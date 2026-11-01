@@ -331,7 +331,10 @@ export class BattleRun {
     const b = this.battle;
     if (this.started) {
       if (this.hud.choosing) {
-        const y = s.moveY !== 0 ? s.moveY : -s.moveX;
+        // A key steps once per press (an edge, so a quick tap between two frames still counts); the
+        // stick steps once each time it's pushed past the edge.
+        if (s.navY) this.hud.nav(s.navY > 0 ? -1 : 1);
+        const y = s.usingGamepad ? (s.moveY !== 0 ? s.moveY : -s.moveX) : 0;
         if (Math.abs(y) > NAV_EDGE) {
           if (!this.navHeld) this.hud.nav(y > 0 ? -1 : 1);
           this.navHeld = true;
