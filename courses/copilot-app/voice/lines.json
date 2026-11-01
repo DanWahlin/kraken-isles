@@ -680,6 +680,11 @@
       "text": "Below those, Sessions lists each connected project. Once you’ve started a chat, a Chats row shows up there too."
     },
     {
+      "id": "mer.mina.goal",
+      "speaker": "Mina",
+      "text": "Turn on the Projects preview, and you’ll get a Projects area too. A Project works toward an ongoing goal, and it isn’t a project session. It’s optional, so no rush."
+    },
+    {
       "id": "mer.mina.logbook",
       "speaker": "Mina",
       "text": "I’ve filed every one in your Logbook. Press J any time."

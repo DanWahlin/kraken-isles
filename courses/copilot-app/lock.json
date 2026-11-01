@@ -2,8 +2,8 @@
   "$comment": "Written by tools/course/sync.mjs (PLAN §8.2). Section hashes are the first 12 hex digits of the SHA-256 of normalizeForCompare(markdown); images keep the full SHA-256. Do not edit by hand.",
   "repo": "github/copilot-app-for-beginners",
   "ref": "main",
-  "sha": "f24b52105ca870cfecd675e7ae0e9672738ecd53",
-  "syncedAt": "2026-10-26",
+  "sha": "dd7cffaae361c51a6def4cc5a4981003e0f7a8e4",
+  "syncedAt": "2026-11-01",
   "catalog": [
     {
       "id": "00-setup",
@@ -188,12 +188,12 @@
     "01-tour-the-app": {
       "short": "ch01",
       "title": "Tour the App",
-      "hash": "3d93a6140765",
+      "hash": "e2e458438167",
       "sections": {
         "learning-objectives": {
           "title": "Learning Objectives",
           "level": 2,
-          "hash": "10570b2bca05",
+          "hash": "9f4988fed710",
           "terms": ["Estimated Time"]
         },
         "prerequisites": {
@@ -210,13 +210,20 @@
         "tour-the-app": {
           "title": "Tour the App",
           "level": 2,
-          "hash": "bfa6c0932790",
+          "hash": "8a561845bbeb",
           "images": [
             "01-tour-the-app/assets/app-new-page.webp",
             "01-tour-the-app/assets/app-pull-requests-page.webp",
             "01-tour-the-app/assets/app-issues-page.webp",
             "01-tour-the-app/assets/app-dashboards-page.webp",
-            "01-tour-the-app/assets/app-automations-page.webp"
+            "01-tour-the-app/assets/app-automations-page.webp",
+            "01-tour-the-app/assets/app-customize-page.webp",
+            "01-tour-the-app/assets/app-sessions-and-chats.webp",
+            "01-tour-the-app/assets/app-projects-page.webp",
+            "01-tour-the-app/assets/app-enable-projects.webp",
+            "01-tour-the-app/assets/app-new-project.webp",
+            "01-tour-the-app/assets/app-project-library.webp",
+            "01-tour-the-app/assets/app-project-automations.webp"
           ],
           "terms": [
             "Authored by me",
@@ -232,7 +239,35 @@
             "Requested reviews",
             "Automations",
             "Sessions",
-            "Chats"
+            "Chats",
+            "public preview",
+            "Settings",
+            "Experimental",
+            "Projects",
+            "Project",
+            "project session",
+            "Orchestration",
+            "Filter experiments",
+            "+",
+            "New project",
+            "Start with one or more repositories",
+            "Work on parallel tasks",
+            "Triage recent issues",
+            "Which repositories should this project use?",
+            "Continue",
+            "Overview",
+            "Needs input",
+            "Open",
+            "Working",
+            "Done",
+            "Steer this session",
+            "Library",
+            "All Files",
+            "Agent",
+            "User",
+            "Add to Library",
+            "Add file…",
+            "Add folder…"
           ]
         },
         "new": {
@@ -279,13 +314,107 @@
         "customize": {
           "title": "Customize",
           "level": 3,
-          "hash": "40d6c4c7a5bf"
+          "hash": "0806c333a2da",
+          "images": ["01-tour-the-app/assets/app-customize-page.webp"]
         },
         "sessions-and-chats": {
           "title": "Sessions and Chats",
           "level": 3,
-          "hash": "9bbe8aab627f",
+          "hash": "105f2cb90db1",
+          "images": ["01-tour-the-app/assets/app-sessions-and-chats.webp"],
           "terms": ["Sessions", "Chats"]
+        },
+        "projects": {
+          "title": "Projects",
+          "level": 3,
+          "hash": "c6bd99f41ea7",
+          "images": [
+            "01-tour-the-app/assets/app-projects-page.webp",
+            "01-tour-the-app/assets/app-enable-projects.webp",
+            "01-tour-the-app/assets/app-new-project.webp",
+            "01-tour-the-app/assets/app-project-library.webp",
+            "01-tour-the-app/assets/app-project-automations.webp"
+          ],
+          "terms": [
+            "public preview",
+            "Settings",
+            "Experimental",
+            "Projects",
+            "Project",
+            "project session",
+            "Orchestration",
+            "Filter experiments",
+            "+",
+            "New project",
+            "Start with one or more repositories",
+            "Work on parallel tasks",
+            "Triage recent issues",
+            "Which repositories should this project use?",
+            "Continue",
+            "Overview",
+            "Needs input",
+            "Open",
+            "Working",
+            "Done",
+            "Steer this session",
+            "Library",
+            "All Files",
+            "Agent",
+            "User",
+            "Automations",
+            "Add to Library",
+            "Add file…",
+            "Add folder…"
+          ]
+        },
+        "enable-projects": {
+          "title": "Enable Projects",
+          "level": 4,
+          "hash": "c90c7bebfcad",
+          "images": ["01-tour-the-app/assets/app-enable-projects.webp"],
+          "terms": ["Settings", "Experimental", "Projects", "Orchestration", "Filter experiments"]
+        },
+        "start-a-project": {
+          "title": "Start a Project",
+          "level": 4,
+          "hash": "1ca2220dd33c",
+          "images": ["01-tour-the-app/assets/app-new-project.webp"],
+          "terms": [
+            "+",
+            "Projects",
+            "New project",
+            "Start with one or more repositories",
+            "Work on parallel tasks",
+            "Triage recent issues",
+            "Which repositories should this project use?",
+            "Continue"
+          ]
+        },
+        "follow-progress-and-share-context": {
+          "title": "Follow Progress and Share Context",
+          "level": 4,
+          "hash": "25fe935d6c2e",
+          "images": [
+            "01-tour-the-app/assets/app-project-library.webp",
+            "01-tour-the-app/assets/app-project-automations.webp"
+          ],
+          "terms": [
+            "Overview",
+            "Needs input",
+            "Open",
+            "Working",
+            "Done",
+            "Steer this session",
+            "Library",
+            "All Files",
+            "Agent",
+            "User",
+            "Automations",
+            "+",
+            "Add to Library",
+            "Add file…",
+            "Add folder…"
+          ]
         },
         "chats-project-sessions-and-modes": {
           "title": "Chats, Project Sessions, and Modes",
@@ -436,8 +565,16 @@
         "key-takeaways": {
           "title": "Key Takeaways",
           "level": 2,
-          "hash": "b74b93cb51b2",
-          "terms": ["Chat sessions", "Project sessions", "Automations", "Interactive", "Plan", "Autopilot"]
+          "hash": "095b87dfacf8",
+          "terms": [
+            "Chat sessions",
+            "Project sessions",
+            "Projects",
+            "Automations",
+            "Interactive",
+            "Plan",
+            "Autopilot"
+          ]
         },
         "whats-next": {
           "title": "What's Next",
@@ -448,7 +585,7 @@
         "source-references": {
           "title": "Source References",
           "level": 2,
-          "hash": "253aa40160ed"
+          "hash": "6877623708a6"
         }
       }
     },
@@ -1260,11 +1397,22 @@
       "pinned": true,
       "bytes": 93020
     },
+    "course/ch01/app-customize-page.webp": {
+      "upstream": "01-tour-the-app/assets/app-customize-page.webp",
+      "sha256": "5e8b5dcfe0ec0cb74c876382af461408b604d81f316611ec1732222666a42c2a",
+      "pinned": true,
+      "bytes": 325966
+    },
     "course/ch01/app-dashboards-page.webp": {
       "upstream": "01-tour-the-app/assets/app-dashboards-page.webp",
       "sha256": "3f1a869cfc31bbafa70691ad6c2cfa42c5caaf98c5ce4d223826ba563fa4659b",
       "pinned": true,
       "bytes": 129602
+    },
+    "course/ch01/app-enable-projects.webp": {
+      "upstream": "01-tour-the-app/assets/app-enable-projects.webp",
+      "sha256": "7ffb3ce6b833eb1f69fb70080a333444d1fc609c43acd5f1b34d8cdff7acd79f",
+      "bytes": 84596
     },
     "course/ch01/app-issues-page.webp": {
       "upstream": "01-tour-the-app/assets/app-issues-page.webp",
@@ -1278,6 +1426,27 @@
       "pinned": true,
       "bytes": 81334
     },
+    "course/ch01/app-new-project.webp": {
+      "upstream": "01-tour-the-app/assets/app-new-project.webp",
+      "sha256": "365ac64e63af6e4a057d283156996c24a09d9a5e01fa0d5ad050434f20e40d52",
+      "bytes": 105346
+    },
+    "course/ch01/app-project-automations.webp": {
+      "upstream": "01-tour-the-app/assets/app-project-automations.webp",
+      "sha256": "d21aadc260eef637244388b21c0a1ae39b1120e6515b80689dae61ff2b251aa8",
+      "bytes": 191726
+    },
+    "course/ch01/app-project-library.webp": {
+      "upstream": "01-tour-the-app/assets/app-project-library.webp",
+      "sha256": "e405c09972da2e3747d030cc6657e4779be522449279fc8dd4b0514459eb0487",
+      "bytes": 182992
+    },
+    "course/ch01/app-projects-page.webp": {
+      "upstream": "01-tour-the-app/assets/app-projects-page.webp",
+      "sha256": "a5e89c1930db1606d2fe49daa365bc1b234e96d740f3a2dd5941f6677fc86659",
+      "pinned": true,
+      "bytes": 208706
+    },
     "course/ch01/app-pull-requests-page.webp": {
       "upstream": "01-tour-the-app/assets/app-pull-requests-page.webp",
       "sha256": "1a68cc38eb6a5b1a43edb2c7b56dace7783f2203b03ebd2726c4c068778b112f",
@@ -1289,6 +1458,12 @@
       "sha256": "9e4bae27093366659f48170ec602d07ad67355dcca9e6c9200d8714ec0c7c155",
       "pinned": true,
       "bytes": 91156
+    },
+    "course/ch01/app-sessions-and-chats.webp": {
+      "upstream": "01-tour-the-app/assets/app-sessions-and-chats.webp",
+      "sha256": "6ec1f6e5fb9cc5be6a6dd341e2bf13f26c6f38d7b1ae942d65e4cb70fedb5f68",
+      "pinned": true,
+      "bytes": 164612
     },
     "course/ch01/app-settings.webp": {
       "upstream": "01-tour-the-app/assets/app-settings.webp",

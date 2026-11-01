@@ -51,6 +51,30 @@
       "alt": "The Automations view: Set up automations, templates such as Issue triage (Daily), Changelog draft (Weekly) and Repo audit (Manual), and the skills you can turn into automations"
     },
     {
+      "id": "ch01/app-customize-page",
+      "src": "course/ch01/app-customize-page.webp",
+      "hash": "5e8b5dcfe0ec",
+      "width": 1920,
+      "height": 1080,
+      "alt": "The Customize view on its Browse tab: the search box for MCP servers, plugins, skills and more, Editor’s picks with a skill, a plugin and a canvas, and a list of MCP servers to add"
+    },
+    {
+      "id": "ch01/app-sessions-and-chats",
+      "src": "course/ch01/app-sessions-and-chats.webp",
+      "hash": "6ec1f6e5fb9c",
+      "width": 1920,
+      "height": 1080,
+      "alt": "The Sessions area of the sidebar, outlined: the Chats row with one chat, and the copilot-app-for-beginners project with one session"
+    },
+    {
+      "id": "ch01/app-projects-page",
+      "src": "course/ch01/app-projects-page.webp",
+      "hash": "a5e89c1930db",
+      "width": 1920,
+      "height": 1080,
+      "alt": "A Project named Copilot app for beginners under Projects in the sidebar, above Sessions. Its conversation is in the middle, and the Overview tab, beside Library and Automations, lists Needs input, Open and Working with none, and one session under Done"
+    },
+    {
       "id": "ch01/producer-control-room-modes",
       "src": "course/ch01/producer-control-room-modes.webp",
       "hash": "e31f0eb3029b",
@@ -453,7 +477,7 @@
       "source": {
         "chapter": "01-tour-the-app",
         "anchor": "key-takeaways",
-        "hash": "b74b93cb51b2"
+        "hash": "095b87dfacf8"
       }
     },
     {
@@ -560,7 +584,7 @@
       "source": {
         "chapter": "01-tour-the-app",
         "anchor": "tour-the-app",
-        "hash": "bfa6c0932790"
+        "hash": "8a561845bbeb"
       }
     },
     {
@@ -823,6 +847,38 @@
         "chapter": "01-tour-the-app",
         "anchor": "project-sessions",
         "hash": "b8e172159d21"
+      }
+    },
+    {
+      "id": "N1.7",
+      "type": "scenario",
+      "situation": "You want Copilot to keep collecting feedback about the book app, find common problems, and start follow-up work. When new feedback comes in, you want to carry on where you left off.",
+      "prompt": "What fits this ongoing goal?",
+      "options": [
+        {
+          "id": "session",
+          "text": "A project session",
+          "feedback": "A project session is one session in one repository. This goal needs related work coordinated over time."
+        },
+        {
+          "id": "chat",
+          "text": "A chat",
+          "feedback": "A chat is for a general question without a repository. It doesn’t coordinate work toward a goal."
+        },
+        {
+          "id": "project",
+          "text": "A **Project** (public preview)"
+        }
+      ],
+      "answer": "project",
+      "explain": {
+        "correct": "Right. A **Project** coordinates related work toward an ongoing goal. It’s optional and in public preview, so turn it on under **Settings** > **Experimental** first.",
+        "wrong": "Look for the feature that coordinates related work toward an ongoing goal. That’s a **Project**, not a project session."
+      },
+      "source": {
+        "chapter": "01-tour-the-app",
+        "anchor": "projects",
+        "hash": "c6bd99f41ea7"
       }
     },
     {
@@ -1154,21 +1210,34 @@
     {
       "id": "pg1.customize",
       "title": "Customize",
+      "image": "ch01/app-customize-page",
       "caption": "Where you manage the ways to extend the app: skills, Model Context Protocol (MCP) servers, plugins, extensions and canvases. You don’t need any yet. Chapter 04 covers skills and custom agents, Chapter 05 MCP servers and plugins, and Chapter 06 canvases.",
       "source": {
         "chapter": "01-tour-the-app",
         "anchor": "customize",
-        "hash": "40d6c4c7a5bf"
+        "hash": "0806c333a2da"
       }
     },
     {
       "id": "pg1.sessions-chats",
       "title": "Sessions and chats",
+      "image": "ch01/app-sessions-and-chats",
       "caption": "The **Sessions** area of the sidebar lists every project you’ve connected. Start your first chat, and a **Chats** row shows up there too.",
       "source": {
         "chapter": "01-tour-the-app",
         "anchor": "sessions-and-chats",
-        "hash": "9bbe8aab627f"
+        "hash": "105f2cb90db1"
+      }
+    },
+    {
+      "id": "pg1.goal-projects",
+      "title": "Projects (optional, public preview)",
+      "image": "ch01/app-projects-page",
+      "caption": "Optional, and in public preview, so it can change. A **Project** gives Copilot an ongoing goal, and Copilot coordinates the work: it can start sessions, create artifacts such as reports, and set up recurring tasks when you ask. It isn’t a **project session**, which is one session in one repository: a Project can use one repository, several, or none, and adding a repository to the app doesn’t create one. To turn it on, open **Settings** > **Experimental** and turn on **Projects** under **Orchestration**. Its right-hand panel has three tabs: **Overview** (**Needs input**, **Open**, **Working** and **Done**), **Library** (files you add and the artifacts it makes) and **Automations** (its recurring tasks).",
+      "source": {
+        "chapter": "01-tour-the-app",
+        "anchor": "projects",
+        "hash": "c6bd99f41ea7"
       }
     },
     {
@@ -1381,6 +1450,11 @@
       "definition": "Where you manage skills, MCP servers, plugins, extensions and canvases."
     },
     {
+      "id": "goal-project",
+      "term": "Project (public preview)",
+      "definition": "An optional feature that gives Copilot an ongoing goal and coordinates the work toward it. It isn’t a project session, which is one session in one repository."
+    },
+    {
       "id": "session-modes",
       "term": "Session modes",
       "definition": "Interactive (step by step), Plan (plan first, execute when ready) and Autopilot (end to end without interruption)."
@@ -1461,7 +1535,7 @@
     "mer.mina.01": {
       "chapter": "01-tour-the-app",
       "anchor": "tour-the-app",
-      "hash": "bfa6c0932790"
+      "hash": "8a561845bbeb"
     },
     "mer.mina.new": {
       "chapter": "01-tour-the-app",
@@ -1491,12 +1565,17 @@
     "mer.mina.customize": {
       "chapter": "01-tour-the-app",
       "anchor": "customize",
-      "hash": "40d6c4c7a5bf"
+      "hash": "0806c333a2da"
     },
     "mer.mina.projects": {
       "chapter": "01-tour-the-app",
       "anchor": "sessions-and-chats",
-      "hash": "9bbe8aab627f"
+      "hash": "105f2cb90db1"
+    },
+    "mer.mina.goal": {
+      "chapter": "01-tour-the-app",
+      "anchor": "projects",
+      "hash": "c6bd99f41ea7"
     },
     "mer.lyra.02": {
       "chapter": "01-tour-the-app",
