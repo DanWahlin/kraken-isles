@@ -1,0 +1,157 @@
+{
+  "id": "mer.mina.goal",
+  "speaker": "Mina",
+  "text": "Turn on the Projects preview, and you’ll get a Projects area too. A Project works toward an ongoing goal, and it isn’t a project session. It’s optional, so no rush.",
+  "words": [
+    {
+      "word": "Turn",
+      "start": 0.0471659,
+      "end": 0.353791
+    },
+    {
+      "word": "on",
+      "start": 0.353791,
+      "end": 0.459916
+    },
+    {
+      "word": "the",
+      "start": 0.459916,
+      "end": 0.55425
+    },
+    {
+      "word": "Projects",
+      "start": 0.55425,
+      "end": 1.002375
+    },
+    {
+      "word": "preview",
+      "start": 1.002375,
+      "end": 1.698125
+    },
+    {
+      "word": "and",
+      "start": 1.698125,
+      "end": 1.839625
+    },
+    {
+      "word": "you’ll",
+      "start": 1.839625,
+      "end": 1.992916
+    },
+    {
+      "word": "get",
+      "start": 1.992916,
+      "end": 2.205208
+    },
+    {
+      "word": "a",
+      "start": 2.205208,
+      "end": 2.275958
+    },
+    {
+      "word": "Projects",
+      "start": 2.275958,
+      "end": 2.771208
+    },
+    {
+      "word": "area",
+      "start": 2.771208,
+      "end": 3.125
+    },
+    {
+      "word": "too",
+      "start": 3.125,
+      "end": 4.386791
+    },
+    {
+      "word": "A",
+      "start": 4.386791,
+      "end": 4.504708
+    },
+    {
+      "word": "Project",
+      "start": 4.504708,
+      "end": 4.92925
+    },
+    {
+      "word": "works",
+      "start": 4.92925,
+      "end": 5.294791
+    },
+    {
+      "word": "toward",
+      "start": 5.294791,
+      "end": 5.636791
+    },
+    {
+      "word": "an",
+      "start": 5.636791,
+      "end": 5.754708
+    },
+    {
+      "word": "ongoing",
+      "start": 5.754708,
+      "end": 6.167458
+    },
+    {
+      "word": "goal",
+      "start": 6.167458,
+      "end": 6.839625
+    },
+    {
+      "word": "and",
+      "start": 6.839625,
+      "end": 6.957541
+    },
+    {
+      "word": "it",
+      "start": 6.957541,
+      "end": 7.075458
+    },
+    {
+      "word": "isn’t",
+      "start": 7.075458,
+      "end": 7.3585
+    },
+    {
+      "word": "a",
+      "start": 7.3585,
+      "end": 7.42925
+    },
+    {
+      "word": "project",
+      "start": 7.42925,
+      "end": 7.853791
+    },
+    {
+      "word": "session",
+      "start": 7.853791,
+      "end": 9.16275
+    },
+    {
+      "word": "It’s",
+      "start": 9.16275,
+      "end": 9.386791
+    },
+    {
+      "word": "optional",
+      "start": 9.386791,
+      "end": 10.106125
+    },
+    {
+      "word": "so",
+      "start": 10.106125,
+      "end": 10.330208
+    },
+    {
+      "word": "no",
+      "start": 10.330208,
+      "end": 10.589625
+    },
+    {
+      "word": "rush",
+      "start": 10.589625,
+      "end": 10.839625
+    }
+  ]
+}

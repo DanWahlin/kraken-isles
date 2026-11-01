@@ -521,7 +521,7 @@
         "cue": "tour:outfitter"
       },
       {
-        "show": "ch01/app-new-page",
+        "show": "ch01/app-customize-page",
         "caption": "**Customize**: skills, MCP servers, plugins, extensions and canvases. You don’t need any yet."
       },
       {
@@ -531,13 +531,27 @@
         "cue": "tour:end"
       },
       {
+        "show": "ch01/app-sessions-and-chats",
+        "caption": "**Sessions**: each connected project, and a **Chats** row once you’ve started a chat."
+      },
+      {
         "say": "mer.mina.projects"
+      },
+      {
+        "show": "ch01/app-projects-page",
+        "caption": "**Projects** (optional, public preview): a Project coordinates work toward an ongoing goal. Turn it on in **Settings** > **Experimental**."
+      },
+      {
+        "say": "mer.mina.goal"
       },
       {
         "hide": true
       },
       {
         "quiz": "H1.1"
+      },
+      {
+        "quiz": "N1.7"
       },
       {
         "term": "pull-requests"
@@ -553,6 +567,9 @@
       },
       {
         "term": "customize"
+      },
+      {
+        "term": "goal-project"
       },
       {
         "file": "pg1.new"
@@ -574,6 +591,9 @@
       },
       {
         "file": "pg1.sessions-chats"
+      },
+      {
+        "file": "pg1.goal-projects"
       },
       {
         "say": "mer.mina.logbook"

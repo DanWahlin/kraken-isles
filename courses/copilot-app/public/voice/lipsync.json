@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T07:27:45.989Z",
+  "generatedAt": "2026-11-01T08:15:07.899Z",
   "generator": "Rhubarb Lip Sync 1.14.0",
   "scope": "Every voiced islander (not Wingman)",
   "lines": {
@@ -4018,6 +4018,16 @@
         35, 17
       ],
       "v": "XCBFCAEBEABGFDBCABCXBEFABCEFBX"
+    },
+    "mer.mina.goal": {
+      "h": "119c3b0aad3df5ff",
+      "e": "neutral",
+      "t": [
+        0, 8, 7, 7, 7, 14, 7, 10, 5, 5, 7, 7, 7, 8, 22, 7, 21, 23, 5, 16, 4, 26, 10, 14, 14, 14, 14, 14, 49,
+        79, 26, 18, 7, 14, 7, 7, 21, 7, 7, 7, 14, 7, 28, 7, 28, 21, 26, 33, 7, 7, 7, 11, 15, 7, 21, 7, 14, 21,
+        84, 18, 7, 9, 9, 21, 23, 16, 7, 7, 7, 14, 7, 7, 14, 21, 78
+      ],
+      "v": "XBCBDBABDBCBABGFXBFECABCBCBFXABCBFCBCFEBCEBEFXBCBCABCBCBCXBDABCHBEFCEFBCBX"
     }
   }
 }

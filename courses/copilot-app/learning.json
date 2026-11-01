@@ -892,7 +892,7 @@
       "source": {
         "chapter": "01-tour-the-app",
         "anchor": "learning-objectives",
-        "hash": "10570b2bca05"
+        "hash": "9f4988fed710"
       },
       "covers": {
         "quests": ["Q1.1"],
@@ -906,7 +906,7 @@
       "source": {
         "chapter": "01-tour-the-app",
         "anchor": "learning-objectives",
-        "hash": "10570b2bca05"
+        "hash": "9f4988fed710"
       },
       "covers": {
         "quests": ["Q1.2"],
@@ -921,7 +921,7 @@
       "source": {
         "chapter": "01-tour-the-app",
         "anchor": "learning-objectives",
-        "hash": "10570b2bca05"
+        "hash": "9f4988fed710"
       },
       "covers": {
         "quests": ["Q1.3"],
@@ -931,13 +931,26 @@
       }
     },
     {
+      "id": "O1.9",
+      "chapter": "01-tour-the-app",
+      "text": "Explain how Projects can be used to coordinate work toward an ongoing goal",
+      "source": {
+        "chapter": "01-tour-the-app",
+        "anchor": "learning-objectives",
+        "hash": "9f4988fed710"
+      },
+      "covers": {
+        "quizzes": ["N1.7"]
+      }
+    },
+    {
       "id": "O1.4",
       "chapter": "01-tour-the-app",
       "text": "Explain the session modes: Interactive, Plan, and Autopilot",
       "source": {
         "chapter": "01-tour-the-app",
         "anchor": "learning-objectives",
-        "hash": "10570b2bca05"
+        "hash": "9f4988fed710"
       },
       "covers": {
         "puzzles": ["three-helms"],
@@ -951,7 +964,7 @@
       "source": {
         "chapter": "01-tour-the-app",
         "anchor": "learning-objectives",
-        "hash": "10570b2bca05"
+        "hash": "9f4988fed710"
       },
       "covers": {
         "quests": ["Q1.6"],
@@ -966,7 +979,7 @@
       "source": {
         "chapter": "01-tour-the-app",
         "anchor": "learning-objectives",
-        "hash": "10570b2bca05"
+        "hash": "9f4988fed710"
       },
       "covers": {
         "quests": ["Q1.7"],
@@ -980,7 +993,7 @@
       "source": {
         "chapter": "01-tour-the-app",
         "anchor": "learning-objectives",
-        "hash": "10570b2bca05"
+        "hash": "9f4988fed710"
       },
       "covers": {
         "quests": ["Q1.6"],
@@ -994,7 +1007,7 @@
       "source": {
         "chapter": "01-tour-the-app",
         "anchor": "learning-objectives",
-        "hash": "10570b2bca05"
+        "hash": "9f4988fed710"
       },
       "covers": {}
     },
@@ -1209,7 +1222,7 @@
       "source": {
         "chapter": "01-tour-the-app",
         "anchor": "key-takeaways",
-        "hash": "b74b93cb51b2"
+        "hash": "095b87dfacf8"
       },
       "choices": [
         {
@@ -1223,6 +1236,10 @@
         {
           "id": "kinds",
           "text": "Chats for questions, project sessions for repository work"
+        },
+        {
+          "id": "goal",
+          "text": "A Project (public preview) for an ongoing goal"
         },
         {
           "id": "modes",
