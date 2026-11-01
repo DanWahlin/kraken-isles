@@ -1,3 +1,4 @@
+import { GUILDCREST_FLORA_PALETTE } from '../world/islands/guildcrest/flora-palette';
 import { guildcrestTerrainRegions } from '../world/islands/guildcrest/terrain-regions';
 import type { IslandInBuild } from './types';
 
@@ -9,4 +10,5 @@ import type { IslandInBuild } from './types';
 export const GUILDCREST_IN_BUILD: IslandInBuild = {
   id: 'guildcrest',
   terrainRegions: guildcrestTerrainRegions,
+  floraPalette: GUILDCREST_FLORA_PALETTE,
 };

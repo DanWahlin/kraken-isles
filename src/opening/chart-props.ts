@@ -349,6 +349,13 @@ function plantShape(
       parts.add(g, rgb(hue, 0.85 + r() * 0.3), x, y, z, delay);
       return;
     }
+    case 'pineTree': {
+      // A dark, flat crown on a bare trunk.
+      const g = new ConeGeometry(1.6 * scale, 3 * scale, 6);
+      g.translate(0, 8.5 * scale, 0);
+      parts.add(g, rgb(0x2e4630, 0.85 + r() * 0.3), x, y, z, delay);
+      return;
+    }
     case 'cypress': {
       // A dark green flame.
       const g = new ConeGeometry(0.7 * scale, 8 * scale, 6);

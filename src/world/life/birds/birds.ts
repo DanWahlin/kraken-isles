@@ -29,6 +29,12 @@ export interface CreateBirdsOptions {
   scale?: number;
   /** Flight band above `center.y` (m); default 18-73 m. */
   altitude?: readonly [min: number, max: number];
+  /** Flight speed multiplier; default 1 (Guildcrest's swifts fly faster). */
+  speed?: number;
+  /** How many birds (default the tier's `birds`). */
+  count?: number;
+  /** Their plumage's lightness (0-1; default 0.82, white gulls; swifts are dark). */
+  lightness?: number;
 }
 
 export interface BirdsSystem {
@@ -117,11 +123,12 @@ function setMatrix(agent: BirdAgent): Matrix4 {
 
 export function createBirds(options: CreateBirdsOptions): BirdsSystem {
   const tier = resolveTier(options.tier);
-  const count = Math.max(0, tier.birds);
+  const count = Math.max(0, options.count ?? tier.birds);
   let rng = seededRandom(options.seed ?? 0xb17d5);
   const agents: BirdAgent[] = [];
   const alt = options.altitude ?? DEFAULT_ALTITUDE;
   const perchCount = Math.min(options.perches.length, Math.ceil(count * 0.24));
+  const lightness = options.lightness ?? 0.82;
   const spawn = () => {
     rng = seededRandom(options.seed ?? 0xb17d5);
     agents.length = 0;
@@ -141,7 +148,7 @@ export function createBirds(options: CreateBirdsOptions): BirdsSystem {
         yaw: rng() * Math.PI * 2,
         bank: 0,
         pitch: 0,
-        speed: 7.5 + rng() * 4,
+        speed: (7.5 + rng() * 4) * (options.speed ?? 1),
         scale: (1.6 + rng() * 0.35) * (options.scale ?? 1),
         seed: rng(),
         flapPhase: rng() * Math.PI * 2,
@@ -269,7 +276,7 @@ export function createBirds(options: CreateBirdsOptions): BirdsSystem {
         mesh.setMatrixAt(visible, setMatrix(agent));
         flapPhase.setX(visible, agent.flapPhase + agent.seed * 8);
         flapAmp.setX(visible, agent.flapAmp);
-        tmpColor.setHSL(0.58, 0.04, 0.82 + agent.seed * 0.08);
+        tmpColor.setHSL(0.58, 0.04, lightness + agent.seed * 0.08);
         birdTint.setXYZW(visible, tmpColor.r, tmpColor.g, tmpColor.b, agent.fold);
         visible += 1;
       }

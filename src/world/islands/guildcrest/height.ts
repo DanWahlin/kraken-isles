@@ -274,9 +274,12 @@ export const MILL_TRACK = [
 
 /** The tower stair's path: from the yard's west side down to the tower terrace's foot. */
 export const TOWER_PATH = [
-  { u: YARD.u - YARD.halfU, v: YARD.v - 6, y: YARD.y },
-  { u: 82, v: 128, y: 40 },
-  { u: TERRACE.u + 6, v: TERRACE.v + 2, y: TERRACE.y },
+  { u: 78, v: 147, y: YARD.y },
+  { u: 80, v: 134, y: YARD.y },
+  { u: 79, v: 131, y: 41 },
+  { u: 78.6, v: 129, y: 41 },
+  { u: 77.6, v: 126, y: TERRACE.y },
+  { u: 72, v: 121, y: TERRACE.y },
 ] as const;
 
 /** The lane from the quay up past the inn to the square's west side. */
@@ -335,8 +338,9 @@ function pads(h: number, u: number, v: number): number {
   // The tower's terrace stands on a plinth (stage 2): the ground round it at the knoll's level, and
   // a shelf east of the tower toward the yard.
   h = pad(h, boxOut(u, v, TERRACE.u + 4, TERRACE.v + 4, 8, 8), TERRACE.y, 1.4, 1);
-  // The guildhall yard.
+  // The guildhall yard and the Guildhall of Journeymen on its south side.
   h = pad(h, boxOut(u, v, YARD.u, YARD.v, YARD.halfU, YARD.halfV), YARD.y, 1.4, 0.9);
+  h = pad(h, boxOut(u, v, 102, 139, 14.5, 5.5), YARD.y, 1.4, 0.9);
   // The mills' pads.
   for (const m of MILLS) h = pad(h, Math.max(0, Math.hypot(u - m.u, v - m.v) - MILL.pad), m.y, 1.2, 0.8);
   return h;

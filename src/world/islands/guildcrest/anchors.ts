@@ -1,5 +1,6 @@
 import type { VillageAnchor } from '../../village/kit';
 import { guildcrestHeight } from './height';
+import { CIRCUIT_SPOTS } from './circuit';
 import { headingBetween, toWorld, type Uv } from './layout';
 
 /**
@@ -21,6 +22,12 @@ function anchor(u: number, v: number, _planned: number, look?: Uv): VillageAncho
     z: p.z,
     heading: look ? headingBetween({ u, v }, look) : 0,
   };
+}
+
+/** A circuit's station as an anchor: where the player stands, facing what the station's camera looks at. */
+function spotAnchor(kind: 'book' | 'belt', place: string): VillageAnchor {
+  const s = CIRCUIT_SPOTS[kind][place]!;
+  return anchor(s.u, s.v, s.y, { u: s.look.u, v: s.look.v });
 }
 
 /** A camera: where it stands (x, y, z, its heading toward the target) and what it looks at. */
@@ -52,7 +59,6 @@ const LOOK = {
   fergus: { u: 90, v: 154 },
   towerStair: { u: 82, v: 128 },
   garth: { u: 22, v: 130 },
-  hall: { u: 94, v: 156 },
 } as const;
 
 export const GUILDCREST_ANCHORS = {
@@ -64,28 +70,28 @@ export const GUILDCREST_ANCHORS = {
   elspeth: anchor(-102, 40, 10, LOOK.charterStone),
   charterStone: anchor(-96, 46, 10),
   aidan: anchor(-18, 106, 34, LOOK.braeTurn),
-  brigid: anchor(4, 112, 36, LOOK.aidan),
-  ewan: anchor(22, 141, 36, LOOK.brigid),
-  chainRack: anchor(26, 146, 36, LOOK.garth),
+  brigid: anchor(8, 121, 36, LOOK.aidan),
+  ewan: anchor(24, 149, 36, LOOK.garth),
+  chainRack: anchor(24.6, 152.6, 36, LOOK.garth),
   fergus: anchor(90, 154, 42, LOOK.ridge),
   rory: anchor(96, 160, 42, LOOK.fergus),
   seren: anchor(66, 116, 40, LOOK.towerStair),
-  bellRope: anchor(62, 114, 40),
+  bellRope: anchor(62.6, 114, 40),
   // The Pattern Book's stations on the cloister walk (P4.1), facing the garth.
-  'book.shelf': anchor(8, 118, 36, LOOK.garth),
-  'book.spine': anchor(8, 132, 36, LOOK.garth),
-  'book.desk': anchor(18, 136, 36, LOOK.garth),
-  'book.proof': anchor(32, 136, 36, LOOK.garth),
-  'book.bell': anchor(32, 120, 36, LOOK.garth),
-  'book.lectern': anchor(20, 116, 36, LOOK.garth),
+  'book.shelf': spotAnchor('book', 'shelf'),
+  'book.spine': spotAnchor('book', 'spine'),
+  'book.desk': spotAnchor('book', 'desk'),
+  'book.proof': spotAnchor('book', 'proof'),
+  'book.bell': spotAnchor('book', 'bell'),
+  'book.lectern': spotAnchor('book', 'lectern'),
   // The Journeyman's Toolbelt's stations in the guildhall yard (P4.2), facing the hall.
-  'belt.indenture': anchor(86, 158, 42, LOOK.hall),
-  'belt.rack': anchor(98, 166, 42, LOOK.hall),
-  'belt.proof': anchor(108, 160, 42, LOOK.hall),
-  'belt.door': anchor(104, 150, 42, LOOK.hall),
-  'belt.roll': anchor(94, 146, 42, LOOK.hall),
-  'belt.bench': anchor(84, 150, 42, LOOK.hall),
-  'belt.testBench': anchor(78, 156, 42, LOOK.hall),
+  'belt.indenture': spotAnchor('belt', 'indenture'),
+  'belt.rack': spotAnchor('belt', 'rack'),
+  'belt.proof': spotAnchor('belt', 'proof'),
+  'belt.door': spotAnchor('belt', 'door'),
+  'belt.roll': spotAnchor('belt', 'roll'),
+  'belt.bench': spotAnchor('belt', 'bench'),
+  'belt.testBench': spotAnchor('belt', 'testBench'),
   // The circuits' cameras.
   bookCam: camera(-6, 124, 52, 22, 128, 36),
   beltCam: camera(70, 140, 54, 94, 156, 42),
@@ -93,7 +99,7 @@ export const GUILDCREST_ANCHORS = {
   extraFiddler: anchor(-160, 34, 3.0, LOOK.landing),
   extraWhistler: anchor(-164, 42, 3.0, LOOK.landing),
   extraKids: anchor(-90, 52, 10, LOOK.charterStone),
-  extraCopyist: anchor(12, 140, 36, LOOK.garth),
+  extraCopyist: anchor(13.6, 144.6, 36, { u: 16, v: 145.5 }),
   extraMiller: anchor(126, 186, 52, LOOK.fergus),
   extraShepherd: anchor(40, 20, 40, LOOK.aidan),
 } as const satisfies Record<string, VillageAnchor>;

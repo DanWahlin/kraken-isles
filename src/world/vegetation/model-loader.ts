@@ -20,7 +20,7 @@ import {
   createRecoloredLeafMaterial,
   createVegetationMaterial,
 } from './materials';
-import { buildCypress, buildMaquisBush, buildPricklyPear } from './cactus';
+import { buildCypress, buildMaquisBush, buildPine, buildPricklyPear } from './cactus';
 import { buildPalmFar, buildPalmNear, buildYoungPalm } from './palms';
 import { PLANT_SPECIES } from './blockers';
 import type { PlantSpecies } from './types';
@@ -295,11 +295,17 @@ async function loadSpecies(loader: GLTFLoader, species: PlantSpecies): Promise<V
       (['hero', 'grove'] as const).flatMap((lod) => createPalmParts(species, variant, lod)),
     );
   }
-  if (species === 'cactus' || species === 'brush' || species === 'cypress') {
+  if (species === 'cactus' || species === 'brush' || species === 'cypress' || species === 'pineTree') {
     // Built in code (no model in the kit): Port Meridian's prickly pears and maquis brush. Same
     // material options, so both share one program.
     const source =
-      species === 'cactus' ? buildPricklyPear() : species === 'brush' ? buildMaquisBush() : buildCypress();
+      species === 'cactus'
+        ? buildPricklyPear()
+        : species === 'brush'
+          ? buildMaquisBush()
+          : species === 'pineTree'
+            ? buildPine()
+            : buildCypress();
     const geometry = addInstanceAttributes(source, new Mesh(source), species);
     source.dispose();
     const parts: VegetationModelPart[] = [
@@ -307,7 +313,15 @@ async function loadSpecies(loader: GLTFLoader, species: PlantSpecies): Promise<V
         geometry,
         material: createVegetationMaterial({
           alphaTest: 0.12,
-          color: new Color(species === 'cactus' ? 0x93a85e : species === 'brush' ? 0x8c9a58 : 0x3d5a34),
+          color: new Color(
+            species === 'cactus'
+              ? 0x93a85e
+              : species === 'brush'
+                ? 0x8c9a58
+                : species === 'pineTree'
+                  ? 0x3a5236
+                  : 0x3d5a34,
+          ),
           name: 'vegetation-procedural',
         }),
       },
@@ -343,6 +357,7 @@ export async function loadVegetationGeometries(): Promise<VegetationGeometryCata
     'cactus',
     'brush',
     'cypress',
+    'pineTree',
   ] as PlantSpecies[];
   const entries = await Promise.all(
     speciesList.map(async (species) => [species, await loadSpecies(loader, species)] as const),

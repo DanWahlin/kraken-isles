@@ -41,21 +41,26 @@ export const CIRCUIT_SPOTS: {
   book: Readonly<Record<string, StationSpot>>;
   belt: Readonly<Record<string, StationSpot>>;
 } = {
+  // Round the cloister's walks (the garth's lawn is ±12 m of its middle, the walks to ±16): up the
+  // west walk by the scriptorium, along the north walk by the library, down the east walk.
   book: {
-    shelf: spot('book', 'shelf', 8, 118, walk, 2, 116, 1.4),
-    spine: spot('book', 'spine', 8, 132, walk, 2, 134, 1.2),
-    desk: spot('book', 'desk', 18, 136, walk, 18, 143, 0.9),
-    proof: spot('book', 'proof', 32, 136, walk, 34, 142, 0.9),
-    bell: spot('book', 'bell', 32, 120, walk, 40, 120, 2.6),
-    lectern: spot('book', 'lectern', 20, 116, walk, 20, 112, 1.2),
+    shelf: spot('book', 'shelf', 8, 128, walk, 6.4, 128, 1.4),
+    spine: spot('book', 'spine', 8, 138, walk, 6.5, 138, 1.4),
+    desk: spot('book', 'desk', 16, 144, walk, 16, 145.5, 0.9),
+    proof: spot('book', 'proof', 30, 144, walk, 30, 145.5, 0.9),
+    bell: spot('book', 'bell', 36, 136, walk, 37.3, 136, 2.5),
+    lectern: spot('book', 'lectern', 36, 122, walk, 37.1, 122, 1.1),
   },
+  // Round the guildhall yard: the writing desk and the test bench on its north side, the peg rail on
+  // its north wall, the proof table on its east, the hall's door and roll board on its south, the
+  // reading bench by its west entrance.
   belt: {
-    indenture: spot('belt', 'indenture', 86, 158, yard, 86, 163, 1.2),
-    rack: spot('belt', 'rack', 98, 166, yard, 100, 169, 1.2),
-    proof: spot('belt', 'proof', 108, 160, yard, 111, 161, 0.9),
-    door: spot('belt', 'door', 104, 150, yard, 104, 146, 1.8),
-    roll: spot('belt', 'roll', 94, 146, yard, 94, 143, 1.6),
-    bench: spot('belt', 'bench', 84, 150, yard, 82, 148, 0.8),
-    testBench: spot('belt', 'testBench', 78, 156, yard, 75, 157, 0.8),
+    indenture: spot('belt', 'indenture', 87, 160.5, yard, 87, 163.5, 1),
+    rack: spot('belt', 'rack', 98, 165, yard, 98, 167.8, 1.2),
+    proof: spot('belt', 'proof', 103, 158, yard, 106, 158, 0.9),
+    door: spot('belt', 'door', 104, 149, yard, 104, 144.2, 1.6),
+    roll: spot('belt', 'roll', 94, 148, yard, 94, 144.2, 1.6),
+    bench: spot('belt', 'bench', 85, 152, yard, 82.5, 149.5, 0.7),
+    testBench: spot('belt', 'testBench', 80, 160, yard, 79, 163.5, 0.9),
   },
 };

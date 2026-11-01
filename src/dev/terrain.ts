@@ -5,6 +5,9 @@ import { createPost } from '../engine/post';
 import { compileProgressively, warmProgressively, warmTerrainLods } from '../engine/warm';
 import { ISLANDS } from '../game/islands';
 import { guildcrestTerrainWater } from '../world/islands/guildcrest/height';
+import { GUILDCREST_FLORA } from '../world/islands/guildcrest/flora';
+import { GUILDCREST_PLANT_LOOK } from '../world/islands/guildcrest/vegetation';
+import { createGuildcrestWorldAsync } from '../world/islands/guildcrest';
 import { GUILDCREST, toWorld as gcWorld } from '../world/islands/guildcrest/layout';
 import { KEELHAVEN_FLORA } from '../world/islands/keelhaven/flora';
 import { keelhavenTerrainWater } from '../world/islands/keelhaven/height';
@@ -70,6 +73,7 @@ function noHomePlants(): IslandVegetationRules {
     'cactus',
     'brush',
     'cypress',
+    'pineTree',
   ];
   const empty = { minX: 0, maxX: 0, minZ: 0, maxZ: 0 };
   return {
@@ -311,14 +315,8 @@ PACKS.guildcrest = {
       [5858, 16, 120],
       [5885, 12, 160],
     ],
-    cloister: [
-      [5990, 48, 170],
-      [6014, 36, 192],
-    ],
-    ridge: [
-      [6045, 52, 200],
-      [6140, 54, 250],
-    ],
+    cloister: guildcrestPose([-12, 122, 57], [24, 128, 36]),
+    ridge: guildcrestPose([70, 140, 56], [150, 205, 58]),
     tower: [
       [6060, 46, 250],
       [6025, 70, 226],
@@ -344,7 +342,10 @@ PACKS.guildcrest = {
       'quay-lane': [onGround(-170, 30, 1.7), at(-96, 46, 11)],
       brae: [onGround(-80, 56, 1.7), at(-18, 106, 38)],
       linn: [onGround(-74, 44, 1.7), at(-30, 63, 26)],
-      garth: [onGround(10, 124, 1.7), at(56, 114, 60)],
+      garth: [onGround(9, 118, 1.7), at(40, 140, 40)],
+      'walk-north': [onGround(10, 144, 1.7), at(40, 144, 38)],
+      terrace: [onGround(74, 124, 1.7), at(56, 114, 66)],
+      gate: [onGround(-26, 100, 1.7), at(-10, 118, 38)],
       yard: [onGround(80, 150, 1.7), at(150, 214, 62)],
       glen: [onGround(30, 64, 1.7), at(-40, 62, 20)],
     };
@@ -446,6 +447,51 @@ if (packName === 'keelhaven' && !q.has('noart')) {
   }
 }
 
+// Guildcrest's world art (spec §12 stage 2A), as Keelhaven's: its plants a patch, its gulls and swifts.
+let gcUpdate: ((dt: number, t: number) => void) | null = null;
+if (packName === 'guildcrest' && !q.has('noart')) {
+  const breathe = () => Promise.resolve();
+  const kit = await loadVillageKit();
+  const gcWorld = await createGuildcrestWorldAsync({ tier, heightField: terrain.heightField, kit }, breathe);
+  scene.add(gcWorld.group);
+  khFrame = (c) => gcWorld.frame(c);
+  gcUpdate = (dt, t) => gcWorld.update(dt, t);
+  if (tier.birds > 0)
+    for (const f of gcWorld.birds) {
+      if (f.kind?.count === 0) continue;
+      const b = createBirds({
+        tier,
+        perches: f.perches,
+        center: f.center,
+        radius: f.radius,
+        seed: f.seed,
+        ...f.kind,
+      });
+      scene.add(b.group);
+      khBirds.push(b);
+    }
+  if (!q.has('noveg')) {
+    vegetation = await createVegetation({
+      heightField: terrain.heightField,
+      heightGrid: terrain.heightGrid,
+      tier,
+      renderer,
+      island: noHomePlants(),
+    });
+    scene.add(vegetation.group);
+    const patch = await addIslandPlants(
+      { skipShadows: false },
+      vegetation,
+      await gcWorld.plants(breathe),
+      'guildcrest-plants',
+      GUILDCREST_FLORA,
+      terrain,
+      q.has('nolook') ? undefined : GUILDCREST_PLANT_LOOK,
+    );
+    patch.group.visible = true;
+  }
+}
+
 // `?sil`: Keelhaven's far silhouette in place of its ground, art and plants (to compare the two).
 if (packName === 'keelhaven' && q.has('sil')) {
   const { createKeelhavenSilhouette } = await import('../world/islands/keelhaven/silhouette');
@@ -488,6 +534,7 @@ engine.add({
     terrain.update(camera);
     vegetation?.update(camera);
     khFrame?.(camera);
+    gcUpdate?.(dt, t);
     for (const b of khBirds) b.update(dt, t, camera);
     focus.set(camera.position.x, 0, camera.position.z);
     sky.update(clock, focus, dt, camera);
@@ -568,7 +615,7 @@ const frozenAt = new Vector3();
   lodInfo: () => {
     const rows: unknown[] = [];
     scene.traverse((o) => {
-      if (!(o instanceof Mesh) || !o.name.startsWith('kh-yard')) return;
+      if (!(o instanceof Mesh) || !(o.name.startsWith('kh-yard') || o.name.startsWith('gc-town'))) return;
       const g = o.geometry;
       rows.push([o.name, g.index?.count, g.attributes.position!.count, g.userData.lodRanges ?? null]);
     });
