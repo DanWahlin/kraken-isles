@@ -77,12 +77,21 @@ export const GUILDCREST = {
   coast: { centerU: 10, halfU: 410, halfV: 330, power: 2.4, noise: 28, noiseScale: 140, ragged: 8 },
 
   /** Sky (spec G4): late afternoon, the sun low in the west-south-west (bearing ~250°). */
-  sky: { hours: 16.5, azimuth: 0 },
+  // `azimuth` −21 puts the sun on bearing 250° (23.8° up): §15.
+  sky: { hours: 16.5, azimuth: -21 },
   mood: { fogScale: 1.8, hazeTint: [0.92, 0.96, 1.0] as const },
 
   /** How far its parts stream and show (footprintDistance, spec §3.1). */
   ranges: { load: 1300, show: 1100, unload: 1550, detail: 600 },
   skyReach: { reach: 1300, full: 800 },
+
+  /** Its terrain mesh: gentle ground (no prefilter needed), the island one block from the sea. */
+  terrain: {
+    maxMergedTriangles: 24_000,
+    prefilter: false,
+    morphFrames: 24,
+    seabed: { below: -15, level: 2 },
+  },
 
   /** The chart miniature's sampled box (a coarse pack, O7). */
   chart: { minX: 5320, maxX: 6500, minZ: -360, maxZ: 870, cell: 12, scale: 1 / 10000 },
@@ -100,7 +109,7 @@ export const LANDING = { u: -190, v: 16 } as const;
 export const LANE = {
   start: { u: -560, v: -30 },
   mouth: { u: -430, v: -30 },
-  turning: { u: -300, v: -30, r: 45, depth: 6 },
+  turning: { u: -300, v: -33, r: 40, depth: 4.5 },
   halfWidth: 30,
   floor: -6,
 } as const;
@@ -159,12 +168,52 @@ export const MILLS = [
 export const MILL = { tower: 14, cap: 3, sail: 9, pad: 6 } as const;
 
 /** Ben Scrivener: summit, height, radius of its cone. */
-export const BEN = { u: 260, v: -60, y: 182, r: 150 } as const;
+export const BEN = { u: 260, v: -60, y: 182, r: 240 } as const;
 
-/** Fresh water (spec §3.3, as built §15). */
+/**
+ * The sea loch, cut in from the north-west (as built, §15: wider than the spec's 90-120 m so the
+ * lane's 30 m half-width keeps 6 m of water): stations along u, each with the loch's two shores (v)
+ * at the waterline and its floor in the middle. Past the coast it runs on into the sea's floor.
+ */
+export const LOCH = [
+  { u: -560, vMin: -100, vMax: 40, floor: -18 },
+  { u: -460, vMin: -92, vMax: 26, floor: -14 },
+  { u: -330, vMin: -88, vMax: 24, floor: -11 },
+  { u: -255, vMin: -80, vMax: 15, floor: -9 },
+  { u: -175, vMin: -62, vMax: 12.5, floor: -7.5 },
+  { u: -140, vMin: -44, vMax: 10, floor: -4 },
+  { u: -122, vMin: -26, vMax: 4, floor: -1.5 },
+] as const;
+
+/**
+ * Fresh water (spec §3.3, as built §15): the lochan on the knoll's back; the Scriptor's Burn down the
+ * glen south of the knoll to the linn's lip on the escarpment; the Copyist's Linn down its crag into
+ * the pool at its foot (east of the square, beside the brae's foot); the lower burn south-west past the
+ * square's south-east corner to the loch's head, where it spreads over a pebble shore.
+ */
 export const WATER = {
-  lochan: { u: 82, v: 58, r: 18, y: 52 },
-  linnLip: { u: -36, v: 78, y: 34 },
-  linnPool: { u: -56, v: 70, r: 9, y: 12 },
-  loch: { u: -125, v: 60 },
+  lochan: { u: 84, v: 60, r: 18, y: 46.5 },
+  burn: [
+    [66, 62],
+    [46, 58],
+    [26, 62],
+    [6, 60],
+    [-12, 62],
+    [-24, 63],
+  ] as const,
+  linnLip: { u: -28, v: 63, y: 34 },
+  linnPool: { u: -44, v: 58, r: 8, y: 10.2 },
+  lowerBurn: [
+    [-52, 53],
+    [-62, 45],
+    [-71, 34],
+    [-83, 24],
+    [-98, 16],
+    [-112, 9],
+    [-124, 2],
+    [-134, -5],
+  ] as const,
 } as const;
+
+/** The pebble shore at the loch's head, where the lower burn comes in (a starfish spot). */
+export const PEBBLE_SHORE = { u: -128, v: -8, r: 16 } as const;

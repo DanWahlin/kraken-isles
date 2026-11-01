@@ -1,4 +1,5 @@
 import type { VillageAnchor } from '../../village/kit';
+import { guildcrestHeight } from './height';
 import { headingBetween, toWorld, type Uv } from './layout';
 
 /**
@@ -8,10 +9,18 @@ import { headingBetween, toWorld, type Uv } from './layout';
  * data (no three.js): this file is the source of truth after the build.
  */
 
-/** An anchor at frame (u, v) and height y, facing frame point `look` (or heading 0 with none). */
-function anchor(u: number, v: number, y: number, look?: Uv): VillageAnchor {
+/**
+ * An anchor at frame (u, v) on the ground there (`_planned` is the spec's height, kept to read the
+ * table by), facing frame point `look` (or heading 0 with none).
+ */
+function anchor(u: number, v: number, _planned: number, look?: Uv): VillageAnchor {
   const p = toWorld(u, v);
-  return { x: p.x, y, z: p.z, heading: look ? headingBetween({ u, v }, look) : 0 };
+  return {
+    x: p.x,
+    y: guildcrestHeight(p.x, p.z),
+    z: p.z,
+    heading: look ? headingBetween({ u, v }, look) : 0,
+  };
 }
 
 /** A camera: where it stands (x, y, z, its heading toward the target) and what it looks at. */
@@ -20,8 +29,15 @@ export interface CameraAnchor extends VillageAnchor {
 }
 
 function camera(u: number, v: number, y: number, tu: number, tv: number, ty: number): CameraAnchor {
+  const p = toWorld(u, v);
   const t = toWorld(tu, tv);
-  return { ...anchor(u, v, y, { u: tu, v: tv }), target: { x: t.x, y: ty, z: t.z } };
+  return {
+    x: p.x,
+    y,
+    z: p.z,
+    heading: headingBetween({ u, v }, { u: tu, v: tv }),
+    target: { x: t.x, y: ty, z: t.z },
+  };
 }
 
 /** The look targets the route uses (frame). */

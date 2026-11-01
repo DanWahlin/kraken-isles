@@ -1315,3 +1315,43 @@ Each stage writes what moved from this spec, and why.
 - `PUZZLE_STEPS` rows for `pattern-book` and `toolbelt` (W.6) are **not** added in stage 0: with no
   puzzle files in the pack yet, `steps.test.ts` fails on them. B (or stage 3) adds the two rows with
   the puzzle files.
+- `tools/content/check.ts` asks for `quests/<island>.json` only once the island is in the registry (it
+  failed on Guildcrest in stage 0, with `STORY_CONDITIONS.guildcrest` and no quests file yet).
+
+### 15.2 Stage 1A: terrain and water (agent A)
+
+- **Height** (`height.ts`): a superellipse coast with a wandering edge; granite sea cliffs only on the
+  north-east flank (v > 70–170); an upland moor (27–33 m) with a shoulder rising east to the lochan's
+  bowl; Ben Scrivener as a broad rounded cone (`BEN.r` 240, top 182, spurs, a corrie on its north
+  face); the Guild Crest's crest line; the loch's sides as low hills; the town's slope (2.2 → 10 m) in
+  an organic bowl under an escarpment that the brae climbs (a sharper crag where the linn falls);
+  pads with cut and fill slopes for the quay, the square, the inn, the knoll (36), the gatehouse, the
+  terrace shelf (40), the yard (42) and the mills; paths (quay lane, brae, ridge path, mill track,
+  tower path); the loch carved last with the berth's dredged pocket.
+- **Sun:** `azimuth` −21 puts the 16.5 h sun on bearing 250°, 23.8° up.
+- **The loch is wider than §3.1** (about 100–112 m at the waterline, stations in `LOCH`): with the
+  spec's 90–120 m and the lane's centre at v −30, the lane's 30 m half-width and the turning circle
+  didn't keep 6 m of water. The turning room is r 40 at (−300, −33), ≥ 4.5 m deep (Keelhaven's is r
+  40, 3.5 m).
+- **The linn moved** to lip (−28, 63, y 34) → pool (−44, 58, level 10.2): at §3.3's place the brae's
+  switchback stood 7 m from the falling water, and the lower brae crossed the pool. The burn now runs
+  the glen at v ≈ 60 (south of the knoll), falls over a crag in the escarpment 20 m east of the brae's
+  foot, and the **lower burn** runs south-west past the square's south-east corner to the loch's head
+  (no footbridge on the route: the route never crosses water). The lochan's level is **46.5** (not 52):
+  with the knoll standing proud of the moor, a 52 m lochan needed a levee.
+- **The pebble cove** is a pebble shore at the loch's head (`PEBBLE_SHORE`, (−128, −8)), where the
+  lower burn comes in: §3.10's (60, −150) was 180 m inland of the oval coast. `sf.g.cove` moves there
+  (stage 2A, `starfish.ts`).
+- **The berth:** bow to the mouth (bearing 323°), so her **starboard** side is to the quay (the
+  spec's "port" doesn't fit a quay on the loch's north-east shore with the bow seaward; nothing in
+  the game reads the side).
+- **Sea chart:** `GUILDCREST_WAYS.sea` traced from the height (under 3.1 m, 18 m wider, 8 m
+  tolerance; the loch's inner reach not widened), 48 points; a test keeps the berth, the departure,
+  the turning room and the lane outside it.
+- **Bake:** `tools/bake/bake-guildcrest.ts` (pack 3.95 MiB, **0.82 MiB gz**; chart pack 0.03 MiB gz);
+  Anchorage `1aac2f2a`, Meridian `8d32083a`, Thousand-Bough `90dc42b3`, Keelhaven `dd928b70` and its
+  chart `d3d7d814` unchanged.
+- **Terrain regions** (existing keys): `villageGround` (town, square, knoll, yard), `paths`,
+  `grassySlopes` (the moor), `forestFloor` (the pine stands, `stands.ts`), `campSand` (the pebble
+  shore). The island is in `ISLANDS_IN_BUILD` (`GUILDCREST_IN_BUILD`); the dev terrain page has
+  `?pack=guildcrest` with the hero views (§2.7) and ground views.

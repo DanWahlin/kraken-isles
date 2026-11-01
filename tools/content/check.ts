@@ -642,9 +642,14 @@ export function checkContent(
       for (const [n, rules] of Object.entries(events)) checkRules(rel, at('story.events', n), rules, true);
     }
   }
-  // Every island the course uses that the game asks a story of has its quests (and story).
+  // Every island the course uses that the game asks a story of has its quests (and story), once the
+  // island is in the game (an island still in build may have no content yet).
   for (const isl of meta.islands)
-    if (Object.hasOwn(STORY_CONDITIONS, isl.island) && !files.includes(`quests/${isl.island}.json`))
+    if (
+      Object.hasOwn(STORY_CONDITIONS, isl.island) &&
+      ISLAND_LIST.some((e) => e.id === isl.island) &&
+      !files.includes(`quests/${isl.island}.json`)
+    )
       issue(
         'course.json',
         'islands',

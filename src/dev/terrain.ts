@@ -4,6 +4,8 @@ import { positionWorld } from 'three/tsl';
 import { createPost } from '../engine/post';
 import { compileProgressively, warmProgressively, warmTerrainLods } from '../engine/warm';
 import { ISLANDS } from '../game/islands';
+import { guildcrestTerrainWater } from '../world/islands/guildcrest/height';
+import { GUILDCREST, toWorld as gcWorld } from '../world/islands/guildcrest/layout';
 import { KEELHAVEN_FLORA } from '../world/islands/keelhaven/flora';
 import { keelhavenTerrainWater } from '../world/islands/keelhaven/height';
 import { loadVillageKit } from '../world/village/kit';
@@ -109,6 +111,16 @@ const KEELHAVEN_COVE = toWorld(0, 0);
 function keelhavenPose(eye: readonly number[], target: readonly number[]): CamPose {
   const e = toWorld(eye[0]!, eye[1]!);
   const t = toWorld(target[0]!, target[1]!);
+  return [
+    [e.x, eye[2]!, e.z],
+    [t.x, target[2]!, t.z],
+  ];
+}
+
+/** A camera pose in Guildcrest's frame: eye at (u, v, y), looking at (u, v, y). */
+function guildcrestPose(eye: readonly number[], target: readonly number[]): CamPose {
+  const e = gcWorld(eye[0]!, eye[1]!);
+  const t = gcWorld(target[0]!, target[1]!);
   return [
     [e.x, eye[2]!, e.z],
     [t.x, target[2]!, t.z],
@@ -281,6 +293,64 @@ const PACKS: Record<string, PackPreset> = {
   },
 };
 
+PACKS.guildcrest = {
+  sky: GUILDCREST.sky,
+  mood: GUILDCREST.mood,
+  views: {
+    // The hero shots (spec §2.7) and the progress set.
+    approach: [
+      [5480, 24, -230],
+      [5900, 60, 250],
+    ],
+    'sea-1500': [
+      [4700, 10, -500],
+      [5900, 70, 250],
+    ],
+    harbour: guildcrestPose([-232, 30, 8], [-150, 46, 6]),
+    square: [
+      [5858, 16, 120],
+      [5885, 12, 160],
+    ],
+    cloister: [
+      [5990, 48, 170],
+      [6014, 36, 192],
+    ],
+    ridge: [
+      [6045, 52, 200],
+      [6140, 54, 250],
+    ],
+    tower: [
+      [6060, 46, 250],
+      [6025, 70, 226],
+    ],
+    aerial: guildcrestPose([-620, -260, 420], [20, 60, 30]),
+    top: [
+      [5905, 1900, 262],
+      [5900, 0, 250],
+    ],
+    'from-south': guildcrestPose([300, -700, 30], [60, 60, 80]),
+  },
+  groundViews: (groundAt) => {
+    const onGround = (u: number, v: number, above: number) => {
+      const p = gcWorld(u, v);
+      return [p.x, groundAt(p.x, p.z) + above, p.z];
+    };
+    const at = (u: number, v: number, y: number) => {
+      const p = gcWorld(u, v);
+      return [p.x, y, p.z];
+    };
+    return {
+      landing: [onGround(-192, 15, 1.7), at(-150, 50, 8)],
+      'quay-lane': [onGround(-170, 30, 1.7), at(-96, 46, 11)],
+      brae: [onGround(-80, 56, 1.7), at(-18, 106, 38)],
+      linn: [onGround(-74, 44, 1.7), at(-30, 63, 26)],
+      garth: [onGround(10, 124, 1.7), at(56, 114, 60)],
+      yard: [onGround(80, 150, 1.7), at(150, 214, 62)],
+      glen: [onGround(30, 64, 1.7), at(-40, 62, 20)],
+    };
+  },
+};
+
 const h = await createDevHarness();
 const { q, backend, tier, canvas, renderer, engine } = h;
 const { scene, camera, clock } = engine;
@@ -312,19 +382,27 @@ const terrain = createTerrain({
         seabed: KEELHAVEN.terrain.seabed,
         freshWater: q.has('noart') ? null : keelhavenTerrainWater(),
       }
-    : {}),
+    : packName === 'guildcrest'
+      ? {
+          prefilter: GUILDCREST.terrain.prefilter,
+          maxMergedTriangles: GUILDCREST.terrain.maxMergedTriangles,
+          morphFrames: GUILDCREST.terrain.morphFrames,
+          seabed: GUILDCREST.terrain.seabed,
+          freshWater: q.has('noart') ? null : guildcrestTerrainWater(),
+        }
+      : {}),
 });
 scene.add(terrain.group);
 // The streamed islands lend the ocean their floor (Anchorage's and Meridian's are in its home tile).
-if (packName === 'thousand-bough' || packName === 'keelhaven') {
+if (packName === 'thousand-bough' || packName === 'keelhaven' || packName === 'guildcrest') {
   const build = waterDepthTileFromTerrain(data, packName);
   let r = build.next();
   while (!r.done) r = build.next();
   addWaterDepthTile(r.value);
 }
 const coastFoam = createCoastFoam(data, terrain.heightField, {
-  exposure: packName === 'keelhaven' ? 1 : 0,
-  maxDistance: packName === 'keelhaven' ? 1100 : 620,
+  exposure: packName === 'keelhaven' || packName === 'guildcrest' ? 1 : 0,
+  maxDistance: packName === 'keelhaven' || packName === 'guildcrest' ? 1100 : 620,
 });
 scene.add(coastFoam);
 

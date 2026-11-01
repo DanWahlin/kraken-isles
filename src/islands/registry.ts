@@ -1,4 +1,5 @@
 import { ANCHORAGE } from './anchorage';
+import { GUILDCREST_IN_BUILD } from './guildcrest';
 import { KEELHAVEN_ISLAND } from './keelhaven';
 import { MERIDIAN_ISLAND } from './meridian';
 import { THOUSAND_BOUGH_ISLAND } from './thousand-bough';
@@ -25,7 +26,7 @@ export type IslandId = keyof typeof ISLAND_REGISTRY;
  * terrain regions are in the shared world (src/world/islands/terrain-regions.ts). An island moves
  * from here to `ISLAND_REGISTRY` when its package is done.
  */
-export const ISLANDS_IN_BUILD: readonly IslandInBuild[] = [];
+export const ISLANDS_IN_BUILD: readonly IslandInBuild[] = [GUILDCREST_IN_BUILD];
 
 /** The islands in voyage order. */
 export const ISLAND_LIST: readonly IslandEntry[] = Object.values(ISLAND_REGISTRY);
