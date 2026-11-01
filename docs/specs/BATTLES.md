@@ -145,7 +145,8 @@ raiders into it. The plan's `events` hook holds it: `KEELHAVEN_BATTLE.events` is
   (`3-ask-for-a-second-opinion`: `/rubber-duck`, "a constructive critic").
 - **Placement** (docs/specs/ISLAND-03-keelhaven.md §9; Dan's decision O2, 2026-10-24): battle 3 on
   the Thousand-Bough → Keelhaven passage uses this frame with Chapter 02's waves (§2.0c); the Chapter 03
-  questions and these raiders recap Chapter 03 on the Keelhaven → Guildcrest passage (battle 4).
+  questions and these raiders recap Chapter 03 on the Keelhaven → Guildcrest passage (battle 4). Battle 4's
+  waves, questions (N3.1–N3.3) and data: [ISLAND-04-guildcrest.md](ISLAND-04-guildcrest.md) §9.
 - **The reward never punishes.** A right answer lets you **pick**: a **double-shotted volley** (the next
   broadside does 1.5× damage) or **quick repairs** (+30 hull). A wrong answer shows the "why" with the
   course link, and you still get the normal repairs from the stores you collected.
