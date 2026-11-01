@@ -80,8 +80,8 @@ export const GUILDCREST_ISLAND: IslandEntry = {
     pack: 'guildcrest/chart',
     terrain: () => import('../world/islands/guildcrest/chart').then((m) => m.GUILDCREST_CHART_TERRAIN),
   },
-  // "Guildcrest Air", made with ElevenLabs Music (spec G19): pastoral Celtic folk in D Dorian.
-  theme: { file: 'music_guildcrest_air', lufs: -13.6 },
+  // "Harp's Return", made for Guildcrest by Dan with Suno: pastoral Celtic folk in D Dorian.
+  theme: { file: 'music_harps_return', lufs: -15.6 },
   terrainRegions: guildcrestTerrainRegions,
   floraPalette: GUILDCREST_FLORA_PALETTE,
   puzzles: { 'pattern-book': 'circuit', toolbelt: 'circuit', 'song-chart': 'ceremony' },

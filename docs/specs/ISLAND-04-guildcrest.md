@@ -801,6 +801,8 @@ box when a custom agent is available: it shows the agent in use").
 
 ### 8.1 Music (G19)
 
+> **Replaced 2026-11-01:** Dan made the theme with Suno, **"Harp's Return"** (`music_harps_return`, 180 s, −15.6 LUFS, ART_PROVENANCE.md). The ElevenLabs "Guildcrest Air" below was the stand-in and is removed.
+
 **"Guildcrest Air"**: `elevenlabs music` (the CLI the voices use; check `elevenlabs music --help` for
 the compose command and its length option). Prompt: "Instrumental pastoral Celtic folk in D Dorian,
 gentle 84 bpm, Celtic harp arpeggios, a tin whistle melody, a soft low drone and light bodhran,

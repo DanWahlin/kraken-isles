@@ -3,14 +3,14 @@
   "id": "Q4.1.song-chart",
   "mechanic": "ceremony",
   "quest": "Q4.1",
-  "$comment": "Lyra's song chart on the inn's porch (Q4.1, docs/specs/ISLAND-04-guildcrest.md §7): Callum and Isla play from memory, out of step; the player hands out the chart and they play this song the same way. Guildcrest Air joins the Songbook. Her talk is the island's lyra script (04 · From the Studio).",
+  "$comment": "Lyra's song chart on the inn's porch (Q4.1, docs/specs/ISLAND-04-guildcrest.md §7): Callum and Isla play from memory, out of step; the player hands out the chart and they play this song the same way. Harp’s Return joins the Songbook. Her talk is the island's lyra script (04 · From the Studio).",
   "text": {
     "playFree": "Play it from memory",
     "handOut": "Hand out the chart",
     "playChart": "Play from the chart",
     "apart": "Same tune, two ways. Callum and Isla drift a beat apart.",
     "together": "One chart, one song: they play it the same way.",
-    "unlocked": "Guildcrest Air joins your Songbook.",
+    "unlocked": "Harp’s Return joins your Songbook.",
     "hint1": "Listen: the fiddle and the whistle don’t agree.",
     "hint2": "Hand the chart to the players, then listen again."
   }

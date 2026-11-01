@@ -818,7 +818,7 @@
     ]
   },
   "notes": {
-    "lyra": "The song chart (puzzles/song-chart.json, the gc-chart cue): Callum and Isla play from memory, out of step; the player hands out the chart and they play together. Guildcrest Air joins the Songbook (04 · from-the-studio-a-song-chart-for-the-session).",
+    "lyra": "The song chart (puzzles/song-chart.json, the gc-chart cue): Callum and Isla play from memory, out of step; the player hands out the chart and they play together. Harp’s Return joins the Songbook (04 · from-the-studio-a-song-chart-for-the-session).",
     "elspeth": "The Charter Stone (gc-charter) frames M4.1, the course's four-row table; then the one-off prompt image and K4.2.",
     "aidan": "The practice session: K4.3 and its card (A4.1). The carrel key is the session in a new worktree from main.",
     "brigid": "The Pattern Book (puzzles/pattern-book.json): the brief sets the book step, and the lap opens (gc-book). The lap's end sets solved and plays brigid.solved at once.",

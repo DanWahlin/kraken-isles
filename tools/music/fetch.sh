@@ -24,7 +24,7 @@ TRACKS=(
   "music_island_reveal|suno:e9a16c98-4efe-40f7-a705-8c2ef91182a1|165ab83dd2411f1beae067cb45cd38f11e55cac735a19633089f7ef76a8ceb58|0.3|147.2"
   "music_brass_of_the_storm|suno:c7937692-3831-4a79-b7f2-66401ecc9b68|85e9baef8964374bb43540c966781411c9608d8f82e0508b717a9f6bf8ed6113|0.0|146.7"
   "music_thousand_boughs|suno:99af60c4-84c5-4b2b-8908-7b80468b66c6|b2d08fd5e03d6d7011e7dc4b40688401bd5ef76e71cee93d74e221688df66780|0.0|148.6"
-  "music_guildcrest_air|elevenlabs:2026-11-01|698605dc435ac7c3131b67dc09d5f574881b5148fbfebefde4fead6914e8917d|0.0|149.0"
+  "music_harps_return|suno:harps-return|ae5c71dc21094f1bd214cef2ee75ebbd9786725dff7df97485d002ef92a5c2a8|0.15|179.9"
 )
 
 ONLY="${1:-}"
