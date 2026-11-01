@@ -1106,6 +1106,192 @@
           "hash": "f816fbfda86c"
         }
       }
+    },
+    "04-skills-custom-agents": {
+      "short": "ch04",
+      "title": "Skills and Custom Agents",
+      "hash": "349cde01aecd",
+      "sections": {
+        "learning-objectives": {
+          "title": "Learning Objectives",
+          "level": 2,
+          "hash": "87437423c6c6",
+          "terms": ["Estimated Time"]
+        },
+        "prerequisites": {
+          "title": "Prerequisites",
+          "level": 2,
+          "hash": "af3d5642ec67"
+        },
+        "from-the-studio-a-song-chart-for-the-session": {
+          "title": "From the Studio: A Song Chart for the Session",
+          "level": 2,
+          "hash": "332e29dc140f",
+          "images": ["04-skills-custom-agents/assets/song-chart-skills.webp"]
+        },
+        "core-concepts": {
+          "title": "Core Concepts",
+          "level": 2,
+          "hash": "f106792dbf27",
+          "images": ["04-skills-custom-agents/assets/skill-vs-one-off-prompt.webp"],
+          "terms": [
+            "Customize",
+            "Optional exploration:",
+            "Installing external skills:",
+            "Add",
+            "Install skill…"
+          ]
+        },
+        "choose-the-feature-that-fits-the-task": {
+          "title": "Choose the Feature That Fits the Task",
+          "level": 3,
+          "hash": "aa81861f78f8",
+          "images": ["04-skills-custom-agents/assets/skill-vs-one-off-prompt.webp"],
+          "terms": [
+            "Customize",
+            "Optional exploration:",
+            "Installing external skills:",
+            "Add",
+            "Install skill…"
+          ]
+        },
+        "create-a-practice-session": {
+          "title": "Create a Practice Session",
+          "level": 2,
+          "hash": "11035c4aac17",
+          "terms": ["Create from", "Branches", "Interactive", "Expected Output:"]
+        },
+        "skills-save-a-review-checklist": {
+          "title": "Skills: Save a Review Checklist",
+          "level": 2,
+          "hash": "688a14a25fe7",
+          "images": ["04-skills-custom-agents/assets/app-customize-skills.webp"],
+          "terms": [
+            "YAML frontmatter",
+            "Customize",
+            "Installed",
+            "Skills",
+            "Project: copilot-app-for-beginners",
+            "Changes",
+            "Plan",
+            "Expected Output:",
+            "How It Works:"
+          ]
+        },
+        "exercise-update-and-use-the-course-skill": {
+          "title": "Exercise: Update and Use the Course Skill",
+          "level": 3,
+          "hash": "ea46465fbcdf",
+          "images": ["04-skills-custom-agents/assets/app-customize-skills.webp"],
+          "terms": [
+            "Customize",
+            "Installed",
+            "Skills",
+            "Project: copilot-app-for-beginners",
+            "Changes",
+            "Plan",
+            "Expected Output:",
+            "How It Works:"
+          ]
+        },
+        "custom-agents-define-a-role-and-its-tools": {
+          "title": "Custom Agents: Define a Role and Its Tools",
+          "level": 2,
+          "hash": "991db2aad3f9",
+          "images": [
+            "04-skills-custom-agents/assets/hiring-specialists-analogy.webp",
+            "04-skills-custom-agents/assets/app-custom-agent-picker.webp"
+          ],
+          "terms": [
+            "custom agent",
+            "Interactive",
+            "Default agent",
+            "Changes",
+            "book-app-explainer",
+            "Expected Output:",
+            "How It Works:"
+          ]
+        },
+        "exercise-create-a-read-only-book-app-explainer": {
+          "title": "Exercise: Create a Read-Only Book App Explainer",
+          "level": 3,
+          "hash": "428c8ffecae4",
+          "images": ["04-skills-custom-agents/assets/app-custom-agent-picker.webp"],
+          "terms": [
+            "Interactive",
+            "Default agent",
+            "Changes",
+            "book-app-explainer",
+            "Expected Output:",
+            "How It Works:"
+          ]
+        },
+        "checkpoint": {
+          "title": "Checkpoint",
+          "level": 3,
+          "hash": "8a4a2028b3b8"
+        },
+        "troubleshooting": {
+          "title": "Troubleshooting",
+          "level": 2,
+          "hash": "d98c44158cc8",
+          "terms": ["Customize"]
+        },
+        "a-changed-skill-or-new-agent-is-missing": {
+          "title": "A changed skill or new agent is missing",
+          "level": 3,
+          "hash": "52e4a7ccaced"
+        },
+        "generic-advice-from-the-copilot-app": {
+          "title": "Generic advice from the Copilot app",
+          "level": 3,
+          "hash": "a4f9a0a3ecf3"
+        },
+        "i-cannot-find-skills-or-custom-agents": {
+          "title": "I cannot find skills or custom agents",
+          "level": 3,
+          "hash": "24f3083ffeec",
+          "terms": ["Customize"]
+        },
+        "the-custom-agent-cannot-run-tests": {
+          "title": "The custom agent cannot run tests",
+          "level": 3,
+          "hash": "9dc08d4ddfcb"
+        },
+        "key-takeaways": {
+          "title": "Key Takeaways",
+          "level": 2,
+          "hash": "e262c06d63b6"
+        },
+        "assignment": {
+          "title": "Assignment",
+          "level": 2,
+          "hash": "80a1a1b3729a",
+          "images": ["assets/assignment.webp"],
+          "terms": [
+            "Plan",
+            "Terminal",
+            "Exit plan mode and I will prompt myself",
+            "Review plan",
+            "Continue",
+            "Interactive",
+            "Changes",
+            "Local",
+            "Browser",
+            "Success Criteria:"
+          ]
+        },
+        "whats-next": {
+          "title": "What's Next",
+          "level": 2,
+          "hash": "c6e8e74c186d"
+        },
+        "source-references": {
+          "title": "Source References",
+          "level": 2,
+          "hash": "457440eb5876"
+        }
+      }
     }
   },
   "appendices": {
@@ -1614,6 +1800,31 @@
       "sha256": "18959a58675c08410bb65b3d8f259afe850745174890c1672f1b43c3f9e3d538",
       "pinned": true,
       "bytes": 93390
+    },
+    "course/ch04/app-custom-agent-picker.webp": {
+      "upstream": "04-skills-custom-agents/assets/app-custom-agent-picker.webp",
+      "sha256": "1d452eddfdc45b113987155a7388790b7b580280e0a4f7e1d20463a2148e492a",
+      "bytes": 13602
+    },
+    "course/ch04/app-customize-skills.webp": {
+      "upstream": "04-skills-custom-agents/assets/app-customize-skills.webp",
+      "sha256": "2edd7f1879fa16205b2cc693a44e0e552d579be4be01e075fb10caa2cdd36897",
+      "bytes": 52238
+    },
+    "course/ch04/hiring-specialists-analogy.webp": {
+      "upstream": "04-skills-custom-agents/assets/hiring-specialists-analogy.webp",
+      "sha256": "f6ca9cb588cb2e67afb8e8eaa7b7bf43675b6c7eb8362d26c0573b338313fd23",
+      "bytes": 120114
+    },
+    "course/ch04/skill-vs-one-off-prompt.webp": {
+      "upstream": "04-skills-custom-agents/assets/skill-vs-one-off-prompt.webp",
+      "sha256": "03b8e7dcc4a2b919026fbbe73be79cc340f7750d316c2baf4ca65e3d7371ceec",
+      "bytes": 57634
+    },
+    "course/ch04/song-chart-skills.webp": {
+      "upstream": "04-skills-custom-agents/assets/song-chart-skills.webp",
+      "sha256": "e25c1aec1e737067af9419c75065b5777750ffdc05ec5f22ed455a276632c77d",
+      "bytes": 138964
     },
     "course/shared/app-github-copilot-app.webp": {
       "upstream": "assets/app-github-copilot-app.webp",
