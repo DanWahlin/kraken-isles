@@ -166,8 +166,8 @@ function innPorch(b: Buckets, out: GcOut): void {
   ubox(b, 'wood', h.u, top + 0.08, front - 2.6, 10, 0.16, 0.18, GC_PAINT.timber);
   ubox(b, 'paving', h.u, top + 0.45, front - 1.35, 10.4, 0.14, 2.9, GC_PAINT.slate, 0, -0.22);
   // A lantern under the porch, by the door.
-  const l = at(h.u - 1.6, 0, front - 0.6);
-  hangLantern(b, out, l.x, top + 0.25, l.z, YAW_U);
+  const l = at(h.u - 1.6, 0, front - 2.6);
+  hangLantern(b, out, l.x, top, l.z, YAW_U);
   // The sign: a board hanging from an iron bracket at the west corner (its words are the pack's).
   const corner = at(h.u - h.w / 2 - 0.05, 0, front + 0.6);
   const s = INN_SIGN;
@@ -253,30 +253,23 @@ function guildhall(b: Buckets, out: GcOut, g: Guildhall): void {
 
 /** Guild Square: paving, the Charter Stone, the market cross, benches, the trough, and a well uphill. */
 function square(b: Buckets, out: GcOut, lite: boolean): void {
-  // Setts over the square (just over the ground, 3 cm: no z-fight).
-  for (let i = 0; i < 4; i++)
-    for (let j = 0; j < 3; j++) {
-      const u0 = SQUARE.u - SQUARE.halfU + (i * SQUARE.halfU * 2) / 4;
-      const v0 = SQUARE.v - SQUARE.halfV + (j * SQUARE.halfV * 2) / 3;
-      const su = (SQUARE.halfU * 2) / 4;
-      const sv = (SQUARE.halfV * 2) / 3;
-      ubox(
-        b,
-        'paving',
-        u0 + su / 2,
-        SQUARE.y - 0.1 + 0.03,
-        v0 + sv / 2,
-        su + 0.01,
-        0.2,
-        sv + 0.01,
-        GC_PAINT.paving,
-      );
-    }
+  // Setts over the square (one slab 3 cm over the pad: no z-fight with the ground).
+  ubox(
+    b,
+    'paving',
+    SQUARE.u,
+    SQUARE.y - 0.07,
+    SQUARE.v,
+    SQUARE.halfU * 2,
+    0.2,
+    SQUARE.halfV * 2,
+    GC_PAINT.paving,
+  );
   // The Charter Stone: a tall granite slab on a plinth, a paler carved panel on its west face, a
   // bronze plate at its foot (the pack's words on both).
   const cs = CHARTER_STONE;
   const y = SQUARE.y + 0.03;
-  ubox(b, 'stone', cs.u, y + 0.15, cs.v, 2.2, 0.3, 1.6, GC_PAINT.rubble);
+  ubox(b, 'stone', cs.u, y + 0.14, cs.v, 2.2, 0.32, 1.6, GC_PAINT.rubble);
   ubox(b, 'stone', cs.u, y + 0.3 + 1.1, cs.v, 0.55, 2.2, 1.1, GC_PAINT.granite);
   ubox(b, 'stone', cs.u, y + 0.3 + 2.2 + 0.35, cs.v, 0.48, 0.7, 0.9, GC_PAINT.granite, 0, 0.08);
   ubox(b, 'stone', cs.u - 0.295, y + 1.75, cs.v, 0.04, 1.6, 0.8, 0xb8b2a6);
@@ -391,7 +384,7 @@ function quay(b: Buckets, out: GcOut): void {
     const mid = (u + u1) / 2;
     const bed = Math.min(ground(mid, q.v - 1), ground(mid, q.v + 0.5)) - 0.8;
     uvSpan(b, 'stone', u, u1, q.v - 0.2, back, bed, 0.4, GC_PAINT.wetStone);
-    uvSpan(b, 'stone', u, u1, q.v - 0.2, back, 0.4, q.top - 0.16, GC_PAINT.stone);
+    uvSpan(b, 'stone', u, u1, q.v - 0.2, back, 0.4, q.top - 0.18, GC_PAINT.stone);
   }
   // The coping and the paving behind it (3 cm over the deck's ground: the terrain's pad is at 2.2).
   uvSpan(

@@ -8,6 +8,7 @@ import { guildcrestTerrainWater } from '../world/islands/guildcrest/height';
 import { GUILDCREST_FLORA } from '../world/islands/guildcrest/flora';
 import { GUILDCREST_PLANT_LOOK } from '../world/islands/guildcrest/vegetation';
 import { createGuildcrestWorldAsync } from '../world/islands/guildcrest';
+import { auditCoplanar, type CoplanarAuditOptions } from './coplanar-audit';
 import { GUILDCREST, toWorld as gcWorld } from '../world/islands/guildcrest/layout';
 import { KEELHAVEN_FLORA } from '../world/islands/keelhaven/flora';
 import { keelhavenTerrainWater } from '../world/islands/keelhaven/height';
@@ -327,6 +328,9 @@ PACKS.guildcrest = {
       [5900, 0, 250],
     ],
     'from-south': guildcrestPose([300, -700, 30], [60, 60, 80]),
+    // From the Keelhaven passage (H7, 1.1 km off the loch's mouth, the swap distance) and the north-east.
+    horizon: guildcrestPose([-1250, -60, 30], [40, 60, 80]),
+    'far-ne': guildcrestPose([200, 1250, 30], [60, 40, 60]),
   },
   groundViews: (groundAt) => {
     const onGround = (u: number, v: number, above: number) => {
@@ -492,6 +496,18 @@ if (packName === 'guildcrest' && !q.has('noart')) {
   }
 }
 
+// `?sil`: Guildcrest's far silhouette in place of its ground, art and plants.
+if (packName === 'guildcrest' && q.has('sil')) {
+  const { createGuildcrestSilhouette } = await import('../world/islands/guildcrest/silhouette');
+  const sil = createGuildcrestSilhouette(tier.tier, () => Promise.resolve());
+  await sil.ready;
+  terrain.group.visible = false;
+  coastFoam.visible = false;
+  for (const o of scene.children) if (o.name === 'guildcrest' || o === vegetation?.group) o.visible = false;
+  for (const b of khBirds) b.group.visible = false;
+  scene.add(sil.group);
+}
+
 // `?sil`: Keelhaven's far silhouette in place of its ground, art and plants (to compare the two).
 if (packName === 'keelhaven' && q.has('sil')) {
   const { createKeelhavenSilhouette } = await import('../world/islands/keelhaven/silhouette');
@@ -609,6 +625,11 @@ const frozenAt = new Vector3();
   still: () => engine.renderStill(),
   restartJitter: () => post?.restartJitter(),
   terrainStats,
+  /** Static z-fighting audit of the island's world art (coplanar-audit.ts; Keelhaven's or Guildcrest's). */
+  coplanar: (o: Omit<CoplanarAuditOptions, 'skip'> = {}) => {
+    const root = scene.children.find((c) => c.name === 'guildcrest' || c.name === 'keelhaven');
+    return root ? auditCoplanar(root, o) : null;
+  },
   vegetationStats: () => vegetation?.stats() ?? null,
   heightAt: (x: number, z: number) => terrain.heightField.heightAt(x, z),
   /** The town's and the works' chunks: triangles, their index levels (if any), vertices. */

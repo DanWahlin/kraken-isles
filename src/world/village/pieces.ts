@@ -324,9 +324,12 @@ export function crowStepGable(
   // proud of the roof's line (the steps), and the top block over the ridge.
   for (let k = 0; k <= steps; k++) {
     const w = width - 2 * tread * k;
-    const h = lift + (k === steps ? lift * 0.4 : 0.06);
-    const yy = y + lift * k + h / 2;
-    const g = box(buckets, key, x, yy, z, w, h, thick, yaw, colour);
+    // The first course starts 2 cm under the eaves (its foot never on the wall's top face).
+    const foot = k === 0 ? 0.02 : 0;
+    const h = lift + (k === steps ? lift * 0.4 : 0.06) + foot;
+    const yy = y - foot + lift * k + h / 2;
+    // Each course a little thinner than the one under it: where two overlap, no faces share a plane.
+    const g = box(buckets, key, x, yy, z, w, h, thick - 0.012 * k, yaw, colour);
     if (key === 'stone' || key === 'paving') stoneUv(g, 1.6);
   }
   // Cope stones on each step's tread (a thin slab, wider than the wall).

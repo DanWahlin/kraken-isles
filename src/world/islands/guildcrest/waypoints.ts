@@ -33,7 +33,8 @@ path('quay.stall', 'quay.gangway', 'quay.landing', 'inn');
 at('lane.1', -150, 37);
 at('lane.2', -130, 41);
 at('square.west', -114, 42);
-at('square', -100, 44);
+at('square', -104, 49);
+at('square.ne', -92, 58);
 path('inn', 'lane.1', 'lane.2', 'square.west', 'square');
 // The Kirk Brae: from the square's north-east corner, up its flights and switchback to the gatehouse.
 at('brae.foot', -76, 58);
@@ -41,34 +42,53 @@ at('brae.1', -61, 70);
 at('brae.turn', -48, 80);
 at('brae.2', -33, 93);
 at('gatehouse', -18, 106);
-path('square', 'brae.foot', 'brae.1', 'brae.turn', 'brae.2', 'gatehouse');
+path('square', 'square.ne', 'brae.foot', 'brae.1', 'brae.turn', 'brae.2', 'gatehouse');
 // The cloister's walks: in from the gatehouse to the scriptorium's door, then round the garth.
-at('walk.sw', 6, 114);
-at('walk.nw', 6, 146);
-at('walk.ne', 38, 146);
-at('walk.se', 38, 114);
-path('gatehouse', 'walk.sw', 'walk.nw', 'walk.ne', 'walk.se', 'walk.sw');
+at('gate.w', -17, 118);
+at('slype', 0, 118);
+at('walk.w', 8, 118);
+at('walk.sw', 8, 116);
+at('walk.nw', 8, 144);
+at('walk.ne', 36, 144);
+at('walk.se', 36, 116);
+path(
+  'gatehouse',
+  'gate.w',
+  'slype',
+  'walk.w',
+  'walk.nw',
+  'walk.ne',
+  'walk.e',
+  'walk.se',
+  'walk.sw',
+  'walk.w',
+);
 // Out of the east gate onto the ridge path, up to the guildhall yard.
-at('east.gate', 42, 140);
+at('walk.e', 36, 139);
+at('east.gate', 42, 139);
+at('gate.out', 49, 139.5);
 at('ridge.1', 56, 146);
 at('ridge.2', 70, 152);
 at('yard.west', 78, 154);
 at('yard', 92, 156);
 at('yard.east', 104, 158);
-path('walk.ne', 'east.gate', 'ridge.1', 'ridge.2', 'yard.west', 'yard', 'yard.east');
+path('walk.e', 'east.gate', 'gate.out', 'ridge.1', 'ridge.2', 'yard.west', 'yard', 'yard.east');
 // The track on to the mills.
+at('yard.gap', 104.5, 168.5);
 at('track.1', 112, 176);
 at('mill.1', 122, 184);
 at('track.2', 140, 204);
 at('mill.2', 150, 208);
 at('mill.3', 172, 176);
-path('yard.east', 'track.1', 'mill.1', 'track.2', 'mill.2');
+path('yard.east', 'yard.gap', 'track.1', 'mill.1', 'track.2', 'mill.2');
 path('mill.1', 'mill.3');
 // The tower stair: from the yard's west side down past the tower to its terrace.
-at('stair.top', 77, 150);
-at('stair.mid', 82, 128);
-at('terrace', 70, 118);
-path('yard.west', 'stair.top', 'stair.mid', 'terrace');
+at('stair.top', 78.5, 146);
+at('stair.1', 80, 134.5);
+at('stair.land', 78.8, 130);
+at('stair.2', 77.6, 125.5);
+at('terrace', 72, 120);
+path('yard.west', 'stair.top', 'stair.1', 'stair.land', 'stair.2', 'terrace');
 
 export const GUILDCREST_WAYS: IslandWays = {
   walk: { nodes, legs },

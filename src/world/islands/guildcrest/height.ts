@@ -165,10 +165,19 @@ function ben(u: number, v: number, x: number, z: number): number {
   return h;
 }
 
-/** The Guild Crest: its crest line's height, falling ~22° to either side. */
+/**
+ * The Guild Crest: its crest line's height, falling ~22° to either side (the highest of each stretch's
+ * own, so no step where the nearest stretch changes).
+ */
 function ridge(u: number, v: number): number {
-  polyline(u, v, RIDGE, near);
-  return near.y - Math.max(0, near.d - 3) * 0.4;
+  let h = -Infinity;
+  for (let i = 0; i + 1 < RIDGE.length; i++) {
+    const a = RIDGE[i]!;
+    const b = RIDGE[i + 1]!;
+    segment(u, v, a.u, a.v, b.u, b.v, seg);
+    h = Math.max(h, lerp(a.y, b.y, seg.t) - Math.max(0, seg.d - 3) * 0.4);
+  }
+  return h;
 }
 
 /** The upland: moor, the shoulder east of the knoll, the ben and the ridge. */
@@ -246,9 +255,19 @@ const GLEN = [
 ];
 
 function glen(h: number, u: number, v: number): number {
-  polyline(u, v, GLEN, near);
-  if (near.d > 60) return h;
-  return smin(h, near.y + Math.max(0, near.d - 5) * 0.3, 4);
+  // The lowest of each stretch's valley (continuous where the nearest stretch changes).
+  let floor = Infinity;
+  for (let i = 0; i + 1 < GLEN.length; i++) {
+    const a = GLEN[i]!;
+    const b = GLEN[i + 1]!;
+    segment(u, v, a.u, a.v, b.u, b.v, seg);
+    const d = seg.d;
+    floor = Math.min(
+      floor,
+      lerp(a.y, b.y, seg.t) + Math.max(0, d - 5) * 0.3 + Math.max(0, d - 40) ** 2 * 0.02,
+    );
+  }
+  return smin(h, floor, 4);
 }
 
 // --- 5. The pads ---------------------------------------------------------------------------------
@@ -256,6 +275,7 @@ function glen(h: number, u: number, v: number): number {
 /** The ridge path: from the east gate along the crest to the guildhall yard, then on past the mills. */
 export const RIDGE_PATH = [
   { u: EAST_GATE.u, v: EAST_GATE.v, y: EAST_GATE.y },
+  { u: 49, v: 139.5, y: 36.4 },
   { u: 56, v: 146, y: 37.6 },
   { u: 70, v: 152, y: 40 },
   { u: YARD.u - YARD.halfU, v: YARD.v - 2, y: YARD.y },
@@ -263,7 +283,8 @@ export const RIDGE_PATH = [
 
 /** The track on from the yard to the mills. */
 export const MILL_TRACK = [
-  { u: YARD.u + YARD.halfU, v: YARD.v + 4, y: YARD.y },
+  { u: 104.5, v: YARD.v + 4, y: YARD.y },
+  { u: 104.5, v: YARD.v + YARD.halfV + 1.5, y: YARD.y },
   { u: 112, v: 176, y: 47 },
   { u: MILLS[0].u, v: MILLS[0].v, y: MILLS[0].y },
   { u: 140, v: 204, y: 55.5 },
@@ -291,19 +312,25 @@ export const QUAY_LANE = [
   { u: SQUARE.u - SQUARE.halfU, v: SQUARE.v - 4, y: SQUARE.y },
 ] as const;
 
+/** Each path's stretches as pads in turn (no cut-off: a far pad's slopes are out of reach anyway). */
 function paths(h: number, u: number, v: number): number {
-  for (const [pts, w] of [
-    [QUAY_LANE, 2.4],
-    [BRAE, 2.2],
-    [RIDGE_PATH, 2],
-    [MILL_TRACK, 1.6],
-    [TOWER_PATH, 1.6],
-  ] as const) {
-    polyline(u, v, pts, near);
-    if (near.d < w + 30) h = pad(h, Math.max(0, near.d - w), near.y, 1.2, 0.8);
-  }
+  for (const [pts, w] of PATHS)
+    for (let i = 0; i + 1 < pts.length; i++) {
+      const a = pts[i]!;
+      const b = pts[i + 1]!;
+      segment(u, v, a.u, a.v, b.u, b.v, seg);
+      h = pad(h, Math.max(0, seg.d - w), lerp(a.y, b.y, seg.t), 1.2, 0.8);
+    }
   return h;
 }
+
+const PATHS = [
+  [QUAY_LANE, 2.4],
+  [BRAE, 2.2],
+  [RIDGE_PATH, 2],
+  [MILL_TRACK, 1.6],
+  [TOWER_PATH, 1.6],
+] as const;
 
 function pads(h: number, u: number, v: number): number {
   // The quay's deck (its face is the stone wall, stage 2) and the slipway at its east end.

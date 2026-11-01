@@ -155,8 +155,12 @@ export function auditCoplanar(root: Object3D, o: CoplanarAuditOptions = {}): Cop
     for (const g of groups) {
       const m = mats[g.materialIndex ?? 0];
       if (!m || !depthOpaque(m)) continue;
-      const end = Math.min(g.start + g.count, index ? index.count : pos.count);
-      for (let i = g.start; i + 2 < end; i += 3) {
+      // Only what's drawn: a chunk's index holds its coarser levels after the full list (`lodRanges`),
+      // and its draw range picks one; read whole, every face would fight its own coarser copy.
+      const range = geometry.drawRange;
+      const start = Math.max(g.start, range.start);
+      const end = Math.min(g.start + g.count, range.start + range.count, index ? index.count : pos.count);
+      for (let i = start; i + 2 < end; i += 3) {
         const i0 = index ? index.getX(i) : i;
         const i1 = index ? index.getX(i + 1) : i + 1;
         const i2 = index ? index.getX(i + 2) : i + 2;

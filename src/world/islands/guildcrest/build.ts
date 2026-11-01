@@ -391,7 +391,17 @@ export function stoneHall(
   const eaves = floor + wall;
   ubox(b, 'stone', u, (y0 + eaves) / 2, v, su, eaves - y0, sv, colour);
   // A plinth course a little proud of the wall at its foot.
-  ubox(b, 'stone', u, (y0 + floor + 0.6) / 2, v, su + 0.24, floor + 0.6 - y0, sv + 0.24, GC_PAINT.rubble);
+  ubox(
+    b,
+    'stone',
+    u,
+    (y0 - 0.05 + floor + 0.6) / 2,
+    v,
+    su + 0.24,
+    floor + 0.65 - y0,
+    sv + 0.24,
+    GC_PAINT.rubble,
+  );
   const p = toWorld(u, v);
   const yaw = along === 'u' ? YAW_U : YAW_U + Math.PI / 2;
   const roofLen = crow ? length - 0.5 : length + 0.6;

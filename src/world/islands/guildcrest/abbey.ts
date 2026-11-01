@@ -92,7 +92,7 @@ function gatehouse(b: Buckets, out: GcOut): void {
   // The passage's floor: flags.
   uvSpan(b, 'paving', g.u0 - 0.5, g.u1 + 0.5, s.v0, s.v1, FLOOR - 0.2, WALK, GC_PAINT.paving);
   // Brother Aidan's desk and his rack of keys by the west door.
-  const desk = { u: g.u0 - 2.2, v: s.v0 - 2.4 };
+  const desk = { u: g.u0 - 6.6, v: s.v0 - 5.4 };
   ubox(b, 'wood', desk.u, ground(desk.u, desk.v) + 0.78, desk.v, 1.4, 0.08, 0.7, GC_PAINT.timber);
   for (const [du, dv] of [
     [-0.6, -0.28],
@@ -125,7 +125,7 @@ function gatehouse(b: Buckets, out: GcOut): void {
     4,
     GC_PAINT.iron,
   );
-  hangLantern(b, out, l.x, FLOOR + 3.33, l.z, YAW_U);
+  hangLantern(b, out, l.x, FLOOR + 3.35, l.z, YAW_U);
 }
 
 /** A range's wall box (from its foundation) and its roof along `along`. */
@@ -137,6 +137,7 @@ function rangeBlock(
   v0: number,
   v1: number,
   eaves: number,
+  outset = 0.1,
 ): void {
   const y0 = FLOOR - 1.2;
   uvSpan(b, 'stone', u0, u1, v0, v1, y0, eaves, GC_PAINT.stone);
@@ -144,11 +145,11 @@ function rangeBlock(
     b,
     'stone',
     (u0 + u1) / 2,
-    (y0 + FLOOR + 0.5) / 2,
+    (y0 - 0.05 + FLOOR + 0.5) / 2,
     (v0 + v1) / 2,
-    u1 - u0 + 0.2,
-    FLOOR + 0.5 - y0,
-    v1 - v0 + 0.2,
+    u1 - u0 + 2 * outset,
+    FLOOR + 0.55 - y0,
+    v1 - v0 + 2 * outset,
     GC_PAINT.rubble,
   );
   solid(out, (u0 + u1) / 2, (v0 + v1) / 2, u1 - u0 + 0.2, v1 - v0 + 0.2, y0, eaves + 3);
@@ -173,18 +174,18 @@ function ranges(b: Buckets, out: GcOut, lite: boolean): void {
   uvSpan(b, 'stone', w, wi, sl.v0, sl.v1, FLOOR + 4.6, RANGE_EAVES, GC_PAINT.stone);
   uvSpan(b, 'paving', w - 0.5, wi, sl.v0, sl.v1, FLOOR - 0.2, WALK, GC_PAINT.paving);
   // North range (the chained library), its open bay on the walk.
-  rangeBlock(b, out, wi, bay.u0, ni, n, RANGE_EAVES);
-  rangeBlock(b, out, bay.u1, ei, ni, n, RANGE_EAVES);
+  rangeBlock(b, out, wi, bay.u0, ni, n, RANGE_EAVES, 0.12);
+  rangeBlock(b, out, bay.u1, ei, ni, n, RANGE_EAVES, 0.12);
   uvSpan(b, 'stone', bay.u0, bay.u1, n - 0.8, n, FLOOR - 1.2, RANGE_EAVES, GC_PAINT.stone);
   uvSpan(b, 'stone', bay.u0, bay.u1, ni, n - 0.8, FLOOR + 5.2, RANGE_EAVES, GC_PAINT.stone);
   solid(out, (bay.u0 + bay.u1) / 2, n - 0.4, bay.u1 - bay.u0, 0.8, FLOOR - 1, RANGE_EAVES + 3);
   // East range (the chapter house), the east gate through it.
-  rangeBlock(b, out, ei, e, si, eg.v0, RANGE_EAVES);
-  rangeBlock(b, out, ei, e, eg.v1, ni, RANGE_EAVES);
+  rangeBlock(b, out, ei, e, si, eg.v0, RANGE_EAVES, 0.14);
+  rangeBlock(b, out, ei, e, eg.v1, ni, RANGE_EAVES, 0.14);
   uvSpan(b, 'stone', ei, e, eg.v0, eg.v1, FLOOR + 4.6, RANGE_EAVES, GC_PAINT.stone);
   uvSpan(b, 'paving', ei, e + 0.5, eg.v0, eg.v1, FLOOR - 0.2, WALK, GC_PAINT.paving);
   // South range (the church), on east to the tower, taller.
-  rangeBlock(b, out, wi, ABBEY.churchEast, s, si, CHURCH_EAVES);
+  rangeBlock(b, out, wi, ABBEY.churchEast, s, si, CHURCH_EAVES, 0.16);
   // Roofs: the west and east ranges' ridges along v, the north range's and the church's along u.
   const roof = (
     u: number,
@@ -329,16 +330,6 @@ function walks(b: Buckets, out: GcOut, lite: boolean): void {
       y1: hi + 0.4,
     });
   }
-  // Plain lanterns at the walks' corners (the stations have their own, `stations`).
-  for (const [du, dv] of [
-    [-1, -1],
-    [1, -1],
-    [-1, 1],
-    [1, 1],
-  ] as const) {
-    const p = at(C.u + du * (gi + 2), 0, C.v + dv * (gi + 2));
-    hangLantern(b, out, p.x, lo - 0.02, p.z, YAW_U);
-  }
 }
 
 /** The garth: a well in the middle of the lawn (its kerb a starfish's spot), and four paths. */
@@ -392,10 +383,11 @@ function stations(b: Buckets, out: GcOut, lite: boolean): void {
     const toGarthU = C.u - spot.u;
     const toGarthV = C.v - spot.v;
     const horizontal = Math.abs(toGarthU) > Math.abs(toGarthV);
-    const lu = horizontal ? C.u - Math.sign(toGarthU) * (ABBEY.garth + 0.7) : spot.u;
-    const lv = horizontal ? spot.v : C.v - Math.sign(toGarthV) * (ABBEY.garth + 0.7);
+    const lu = horizontal ? C.u - Math.sign(toGarthU) * ABBEY.garth : spot.u;
+    const lv = horizontal ? spot.v : C.v - Math.sign(toGarthV) * ABBEY.garth;
     const p = at(lu, 0, lv);
-    hangLantern(b, out, p.x, FLOOR + 4.42, p.z, YAW_U, { lamp: spot.lamp, look: 'dark' });
+    // Hung by the shared hanger from the lintel's underside (the piers' tops).
+    hangLantern(b, out, p.x, FLOOR + 4.4, p.z, YAW_U, { lamp: spot.lamp, look: 'dark' });
     void place;
   }
   // The shelf: a tall press of pattern books against the scriptorium's wall (its label is the pack's).
@@ -566,7 +558,7 @@ function library(b: Buckets, out: GcOut, lite: boolean): void {
   solid(out, rack.u, rack.v, 3.1, 0.4, WALK, WALK + 2.4, false);
   // A lantern hung in the bay.
   const l = at((bay.u0 + bay.u1) / 2, 0, ni + 3);
-  hangLantern(b, out, l.x, FLOOR + 5.18, l.z, YAW_U);
+  hangLantern(b, out, l.x, FLOOR + 5.2, l.z, YAW_U);
   out.cameraBoxes.push({
     ...at((bay.u0 + bay.u1) / 2, 0, (ni + n) / 2),
     hx: (bay.u1 - bay.u0) / 2,
@@ -605,7 +597,7 @@ function tower(b: Buckets, out: GcOut, lite: boolean): void {
   for (const y of [48, 56, b0])
     ubox(b, 'stone', t.u, y, t.v, t.side + 0.4, 0.3, t.side + 0.4, GC_PAINT.rubble);
   // The belfry: four corner piers, a floor and a cornice; the bell inside.
-  ubox(b, 'stone', t.u, b0 + 0.2, t.v, t.side, 0.4, t.side, GC_PAINT.stone);
+  ubox(b, 'stone', t.u, b0 + 0.21, t.v, t.side - 0.02, 0.4, t.side - 0.02, GC_PAINT.stone);
   for (const [du, dv] of [
     [-1, -1],
     [1, -1],
@@ -646,8 +638,9 @@ function tower(b: Buckets, out: GcOut, lite: boolean): void {
   const c = at(t.u, 0, t.v);
   cone(b, 'metal', c.x, b0 + 2.2, c.z, 1.1, 1.6, 12, GC_PAINT.bronze, 0.45);
   rod(b, 'wood', at(t.u - 2, b0 + 3.9, t.v), at(t.u + 2, b0 + 3.9, t.v), 0.12, 6, GC_PAINT.timber);
-  // The belfry's lamp (lit at night).
-  hangLantern(b, out, c.x, b0 + 5.3, c.z, YAW_U);
+  // The belfry's lamp (lit at night), hung from the cornice in a corner, clear of the bell.
+  const lamp = at(t.u + half - 1.4, 0, t.v + half - 1.4);
+  hangLantern(b, out, lamp.x, b1, lamp.z, YAW_U);
   // The cap: a slate pyramid.
   cone(
     b,

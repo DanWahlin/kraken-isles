@@ -130,7 +130,7 @@ export const CHARTER_STONE = { u: -96, v: 46, h: 3 } as const;
 export const BRAE = [
   { u: -74, v: 60, y: 10 },
   { u: -48, v: 80, y: 22 },
-  { u: -18, v: 106, y: 34 },
+  { u: -18, v: 106, y: 36 },
 ] as const;
 
 /** The Abbey Knoll's plateau (frame box) and its height. */
@@ -144,8 +144,8 @@ export const TOWER = { u: 56, v: 114, side: 9, base: 36, top: 76, belfry: [64, 7
 export const TERRACE = { u: 66, v: 116, y: 40 } as const;
 
 /** The gatehouse at the brae's top, and the east gate onto the ridge. */
-export const GATEHOUSE = { u: -18, v: 106, y: 34 } as const;
-export const EAST_GATE = { u: 42, v: 140, y: 36 } as const;
+export const GATEHOUSE = { u: -18, v: 106, y: 36 } as const;
+export const EAST_GATE = { u: 42, v: 139, y: 36 } as const;
 
 /** The Guild Crest: its crest line (frame, heights) from the abbey to its east top. */
 export const RIDGE = [
@@ -216,4 +216,4 @@ export const WATER = {
 } as const;
 
 /** The pebble shore at the loch's head, where the lower burn comes in (a starfish spot). */
-export const PEBBLE_SHORE = { u: -128, v: -8, r: 16 } as const;
+export const PEBBLE_SHORE = { u: -110, v: -18, r: 14 } as const;

@@ -115,7 +115,7 @@ function hall(b: Buckets, out: GcOut): void {
 }
 
 /** A station's lamp on an iron bracket out of a wall facing (fu, fv), its support `y`. */
-function wallLamp(
+export function wallLamp(
   b: Buckets,
   out: GcOut,
   u: number,
@@ -128,11 +128,11 @@ function wallLamp(
   const root = at(u, y, v);
   const tip = at(u + fu * 0.7, y, v + fv * 0.7);
   rod(b, 'metal', root, tip, 0.03, 4, GC_PAINT.iron);
-  hangLantern(b, out, tip.x, y - 0.02, tip.z, yawAlong(fu, fv), { lamp, look: 'dark' });
+  hangLantern(b, out, tip.x, y, tip.z, yawAlong(fu, fv), { lamp, look: 'dark' });
 }
 
 /** A station's lamp on a short post standing on a low wall's top (the yard's north and east walls). */
-function postLamp(
+export function postLamp(
   b: Buckets,
   out: GcOut,
   u: number,
@@ -145,8 +145,10 @@ function postLamp(
   const p = at(u, g, v);
   rod(b, 'metal', p, { x: p.x, y: g + 2.3, z: p.z }, 0.05, 5, GC_PAINT.iron);
   const tip = at(u + armDu * 0.6, g + 2.25, v + armDv * 0.6);
-  rod(b, 'metal', { x: p.x, y: g + 2.25, z: p.z }, tip, 0.03, 4, GC_PAINT.iron);
-  hangLantern(b, out, tip.x, g + 2.23, tip.z, yawAlong(armDu, armDv), { lamp, look: 'dark' });
+  // The arm from 2 cm into the post.
+  const root = at(u + armDu * 0.03, g + 2.25, v + armDv * 0.03);
+  rod(b, 'metal', root, tip, 0.03, 4, GC_PAINT.iron);
+  hangLantern(b, out, tip.x, g + 2.25, tip.z, yawAlong(armDu, armDv), { lamp, look: 'dark' });
 }
 
 /** The yard: its low walls, its furniture and the station lamps. */
