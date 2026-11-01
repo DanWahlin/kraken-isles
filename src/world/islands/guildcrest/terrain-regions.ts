@@ -1,7 +1,8 @@
 import { float, max, smoothstep } from 'three/tsl';
-import type { TerrainRegions } from '../../terrain/terrain-regions';
-import { CLOISTER, FRAME, GUILDCREST as G, KNOLL, PEBBLE_SHORE, SQUARE, YARD } from './layout';
+import { segmentMaskNode, type TerrainRegions } from '../../terrain/terrain-regions';
+import { CLOISTER, FRAME, GUILDCREST as G, KNOLL, PEBBLE_SHORE, SQUARE, toWorld, YARD } from './layout';
 import { PINE_STANDS } from './stands';
+import { BRAE, MILL_TRACK, RIDGE_PATH, TOWER_PATH } from './layout';
 
 /**
  * Guildcrest's ground (spec §3.2, G12: existing keys only). The town, the square, the abbey's knoll
@@ -43,18 +44,32 @@ export const guildcrestTerrainRegions: TerrainRegions = (ctx) => {
   // The moor and the hills: every slope above the shore, except where it's built on.
   const grassySlopes = island.mul(smoothstep(2, 6, y)).mul(float(1).sub(villageGround));
   // The pine stands' floor (their trees, vegetation.ts), on the gentle ground.
+  // Ragged edges (the broad noise) and patchy inside: a stand's floor, not a painted ellipse.
+  const ragged = ctx.noise.sub(0.5).mul(0.7);
   const stands = PINE_STANDS.map((s) =>
-    float(1).sub(smoothstep(0.7, 1.15, u.sub(s.u).div(s.ru).pow(2).add(v.sub(s.v).div(s.rv).pow(2)))),
+    float(1).sub(
+      smoothstep(0.45, 1.05, u.sub(s.u).div(s.ru).pow(2).add(v.sub(s.v).div(s.rv).pow(2)).add(ragged)),
+    ),
   ).reduce((a, b) => a.max(b));
   const forestFloor = stands
     .mul(island)
     .mul(smoothstep(0.82, 0.9, ctx.up))
-    .mul(smoothstep(3, 7, y));
+    .mul(smoothstep(3, 7, y))
+    .mul(float(0.3).add(ctx.noise.mul(0.35)));
   const shore = u.sub(PEBBLE_SHORE.u).pow(2).add(v.sub(PEBBLE_SHORE.v).pow(2)).sqrt();
   const campSand = float(1)
     .sub(smoothstep(PEBBLE_SHORE.r - 4, PEBBLE_SHORE.r + 4, shore))
     .mul(float(1).sub(smoothstep(2.5, 4, y)));
-  // Trodden sand over the shore's shingle is worn earth (the lanes, the paths, the pads).
-  const paths = island.mul(smoothstep(3, 6, y));
+  // The paths out of the town (the brae, the ridge path, the mill track, the tower stair): the
+  // bake's trodden sand there is worn earth, not beach.
+  const lines = [BRAE, RIDGE_PATH, MILL_TRACK, TOWER_PATH].flatMap((pts) =>
+    pts.slice(1).map((b, i) => {
+      const a = pts[i]!;
+      const wa = toWorld(a.u, a.v);
+      const wb = toWorld(b.u, b.v);
+      return segmentMaskNode(wa.x, wa.z, wb.x, wb.z, 2.2, 3.4, P);
+    }),
+  );
+  const paths = lines.reduce((a, b) => a.max(b)).mul(island);
   return { villageGround, paths, grassySlopes, forestFloor, campSand };
 };

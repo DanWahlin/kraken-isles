@@ -5,18 +5,21 @@ import {
   BEN,
   BRAE,
   CLOISTER,
-  EAST_GATE,
   GATEHOUSE,
   GUILDCREST as G,
   KNOLL,
   LOCH,
   MILL,
   MILLS,
+  MILL_TRACK,
   PEBBLE_SHORE,
   QUAY,
+  QUAY_LANE,
   RIDGE,
+  RIDGE_PATH,
   SQUARE,
   TERRACE,
+  TOWER_PATH,
   toFrame,
   WATER,
   YARD,
@@ -271,46 +274,6 @@ function glen(h: number, u: number, v: number): number {
 }
 
 // --- 5. The pads ---------------------------------------------------------------------------------
-
-/** The ridge path: from the east gate along the crest to the guildhall yard, then on past the mills. */
-export const RIDGE_PATH = [
-  { u: EAST_GATE.u, v: EAST_GATE.v, y: EAST_GATE.y },
-  { u: 49, v: 139.5, y: 36.4 },
-  { u: 56, v: 146, y: 37.6 },
-  { u: 70, v: 152, y: 40 },
-  { u: YARD.u - YARD.halfU, v: YARD.v - 2, y: YARD.y },
-] as const;
-
-/** The track on from the yard to the mills. */
-export const MILL_TRACK = [
-  { u: 104.5, v: YARD.v + 4, y: YARD.y },
-  { u: 104.5, v: YARD.v + YARD.halfV + 1.5, y: YARD.y },
-  { u: 112, v: 176, y: 47 },
-  { u: MILLS[0].u, v: MILLS[0].v, y: MILLS[0].y },
-  { u: 140, v: 204, y: 55.5 },
-  { u: MILLS[1].u, v: MILLS[1].v, y: MILLS[1].y },
-  { u: 166, v: 190, y: 57.5 },
-  { u: MILLS[2].u, v: MILLS[2].v, y: MILLS[2].y },
-] as const;
-
-/** The tower stair's path: from the yard's west side down to the tower terrace's foot. */
-export const TOWER_PATH = [
-  { u: 78, v: 147, y: YARD.y },
-  { u: 80, v: 134, y: YARD.y },
-  { u: 79, v: 131, y: 41 },
-  { u: 78.6, v: 129, y: 41 },
-  { u: 77.6, v: 126, y: TERRACE.y },
-  { u: 72, v: 121, y: TERRACE.y },
-] as const;
-
-/** The lane from the quay up past the inn to the square's west side. */
-export const QUAY_LANE = [
-  { u: -190, v: 18, y: QUAY.top },
-  { u: -170, v: 30, y: 2.6 },
-  { u: -150, v: 38, y: 4.2 },
-  { u: -130, v: 41, y: 7 },
-  { u: SQUARE.u - SQUARE.halfU, v: SQUARE.v - 4, y: SQUARE.y },
-] as const;
 
 /** Each path's stretches as pads in turn (no cut-off: a far pad's slopes are out of reach anyway). */
 function paths(h: number, u: number, v: number): number {

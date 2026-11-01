@@ -17,8 +17,7 @@ import {
   type GcOut,
 } from './build';
 import { CIRCUIT_SPOTS } from './circuit';
-import { MILL_TRACK, RIDGE_PATH } from './height';
-import { MILL, MILLS, YARD } from './layout';
+import { MILL, MILL_TRACK, MILLS, RIDGE_PATH, YARD } from './layout';
 import { JOURNEYMEN_HALL } from './town';
 
 /**

@@ -324,7 +324,7 @@ PACKS.guildcrest = {
     ],
     aerial: guildcrestPose([-620, -260, 420], [20, 60, 30]),
     top: [
-      [5905, 1900, 262],
+      [5904, 1100, 258],
       [5900, 0, 250],
     ],
     'from-south': guildcrestPose([300, -700, 30], [60, 60, 80]),
@@ -350,6 +350,9 @@ PACKS.guildcrest = {
       'walk-north': [onGround(10, 144, 1.7), at(40, 144, 38)],
       terrace: [onGround(74, 124, 1.7), at(56, 114, 66)],
       gate: [onGround(-26, 100, 1.7), at(-10, 118, 38)],
+      guildhalls: [onGround(-112, 34, 2.2), at(-80, 56, 14)],
+      abbey: [onGround(-60, 64, 2.4), at(10, 112, 52)],
+      mills: [onGround(96, 160, 2), at(150, 200, 64)],
       yard: [onGround(80, 150, 1.7), at(150, 214, 62)],
       glen: [onGround(30, 64, 1.7), at(-40, 62, 20)],
     };

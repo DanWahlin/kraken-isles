@@ -129,7 +129,7 @@ export function buildPine(seed = 9): BufferGeometry {
   const parts: BufferGeometry[] = [];
   const lean = (rand() - 0.5) * 0.5;
   const trunk = new SphereGeometry(1, 6, 4);
-  trunk.scale(0.2, 4.6, 0.2);
+  trunk.scale(0.24, 4.6, 0.24);
   trunk.translate(lean * 0.5, 4.6, 0);
   parts.push(tagged(trunk, [0.52, 0.33, 0.22], 0));
   // The upper trunk's orange bark, thinner.
@@ -141,12 +141,12 @@ export function buildPine(seed = 9): BufferGeometry {
   for (let i = 0; i < clumps; i++) {
     const t = i / Math.max(1, clumps - 1);
     const a = rand() * Math.PI * 2;
-    const d = (1 - t) * (0.8 + rand() * 0.6);
-    const r = (1.9 - t * 0.7) * (0.85 + rand() * 0.3);
+    const d = (1 - t) * (0.9 + rand() * 0.7);
+    const r = (2.4 - t * 0.8) * (0.85 + rand() * 0.3);
     const g = new SphereGeometry(1, 8, 4);
-    g.scale(r, r * 0.38, r * (0.8 + rand() * 0.3));
+    g.scale(r, r * 0.45, r * (0.8 + rand() * 0.3));
     g.rotateY(rand() * Math.PI);
-    g.translate(lean + Math.cos(a) * d, 7.4 + t * 3.1, Math.sin(a) * d);
+    g.translate(lean + Math.cos(a) * d, 6.6 + t * 3.6, Math.sin(a) * d);
     const k = 0.8 + rand() * 0.25;
     parts.push(tagged(g, [0.16 * k, 0.25 * k, 0.17 * k], 1));
   }

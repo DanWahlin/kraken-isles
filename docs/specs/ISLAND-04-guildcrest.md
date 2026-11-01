@@ -1355,3 +1355,91 @@ Each stage writes what moved from this spec, and why.
   `grassySlopes` (the moor), `forestFloor` (the pine stands, `stands.ts`), `campSand` (the pebble
   shore). The island is in `ISLANDS_IN_BUILD` (`GUILDCREST_IN_BUILD`); the dev terrain page has
   `?pack=guildcrest` with the hero views (§2.7) and ground views.
+
+### 15.3 Stage 2A: world art (agent A)
+
+**Built** (`src/world/islands/guildcrest/`): `town-build.ts` (the quay with fenders, bollards, a
+rail along its face but for the gangway's gap, ship obstacles, a lamp and the slipway; 16 houses and
+the inn; the three guildhalls; Guild Square with the Charter Stone, the market cross, benches, the
+trough; the well, washing lines, lane lamps), `abbey.ts` (gatehouse, the four ranges with the slype,
+the library's open bay and the east gate cut through, the arcaded walks under lean-to slate roofs, the
+garth and its well, the Pattern Book's station pieces and lamps, the bell tower with its belfry, bell,
+rope and slate cap, the terrace with its bench and the two railed flights down from the yard),
+`ridge.ts` (the Guildhall of Journeymen, the yard's low walls and furniture, the Toolbelt's station
+lamps, rails on the ridge path's steep side, three stone tower mills whose sails turn as one mesh each),
+`market.ts` (Moira's booth), `rocks.ts`, `mist.ts` (the linn's spray and the chimneys' smoke, Low and
+up), `vegetation.ts` (pine stands, broadleaf by the water, gorse and broom as shrubs, ferns),
+`flora.ts`/`flora-palette.ts`, `silhouette.ts`, `stream.ts` (a `StreamLifecycle` like Keelhaven's),
+`index.ts` (`createGuildcrestWorldAsync`), `starfish.ts`, `build.ts` (shared helpers: `GcOut`, railed
+`flight`s, `lowWall`, `rail`, `lampPost`, `hangLantern`, `stoneHall`), `town.ts` (the town as data).
+
+**What moved from the spec, and why:**
+
+- **Houses are built here, not from the kit** (G16 said `house-builder.ts`): the kit's European
+  houses are half-timbered (Tudor, not Highland) and their timber alone was 84k triangles on Lite
+  (two `gc-town-wood` chunks). The harled houses are boxes in the kit's plaster with slate roofs,
+  crow-stepped gables on about a third (all three guildhalls and the inn), chimney stacks, doors and
+  windows: Lite's whole frame went from 133k to 68k triangles at the harbour.
+- **Slate** is the kit's `paving` material painted slate grey (its `roofTile` is red clay, which no
+  paint makes grey). No new material.
+- **The cloister is smaller than §3.6's "36 m garth":** §3.9's station spots sit 14 m from the garth's
+  middle, so the lawn is ±12 m, the walks ±12…16 m, the ranges ±16…24 m (u −2…46, v 106…154). The
+  stations moved onto the walks (`circuit.ts`): shelf (8, 128), spine (8, 138), desk (16, 144), proof
+  (30, 144), bell (36, 136), lectern (36, 122). Brigid (8, 121) by the scriptorium; Ewan in the library's
+  open bay (24, 149) with the chained rack behind him (24.6, 152.6); the copyist at the desk
+  (13.6, 144.6). The slype (v 116…120) takes you from the gatehouse (u −15…−7) into the west walk; the
+  east gate (v 137…141) out of the east range onto the ridge path.
+- **The guildhall yard:** the Guildhall of Journeymen stands on the yard's south side (u 88…116,
+  v 134…144), its door (104, 144) and roll board on the yard. Stations: indenture (87, 160.5), rack
+  (98, 165, the peg rail on the north wall), proof (103, 158, the table on the east wall), door
+  (104, 149), roll (94, 148), bench (85, 152), testBench (80, 160). The mill track leaves by a gap at
+  the north wall's east end; the tower stair leaves the yard's south-west corner.
+- **The tower stair** runs (78, 147) → (80, 134) → two railed flights of 1 m → (77.6, 126) → the
+  terrace (paved u 62…78, v 112…128, y 40).
+- **The brae's top and the gatehouse are at 36** (the knoll's level; 34 made a 0.75 m step).
+- **Scots pine** is built in code (`buildPine` in `vegetation/cactus.ts`, species `pineTree`, the
+  procedural vegetation material, no impostor: drawn to `treeNear × 3` like the cypress), G13's
+  fallback: the MegaKit pine would need a download, the model pipeline and a textured species. Lite
+  keeps 25 % (`KEEP`), Low 45 %, Medium 70 %.
+- **Flora:** four species (heather, gorse, harebell, a fern); the shared species table holds 24 rows
+  and the five islands now fill it, so there's no thrift on the shingle. **The next island needs
+  `FLORA_SPECIES_MAX` raised** (one uniform array's size; every island's grass shader changes once).
+- **Swifts:** `CreateBirdsOptions` has `speed`, `count` and `lightness` (and `addIslandBirds` a
+  `kind`); the island's swifts are 0.55 scale, 1.6 × speed, dark, 6–40 m up round the tower, 0 / 6 /
+  10 / 16 / 16 by tier, perching on the belfry's ledges.
+- **The pebble shore** is at (−110, −18); `sf.g.cove` (−100, −30). The other starfish: quay slipway
+  (−153, 9.4), behind the linn's pool (−40, 50.5), by the cloister's well (22, 132.8), the far mill
+  (172.5, 168).
+- **Shared code moved (no behaviour change):** Keelhaven's walk decks → `village/walk-decks.ts` (its
+  `DeckIndex` takes the island's `toFrame`), its lamp set → `village/lamp-set.ts`, `stoneUv` →
+  `village/pieces.ts`; new pieces `crowStepGable` and `pitchedRoof`. The ridge, the glen and the path
+  pads are continuous (each stretch's own, not the nearest's: the nearest-stretch switch made 3 m
+  steps). `coplanar-audit.ts` reads only a mesh's draw range (a chunk's index holds its coarser
+  levels after the full list: every face fought its own copy).
+
+**Gates (stage 2A):** `npm run typecheck`, lint and Prettier (outside the scratch `tmp/`), `npm test`
+(210 files, 1540 tests), `npm run build && npm run check:budgets && npm run check:secrets` pass.
+Bake: other islands' hashes unchanged; Guildcrest `c2fb5af6` (stable run to run), 0.82 MiB gz.
+Census (game, landed then each island by `travelTo`): High WebGPU 115 / 123 / 132 / 132 (base
+115 / 125 / 132 / 132), Lite WebGL2 92 / 96 / 97 / 97 (base the same). Lamp audit: four Guildcrest
+lamp rows added (`lamps.test.ts`). Coplanar audit (dev terrain page, `__dev.coplanar()`): what's left
+is hidden faces inside walls (range against range, tower against church), the shared booth and the
+mill sails' hub; no visible coplanar faces found.
+
+**Frame budgets on the dev terrain page** (whole page: sky, ocean, terrain, the island; settled
+views, not `check:frame-budgets`, which needs the island in the registry, stage 3):
+
+| Tier | Worst view (draws / triangles) | Without the island's art | The art's share |
+|---|---|---|---|
+| Lite WebGL2 | 35 / 99k (tower) | 23 / 68k | ≤ 14 draws, ≤ 37k |
+| Low | 50 / 165k (tower) | 23 / 96k | ≤ 27 draws, ≤ 77k |
+| Medium | 118 / 304k (approach / harbour) | — | — |
+| High | 118 / 664k (approach / harbour) | 98 / 405k | ≤ 38 draws, ≤ 324k |
+
+**Open for stage 3:** the registry entry (`courseBoard` at `COURSE_BOARD_UV` in `town.ts`; footprint
+measured from `guildcrestHeightDry`); sign poses for W.7 (the inn's board `INN_SIGN`, the roll board
+by the hall's door, the Charter Stone's foot plate, the spine on the pattern book's case, the shelf's
+press) are built as blank boards; Rory's banner, the book's new page and the Seal's banners are the
+stage's to show; the sails' pace (`setSailPace`, ¼ with reduced motion); `flickertest` views
+`gc-quay`, `gc-square`, `gc-cloister`, `gc-yard`, `gc-tower` once the island is in `tools/lib/islands.json`.
+

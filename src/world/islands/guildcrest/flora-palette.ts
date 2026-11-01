@@ -11,7 +11,7 @@ export const GUILDCREST_FLORA_PALETTE: FloraPalette = {
   id: 'guildcrest',
   bounds: { minX: 5280, maxX: 6540, minZ: -400, maxZ: 910 },
   grass: { ramp: [0x33452a, 0x52693a, 0x7a8a4c, 0xa49a62], straw: 0.08 },
-  sward: { lush: 0x5c7440, dry: 0x76784a, moss: 0x3c4c2c, cover: 0.62 },
+  sward: { lush: 0x5c7440, dry: 0x76784a, moss: 0x4e6236, cover: 0.62 },
   drifts: { coverage: 0.5, leadShare: 0.72, seed: 4.4 },
   species: [
     {
