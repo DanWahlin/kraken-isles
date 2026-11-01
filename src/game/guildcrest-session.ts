@@ -390,6 +390,7 @@ export function createGuildcrestContent(host: IslandContentHost): GuildcrestCont
       /** Plays the Seal's moment (for a test's shots). */
       seal: () => circuits.seal(),
       lamp: (key: string) => circuits.debug.lamp(key),
+      sealing: () => circuits.debug.sealing(),
       stations: () => circuits.debug.spots(),
       /** Every chest and bottle spot (tests walk to each). */
       chestSpots: () => [

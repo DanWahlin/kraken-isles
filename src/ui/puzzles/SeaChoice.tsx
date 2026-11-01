@@ -2,8 +2,12 @@ import { useEffect, useRef, useSyncExternalStore } from 'react';
 import { createRoot } from 'react-dom/client';
 import { PadEdges, standardPad } from '../../game/puzzles/pad-edges';
 import { Bold } from '../components/Bold';
+import { Rich } from '../components/Rich';
 import { isTyping } from '../typing';
 import './sea-choice.css';
+
+/** A line without its `**bold**` and `code` marks (for screen readers). */
+const plain = (text: string) => text.replace(/\*\*|`/g, '');
 
 /** One choice on the card. `tried` marks a wrong pick already made (it stays, dimmed). */
 export interface SeaChoiceOption {
@@ -106,11 +110,17 @@ function SeaChoice({ store }: { store: SeaChoiceStore }) {
             </p>
           ) : null}
         </header>
-        {v.prompt ? <p className="ci-sc-prompt">{v.prompt}</p> : null}
+        {v.prompt ? (
+          <p className="ci-sc-prompt">
+            <Rich text={v.prompt} />
+          </p>
+        ) : null}
         {v.detail.length ? (
           <ol className="ci-sc-detail">
             {v.detail.map((line) => (
-              <li key={line}>{line}</li>
+              <li key={line}>
+                <Rich text={line} />
+              </li>
             ))}
           </ol>
         ) : null}
@@ -122,27 +132,31 @@ function SeaChoice({ store }: { store: SeaChoiceStore }) {
                 className={`${i === v.focus ? 'is-focus' : ''}${o.tried ? ' is-tried' : ''}`}
                 disabled={v.busy}
                 data-choice={o.id}
-                aria-label={`${o.label}${o.sub ? `: ${o.sub}` : ''}${o.tried ? ' (tried)' : ''}`}
+                aria-label={plain(`${o.label}${o.sub ? `: ${o.sub}` : ''}${o.tried ? ' (tried)' : ''}`)}
                 onClick={() => store.choose(o.id)}
                 onFocus={() => store.setFocus(i)}
               >
                 <kbd aria-hidden="true">{i + 1}</kbd>
                 <span className="ci-sc-text">
-                  <b>{o.label}</b>
+                  <b>
+                    <Rich text={o.label} />
+                  </b>
                   {o.sub ? <small>{o.sub}</small> : null}
                 </span>
               </button>
             </li>
           ))}
         </ol>
-        <p className={`ci-sc-message is-${v.message?.tone ?? 'info'}`}>{v.message?.text ?? ''}</p>
+        <p className={`ci-sc-message is-${v.message?.tone ?? 'info'}`}>
+          <Rich text={v.message?.text ?? ''} />
+        </p>
         {v.options.length ? (
           <p className="ci-sc-help" aria-hidden="true">
             Press <kbd>1</kbd>–<kbd>{v.options.length}</kbd> or tap a choice
           </p>
         ) : null}
         <div className="ci-sc-live" role="status" aria-live="polite">
-          {v.message?.text ?? v.prompt}
+          {plain(v.message?.text ?? v.prompt)}
         </div>
       </section>
     </div>

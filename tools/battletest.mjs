@@ -9,6 +9,9 @@
 // node tools/battletest.mjs [--base=http://localhost:5301] [--tier=high] [--webgl] [--out=/tmp/shots/battle]
 //   [--only=play|skip] [--sea=calm|breeze|fresh|gale] (the Sea state setting: the battle must still fight
 //   on its own fixed sea, today's Breeze, and the harbour must show the setting's)
+//   [--battle=4] (battle 4, "Evidence Agrees": Chapters 00-03 done, the chart to Keelhaven, then out
+//   toward Guildcrest; no kraken; its peak must stay at or under 140 programs with Guildcrest in memory,
+//   and you dock at Guildcrest).
 //   [--battle=3] (battle 3, "Trust the Evidence": Chapters 00-02 done, the chart to Thousand-Bough Isle,
 //   then out toward Keelhaven; its peak must stay at or under 140 programs with Keelhaven in memory, its
 //   end must bring the passage's "next morning", and you dock at Keelhaven). Battle 3's kraken: after
@@ -27,15 +30,29 @@ const tag = `${opt.webgl ? 'gl' : 'gpu'}-${tier}`;
 // --nokraken: battle 3 without its kraken (its census without it).
 const url = `${base}/?debug&tier=${tier}${opt.webgl ? '&webgl' : ''}${opt.nokraken ? '&nokraken' : ''}`;
 const BATTLE = Number(opt.battle ?? 1);
-if (BATTLE !== 1 && BATTLE !== 3) throw new Error('--battle=1 or --battle=3');
-// Battle 3 has an island on each side of its passage in memory: its peak keeps room for the next.
-const PROGRAM_CAP = BATTLE === 3 ? 140 : 150;
-const BATTLE_ID = BATTLE === 3 ? 'passage-thousand-bough-keelhaven' : 'passage-anchorage-meridian';
+if (![1, 3, 4].includes(BATTLE)) throw new Error('--battle=1, --battle=3 or --battle=4');
+/** Battles 3 and 4 sail from a later island (by the chart) to the next. */
+const LATER = BATTLE >= 3;
+/** The passage's two islands. */
+const PASSAGE = {
+  1: ['anchorage', 'meridian'],
+  3: ['thousand-bough', 'keelhaven'],
+  4: ['keelhaven', 'guildcrest'],
+}[BATTLE];
+// Battles 3 and 4 have an island on each side of the passage in memory: the peak keeps room for the next.
+const PROGRAM_CAP = LATER ? 140 : 150;
+const BATTLE_ID = {
+  1: 'passage-anchorage-meridian',
+  3: 'passage-thousand-bough-keelhaven',
+  4: 'passage-keelhaven-guildcrest',
+}[BATTLE];
 /** The quests done before the battle (each chapter's island and its Seal). */
 const CH0 = ['Q0.2', 'Q0.3', 'Q0.4', 'Q0.5', 'Q0.6', 'Q0.7', 'Q0.8', 'Q0.9', 'Q0.10', 'Q0.11'];
 const CH1 = ['Q1.1', 'Q1.2', 'Q1.3', 'Q1.4', 'Q1.5', 'Q1.6', 'Q1.7', 'Q1.8', 'Q1.A'];
 const CH2 = ['Q2.1', 'Q2.2', 'Q2.3', 'Q2.4', 'Q2.5', 'Q2.6', 'Q2.7', 'Q2.8', 'Q2.9', 'Q2.A'];
-const QUESTS = BATTLE === 3 ? [...CH0, ...CH1, ...CH2] : CH0;
+const CH3 = ['Q3.1', 'Q3.2', 'Q3.3', 'Q3.4', 'Q3.5', 'Q3.6', 'Q3.7', 'Q3.8', 'Q3.9', 'Q3.10', 'Q3.A', 'Q3.B'];
+const QUESTS =
+  BATTLE === 4 ? [...CH0, ...CH1, ...CH2, ...CH3] : BATTLE === 3 ? [...CH0, ...CH1, ...CH2] : CH0;
 
 const browser = await launchChrome({ autoplay: true });
 const report = { url, play: null, skip: null };
@@ -79,18 +96,18 @@ async function voyage() {
   // Continue shows where you left off once ashore (and a recap, if one's due): past them first.
   await passLearningPauses(page);
   await page.waitForTimeout(1000);
-  if (BATTLE === 3) await toThousandBough(page);
+  if (LATER) await toThousandBough(page, PASSAGE[0]);
   return page;
 }
 
-/** Battle 3: by the chart to Thousand-Bough Isle (its battle waits on the passage out), past its welcome. */
-async function toThousandBough(page) {
-  await page.evaluate(() => {
+/** Battles 3 and 4: by the chart to the passage's first island (its battle waits on the way out), past its welcome. */
+async function toThousandBough(page, island) {
+  await page.evaluate((id) => {
     const s = window.__flow.debugSession;
-    const q = s.islandQuay('thousand-bough');
+    const q = s.islandQuay(id);
     s.travel(q.x, q.z, q.heading);
-  });
-  await page.waitForFunction(() => window.__flow.debugSession.island === 'thousand-bough', null, {
+  }, island);
+  await page.waitForFunction((id) => window.__flow.debugSession.island === id, island, {
     timeout: 120_000,
   });
   await page.waitForTimeout(2500);
@@ -109,11 +126,10 @@ async function toThousandBough(page) {
 
 /** Where the battle's passage runs: from its island's mooring to its destination's (`ISLANDS`). */
 async function passageEnds(page) {
-  return page.evaluate(async (b) => {
+  return page.evaluate(async ([from, to]) => {
     const { ISLANDS } = await import('/src/game/islands.ts');
-    const [from, to] = b === 3 ? ['thousand-bough', 'keelhaven'] : ['anchorage', 'meridian'];
     return { from: ISLANDS[from].mooring, to: ISLANDS[to].mooring };
-  }, BATTLE);
+  }, PASSAGE);
 }
 
 const S = (page, js) => page.evaluate(`(() => { const s = window.__flow.debugSession; return ${js}; })()`);
@@ -202,11 +218,11 @@ async function boardAndSailOut(page) {
   // ~60 m short of the open water, and on under sail until the lookout calls sails.
   const t0 = Date.now();
   const started = () => S(page, '!!s.debug.battleRun()?.started');
-  if (BATTLE === 3) {
+  if (LATER) {
     const { from, to } = await passageEnds(page);
     await sailToward(page, to.x, to.z, 30_000, started);
     if (!(await started())) {
-      const k = 0.3;
+      const k = BATTLE === 4 ? 0.5 : 0.3;
       const h = Math.atan2(to.x - from.x, to.z - from.z);
       await page.evaluate(
         ([x, z, h]) => window.__flow.debugSession.debug.sailTo(x, z, h),
@@ -424,10 +440,11 @@ async function play() {
   // Gentle seas for the run, so a break-off doesn't make the test slow (it's covered by the unit tests).
   await S(page, 's.debug.battleRun().battle.setCalm(true)');
   const waves = await S(page, 's.debug.battleRun().plan.waves.length');
-  if (BATTLE === 3) {
-    // The census with Keelhaven in memory (the island ahead streams in as you sail toward it).
+  if (LATER) {
+    // The census with the island ahead in memory (it streams in as you sail toward it).
     const r = await S(page, 's.debug.residency()');
-    if (!r.resident.includes('keelhaven')) fail(`Keelhaven isn't in memory in battle 3 (${r.resident})`);
+    if (!r.resident.includes(PASSAGE[1]))
+      fail(`${PASSAGE[1]} isn't in memory in battle ${BATTLE} (${r.resident})`);
   }
   for (let wave = 0; wave < waves; wave++) {
     await waitPhase(page, ['fight']);
@@ -527,7 +544,7 @@ async function play() {
   }
   const won = await waitPhase(page, ['won'], 20_000);
   if (won?.phase !== 'won') fail(`the battle wasn't won (${won?.phase})`);
-  if (BATTLE === 3) {
+  if (LATER) {
     // Every ship's sails, the flagship's and the broken hulls' pieces too: never one state, then another.
     const jumps = await S(
       page,
@@ -562,7 +579,7 @@ async function play() {
   } else await page.waitForTimeout(9000);
   await shot(page, 'after');
   // On to the next island: the berth opens now the passage is clear.
-  if (BATTLE === 3) {
+  if (LATER) {
     const { to } = await passageEnds(page);
     await page.evaluate(
       ([x, z, h]) => window.__flow.debugSession.debug.sailTo(x, z, h),
@@ -575,7 +592,7 @@ async function play() {
     .waitForFunction(
       (id) =>
         window.__flow.debugSession.island === id && window.__flow.debugSession.debug.state().mode === 'walk',
-      BATTLE === 3 ? 'keelhaven' : 'meridian',
+      PASSAGE[1],
       { timeout: 90_000 },
     )
     .catch(() => fail('never docked at the next island after the battle'));
@@ -583,7 +600,7 @@ async function play() {
   await S(page, 's.debug.skipArrival()');
   await page.waitForTimeout(2500);
   res.docked = await S(page, '({ island: s.island, mode: s.mode })');
-  await shot(page, BATTLE === 3 ? 'keelhaven' : 'meridian');
+  await shot(page, PASSAGE[1]);
   // Back aboard at Meridian and home: battle 1 isn't fought again (and battle 2 waits for its island).
   await S(page, 's.debug.board()');
   await page.waitForTimeout(3000);
@@ -629,12 +646,14 @@ async function skip() {
   await shot(page, 'skip-after');
   await page.waitForTimeout(5000);
   if (await S(page, '!!s.debug.battleRun()')) fail('(skip) the battle was still built after the skip');
-  if (BATTLE === 3) {
-    // A skip settles the battle at once: the night passes at sea all the same.
-    const veil = await page
-      .waitForFunction(() => window.__sawDawn, null, { timeout: 20_000 })
-      .then(() => true)
-      .catch(() => false);
+  if (LATER) {
+    // A skip settles the battle at once: battle 3's night passes at sea all the same.
+    const veil =
+      BATTLE !== 3 ||
+      (await page
+        .waitForFunction(() => window.__sawDawn, null, { timeout: 20_000 })
+        .then(() => true)
+        .catch(() => false));
     if (!veil) fail('(skip) no "next morning" after battle 3 was skipped');
     res.hitches = await hitches(page);
     if (res.hitches.length)

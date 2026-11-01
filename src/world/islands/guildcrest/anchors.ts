@@ -90,7 +90,8 @@ export const GUILDCREST_ANCHORS = {
   charterStone: anchor(-96, 46, 10),
   aidan: anchor(-18, 106, 34, LOOK.braeTurn),
   brigid: anchor(8, 121, 36, LOOK.aidan),
-  ewan: anchor(24, 149, 36, LOOK.garth),
+  // On the north walk in front of the library's open bay (in the bay the talk's camera had no room).
+  ewan: anchor(23, 144.6, 36, LOOK.garth),
   chainRack: anchor(24.6, 152.6, 36, LOOK.garth),
   fergus: anchor(90, 154, 42, LOOK.ridge),
   rory: anchor(96, 160, 42, LOOK.fergus),

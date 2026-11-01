@@ -2,7 +2,7 @@ import { puzzleMaybe, puzzleOn, textOf } from '../course/puzzles';
 import { GUILDCREST_ANCHORS } from '../world/islands/guildcrest/anchors';
 import { CIRCUIT_SPOTS } from '../world/islands/guildcrest/circuit';
 import type { GuildcrestWorld } from '../world/islands/guildcrest/index';
-import { TERRACE, TOWER, toWorld } from '../world/islands/guildcrest/layout';
+import { TOWER, toWorld } from '../world/islands/guildcrest/layout';
 import type { LampLook } from '../world/village/lamp-set';
 import type { ChoiceAsk } from './choice-card';
 import type { CameraShot } from './follow-camera';
@@ -43,6 +43,8 @@ export interface GuildcrestCircuits {
   teardown(): void;
   readonly debug: {
     lamp(key: string): string | null;
+    /** Whether the Seal's moment is playing (tests catch it for a shot). */
+    sealing(): boolean;
     /** Every station's spot (tests walk to each). */
     spots(): { id: string; x: number; y: number; z: number }[];
   };
@@ -60,18 +62,27 @@ export function createGuildcrestCircuits(
   const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
   /** Seconds the Seal's quick sails have left. */
   let fastSails = 0;
+  let sealing = false;
 
-  /** A camera behind where you stand, looking at the station's piece. */
-  function shotAt(u: number, v: number, y: number, look: { u: number; y: number; v: number }): CameraShot {
+  /**
+   * A camera by where you stand, looking at the station's piece. In the yard it's behind you and to your
+   * right (the yard is open); on the cloister's walks it stands along the walk, under its roof, so the
+   * arcade's piers don't stand between it and the wall the piece is on.
+   */
+  function shotAt(
+    kind: Kind,
+    u: number,
+    v: number,
+    y: number,
+    look: { u: number; y: number; v: number },
+  ): CameraShot {
     const du = u - look.u;
     const dv = v - look.v;
     const d = Math.hypot(du, dv) || 1;
-    // Behind you and to your right, so the station's own lamp doesn't stand in the way.
-    const back = 4.2;
-    const side = 2.2;
+    const [back, side, up] = kind === 'book' ? [1.4, 4.6, 2.3] : [4.2, 2.2, 3.6];
     const e = toWorld(u + (du / d) * back - (dv / d) * side, v + (dv / d) * back + (du / d) * side);
     const t = toWorld(look.u, look.v);
-    return { x: e.x, y: y + 3.6, z: e.z, tx: t.x, ty: look.y, tz: t.z };
+    return { x: e.x, y: y + up, z: e.z, tx: t.x, ty: look.y, tz: t.z };
   }
 
   type Spot = ReturnType<CircuitStage['spot']>;
@@ -83,7 +94,7 @@ export function createGuildcrestCircuits(
     const sp = CIRCUIT_SPOTS[kind][place]!;
     const p = toWorld(sp.u, sp.v);
     const y = host.world.groundAt(p.x, p.z, sp.y + 1.5);
-    s = { x: p.x, y, z: p.z, lamp: sp.lamp, shot: shotAt(sp.u, sp.v, y, sp.look) };
+    s = { x: p.x, y, z: p.z, lamp: sp.lamp, shot: shotAt(kind, sp.u, sp.v, y, sp.look) };
     spotCache.set(key, s);
     return s;
   }
@@ -94,7 +105,8 @@ export function createGuildcrestCircuits(
       spot: (place) => spot(kind, place),
       lamp: (key, l) => world?.circuit.lamp(key, look(l)),
       station(at, event) {
-        const s = spot(kind, at.place);
+        // The lap's end (`done`) has no place: its sound is where you stand.
+        const s = CIRCUIT_SPOTS[kind][at.place] ? spot(kind, at.place) : host.player;
         if (kind === 'book' && at.place === 'bell' && event === 'pass')
           host.audio?.sfx.oneShot('gondola_bell', s, 0.8);
         if (kind === 'book' && at.place === 'desk' && event === 'open')
@@ -120,6 +132,40 @@ export function createGuildcrestCircuits(
   function sealLamps(): void {
     for (const kind of ['book', 'belt'] as const)
       for (const place of Object.keys(CIRCUIT_SPOTS[kind])) world?.circuit.lamp(`${kind}:${place}`, 'ready');
+  }
+
+  /** The Seal's moment (§4.5): the bell rings, the lamps answer and the sails turn faster for 10 s. */
+  async function playSeal(w: GuildcrestWorld): Promise<void> {
+    const r = reduced();
+    // Off the terrace's east end, level with the belfry: the bell rings over the abbey.
+    const t = toWorld(TOWER.u, TOWER.v);
+    const e = toWorld(TOWER.u + 40, TOWER.v - 8);
+    const belfry = (TOWER.belfry[0] + TOWER.belfry[1]) / 2;
+    const tower: CameraShot = { x: e.x, y: belfry - 2, z: e.z, tx: t.x, ty: belfry - 6, tz: t.z };
+    // Out over the ridge: the mills, the guildhall and the yard's lamps.
+    const re = toWorld(60, 196);
+    const rt = toWorld(130, 170);
+    const ridge: CameraShot = { x: re.x, y: 66, z: re.z, tx: rt.x, ty: 52, tz: rt.z };
+    if (!r) {
+      await host.fade(true, 260);
+      host.cut(tower);
+      await host.fade(false, 260);
+    }
+    host.audio?.sfx.oneShot('abbey_bell', { x: t.x, y: TOWER.belfry[0], z: t.z }, 1);
+    await wait(r ? 1200 : 2600);
+    sealLamps();
+    w.setSailPace(r ? 0.25 : 3);
+    fastSails = 10;
+    if (!r) {
+      await host.fade(true, 220);
+      host.cut(ridge);
+      await host.fade(false, 220);
+    }
+    host.audio?.sfx.oneShot('stinger_triumph', host.player, 0.7);
+    await wait(r ? 1200 : 2600);
+    if (!r) await host.fade(true, 260);
+    host.backToTalk();
+    if (!r) await host.fade(false, 260);
   }
 
   return {
@@ -178,37 +224,15 @@ export function createGuildcrestCircuits(
     },
     async seal() {
       if (!world) return;
-      const r = reduced();
-      // From the terrace's west end, up at the belfry: the bell swings and rings.
-      const t = toWorld(TOWER.u, TOWER.v);
-      const e = toWorld(TERRACE.u + 14, TERRACE.v + 10);
-      const tower: CameraShot = { x: e.x, y: TERRACE.y + 6, z: e.z, tx: t.x, ty: TOWER.belfry[0], tz: t.z };
-      // Out over the ridge: the mills, the guildhall and the yard's lamps.
-      const re = toWorld(60, 196);
-      const rt = toWorld(130, 170);
-      const ridge: CameraShot = { x: re.x, y: 66, z: re.z, tx: rt.x, ty: 52, tz: rt.z };
-      if (!r) {
-        await host.fade(true, 260);
-        host.cut(tower);
-        await host.fade(false, 260);
+      sealing = true;
+      try {
+        await playSeal(world);
+      } finally {
+        sealing = false;
       }
-      host.audio?.sfx.oneShot('abbey_bell', { x: t.x, y: TOWER.belfry[0], z: t.z }, 1);
-      await wait(r ? 1200 : 2600);
-      sealLamps();
-      world.setSailPace(r ? 0.25 : 3);
-      fastSails = 10;
-      if (!r) {
-        await host.fade(true, 220);
-        host.cut(ridge);
-        await host.fade(false, 220);
-      }
-      host.audio?.sfx.oneShot('stinger_triumph', host.player, 0.7);
-      await wait(r ? 1200 : 2600);
-      if (!r) await host.fade(true, 260);
-      host.backToTalk();
-      if (!r) await host.fade(false, 260);
     },
     debug: {
+      sealing: () => sealing,
       lamp: (key) => world?.circuit.look(key) ?? null,
       spots: () => {
         const out: { id: string; x: number; y: number; z: number }[] = [];
