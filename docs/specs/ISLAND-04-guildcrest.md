@@ -1588,3 +1588,57 @@ Guildcrest to `ROUTE`), `check:perf`, `check:opening`, `check:audio`; the census
 `cameratest` on the new views; the W.7 signs painted (the boards are blank; the names are in
 `ISLAND_SIGNS`); the Seal's banners, Rory's banner and the book's page; the swifts' burst. The
 battle HUD shows a situation's single `*italics*` as asterisks (battles 3 and 4; pre-existing).
+
+### 15.6 Stages 4 and 5: play-test, gates and records (2026-11-01)
+
+**Built (the pieces stage 3 left):**
+
+- **The signs read the pack.** The builders hand their lettering to the world as `GcOut.signs`
+  (sign names, place, facing, size and look), and `index.ts` paints them all in the island's one
+  `SignSet` (one draw, with the course board's notices) and repaints them in an `onCourse` hook,
+  released with the world. A sign with no words (the dev page) is hidden. The inn's sign (lowered to
+  3.7 m and enlarged: at 5.2 m its name was a few pixels), the guildhalls' three banners (their
+  guild's name down the cloth), the Charter Stone's bronze plate at its foot, the shelf's label over
+  the press, the pattern book's spine and its file on its case, the roll board's heading, and the peg
+  rail's two tags (`read`, `search`). Big cloths seen from afar paint at a fixed width
+  (`SignOptions.pixels`, generic): at 640 px/m the first atlas was 1152 × 9726 px.
+- **The course board** (its registry placement had no timber or notices: its "Read the notices"
+  prompt stood on bare ground at the square's west entrance) is built like Keelhaven's.
+- **The story shows** (`GuildcrestWorld.show`): the copied book's new page lies open on its cover on
+  the case (`bookCopied`, at the Pattern Book's close), Rory's banner (cream canvas, his name) unrolls
+  on the roll board at the Toolbelt's close (`journeymanHired`), and the guilds' three banners hang
+  by the mills (`sealed`). Decision: **the Seal's banners stand by the mills**, one a mill, on poles
+  that always stand (their crossbars bare until the Seal), so the ridge shot at the Seal shows them
+  unfurl (1.6 s each, from their crossbars); with reduced motion they're simply there. After a
+  reload, `settle()` shows each from the save (only ever on: a lap's close shows its piece before its
+  quest is through).
+- **The swifts burst** from the belfry at the Seal's first bell (`BirdsSystem.burst`, generic: the
+  perched take off, the flock climbs away at twice its pace for 5 s, then wheels back).
+
+**Fixed (each at its root):**
+
+- **Italics on the question cards** (issue 371): one inline markup (`src/learn/inline-markup.ts`:
+  `**bold**`, `*italic*`, `` `code` ``; everything else escaped) for the battle's question card, the
+  choice cards and the quiz panel. The packs' single-star spans are all names (`*Confident Guess*`,
+  `*Muddy Main*`…).
+- **The zigzag escarpment by the linn** (issue 370) wasn't the masks: the lochan's bowl ended at a
+  hard 90 m radius, a 6 m wall west of the glen that no terrain level could draw. The bowl now eases
+  into the moor from 62 to 96 m (`LOCHAN_SKIRT`). The burn runs down a slope there now (rapids) where
+  it fell over the wall. Other islands' bake hashes unchanged; Guildcrest's is `cb241a4e`.
+- **The gangway went into the loch** (issue 368, found by the player pass and `wayfindtest`): bow to
+  the mouth put the brigantine's gangway on the loch side. The berth's bow is now up the loch (you
+  come alongside as you sail in; the departure still faces the mouth). `height.test.ts` checks the
+  gangway's foot lands on the quay.
+- **The compass's walk round the cloister** ran into Brigid (mid-walk) and stopped, and Kenna had no
+  route (issue 369): the west and north walks' lines keep to the arcade's side, and a route runs from
+  the brae's switchback over the moor and the burn to her seat.
+- **Battle question cards lost quick key taps** (issue 373): the keys' held state was read once a
+  frame. A move key's press is now an edge (`InputState.navY`).
+
+**Tests added or extended:** `tools/guildcrest-savetest.mjs` (§11.1 steps 6 and 7: a save on the
+island, Continue, the story from the save, the chart to Keelhaven until Guildcrest is freed, and back,
+hitch-free; it travels by the game's chart, `flow.travelTo`: `session.travel` skips the warm and saw
+hitches the game wouldn't); `guildcresttest` walks onto each starfish; `wayfindtest` sails on to
+Guildcrest in its sitting and walks Guildcrest's reach by default (Guildcrest's debug has
+`railedTreads`/`stairHeads` from its flights); the session's debug has `shot` (a still camera) and
+Guildcrest's `signs` and `showing`; video scenarios `battle4` and `guildcrest`.

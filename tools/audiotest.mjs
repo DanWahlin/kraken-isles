@@ -3,7 +3,8 @@
 // emulation), played the way a new player plays it, with every sound timed. The title (the first
 // press starts the music), the Chart, New Voyage, Juno's cabin, the chest, the dive and the fly-in,
 // Anchorage (its theme, ambience and Wingman's welcome), Nell, a jump to Port Meridian and to
-// Thousand-Bough (the music handover and the island streaming), and (with --flow=full) a sea battle
+// Thousand-Bough (the music handover and the island streaming), on to Guildcrest (its theme, its
+// welcome and Lyra's lines; Chapters 00-03 marked done to open it), and (with --flow=full) a sea battle
 // (the battle music, the cannons).
 //
 // In the page it logs each music <audio> element (events, readyState, how far it's buffered, its
@@ -464,7 +465,38 @@ async function playFlow(page, mark, errors) {
   await S(page, 's.debug.skipArrival()');
   await drain(page, 40_000);
   await page.waitForTimeout(6000);
+  // On to Guildcrest (the newest island: its theme, its welcome and Lyra's first lines), with Chapters
+  // 00-03 marked done so the chart has it open.
+  mark('guildcrest');
+  await S(
+    page,
+    `(() => { for (const q of ${JSON.stringify(SEALED_TO_GUILDCREST)}) s.debug.quest(q, 'done'); })()`,
+  );
+  await page.waitForTimeout(800);
+  await page.evaluate(() => window.__flow.travelTo('island:guildcrest'));
+  const gc = await until(
+    page,
+    () =>
+      window.__flow.debugSession?.island === 'guildcrest' && window.__flow.getState().screen === 'playing',
+    null,
+    240_000 * slow,
+  );
+  if (!gc) errors.push('never got to Guildcrest');
+  await page.waitForTimeout(2500);
+  await S(page, 's.debug.skipArrival()');
+  await drain(page, 40_000);
+  mark('talk lyra_guild');
+  await S(page, 's.debug.talk("lyra_guild")');
+  await page.waitForTimeout(9000);
 }
+
+/** Chapters 00-03's quests (Guildcrest opens with Keelhaven's Seal). */
+const SEALED_TO_GUILDCREST = [
+  ...['Q0.2', 'Q0.3', 'Q0.4', 'Q0.5', 'Q0.6', 'Q0.7', 'Q0.8', 'Q0.9', 'Q0.10', 'Q0.11'],
+  ...['Q1.1', 'Q1.2', 'Q1.3', 'Q1.4', 'Q1.5', 'Q1.6', 'Q1.7', 'Q1.8', 'Q1.A'],
+  ...['Q2.1', 'Q2.2', 'Q2.3', 'Q2.4', 'Q2.5', 'Q2.6', 'Q2.7', 'Q2.8', 'Q2.9', 'Q2.A'],
+  ...['Q3.1', 'Q3.2', 'Q3.3', 'Q3.4', 'Q3.5', 'Q3.6', 'Q3.7', 'Q3.8', 'Q3.9', 'Q3.10', 'Q3.A', 'Q3.B'],
+];
 
 /**
  * Anchorage's Seal, board, and sail out until the lookout calls sails (as tools/battletest.mjs); fire
