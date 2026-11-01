@@ -1,3 +1,5 @@
+import { GUILDCREST_ANCHORS } from '../islands/guildcrest/anchors';
+import { guildcrestHeight } from '../islands/guildcrest/height';
 import { readFileSync } from 'node:fs';
 import { Box3, type BufferGeometry } from 'three/webgpu';
 import { describe, expect, it } from 'vitest';
@@ -76,6 +78,7 @@ const HIGH_WATER = ALL_WAVES.reduce((h, w, i) => h + w.a * SEA_STATES[DEFAULT_SE
 const STAGE = MERIDIAN.pads.tavern.height + 0.6;
 const kettle = TB.anchors.extraFisher;
 const salter = KEELHAVEN_ANCHORS.extraFisher;
+const kenna = GUILDCREST_ANCHORS.extraShepherd;
 
 /** Each seated NPC: its body, its seat in its frame, and the world's height under the seat. */
 const SEATS: Record<string, { body: NpcId; seat: () => Seat; ground: number }> = {
@@ -157,6 +160,11 @@ const SEATS: Record<string, { body: NpcId; seat: () => Seat; ground: number }> =
     body: 'kh_salter',
     seat: blockSeat(salter.y, keelhavenHeight(salter.x, salter.z)),
     ground: lowestUnder(salter, keelhavenHeight),
+  },
+  'Kenna on her granite seat on the glen (Guildcrest)': {
+    body: 'gc_shepherd',
+    seat: blockSeat(kenna.y, guildcrestHeight(kenna.x, kenna.z)),
+    ground: lowestUnder(kenna, guildcrestHeight),
   },
 };
 
