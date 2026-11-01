@@ -545,6 +545,7 @@ describe('the market at every stall (MODEL-MARKET.md §2, §5)', () => {
   it('has a stall on every island, and only Gilda’s runs the story', () => {
     expect(MARKET_STALLS.map((s) => s.island).sort()).toEqual([
       'anchorage',
+      'guildcrest',
       'keelhaven',
       'meridian',
       'thousand-bough',

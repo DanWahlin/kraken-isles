@@ -80,13 +80,14 @@ export class Dialogue {
 
   /** Starts loading lines that are coming up (a conversation's, an island's welcome). */
   preload(ids: readonly string[]): void {
-    this.audio?.preloadVoice(ids);
+    this.audio?.preloadVoice(ids.filter((id) => !this.hud.line(id)?.pending));
   }
 
   /** Waits for a line's voice (up to VOICE_WAIT_MS, or a press); true if it can play with its caption. */
   private async voiceFor(id: string, token: number): Promise<boolean> {
     const audio = this.audio;
-    if (!audio) return false;
+    // A pending line has no voice yet: its caption shows at once.
+    if (!audio || this.hud.line(id)?.pending) return false;
     if (audio.voiceReady(id)) return true;
     await new Promise<void>((resolve) => {
       this.wake = resolve;

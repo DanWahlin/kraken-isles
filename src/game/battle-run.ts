@@ -71,6 +71,8 @@ export class BattleRun {
   private endedAt = 0;
   private hudAt = -1;
   private quizWave = -1;
+  /** The last wave whose crew line was said (each wave's once, as it sails in). */
+  private lineWave = -1;
   private musicInBattle = false;
   private navHeld = false;
   private wasDirecting = false;
@@ -275,6 +277,7 @@ export class BattleRun {
   private finish(how: 'won' | 'skipped'): void {
     this.ended = how;
     this.endedAt = this.t;
+    if (how === 'won' && this.plan.wonLine) this.say(this.plan.wonLine);
     this.setMusic(false);
     this.o.onEnd(how);
   }
@@ -391,6 +394,12 @@ export class BattleRun {
         this.quizWave = snap.wave;
         const id = this.plan.waves[snap.wave]?.quiz ?? '';
         this.hud.setQuiz((QUIZZES.get(id) as ChoiceQuiz | undefined) ?? null);
+      }
+      // The crew's line as a wave sails in (battle 4 on), once each.
+      if (this.started && snap.phase === 'intro' && snap.wave > this.lineWave) {
+        this.lineWave = snap.wave;
+        const line = this.plan.waves[snap.wave]?.line;
+        if (line) this.say(line);
       }
       const won = snap.phase === 'won';
       this.hud.show(

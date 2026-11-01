@@ -394,18 +394,22 @@
       "passage-keelhaven-guildcrest": {
         "chapter": "03",
         "won": "Three habits sank, and the evidence held. Guildcrest lies ahead, Captain.",
+        "wonLine": "b4.juno.won",
         "waves": [
           {
             "quiz": "N3.1",
-            "raiders": ["Confident Guess", "Confident Guess"]
+            "raiders": ["Confident Guess", "Looks Fine"],
+            "line": "b4.juno.sails"
           },
           {
             "quiz": "N3.2",
-            "raiders": ["First Take", "Confident Guess"]
+            "raiders": ["First Take", "Green Enough"],
+            "line": "b4.wingman.wave2"
           },
           {
             "quiz": "N3.3",
-            "raiders": ["Unchecked", "First Take"]
+            "raiders": ["Unchecked", "No Second Look"],
+            "line": "b4.wingman.wave3"
           }
         ]
       }

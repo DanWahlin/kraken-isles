@@ -32,6 +32,9 @@ const DENIED: readonly { what: RegExp; except?: readonly string[] }[] = [
   { what: /\b517[34]\b/, except: ['src/world/terrain/rock-assets.ts'] },
   { what: /['"`](Lightweight|Versatile|Powerful)['"`]/ },
   { what: /['"`](chat|project|projects)['"`]/, except: [CREDITS] },
+  // Chapter 04's files, agents and words (Guildcrest): the pack's signs and lines name them.
+  { what: /book-app-reviewer|book-app-explainer|SKILL\.md|\.github\/agents|\.github\/skills/ },
+  { what: /['"`](skill|skills|agent|agents|customize)['"`]/i },
   // Course words that used to be on signs, plates, flags, the crane's arm and the tracker.
   {
     what: /Base branch|Default branch|Repository:|PROMPT BOX|REYES|Port Meridian’s next|GitHub Copilot app|Chronicle/,

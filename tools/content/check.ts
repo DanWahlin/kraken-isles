@@ -960,9 +960,11 @@ export function checkContent(
   for (const [b, x] of Object.entries(h.battles)) {
     for (const [k, id] of Object.entries(x.kraken?.lines ?? {}))
       hook(`${at('battles', b)}.kraken.lines.${k}`, id);
-    if (x.wonLine) hook(`${at('battles', b)}.wonLine`, x.wonLine);
+    // A battle's crew lines may be pending (written, not voiced yet): the battle shows them as
+    // captions on their own (the voice manifest holds their text, `pending`), never waiting on a voice.
+    if (x.wonLine) hook(`${at('battles', b)}.wonLine`, x.wonLine, true);
     x.waves.forEach((w, i) => {
-      if (w.line) hook(`${at('battles', b)}.waves[${i}].line`, w.line);
+      if (w.line) hook(`${at('battles', b)}.waves[${i}].line`, w.line, true);
       if (!ids.quiz.has(w.quiz))
         issue(
           'course.json',

@@ -53722,6 +53722,38 @@
         }
       ],
       "voice": "en-GB-Ada:DragonHDLatestNeural"
+    },
+    {
+      "id": "b4.juno.sails",
+      "speaker": "Juno",
+      "text": "Sails off the bow, Captain! The lead ship’s name board says Confident Guess.",
+      "duration": 5.76,
+      "words": [],
+      "pending": true
+    },
+    {
+      "id": "b4.wingman.wave2",
+      "speaker": "Wingman",
+      "text": "First Take! They never look back at their own work.",
+      "duration": 4.8,
+      "words": [],
+      "pending": true
+    },
+    {
+      "id": "b4.wingman.wave3",
+      "speaker": "Wingman",
+      "text": "Unchecked! Nobody read their checks.",
+      "duration": 3.2,
+      "words": [],
+      "pending": true
+    },
+    {
+      "id": "b4.juno.won",
+      "speaker": "Juno",
+      "text": "Three habits sank, and the evidence held. Guildcrest lies ahead, Captain.",
+      "duration": 5.12,
+      "words": [],
+      "pending": true
     }
   ]
 }

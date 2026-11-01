@@ -5,7 +5,6 @@ import { COURSES, DEFAULT_COURSE_ID, LEGACY_COURSE } from '../course/catalog';
 import { activateCourse } from '../course/load';
 import type { CoursePack } from '../course/pack';
 import { puzzleQuest } from '../course/puzzles';
-import { ISLAND_REGISTRY } from '../islands/registry';
 import { pendingBattle } from './battles';
 import {
   STORY_CONDITIONS,
@@ -80,8 +79,6 @@ describe('the Copilot app course’s story', () => {
       const pack = readCoursePack(c.id);
       for (const { island } of c.islands) {
         if (!Object.hasOwn(STORY_CONDITIONS, island)) continue;
-        // An island still being built (not in the registry) whose quests the pack doesn't hold yet.
-        if (!Object.hasOwn(ISLAND_REGISTRY, island) && !pack.quests[island]) continue;
         const story = pack.quests[island]?.story;
         expect(story, `${c.id} ${island}`).toBeDefined();
         for (const n of STORY_CONDITIONS[island as StoryIsland])

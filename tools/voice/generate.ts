@@ -8,7 +8,7 @@ import { promisify } from 'node:util';
 import { parseKeyValueEnv, redactSecretValues } from '../../src/audio/voice/env';
 import { rateFactor, wordsFromAlignment, type CharacterAlignment } from '../../src/audio/voice/alignment';
 import { courseArg, coursePaths } from '../course-pack/read';
-import { ELEVENLABS_MODEL, lineHash, readLines, type VoiceLineDefinition } from './lines';
+import { ELEVENLABS_MODEL, lineHash, pendingLines, readLines, type VoiceLineDefinition } from './lines';
 import { readingTime } from '../../src/audio/voice/reading';
 
 interface WordTiming {
@@ -88,6 +88,11 @@ async function check(): Promise<void> {
       if (line.tts !== 'elevenlabs') staleAzure.push(line.id);
     }
   }
+  for (const line of pendingLines(course)) {
+    const m = made.get(line.id) as unknown as Record<string, unknown> | undefined;
+    if (!m || JSON.stringify(m) !== JSON.stringify(pendingCaption(line)))
+      stale.push(`${line.id} (pending caption: --pending)`);
+  }
   // `--list-stale`: just the Azure lines to make again, comma-separated (the weekly refresh's step 6).
   if (process.argv.includes('--list-stale')) {
     console.log(staleAzure.join(','));
@@ -114,6 +119,29 @@ const caption = (line: VoiceLineDefinition) => ({
   duration: readingTime(line.text),
   words: [] as WordTiming[],
 });
+
+/**
+ * A pending line's caption (written, not voiced yet): its words at once for its reading time, with no
+ * audio files, so the game shows it on its own and never waits on a voice (a battle's crew lines).
+ */
+const pendingCaption = (line: VoiceLineDefinition) => ({ ...caption(line), pending: true as const });
+
+/** The manifest's voiced lines and the pending lines' captions after them (a pending caption is remade each time). */
+function withPending(voiced: readonly { readonly id: string; readonly pending?: boolean }[]) {
+  return [...voiced.filter((l) => !l.pending), ...pendingLines(course).map(pendingCaption)];
+}
+
+/** `--pending`: writes only the pending lines' captions into the manifest (no speech service). */
+async function writePending(): Promise<void> {
+  const manifestPath = join(outDir, 'manifest.json');
+  const m = JSON.parse(await readFile(manifestPath, 'utf8')) as {
+    lines: { id: string; pending?: boolean }[];
+  };
+  await writeJson(manifestPath, { ...m, lines: withPending(m.lines) });
+  console.log(
+    `${pendingLines(course).length} pending captions in courses/${course}/public/voice/manifest.json.`,
+  );
+}
 
 /**
  * A text-only course (`"voice": false`): no speech service, no audio. The captions go where the voice
@@ -152,6 +180,7 @@ async function checkCaptions(): Promise<void> {
 async function main(): Promise<void> {
   if (!voiced()) return process.argv.includes('--check') ? checkCaptions() : writeCaptions();
   if (process.argv.includes('--check')) return check();
+  if (process.argv.includes('--pending')) return writePending();
   const only = parseOnly(process.argv.slice(2));
   const env = await loadEnv();
   const secrets = [...env.values.values()];
@@ -200,7 +229,7 @@ async function main(): Promise<void> {
   await writeJson(manifestPath, {
     generatedAt: new Date().toISOString(),
     set: data.set,
-    lines: manifestLines,
+    lines: withPending(manifestLines),
   });
   if (fallbackSpeakers.size)
     console.log(`Primary voice failed for ${[...fallbackSpeakers].join(', ')}; used their fallback voices.`);

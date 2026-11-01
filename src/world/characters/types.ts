@@ -67,6 +67,21 @@ const NPC_IDS = [
   'kh_salter',
   'kh_kit',
   'kh_skipper',
+  // Guildcrest (Chapter 04): the cast, Moira's market body, and the islanders.
+  'elspeth',
+  'aidan',
+  'brigid',
+  'ewan',
+  'fergus',
+  'rory',
+  'seren',
+  'gc_market',
+  'gc_fiddler',
+  'gc_whistler',
+  'gc_kid',
+  'gc_copyist',
+  'gc_miller',
+  'gc_shepherd',
 ] as const;
 export const CHARACTER_BODIES = [...PLAYER_BODIES, ...NPC_IDS] as const;
 export const CHARACTER_CLIPS = [

@@ -17,6 +17,8 @@ export interface SubtitleLine {
   words: { word: string; start: number; end: number }[];
   mouthCues?: MouthCue[];
   expression?: FaceExpression;
+  /** Written, not voiced yet: its caption shows on its own (no audio to wait for). */
+  pending?: true;
 }
 
 /** A terminal panel line; `tone` picks the ink (command, your fork, someone else's, success). */

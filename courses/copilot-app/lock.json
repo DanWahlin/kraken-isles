@@ -1804,26 +1804,31 @@
     "course/ch04/app-custom-agent-picker.webp": {
       "upstream": "04-skills-custom-agents/assets/app-custom-agent-picker.webp",
       "sha256": "1d452eddfdc45b113987155a7388790b7b580280e0a4f7e1d20463a2148e492a",
+      "pinned": true,
       "bytes": 13602
     },
     "course/ch04/app-customize-skills.webp": {
       "upstream": "04-skills-custom-agents/assets/app-customize-skills.webp",
       "sha256": "2edd7f1879fa16205b2cc693a44e0e552d579be4be01e075fb10caa2cdd36897",
+      "pinned": true,
       "bytes": 52238
     },
     "course/ch04/hiring-specialists-analogy.webp": {
       "upstream": "04-skills-custom-agents/assets/hiring-specialists-analogy.webp",
       "sha256": "f6ca9cb588cb2e67afb8e8eaa7b7bf43675b6c7eb8362d26c0573b338313fd23",
+      "pinned": true,
       "bytes": 120114
     },
     "course/ch04/skill-vs-one-off-prompt.webp": {
       "upstream": "04-skills-custom-agents/assets/skill-vs-one-off-prompt.webp",
       "sha256": "03b8e7dcc4a2b919026fbbe73be79cc340f7750d316c2baf4ca65e3d7371ceec",
+      "pinned": true,
       "bytes": 57634
     },
     "course/ch04/song-chart-skills.webp": {
       "upstream": "04-skills-custom-agents/assets/song-chart-skills.webp",
       "sha256": "e25c1aec1e737067af9419c75065b5777750ffdc05ec5f22ed455a276632c77d",
+      "pinned": true,
       "bytes": 138964
     },
     "course/shared/app-github-copilot-app.webp": {

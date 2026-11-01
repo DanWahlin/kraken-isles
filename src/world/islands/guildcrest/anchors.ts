@@ -1,7 +1,10 @@
 import type { VillageAnchor } from '../../village/kit';
 import { SIT } from '../../characters/seat-fit';
+import { BOOTH_LAYOUT } from '../../market-stall/booth';
+import { stallToWorld } from '../../market-stall/layout';
 import { guildcrestHeight } from './height';
 import { CIRCUIT_SPOTS } from './circuit';
+import { GUILDCREST_BOOTH } from './market';
 import { headingBetween, toWorld, type Uv } from './layout';
 
 /**
@@ -67,10 +70,20 @@ const LOOK = {
   garth: { u: 22, v: 130 },
 } as const;
 
+/** Behind Moira's counter (the booth builds from `GUILDCREST_BOOTH`). */
+const vendor = stallToWorld(GUILDCREST_BOOTH, BOOTH_LAYOUT.vendor.x, BOOTH_LAYOUT.vendor.z);
+
 export const GUILDCREST_ANCHORS = {
   // The captain, and the stops in the course's order (spec §4.1).
   landing: anchor(-190, 16, 2.2, LOOK.lyra),
   moira: anchor(-212, 24, 2.4, LOOK.landing),
+  // The Model Market's keeper behind the counter (where Moira stands).
+  marketKeeper: {
+    x: vendor.x,
+    y: GUILDCREST_BOOTH.y + BOOTH_LAYOUT.vendor.y,
+    z: vendor.z,
+    heading: GUILDCREST_BOOTH.heading,
+  },
   lyra: anchor(-166, 36, 3.0, LOOK.landing),
   chartStand: anchor(-162, 40, 3.0, LOOK.landing),
   elspeth: anchor(-102, 40, 10, LOOK.charterStone),
