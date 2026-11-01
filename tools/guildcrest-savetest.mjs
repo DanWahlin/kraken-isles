@@ -44,14 +44,14 @@ const shot = (name) => page.screenshot({ path: `${out}/${tag}-${name}.jpg`, qual
 const playing = () =>
   page.waitForFunction(() => window.__flow.getState().screen === 'playing', null, { timeout: 180_000 });
 
-/** By the chart to an island's quay, past its arrival and welcome. */
+/** By the chart (the game's own jump: it waits for the island's warm behind its fade), past its arrival and welcome. */
 async function travel(id) {
-  await page.evaluate((id) => {
-    const s = window.__flow.debugSession;
-    const q = s.islandQuay(id);
-    s.travel(q.x, q.z, q.heading);
-  }, id);
-  await page.waitForFunction((id) => window.__flow.debugSession.island === id, id, { timeout: 180_000 });
+  await page.evaluate((id) => window.__flow.travelTo(`island:${id}`), id);
+  await page.waitForFunction(
+    (id) => window.__flow.getState().screen === 'playing' && window.__flow.debugSession?.island === id,
+    id,
+    { timeout: 180_000 },
+  );
   await page.waitForTimeout(2500);
   await S('s.debug.skipArrival()');
   await calm();

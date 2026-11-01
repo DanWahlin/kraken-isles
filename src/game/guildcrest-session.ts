@@ -6,7 +6,14 @@ import { naturalWaterAt } from '../world/islands/fresh-water-natural';
 import { GUILDCREST_ANCHORS } from '../world/islands/guildcrest/anchors';
 import { guildcrestWater } from '../world/islands/guildcrest/height';
 import type { GuildcrestWorld } from '../world/islands/guildcrest/index';
-import { CHARTER_STONE, GUILDCREST, SQUARE, toFrame, toWorld } from '../world/islands/guildcrest/layout';
+import {
+  CHARTER_STONE,
+  GUILDCREST,
+  headingUv,
+  SQUARE,
+  toFrame,
+  toWorld,
+} from '../world/islands/guildcrest/layout';
 import { createBottles, type BottleSite } from '../world/sites/bottles';
 import { loadVillageKit } from '../world/village/kit';
 import { DeckIndex } from '../world/village/walk-decks';
@@ -391,6 +398,24 @@ export function createGuildcrestContent(host: IslandContentHost): GuildcrestCont
       seal: () => circuits.seal(),
       lamp: (key: string) => circuits.debug.lamp(key),
       sealing: () => circuits.debug.sealing(),
+      /** Every third tread's middle of each railed flight, and the way it climbs (tests push at its rails). */
+      railedTreads: () =>
+        (world?.works.flights ?? []).flatMap(({ a, e }) => {
+          const out: { x: number; y: number; z: number; heading: number }[] = [];
+          const up = e[2] > a[2];
+          const heading = up ? headingUv(e[0] - a[0], e[1] - a[1]) : headingUv(a[0] - e[0], a[1] - e[1]);
+          for (let t = 0.15; t < 0.9; t += 0.25) {
+            const p = toWorld(a[0] + (e[0] - a[0]) * t, a[1] + (e[1] - a[1]) * t);
+            out.push({ ...p, y: a[2] + (e[2] - a[2]) * t, heading });
+          }
+          return out;
+        }),
+      /** Where each flight comes out at its top: where a climber arrives. */
+      stairHeads: () =>
+        (world?.works.flights ?? []).map(({ a, e }) => {
+          const top = e[2] > a[2] ? e : a;
+          return { ...toWorld(top[0], top[1]), y: top[2] };
+        }),
       /** The island's lettered signs (their sign names, place and facing): tests look at each. */
       signs: () =>
         world?.works.signs.map((g) => ({ lines: g.lines, x: g.x, y: g.y, z: g.z, heading: g.heading })) ?? [],

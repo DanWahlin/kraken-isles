@@ -6,8 +6,14 @@ import { BERTH, DEPARTURE, headingBetween, headingUv, INN, LANDING, LANE, QUAY, 
  * mouth, and the turning room. Plain data (no three.js): the registry, the tests and the tools import it.
  */
 
-/** Out of the loch toward its mouth (bearing 323°): the bow's heading at the berth. */
+/** Out of the loch toward its mouth (bearing 323°): the bow's heading as you put out. */
 const SEAWARD = headingUv(-1, 0);
+/**
+ * Up the loch toward its head: the bow's heading at the berth, as you come in from the mouth. This lays
+ * the brigantine's gangway on the quay (bow to the mouth, it went down into the loch: you couldn't
+ * board from the quay).
+ */
+const UP_LOCH = headingUv(1, 0);
 
 const berth = toWorld(BERTH.u, BERTH.v);
 const departure = toWorld(DEPARTURE.u, DEPARTURE.v);
@@ -29,8 +35,8 @@ const camAt = (u: number, y: number, v: number, tu: number, ty: number, tv: numb
 };
 
 export const GUILDCREST_HARBOR = {
-  /** Your ship alongside the quay: port side to its face, bow to the loch's mouth. */
-  berth: { x: berth.x, z: berth.z, heading: SEAWARD },
+  /** Your ship alongside the quay: her gangway's side to its face, bow up the loch. */
+  berth: { x: berth.x, z: berth.z, heading: UP_LOCH },
   /** Off the quay as you board, bow to the mouth, inside the turning room's reach. */
   departure: { x: departure.x, z: departure.z, heading: SEAWARD },
   /** Where you step ashore, facing the inn at the quay's head. */

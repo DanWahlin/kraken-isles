@@ -42,6 +42,8 @@ export interface GcOut {
   chimneys: { x: number; y: number; z: number }[];
   /** Lettering with the pack's words (`quests/guildcrest.json` → `signs`), painted by the world's sign set. */
   signs: GcSign[];
+  /** Each railed flight of steps, foot and head (frame u, v and the walk's y): tests push at its rails. */
+  flights: { a: readonly [number, number, number]; e: readonly [number, number, number] }[];
 }
 
 /** What the story shows: the book's new page, Rory's banner, the Seal's banners on the ridge. */
@@ -105,6 +107,7 @@ export function makeOut(): GcOut {
     perches: [],
     chimneys: [],
     signs: [],
+    flights: [],
   };
 }
 
@@ -351,6 +354,7 @@ export function flight(
     );
   }
   out.decks.push(lineDeck(a, e, width / 2, false));
+  out.flights.push({ a, e });
   // Rails both sides, a hand's width in from the treads' ends.
   const nu = -dv;
   const nv = du;

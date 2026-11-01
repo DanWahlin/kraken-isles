@@ -9,7 +9,8 @@
 // Book's lap (a wrong pick first at each choice; cards A4.2 Later, A4.3), Ewan's chained library, Fergus
 // and the Journeyman's Toolbelt's lap (a wrong tile and a wrong pick first; cards A4.4, A4.5), Seren's
 // Toolbelt Trial and the Seal (the bell, every station's lamp lit), and the optional assignment (Q4.A).
-// Then the chests, bottles and starfish. --battle=none goes to Guildcrest by the chart instead.
+// Then the chests, the bottles (each read where it lies) and the starfish (each walked onto). --battle=none
+// goes to Guildcrest by the chart instead.
 // Each NPC is walked up to from a free side and talked to with E; quizzes are answered, cards confirmed.
 // Fails on any console error, a missing beat, a quest out of order or a hitch after warm-up.
 //   node tools/guildcresttest.mjs [--base=http://127.0.0.1:5301] [--out=<dir>] [--tier=high] [--webgl]
@@ -734,6 +735,27 @@ for (const b of bottles) {
 }
 const read = await D("d.bottles().filter((b) => b.id.startsWith('B4.') && b.read).length");
 if (read !== 4) fail(`${read} of 4 bottles read`);
+
+// Each starfish picked up by walking onto it: from 3 m off, W toward it until it's in the save.
+const found = () => S(() => window.__dev.learn.progress.data.starfish.filter((id) => id.startsWith('sf.g.')));
+for (const sf of starfish) {
+  let got = false;
+  for (const a of [0, Math.PI / 2, Math.PI, -Math.PI / 2]) {
+    if (got) break;
+    const x = sf.x + Math.sin(a) * 3;
+    const z = sf.z + Math.cos(a) * 3;
+    await S(([x, z, h, y]) => window.__dev.session().debug.teleport(x, z, h, y), [x, z, a + Math.PI, sf.y]);
+    await page.waitForTimeout(400);
+    for (let k = 0; k < 14 && !got; k++) {
+      await S((ms) => window.__dev.hold(['KeyW'], ms), 120);
+      got = (await found()).includes(sf.id);
+    }
+  }
+  if (!got) fail(`starfish ${sf.id}: walking onto it didn't pick it up`);
+  else await shot(`starfish-${sf.id}`);
+}
+const stars = (await found()).length;
+if (stars !== 5) fail(`${stars} of 5 starfish found`);
 
 for (const [what, list] of [
   ['quizzes', quizOrders],

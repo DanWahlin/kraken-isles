@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { windAt } from '../../wind';
 import { windOnBow } from '../../ship/dynamics';
+import { GANGWAY_FOOT } from '../../ship/brigantine';
 import { GUILDCREST_HARBOR as H } from './harbor';
 import { guildcrestHeight, guildcrestMasks, guildcrestWater } from './height';
 import { BEN, GUILDCREST as G, toFrame, toWorld, WATER } from './layout';
@@ -138,6 +139,16 @@ describe('Guildcrest’s loch (the ship’s way in)', () => {
         expect(guildcrestHeight(x, z)).toBeLessThan(-4);
       }
     expect(guildcrestHeight(H.landing.x, H.landing.z)).toBeGreaterThan(H.deck - 0.4);
+  });
+
+  it('lays the gangway on the quay at the berth', () => {
+    // The brigantine's gangway foot in its own frame, at the berth (session.ts atBerth).
+    const { berth } = H;
+    const lx = GANGWAY_FOOT.x;
+    const lz = GANGWAY_FOOT.z;
+    const x = berth.x + Math.cos(berth.heading) * lx + Math.sin(berth.heading) * lz;
+    const z = berth.z - Math.sin(berth.heading) * lx + Math.cos(berth.heading) * lz;
+    expect(guildcrestHeight(x, z)).toBeGreaterThan(H.deck - 0.4);
   });
 
   it('sails in and out on beam reaches (≥ 60° off the wind; P08)', () => {

@@ -43,13 +43,16 @@ at('brae.turn', -48, 80);
 at('brae.2', -33, 93);
 at('gatehouse', -18, 106);
 path('square', 'square.ne', 'brae.foot', 'brae.1', 'brae.turn', 'brae.2', 'gatehouse');
-// The cloister's walks: in from the gatehouse to the scriptorium's door, then round the garth.
+// The cloister's walks: in from the gatehouse to the scriptorium's door, then round the garth. The
+// west and north walks' lines keep to the arcade's side of their middles: Brigid stands mid-walk on the
+// west (8, 121), Ewan and Brother Cuthbert by the north range (v 144.6), and a walker heading straight
+// at the next corner stopped head-on against her.
 at('gate.w', -17, 118);
 at('slype', 0, 118);
-at('walk.w', 8, 118);
-at('walk.sw', 8, 116);
-at('walk.nw', 8, 144);
-at('walk.ne', 36, 144);
+at('walk.w', 9, 118);
+at('walk.sw', 9, 116);
+at('walk.nw', 9, 143.2);
+at('walk.ne', 36, 143.2);
 at('walk.se', 36, 116);
 path(
   'gatehouse',
@@ -89,6 +92,11 @@ at('stair.land', 78.8, 130);
 at('stair.2', 77.6, 125.5);
 at('terrace', 72, 120);
 path('yard.west', 'stair.top', 'stair.1', 'stair.land', 'stair.2', 'terrace');
+// From the brae's switchback east over the moor, across the burn and up the glen to Kenna's seat.
+at('glen.w', -10, 86);
+at('glen.ford', 12, 62);
+at('glen.seat', 40, 24);
+path('brae.turn', 'glen.w', 'glen.ford', 'glen.seat');
 
 export const GUILDCREST_WAYS: IslandWays = {
   walk: { nodes, legs },
