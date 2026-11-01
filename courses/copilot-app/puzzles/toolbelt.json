@@ -1,0 +1,345 @@
+{
+  "$schema": "../../schemas/puzzle-circuit.schema.json",
+  "id": "P4.2",
+  "mechanic": "circuit",
+  "chapter": "04-skills-custom-agents",
+  "quest": "Q4.7",
+  "circuit": "belt",
+  "$comment": "The Journeyman's Toolbelt round the guildhall yard (docs/specs/ISLAND-04-guildcrest.md §5.3): Rory's indenture (the agent profile), his toolbelt (tools: read and search), the proof, the hall's doors (quit and reopen), the roll call (/agent), his explanation at the bench, and the tests back to the default agent. The places, lamps and controls are the game's; every word is this file's.",
+  "places": {
+    "indenture": {
+      "acts": "indenture",
+      "name": "The indenture",
+      "means": "The agent profile: `.github/agents/book-app-explainer.agent.md`",
+      "cite": "agents"
+    },
+    "rack": {
+      "acts": "rack",
+      "name": "The tool rack",
+      "means": "`tools`: the tools the agent can use",
+      "cite": "explainer"
+    },
+    "proof": {
+      "acts": "proof",
+      "name": "The proof board",
+      "means": "Inspect **Changes**",
+      "cite": "explainer"
+    },
+    "door": {
+      "acts": "door",
+      "name": "The hall’s doors",
+      "means": "The app loads custom agents when it starts",
+      "cite": "explainer"
+    },
+    "roll": {
+      "acts": "roll",
+      "name": "The roll board",
+      "means": "Pick it with `/agent` or the agent picker",
+      "cite": "explainer"
+    },
+    "bench": {
+      "acts": "bench",
+      "name": "The reading bench",
+      "means": "Ask it to explain the code",
+      "cite": "explainer"
+    },
+    "testBench": {
+      "acts": "testBench",
+      "name": "The test bench",
+      "means": "Run the tests with the default agent",
+      "cite": "cantTest"
+    }
+  },
+  "laps": [
+    {
+      "id": "hire",
+      "quest": "Q4.7",
+      "step": "belt",
+      "solved": "solved",
+      "close": "fergus.belt.solved",
+      "title": "The Journeyman’s Toolbelt: a read-only explainer",
+      "order": "book-app-explainer · explain without changing files",
+      "stations": [
+        {
+          "id": "profile",
+          "at": "indenture",
+          "kind": "choose",
+          "title": "Write the agent profile",
+          "prompt": "Rory’s indenture needs its parts. What goes in it?",
+          "line": "gc.fergus.indenture",
+          "options": [
+            {
+              "id": "parts",
+              "text": "A name, a description, a tools list, and his instructions below the frontmatter",
+              "right": true,
+              "result": "Signed: `book-app-explainer`, with a role and an answer format."
+            },
+            {
+              "id": "mode",
+              "text": "A session mode and a model",
+              "reason": "A custom agent isn’t a different session mode, or necessarily a different model.",
+              "backTo": "indenture",
+              "cite": "agents"
+            },
+            {
+              "id": "only",
+              "text": "Only his instructions",
+              "reason": "Without `name` and `description`, the agent picker can’t show him. Without `tools`, he gets every tool.",
+              "backTo": "indenture",
+              "cite": "agents"
+            }
+          ],
+          "hints": [
+            "What does the profile table list?",
+            "Frontmatter first, then the Markdown below.",
+            "A name, a description, a tools list, and his instructions."
+          ],
+          "cite": "agents"
+        },
+        {
+          "id": "tools",
+          "at": "rack",
+          "kind": "tiles",
+          "title": "Choose the tools",
+          "prompt": "Fit Rory’s toolbelt for one job: explain the Book App without changing it.",
+          "line": "gc.fergus.rack",
+          "tiles": [
+            {
+              "id": "read",
+              "text": "Read files (`read`)",
+              "sticks": true
+            },
+            {
+              "id": "search",
+              "text": "Search files (`search`)",
+              "sticks": true
+            },
+            {
+              "id": "edit",
+              "text": "Edit files",
+              "sticks": false,
+              "reason": "An explainer doesn’t change files.",
+              "cite": "explainer"
+            },
+            {
+              "id": "shell",
+              "text": "Run commands",
+              "sticks": false,
+              "reason": "He can’t run commands. That’s the default agent’s job.",
+              "cite": "explainer"
+            },
+            {
+              "id": "web",
+              "text": "Use external services",
+              "sticks": false,
+              "reason": "His instructions say no external services.",
+              "cite": "explainer"
+            },
+            {
+              "id": "none",
+              "text": "Leave the tools list out",
+              "sticks": false,
+              "reason": "Omitting `tools` would allow all available tools.",
+              "cite": "explainer"
+            }
+          ],
+          "cite": "explainer"
+        },
+        {
+          "id": "proof",
+          "at": "proof",
+          "kind": "choose",
+          "title": "Inspect Changes",
+          "prompt": "The proof board shows the new profile. What do you check?",
+          "options": [
+            {
+              "id": "tools",
+              "text": "That `tools` holds only `read` and `search`",
+              "right": true,
+              "result": "Read and search: nothing else on the belt."
+            },
+            {
+              "id": "long",
+              "text": "That it’s long enough",
+              "reason": "Length isn’t the check. The tools list is.",
+              "backTo": "proof",
+              "cite": "explainer"
+            },
+            {
+              "id": "skill",
+              "text": "That Copilot also updated the skill",
+              "reason": "This step creates one file. Send any other edits back.",
+              "backTo": "rack",
+              "cite": "explainer"
+            }
+          ],
+          "hints": [
+            "Which line is the limit?",
+            "Look at `tools`.",
+            "Check that `tools` holds only `read` and `search`."
+          ],
+          "cite": "explainer"
+        },
+        {
+          "id": "load",
+          "at": "door",
+          "kind": "choose",
+          "title": "Load the new agent",
+          "prompt": "Rory waits outside. The hall opens its doors only at dawn. How do you bring him in?",
+          "line": "gc.fergus.door",
+          "options": [
+            {
+              "id": "restart",
+              "text": "Wait for work in every session to finish, quit the app, and open it again",
+              "right": true,
+              "result": "The app loads custom agents when it starts."
+            },
+            {
+              "id": "window",
+              "text": "Close the window",
+              "reason": "Closing a window isn’t the same as quitting the app.",
+              "backTo": "door",
+              "cite": "missing"
+            },
+            {
+              "id": "main",
+              "text": "Start a new session from `main`",
+              "reason": "Don’t start from `main` again to reload uncommitted files.",
+              "backTo": "door",
+              "cite": "missing"
+            }
+          ],
+          "hints": [
+            "When does the app load custom agents?",
+            "At dawn: when the app starts.",
+            "Let the work finish, quit the app, and open it again."
+          ],
+          "cite": "explainer"
+        },
+        {
+          "id": "select",
+          "at": "roll",
+          "kind": "choose",
+          "title": "Select the agent",
+          "prompt": "Call him to the bench.",
+          "options": [
+            {
+              "id": "agent",
+              "text": "Type `/agent`, pick **book-app-explainer**, send it, and check the agent picker shows him",
+              "right": true,
+              "result": "The agent picker below the prompt box reads `book-app-explainer`."
+            },
+            {
+              "id": "slash",
+              "text": "Type `/book-app-explainer`",
+              "reason": "That’s how a skill shows in the `/` menu. You select a custom agent with `/agent`.",
+              "backTo": "roll",
+              "cite": "explainer"
+            },
+            {
+              "id": "customize",
+              "text": "Find him in **Customize**",
+              "reason": "You find skills in **Customize**. You select custom agents with `/agent` or the agent picker.",
+              "backTo": "roll",
+              "cite": "explainer"
+            }
+          ],
+          "hints": [
+            "Which slash command selects an agent?",
+            "Then check the agent picker below the prompt box.",
+            "Type `/agent`, pick **book-app-explainer**, and send it."
+          ],
+          "cite": "explainer"
+        },
+        {
+          "id": "explain",
+          "at": "bench",
+          "kind": "watch",
+          "title": "Ask it to explain",
+          "prompt": "Rory sits at the bench with `App.tsx`.",
+          "line": "gc.rory.01",
+          "action": "Ask Rory how the Unread filter reaches the stats",
+          "text": "Rory traces `filters` through `filterBooks` to `filteredBooks`, then to `ReadingStats` and the book cards, in his four-part format. Nothing on the bench changes.",
+          "seconds": 8,
+          "cite": "explainer"
+        },
+        {
+          "id": "tests",
+          "at": "testBench",
+          "kind": "choose",
+          "title": "Run the tests",
+          "prompt": "Now the tests must run. Rory’s belt has no hammer. What do you do?",
+          "line": "gc.fergus.tests",
+          "options": [
+            {
+              "id": "default",
+              "text": "Switch back to the default agent, and run them there",
+              "right": true,
+              "result": "The guild’s own crew runs the tests. Rory’s belt stays as it is."
+            },
+            {
+              "id": "shell",
+              "text": "Give Rory the hammer: add shell access",
+              "reason": "Don’t add shell access just to make the read-only agent run tests.",
+              "backTo": "testBench",
+              "cite": "cantTest"
+            },
+            {
+              "id": "claim",
+              "text": "Ask Rory to say they passed",
+              "reason": "He can inspect tests but can’t run them. Don’t claim tests passed.",
+              "backTo": "testBench",
+              "cite": "explainer"
+            }
+          ],
+          "hints": [
+            "Who can run commands?",
+            "Not the read-only explainer.",
+            "Switch back to the default agent and run the tests there."
+          ],
+          "cite": "cantTest"
+        }
+      ]
+    }
+  ],
+  "lines": {
+    "benchAnswer": "gc.rory.02"
+  },
+  "text": {
+    "lampDark": "○ waiting",
+    "lampRunning": "… running",
+    "lampReady": "✓ ready",
+    "lampNotReady": "✗ not ready",
+    "next": "Next station: {name}",
+    "back": "Back to {name}",
+    "skip": "Skip",
+    "leave": "Leave",
+    "hint": "Hint",
+    "sealIt": "Seal it",
+    "sendBack": "Send it back",
+    "darkLamp": "{name} is still dark.",
+    "sticks": "It sticks.",
+    "noStick": "It won’t stick.",
+    "title": "The Journeyman’s Toolbelt",
+    "intro": "Write the profile, fit the tools, check it, load it, select it, use it, and leave the tests to the default agent.",
+    "hoist": "Hang the belt"
+  },
+  "cites": {
+    "agents": {
+      "anchor": "custom-agents-define-a-role-and-its-tools",
+      "hash": "991db2aad3f9"
+    },
+    "explainer": {
+      "anchor": "exercise-create-a-read-only-book-app-explainer",
+      "hash": "428c8ffecae4"
+    },
+    "missing": {
+      "anchor": "a-changed-skill-or-new-agent-is-missing",
+      "hash": "52e4a7ccaced"
+    },
+    "cantTest": {
+      "anchor": "the-custom-agent-cannot-run-tests",
+      "hash": "9dc08d4ddfcb"
+    }
+  }
+}

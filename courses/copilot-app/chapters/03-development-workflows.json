@@ -1018,6 +1018,132 @@
         "anchor": "running-code-snippets-in-the-terminal",
         "hash": "59d78fd08c7f"
       }
+    },
+    {
+      "id": "N3.1",
+      "type": "scenario",
+      "situation": "A raider calls itself *Confident Guess*. Your tests and build pass on your machine, and you’ve opened a pull request.",
+      "prompt": "Which evidence answers “Does CI agree with your local results?”",
+      "options": [
+        {
+          "id": "checks",
+          "text": "The pull request’s GitHub checks, in **Pull requests**"
+        },
+        {
+          "id": "diff",
+          "text": "The diff in **Changes**",
+          "feedback": "The diff shows whether the change is focused and understandable."
+        },
+        {
+          "id": "browser",
+          "text": "The running app in **Browser**",
+          "feedback": "The preview shows whether it behaves as expected."
+        },
+        {
+          "id": "summary",
+          "text": "Copilot’s summary of the work",
+          "feedback": "A confident response from Copilot isn’t the same as validated software."
+        }
+      ],
+      "answer": "checks",
+      "explain": {
+        "correct": "Right. GitHub checks on the pull request answer whether CI agrees with your local results. Each surface answers its own question.",
+        "wrong": "Which surface does CI report to?"
+      },
+      "hints": [
+        "CI runs on GitHub, not on your machine.",
+        "It reports on the pull request.",
+        "The pull request’s checks, in **Pull requests**."
+      ],
+      "source": {
+        "chapter": "03-development-workflows",
+        "anchor": "core-concept-trust-the-evidence",
+        "hash": "46abd535804e"
+      }
+    },
+    {
+      "id": "N3.2",
+      "type": "scenario",
+      "situation": "A raider calls itself *First Take*. After your fix, the preview in **Browser** still shows the old unread count.",
+      "prompt": "What do you do?",
+      "options": [
+        {
+          "id": "again",
+          "text": "Go round the inner loop again: inspect the diff, fix the change, then test and preview it"
+        },
+        {
+          "id": "open",
+          "text": "Open the pull request anyway",
+          "feedback": "When the evidence shows a problem, repeat the inner loop before you move on."
+        },
+        {
+          "id": "test",
+          "text": "Change the test so it expects the old count",
+          "feedback": "That weakens a test. Fix the code."
+        },
+        {
+          "id": "hope",
+          "text": "Restart the app and hope it updates",
+          "feedback": "The preview is evidence. Find out why it’s wrong."
+        }
+      ],
+      "answer": "again",
+      "explain": {
+        "correct": "Right. The inner loop repeats when the evidence shows a problem: understand, change, inspect, test, build and preview again.",
+        "wrong": "The preview showed a problem. What does the inner loop do then?"
+      },
+      "hints": [
+        "Is the first take good enough?",
+        "The evidence showed a problem.",
+        "Go round the inner loop again."
+      ],
+      "source": {
+        "chapter": "03-development-workflows",
+        "anchor": "inner-loop-develop-and-validate-on-your-machine",
+        "hash": "10a0fe3998b5"
+      }
+    },
+    {
+      "id": "N3.3",
+      "type": "scenario",
+      "situation": "A raider calls itself *Unchecked*. The **Book app web** check fails on your pull request, and the quickest fix edits the test’s expected number.",
+      "prompt": "What do you ask Copilot for?",
+      "options": [
+        {
+          "id": "code",
+          "text": "The root cause, and the smallest code fix that keeps the test"
+        },
+        {
+          "id": "easy",
+          "text": "The quick fix: the check goes green",
+          "feedback": "Don’t weaken the failing test. Fix the code."
+        },
+        {
+          "id": "rerun",
+          "text": "Rerun the check until it passes",
+          "feedback": "A failing check is evidence. Read it, and fix the cause."
+        },
+        {
+          "id": "merge",
+          "text": "Merge it: the local tests pass",
+          "feedback": "CI disagrees with your local results. Find out why first."
+        }
+      ],
+      "answer": "code",
+      "explain": {
+        "correct": "Right. Ask Copilot to explain the root cause and propose the smallest fix, and don’t weaken the failing test.",
+        "wrong": "Should the test change, or the code?"
+      },
+      "hints": [
+        "Who’s wrong: the test, or the code?",
+        "Don’t weaken a test to make a check pass.",
+        "The root cause, and the smallest code fix that keeps the test."
+      ],
+      "source": {
+        "chapter": "03-development-workflows",
+        "anchor": "fix-a-failing-check",
+        "hash": "f2156f9ed67c"
+      }
     }
   ],
   "pages": [

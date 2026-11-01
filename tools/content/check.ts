@@ -960,7 +960,9 @@ export function checkContent(
   for (const [b, x] of Object.entries(h.battles)) {
     for (const [k, id] of Object.entries(x.kraken?.lines ?? {}))
       hook(`${at('battles', b)}.kraken.lines.${k}`, id);
+    if (x.wonLine) hook(`${at('battles', b)}.wonLine`, x.wonLine);
     x.waves.forEach((w, i) => {
+      if (w.line) hook(`${at('battles', b)}.waves[${i}].line`, w.line);
       if (!ids.quiz.has(w.quiz))
         issue(
           'course.json',
