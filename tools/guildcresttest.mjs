@@ -470,7 +470,15 @@ async function fightWave(wave) {
     const quiz = QUIZZES.get(run.plan.waves[wi].quiz);
     return quizOptions(quiz).findIndex((o) => o.id === quiz.answer);
   }, wave);
-  for (let k = 0; k < answerIdx; k++) await press('ArrowDown');
+  // The arrows move the focus from the first choice (E focuses it if nothing has it yet); read where it
+  // is after each press, so a press the page missed is pressed again.
+  const focused = () =>
+    S(() => [...document.querySelectorAll('.bh-options .bh-choice')].indexOf(document.activeElement));
+  if ((await focused()) < 0) await press('ArrowDown');
+  for (let k = 0; k < 8 && (await focused()) !== answerIdx; k++)
+    await press((await focused()) < answerIdx ? 'ArrowDown' : 'ArrowUp');
+  if ((await focused()) !== answerIdx)
+    note(`battle 4 wave ${wave + 1}: focus ${await focused()}, want ${answerIdx}`);
   await page.waitForTimeout(250);
   await page.keyboard.press('KeyE');
   await page.waitForTimeout(800);
@@ -548,8 +556,9 @@ async function battle4() {
   note(`battle captions: ${JSON.stringify(caps)}`);
   if (!caps.some((c) => c.includes('Confident Guess')))
     fail('battle 4: no caption for the first wave’s crew line');
-  if (battle === 'fight' && !caps.some((c) => c.includes('Three habits sank')))
-    fail('battle 4: no caption for the won line');
+  // The won line is pending: the win card shows its words (no caption over it).
+  if (battle === 'fight' && !(await S(() => document.body.textContent.includes('Three habits sank'))))
+    fail('battle 4: the win card doesn’t show the won line');
   const saved = await D('d.battlesDone?.() ?? null');
   note(`battles saved: ${JSON.stringify(saved)}`);
   await page.waitForTimeout(6000);
@@ -716,6 +725,10 @@ for (const b of bottles) {
     continue;
   }
   await tap('KeyE');
+  // Its message opens as a reveal: wait for it, then read it through.
+  await page
+    .waitForFunction(() => !!window.__dev.learn.getState().reveal, null, { timeout: 6000 })
+    .catch(() => fail(`bottle ${b.id}: E didn't open its message`));
   await drive(`bottle ${b.id}`, (st) => !st.reveal && !st.banner && !st.dialogue, 30000);
   await page.waitForTimeout(500);
 }

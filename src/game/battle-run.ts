@@ -38,6 +38,8 @@ export interface BattleRunOptions {
   onStart?(): void;
   /** Plays voiced lines of the course's (the crew's calls in a battle with the kraken), one run at a time. */
   say?(ids: readonly string[]): Promise<void>;
+  /** Whether a line has its voice yet (a pending one is written, not voiced: its words show alone). */
+  voiced?(id: string): boolean;
 }
 
 /** The briefing shows before every battle until you tick "Don't show this again". */
@@ -277,7 +279,9 @@ export class BattleRun {
   private finish(how: 'won' | 'skipped'): void {
     this.ended = how;
     this.endedAt = this.t;
-    if (how === 'won' && this.plan.wonLine) this.say(this.plan.wonLine);
+    // The won line, spoken: while its voice is pending, the win card already shows its words.
+    const line = this.plan.wonLine;
+    if (how === 'won' && line && (this.o.voiced?.(line) ?? true)) this.say(line);
     this.setMusic(false);
     this.o.onEnd(how);
   }

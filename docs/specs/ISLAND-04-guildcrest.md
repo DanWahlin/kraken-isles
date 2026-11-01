@@ -1517,3 +1517,74 @@ line). Every new player-facing word is in the pack; a review copy is in the sess
 - **SFX:** ElevenLabs sound effects hit the same quota. **Synthesized** (project-owned, deterministic,
   `tools/sfx/synth-guildcrest.{py,sh}`): `abbey_bell` (three strikes, 7.5 s) and `book_close`. **Reused:**
   `wheel_creak` for the windmills, `quill` for Cuthbert's quill, `tern` (quiet, far) for the swifts.
+
+### 15.5 Stage 3: playable and battle 4 (2026-11-01)
+
+**Built:** `src/islands/guildcrest.ts` (`GUILDCREST_ISLAND`, `GUILDCREST_ARRIVAL` from A's keys), the
+registry line (and `ISLANDS_IN_BUILD` empty again), `src/game/guildcrest-island.ts`, `-session.ts`,
+`-npcs.ts`, `-quests.ts`, `-circuits.ts`; 14 new NPC ids with bodies, palettes and accessories (only
+existing accessory pieces); Moira's stall (`marketKeeper` anchor behind the booth's counter); the
+manifest's `guildcrest/critical` and `guildcrest/chart` packs; `abbey_bell` and `book_close` in the SFX
+bank; `ISLAND_SIGNS.guildcrest`; battle 4 (`GUILDCREST_BATTLE`, `BATTLE_PLANS[3]`,
+`PASSAGE_BATTLES` row); `tools/lib/islands.json` (budget spots, decks, perf views `guildcrest` and
+`gc-cloister`, flicker views `gc-quay`, `gc-square`, `gc-cloister`, `gc-yard`, `gc-tower`);
+`tools/battletest.mjs --battle=4`; `tools/guildcresttest.mjs` (§11.1).
+
+**Decisions:**
+
+- **Pending battle lines show as captions.** The four `b4.*` lines stay `"pending": true` in
+  `voice/lines.json` (no ElevenLabs credits until Nov 10). `tools/voice/generate.ts --pending` writes
+  each pending line into the voice manifest as a caption (`pending: true`, no files, reading-time
+  duration); every generate run rewrites them, and `--check` holds them. The game's `Dialogue` never
+  waits on (or fetches) a pending line's voice. The content check lets a battle hook's crew lines
+  (`waves[].line`, `wonLine`) be pending; nothing else may. When the lines are voiced: drop `pending`,
+  run `generate.ts --only=b4.`, and add `b4.wingman.wave2`/`.wave3` to Chapter 03's `voiced`.
+- **The won line plays only once it's voiced.** The win card already shows the same words; a pending
+  caption under it read twice. `BattleRunOptions.voiced` tells the run.
+- **Battle 4's raider names are six, not three** (`Confident Guess`, `Looks Fine` · `First Take`,
+  `Green Enough` · `Unchecked`, `No Second Look`): `plans.test.ts` holds that a name is used once per
+  battle (each hull has its own board). §9's three habits lead each wave. `b4.juno.sails` now says
+  "The lead ship's name board says Confident Guess" (pending, so free to change).
+- **Battle 4 has no "next morning"** (G4): the battle passes in Keelhaven's morning, and Guildcrest's
+  16.5 h sky comes in with its waters as on the other islands.
+- **Rory is an islander with barks** (`guildcrestExtras`), not a scripted NPC: his lines play inside
+  `fergus.belt` and the bench station. `rory` and `brigid` barks are the pack's.
+- **Ewan stands on the north walk** in front of the library's bay (23, 144.6): in the bay the talk's
+  camera had no room between the presses.
+- **Chests and bottles (as built):** C4.1 on the west walk by the scriptorium (7.1, 124.6); C4.2 in the
+  library bay's front corner (27.6, 147.8); C4.3 by the yard's north wall (104, 164.6). B4.1 by the
+  brae's switchback (−46.5, 82.5), B4.2 by the square's trough (−86.2, 36.6), B4.3 on the ridge path
+  (57.2, 144.4), B4.4 by the test bench (82.6, 163.2). Each is read by E in `guildcresttest`.
+- **The song chart ceremony** uses the pack's text keys as B proposed (`playFree`, `handOut`,
+  `playChart`, `apart`, `together`, `unlocked`, `hint1`, `hint2`), played as a choice card with
+  `lute_strum` (out of step, then together) like Keelhaven's re-take. There is no song unlock in the
+  game (no Songbook mechanic exists yet): the `unlocked` line is the card's message.
+- **The Pattern Book's camera** stands along the cloister walk under its roof (the arcade's piers came
+  between a camera behind you and the station's wall); the yard's stays behind you to your right.
+- **The Seal** (`gc-seal`): a cut to the belfry from east of the tower as the bell rings three times
+  (`abbey_bell`), every station's lamp lights, then the ridge with the mills turning at 3× for 10 s.
+  Reduced motion: no cuts, the bell, the lamps, the sails at their quarter speed. **Not built yet:**
+  the guild banners unfurling, Rory's banner, the book's new page (`bookCopied`, `journeymanHired` hold
+  in the save but show nothing), the swifts' burst.
+- **Choice cards render `**bold**` and `` `code` ``** (`SeaChoice` through `Rich`; the screen reader's
+  copy is plain): the pack's circuit prompts use them (Keelhaven's didn't).
+- **Keelhaven reads `tracker.nextSail`** (as Thousand-Bough), and Guildcrest does too (generic).
+- **Course images:** Chapter 04's five images are `pinned` in `lock.json` (the refs test asks it of
+  every image the game shows).
+- **Strict again:** `story.test.ts` no longer skips an island that isn't in the registry; the content
+  check is strict for Guildcrest by itself (the registry line).
+
+**Play-test (WebGPU High, the play page, `tools/guildcresttest.mjs`):** by the chart (`--battle=none`):
+every stop, both circuits (a wrong pick first at every choice, a wrong tile), cards A4.1–A4.6 (A4.2
+Later), the Trial failed once (three wrong, then away) and passed, the Seal, Q4.A, four bottles read,
+no console error, empty hitch guard. Battle 4 (`--battle=fight`): 131–135 programs with Keelhaven and
+Guildcrest resident, every wave's question, the crew's captions, then docking at the quay and the
+arrival. `battletest --battle=4 --only=play`: won, saved, docked at Guildcrest, peak 135 programs.
+
+**Left for stage 4:** the WebGL2 Low runs and the skip run of `guildcresttest`; reload on the island
+(§11.1 step 6) and sail away and back (step 7); starfish collected by walking; `wayfindtest --reach`,
+`questtest`, `cardtest`, `starfishtest`, `revoyagetest`; `check:frame-budgets`, `check:memory` (add
+Guildcrest to `ROUTE`), `check:perf`, `check:opening`, `check:audio`; the census; `flickertest` and
+`cameratest` on the new views; the W.7 signs painted (the boards are blank; the names are in
+`ISLAND_SIGNS`); the Seal's banners, Rory's banner and the book's page; the swifts' burst. The
+battle HUD shows a situation's single `*italics*` as asterisks (battles 3 and 4; pre-existing).
