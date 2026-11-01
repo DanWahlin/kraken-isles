@@ -1,0 +1,112 @@
+{
+  "id": "gc.elspeth.01",
+  "speaker": "Elspeth",
+  "text": "Welcome to Guild Square, Captain. There are four ways to tell Copilot what you want, and each fits its own job.",
+  "words": [
+    {
+      "word": "Welcome",
+      "start": 0,
+      "end": 0.347
+    },
+    {
+      "word": "to",
+      "start": 0.347,
+      "end": 0.44
+    },
+    {
+      "word": "Guild",
+      "start": 0.44,
+      "end": 0.697
+    },
+    {
+      "word": "Square",
+      "start": 0.697,
+      "end": 1.31
+    },
+    {
+      "word": "Captain",
+      "start": 1.31,
+      "end": 1.72
+    },
+    {
+      "word": "There",
+      "start": 1.72,
+      "end": 2.36
+    },
+    {
+      "word": "are",
+      "start": 2.36,
+      "end": 2.528
+    },
+    {
+      "word": "four",
+      "start": 2.528,
+      "end": 2.8
+    },
+    {
+      "word": "ways",
+      "start": 2.8,
+      "end": 3.147
+    },
+    {
+      "word": "to",
+      "start": 3.147,
+      "end": 3.232
+    },
+    {
+      "word": "tell",
+      "start": 3.232,
+      "end": 3.46
+    },
+    {
+      "word": "Copilot",
+      "start": 3.46,
+      "end": 4.032
+    },
+    {
+      "word": "what",
+      "start": 4.032,
+      "end": 4.2
+    },
+    {
+      "word": "you",
+      "start": 4.2,
+      "end": 4.4
+    },
+    {
+      "word": "want",
+      "start": 4.4,
+      "end": 5.16
+    },
+    {
+      "word": "and",
+      "start": 5.16,
+      "end": 5.36
+    },
+    {
+      "word": "each",
+      "start": 5.36,
+      "end": 5.728
+    },
+    {
+      "word": "fits",
+      "start": 5.728,
+      "end": 5.98
+    },
+    {
+      "word": "its",
+      "start": 5.98,
+      "end": 6.2
+    },
+    {
+      "word": "own",
+      "start": 6.2,
+      "end": 6.44
+    },
+    {
+      "word": "job",
+      "start": 6.44,
+      "end": 6.69
+    }
+  ]
+}

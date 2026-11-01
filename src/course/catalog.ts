@@ -49,7 +49,10 @@ export interface BattleHooks {
   /** The course chapter it recaps ("00"). */
   chapter: string;
   won: string;
-  waves: readonly { quiz: string; raiders: readonly string[] }[];
+  /** The won line, voiced (battle 4 on). */
+  wonLine?: string;
+  /** Each wave's quiz, its raiders' names, and a crew line as it sails in (battle 4 on). */
+  waves: readonly { quiz: string; raiders: readonly string[]; line?: string }[];
   /** A battle with the kraken in it (battle 3): its flagship and the crew's lines. */
   kraken?: KrakenHooks;
 }

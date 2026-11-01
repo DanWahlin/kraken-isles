@@ -1,0 +1,72 @@
+{
+  "id": "gc.fergus.door",
+  "speaker": "Fergus",
+  "text": "The app loads custom agents when it starts. Closing the window isn't quitting.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.052083,
+      "end": 0.221375
+    },
+    {
+      "word": "app",
+      "start": 0.221375,
+      "end": 0.429708
+    },
+    {
+      "word": "loads",
+      "start": 0.429708,
+      "end": 0.76825
+    },
+    {
+      "word": "custom",
+      "start": 0.76825,
+      "end": 1.171875
+    },
+    {
+      "word": "agents",
+      "start": 1.171875,
+      "end": 1.614583
+    },
+    {
+      "word": "when",
+      "start": 1.614583,
+      "end": 1.796875
+    },
+    {
+      "word": "it",
+      "start": 1.796875,
+      "end": 1.927083
+    },
+    {
+      "word": "starts",
+      "start": 1.927083,
+      "end": 3.450541
+    },
+    {
+      "word": "Closing",
+      "start": 3.450541,
+      "end": 3.90625
+    },
+    {
+      "word": "the",
+      "start": 3.90625,
+      "end": 4.010416
+    },
+    {
+      "word": "window",
+      "start": 4.010416,
+      "end": 4.401041
+    },
+    {
+      "word": "isn't",
+      "start": 4.401041,
+      "end": 4.661458
+    },
+    {
+      "word": "quitting",
+      "start": 4.661458,
+      "end": 4.911458
+    }
+  ]
+}

@@ -110,8 +110,8 @@ export function CreditsScreen({ bridge }: { bridge: GameBridge }) {
         <p>
           “Bamboo Tide”, “Island Reveal”, “Brass of the Storm”, “Misty Jungle Dusk” and “Salty Sway”, made for
           Kraken Isles with Suno. “Medieval: The Bard’s Tale” by RandomMind and “Sunset Plains” by Yoiyami,
-          both CC0 on OpenGameArt. The character voices are AI-generated with Azure AI Speech and ElevenLabs.
-          They aren’t real people.
+          both CC0 on OpenGameArt. “Guildcrest Air”, generated for Kraken Isles with ElevenLabs Music. The
+          character voices are AI-generated with Azure AI Speech and ElevenLabs. They aren’t real people.
         </p>
         <p>Seagull models by Poly by Google, CC BY 3.0 (poly.pizza).</p>
         <h3>About this project</h3>

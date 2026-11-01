@@ -1,0 +1,82 @@
+{
+  "id": "gc.rory.done",
+  "speaker": "Rory",
+  "text": "Read and search, Captain. That's all I carry, and all I need for this job.",
+  "words": [
+    {
+      "word": "Read",
+      "start": 0.051,
+      "end": 0.369916
+    },
+    {
+      "word": "and",
+      "start": 0.369916,
+      "end": 0.510208
+    },
+    {
+      "word": "search",
+      "start": 0.510208,
+      "end": 1.122458
+    },
+    {
+      "word": "Captain",
+      "start": 1.122458,
+      "end": 2.5255
+    },
+    {
+      "word": "That's",
+      "start": 2.5255,
+      "end": 2.818875
+    },
+    {
+      "word": "all",
+      "start": 2.818875,
+      "end": 3.022958
+    },
+    {
+      "word": "I",
+      "start": 3.022958,
+      "end": 3.188791
+    },
+    {
+      "word": "carry",
+      "start": 3.188791,
+      "end": 3.852041
+    },
+    {
+      "word": "and",
+      "start": 3.852041,
+      "end": 3.992333
+    },
+    {
+      "word": "all",
+      "start": 3.992333,
+      "end": 4.209166
+    },
+    {
+      "word": "I",
+      "start": 4.209166,
+      "end": 4.36225
+    },
+    {
+      "word": "need",
+      "start": 4.36225,
+      "end": 4.617333
+    },
+    {
+      "word": "for",
+      "start": 4.617333,
+      "end": 4.744916
+    },
+    {
+      "word": "this",
+      "start": 4.744916,
+      "end": 5
+    },
+    {
+      "word": "job",
+      "start": 5,
+      "end": 5.25
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "gc.brigid.bell",
+  "speaker": "Brigid",
+  "text": "The readers still hold the old copy. Ring the bell: /skills reload.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0,
+      "end": 0.14
+    },
+    {
+      "word": "readers",
+      "start": 0.14,
+      "end": 0.613
+    },
+    {
+      "word": "still",
+      "start": 0.613,
+      "end": 0.96
+    },
+    {
+      "word": "hold",
+      "start": 0.96,
+      "end": 1.32
+    },
+    {
+      "word": "the",
+      "start": 1.32,
+      "end": 1.52
+    },
+    {
+      "word": "old",
+      "start": 1.52,
+      "end": 1.856
+    },
+    {
+      "word": "copy",
+      "start": 1.856,
+      "end": 2.816
+    },
+    {
+      "word": "Ring",
+      "start": 2.816,
+      "end": 4.5
+    },
+    {
+      "word": "the",
+      "start": 4.5,
+      "end": 4.64
+    },
+    {
+      "word": "bell",
+      "start": 4.64,
+      "end": 5.966
+    },
+    {
+      "word": "skills",
+      "start": 5.966,
+      "end": 6.811
+    },
+    {
+      "word": "reload",
+      "start": 6.811,
+      "end": 7.061
+    }
+  ]
+}

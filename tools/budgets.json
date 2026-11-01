@@ -33,6 +33,10 @@
       "asset": "course-copilot-app-03-development-workflows",
       "maxGzipKB": 28
     },
+    "course-copilot-app 04": {
+      "asset": "course-copilot-app-04-skills-custom-agents",
+      "maxGzipKB": 28
+    },
     "course-copilot-cli": {
       "name": "course-copilot-cli",
       "maxGzipKB": 48

@@ -1449,3 +1449,71 @@ stage's to show; the sails' pace (`setSailPace`, ¼ with reduced motion); `flick
   sails by 3 m: a test); a docking test (the dock assist from the lane and from the turning room, no
   contact with the quay's obstacles) and the silhouette test (one draw, under 30k triangles on High).
 
+
+### 15.4 Stages 1B and 2B: content, voice and audio (agent B, 2026-11-01)
+
+Written ahead of the island (the content check holds it; the game leaves it out until the registry
+line). Every new player-facing word is in the pack; a review copy is in the session's
+`files/guildcrest/content.md`.
+
+**Content (1B)**
+
+- `chapters/04-skills-custom-agents.json`: five images, K4.1–K4.3, K4.5, K4.6, K4.9, M4.1, H4.1, H4.2,
+  T4.1–T4.10 (the Trial's items, all scenarios but T4.4 and T4.10; hint tier 3 empty), 23 pages
+  (§6.4 plus **`pg4.next`**, filed at the Seal as Keelhaven's `pg3.next`), chests C4.1–C4.3 and bottles
+  B4.1–B4.4, six glossary terms, and `voiced` (every cited line). Part: 13.8 KB gz; a 28 KB row in
+  `tools/budgets.json`.
+- **H4.1/H4.2 measured** on the images: H4.1 (1920 × 1080) has four targets (the **Skills** filter
+  [0.852, 0.093, 0.047, 0.042], the **Installed** tab, the search box, **Customize**) and the four badge
+  masks; H4.2 (978 × 244, not 975) has four (the explainer's row, the default row, the agent picker, the
+  mode). Both play in the circuits' close scripts after the screenshot, as Keelhaven's H3.1 does.
+- `quests/guildcrest.json` as §4.2 and §4.4. Changes: **`gc.brigid.04` and `gc.brigid.done` were cut**
+  (the credits ran out before them, below): Brigid's last beat is `none`, and her first bark says where
+  Ewan is. **`rory` and `brigid` have barks** (text). The signs' guild names: "The Masons’ Guild",
+  "The Weavers’ Guild", "The Millwrights’ Guild". Fergus's `fergus` script ends Q4.6 and starts Q4.7;
+  the next talk plays `fergus.belt` (as Keelhaven's `cass.lap2`).
+- `puzzles/pattern-book.json` (P4.1) and `puzzles/toolbelt.json` (P4.2) as §5.2–5.3. The toolbelt's
+  `lines.benchAnswer` (`gc.rory.02`) is for the stage to play after the bench demo (`gc.rory.01` is the
+  station's line). `PUZZLE_STEPS` rows `pattern-book: ['book', 'solved']`, `toolbelt: ['belt',
+  'solved']` added (stage 0 left them to B).
+- `puzzles/song-chart.json` (ceremony): **text keys are a proposal for stage 3**: `playFree`, `handOut`,
+  `playChart`, `apart`, `together`, `unlocked`, `hint1`, `hint2`. No `PUZZLE_STEPS` row (as `retake`).
+- `learning.json`: A4.1–A4.6 (no checks, G10), O4.1–O4.4 (word for word), the reflection. **The
+  reflection is a choice** (the schema has no free text): five choices from the takeaways.
+- `labels.json`: `arrival:guildcrest` (headline **"Save the craft, hire the right hands"**: the label's
+  40-character limit; the arrival card keeps G25's line), `puzzle:P4.1`, `puzzle:P4.2`,
+  `battle:passage-keelhaven-guildcrest` ("Evidence Agrees", Chapter 03's key takeaways).
+- `course.json`: the seal, the arrival, `hooks.islands.guildcrest` (landing `gc.juno.arrive.01`; welcome
+  `wingman.gc.01`, `@starfish`; tips **`wingman.gc.nav`**, a line the spec didn't list: the hook needs
+  one) and battle 4's hook (N3.1–N3.3, the raiders by wave).
+- **Battle lines, a generic schema addition:** `hooks.battles[].waves[].line` (a crew line as the wave
+  sails in) and `wonLine` (the won line, voiced), in `course.schema.json`, `BattleHooks`
+  (`src/course/catalog.ts`) and the content check. Battle 4's four lines (`b4.juno.sails`,
+  `b4.wingman.wave2`, `b4.wingman.wave3`, `b4.juno.won`) are written but **pending** (below), so the
+  hook doesn't name them yet. When they're voiced: hook them (waves 1–3 `line`, `wonLine`), and add
+  `b4.wingman.wave2`/`.wave3` to Chapter 03's `voiced` (03 · inner-loop…, 03 · fix-a-failing-check).
+- Keelhaven: `tracker.next` stays; **`tracker.nextSail`** "Guildcrest’s next. Board your ship and follow
+  the compass south-east." (Anchorage's and Thousand-Bough's pattern). **Stage 3:** `keelhaven-island.ts`
+  doesn't read `nextSail` yet (copy `thousand-bough-island.ts`'s two lines).
+- `src/learn/content/ch04.test.ts`: cites in the snapshot, hotspots in bounds and clear of the masks,
+  UI names only from the chapter, six cards with no check, the ten-item Trial over the takeaways, the
+  quests' order and targets, at most four lines before an action, the circuits' six and seven stations
+  with sourced wrong picks.
+
+**Voice and audio (2B)**
+
+- **All eight §8.3 voices worked** with a test line. Then **the ElevenLabs account ran out of credits**
+  (the creator plan's 154k; it resets 2026-11-10) after Juno, Wingman, Lyra, Elspeth, Aidan and nine of
+  Brigid's lines. Decision: **Ewan, Fergus, Rory, Seren and Moira speak with Azure stopgap voices**
+  (`en-GB-AlfieNeural` −8 % −2 st; `en-GB-NoahNeural` −4 % −1 st; `en-IE-ConnorNeural` −2 %, Pim's
+  voice at another rate; `en-GB-Sonia:DragonHDLatestNeural` −6 %; `en-GB-Ada:DragonHDLatestNeural`).
+  Their planned ElevenLabs voices and the one-command swap are in `docs/voices.md`. 76 lines voiced,
+  lip-synced and `--check`ed. Speech-to-text (Azure) on 21 lines: "skill", "agent", "Guildcrest",
+  "/agent", "/skills reload" all heard; Fergus at −3 st was muddy, so he's at −1 st.
+- **Music:** "Guildcrest Air", ElevenLabs Music, **one take** (the second and third hit the quota):
+  149 s, −13.6 LUFS, `public/audio/music_guildcrest_air.{ogg,m4a}` via `tools/music/fetch.sh` (an
+  `elevenlabs:` source, like `suno:`). Stage 3 sets `theme: { file: 'music_guildcrest_air', lufs: -13.6 }`.
+  Credits screen updated.
+- **SFX:** ElevenLabs sound effects hit the same quota. **Synthesized** (project-owned, deterministic,
+  `tools/sfx/synth-guildcrest.{py,sh}`): `abbey_bell` (three strikes, 7.5 s) and `book_close`. **Reused:**
+  `wheel_creak` for the windmills, `quill` for Cuthbert's quill, `tern` (quiet, far) for the swifts.

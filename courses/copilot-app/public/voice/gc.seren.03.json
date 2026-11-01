@@ -1,0 +1,97 @@
+{
+  "id": "gc.seren.03",
+  "speaker": "Seren",
+  "text": "Next, Sunspire Sands. You'll connect tools from outside the app, and a plugin that brings its own skill.",
+  "words": [
+    {
+      "word": "Next",
+      "start": 0.031,
+      "end": 0.627
+    },
+    {
+      "word": "Sunspire",
+      "start": 0.627,
+      "end": 1.393
+    },
+    {
+      "word": "Sands",
+      "start": 1.393,
+      "end": 2.074
+    },
+    {
+      "word": "You'll",
+      "start": 2.074,
+      "end": 2.456
+    },
+    {
+      "word": "connect",
+      "start": 2.456,
+      "end": 2.712
+    },
+    {
+      "word": "tools",
+      "start": 2.712,
+      "end": 3.052
+    },
+    {
+      "word": "from",
+      "start": 3.052,
+      "end": 3.223
+    },
+    {
+      "word": "outside",
+      "start": 3.223,
+      "end": 3.734
+    },
+    {
+      "word": "the",
+      "start": 3.734,
+      "end": 3.904
+    },
+    {
+      "word": "app",
+      "start": 3.904,
+      "end": 4.287
+    },
+    {
+      "word": "and",
+      "start": 4.287,
+      "end": 4.457
+    },
+    {
+      "word": "a",
+      "start": 4.457,
+      "end": 4.542
+    },
+    {
+      "word": "plugin",
+      "start": 4.542,
+      "end": 5.01
+    },
+    {
+      "word": "that",
+      "start": 5.01,
+      "end": 5.138
+    },
+    {
+      "word": "brings",
+      "start": 5.138,
+      "end": 5.436
+    },
+    {
+      "word": "its",
+      "start": 5.436,
+      "end": 5.563
+    },
+    {
+      "word": "own",
+      "start": 5.563,
+      "end": 5.819
+    },
+    {
+      "word": "skill",
+      "start": 5.819,
+      "end": 6.069
+    }
+  ]
+}

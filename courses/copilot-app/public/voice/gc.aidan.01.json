@@ -1,0 +1,107 @@
+{
+  "id": "gc.aidan.01",
+  "speaker": "Aidan",
+  "text": "Every copyist gets a carrel of their own, Captain. Yours is a practice session in a new worktree from main.",
+  "words": [
+    {
+      "word": "Every",
+      "start": 0,
+      "end": 0.32
+    },
+    {
+      "word": "copyist",
+      "start": 0.32,
+      "end": 0.832
+    },
+    {
+      "word": "gets",
+      "start": 0.832,
+      "end": 1
+    },
+    {
+      "word": "a",
+      "start": 1,
+      "end": 1.08
+    },
+    {
+      "word": "carrel",
+      "start": 1.08,
+      "end": 1.387
+    },
+    {
+      "word": "of",
+      "start": 1.387,
+      "end": 1.467
+    },
+    {
+      "word": "their",
+      "start": 1.467,
+      "end": 1.66
+    },
+    {
+      "word": "own",
+      "start": 1.66,
+      "end": 1.97
+    },
+    {
+      "word": "Captain",
+      "start": 1.97,
+      "end": 2.547
+    },
+    {
+      "word": "Yours",
+      "start": 2.547,
+      "end": 3.307
+    },
+    {
+      "word": "is",
+      "start": 3.307,
+      "end": 3.4
+    },
+    {
+      "word": "a",
+      "start": 3.4,
+      "end": 3.484
+    },
+    {
+      "word": "practice",
+      "start": 3.484,
+      "end": 3.89
+    },
+    {
+      "word": "session",
+      "start": 3.89,
+      "end": 4.293
+    },
+    {
+      "word": "in",
+      "start": 4.293,
+      "end": 4.44
+    },
+    {
+      "word": "a",
+      "start": 4.44,
+      "end": 4.52
+    },
+    {
+      "word": "new",
+      "start": 4.52,
+      "end": 4.704
+    },
+    {
+      "word": "worktree",
+      "start": 4.704,
+      "end": 5.248
+    },
+    {
+      "word": "from",
+      "start": 5.248,
+      "end": 5.536
+    },
+    {
+      "word": "main",
+      "start": 5.536,
+      "end": 5.786
+    }
+  ]
+}

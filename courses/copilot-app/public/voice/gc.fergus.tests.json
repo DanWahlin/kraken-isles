@@ -1,0 +1,92 @@
+{
+  "id": "gc.fergus.tests",
+  "speaker": "Fergus",
+  "text": "His belt has no hammer, and that's on purpose. Use the default agent when you need actions.",
+  "words": [
+    {
+      "word": "His",
+      "start": 0.052083,
+      "end": 0.273458
+    },
+    {
+      "word": "belt",
+      "start": 0.273458,
+      "end": 0.533875
+    },
+    {
+      "word": "has",
+      "start": 0.533875,
+      "end": 0.729166
+    },
+    {
+      "word": "no",
+      "start": 0.729166,
+      "end": 0.9375
+    },
+    {
+      "word": "hammer",
+      "start": 0.9375,
+      "end": 1.575541
+    },
+    {
+      "word": "and",
+      "start": 1.575541,
+      "end": 1.666666
+    },
+    {
+      "word": "that's",
+      "start": 1.666666,
+      "end": 1.979166
+    },
+    {
+      "word": "on",
+      "start": 1.979166,
+      "end": 2.122416
+    },
+    {
+      "word": "purpose",
+      "start": 2.122416,
+      "end": 3.619791
+    },
+    {
+      "word": "Use",
+      "start": 3.619791,
+      "end": 3.867208
+    },
+    {
+      "word": "the",
+      "start": 3.867208,
+      "end": 3.984375
+    },
+    {
+      "word": "default",
+      "start": 3.984375,
+      "end": 4.440125
+    },
+    {
+      "word": "agent",
+      "start": 4.440125,
+      "end": 4.804708
+    },
+    {
+      "word": "when",
+      "start": 4.804708,
+      "end": 4.973958
+    },
+    {
+      "word": "you",
+      "start": 4.973958,
+      "end": 5.104166
+    },
+    {
+      "word": "need",
+      "start": 5.104166,
+      "end": 5.377625
+    },
+    {
+      "word": "actions",
+      "start": 5.377625,
+      "end": 5.627625
+    }
+  ]
+}

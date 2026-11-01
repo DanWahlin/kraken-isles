@@ -1,0 +1,67 @@
+{
+  "id": "gc.brigid.book",
+  "speaker": "Brigid",
+  "text": "Follow the lamps round the walk, Captain. One station at a time.",
+  "words": [
+    {
+      "word": "Follow",
+      "start": 0,
+      "end": 0.2
+    },
+    {
+      "word": "the",
+      "start": 0.2,
+      "end": 0.373
+    },
+    {
+      "word": "lamps",
+      "start": 0.373,
+      "end": 0.68
+    },
+    {
+      "word": "round",
+      "start": 0.68,
+      "end": 0.9
+    },
+    {
+      "word": "the",
+      "start": 0.9,
+      "end": 1.024
+    },
+    {
+      "word": "walk",
+      "start": 1.024,
+      "end": 1.595
+    },
+    {
+      "word": "Captain",
+      "start": 1.595,
+      "end": 2.06
+    },
+    {
+      "word": "One",
+      "start": 2.06,
+      "end": 2.55
+    },
+    {
+      "word": "station",
+      "start": 2.55,
+      "end": 3.093
+    },
+    {
+      "word": "at",
+      "start": 3.093,
+      "end": 3.24
+    },
+    {
+      "word": "a",
+      "start": 3.24,
+      "end": 3.376
+    },
+    {
+      "word": "time",
+      "start": 3.376,
+      "end": 3.626
+    }
+  ]
+}

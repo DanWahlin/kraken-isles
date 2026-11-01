@@ -1,0 +1,82 @@
+{
+  "id": "gc.fergus.indenture",
+  "speaker": "Fergus",
+  "text": "His indenture's his profile: a name, a description, a tools list, and his instructions below.",
+  "words": [
+    {
+      "word": "His",
+      "start": 0.052083,
+      "end": 0.234375
+    },
+    {
+      "word": "indenture's",
+      "start": 0.234375,
+      "end": 0.755208
+    },
+    {
+      "word": "his",
+      "start": 0.755208,
+      "end": 0.911458
+    },
+    {
+      "word": "profile",
+      "start": 0.911458,
+      "end": 1.770833
+    },
+    {
+      "word": "a",
+      "start": 1.770833,
+      "end": 1.822916
+    },
+    {
+      "word": "name",
+      "start": 1.822916,
+      "end": 2.421875
+    },
+    {
+      "word": "a",
+      "start": 2.421875,
+      "end": 2.460958
+    },
+    {
+      "word": "description",
+      "start": 2.460958,
+      "end": 3.359375
+    },
+    {
+      "word": "a",
+      "start": 3.359375,
+      "end": 3.411458
+    },
+    {
+      "word": "tools",
+      "start": 3.411458,
+      "end": 3.802083
+    },
+    {
+      "word": "list",
+      "start": 3.802083,
+      "end": 4.283875
+    },
+    {
+      "word": "and",
+      "start": 4.283875,
+      "end": 4.414083
+    },
+    {
+      "word": "his",
+      "start": 4.414083,
+      "end": 4.596375
+    },
+    {
+      "word": "instructions",
+      "start": 4.596375,
+      "end": 5.260416
+    },
+    {
+      "word": "below",
+      "start": 5.260416,
+      "end": 5.510416
+    }
+  ]
+}

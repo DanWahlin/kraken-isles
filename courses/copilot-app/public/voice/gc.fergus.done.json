@@ -1,0 +1,67 @@
+{
+  "id": "gc.fergus.done",
+  "speaker": "Fergus",
+  "text": "Rory's hired, Captain. Abbess Seren's on the tower terrace, up the stair.",
+  "words": [
+    {
+      "word": "Rory's",
+      "start": 0.052083,
+      "end": 0.507833
+    },
+    {
+      "word": "hired",
+      "start": 0.507833,
+      "end": 1.145833
+    },
+    {
+      "word": "Captain",
+      "start": 1.145833,
+      "end": 2.604166
+    },
+    {
+      "word": "Abbess",
+      "start": 2.604166,
+      "end": 2.95575
+    },
+    {
+      "word": "Seren's",
+      "start": 2.95575,
+      "end": 3.411458
+    },
+    {
+      "word": "on",
+      "start": 3.411458,
+      "end": 3.554708
+    },
+    {
+      "word": "the",
+      "start": 3.554708,
+      "end": 3.658875
+    },
+    {
+      "word": "tower",
+      "start": 3.658875,
+      "end": 3.997416
+    },
+    {
+      "word": "terrace",
+      "start": 3.997416,
+      "end": 4.596375
+    },
+    {
+      "word": "up",
+      "start": 4.596375,
+      "end": 4.752625
+    },
+    {
+      "word": "the",
+      "start": 4.752625,
+      "end": 4.856791
+    },
+    {
+      "word": "stair",
+      "start": 4.856791,
+      "end": 5.106791
+    }
+  ]
+}

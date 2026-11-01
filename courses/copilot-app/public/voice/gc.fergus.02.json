@@ -1,0 +1,82 @@
+{
+  "id": "gc.fergus.02",
+  "speaker": "Fergus",
+  "text": "A custom agent is a specialist: a name, instructions, and a set of available tools.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.052083,
+      "end": 0.169291
+    },
+    {
+      "word": "custom",
+      "start": 0.169291,
+      "end": 0.572916
+    },
+    {
+      "word": "agent",
+      "start": 0.572916,
+      "end": 0.911458
+    },
+    {
+      "word": "is",
+      "start": 0.911458,
+      "end": 1.028666
+    },
+    {
+      "word": "a",
+      "start": 1.028666,
+      "end": 1.106791
+    },
+    {
+      "word": "specialist",
+      "start": 1.106791,
+      "end": 2.03125
+    },
+    {
+      "word": "a",
+      "start": 2.03125,
+      "end": 2.096375
+    },
+    {
+      "word": "name",
+      "start": 2.096375,
+      "end": 2.682291
+    },
+    {
+      "word": "instructions",
+      "start": 2.682291,
+      "end": 3.645833
+    },
+    {
+      "word": "and",
+      "start": 3.645833,
+      "end": 3.776041
+    },
+    {
+      "word": "a",
+      "start": 3.776041,
+      "end": 3.854166
+    },
+    {
+      "word": "set",
+      "start": 3.854166,
+      "end": 4.140625
+    },
+    {
+      "word": "of",
+      "start": 4.140625,
+      "end": 4.244791
+    },
+    {
+      "word": "available",
+      "start": 4.244791,
+      "end": 4.726583
+    },
+    {
+      "word": "tools",
+      "start": 4.726583,
+      "end": 4.976583
+    }
+  ]
+}

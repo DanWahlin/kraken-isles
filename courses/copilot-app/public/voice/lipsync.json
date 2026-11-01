@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T08:15:07.899Z",
+  "generatedAt": "2026-11-01T09:34:09.066Z",
   "generator": "Rhubarb Lip Sync 1.14.0",
   "scope": "Every voiced islander (not Wingman)",
   "lines": {
@@ -4028,6 +4028,611 @@
         84, 18, 7, 9, 9, 21, 23, 16, 7, 7, 7, 14, 7, 7, 14, 21, 78
       ],
       "v": "XBCBDBABDBCBABGFXBFECABCBCBFXABCBFCBCFEBCEBEFXBCBCABCBCBCXBDABCHBEFCEFBCBX"
+    },
+    "gc.rory.done": {
+      "h": "6db80487e0a40e85",
+      "e": "neutral",
+      "t": [
+        0, 9, 21, 14, 21, 14, 28, 17, 8, 6, 26, 95, 22, 21, 7, 35, 44, 7, 20, 7, 7, 35, 7, 7, 35, 7, 22, 84
+      ],
+      "v": "XBCBEBCABCXBEHCBCEHCBGEBDAX"
+    },
+    "gc.juno.arrive.01": {
+      "h": "4b44824fc937a24d",
+      "e": "neutral",
+      "t": [
+        0, 48, 7, 7, 21, 8, 4, 25, 59, 6, 6, 42, 21, 7, 14, 20, 20, 21, 8, 16, 7, 7, 7, 21, 8, 18, 7, 18, 11,
+        21, 7, 7, 21, 8, 23, 7, 14, 35, 1
+      ],
+      "v": "BCBCABCXBCBCECXBCABGFBEABCBFCBFBABECBX"
+    },
+    "gc.lyra.01": {
+      "h": "365d69a8ad84cb46",
+      "e": "happy",
+      "t": [
+        0, 1, 14, 10, 5, 32, 35, 7, 6, 8, 7, 7, 7, 7, 14, 21, 7, 7, 7, 42, 8, 8, 21, 43, 7, 6, 19, 21, 21, 21,
+        7, 21, 7, 28, 7, 21, 14, 4
+      ],
+      "v": "XCABCXBAHCBEBEBCEFBACBXBACBEBHCBFBDBX"
+    },
+    "gc.lyra.02": {
+      "h": "5e6189c5c775c340",
+      "e": "neutral",
+      "t": [
+        0, 6, 24, 10, 4, 8, 7, 13, 14, 7, 14, 7, 8, 11, 7, 35, 21, 14, 7, 7, 10, 7, 13, 7, 107, 14, 14, 21, 8,
+        9, 40, 7, 48, 7
+      ],
+      "v": "XBDCACBCGBCAHCBEBCBAFCBXCBCABXCBX"
+    },
+    "gc.lyra.03": {
+      "h": "0a80aa5d604b18d2",
+      "e": "neutral",
+      "t": [
+        0, 6, 35, 7, 7, 35, 21, 14, 77, 21, 14, 8, 7, 56, 8, 9, 14, 7, 7, 7, 21, 7, 7, 14, 62, 4, 4, 42, 35,
+        7, 19, 18
+      ],
+      "v": "XBHCBEBXCBACBACBHCBFGDEBFBFBDAX"
+    },
+    "gc.lyra.04": {
+      "h": "47e7c46e15c2a0da",
+      "e": "neutral",
+      "t": [
+        0, 10, 7, 48, 7, 14, 7, 14, 14, 17, 14, 7, 113, 6, 12, 14, 35, 21, 42, 7, 14, 8, 10, 14, 7, 8, 30,
+        136, 7, 7, 8, 13, 21, 14, 7, 28, 7, 21, 7
+      ],
+      "v": "XFBCBCBCBEFXCBDBCBCBAEGEABXCHACBECBCBX"
+    },
+    "gc.lyra.done": {
+      "h": "812a619cb8de108a",
+      "e": "neutral",
+      "t": [0, 5, 17, 7, 14, 7, 8, 15, 63, 28, 8, 5, 26, 34, 8, 13, 6, 5, 7, 21, 8, 35, 4],
+      "v": "XBGCHACBCABCBCABHCBABX"
+    },
+    "gc.elspeth.wait": {
+      "h": "bd5744c27d6fcb47",
+      "e": "neutral",
+      "t": [
+        0, 4, 23, 14, 7, 14, 7, 7, 14, 21, 7, 14, 21, 10, 7, 27, 63, 21, 7, 35, 8, 42, 30, 11, 7, 8, 14, 49, 4
+      ],
+      "v": "XBHCBCBCBCBCABCXBDBAEBCEACBX"
+    },
+    "gc.elspeth.01": {
+      "h": "82df4136eeb81fac",
+      "e": "happy",
+      "t": [
+        0, 3, 6, 5, 7, 7, 8, 55, 7, 7, 21, 9, 34, 63, 13, 7, 14, 28, 14, 21, 35, 7, 14, 21, 7, 7, 28, 14, 7,
+        14, 44, 98, 21, 14, 7, 16, 13
+      ],
+      "v": "XFCHBABCBCABXCBGFCBCBCBFCFDCBXBFBDAX"
+    },
+    "gc.elspeth.02": {
+      "h": "206346a5b1b05a80",
+      "e": "neutral",
+      "t": [
+        0, 3, 6, 6, 21, 28, 7, 21, 7, 21, 21, 7, 14, 14, 7, 28, 21, 62, 8, 7, 14, 7, 7, 7, 7, 56, 28, 72, 5,
+        12, 8, 13, 14, 7, 21, 17, 9, 14, 14, 14, 7, 8, 35, 10, 22, 14, 14, 11
+      ],
+      "v": "XBCBCBEFBCEBFEHBXBADBCBEBCXBCAHCBEBCGBCBABABCBX"
+    },
+    "gc.elspeth.03": {
+      "h": "79c78453da2ded06",
+      "e": "neutral",
+      "t": [
+        0, 5, 8, 3, 37, 7, 14, 28, 14, 14, 7, 7, 14, 35, 35, 33, 66, 32, 8, 31, 7, 14, 7, 8, 59, 8, 22, 14, 7,
+        7, 14, 21, 6
+      ],
+      "v": "XCXBHCBDBGEFCBEXFECBFBABACBGFCBX"
+    },
+    "gc.elspeth.04": {
+      "h": "6ff688e98718d929",
+      "e": "neutral",
+      "t": [
+        0, 3, 19, 7, 7, 77, 28, 21, 8, 16, 14, 54, 4, 11, 8, 14, 35, 7, 7, 8, 11, 21, 14, 24, 7, 14, 21, 7, 7,
+        35, 14, 14, 14, 28, 112, 17, 9, 5, 4, 7, 14, 7, 7, 19, 5, 25, 15, 25, 7, 8, 11, 28, 56
+      ],
+      "v": "XFGCBCBADBXBFABCBCACBCBFBGHCBCBCBXBABCBECBDCBABCABCB"
+    },
+    "gc.elspeth.done": {
+      "h": "ca3e0bc283fbc081",
+      "e": "neutral",
+      "t": [0, 3, 9, 6, 40, 21, 8, 15, 8, 28, 7, 9, 11, 28, 61, 7, 13, 14, 8, 14, 7, 28, 7, 10, 7, 21, 14, 4],
+      "v": "XABCBABABCABCBCBEACBECABCBX"
+    },
+    "gc.aidan.wait": {
+      "h": "403db7680a8ab2a4",
+      "e": "neutral",
+      "t": [
+        0, 3, 18, 7, 14, 7, 8, 19, 14, 8, 6, 19, 21, 7, 21, 21, 7, 7, 14, 7, 14, 8, 32, 12, 22, 8, 36, 7, 21,
+        4
+      ],
+      "v": "XBGCHACBACBFDBCBGEBCABXBACGEX"
+    },
+    "gc.aidan.01": {
+      "h": "272e14f765d436d1",
+      "e": "neutral",
+      "t": [
+        0, 5, 10, 7, 7, 14, 7, 8, 48, 28, 7, 7, 7, 7, 14, 7, 21, 10, 7, 27, 46, 6, 19, 28, 12, 8, 7, 7, 7, 14,
+        7, 7, 7, 21, 7, 35, 42, 14, 7, 17, 5, 25, 4
+      ],
+      "v": "XCGBDCABCHCGCEFCABCXCEBABCBCBCBCBCFBGBACBX"
+    },
+    "gc.aidan.02": {
+      "h": "690a9fb631c1c608",
+      "e": "neutral",
+      "t": [
+        0, 7, 27, 35, 7, 33, 14, 42, 7, 49, 87, 24, 13, 5, 11, 7, 14, 14, 14, 7, 31, 7, 20, 7, 7, 14, 14, 14,
+        7, 7, 7, 28, 4
+      ],
+      "v": "XFBCBCBFBXBABCFCBCBCGECGBCBEBCBX"
+    },
+    "gc.aidan.03": {
+      "h": "45177b9c406c38fc",
+      "e": "concerned",
+      "t": [0, 9, 26, 14, 59, 8, 6, 13, 14, 7, 29, 15, 21, 14, 21, 38, 8, 4, 53, 1],
+      "v": "XBABABEBCAFEBEXACBX"
+    },
+    "gc.aidan.done": {
+      "h": "8457dbaeba3c3f42",
+      "e": "neutral",
+      "t": [0, 11, 7, 7, 21, 28, 14, 14, 10, 24, 34, 21, 14, 14, 28, 7, 28, 7, 7, 7, 21, 21, 14, 1],
+      "v": "XFBEFBCABXBEFBCEBFCBECX"
+    },
+    "gc.brigid.wait": {
+      "h": "5c580edeafb55936",
+      "e": "neutral",
+      "t": [0, 5, 7, 21, 42, 7, 14, 14, 7, 14, 9, 7, 34, 19, 15, 21, 7, 21, 14, 63, 19, 12, 21, 35, 4],
+      "v": "XFBCHGCBCABCBABCBCBXBCBX"
+    },
+    "gc.brigid.01": {
+      "h": "7b673e5027b21313",
+      "e": "neutral",
+      "t": [
+        0, 4, 8, 14, 8, 16, 7, 11, 20, 21, 7, 14, 9, 7, 34, 26, 74, 7, 7, 7, 14, 21, 70, 14, 14, 14, 8, 26,
+        14, 7, 49, 7, 21, 4
+      ],
+      "v": "XFCAFBABCBCABCXBCGEFEBEFCABGCBDBX"
+    },
+    "gc.brigid.02": {
+      "h": "6ebaf91b9051806e",
+      "e": "neutral",
+      "t": [
+        0, 5, 6, 5, 21, 7, 14, 8, 19, 42, 45, 5, 34, 8, 21, 28, 85, 12, 7, 84, 7, 21, 7, 21, 8, 19, 5, 51, 8,
+        10, 4, 8, 23, 8, 57, 7, 21, 14, 26, 17, 7, 21, 7, 28, 14, 5
+      ],
+      "v": "XCEBGFAFBFBFEHBXGCBCBCBADCBCDCABABCBCBCGBFDBX"
+    },
+    "gc.brigid.book": {
+      "h": "ded6fd77fcf0fbde",
+      "e": "neutral",
+      "t": [
+        0, 3, 5, 5, 14, 7, 7, 7, 7, 9, 19, 7, 14, 14, 7, 21, 9, 7, 41, 24, 15, 4, 19, 7, 14, 21, 7, 7, 7, 7,
+        28, 7, 10, 4
+      ],
+      "v": "XGDEBCHCABCBFECABCBFECBCBCBCBDBAX"
+    },
+    "gc.brigid.shelf": {
+      "h": "8aacea40428f129c",
+      "e": "neutral",
+      "t": [
+        0, 6, 23, 7, 7, 7, 14, 14, 28, 21, 21, 8, 14, 28, 89, 12, 49, 21, 14, 21, 17, 14, 18, 6, 13, 14, 14,
+        28, 21, 28, 21, 14, 12
+      ],
+      "v": "XBCHGBCBCBADBXCBEBCACXBCGBEFBHBX"
+    },
+    "gc.brigid.proof": {
+      "h": "7cefb659cae83357",
+      "e": "neutral",
+      "t": [0, 3, 19, 7, 7, 7, 28, 37, 7, 7, 35, 42, 8, 21, 14, 14, 7, 14, 14, 7, 42, 4],
+      "v": "AFGBCBXEFBFEHBFBCBCBX"
+    },
+    "gc.brigid.bell": {
+      "h": "6183b2bbbc43685b",
+      "e": "neutral",
+      "t": [
+        0, 6, 7, 7, 21, 21, 28, 28, 7, 28, 14, 14, 7, 7, 8, 35, 189, 34, 8, 23, 21, 42, 7, 14, 133, 14, 21, 8
+      ],
+      "v": "XBCBEBEFBEFCDABXBACHBHCBEBX"
+    },
+    "gc.brigid.lectern": {
+      "h": "4aae95790f957ea8",
+      "e": "neutral",
+      "t": [
+        0, 5, 15, 7, 11, 29, 7, 35, 8, 18, 28, 7, 15, 11, 35, 11, 7, 14, 7, 8, 11, 14, 28, 7, 8, 13, 8, 22,
+        14, 22, 27, 7, 14, 8, 14, 61, 14, 7, 7, 14, 42, 24
+      ],
+      "v": "XCEABFBAHCBABXBCBCADBCBABAFBXBCBAHCBCGDBX"
+    },
+    "gc.brigid.03": {
+      "h": "5c972d16c7d51779",
+      "e": "neutral",
+      "t": [
+        0, 3, 10, 7, 8, 51, 8, 11, 7, 7, 7, 14, 28, 63, 59, 17, 21, 8, 6, 19, 7, 7, 103, 31, 7, 7, 21, 7, 28,
+        4
+      ],
+      "v": "XCBABACBCEBCBXBCACBGCBFBCBEFX"
+    },
+    "gc.ewan.wait": {
+      "h": "cec5d4aa926d4f97",
+      "e": "neutral",
+      "t": [
+        0, 10, 28, 8, 14, 28, 9, 14, 13, 5, 5, 14, 6, 13, 21, 24, 17, 9, 4, 25, 104, 65, 8, 34, 21, 26, 23,
+        14, 28, 14, 28, 90
+      ],
+      "v": "XBAEBAFBGEABGEBCABCXFAECXBFBCBX"
+    },
+    "gc.ewan.01": {
+      "h": "1dc6c42998b144aa",
+      "e": "neutral",
+      "t": [
+        0, 4, 8, 6, 13, 28, 21, 46, 17, 8, 5, 25, 106, 6, 27, 14, 21, 21, 7, 7, 21, 106, 7, 14, 14, 14, 7, 14,
+        47, 14, 21, 21, 91
+      ],
+      "v": "XACBDEBCABCXFBFBEFGEXBFCBFABGEBX"
+    },
+    "gc.ewan.02": {
+      "h": "b69e7acb02d86d66",
+      "e": "neutral",
+      "t": [
+        0, 9, 7, 28, 56, 8, 18, 7, 8, 24, 14, 8, 21, 7, 7, 8, 36, 14, 110, 39, 14, 42, 7, 28, 21, 28, 14, 94
+      ],
+      "v": "XCBFAEBAEFAEFBAEBXFBFGFBFBX"
+    },
+    "gc.ewan.03": {
+      "h": "a44092155e669359",
+      "e": "neutral",
+      "t": [
+        0, 10, 15, 7, 8, 13, 7, 28, 21, 7, 52, 41, 48, 42, 7, 14, 102, 30, 14, 42, 7, 14, 8, 13, 14, 7, 35,
+        14, 14, 21, 97
+      ],
+      "v": "XFBAFBEBFBFBFEBXBDFCFABGEFBEFX"
+    },
+    "gc.ewan.04": {
+      "h": "e21a3bc6ad4cad97",
+      "e": "neutral",
+      "t": [
+        0, 12, 21, 21, 14, 21, 7, 21, 7, 28, 22, 25, 2, 8, 8, 21, 21, 90, 45, 7, 7, 8, 10, 14, 7, 8, 35, 42,
+        8, 16, 8, 36, 21, 93
+      ],
+      "v": "XBEBEFBCBXBABAFBXFEBABGEAFBAFACBX"
+    },
+    "gc.ewan.done": {
+      "h": "b5112c228e16bcbf",
+      "e": "neutral",
+      "t": [
+        0, 10, 20, 7, 21, 21, 35, 21, 65, 20, 8, 5, 26, 91, 46, 7, 7, 8, 13, 7, 14, 9, 34, 10, 4, 39, 14, 97
+      ],
+      "v": "XBCBEFEBCABCXFEBABGEABABCBX"
+    },
+    "gc.fergus.wait": {
+      "h": "f7031836f318d71a",
+      "e": "neutral",
+      "t": [
+        0, 6, 9, 18, 19, 5, 25, 7, 7, 7, 7, 21, 14, 21, 14, 14, 26, 20, 8, 7, 20, 16, 19, 7, 8, 34, 7, 7, 21,
+        14, 26, 86
+      ],
+      "v": "XABFECBCHCBGFGEBCABCXBCABCBHABX"
+    },
+    "gc.fergus.01": {
+      "h": "16c224d40fa89b09",
+      "e": "concerned",
+      "t": [
+        0, 11, 13, 56, 7, 28, 8, 19, 7, 7, 7, 7, 21, 8, 15, 26, 19, 8, 7, 20, 103, 5, 26, 7, 13, 11, 8, 11,
+        19, 19, 7, 35, 14, 26, 6, 20, 7, 14, 91
+      ],
+      "v": "XBEFCAEGBCGBACBCABCXFEBABAECBHBCXBFGEX"
+    },
+    "gc.fergus.02": {
+      "h": "d1f5a0efff14cb9b",
+      "e": "neutral",
+      "t": [
+        0, 11, 19, 7, 14, 8, 4, 39, 7, 8, 15, 70, 26, 7, 35, 24, 7, 14, 14, 32, 8, 8, 7, 13, 21, 21, 7, 8, 14,
+        49, 14, 86
+      ],
+      "v": "XCBCACBCACBCBABCBCBCACBCGBACFBX"
+    },
+    "gc.fergus.03": {
+      "h": "192ebfa5d7766a2f",
+      "e": "neutral",
+      "t": [
+        0, 10, 43, 8, 20, 14, 14, 14, 7, 7, 7, 14, 7, 105, 8, 7, 49, 21, 7, 80, 7, 7, 14, 7, 21, 7, 53, 24,
+        21, 10, 6, 12, 7, 93
+      ],
+      "v": "XBAHBCFECGEFXBCBEFBEBCGBFBEFADCHX"
+    },
+    "gc.fergus.04": {
+      "h": "158622174a565001",
+      "e": "neutral",
+      "t": [
+        0, 11, 19, 7, 14, 19, 5, 25, 14, 7, 25, 111, 26, 8, 18, 14, 8, 17, 14, 14, 23, 7, 21, 14, 28, 89, 25,
+        8, 12, 14, 21, 8, 6, 27, 88
+      ],
+      "v": "XEFBDEFBEAXBAHBAFCABCBCBXCABGBACBX"
+    },
+    "gc.fergus.belt": {
+      "h": "80b6d4ae07933d6e",
+      "e": "neutral",
+      "t": [
+        0, 11, 20, 7, 7, 28, 8, 8, 35, 14, 49, 7, 28, 7, 109, 7, 7, 14, 7, 7, 14, 7, 15, 21, 16, 9, 7, 20, 91
+      ],
+      "v": "XEFBFACBFBCDBXGDEFCHCABCABCX"
+    },
+    "gc.fergus.indenture": {
+      "h": "946fa7ed817e936b",
+      "e": "neutral",
+      "t": [
+        0, 10, 22, 21, 28, 8, 25, 14, 7, 43, 24, 7, 27, 37, 10, 11, 14, 27, 35, 57, 7, 27, 7, 49, 8, 10, 28,
+        7, 88
+      ],
+      "v": "XBCBAEGCBCBABABCBFBCBCBABEFX"
+    },
+    "gc.fergus.rack": {
+      "h": "7242328b0b12321f",
+      "e": "neutral",
+      "t": [0, 8, 8, 7, 20, 56, 7, 35, 14, 108, 19, 8, 16, 14, 21, 42, 28, 49, 21, 21, 88],
+      "v": "XACBFBEBXBAHCEBFBEBX"
+    },
+    "gc.fergus.door": {
+      "h": "1c580a4ceb96c81b",
+      "e": "neutral",
+      "t": [
+        0, 12, 8, 7, 8, 20, 14, 21, 21, 8, 7, 34, 7, 35, 19, 5, 25, 89, 23, 28, 14, 7, 7, 14, 7, 35, 7, 28, 89
+      ],
+      "v": "XBCAEBCBACBFBDCBXEBCFBEFBFBX"
+    },
+    "gc.fergus.tests": {
+      "h": "3545ca1e58dbecee",
+      "e": "neutral",
+      "t": [
+        0, 14, 4, 8, 14, 7, 14, 14, 7, 7, 7, 14, 8, 14, 26, 16, 7, 14, 7, 8, 17, 8, 19, 14, 99, 17, 28, 7, 14,
+        14, 14, 7, 14, 7, 7, 14, 21, 14, 14, 21, 14, 89
+      ],
+      "v": "XBACHCBCEFCAECBCBEAEACBXFBGECBCBFBFBCBCBX"
+    },
+    "gc.fergus.05": {
+      "h": "de05aec86e0f02a2",
+      "e": "neutral",
+      "t": [0, 11, 6, 33, 35, 14, 28, 8, 7, 13, 98, 14, 7, 7, 14, 21, 21, 17, 35, 7, 42, 7, 14, 35, 89],
+      "v": "XBFBCBACBXBGBCBXBCGFBCBX"
+    },
+    "gc.fergus.06": {
+      "h": "1cfccf05132ad12f",
+      "e": "neutral",
+      "t": [
+        0, 4, 6, 6, 12, 35, 7, 21, 12, 11, 8, 18, 14, 18, 8, 9, 10, 21, 28, 7, 7, 103, 20, 21, 14, 35, 7, 28,
+        7, 21, 87
+      ],
+      "v": "XCACBCBABACHBCACBCECXBCBFGECBX"
+    },
+    "gc.fergus.done": {
+      "h": "ebb8d77cce3ebaad",
+      "e": "neutral",
+      "t": [
+        0, 11, 14, 7, 14, 21, 7, 7, 26, 20, 8, 7, 21, 97, 8, 8, 4, 11, 7, 21, 21, 7, 7, 14, 14, 14, 21, 7, 7,
+        26, 8, 11, 22, 21, 14, 86
+      ],
+      "v": "XEFBCBEBCABCXCABCBEBECBCECBCBCABCBX"
+    },
+    "gc.rory.01": {
+      "h": "b3ffc08e7603afa3",
+      "e": "neutral",
+      "t": [
+        0, 11, 13, 7, 14, 35, 35, 7, 14, 8, 41, 8, 11, 7, 7, 14, 8, 25, 21, 99, 30, 8, 35, 7, 63, 21, 14, 7,
+        7, 8, 14, 25, 7, 24, 85
+      ],
+      "v": "XCGBEFGBAFACBGBAFBXBABGBCBCBAFDCBX"
+    },
+    "gc.rory.02": {
+      "h": "e5f2cee10cac4967",
+      "e": "neutral",
+      "t": [
+        0, 11, 5, 12, 14, 7, 7, 7, 28, 13, 8, 15, 7, 14, 14, 7, 7, 21, 21, 14, 8, 16, 28, 97, 12, 49, 28, 14,
+        11, 5, 25, 7, 14, 7, 7, 7, 33, 13, 7, 14, 7, 8, 48, 14, 83
+      ],
+      "v": "XFBCBCBDCAEFBEFEBCBAFBXCBCBABCBEFBCABFBCACBX"
+    },
+    "gc.seren.wait": {
+      "h": "ae0ca19c77edc9ad",
+      "e": "neutral",
+      "t": [
+        0, 3, 11, 49, 14, 21, 21, 8, 12, 7, 21, 7, 14, 10, 6, 27, 32, 26, 10, 20, 28, 28, 14, 7, 21, 21, 14,
+        21
+      ],
+      "v": "ACBCBCABGCBCABCBCACBFBGBCBX"
+    },
+    "gc.seren.01": {
+      "h": "1bbebddef3e1e2d7",
+      "e": "neutral",
+      "t": [0, 3, 13, 7, 35, 21, 7, 49, 7, 8, 18, 14, 8, 22, 21, 14, 14, 7, 7, 14, 14, 8, 27, 10, 4, 25, 22],
+      "v": "XFGBCEFBACBAFBCBCBCBACABCX"
+    },
+    "gc.seren.02": {
+      "h": "abf24660a40af355",
+      "e": "neutral",
+      "t": [
+        0, 4, 9, 7, 7, 7, 7, 13, 5, 13, 6, 11, 35, 28, 7, 7, 7, 7, 7, 28, 21, 21, 14, 7, 14, 7, 21, 7, 7, 21,
+        78, 5, 19, 8, 14, 21, 14, 56, 7, 7, 21, 28, 16
+      ],
+      "v": "XBCBGBABDCABFBCBCBCBCBCBCBCHBXBFACBCBFBFDX"
+    },
+    "gc.seren.retry": {
+      "h": "0adcc853d469a560",
+      "e": "concerned",
+      "t": [0, 3, 5, 4, 7, 42, 9, 6, 26, 43, 29, 8, 12, 14, 77, 8, 7, 28, 8, 20, 14, 11],
+      "v": "XCDBCABCXBAFBCACFACHX"
+    },
+    "gc.seren.03": {
+      "h": "e4715ebf50e8440f",
+      "e": "neutral",
+      "t": [
+        0, 3, 17, 28, 15, 14, 9, 2, 8, 7, 20, 21, 14, 28, 16, 15, 7, 31, 8, 31, 14, 11, 10, 21, 7, 21, 14, 38,
+        8, 8, 20, 7, 28, 8, 42, 7, 21, 42, 14
+      ],
+      "v": "XCBXBCABACBCBXBFCEFBACBCBCACAHCBABEFBX"
+    },
+    "gc.seren.more": {
+      "h": "45ead4823a1367d8",
+      "e": "neutral",
+      "t": [0, 3, 4, 4, 7, 7, 7, 8, 9, 14, 11, 7, 6, 24, 8, 7, 14, 7, 28, 28, 7, 8, 14, 21, 7, 28, 15],
+      "v": "XCBGFCAEBAGBFBGFDBEGABFCBX"
+    },
+    "gc.seren.assign.01": {
+      "h": "d852baf21a4fd579",
+      "e": "neutral",
+      "t": [
+        0, 4, 9, 14, 9, 16, 14, 7, 14, 49, 9, 21, 7, 14, 21, 7, 7, 7, 8, 9, 14, 28, 7, 7, 8, 5, 5, 14, 7, 21,
+        11, 7, 7, 28, 14, 28, 28, 7, 21, 21, 6
+      ],
+      "v": "XFCAEBDAXBCBFCBCBABCBGBABCBGBFCBCBFBEFAX"
+    },
+    "gc.seren.assign.go": {
+      "h": "a1fe6523c70b4b2f",
+      "e": "neutral",
+      "t": [0, 11, 28, 7, 8, 21, 8, 5, 25, 14, 28, 8, 18, 35, 7, 7, 8, 17, 14],
+      "v": "FBCACABCBCACBEFABX"
+    },
+    "gc.seren.assign.ask": {
+      "h": "080393fa59a54b61",
+      "e": "neutral",
+      "t": [0, 4, 54, 9, 29, 28, 14, 7, 14, 7, 14, 21, 28, 21, 18],
+      "v": "ACABCBCBCBHBFX"
+    },
+    "gc.seren.assign.back": {
+      "h": "dfaeb9ad972a0a8a",
+      "e": "neutral",
+      "t": [
+        0, 3, 9, 14, 7, 49, 14, 36, 4, 25, 28, 21, 66, 27, 35, 7, 14, 19, 7, 27, 14, 21, 35, 63, 60, 21, 7,
+        21, 15
+      ],
+      "v": "XCGEBCBACBCBCBFBGEBFBCXBCGBX"
+    },
+    "gc.seren.done": {
+      "h": "39672f13c1fe0988",
+      "e": "neutral",
+      "t": [
+        0, 4, 6, 20, 8, 12, 28, 14, 56, 8, 35, 14, 14, 21, 9, 5, 26, 52, 47, 28, 21, 18, 8, 7, 21, 7, 7, 7, 7,
+        21, 14, 18
+      ],
+      "v": "XBCACBCBABDBCABCXBCXBAEFBCBCEBX"
+    },
+    "gc.moira.market.hello": {
+      "h": "033d194d13d00434",
+      "e": "happy",
+      "t": [
+        0, 3, 26, 8, 18, 11, 7, 27, 35, 8, 6, 33, 9, 5, 4, 7, 7, 8, 7, 73, 48, 7, 7, 7, 9, 4, 4, 14, 20, 22,
+        7, 28, 7, 14, 7, 23, 29, 12, 4, 18, 7, 21, 7, 21, 14, 8, 15, 14, 14, 7, 7, 35, 17
+      ],
+      "v": "XCACABCBACBADBCHADBCBECADBCHBGBCBDAXABEFCBEBAEBDBGBX"
+    },
+    "gc.moira.market.open": {
+      "h": "a183a24064bd9d9a",
+      "e": "neutral",
+      "t": [
+        0, 1, 4, 7, 14, 14, 7, 8, 13, 7, 7, 8, 33, 14, 40, 7, 51, 7, 7, 7, 9, 4, 4, 14, 14, 23, 23, 7, 21, 14,
+        7, 14, 14, 21, 15
+      ],
+      "v": "XABCBEAEGBAEBXBCBECADBCHXBCBCGBCBX"
+    },
+    "gc.moira.market.auto": {
+      "h": "cb5ab47afb3721cf",
+      "e": "neutral",
+      "t": [
+        0, 12, 8, 17, 28, 7, 42, 7, 7, 14, 7, 7, 21, 14, 7, 52, 55, 7, 7, 7, 21, 8, 4, 4, 14, 14, 35, 9, 8,
+        36, 10, 4, 4, 14, 14, 19, 18, 14, 7, 7, 21, 7, 14, 14, 7, 7, 42, 7, 23, 52, 35, 42, 14, 42, 8, 19, 35,
+        16
+      ],
+      "v": "EACBGBEDEGBFCBXBCBFCADBCHXBABADBCHBCBFCBGCBGEBDAXCBCEACBX"
+    },
+    "gc.moira.market.right": {
+      "h": "e2e2691db1f4a463",
+      "e": "happy",
+      "t": [0, 3, 10, 7, 35, 14, 42, 44, 22, 14, 37, 9, 35, 14, 7, 8, 24, 21, 14],
+      "v": "XBCBDBXBXBABGBACBX"
+    },
+    "gc.moira.market.fair": {
+      "h": "839e44d518524a5d",
+      "e": "neutral",
+      "t": [0, 3, 7, 7, 28, 14, 47, 5, 12, 7, 7, 7, 7, 10, 14, 7, 7, 28, 9, 6, 26, 17],
+      "v": "XBCBDBCBGBCBABCBCABCX"
+    },
+    "gc.moira.market.keep": {
+      "h": "9fe91192a11e74dd",
+      "e": "neutral",
+      "t": [
+        0, 4, 45, 7, 35, 35, 18, 14, 7, 7, 7, 21, 14, 14, 7, 7, 7, 14, 7, 8, 7, 6, 21, 7, 19, 5, 18, 17, 46,
+        7, 14, 21, 7, 7, 55, 12, 11, 18, 14, 7, 21, 14, 15, 17, 21, 14, 9, 25, 17
+      ],
+      "v": "XBDBXBCBFBFBGCBCDBADBFGDCBXBGECGCBCABEFCBXBDBAEX"
+    },
+    "gc.moira.market.over.effort": {
+      "h": "4885401072b6d6b8",
+      "e": "neutral",
+      "t": [
+        0, 4, 14, 14, 14, 14, 7, 7, 7, 7, 7, 7, 28, 14, 43, 14, 13, 16, 14, 14, 21, 7, 7, 17, 6, 19, 28, 7,
+        14, 21, 20
+      ],
+      "v": "XCBGBGECBFBFBXBXBGECGEBFBCGCBX"
+    },
+    "gc.moira.market.over.auto": {
+      "h": "e1e52a01c49f7d65",
+      "e": "neutral",
+      "t": [
+        0, 3, 27, 14, 14, 21, 7, 14, 14, 14, 7, 7, 7, 7, 7, 7, 35, 14, 45, 29, 21, 14, 21, 14, 28, 7, 14, 21,
+        17
+      ],
+      "v": "XCBGFCHCHGECBFBFBXBCBFBCGCBX"
+    },
+    "gc.moira.market.short": {
+      "h": "b9f7fee8394980dc",
+      "e": "neutral",
+      "t": [
+        0, 3, 16, 14, 7, 21, 28, 14, 28, 7, 21, 38, 24, 7, 7, 35, 35, 21, 7, 7, 8, 7, 21, 17, 11, 10, 4, 21,
+        14, 14, 28, 15
+      ],
+      "v": "XBFCBCGBFCXBCBCBECBADCHBFEHCGBX"
+    },
+    "gc.moira.market.hard.auto": {
+      "h": "5226712812a2fc0c",
+      "e": "happy",
+      "t": [
+        0, 4, 7, 7, 17, 14, 7, 8, 38, 47, 21, 7, 25, 7, 59, 14, 7, 14, 28, 14, 14, 14, 7, 7, 14, 7, 7, 7, 14,
+        39, 8, 14, 14, 8, 9, 9, 12, 8, 6, 48, 14, 21, 8, 22, 56, 18
+      ],
+      "v": "XBCBGCABXBCDCBFDBDBGFBCHCGCHXAECACABADBCBAEBX"
+    },
+    "gc.moira.market.broke": {
+      "h": "1cb2aacf8f385382",
+      "e": "neutral",
+      "t": [
+        0, 3, 6, 19, 7, 7, 14, 14, 7, 7, 21, 46, 6, 6, 7, 8, 13, 7, 42, 21, 7, 7, 28, 7, 35, 40, 23, 9, 20,
+        14, 28, 14, 14, 14, 7, 28, 14
+      ],
+      "v": "XCBGBCHGCBXBCBAHCBCBCBCBXCACBFGCBGFX"
+    },
+    "gc.moira.market.done": {
+      "h": "07bb76ccfc18517b",
+      "e": "happy",
+      "t": [
+        0, 4, 5, 12, 7, 8, 34, 21, 32, 9, 7, 28, 14, 28, 46, 8, 7, 7, 7, 7, 7, 8, 6, 26, 21, 9, 5, 26, 16
+      ],
+      "v": "XBEFAFBXBCBDBXFCEFCEADBCABCX"
+    },
+    "gc.moira.market.early": {
+      "h": "0635c9ad81c43b0b",
+      "e": "concerned",
+      "t": [
+        0, 3, 7, 6, 28, 7, 21, 8, 6, 26, 55, 7, 6, 21, 10, 12, 5, 8, 25, 14, 8, 10, 28, 24, 35, 7, 7, 8, 6,
+        37, 8, 14, 14, 14, 37, 19, 28, 11, 15, 28, 14, 21, 7, 7, 35, 18
+      ],
+      "v": "XDBCBCABCXEFCBDCAEBAEBCBCBADBHCGBXBCACEFBHCBX"
+    },
+    "gc.moira.market.bye": {
+      "h": "c97a0edce2712fcc",
+      "e": "neutral",
+      "t": [
+        0, 4, 11, 14, 7, 14, 4, 4, 11, 5, 19, 7, 60, 15, 42, 7, 7, 14, 14, 7, 7, 7, 14, 7, 15, 20, 7, 21, 21,
+        20
+      ],
+      "v": "XEGCABCABCBXFBGCBCBCEBDAEFBFX"
     }
   }
 }

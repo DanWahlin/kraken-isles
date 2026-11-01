@@ -1,0 +1,77 @@
+{
+  "id": "gc.fergus.wait",
+  "speaker": "Fergus",
+  "text": "Brother Ewan has a lesson for you first, Captain, in the abbey's chained library.",
+  "words": [
+    {
+      "word": "Brother",
+      "start": 0.052083,
+      "end": 0.351583
+    },
+    {
+      "word": "Ewan",
+      "start": 0.351583,
+      "end": 0.664083
+    },
+    {
+      "word": "has",
+      "start": 0.664083,
+      "end": 0.872416
+    },
+    {
+      "word": "a",
+      "start": 0.872416,
+      "end": 0.950541
+    },
+    {
+      "word": "lesson",
+      "start": 0.950541,
+      "end": 1.341166
+    },
+    {
+      "word": "for",
+      "start": 1.341166,
+      "end": 1.458333
+    },
+    {
+      "word": "you",
+      "start": 1.458333,
+      "end": 1.640625
+    },
+    {
+      "word": "first",
+      "start": 1.640625,
+      "end": 2.291666
+    },
+    {
+      "word": "Captain",
+      "start": 2.291666,
+      "end": 2.890625
+    },
+    {
+      "word": "in",
+      "start": 2.890625,
+      "end": 3.007833
+    },
+    {
+      "word": "the",
+      "start": 3.007833,
+      "end": 3.138041
+    },
+    {
+      "word": "abbey's",
+      "start": 3.138041,
+      "end": 3.463541
+    },
+    {
+      "word": "chained",
+      "start": 3.463541,
+      "end": 3.802083
+    },
+    {
+      "word": "library",
+      "start": 3.802083,
+      "end": 4.052083
+    }
+  ]
+}

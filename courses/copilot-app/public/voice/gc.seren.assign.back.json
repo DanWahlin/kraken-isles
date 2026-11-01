@@ -1,0 +1,82 @@
+{
+  "id": "gc.seren.assign.back",
+  "speaker": "Seren",
+  "text": "A focused change, passing tests, and a record of only what ran. That's the craft.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.031,
+      "end": 0.159
+    },
+    {
+      "word": "focused",
+      "start": 0.159,
+      "end": 0.755
+    },
+    {
+      "word": "change",
+      "start": 0.755,
+      "end": 1.393
+    },
+    {
+      "word": "passing",
+      "start": 1.393,
+      "end": 1.904
+    },
+    {
+      "word": "tests",
+      "start": 1.904,
+      "end": 2.712
+    },
+    {
+      "word": "and",
+      "start": 2.712,
+      "end": 3.009
+    },
+    {
+      "word": "a",
+      "start": 3.009,
+      "end": 3.052
+    },
+    {
+      "word": "record",
+      "start": 3.052,
+      "end": 3.605
+    },
+    {
+      "word": "of",
+      "start": 3.605,
+      "end": 3.776
+    },
+    {
+      "word": "only",
+      "start": 3.776,
+      "end": 4.201
+    },
+    {
+      "word": "what",
+      "start": 4.201,
+      "end": 4.414
+    },
+    {
+      "word": "ran",
+      "start": 4.414,
+      "end": 5.436
+    },
+    {
+      "word": "That's",
+      "start": 5.436,
+      "end": 5.776
+    },
+    {
+      "word": "the",
+      "start": 5.776,
+      "end": 5.946
+    },
+    {
+      "word": "craft",
+      "start": 5.946,
+      "end": 6.196
+    }
+  ]
+}

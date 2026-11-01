@@ -1,0 +1,87 @@
+{
+  "id": "gc.elspeth.02",
+  "speaker": "Elspeth",
+  "text": "This stone holds the house rules: repository instructions. They apply across every task in the project.",
+  "words": [
+    {
+      "word": "This",
+      "start": 0,
+      "end": 0.24
+    },
+    {
+      "word": "stone",
+      "start": 0.24,
+      "end": 0.707
+    },
+    {
+      "word": "holds",
+      "start": 0.707,
+      "end": 1.06
+    },
+    {
+      "word": "the",
+      "start": 1.06,
+      "end": 1.187
+    },
+    {
+      "word": "house",
+      "start": 1.187,
+      "end": 1.627
+    },
+    {
+      "word": "rules",
+      "start": 1.627,
+      "end": 2.938
+    },
+    {
+      "word": "repository",
+      "start": 2.938,
+      "end": 3.582
+    },
+    {
+      "word": "instructions",
+      "start": 3.582,
+      "end": 4.608
+    },
+    {
+      "word": "They",
+      "start": 4.608,
+      "end": 5.187
+    },
+    {
+      "word": "apply",
+      "start": 5.187,
+      "end": 5.577
+    },
+    {
+      "word": "across",
+      "start": 5.577,
+      "end": 5.973
+    },
+    {
+      "word": "every",
+      "start": 5.973,
+      "end": 6.352
+    },
+    {
+      "word": "task",
+      "start": 6.352,
+      "end": 6.827
+    },
+    {
+      "word": "in",
+      "start": 6.827,
+      "end": 6.9
+    },
+    {
+      "word": "the",
+      "start": 6.9,
+      "end": 7.05
+    },
+    {
+      "word": "project",
+      "start": 7.05,
+      "end": 7.3
+    }
+  ]
+}

@@ -73,6 +73,23 @@ another language) in its own `voice/cast.json`.
 | Arlo | ElevenLabs | [Robert – Conversational and Helpful](https://elevenlabs.io/voices/A41HRDgOrF1mgUtjuSGM) (`A41HRDgOrF1mgUtjuSGM`) | Canadian, male, young; cheerful. Voice Library, 4015-day notice period. Keelhaven’s lock-keeper (`kh.arlo.*`). His "hull" can sound like "hole": three lines say it in a clearer way (ART_PROVENANCE.md). |
 | Ottoline | ElevenLabs | [Cassandra Woodhouse](https://elevenlabs.io/voices/A3TiUH9xcSptIzvOUBnB) (`A3TiUH9xcSptIzvOUBnB`) | New Zealand English, female, middle-aged; calm and warm. Voice Library, 180-day notice period. Keeper of Keelhaven’s Gate Light and its Seal (`kh.otto.*`). |
 | Bram | ElevenLabs | [Hendrik Vorster – Upbeat and Energetic](https://elevenlabs.io/voices/JbAJPrBwqw2dm8hxfklG) (`JbAJPrBwqw2dm8hxfklG`) | South African English, male, middle-aged; upbeat. Voice Library, no notice period (the owner can remove it at any time; the audio made stays). The Model Market’s stall on Keelhaven: his own version of every market line, and a goodbye (`kh.bram.market.*`, 14 lines). |
+| Elspeth | ElevenLabs | [Isla Skye – Scottish, Soft, and Warm](https://elevenlabs.io/voices/TVmbglAk3F1GkiCoOq47) (`TVmbglAk3F1GkiCoOq47`) | Scottish, female, middle-aged; warm and brisk. Voice Library, 730-day notice period. Guildcrest’s reeve, at the Charter Stone (`gc.elspeth.*`, 6 lines). |
+| Aidan | ElevenLabs | [Cillian – Low, Calm and Authentic](https://elevenlabs.io/voices/B5jEZPqk2OJ2vkPw3wBM) (`B5jEZPqk2OJ2vkPw3wBM`) | Irish, male, young; low and calm. Voice Library, 730-day notice period. The abbey’s porter (`gc.aidan.*`, 5 lines). |
+| Brigid | ElevenLabs | [Orla – Calm & Friendly](https://elevenlabs.io/voices/WtSj8ZSBSK3JEi9xgqBG) (`WtSj8ZSBSK3JEi9xgqBG`) | Irish, female, middle-aged; calm and exact. Voice Library, 730-day notice period. The scriptorium (`gc.brigid.*`, 9 lines). |
+| Ewan | Azure AI Speech | `en-GB-AlfieNeural`, −8 %, −2 st | **Stopgap** (2026-11-01): the ElevenLabs credits ran out mid-generation (they reset 2026-11-10). Planned: [Chris – Father's Legacy](https://elevenlabs.io/voices/aKQdyEogZx5VoND0oujS) (`aKQdyEogZx5VoND0oujS`), Welsh, 730-day notice. The chained library (`gc.ewan.*`, 6 lines). |
+| Fergus | Azure AI Speech | `en-GB-NoahNeural`, −5 %, −3 st | **Stopgap**, as Ewan. Planned: [David – Deep, Smooth, and Scottish](https://elevenlabs.io/voices/1N4VgTBW1ZGBv5IHWRAf) (`1N4VgTBW1ZGBv5IHWRAf`), 365-day notice. The Guildhall of Journeymen (`gc.fergus.*`, 13 lines). |
+| Rory | Azure AI Speech | `en-IE-ConnorNeural`, −2 % | **Stopgap**, as Ewan (the same Azure voice as Pim on Anchorage, at another rate; `en-GB-Harry:MAI-Voice-2.1` gives no word timings). Planned: [Steven – Warm Scottish English](https://elevenlabs.io/voices/wnbtVuRBgnPmE1cCeLUN) (`wnbtVuRBgnPmE1cCeLUN`), 730-day notice. The journeyman (`gc.rory.*`, 3 lines). |
+| Seren | Azure AI Speech | `en-GB-Sonia:DragonHDLatestNeural`, −6 % | **Stopgap**, as Ewan. Fallback `en-GB-SoniaNeural`. Planned: [Hannah – Welsh and friendly](https://elevenlabs.io/voices/73fZMjboCm1aBVyxTbBp) (`73fZMjboCm1aBVyxTbBp`), 730-day notice. Keeper of the bell and the Seal (`gc.seren.*`, 12 lines). |
+| Moira | Azure AI Speech | `en-GB-Ada:DragonHDLatestNeural` | **Stopgap**, as Ewan. Fallback `en-GB-AdaMultilingualNeural`. Planned: [Laura – Natural Scottish Conversational](https://elevenlabs.io/voices/XaIM9neHiD6g6r88bMbY) (`XaIM9neHiD6g6r88bMbY`), 730-day notice. The Model Market’s stall on Guildcrest (`gc.moira.market.*`, 14 lines). |
+
+**Guildcrest's stopgap voices.** All eight of Guildcrest's ElevenLabs voices were checked with a test line on
+2026-11-01, but the account's ElevenLabs credits ran out after Elspeth, Aidan and most of Brigid. Ewan, Fergus,
+Rory, Seren and Moira speak with Azure voices until the credits reset (2026-11-10). To move one to its planned
+voice, set `"tts": "elevenlabs"` and its `voice` in `cast.json` (drop `prosody` and `fallbackVoice`), then make
+its lines again: `npx tsx tools/voice/generate.ts --course copilot-app --only=Ewan` and
+`npm run voice:lipsync -- --course copilot-app`. Battle 4's four lines (`b4.*`, Juno and Wingman) are
+`"pending": true` for the same reason: voice them, drop `pending`, and hook them in `course.json`
+(`hooks.battles["passage-keelhaven-guildcrest"]`: `waves[].line`, `wonLine`) and Chapter 03's `voiced`.
 
 ElevenLabs Voice Library voices can be removed by their owners. With a notice period, you can use the voice until
 the period ends. Audio that you already made continues to work.

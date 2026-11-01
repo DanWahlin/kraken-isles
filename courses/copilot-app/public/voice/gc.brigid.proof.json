@@ -1,0 +1,52 @@
+{
+  "id": "gc.brigid.proof",
+  "speaker": "Brigid",
+  "text": "Proof it. Only the two rules should have changed.",
+  "words": [
+    {
+      "word": "Proof",
+      "start": 0,
+      "end": 0.347
+    },
+    {
+      "word": "it",
+      "start": 0.347,
+      "end": 0.784
+    },
+    {
+      "word": "Only",
+      "start": 0.784,
+      "end": 1.4
+    },
+    {
+      "word": "the",
+      "start": 1.4,
+      "end": 1.58
+    },
+    {
+      "word": "two",
+      "start": 1.58,
+      "end": 1.853
+    },
+    {
+      "word": "rules",
+      "start": 1.853,
+      "end": 2.354
+    },
+    {
+      "word": "should",
+      "start": 2.354,
+      "end": 2.592
+    },
+    {
+      "word": "have",
+      "start": 2.592,
+      "end": 2.79
+    },
+    {
+      "word": "changed",
+      "start": 2.79,
+      "end": 3.04
+    }
+  ]
+}

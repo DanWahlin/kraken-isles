@@ -1,0 +1,87 @@
+{
+  "id": "gc.fergus.05",
+  "speaker": "Fergus",
+  "text": "The tools list is the limit. Leave it out, and he'd get every tool there is.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.052083,
+      "end": 0.208333
+    },
+    {
+      "word": "tools",
+      "start": 0.208333,
+      "end": 0.625
+    },
+    {
+      "word": "list",
+      "start": 0.625,
+      "end": 0.911458
+    },
+    {
+      "word": "is",
+      "start": 0.911458,
+      "end": 1.041666
+    },
+    {
+      "word": "the",
+      "start": 1.041666,
+      "end": 1.158875
+    },
+    {
+      "word": "limit",
+      "start": 1.158875,
+      "end": 2.487
+    },
+    {
+      "word": "Leave",
+      "start": 2.487,
+      "end": 2.786458
+    },
+    {
+      "word": "it",
+      "start": 2.786458,
+      "end": 2.916666
+    },
+    {
+      "word": "out",
+      "start": 2.916666,
+      "end": 3.372416
+    },
+    {
+      "word": "and",
+      "start": 3.372416,
+      "end": 3.463541
+    },
+    {
+      "word": "he'd",
+      "start": 3.463541,
+      "end": 3.632833
+    },
+    {
+      "word": "get",
+      "start": 3.632833,
+      "end": 3.867208
+    },
+    {
+      "word": "every",
+      "start": 3.867208,
+      "end": 4.101583
+    },
+    {
+      "word": "tool",
+      "start": 4.101583,
+      "end": 4.427083
+    },
+    {
+      "word": "there",
+      "start": 4.427083,
+      "end": 4.609375
+    },
+    {
+      "word": "is",
+      "start": 4.609375,
+      "end": 4.859375
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "id": "gc.seren.wait",
+  "speaker": "Seren",
+  "text": "Fergus's journeyman comes first, Captain. Come back when Rory's fitted out.",
+  "words": [
+    {
+      "word": "Fergus's",
+      "start": 0.031,
+      "end": 0.542
+    },
+    {
+      "word": "journeyman",
+      "start": 0.542,
+      "end": 1.095
+    },
+    {
+      "word": "comes",
+      "start": 1.095,
+      "end": 1.393
+    },
+    {
+      "word": "first",
+      "start": 1.393,
+      "end": 1.819
+    },
+    {
+      "word": "Captain",
+      "start": 1.819,
+      "end": 2.712
+    },
+    {
+      "word": "Come",
+      "start": 2.712,
+      "end": 3.052
+    },
+    {
+      "word": "back",
+      "start": 3.052,
+      "end": 3.393
+    },
+    {
+      "word": "when",
+      "start": 3.393,
+      "end": 3.562
+    },
+    {
+      "word": "Rory's",
+      "start": 3.562,
+      "end": 3.946
+    },
+    {
+      "word": "fitted",
+      "start": 3.946,
+      "end": 4.243
+    },
+    {
+      "word": "out",
+      "start": 4.243,
+      "end": 4.493
+    }
+  ]
+}

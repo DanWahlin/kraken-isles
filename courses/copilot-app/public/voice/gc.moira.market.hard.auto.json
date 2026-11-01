@@ -1,0 +1,82 @@
+{
+  "id": "gc.moira.market.hard.auto",
+  "speaker": "Moira",
+  "text": "Right-sized! A hard job wants a higher Fusion level: more capable models and deeper reasoning.",
+  "words": [
+    {
+      "word": "Right-sized",
+      "start": 0.03,
+      "end": 1.67
+    },
+    {
+      "word": "A",
+      "start": 1.67,
+      "end": 1.87
+    },
+    {
+      "word": "hard",
+      "start": 1.87,
+      "end": 2.23
+    },
+    {
+      "word": "job",
+      "start": 2.23,
+      "end": 2.75
+    },
+    {
+      "word": "wants",
+      "start": 2.75,
+      "end": 3.03
+    },
+    {
+      "word": "a",
+      "start": 3.03,
+      "end": 3.15
+    },
+    {
+      "word": "higher",
+      "start": 3.15,
+      "end": 3.51
+    },
+    {
+      "word": "Fusion",
+      "start": 3.51,
+      "end": 3.989
+    },
+    {
+      "word": "level",
+      "start": 3.989,
+      "end": 4.75
+    },
+    {
+      "word": "more",
+      "start": 4.75,
+      "end": 5.03
+    },
+    {
+      "word": "capable",
+      "start": 5.03,
+      "end": 5.55
+    },
+    {
+      "word": "models",
+      "start": 5.55,
+      "end": 6.11
+    },
+    {
+      "word": "and",
+      "start": 6.11,
+      "end": 6.35
+    },
+    {
+      "word": "deeper",
+      "start": 6.35,
+      "end": 6.75
+    },
+    {
+      "word": "reasoning",
+      "start": 6.75,
+      "end": 7
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "gc.brigid.shelf",
+  "speaker": "Brigid",
+  "text": "The shelf index is Customize. Open the Installed tab, then filter to Skills.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0,
+      "end": 0.133
+    },
+    {
+      "word": "shelf",
+      "start": 0.133,
+      "end": 0.48
+    },
+    {
+      "word": "index",
+      "start": 0.48,
+      "end": 0.933
+    },
+    {
+      "word": "is",
+      "start": 0.933,
+      "end": 1.128
+    },
+    {
+      "word": "Customize",
+      "start": 1.128,
+      "end": 2.208
+    },
+    {
+      "word": "Open",
+      "start": 2.208,
+      "end": 3.08
+    },
+    {
+      "word": "the",
+      "start": 3.08,
+      "end": 3.256
+    },
+    {
+      "word": "Installed",
+      "start": 3.256,
+      "end": 3.86
+    },
+    {
+      "word": "tab",
+      "start": 3.86,
+      "end": 4.448
+    },
+    {
+      "word": "then",
+      "start": 4.448,
+      "end": 4.709
+    },
+    {
+      "word": "filter",
+      "start": 4.709,
+      "end": 5.2
+    },
+    {
+      "word": "to",
+      "start": 5.2,
+      "end": 5.451
+    },
+    {
+      "word": "Skills",
+      "start": 5.451,
+      "end": 5.701
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": "gc.aidan.02",
+  "speaker": "Aidan",
+  "text": "What you write there stays in that worktree. Keep the one session for every exercise.",
+  "words": [
+    {
+      "word": "What",
+      "start": 0,
+      "end": 0.12
+    },
+    {
+      "word": "you",
+      "start": 0.12,
+      "end": 0.293
+    },
+    {
+      "word": "write",
+      "start": 0.293,
+      "end": 0.6
+    },
+    {
+      "word": "there",
+      "start": 0.6,
+      "end": 0.88
+    },
+    {
+      "word": "stays",
+      "start": 0.88,
+      "end": 1.307
+    },
+    {
+      "word": "in",
+      "start": 1.307,
+      "end": 1.392
+    },
+    {
+      "word": "that",
+      "start": 1.392,
+      "end": 1.584
+    },
+    {
+      "word": "worktree",
+      "start": 1.584,
+      "end": 2.464
+    },
+    {
+      "word": "Keep",
+      "start": 2.464,
+      "end": 3.38
+    },
+    {
+      "word": "the",
+      "start": 3.38,
+      "end": 3.52
+    },
+    {
+      "word": "one",
+      "start": 3.52,
+      "end": 3.84
+    },
+    {
+      "word": "session",
+      "start": 3.84,
+      "end": 4.44
+    },
+    {
+      "word": "for",
+      "start": 4.44,
+      "end": 4.627
+    },
+    {
+      "word": "every",
+      "start": 4.627,
+      "end": 5.049
+    },
+    {
+      "word": "exercise",
+      "start": 5.049,
+      "end": 5.299
+    }
+  ]
+}

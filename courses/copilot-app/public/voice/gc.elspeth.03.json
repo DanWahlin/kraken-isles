@@ -1,0 +1,107 @@
+{
+  "id": "gc.elspeth.03",
+  "speaker": "Elspeth",
+  "text": "A skill is the chart for one kind of song. Use one when you repeat the same kind of work.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0,
+      "end": 0.16
+    },
+    {
+      "word": "skill",
+      "start": 0.16,
+      "end": 0.613
+    },
+    {
+      "word": "is",
+      "start": 0.613,
+      "end": 0.74
+    },
+    {
+      "word": "the",
+      "start": 0.74,
+      "end": 0.867
+    },
+    {
+      "word": "chart",
+      "start": 0.867,
+      "end": 1.24
+    },
+    {
+      "word": "for",
+      "start": 1.24,
+      "end": 1.42
+    },
+    {
+      "word": "one",
+      "start": 1.42,
+      "end": 1.68
+    },
+    {
+      "word": "kind",
+      "start": 1.68,
+      "end": 2.027
+    },
+    {
+      "word": "of",
+      "start": 2.027,
+      "end": 2.176
+    },
+    {
+      "word": "song",
+      "start": 2.176,
+      "end": 2.86
+    },
+    {
+      "word": "Use",
+      "start": 2.86,
+      "end": 3.6
+    },
+    {
+      "word": "one",
+      "start": 3.6,
+      "end": 3.872
+    },
+    {
+      "word": "when",
+      "start": 3.872,
+      "end": 4.04
+    },
+    {
+      "word": "you",
+      "start": 4.04,
+      "end": 4.217
+    },
+    {
+      "word": "repeat",
+      "start": 4.217,
+      "end": 4.58
+    },
+    {
+      "word": "the",
+      "start": 4.58,
+      "end": 4.704
+    },
+    {
+      "word": "same",
+      "start": 4.704,
+      "end": 5.008
+    },
+    {
+      "word": "kind",
+      "start": 5.008,
+      "end": 5.253
+    },
+    {
+      "word": "of",
+      "start": 5.253,
+      "end": 5.44
+    },
+    {
+      "word": "work",
+      "start": 5.44,
+      "end": 5.69
+    }
+  ]
+}

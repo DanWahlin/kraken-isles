@@ -822,6 +822,233 @@
         "answer": "card",
         "explain": "An `article.book-card` attachment appears in the prompt box, and Pick & Polish turns off."
       }
+    },
+    {
+      "id": "A4.1",
+      "chapter": "04-skills-custom-agents",
+      "quest": "Q4.3",
+      "title": "Create a practice session",
+      "steps": [
+        "Select **Create from** next to your course project.",
+        "Select **Branches**, then `main`, to start a session in a new worktree.",
+        "Set the mode to **Interactive**.",
+        "Ask it to show the session’s branch and worktree path, and to confirm that `.github/skills/book-app-reviewer/SKILL.md` and `samples/book-app-web` exist, without editing files, committing or pushing."
+      ],
+      "why": "Keep this session for every exercise. When you open a file in your editor, use the session’s worktree, not your original clone.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "create-a-practice-session",
+        "hash": "11035c4aac17"
+      },
+      "link": {
+        "label": "The course’s exact prompts",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/04-skills-custom-agents/README.md#create-a-practice-session"
+      },
+      "seen": {
+        "prompt": "What did the session show?",
+        "options": [
+          {
+            "id": "both",
+            "text": "A worktree path apart from my clone, and both paths found"
+          },
+          {
+            "id": "clone",
+            "text": "My original clone’s path"
+          },
+          {
+            "id": "missing",
+            "text": "One of the paths is missing"
+          }
+        ],
+        "answer": "both",
+        "explain": "The course shows a worktree path separate from your original clone, and both paths found. Your clone’s path means you’re in the original checkout: start from **Create from**. A missing path means the session didn’t start from `main` in your course fork."
+      }
+    },
+    {
+      "id": "A4.2",
+      "chapter": "04-skills-custom-agents",
+      "quest": "Q4.4",
+      "title": "Update the course skill",
+      "steps": [
+        "Select **Customize**, then the **Installed** tab. Set the type filter to **Skills**, search for `book-app-reviewer`, and check it shows **Project: copilot-app-for-beginners** with its toggle on.",
+        "In your chapter session, ask Copilot to read `@.github/skills/book-app-reviewer/SKILL.md` and explain its frontmatter, without editing files or running checks.",
+        "Ask it to edit only `SKILL.md` and append the course’s two Review focus rules (headings; text alternatives), keeping every other rule and the frontmatter.",
+        "Inspect the **Changes** tab: only the two rules were added to `SKILL.md`."
+      ],
+      "why": "A skill is a reusable checklist that lives in the repository. Changing it changes every review that uses it.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-update-and-use-the-course-skill",
+        "hash": "ea46465fbcdf"
+      },
+      "link": {
+        "label": "The course’s exact prompts",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/04-skills-custom-agents/README.md#exercise-update-and-use-the-course-skill"
+      },
+      "seen": {
+        "prompt": "What did **Changes** show?",
+        "options": [
+          {
+            "id": "two",
+            "text": "Only the two new rules in `SKILL.md`"
+          },
+          {
+            "id": "app",
+            "text": "Edits to the sample app too"
+          },
+          {
+            "id": "nothing",
+            "text": "Nothing changed"
+          }
+        ],
+        "answer": "two",
+        "explain": "The course expects only the two rules added to `SKILL.md`. Edits to the sample app? Ask Copilot to undo them: this step edits only the skill. Nothing at all? Check you’re in the session’s worktree."
+      }
+    },
+    {
+      "id": "A4.3",
+      "chapter": "04-skills-custom-agents",
+      "quest": "Q4.4",
+      "title": "Use the updated skill",
+      "steps": [
+        "Submit `/skills reload` to load the edited skill.",
+        "Set the mode to **Plan**, and ask Copilot to use the `book-app-reviewer` skill to inspect `@samples/book-app-web/src` (the results heading, the book-title headings and the empty state) and propose at most one small improvement.",
+        "Expand the skill activity in the response, and check that it loaded `book-app-reviewer`.",
+        "Compare the plan with the rules in the file. Stop before implementation."
+      ],
+      "why": "Naming the skill makes your intent clear. It doesn’t guarantee the findings: check the activity and the code.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-update-and-use-the-course-skill",
+        "hash": "ea46465fbcdf"
+      },
+      "link": {
+        "label": "The course’s exact prompts",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/04-skills-custom-agents/README.md#exercise-update-and-use-the-course-skill"
+      },
+      "seen": {
+        "prompt": "What did the plan say about the book titles?",
+        "options": [
+          {
+            "id": "h3",
+            "text": "`h2` to `h3`, and it also accounts for the `.book-card h2` selector"
+          },
+          {
+            "id": "passed",
+            "text": "That the tests passed"
+          },
+          {
+            "id": "nothing",
+            "text": "Nothing about headings"
+          }
+        ],
+        "answer": "h3",
+        "explain": "The course expects the plan to cite the new rules, and if it moves book titles to `h3`, to account for the `.book-card h2` CSS selector. A plan can’t claim tests passed: no checks ran. Nothing about headings? Pick `/book-app-reviewer` from the `/` menu, then check the activity."
+      }
+    },
+    {
+      "id": "A4.4",
+      "chapter": "04-skills-custom-agents",
+      "quest": "Q4.7",
+      "title": "Create a read-only custom agent",
+      "steps": [
+        "In the chapter session, in **Interactive** mode, select **Default agent** if an agent picker shows below the prompt box.",
+        "Ask Copilot to create `.github/agents/book-app-explainer.agent.md` with the course’s exact Markdown (copy it from the chapter), and to show the file and stop if it exists.",
+        "Inspect the new file in **Changes**: `tools` holds only `read` and `search`.",
+        "Wait for active work in every session to finish, then quit the app and open it again (closing the window isn’t quitting), and select the chapter’s session."
+      ],
+      "why": "The app loads custom agents when it starts. The `tools` list is what keeps this agent read-only.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-create-a-read-only-book-app-explainer",
+        "hash": "428c8ffecae4"
+      },
+      "link": {
+        "label": "The course’s exact prompts",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/04-skills-custom-agents/README.md#exercise-create-a-read-only-book-app-explainer"
+      },
+      "seen": {
+        "prompt": "What’s in its `tools` list?",
+        "options": [
+          {
+            "id": "two",
+            "text": "Only `read` and `search`"
+          },
+          {
+            "id": "none",
+            "text": "There’s no tools list"
+          },
+          {
+            "id": "edit",
+            "text": "It also has an editing tool"
+          }
+        ],
+        "answer": "two",
+        "explain": "The course’s profile has `tools: [\"read\", \"search\"]`. Without a tools list, the agent gets every available tool, and an explainer doesn’t need to edit: ask Copilot to match the course’s Markdown exactly."
+      }
+    },
+    {
+      "id": "A4.5",
+      "chapter": "04-skills-custom-agents",
+      "quest": "Q4.7",
+      "title": "Select and use the agent",
+      "steps": [
+        "In your chapter session, type `/agent`, select **book-app-explainer**, and send the command. Check that the agent picker below the prompt box shows `book-app-explainer`.",
+        "Ask it how `@samples/book-app-web/src/App.tsx` keeps reading statistics aligned with filtered books, using the **Unread** filter as the example, in its four-part answer format.",
+        "Compare the answer with `App.tsx`, `ReadingStats.tsx` and the existing tests, and check that no files changed.",
+        "Use `/agent` or the agent picker to return to the default agent."
+      ],
+      "why": "Match an agent’s tools to its task: an explainer needs read and search, nothing more.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-create-a-read-only-book-app-explainer",
+        "hash": "428c8ffecae4"
+      },
+      "link": {
+        "label": "The course’s exact prompts",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/04-skills-custom-agents/README.md#exercise-create-a-read-only-book-app-explainer"
+      },
+      "seen": {
+        "prompt": "How did the answer trace the data?",
+        "options": [
+          {
+            "id": "trace",
+            "text": "`filters` through `filterBooks` to `filteredBooks`, then to `ReadingStats` and the book cards"
+          },
+          {
+            "id": "changed",
+            "text": "It changed `App.tsx`"
+          },
+          {
+            "id": "passed",
+            "text": "It said the tests passed"
+          }
+        ],
+        "answer": "trace",
+        "explain": "The course expects that trace, with test coverage kept apart from a suggested manual check. It can’t change files or run tests: if it did, check that you selected **book-app-explainer**, and don’t trust a claim that tests passed."
+      }
+    },
+    {
+      "id": "A4.6",
+      "chapter": "04-skills-custom-agents",
+      "quest": "Q4.A",
+      "title": "Your turn: one skill-guided change",
+      "steps": [
+        "In the same worktree, with the default agent, set the mode to **Plan**, pick `/book-app-reviewer` from the `/` menu, and ask for a plan for the skill’s heading recommendation (or a focused test) that names the source, CSS and test files.",
+        "Meanwhile, in the review panel’s **Terminal**: `cd samples/book-app-web`, `npm install`, `npm test -- --run` and `npm run build`. Note the test count and the build result.",
+        "Select **Exit plan mode and I will prompt myself** (**Continue** if **Review plan** stays open), check the mode is **Interactive**, and ask for only that change.",
+        "Check **Changes**, rerun the tests and build, and preview `npm run dev` in **Browser** (the **Local** URL) wide and narrow; search `hobbit`, then `zzzz-no-match`; stop it with `Ctrl+C`. Then ask for `samples/book-app-web/docs/chapter-04-review.md`, recording only what ran."
+      ],
+      "why": "One reviewed recommendation through the whole inner loop, with an honest record. Don’t commit or push.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "assignment",
+        "hash": "80a1a1b3729a"
+      },
+      "link": {
+        "label": "The course’s exact prompts",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/04-skills-custom-agents/README.md#assignment"
+      }
     }
   ],
   "objectives": [
@@ -1190,6 +1417,67 @@
         "puzzles": ["drydock-ring", "lock-flight"],
         "quizzes": ["K3.2", "T3.1"]
       }
+    },
+    {
+      "id": "O4.1",
+      "chapter": "04-skills-custom-agents",
+      "text": "Choose between repository instructions, a skill, and a custom agent",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "learning-objectives",
+        "hash": "87437423c6c6"
+      },
+      "covers": {
+        "quests": ["Q4.2"],
+        "quizzes": ["M4.1", "K4.2", "T4.1", "T4.2", "T4.3"]
+      }
+    },
+    {
+      "id": "O4.2",
+      "chapter": "04-skills-custom-agents",
+      "text": "Find, update, and use the repository's `book-app-reviewer` skill",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "learning-objectives",
+        "hash": "87437423c6c6"
+      },
+      "covers": {
+        "quests": ["Q4.4"],
+        "puzzles": ["pattern-book"],
+        "quizzes": ["T4.4", "T4.5"],
+        "appTasks": ["A4.2", "A4.3"]
+      }
+    },
+    {
+      "id": "O4.3",
+      "chapter": "04-skills-custom-agents",
+      "text": "Create and select a custom agent that can read and explain the sample without editing it",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "learning-objectives",
+        "hash": "87437423c6c6"
+      },
+      "covers": {
+        "quests": ["Q4.7"],
+        "puzzles": ["toolbelt"],
+        "quizzes": ["T4.7", "T4.8", "T4.10"],
+        "appTasks": ["A4.4", "A4.5"]
+      }
+    },
+    {
+      "id": "O4.4",
+      "chapter": "04-skills-custom-agents",
+      "text": "Apply one skill-guided improvement and validate it with the Chapter 03 workflow",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "learning-objectives",
+        "hash": "87437423c6c6"
+      },
+      "covers": {
+        "quests": ["Q4.A"],
+        "quizzes": ["K4.9"],
+        "appTasks": ["A4.6"]
+      }
     }
   ],
   "reflections": [
@@ -1310,6 +1598,37 @@
         {
           "id": "agree",
           "text": "Ready only when the diff, local validation, checks and my review agree"
+        }
+      ]
+    },
+    {
+      "chapter": "04-skills-custom-agents",
+      "prompt": "Before your Seal: which of these will you use first?",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "key-takeaways",
+        "hash": "e262c06d63b6"
+      },
+      "choices": [
+        {
+          "id": "instructions",
+          "text": "Repository instructions: the house rules for every task in a project"
+        },
+        {
+          "id": "skill",
+          "text": "A skill for work I repeat, like a review checklist"
+        },
+        {
+          "id": "agent",
+          "text": "A custom agent with only the tools its job needs"
+        },
+        {
+          "id": "guidance",
+          "text": "Remembering a skill is guidance, not a permission boundary"
+        },
+        {
+          "id": "check",
+          "text": "Checking the activity and the files, not only what Copilot says it did"
         }
       ]
     }

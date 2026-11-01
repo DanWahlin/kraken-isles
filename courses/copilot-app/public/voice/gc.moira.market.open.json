@@ -1,0 +1,82 @@
+{
+  "id": "gc.moira.market.open",
+  "speaker": "Moira",
+  "text": "Pick a job off the board, then hire a model and set the effort dial.",
+  "words": [
+    {
+      "word": "Pick",
+      "start": 0.07,
+      "end": 0.27
+    },
+    {
+      "word": "a",
+      "start": 0.27,
+      "end": 0.31
+    },
+    {
+      "word": "job",
+      "start": 0.31,
+      "end": 0.63
+    },
+    {
+      "word": "off",
+      "start": 0.63,
+      "end": 0.83
+    },
+    {
+      "word": "the",
+      "start": 0.83,
+      "end": 0.95
+    },
+    {
+      "word": "board",
+      "start": 0.95,
+      "end": 1.71
+    },
+    {
+      "word": "then",
+      "start": 1.71,
+      "end": 2.15
+    },
+    {
+      "word": "hire",
+      "start": 2.15,
+      "end": 2.55
+    },
+    {
+      "word": "a",
+      "start": 2.55,
+      "end": 2.63
+    },
+    {
+      "word": "model",
+      "start": 2.63,
+      "end": 3.19
+    },
+    {
+      "word": "and",
+      "start": 3.19,
+      "end": 3.389
+    },
+    {
+      "word": "set",
+      "start": 3.389,
+      "end": 3.63
+    },
+    {
+      "word": "the",
+      "start": 3.63,
+      "end": 3.75
+    },
+    {
+      "word": "effort",
+      "start": 3.75,
+      "end": 4.11
+    },
+    {
+      "word": "dial",
+      "start": 4.11,
+      "end": 4.36
+    }
+  ]
+}

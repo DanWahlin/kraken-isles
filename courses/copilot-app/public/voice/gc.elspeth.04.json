@@ -1,0 +1,97 @@
+{
+  "id": "gc.elspeth.04",
+  "speaker": "Elspeth",
+  "text": "You'll find skills in Customize, and you pick custom agents with /agent. Brother Aidan keeps the abbey gate.",
+  "words": [
+    {
+      "word": "You'll",
+      "start": 0,
+      "end": 0.208
+    },
+    {
+      "word": "find",
+      "start": 0.208,
+      "end": 0.48
+    },
+    {
+      "word": "skills",
+      "start": 0.48,
+      "end": 1.013
+    },
+    {
+      "word": "in",
+      "start": 1.013,
+      "end": 1.208
+    },
+    {
+      "word": "Customize",
+      "start": 1.208,
+      "end": 2.44
+    },
+    {
+      "word": "and",
+      "start": 2.44,
+      "end": 2.6
+    },
+    {
+      "word": "you",
+      "start": 2.6,
+      "end": 2.752
+    },
+    {
+      "word": "pick",
+      "start": 2.752,
+      "end": 2.96
+    },
+    {
+      "word": "custom",
+      "start": 2.96,
+      "end": 3.52
+    },
+    {
+      "word": "agents",
+      "start": 3.52,
+      "end": 4.064
+    },
+    {
+      "word": "with",
+      "start": 4.064,
+      "end": 5.013
+    },
+    {
+      "word": "agent",
+      "start": 5.013,
+      "end": 6.1
+    },
+    {
+      "word": "Brother",
+      "start": 6.1,
+      "end": 7.42
+    },
+    {
+      "word": "Aidan",
+      "start": 7.42,
+      "end": 7.84
+    },
+    {
+      "word": "keeps",
+      "start": 7.84,
+      "end": 8.28
+    },
+    {
+      "word": "the",
+      "start": 8.28,
+      "end": 8.46
+    },
+    {
+      "word": "abbey",
+      "start": 8.46,
+      "end": 8.832
+    },
+    {
+      "word": "gate",
+      "start": 8.832,
+      "end": 9.082
+    }
+  ]
+}

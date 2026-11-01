@@ -1,0 +1,87 @@
+{
+  "id": "gc.brigid.03",
+  "speaker": "Brigid",
+  "text": "Naming the skill makes your intent clear. It doesn't make the findings right. You check those.",
+  "words": [
+    {
+      "word": "Naming",
+      "start": 0,
+      "end": 0.34
+    },
+    {
+      "word": "the",
+      "start": 0.34,
+      "end": 0.453
+    },
+    {
+      "word": "skill",
+      "start": 0.453,
+      "end": 0.76
+    },
+    {
+      "word": "makes",
+      "start": 0.76,
+      "end": 0.992
+    },
+    {
+      "word": "your",
+      "start": 0.992,
+      "end": 1.2
+    },
+    {
+      "word": "intent",
+      "start": 1.2,
+      "end": 1.747
+    },
+    {
+      "word": "clear",
+      "start": 1.747,
+      "end": 2.453
+    },
+    {
+      "word": "It",
+      "start": 2.453,
+      "end": 2.92
+    },
+    {
+      "word": "doesn't",
+      "start": 2.92,
+      "end": 3.232
+    },
+    {
+      "word": "make",
+      "start": 3.232,
+      "end": 3.38
+    },
+    {
+      "word": "the",
+      "start": 3.38,
+      "end": 3.493
+    },
+    {
+      "word": "findings",
+      "start": 3.493,
+      "end": 4
+    },
+    {
+      "word": "right",
+      "start": 4,
+      "end": 4.54
+    },
+    {
+      "word": "You",
+      "start": 4.54,
+      "end": 5
+    },
+    {
+      "word": "check",
+      "start": 5,
+      "end": 5.28
+    },
+    {
+      "word": "those",
+      "start": 5.28,
+      "end": 5.53
+    }
+  ]
+}
