@@ -1,0 +1,87 @@
+{
+  "id": "gc.ewan.02",
+  "speaker": "Ewan",
+  "text": "A skill tells Copilot how to approach a task. It doesn't switch off a single tool.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.054333,
+      "end": 0.163041
+    },
+    {
+      "word": "skill",
+      "start": 0.163041,
+      "end": 0.529875
+    },
+    {
+      "word": "tells",
+      "start": 0.529875,
+      "end": 0.855958
+    },
+    {
+      "word": "Copilot",
+      "start": 0.855958,
+      "end": 1.467375
+    },
+    {
+      "word": "how",
+      "start": 1.467375,
+      "end": 1.657625
+    },
+    {
+      "word": "to",
+      "start": 1.657625,
+      "end": 1.820666
+    },
+    {
+      "word": "approach",
+      "start": 1.820666,
+      "end": 2.22825
+    },
+    {
+      "word": "a",
+      "start": 2.22825,
+      "end": 2.309791
+    },
+    {
+      "word": "task",
+      "start": 2.309791,
+      "end": 3.858708
+    },
+    {
+      "word": "It",
+      "start": 3.858708,
+      "end": 4.035333
+    },
+    {
+      "word": "doesn't",
+      "start": 4.035333,
+      "end": 4.361416
+    },
+    {
+      "word": "switch",
+      "start": 4.361416,
+      "end": 4.72825
+    },
+    {
+      "word": "off",
+      "start": 4.72825,
+      "end": 4.891291
+    },
+    {
+      "word": "a",
+      "start": 4.891291,
+      "end": 4.972833
+    },
+    {
+      "word": "single",
+      "start": 4.972833,
+      "end": 5.394041
+    },
+    {
+      "word": "tool",
+      "start": 5.394041,
+      "end": 5.644041
+    }
+  ]
+}

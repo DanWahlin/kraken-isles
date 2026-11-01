@@ -5,7 +5,9 @@
 # integrated loudness for src/audio/music/tracks.ts.
 #   bash tools/music/fetch.sh [music_name]   (just the one track when a name is given)
 # Suno tracks ("suno:<id>") can't be downloaded: export the MP3 from Dan's Suno library and copy it
-# to tools/.cache/music/<name without the music_ prefix>.mp3 first.
+# to tools/.cache/music/<name without the music_ prefix>.mp3 first. ElevenLabs Music tracks
+# ("elevenlabs:<date>", generated with `elevenlabs music compose`; ART_PROVENANCE.md has the prompt) are
+# the same: copy the generated MP3 to the cache first.
 set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 CACHE="$ROOT/tools/.cache/music"
@@ -22,15 +24,16 @@ TRACKS=(
   "music_island_reveal|suno:e9a16c98-4efe-40f7-a705-8c2ef91182a1|165ab83dd2411f1beae067cb45cd38f11e55cac735a19633089f7ef76a8ceb58|0.3|147.2"
   "music_brass_of_the_storm|suno:c7937692-3831-4a79-b7f2-66401ecc9b68|85e9baef8964374bb43540c966781411c9608d8f82e0508b717a9f6bf8ed6113|0.0|146.7"
   "music_thousand_boughs|suno:99af60c4-84c5-4b2b-8908-7b80468b66c6|b2d08fd5e03d6d7011e7dc4b40688401bd5ef76e71cee93d74e221688df66780|0.0|148.6"
+  "music_guildcrest_air|elevenlabs:2026-11-01|698605dc435ac7c3131b67dc09d5f574881b5148fbfebefde4fead6914e8917d|0.0|149.0"
 )
 
 ONLY="${1:-}"
 for entry in "${TRACKS[@]}"; do
   IFS='|' read -r name url sha start end <<<"$entry"
   [[ -z "$ONLY" || "$name" == "$ONLY" ]] || continue
-  if [[ "$url" == suno:* ]]; then
+  if [[ "$url" == suno:* || "$url" == elevenlabs:* ]]; then
     src="$CACHE/${name#music_}.mp3"
-    [[ -f "$src" ]] || { echo "Missing $src: export Suno track ${url#suno:} from Dan's library and copy it there." >&2; exit 1; }
+    [[ -f "$src" ]] || { echo "Missing $src: export track ${url#*:} (${url%%:*}) and copy it there." >&2; exit 1; }
   else
     src="$CACHE/$(basename "$url")"
     [[ -f "$src" ]] || curl -sfL -A "Mozilla/5.0" -o "$src" "$url"

@@ -1,0 +1,67 @@
+{
+  "id": "gc.seren.01",
+  "speaker": "Seren",
+  "text": "You've seen the house rules, the pattern books and the journeymen, Captain.",
+  "words": [
+    {
+      "word": "You've",
+      "start": 0.031,
+      "end": 0.372
+    },
+    {
+      "word": "seen",
+      "start": 0.372,
+      "end": 0.585
+    },
+    {
+      "word": "the",
+      "start": 0.585,
+      "end": 0.712
+    },
+    {
+      "word": "house",
+      "start": 0.712,
+      "end": 1.053
+    },
+    {
+      "word": "rules",
+      "start": 1.053,
+      "end": 1.436
+    },
+    {
+      "word": "the",
+      "start": 1.436,
+      "end": 1.563
+    },
+    {
+      "word": "pattern",
+      "start": 1.563,
+      "end": 1.946
+    },
+    {
+      "word": "books",
+      "start": 1.946,
+      "end": 2.372
+    },
+    {
+      "word": "and",
+      "start": 2.372,
+      "end": 2.584
+    },
+    {
+      "word": "the",
+      "start": 2.584,
+      "end": 2.712
+    },
+    {
+      "word": "journeymen",
+      "start": 2.712,
+      "end": 3.265
+    },
+    {
+      "word": "Captain",
+      "start": 3.265,
+      "end": 3.515
+    }
+  ]
+}

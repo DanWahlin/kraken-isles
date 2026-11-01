@@ -1,0 +1,92 @@
+{
+  "id": "gc.moira.market.hello",
+  "speaker": "Moira",
+  "text": "Welcome, Captain! Moira's Model Market. Hire a model that fits the job; bigger ones cost more starfish.",
+  "words": [
+    {
+      "word": "Welcome",
+      "start": 0.03,
+      "end": 0.47
+    },
+    {
+      "word": "Captain",
+      "start": 0.47,
+      "end": 1.31
+    },
+    {
+      "word": "Moira's",
+      "start": 1.31,
+      "end": 1.87
+    },
+    {
+      "word": "Model",
+      "start": 1.87,
+      "end": 2.19
+    },
+    {
+      "word": "Market",
+      "start": 2.19,
+      "end": 3.19
+    },
+    {
+      "word": "Hire",
+      "start": 3.19,
+      "end": 3.71
+    },
+    {
+      "word": "a",
+      "start": 3.71,
+      "end": 3.75
+    },
+    {
+      "word": "model",
+      "start": 3.75,
+      "end": 4.27
+    },
+    {
+      "word": "that",
+      "start": 4.27,
+      "end": 4.47
+    },
+    {
+      "word": "fits",
+      "start": 4.47,
+      "end": 4.79
+    },
+    {
+      "word": "the",
+      "start": 4.79,
+      "end": 4.91
+    },
+    {
+      "word": "job",
+      "start": 4.91,
+      "end": 5.19
+    },
+    {
+      "word": "bigger",
+      "start": 5.19,
+      "end": 5.99
+    },
+    {
+      "word": "ones",
+      "start": 5.99,
+      "end": 6.35
+    },
+    {
+      "word": "cost",
+      "start": 6.35,
+      "end": 6.71
+    },
+    {
+      "word": "more",
+      "start": 6.71,
+      "end": 6.91
+    },
+    {
+      "word": "starfish",
+      "start": 6.91,
+      "end": 7.16
+    }
+  ]
+}

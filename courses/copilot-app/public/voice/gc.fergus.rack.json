@@ -1,0 +1,77 @@
+{
+  "id": "gc.fergus.rack",
+  "speaker": "Fergus",
+  "text": "Match the tools to the task. An explainer only needs to read and search.",
+  "words": [
+    {
+      "word": "Match",
+      "start": 0.052083,
+      "end": 0.377625
+    },
+    {
+      "word": "the",
+      "start": 0.377625,
+      "end": 0.494791
+    },
+    {
+      "word": "tools",
+      "start": 0.494791,
+      "end": 0.872416
+    },
+    {
+      "word": "to",
+      "start": 0.872416,
+      "end": 0.976583
+    },
+    {
+      "word": "the",
+      "start": 0.976583,
+      "end": 1.106791
+    },
+    {
+      "word": "task",
+      "start": 1.106791,
+      "end": 2.578125
+    },
+    {
+      "word": "An",
+      "start": 2.578125,
+      "end": 2.721375
+    },
+    {
+      "word": "explainer",
+      "start": 2.721375,
+      "end": 3.333333
+    },
+    {
+      "word": "only",
+      "start": 3.333333,
+      "end": 3.632833
+    },
+    {
+      "word": "needs",
+      "start": 3.632833,
+      "end": 3.945333
+    },
+    {
+      "word": "to",
+      "start": 3.945333,
+      "end": 4.075541
+    },
+    {
+      "word": "read",
+      "start": 4.075541,
+      "end": 4.375
+    },
+    {
+      "word": "and",
+      "start": 4.375,
+      "end": 4.479166
+    },
+    {
+      "word": "search",
+      "start": 4.479166,
+      "end": 4.729166
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "gc.moira.market.over.effort",
+  "speaker": "Moira",
+  "text": "High effort for a quick look? The default effort would've done fine.",
+  "words": [
+    {
+      "word": "High",
+      "start": 0.07,
+      "end": 0.31
+    },
+    {
+      "word": "effort",
+      "start": 0.31,
+      "end": 0.63
+    },
+    {
+      "word": "for",
+      "start": 0.63,
+      "end": 0.79
+    },
+    {
+      "word": "a",
+      "start": 0.79,
+      "end": 0.87
+    },
+    {
+      "word": "quick",
+      "start": 0.87,
+      "end": 1.15
+    },
+    {
+      "word": "look",
+      "start": 1.15,
+      "end": 2.07
+    },
+    {
+      "word": "The",
+      "start": 2.07,
+      "end": 2.27
+    },
+    {
+      "word": "default",
+      "start": 2.27,
+      "end": 2.71
+    },
+    {
+      "word": "effort",
+      "start": 2.71,
+      "end": 3.11
+    },
+    {
+      "word": "would've",
+      "start": 3.11,
+      "end": 3.429
+    },
+    {
+      "word": "done",
+      "start": 3.429,
+      "end": 3.63
+    },
+    {
+      "word": "fine",
+      "start": 3.63,
+      "end": 3.88
+    }
+  ]
+}

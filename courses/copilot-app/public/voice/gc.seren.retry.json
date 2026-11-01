@@ -1,0 +1,72 @@
+{
+  "id": "gc.seren.retry",
+  "speaker": "Seren",
+  "text": "Not yet, Captain. Read the books again, and come back to the bell.",
+  "words": [
+    {
+      "word": "Not",
+      "start": 0.031,
+      "end": 0.329
+    },
+    {
+      "word": "yet",
+      "start": 0.329,
+      "end": 0.542
+    },
+    {
+      "word": "Captain",
+      "start": 0.542,
+      "end": 1.393
+    },
+    {
+      "word": "Read",
+      "start": 1.393,
+      "end": 1.734
+    },
+    {
+      "word": "the",
+      "start": 1.734,
+      "end": 1.861
+    },
+    {
+      "word": "books",
+      "start": 1.861,
+      "end": 2.117
+    },
+    {
+      "word": "again",
+      "start": 2.117,
+      "end": 2.584
+    },
+    {
+      "word": "and",
+      "start": 2.584,
+      "end": 2.755
+    },
+    {
+      "word": "come",
+      "start": 2.755,
+      "end": 2.967
+    },
+    {
+      "word": "back",
+      "start": 2.967,
+      "end": 3.179
+    },
+    {
+      "word": "to",
+      "start": 3.179,
+      "end": 3.308
+    },
+    {
+      "word": "the",
+      "start": 3.308,
+      "end": 3.436
+    },
+    {
+      "word": "bell",
+      "start": 3.436,
+      "end": 3.686
+    }
+  ]
+}

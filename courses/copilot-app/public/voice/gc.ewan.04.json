@@ -1,0 +1,92 @@
+{
+  "id": "gc.ewan.04",
+  "speaker": "Ewan",
+  "text": "The chains are on the tools, not in the books. Guildmaster Fergus can tell you about those.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.054333,
+      "end": 0.217375
+    },
+    {
+      "word": "chains",
+      "start": 0.217375,
+      "end": 0.66575
+    },
+    {
+      "word": "are",
+      "start": 0.66575,
+      "end": 0.774458
+    },
+    {
+      "word": "on",
+      "start": 0.774458,
+      "end": 0.923916
+    },
+    {
+      "word": "the",
+      "start": 0.923916,
+      "end": 1.019041
+    },
+    {
+      "word": "tools",
+      "start": 1.019041,
+      "end": 1.711958
+    },
+    {
+      "word": "not",
+      "start": 1.711958,
+      "end": 1.956541
+    },
+    {
+      "word": "in",
+      "start": 1.956541,
+      "end": 2.065208
+    },
+    {
+      "word": "the",
+      "start": 2.065208,
+      "end": 2.173916
+    },
+    {
+      "word": "books",
+      "start": 2.173916,
+      "end": 3.573375
+    },
+    {
+      "word": "Guildmaster",
+      "start": 3.573375,
+      "end": 4.293458
+    },
+    {
+      "word": "Fergus",
+      "start": 4.293458,
+      "end": 4.769041
+    },
+    {
+      "word": "can",
+      "start": 4.769041,
+      "end": 4.945666
+    },
+    {
+      "word": "tell",
+      "start": 4.945666,
+      "end": 5.203791
+    },
+    {
+      "word": "you",
+      "start": 5.203791,
+      "end": 5.366833
+    },
+    {
+      "word": "about",
+      "start": 5.366833,
+      "end": 5.692916
+    },
+    {
+      "word": "those",
+      "start": 5.692916,
+      "end": 5.942916
+    }
+  ]
+}

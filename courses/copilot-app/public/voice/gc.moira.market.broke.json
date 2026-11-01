@@ -1,0 +1,92 @@
+{
+  "id": "gc.moira.market.broke",
+  "speaker": "Moira",
+  "text": "Out of starfish? There are plenty hidden round the isles. Come back when you've found a few.",
+  "words": [
+    {
+      "word": "Out",
+      "start": 0.03,
+      "end": 0.27
+    },
+    {
+      "word": "of",
+      "start": 0.27,
+      "end": 0.39
+    },
+    {
+      "word": "starfish",
+      "start": 0.39,
+      "end": 1.47
+    },
+    {
+      "word": "There",
+      "start": 1.47,
+      "end": 1.75
+    },
+    {
+      "word": "are",
+      "start": 1.75,
+      "end": 1.87
+    },
+    {
+      "word": "plenty",
+      "start": 1.87,
+      "end": 2.309
+    },
+    {
+      "word": "hidden",
+      "start": 2.309,
+      "end": 2.63
+    },
+    {
+      "word": "round",
+      "start": 2.63,
+      "end": 2.869
+    },
+    {
+      "word": "the",
+      "start": 2.869,
+      "end": 3.03
+    },
+    {
+      "word": "isles.",
+      "start": 3.03,
+      "end": 3.869
+    },
+    {
+      "word": "Come",
+      "start": 3.869,
+      "end": 4.23
+    },
+    {
+      "word": "back",
+      "start": 4.23,
+      "end": 4.51
+    },
+    {
+      "word": "when",
+      "start": 4.51,
+      "end": 4.67
+    },
+    {
+      "word": "you've",
+      "start": 4.67,
+      "end": 4.91
+    },
+    {
+      "word": "found",
+      "start": 4.91,
+      "end": 5.19
+    },
+    {
+      "word": "a",
+      "start": 5.19,
+      "end": 5.23
+    },
+    {
+      "word": "few",
+      "start": 5.23,
+      "end": 5.48
+    }
+  ]
+}

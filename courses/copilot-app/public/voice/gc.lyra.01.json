@@ -1,0 +1,77 @@
+{
+  "id": "gc.lyra.01",
+  "speaker": "Lyra",
+  "text": "Captain! The players already know their instruments. The bandleader still hands out a chart.",
+  "words": [
+    {
+      "word": "Captain",
+      "start": 0,
+      "end": 0.68
+    },
+    {
+      "word": "The",
+      "start": 0.68,
+      "end": 1.08
+    },
+    {
+      "word": "players",
+      "start": 1.08,
+      "end": 1.41
+    },
+    {
+      "word": "already",
+      "start": 1.41,
+      "end": 1.792
+    },
+    {
+      "word": "know",
+      "start": 1.792,
+      "end": 1.947
+    },
+    {
+      "word": "their",
+      "start": 1.947,
+      "end": 2.133
+    },
+    {
+      "word": "instruments",
+      "start": 2.133,
+      "end": 2.98
+    },
+    {
+      "word": "The",
+      "start": 2.98,
+      "end": 3.32
+    },
+    {
+      "word": "bandleader",
+      "start": 3.32,
+      "end": 3.893
+    },
+    {
+      "word": "still",
+      "start": 3.893,
+      "end": 4.213
+    },
+    {
+      "word": "hands",
+      "start": 4.213,
+      "end": 4.52
+    },
+    {
+      "word": "out",
+      "start": 4.52,
+      "end": 4.68
+    },
+    {
+      "word": "a",
+      "start": 4.68,
+      "end": 4.787
+    },
+    {
+      "word": "chart",
+      "start": 4.787,
+      "end": 5.037
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T08:14:47.396Z",
+  "generatedAt": "2026-11-01T09:31:42.601Z",
   "set": "testcove",
   "lines": [
     {
@@ -46983,6 +46983,6745 @@
         }
       ],
       "voice": "en-GB-HollieNeural"
+    },
+    {
+      "id": "gc.rory.done",
+      "speaker": "Rory",
+      "text": "Read and search, Captain. That's all I carry, and all I need for this job.",
+      "duration": 6.307,
+      "files": {
+        "webm": "gc.rory.done.webm",
+        "m4a": "gc.rory.done.m4a"
+      },
+      "hash": "6db80487e0a40e85",
+      "words": [
+        {
+          "word": "Read",
+          "start": 0.051,
+          "end": 0.369916
+        },
+        {
+          "word": "and",
+          "start": 0.369916,
+          "end": 0.510208
+        },
+        {
+          "word": "search",
+          "start": 0.510208,
+          "end": 1.122458
+        },
+        {
+          "word": "Captain",
+          "start": 1.122458,
+          "end": 2.5255
+        },
+        {
+          "word": "That's",
+          "start": 2.5255,
+          "end": 2.818875
+        },
+        {
+          "word": "all",
+          "start": 2.818875,
+          "end": 3.022958
+        },
+        {
+          "word": "I",
+          "start": 3.022958,
+          "end": 3.188791
+        },
+        {
+          "word": "carry",
+          "start": 3.188791,
+          "end": 3.852041
+        },
+        {
+          "word": "and",
+          "start": 3.852041,
+          "end": 3.992333
+        },
+        {
+          "word": "all",
+          "start": 3.992333,
+          "end": 4.209166
+        },
+        {
+          "word": "I",
+          "start": 4.209166,
+          "end": 4.36225
+        },
+        {
+          "word": "need",
+          "start": 4.36225,
+          "end": 4.617333
+        },
+        {
+          "word": "for",
+          "start": 4.617333,
+          "end": 4.744916
+        },
+        {
+          "word": "this",
+          "start": 4.744916,
+          "end": 5
+        },
+        {
+          "word": "job",
+          "start": 5,
+          "end": 5.25
+        }
+      ],
+      "voice": "en-IE-ConnorNeural"
+    },
+    {
+      "id": "gc.juno.arrive.01",
+      "speaker": "Juno",
+      "text": "Guildcrest, Captain. A guild town, an abbey full of copyists, and windmills on the ridge.",
+      "duration": 6.108,
+      "files": {
+        "webm": "gc.juno.arrive.01.webm",
+        "m4a": "gc.juno.arrive.01.m4a"
+      },
+      "hash": "4b44824fc937a24d",
+      "words": [
+        {
+          "word": "Guildcrest",
+          "start": 0,
+          "end": 0.91
+        },
+        {
+          "word": "Captain",
+          "start": 0.91,
+          "end": 1.66
+        },
+        {
+          "word": "A",
+          "start": 1.66,
+          "end": 1.907
+        },
+        {
+          "word": "guild",
+          "start": 1.907,
+          "end": 2.32
+        },
+        {
+          "word": "town",
+          "start": 2.32,
+          "end": 3.147
+        },
+        {
+          "word": "an",
+          "start": 3.147,
+          "end": 3.26
+        },
+        {
+          "word": "abbey",
+          "start": 3.26,
+          "end": 3.552
+        },
+        {
+          "word": "full",
+          "start": 3.552,
+          "end": 3.707
+        },
+        {
+          "word": "of",
+          "start": 3.707,
+          "end": 3.84
+        },
+        {
+          "word": "copyists",
+          "start": 3.84,
+          "end": 4.68
+        },
+        {
+          "word": "and",
+          "start": 4.68,
+          "end": 4.88
+        },
+        {
+          "word": "windmills",
+          "start": 4.88,
+          "end": 5.467
+        },
+        {
+          "word": "on",
+          "start": 5.467,
+          "end": 5.54
+        },
+        {
+          "word": "the",
+          "start": 5.54,
+          "end": 5.667
+        },
+        {
+          "word": "ridge",
+          "start": 5.667,
+          "end": 5.917
+        }
+      ],
+      "voice": "XEQBC9sleaE3f5ff82UR"
+    },
+    {
+      "id": "wingman.gc.01",
+      "speaker": "Wingman",
+      "text": "They write the craft down here, so nobody types the same reminders twice. Skills and agents, Captain!",
+      "duration": 7.207,
+      "files": {
+        "webm": "wingman.gc.01.webm",
+        "m4a": "wingman.gc.01.m4a"
+      },
+      "hash": "26a5ea90db91ca43",
+      "words": [
+        {
+          "word": "They",
+          "start": 0,
+          "end": 0.2
+        },
+        {
+          "word": "write",
+          "start": 0.2,
+          "end": 0.42
+        },
+        {
+          "word": "the",
+          "start": 0.42,
+          "end": 0.533
+        },
+        {
+          "word": "craft",
+          "start": 0.533,
+          "end": 0.864
+        },
+        {
+          "word": "down",
+          "start": 0.864,
+          "end": 1.184
+        },
+        {
+          "word": "here",
+          "start": 1.184,
+          "end": 1.893
+        },
+        {
+          "word": "so",
+          "start": 1.893,
+          "end": 2.069
+        },
+        {
+          "word": "nobody",
+          "start": 2.069,
+          "end": 2.52
+        },
+        {
+          "word": "types",
+          "start": 2.52,
+          "end": 2.76
+        },
+        {
+          "word": "the",
+          "start": 2.76,
+          "end": 2.928
+        },
+        {
+          "word": "same",
+          "start": 2.928,
+          "end": 3.176
+        },
+        {
+          "word": "reminders",
+          "start": 3.176,
+          "end": 3.76
+        },
+        {
+          "word": "twice",
+          "start": 3.76,
+          "end": 4.731
+        },
+        {
+          "word": "Skills",
+          "start": 4.731,
+          "end": 5.78
+        },
+        {
+          "word": "and",
+          "start": 5.78,
+          "end": 5.909
+        },
+        {
+          "word": "agents",
+          "start": 5.909,
+          "end": 6.59
+        },
+        {
+          "word": "Captain",
+          "start": 6.59,
+          "end": 6.84
+        }
+      ],
+      "voice": "tfsEebr1nWcNraaptkk3"
+    },
+    {
+      "id": "wingman.gc.nav",
+      "speaker": "Wingman",
+      "text": "Your tasks are in the top left, and the compass up top shows the way, all the way to the bell tower.",
+      "duration": 6.007,
+      "files": {
+        "webm": "wingman.gc.nav.webm",
+        "m4a": "wingman.gc.nav.m4a"
+      },
+      "hash": "40aec0033bff4835",
+      "words": [
+        {
+          "word": "Your",
+          "start": 0,
+          "end": 0.24
+        },
+        {
+          "word": "tasks",
+          "start": 0.24,
+          "end": 0.68
+        },
+        {
+          "word": "are",
+          "start": 0.68,
+          "end": 0.827
+        },
+        {
+          "word": "in",
+          "start": 0.827,
+          "end": 0.92
+        },
+        {
+          "word": "the",
+          "start": 0.92,
+          "end": 1.1
+        },
+        {
+          "word": "top",
+          "start": 1.1,
+          "end": 1.36
+        },
+        {
+          "word": "left",
+          "start": 1.36,
+          "end": 2.1
+        },
+        {
+          "word": "and",
+          "start": 2.1,
+          "end": 2.18
+        },
+        {
+          "word": "the",
+          "start": 2.18,
+          "end": 2.3
+        },
+        {
+          "word": "compass",
+          "start": 2.3,
+          "end": 2.773
+        },
+        {
+          "word": "up",
+          "start": 2.773,
+          "end": 2.96
+        },
+        {
+          "word": "top",
+          "start": 2.96,
+          "end": 3.267
+        },
+        {
+          "word": "shows",
+          "start": 3.267,
+          "end": 3.62
+        },
+        {
+          "word": "the",
+          "start": 3.62,
+          "end": 3.76
+        },
+        {
+          "word": "way",
+          "start": 3.76,
+          "end": 4.28
+        },
+        {
+          "word": "all",
+          "start": 4.28,
+          "end": 4.44
+        },
+        {
+          "word": "the",
+          "start": 4.44,
+          "end": 4.6
+        },
+        {
+          "word": "way",
+          "start": 4.6,
+          "end": 4.8
+        },
+        {
+          "word": "to",
+          "start": 4.8,
+          "end": 4.98
+        },
+        {
+          "word": "the",
+          "start": 4.98,
+          "end": 5.088
+        },
+        {
+          "word": "bell",
+          "start": 5.088,
+          "end": 5.333
+        },
+        {
+          "word": "tower",
+          "start": 5.333,
+          "end": 5.583
+        }
+      ],
+      "voice": "tfsEebr1nWcNraaptkk3"
+    },
+    {
+      "id": "wingman.starfish.guildcrest",
+      "speaker": "Wingman",
+      "text": "And five starfish are hidden around Guildcrest. Your count's in the top right.",
+      "duration": 5.307,
+      "files": {
+        "webm": "wingman.starfish.guildcrest.webm",
+        "m4a": "wingman.starfish.guildcrest.m4a"
+      },
+      "hash": "b58681f3d203350e",
+      "words": [
+        {
+          "word": "And",
+          "start": 0,
+          "end": 0.24
+        },
+        {
+          "word": "five",
+          "start": 0.24,
+          "end": 0.64
+        },
+        {
+          "word": "starfish",
+          "start": 0.64,
+          "end": 1.24
+        },
+        {
+          "word": "are",
+          "start": 1.24,
+          "end": 1.406
+        },
+        {
+          "word": "hidden",
+          "start": 1.406,
+          "end": 1.737
+        },
+        {
+          "word": "around",
+          "start": 1.737,
+          "end": 2.133
+        },
+        {
+          "word": "Guildcrest",
+          "start": 2.133,
+          "end": 3.168
+        },
+        {
+          "word": "Your",
+          "start": 3.168,
+          "end": 3.733
+        },
+        {
+          "word": "count's",
+          "start": 3.733,
+          "end": 4.213
+        },
+        {
+          "word": "in",
+          "start": 4.213,
+          "end": 4.34
+        },
+        {
+          "word": "the",
+          "start": 4.34,
+          "end": 4.48
+        },
+        {
+          "word": "top",
+          "start": 4.48,
+          "end": 4.773
+        },
+        {
+          "word": "right",
+          "start": 4.773,
+          "end": 5.023
+        }
+      ],
+      "voice": "tfsEebr1nWcNraaptkk3"
+    },
+    {
+      "id": "gc.lyra.01",
+      "speaker": "Lyra",
+      "text": "Captain! The players already know their instruments. The bandleader still hands out a chart.",
+      "duration": 5.308,
+      "files": {
+        "webm": "gc.lyra.01.webm",
+        "m4a": "gc.lyra.01.m4a"
+      },
+      "hash": "365d69a8ad84cb46",
+      "words": [
+        {
+          "word": "Captain",
+          "start": 0,
+          "end": 0.68
+        },
+        {
+          "word": "The",
+          "start": 0.68,
+          "end": 1.08
+        },
+        {
+          "word": "players",
+          "start": 1.08,
+          "end": 1.41
+        },
+        {
+          "word": "already",
+          "start": 1.41,
+          "end": 1.792
+        },
+        {
+          "word": "know",
+          "start": 1.792,
+          "end": 1.947
+        },
+        {
+          "word": "their",
+          "start": 1.947,
+          "end": 2.133
+        },
+        {
+          "word": "instruments",
+          "start": 2.133,
+          "end": 2.98
+        },
+        {
+          "word": "The",
+          "start": 2.98,
+          "end": 3.32
+        },
+        {
+          "word": "bandleader",
+          "start": 3.32,
+          "end": 3.893
+        },
+        {
+          "word": "still",
+          "start": 3.893,
+          "end": 4.213
+        },
+        {
+          "word": "hands",
+          "start": 4.213,
+          "end": 4.52
+        },
+        {
+          "word": "out",
+          "start": 4.52,
+          "end": 4.68
+        },
+        {
+          "word": "a",
+          "start": 4.68,
+          "end": 4.787
+        },
+        {
+          "word": "chart",
+          "start": 4.787,
+          "end": 5.037
+        }
+      ],
+      "voice": "AyCt0WmAXUcPJR11zeeP"
+    },
+    {
+      "id": "gc.lyra.02",
+      "speaker": "Lyra",
+      "text": "The chart makes everyone play this song the same way. Hand it out, and listen.",
+      "duration": 5.408,
+      "files": {
+        "webm": "gc.lyra.02.webm",
+        "m4a": "gc.lyra.02.m4a"
+      },
+      "hash": "5e6189c5c775c340",
+      "words": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.133
+        },
+        {
+          "word": "chart",
+          "start": 0.133,
+          "end": 0.44
+        },
+        {
+          "word": "makes",
+          "start": 0.44,
+          "end": 0.693
+        },
+        {
+          "word": "everyone",
+          "start": 0.693,
+          "end": 1.168
+        },
+        {
+          "word": "play",
+          "start": 1.168,
+          "end": 1.408
+        },
+        {
+          "word": "this",
+          "start": 1.408,
+          "end": 1.648
+        },
+        {
+          "word": "song",
+          "start": 1.648,
+          "end": 1.86
+        },
+        {
+          "word": "the",
+          "start": 1.86,
+          "end": 1.984
+        },
+        {
+          "word": "same",
+          "start": 1.984,
+          "end": 2.32
+        },
+        {
+          "word": "way",
+          "start": 2.32,
+          "end": 2.88
+        },
+        {
+          "word": "Hand",
+          "start": 2.88,
+          "end": 3.867
+        },
+        {
+          "word": "it",
+          "start": 3.867,
+          "end": 4
+        },
+        {
+          "word": "out",
+          "start": 4,
+          "end": 4.59
+        },
+        {
+          "word": "and",
+          "start": 4.59,
+          "end": 4.857
+        },
+        {
+          "word": "listen",
+          "start": 4.857,
+          "end": 5.107
+        }
+      ],
+      "voice": "AyCt0WmAXUcPJR11zeeP"
+    },
+    {
+      "id": "gc.lyra.03",
+      "speaker": "Lyra",
+      "text": "A skill is that chart. A custom agent is the specialist who follows it, with the tools for the job.",
+      "duration": 6.008,
+      "files": {
+        "webm": "gc.lyra.03.webm",
+        "m4a": "gc.lyra.03.m4a"
+      },
+      "hash": "0a80aa5d604b18d2",
+      "words": [
+        {
+          "word": "A",
+          "start": 0,
+          "end": 0.133
+        },
+        {
+          "word": "skill",
+          "start": 0.133,
+          "end": 0.453
+        },
+        {
+          "word": "is",
+          "start": 0.453,
+          "end": 0.592
+        },
+        {
+          "word": "that",
+          "start": 0.592,
+          "end": 0.787
+        },
+        {
+          "word": "chart",
+          "start": 0.787,
+          "end": 1.6
+        },
+        {
+          "word": "A",
+          "start": 1.6,
+          "end": 2.057
+        },
+        {
+          "word": "custom",
+          "start": 2.057,
+          "end": 2.453
+        },
+        {
+          "word": "agent",
+          "start": 2.453,
+          "end": 2.773
+        },
+        {
+          "word": "is",
+          "start": 2.773,
+          "end": 2.9
+        },
+        {
+          "word": "the",
+          "start": 2.9,
+          "end": 3.018
+        },
+        {
+          "word": "specialist",
+          "start": 3.018,
+          "end": 3.64
+        },
+        {
+          "word": "who",
+          "start": 3.64,
+          "end": 3.8
+        },
+        {
+          "word": "follows",
+          "start": 3.8,
+          "end": 4.133
+        },
+        {
+          "word": "it",
+          "start": 4.133,
+          "end": 4.4
+        },
+        {
+          "word": "with",
+          "start": 4.4,
+          "end": 4.74
+        },
+        {
+          "word": "the",
+          "start": 4.74,
+          "end": 4.867
+        },
+        {
+          "word": "tools",
+          "start": 4.867,
+          "end": 5.22
+        },
+        {
+          "word": "for",
+          "start": 5.22,
+          "end": 5.3
+        },
+        {
+          "word": "the",
+          "start": 5.3,
+          "end": 5.44
+        },
+        {
+          "word": "job",
+          "start": 5.44,
+          "end": 5.69
+        }
+      ],
+      "voice": "AyCt0WmAXUcPJR11zeeP"
+    },
+    {
+      "id": "gc.lyra.04",
+      "speaker": "Lyra",
+      "text": "You still check the result, though. A chart doesn't guarantee a good performance. Elspeth's on the square.",
+      "duration": 7.808,
+      "files": {
+        "webm": "gc.lyra.04.webm",
+        "m4a": "gc.lyra.04.m4a"
+      },
+      "hash": "47e7c46e15c2a0da",
+      "words": [
+        {
+          "word": "You",
+          "start": 0,
+          "end": 0.2
+        },
+        {
+          "word": "still",
+          "start": 0.2,
+          "end": 0.453
+        },
+        {
+          "word": "check",
+          "start": 0.453,
+          "end": 0.74
+        },
+        {
+          "word": "the",
+          "start": 0.74,
+          "end": 0.857
+        },
+        {
+          "word": "result",
+          "start": 0.857,
+          "end": 1.383
+        },
+        {
+          "word": "though",
+          "start": 1.383,
+          "end": 2.42
+        },
+        {
+          "word": "A",
+          "start": 2.42,
+          "end": 2.787
+        },
+        {
+          "word": "chart",
+          "start": 2.787,
+          "end": 3.16
+        },
+        {
+          "word": "doesn't",
+          "start": 3.16,
+          "end": 3.668
+        },
+        {
+          "word": "guarantee",
+          "start": 3.668,
+          "end": 4
+        },
+        {
+          "word": "a",
+          "start": 4,
+          "end": 4.096
+        },
+        {
+          "word": "good",
+          "start": 4.096,
+          "end": 4.22
+        },
+        {
+          "word": "performance",
+          "start": 4.22,
+          "end": 5.493
+        },
+        {
+          "word": "Elspeth's",
+          "start": 5.493,
+          "end": 6.88
+        },
+        {
+          "word": "on",
+          "start": 6.88,
+          "end": 7.06
+        },
+        {
+          "word": "the",
+          "start": 7.06,
+          "end": 7.189
+        },
+        {
+          "word": "square",
+          "start": 7.189,
+          "end": 7.439
+        }
+      ],
+      "voice": "AyCt0WmAXUcPJR11zeeP"
+    },
+    {
+      "id": "gc.lyra.done",
+      "speaker": "Lyra",
+      "text": "Reeve Elspeth's on Guild Square, Captain, up the lane from the quay.",
+      "duration": 3.508,
+      "files": {
+        "webm": "gc.lyra.done.webm",
+        "m4a": "gc.lyra.done.m4a"
+      },
+      "hash": "812a619cb8de108a",
+      "words": [
+        {
+          "word": "Reeve",
+          "start": 0,
+          "end": 0.293
+        },
+        {
+          "word": "Elspeth's",
+          "start": 0.293,
+          "end": 0.773
+        },
+        {
+          "word": "on",
+          "start": 0.773,
+          "end": 0.92
+        },
+        {
+          "word": "Guild",
+          "start": 0.92,
+          "end": 1.166
+        },
+        {
+          "word": "Square",
+          "start": 1.166,
+          "end": 1.57
+        },
+        {
+          "word": "Captain",
+          "start": 1.57,
+          "end": 2.373
+        },
+        {
+          "word": "up",
+          "start": 2.373,
+          "end": 2.5
+        },
+        {
+          "word": "the",
+          "start": 2.5,
+          "end": 2.608
+        },
+        {
+          "word": "lane",
+          "start": 2.608,
+          "end": 2.832
+        },
+        {
+          "word": "from",
+          "start": 2.832,
+          "end": 2.98
+        },
+        {
+          "word": "the",
+          "start": 2.98,
+          "end": 3.104
+        },
+        {
+          "word": "quay",
+          "start": 3.104,
+          "end": 3.354
+        }
+      ],
+      "voice": "AyCt0WmAXUcPJR11zeeP"
+    },
+    {
+      "id": "gc.elspeth.wait",
+      "speaker": "Elspeth",
+      "text": "Hear Lyra's tale first, Captain. She's on the inn's porch, down by the quay.",
+      "duration": 5.008,
+      "files": {
+        "webm": "gc.elspeth.wait.webm",
+        "m4a": "gc.elspeth.wait.m4a"
+      },
+      "hash": "bd5744c27d6fcb47",
+      "words": [
+        {
+          "word": "Hear",
+          "start": 0,
+          "end": 0.267
+        },
+        {
+          "word": "Lyra's",
+          "start": 0.267,
+          "end": 0.832
+        },
+        {
+          "word": "tale",
+          "start": 0.832,
+          "end": 1.013
+        },
+        {
+          "word": "first",
+          "start": 1.013,
+          "end": 1.42
+        },
+        {
+          "word": "Captain",
+          "start": 1.42,
+          "end": 2.34
+        },
+        {
+          "word": "She's",
+          "start": 2.34,
+          "end": 2.747
+        },
+        {
+          "word": "on",
+          "start": 2.747,
+          "end": 2.84
+        },
+        {
+          "word": "the",
+          "start": 2.84,
+          "end": 3
+        },
+        {
+          "word": "inn's",
+          "start": 3,
+          "end": 3.293
+        },
+        {
+          "word": "porch",
+          "start": 3.293,
+          "end": 3.904
+        },
+        {
+          "word": "down",
+          "start": 3.904,
+          "end": 4.213
+        },
+        {
+          "word": "by",
+          "start": 4.213,
+          "end": 4.36
+        },
+        {
+          "word": "the",
+          "start": 4.36,
+          "end": 4.56
+        },
+        {
+          "word": "quay",
+          "start": 4.56,
+          "end": 4.81
+        }
+      ],
+      "voice": "TVmbglAk3F1GkiCoOq47"
+    },
+    {
+      "id": "gc.elspeth.01",
+      "speaker": "Elspeth",
+      "text": "Welcome to Guild Square, Captain. There are four ways to tell Copilot what you want, and each fits its own job.",
+      "duration": 7.008,
+      "files": {
+        "webm": "gc.elspeth.01.webm",
+        "m4a": "gc.elspeth.01.m4a"
+      },
+      "hash": "82df4136eeb81fac",
+      "words": [
+        {
+          "word": "Welcome",
+          "start": 0,
+          "end": 0.347
+        },
+        {
+          "word": "to",
+          "start": 0.347,
+          "end": 0.44
+        },
+        {
+          "word": "Guild",
+          "start": 0.44,
+          "end": 0.697
+        },
+        {
+          "word": "Square",
+          "start": 0.697,
+          "end": 1.31
+        },
+        {
+          "word": "Captain",
+          "start": 1.31,
+          "end": 1.72
+        },
+        {
+          "word": "There",
+          "start": 1.72,
+          "end": 2.36
+        },
+        {
+          "word": "are",
+          "start": 2.36,
+          "end": 2.528
+        },
+        {
+          "word": "four",
+          "start": 2.528,
+          "end": 2.8
+        },
+        {
+          "word": "ways",
+          "start": 2.8,
+          "end": 3.147
+        },
+        {
+          "word": "to",
+          "start": 3.147,
+          "end": 3.232
+        },
+        {
+          "word": "tell",
+          "start": 3.232,
+          "end": 3.46
+        },
+        {
+          "word": "Copilot",
+          "start": 3.46,
+          "end": 4.032
+        },
+        {
+          "word": "what",
+          "start": 4.032,
+          "end": 4.2
+        },
+        {
+          "word": "you",
+          "start": 4.2,
+          "end": 4.4
+        },
+        {
+          "word": "want",
+          "start": 4.4,
+          "end": 5.16
+        },
+        {
+          "word": "and",
+          "start": 5.16,
+          "end": 5.36
+        },
+        {
+          "word": "each",
+          "start": 5.36,
+          "end": 5.728
+        },
+        {
+          "word": "fits",
+          "start": 5.728,
+          "end": 5.98
+        },
+        {
+          "word": "its",
+          "start": 5.98,
+          "end": 6.2
+        },
+        {
+          "word": "own",
+          "start": 6.2,
+          "end": 6.44
+        },
+        {
+          "word": "job",
+          "start": 6.44,
+          "end": 6.69
+        }
+      ],
+      "voice": "TVmbglAk3F1GkiCoOq47"
+    },
+    {
+      "id": "gc.elspeth.02",
+      "speaker": "Elspeth",
+      "text": "This stone holds the house rules: repository instructions. They apply across every task in the project.",
+      "duration": 7.808,
+      "files": {
+        "webm": "gc.elspeth.02.webm",
+        "m4a": "gc.elspeth.02.m4a"
+      },
+      "hash": "206346a5b1b05a80",
+      "words": [
+        {
+          "word": "This",
+          "start": 0,
+          "end": 0.24
+        },
+        {
+          "word": "stone",
+          "start": 0.24,
+          "end": 0.707
+        },
+        {
+          "word": "holds",
+          "start": 0.707,
+          "end": 1.06
+        },
+        {
+          "word": "the",
+          "start": 1.06,
+          "end": 1.187
+        },
+        {
+          "word": "house",
+          "start": 1.187,
+          "end": 1.627
+        },
+        {
+          "word": "rules",
+          "start": 1.627,
+          "end": 2.938
+        },
+        {
+          "word": "repository",
+          "start": 2.938,
+          "end": 3.582
+        },
+        {
+          "word": "instructions",
+          "start": 3.582,
+          "end": 4.608
+        },
+        {
+          "word": "They",
+          "start": 4.608,
+          "end": 5.187
+        },
+        {
+          "word": "apply",
+          "start": 5.187,
+          "end": 5.577
+        },
+        {
+          "word": "across",
+          "start": 5.577,
+          "end": 5.973
+        },
+        {
+          "word": "every",
+          "start": 5.973,
+          "end": 6.352
+        },
+        {
+          "word": "task",
+          "start": 6.352,
+          "end": 6.827
+        },
+        {
+          "word": "in",
+          "start": 6.827,
+          "end": 6.9
+        },
+        {
+          "word": "the",
+          "start": 6.9,
+          "end": 7.05
+        },
+        {
+          "word": "project",
+          "start": 7.05,
+          "end": 7.3
+        }
+      ],
+      "voice": "TVmbglAk3F1GkiCoOq47"
+    },
+    {
+      "id": "gc.elspeth.03",
+      "speaker": "Elspeth",
+      "text": "A skill is the chart for one kind of song. Use one when you repeat the same kind of work.",
+      "duration": 6.008,
+      "files": {
+        "webm": "gc.elspeth.03.webm",
+        "m4a": "gc.elspeth.03.m4a"
+      },
+      "hash": "79c78453da2ded06",
+      "words": [
+        {
+          "word": "A",
+          "start": 0,
+          "end": 0.16
+        },
+        {
+          "word": "skill",
+          "start": 0.16,
+          "end": 0.613
+        },
+        {
+          "word": "is",
+          "start": 0.613,
+          "end": 0.74
+        },
+        {
+          "word": "the",
+          "start": 0.74,
+          "end": 0.867
+        },
+        {
+          "word": "chart",
+          "start": 0.867,
+          "end": 1.24
+        },
+        {
+          "word": "for",
+          "start": 1.24,
+          "end": 1.42
+        },
+        {
+          "word": "one",
+          "start": 1.42,
+          "end": 1.68
+        },
+        {
+          "word": "kind",
+          "start": 1.68,
+          "end": 2.027
+        },
+        {
+          "word": "of",
+          "start": 2.027,
+          "end": 2.176
+        },
+        {
+          "word": "song",
+          "start": 2.176,
+          "end": 2.86
+        },
+        {
+          "word": "Use",
+          "start": 2.86,
+          "end": 3.6
+        },
+        {
+          "word": "one",
+          "start": 3.6,
+          "end": 3.872
+        },
+        {
+          "word": "when",
+          "start": 3.872,
+          "end": 4.04
+        },
+        {
+          "word": "you",
+          "start": 4.04,
+          "end": 4.217
+        },
+        {
+          "word": "repeat",
+          "start": 4.217,
+          "end": 4.58
+        },
+        {
+          "word": "the",
+          "start": 4.58,
+          "end": 4.704
+        },
+        {
+          "word": "same",
+          "start": 4.704,
+          "end": 5.008
+        },
+        {
+          "word": "kind",
+          "start": 5.008,
+          "end": 5.253
+        },
+        {
+          "word": "of",
+          "start": 5.253,
+          "end": 5.44
+        },
+        {
+          "word": "work",
+          "start": 5.44,
+          "end": 5.69
+        }
+      ],
+      "voice": "TVmbglAk3F1GkiCoOq47"
+    },
+    {
+      "id": "gc.elspeth.04",
+      "speaker": "Elspeth",
+      "text": "You'll find skills in Customize, and you pick custom agents with /agent. Brother Aidan keeps the abbey gate.",
+      "duration": 9.608,
+      "files": {
+        "webm": "gc.elspeth.04.webm",
+        "m4a": "gc.elspeth.04.m4a"
+      },
+      "hash": "6ff688e98718d929",
+      "words": [
+        {
+          "word": "You'll",
+          "start": 0,
+          "end": 0.208
+        },
+        {
+          "word": "find",
+          "start": 0.208,
+          "end": 0.48
+        },
+        {
+          "word": "skills",
+          "start": 0.48,
+          "end": 1.013
+        },
+        {
+          "word": "in",
+          "start": 1.013,
+          "end": 1.208
+        },
+        {
+          "word": "Customize",
+          "start": 1.208,
+          "end": 2.44
+        },
+        {
+          "word": "and",
+          "start": 2.44,
+          "end": 2.6
+        },
+        {
+          "word": "you",
+          "start": 2.6,
+          "end": 2.752
+        },
+        {
+          "word": "pick",
+          "start": 2.752,
+          "end": 2.96
+        },
+        {
+          "word": "custom",
+          "start": 2.96,
+          "end": 3.52
+        },
+        {
+          "word": "agents",
+          "start": 3.52,
+          "end": 4.064
+        },
+        {
+          "word": "with",
+          "start": 4.064,
+          "end": 5.013
+        },
+        {
+          "word": "agent",
+          "start": 5.013,
+          "end": 6.1
+        },
+        {
+          "word": "Brother",
+          "start": 6.1,
+          "end": 7.42
+        },
+        {
+          "word": "Aidan",
+          "start": 7.42,
+          "end": 7.84
+        },
+        {
+          "word": "keeps",
+          "start": 7.84,
+          "end": 8.28
+        },
+        {
+          "word": "the",
+          "start": 8.28,
+          "end": 8.46
+        },
+        {
+          "word": "abbey",
+          "start": 8.46,
+          "end": 8.832
+        },
+        {
+          "word": "gate",
+          "start": 8.832,
+          "end": 9.082
+        }
+      ],
+      "voice": "TVmbglAk3F1GkiCoOq47"
+    },
+    {
+      "id": "gc.elspeth.done",
+      "speaker": "Elspeth",
+      "text": "Brother Aidan keeps the abbey gate, at the top of the Kirk Brae.",
+      "duration": 4.108,
+      "files": {
+        "webm": "gc.elspeth.done.webm",
+        "m4a": "gc.elspeth.done.m4a"
+      },
+      "hash": "ca3e0bc283fbc081",
+      "words": [
+        {
+          "word": "Brother",
+          "start": 0,
+          "end": 0.4
+        },
+        {
+          "word": "Aidan",
+          "start": 0.4,
+          "end": 0.853
+        },
+        {
+          "word": "keeps",
+          "start": 0.853,
+          "end": 1.16
+        },
+        {
+          "word": "the",
+          "start": 1.16,
+          "end": 1.34
+        },
+        {
+          "word": "abbey",
+          "start": 1.34,
+          "end": 1.696
+        },
+        {
+          "word": "gate",
+          "start": 1.696,
+          "end": 2.507
+        },
+        {
+          "word": "at",
+          "start": 2.507,
+          "end": 2.6
+        },
+        {
+          "word": "the",
+          "start": 2.6,
+          "end": 2.78
+        },
+        {
+          "word": "top",
+          "start": 2.78,
+          "end": 2.987
+        },
+        {
+          "word": "of",
+          "start": 2.987,
+          "end": 3.06
+        },
+        {
+          "word": "the",
+          "start": 3.06,
+          "end": 3.184
+        },
+        {
+          "word": "Kirk",
+          "start": 3.184,
+          "end": 3.5
+        },
+        {
+          "word": "Brae",
+          "start": 3.5,
+          "end": 3.75
+        }
+      ],
+      "voice": "TVmbglAk3F1GkiCoOq47"
+    },
+    {
+      "id": "gc.aidan.wait",
+      "speaker": "Aidan",
+      "text": "Reeve Elspeth's expecting you on the square first, Captain. Come back after.",
+      "duration": 4.008,
+      "files": {
+        "webm": "gc.aidan.wait.webm",
+        "m4a": "gc.aidan.wait.m4a"
+      },
+      "hash": "403db7680a8ab2a4",
+      "words": [
+        {
+          "word": "Reeve",
+          "start": 0,
+          "end": 0.293
+        },
+        {
+          "word": "Elspeth's",
+          "start": 0.293,
+          "end": 0.768
+        },
+        {
+          "word": "expecting",
+          "start": 0.768,
+          "end": 1.22
+        },
+        {
+          "word": "you",
+          "start": 1.22,
+          "end": 1.333
+        },
+        {
+          "word": "on",
+          "start": 1.333,
+          "end": 1.46
+        },
+        {
+          "word": "the",
+          "start": 1.46,
+          "end": 1.566
+        },
+        {
+          "word": "square",
+          "start": 1.566,
+          "end": 1.907
+        },
+        {
+          "word": "first",
+          "start": 1.907,
+          "end": 2.465
+        },
+        {
+          "word": "Captain",
+          "start": 2.465,
+          "end": 2.8
+        },
+        {
+          "word": "Come",
+          "start": 2.8,
+          "end": 3.168
+        },
+        {
+          "word": "back",
+          "start": 3.168,
+          "end": 3.427
+        },
+        {
+          "word": "after",
+          "start": 3.427,
+          "end": 3.677
+        }
+      ],
+      "voice": "B5jEZPqk2OJ2vkPw3wBM"
+    },
+    {
+      "id": "gc.aidan.01",
+      "speaker": "Aidan",
+      "text": "Every copyist gets a carrel of their own, Captain. Yours is a practice session in a new worktree from main.",
+      "duration": 6.008,
+      "files": {
+        "webm": "gc.aidan.01.webm",
+        "m4a": "gc.aidan.01.m4a"
+      },
+      "hash": "272e14f765d436d1",
+      "words": [
+        {
+          "word": "Every",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "word": "copyist",
+          "start": 0.32,
+          "end": 0.832
+        },
+        {
+          "word": "gets",
+          "start": 0.832,
+          "end": 1
+        },
+        {
+          "word": "a",
+          "start": 1,
+          "end": 1.08
+        },
+        {
+          "word": "carrel",
+          "start": 1.08,
+          "end": 1.387
+        },
+        {
+          "word": "of",
+          "start": 1.387,
+          "end": 1.467
+        },
+        {
+          "word": "their",
+          "start": 1.467,
+          "end": 1.66
+        },
+        {
+          "word": "own",
+          "start": 1.66,
+          "end": 1.97
+        },
+        {
+          "word": "Captain",
+          "start": 1.97,
+          "end": 2.547
+        },
+        {
+          "word": "Yours",
+          "start": 2.547,
+          "end": 3.307
+        },
+        {
+          "word": "is",
+          "start": 3.307,
+          "end": 3.4
+        },
+        {
+          "word": "a",
+          "start": 3.4,
+          "end": 3.484
+        },
+        {
+          "word": "practice",
+          "start": 3.484,
+          "end": 3.89
+        },
+        {
+          "word": "session",
+          "start": 3.89,
+          "end": 4.293
+        },
+        {
+          "word": "in",
+          "start": 4.293,
+          "end": 4.44
+        },
+        {
+          "word": "a",
+          "start": 4.44,
+          "end": 4.52
+        },
+        {
+          "word": "new",
+          "start": 4.52,
+          "end": 4.704
+        },
+        {
+          "word": "worktree",
+          "start": 4.704,
+          "end": 5.248
+        },
+        {
+          "word": "from",
+          "start": 5.248,
+          "end": 5.536
+        },
+        {
+          "word": "main",
+          "start": 5.536,
+          "end": 5.786
+        }
+      ],
+      "voice": "B5jEZPqk2OJ2vkPw3wBM"
+    },
+    {
+      "id": "gc.aidan.02",
+      "speaker": "Aidan",
+      "text": "What you write there stays in that worktree. Keep the one session for every exercise.",
+      "duration": 5.908,
+      "files": {
+        "webm": "gc.aidan.02.webm",
+        "m4a": "gc.aidan.02.m4a"
+      },
+      "hash": "690a9fb631c1c608",
+      "words": [
+        {
+          "word": "What",
+          "start": 0,
+          "end": 0.12
+        },
+        {
+          "word": "you",
+          "start": 0.12,
+          "end": 0.293
+        },
+        {
+          "word": "write",
+          "start": 0.293,
+          "end": 0.6
+        },
+        {
+          "word": "there",
+          "start": 0.6,
+          "end": 0.88
+        },
+        {
+          "word": "stays",
+          "start": 0.88,
+          "end": 1.307
+        },
+        {
+          "word": "in",
+          "start": 1.307,
+          "end": 1.392
+        },
+        {
+          "word": "that",
+          "start": 1.392,
+          "end": 1.584
+        },
+        {
+          "word": "worktree",
+          "start": 1.584,
+          "end": 2.464
+        },
+        {
+          "word": "Keep",
+          "start": 2.464,
+          "end": 3.38
+        },
+        {
+          "word": "the",
+          "start": 3.38,
+          "end": 3.52
+        },
+        {
+          "word": "one",
+          "start": 3.52,
+          "end": 3.84
+        },
+        {
+          "word": "session",
+          "start": 3.84,
+          "end": 4.44
+        },
+        {
+          "word": "for",
+          "start": 4.44,
+          "end": 4.627
+        },
+        {
+          "word": "every",
+          "start": 4.627,
+          "end": 5.049
+        },
+        {
+          "word": "exercise",
+          "start": 5.049,
+          "end": 5.299
+        }
+      ],
+      "voice": "B5jEZPqk2OJ2vkPw3wBM"
+    },
+    {
+      "id": "gc.aidan.03",
+      "speaker": "Aidan",
+      "text": "Sister Brigid's in the scriptorium, through the cloister. Mind the ink.",
+      "duration": 3.608,
+      "files": {
+        "webm": "gc.aidan.03.webm",
+        "m4a": "gc.aidan.03.m4a"
+      },
+      "hash": "45177b9c406c38fc",
+      "words": [
+        {
+          "word": "Sister",
+          "start": 0,
+          "end": 0.347
+        },
+        {
+          "word": "Brigid's",
+          "start": 0.347,
+          "end": 0.747
+        },
+        {
+          "word": "in",
+          "start": 0.747,
+          "end": 0.82
+        },
+        {
+          "word": "the",
+          "start": 0.82,
+          "end": 0.926
+        },
+        {
+          "word": "scriptorium",
+          "start": 0.926,
+          "end": 1.78
+        },
+        {
+          "word": "through",
+          "start": 1.78,
+          "end": 1.94
+        },
+        {
+          "word": "the",
+          "start": 1.94,
+          "end": 2.04
+        },
+        {
+          "word": "cloister",
+          "start": 2.04,
+          "end": 2.864
+        },
+        {
+          "word": "Mind",
+          "start": 2.864,
+          "end": 3.14
+        },
+        {
+          "word": "the",
+          "start": 3.14,
+          "end": 3.28
+        },
+        {
+          "word": "ink",
+          "start": 3.28,
+          "end": 3.53
+        }
+      ],
+      "voice": "B5jEZPqk2OJ2vkPw3wBM"
+    },
+    {
+      "id": "gc.aidan.done",
+      "speaker": "Aidan",
+      "text": "Your carrel's waiting, Captain. Sister Brigid's along the west walk.",
+      "duration": 3.608,
+      "files": {
+        "webm": "gc.aidan.done.webm",
+        "m4a": "gc.aidan.done.m4a"
+      },
+      "hash": "8457dbaeba3c3f42",
+      "words": [
+        {
+          "word": "Your",
+          "start": 0,
+          "end": 0.2
+        },
+        {
+          "word": "carrel's",
+          "start": 0.2,
+          "end": 0.59
+        },
+        {
+          "word": "waiting",
+          "start": 0.59,
+          "end": 0.92
+        },
+        {
+          "word": "Captain",
+          "start": 0.92,
+          "end": 1.371
+        },
+        {
+          "word": "Sister",
+          "start": 1.371,
+          "end": 1.973
+        },
+        {
+          "word": "Brigid's",
+          "start": 1.973,
+          "end": 2.453
+        },
+        {
+          "word": "along",
+          "start": 2.453,
+          "end": 2.74
+        },
+        {
+          "word": "the",
+          "start": 2.74,
+          "end": 2.864
+        },
+        {
+          "word": "west",
+          "start": 2.864,
+          "end": 3.2
+        },
+        {
+          "word": "walk",
+          "start": 3.2,
+          "end": 3.45
+        }
+      ],
+      "voice": "B5jEZPqk2OJ2vkPw3wBM"
+    },
+    {
+      "id": "gc.brigid.wait",
+      "speaker": "Brigid",
+      "text": "You'll need a carrel first, Captain. Brother Aidan has the keys, at the gate.",
+      "duration": 4.408,
+      "files": {
+        "webm": "gc.brigid.wait.webm",
+        "m4a": "gc.brigid.wait.m4a"
+      },
+      "hash": "5c580edeafb55936",
+      "words": [
+        {
+          "word": "You'll",
+          "start": 0,
+          "end": 0.192
+        },
+        {
+          "word": "need",
+          "start": 0.192,
+          "end": 0.36
+        },
+        {
+          "word": "a",
+          "start": 0.36,
+          "end": 0.46
+        },
+        {
+          "word": "carrel",
+          "start": 0.46,
+          "end": 0.787
+        },
+        {
+          "word": "first",
+          "start": 0.787,
+          "end": 1.39
+        },
+        {
+          "word": "Captain",
+          "start": 1.39,
+          "end": 1.75
+        },
+        {
+          "word": "Brother",
+          "start": 1.75,
+          "end": 2.3
+        },
+        {
+          "word": "Aidan",
+          "start": 2.3,
+          "end": 2.62
+        },
+        {
+          "word": "has",
+          "start": 2.62,
+          "end": 2.82
+        },
+        {
+          "word": "the",
+          "start": 2.82,
+          "end": 2.96
+        },
+        {
+          "word": "keys",
+          "start": 2.96,
+          "end": 3.547
+        },
+        {
+          "word": "at",
+          "start": 3.547,
+          "end": 3.62
+        },
+        {
+          "word": "the",
+          "start": 3.62,
+          "end": 3.776
+        },
+        {
+          "word": "gate",
+          "start": 3.776,
+          "end": 4.026
+        }
+      ],
+      "voice": "WtSj8ZSBSK3JEi9xgqBG"
+    },
+    {
+      "id": "gc.brigid.01",
+      "speaker": "Brigid",
+      "text": "One book per craft, Captain. A skill is a folder with a SKILL.md file inside.",
+      "duration": 5.908,
+      "files": {
+        "webm": "gc.brigid.01.webm",
+        "m4a": "gc.brigid.01.m4a"
+      },
+      "hash": "7b673e5027b21313",
+      "words": [
+        {
+          "word": "One",
+          "start": 0,
+          "end": 0.224
+        },
+        {
+          "word": "book",
+          "start": 0.224,
+          "end": 0.52
+        },
+        {
+          "word": "per",
+          "start": 0.52,
+          "end": 0.707
+        },
+        {
+          "word": "craft",
+          "start": 0.707,
+          "end": 1.18
+        },
+        {
+          "word": "Captain",
+          "start": 1.18,
+          "end": 1.88
+        },
+        {
+          "word": "A",
+          "start": 1.88,
+          "end": 2.147
+        },
+        {
+          "word": "skill",
+          "start": 2.147,
+          "end": 2.533
+        },
+        {
+          "word": "is",
+          "start": 2.533,
+          "end": 2.72
+        },
+        {
+          "word": "a",
+          "start": 2.72,
+          "end": 2.857
+        },
+        {
+          "word": "folder",
+          "start": 2.857,
+          "end": 3.232
+        },
+        {
+          "word": "with",
+          "start": 3.232,
+          "end": 3.4
+        },
+        {
+          "word": "a",
+          "start": 3.4,
+          "end": 3.52
+        },
+        {
+          "word": "SKILL.md",
+          "start": 3.52,
+          "end": 4.8
+        },
+        {
+          "word": "file",
+          "start": 4.8,
+          "end": 5.2
+        },
+        {
+          "word": "inside",
+          "start": 5.2,
+          "end": 5.45
+        }
+      ],
+      "voice": "WtSj8ZSBSK3JEi9xgqBG"
+    },
+    {
+      "id": "gc.brigid.02",
+      "speaker": "Brigid",
+      "text": "Our review book needs two new rules. Find it, read its spine, copy them in, and check every word.",
+      "duration": 8.808,
+      "files": {
+        "webm": "gc.brigid.02.webm",
+        "m4a": "gc.brigid.02.m4a"
+      },
+      "hash": "6ebaf91b9051806e",
+      "words": [
+        {
+          "word": "Our",
+          "start": 0,
+          "end": 0.217
+        },
+        {
+          "word": "review",
+          "start": 0.217,
+          "end": 0.624
+        },
+        {
+          "word": "book",
+          "start": 0.624,
+          "end": 0.947
+        },
+        {
+          "word": "needs",
+          "start": 0.947,
+          "end": 1.36
+        },
+        {
+          "word": "two",
+          "start": 1.36,
+          "end": 1.68
+        },
+        {
+          "word": "new",
+          "start": 1.68,
+          "end": 2.027
+        },
+        {
+          "word": "rules",
+          "start": 2.027,
+          "end": 2.944
+        },
+        {
+          "word": "Find",
+          "start": 2.944,
+          "end": 3.947
+        },
+        {
+          "word": "it",
+          "start": 3.947,
+          "end": 4.608
+        },
+        {
+          "word": "read",
+          "start": 4.608,
+          "end": 4.86
+        },
+        {
+          "word": "its",
+          "start": 4.86,
+          "end": 5.12
+        },
+        {
+          "word": "spine",
+          "start": 5.12,
+          "end": 6.064
+        },
+        {
+          "word": "copy",
+          "start": 6.064,
+          "end": 6.352
+        },
+        {
+          "word": "them",
+          "start": 6.352,
+          "end": 6.56
+        },
+        {
+          "word": "in",
+          "start": 6.56,
+          "end": 6.9
+        },
+        {
+          "word": "and",
+          "start": 6.9,
+          "end": 7.267
+        },
+        {
+          "word": "check",
+          "start": 7.267,
+          "end": 7.693
+        },
+        {
+          "word": "every",
+          "start": 7.693,
+          "end": 8.256
+        },
+        {
+          "word": "word",
+          "start": 8.256,
+          "end": 8.506
+        }
+      ],
+      "voice": "WtSj8ZSBSK3JEi9xgqBG"
+    },
+    {
+      "id": "gc.brigid.book",
+      "speaker": "Brigid",
+      "text": "Follow the lamps round the walk, Captain. One station at a time.",
+      "duration": 3.908,
+      "files": {
+        "webm": "gc.brigid.book.webm",
+        "m4a": "gc.brigid.book.m4a"
+      },
+      "hash": "ded6fd77fcf0fbde",
+      "words": [
+        {
+          "word": "Follow",
+          "start": 0,
+          "end": 0.2
+        },
+        {
+          "word": "the",
+          "start": 0.2,
+          "end": 0.373
+        },
+        {
+          "word": "lamps",
+          "start": 0.373,
+          "end": 0.68
+        },
+        {
+          "word": "round",
+          "start": 0.68,
+          "end": 0.9
+        },
+        {
+          "word": "the",
+          "start": 0.9,
+          "end": 1.024
+        },
+        {
+          "word": "walk",
+          "start": 1.024,
+          "end": 1.595
+        },
+        {
+          "word": "Captain",
+          "start": 1.595,
+          "end": 2.06
+        },
+        {
+          "word": "One",
+          "start": 2.06,
+          "end": 2.55
+        },
+        {
+          "word": "station",
+          "start": 2.55,
+          "end": 3.093
+        },
+        {
+          "word": "at",
+          "start": 3.093,
+          "end": 3.24
+        },
+        {
+          "word": "a",
+          "start": 3.24,
+          "end": 3.376
+        },
+        {
+          "word": "time",
+          "start": 3.376,
+          "end": 3.626
+        }
+      ],
+      "voice": "WtSj8ZSBSK3JEi9xgqBG"
+    },
+    {
+      "id": "gc.brigid.shelf",
+      "speaker": "Brigid",
+      "text": "The shelf index is Customize. Open the Installed tab, then filter to Skills.",
+      "duration": 6.308,
+      "files": {
+        "webm": "gc.brigid.shelf.webm",
+        "m4a": "gc.brigid.shelf.m4a"
+      },
+      "hash": "8aacea40428f129c",
+      "words": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.133
+        },
+        {
+          "word": "shelf",
+          "start": 0.133,
+          "end": 0.48
+        },
+        {
+          "word": "index",
+          "start": 0.48,
+          "end": 0.933
+        },
+        {
+          "word": "is",
+          "start": 0.933,
+          "end": 1.128
+        },
+        {
+          "word": "Customize",
+          "start": 1.128,
+          "end": 2.208
+        },
+        {
+          "word": "Open",
+          "start": 2.208,
+          "end": 3.08
+        },
+        {
+          "word": "the",
+          "start": 3.08,
+          "end": 3.256
+        },
+        {
+          "word": "Installed",
+          "start": 3.256,
+          "end": 3.86
+        },
+        {
+          "word": "tab",
+          "start": 3.86,
+          "end": 4.448
+        },
+        {
+          "word": "then",
+          "start": 4.448,
+          "end": 4.709
+        },
+        {
+          "word": "filter",
+          "start": 4.709,
+          "end": 5.2
+        },
+        {
+          "word": "to",
+          "start": 5.2,
+          "end": 5.451
+        },
+        {
+          "word": "Skills",
+          "start": 5.451,
+          "end": 5.701
+        }
+      ],
+      "voice": "WtSj8ZSBSK3JEi9xgqBG"
+    },
+    {
+      "id": "gc.brigid.proof",
+      "speaker": "Brigid",
+      "text": "Proof it. Only the two rules should have changed.",
+      "duration": 3.508,
+      "files": {
+        "webm": "gc.brigid.proof.webm",
+        "m4a": "gc.brigid.proof.m4a"
+      },
+      "hash": "7cefb659cae83357",
+      "words": [
+        {
+          "word": "Proof",
+          "start": 0,
+          "end": 0.347
+        },
+        {
+          "word": "it",
+          "start": 0.347,
+          "end": 0.784
+        },
+        {
+          "word": "Only",
+          "start": 0.784,
+          "end": 1.4
+        },
+        {
+          "word": "the",
+          "start": 1.4,
+          "end": 1.58
+        },
+        {
+          "word": "two",
+          "start": 1.58,
+          "end": 1.853
+        },
+        {
+          "word": "rules",
+          "start": 1.853,
+          "end": 2.354
+        },
+        {
+          "word": "should",
+          "start": 2.354,
+          "end": 2.592
+        },
+        {
+          "word": "have",
+          "start": 2.592,
+          "end": 2.79
+        },
+        {
+          "word": "changed",
+          "start": 2.79,
+          "end": 3.04
+        }
+      ],
+      "voice": "WtSj8ZSBSK3JEi9xgqBG"
+    },
+    {
+      "id": "gc.brigid.bell",
+      "speaker": "Brigid",
+      "text": "The readers still hold the old copy. Ring the bell: /skills reload.",
+      "duration": 7.608,
+      "files": {
+        "webm": "gc.brigid.bell.webm",
+        "m4a": "gc.brigid.bell.m4a"
+      },
+      "hash": "6183b2bbbc43685b",
+      "words": [
+        {
+          "word": "The",
+          "start": 0,
+          "end": 0.14
+        },
+        {
+          "word": "readers",
+          "start": 0.14,
+          "end": 0.613
+        },
+        {
+          "word": "still",
+          "start": 0.613,
+          "end": 0.96
+        },
+        {
+          "word": "hold",
+          "start": 0.96,
+          "end": 1.32
+        },
+        {
+          "word": "the",
+          "start": 1.32,
+          "end": 1.52
+        },
+        {
+          "word": "old",
+          "start": 1.52,
+          "end": 1.856
+        },
+        {
+          "word": "copy",
+          "start": 1.856,
+          "end": 2.816
+        },
+        {
+          "word": "Ring",
+          "start": 2.816,
+          "end": 4.5
+        },
+        {
+          "word": "the",
+          "start": 4.5,
+          "end": 4.64
+        },
+        {
+          "word": "bell",
+          "start": 4.64,
+          "end": 5.966
+        },
+        {
+          "word": "skills",
+          "start": 5.966,
+          "end": 6.811
+        },
+        {
+          "word": "reload",
+          "start": 6.811,
+          "end": 7.061
+        }
+      ],
+      "voice": "WtSj8ZSBSK3JEi9xgqBG"
+    },
+    {
+      "id": "gc.brigid.lectern",
+      "speaker": "Brigid",
+      "text": "Now read with it in Plan mode. Check the margin names the book, and check the plan against the files.",
+      "duration": 6.708,
+      "files": {
+        "webm": "gc.brigid.lectern.webm",
+        "m4a": "gc.brigid.lectern.m4a"
+      },
+      "hash": "4aae95790f957ea8",
+      "words": [
+        {
+          "word": "Now",
+          "start": 0,
+          "end": 0.24
+        },
+        {
+          "word": "read",
+          "start": 0.24,
+          "end": 0.592
+        },
+        {
+          "word": "with",
+          "start": 0.592,
+          "end": 0.773
+        },
+        {
+          "word": "it",
+          "start": 0.773,
+          "end": 0.933
+        },
+        {
+          "word": "in",
+          "start": 0.933,
+          "end": 1.12
+        },
+        {
+          "word": "Plan",
+          "start": 1.12,
+          "end": 1.52
+        },
+        {
+          "word": "mode",
+          "start": 1.52,
+          "end": 2.013
+        },
+        {
+          "word": "Check",
+          "start": 2.013,
+          "end": 2.52
+        },
+        {
+          "word": "the",
+          "start": 2.52,
+          "end": 2.709
+        },
+        {
+          "word": "margin",
+          "start": 2.709,
+          "end": 3.173
+        },
+        {
+          "word": "names",
+          "start": 3.173,
+          "end": 3.48
+        },
+        {
+          "word": "the",
+          "start": 3.48,
+          "end": 3.664
+        },
+        {
+          "word": "book",
+          "start": 3.664,
+          "end": 4.18
+        },
+        {
+          "word": "and",
+          "start": 4.18,
+          "end": 4.293
+        },
+        {
+          "word": "check",
+          "start": 4.293,
+          "end": 4.6
+        },
+        {
+          "word": "the",
+          "start": 4.6,
+          "end": 4.8
+        },
+        {
+          "word": "plan",
+          "start": 4.8,
+          "end": 5.17
+        },
+        {
+          "word": "against",
+          "start": 5.17,
+          "end": 5.56
+        },
+        {
+          "word": "the",
+          "start": 5.56,
+          "end": 5.787
+        },
+        {
+          "word": "files",
+          "start": 5.787,
+          "end": 6.037
+        }
+      ],
+      "voice": "WtSj8ZSBSK3JEi9xgqBG"
+    },
+    {
+      "id": "gc.brigid.03",
+      "speaker": "Brigid",
+      "text": "Naming the skill makes your intent clear. It doesn't make the findings right. You check those.",
+      "duration": 5.808,
+      "files": {
+        "webm": "gc.brigid.03.webm",
+        "m4a": "gc.brigid.03.m4a"
+      },
+      "hash": "5c972d16c7d51779",
+      "words": [
+        {
+          "word": "Naming",
+          "start": 0,
+          "end": 0.34
+        },
+        {
+          "word": "the",
+          "start": 0.34,
+          "end": 0.453
+        },
+        {
+          "word": "skill",
+          "start": 0.453,
+          "end": 0.76
+        },
+        {
+          "word": "makes",
+          "start": 0.76,
+          "end": 0.992
+        },
+        {
+          "word": "your",
+          "start": 0.992,
+          "end": 1.2
+        },
+        {
+          "word": "intent",
+          "start": 1.2,
+          "end": 1.747
+        },
+        {
+          "word": "clear",
+          "start": 1.747,
+          "end": 2.453
+        },
+        {
+          "word": "It",
+          "start": 2.453,
+          "end": 2.92
+        },
+        {
+          "word": "doesn't",
+          "start": 2.92,
+          "end": 3.232
+        },
+        {
+          "word": "make",
+          "start": 3.232,
+          "end": 3.38
+        },
+        {
+          "word": "the",
+          "start": 3.38,
+          "end": 3.493
+        },
+        {
+          "word": "findings",
+          "start": 3.493,
+          "end": 4
+        },
+        {
+          "word": "right",
+          "start": 4,
+          "end": 4.54
+        },
+        {
+          "word": "You",
+          "start": 4.54,
+          "end": 5
+        },
+        {
+          "word": "check",
+          "start": 5,
+          "end": 5.28
+        },
+        {
+          "word": "those",
+          "start": 5.28,
+          "end": 5.53
+        }
+      ],
+      "voice": "WtSj8ZSBSK3JEi9xgqBG"
+    },
+    {
+      "id": "gc.ewan.wait",
+      "speaker": "Ewan",
+      "text": "Sister Brigid's book comes first, Captain. She's in the scriptorium, on the west walk.",
+      "duration": 7.307,
+      "files": {
+        "webm": "gc.ewan.wait.webm",
+        "m4a": "gc.ewan.wait.m4a"
+      },
+      "hash": "cec5d4aa926d4f97",
+      "words": [
+        {
+          "word": "Sister",
+          "start": 0.054333,
+          "end": 0.475541
+        },
+        {
+          "word": "Brigid's",
+          "start": 0.475541,
+          "end": 0.9375
+        },
+        {
+          "word": "book",
+          "start": 0.9375,
+          "end": 1.195666
+        },
+        {
+          "word": "comes",
+          "start": 1.195666,
+          "end": 1.535333
+        },
+        {
+          "word": "first",
+          "start": 1.535333,
+          "end": 2.160333
+        },
+        {
+          "word": "Captain",
+          "start": 2.160333,
+          "end": 3.668458
+        },
+        {
+          "word": "She's",
+          "start": 3.668458,
+          "end": 3.994583
+        },
+        {
+          "word": "in",
+          "start": 3.994583,
+          "end": 4.10325
+        },
+        {
+          "word": "the",
+          "start": 4.10325,
+          "end": 4.198375
+        },
+        {
+          "word": "scriptorium",
+          "start": 4.198375,
+          "end": 5.230958
+        },
+        {
+          "word": "on",
+          "start": 5.230958,
+          "end": 5.380416
+        },
+        {
+          "word": "the",
+          "start": 5.380416,
+          "end": 5.475541
+        },
+        {
+          "word": "west",
+          "start": 5.475541,
+          "end": 5.828791
+        },
+        {
+          "word": "walk",
+          "start": 5.828791,
+          "end": 6.078791
+        }
+      ],
+      "voice": "en-GB-AlfieNeural"
+    },
+    {
+      "id": "gc.ewan.01",
+      "speaker": "Ewan",
+      "text": "Look at that page, Captain. \"Review without carving.\" And look at the apprentice's hand.",
+      "duration": 7.907,
+      "files": {
+        "webm": "gc.ewan.01.webm",
+        "m4a": "gc.ewan.01.m4a"
+      },
+      "hash": "1dc6c42998b144aa",
+      "words": [
+        {
+          "word": "Look",
+          "start": 0.054333,
+          "end": 0.3125
+        },
+        {
+          "word": "at",
+          "start": 0.3125,
+          "end": 0.421208
+        },
+        {
+          "word": "that",
+          "start": 0.421208,
+          "end": 0.66575
+        },
+        {
+          "word": "page",
+          "start": 0.66575,
+          "end": 1.317916
+        },
+        {
+          "word": "Captain",
+          "start": 1.317916,
+          "end": 2.826083
+        },
+        {
+          "word": "\"Review",
+          "start": 2.826083,
+          "end": 3.233708
+        },
+        {
+          "word": "without",
+          "start": 3.233708,
+          "end": 3.614125
+        },
+        {
+          "word": "carving",
+          "start": 3.614125,
+          "end": 5.122291
+        },
+        {
+          "word": "\" And",
+          "start": 5.122291,
+          "end": 5.285333
+        },
+        {
+          "word": "look",
+          "start": 5.285333,
+          "end": 5.502708
+        },
+        {
+          "word": "at",
+          "start": 5.502708,
+          "end": 5.58425
+        },
+        {
+          "word": "the",
+          "start": 5.58425,
+          "end": 5.720125
+        },
+        {
+          "word": "apprentice's",
+          "start": 5.720125,
+          "end": 6.399458
+        },
+        {
+          "word": "hand",
+          "start": 6.399458,
+          "end": 6.649458
+        }
+      ],
+      "voice": "en-GB-AlfieNeural"
+    },
+    {
+      "id": "gc.ewan.02",
+      "speaker": "Ewan",
+      "text": "A skill tells Copilot how to approach a task. It doesn't switch off a single tool.",
+      "duration": 6.827,
+      "files": {
+        "webm": "gc.ewan.02.webm",
+        "m4a": "gc.ewan.02.m4a"
+      },
+      "hash": "b69e7acb02d86d66",
+      "words": [
+        {
+          "word": "A",
+          "start": 0.054333,
+          "end": 0.163041
+        },
+        {
+          "word": "skill",
+          "start": 0.163041,
+          "end": 0.529875
+        },
+        {
+          "word": "tells",
+          "start": 0.529875,
+          "end": 0.855958
+        },
+        {
+          "word": "Copilot",
+          "start": 0.855958,
+          "end": 1.467375
+        },
+        {
+          "word": "how",
+          "start": 1.467375,
+          "end": 1.657625
+        },
+        {
+          "word": "to",
+          "start": 1.657625,
+          "end": 1.820666
+        },
+        {
+          "word": "approach",
+          "start": 1.820666,
+          "end": 2.22825
+        },
+        {
+          "word": "a",
+          "start": 2.22825,
+          "end": 2.309791
+        },
+        {
+          "word": "task",
+          "start": 2.309791,
+          "end": 3.858708
+        },
+        {
+          "word": "It",
+          "start": 3.858708,
+          "end": 4.035333
+        },
+        {
+          "word": "doesn't",
+          "start": 4.035333,
+          "end": 4.361416
+        },
+        {
+          "word": "switch",
+          "start": 4.361416,
+          "end": 4.72825
+        },
+        {
+          "word": "off",
+          "start": 4.72825,
+          "end": 4.891291
+        },
+        {
+          "word": "a",
+          "start": 4.891291,
+          "end": 4.972833
+        },
+        {
+          "word": "single",
+          "start": 4.972833,
+          "end": 5.394041
+        },
+        {
+          "word": "tool",
+          "start": 5.394041,
+          "end": 5.644041
+        }
+      ],
+      "voice": "en-GB-AlfieNeural"
+    },
+    {
+      "id": "gc.ewan.03",
+      "speaker": "Ewan",
+      "text": "Some books carry scripts, or tell you to use tools. Read an unfamiliar one before you turn it on.",
+      "duration": 7.607,
+      "files": {
+        "webm": "gc.ewan.03.webm",
+        "m4a": "gc.ewan.03.m4a"
+      },
+      "hash": "a44092155e669359",
+      "words": [
+        {
+          "word": "Some",
+          "start": 0.054333,
+          "end": 0.380416
+        },
+        {
+          "word": "books",
+          "start": 0.380416,
+          "end": 0.66575
+        },
+        {
+          "word": "carry",
+          "start": 0.66575,
+          "end": 0.964666
+        },
+        {
+          "word": "scripts",
+          "start": 0.964666,
+          "end": 1.644041
+        },
+        {
+          "word": "or",
+          "start": 1.644041,
+          "end": 1.766291
+        },
+        {
+          "word": "tell",
+          "start": 1.766291,
+          "end": 2.051625
+        },
+        {
+          "word": "you",
+          "start": 2.051625,
+          "end": 2.173916
+        },
+        {
+          "word": "to",
+          "start": 2.173916,
+          "end": 2.282625
+        },
+        {
+          "word": "use",
+          "start": 2.282625,
+          "end": 2.622291
+        },
+        {
+          "word": "tools",
+          "start": 2.622291,
+          "end": 4.171208
+        },
+        {
+          "word": "Read",
+          "start": 4.171208,
+          "end": 4.456541
+        },
+        {
+          "word": "an",
+          "start": 4.456541,
+          "end": 4.578791
+        },
+        {
+          "word": "unfamiliar",
+          "start": 4.578791,
+          "end": 5.163041
+        },
+        {
+          "word": "one",
+          "start": 5.163041,
+          "end": 5.434791
+        },
+        {
+          "word": "before",
+          "start": 5.434791,
+          "end": 5.706541
+        },
+        {
+          "word": "you",
+          "start": 5.706541,
+          "end": 5.869583
+        },
+        {
+          "word": "turn",
+          "start": 5.869583,
+          "end": 6.154875
+        },
+        {
+          "word": "it",
+          "start": 6.154875,
+          "end": 6.29075
+        },
+        {
+          "word": "on",
+          "start": 6.29075,
+          "end": 6.54075
+        }
+      ],
+      "voice": "en-GB-AlfieNeural"
+    },
+    {
+      "id": "gc.ewan.04",
+      "speaker": "Ewan",
+      "text": "The chains are on the tools, not in the books. Guildmaster Fergus can tell you about those.",
+      "duration": 7.207,
+      "files": {
+        "webm": "gc.ewan.04.webm",
+        "m4a": "gc.ewan.04.m4a"
+      },
+      "hash": "e21a3bc6ad4cad97",
+      "words": [
+        {
+          "word": "The",
+          "start": 0.054333,
+          "end": 0.217375
+        },
+        {
+          "word": "chains",
+          "start": 0.217375,
+          "end": 0.66575
+        },
+        {
+          "word": "are",
+          "start": 0.66575,
+          "end": 0.774458
+        },
+        {
+          "word": "on",
+          "start": 0.774458,
+          "end": 0.923916
+        },
+        {
+          "word": "the",
+          "start": 0.923916,
+          "end": 1.019041
+        },
+        {
+          "word": "tools",
+          "start": 1.019041,
+          "end": 1.711958
+        },
+        {
+          "word": "not",
+          "start": 1.711958,
+          "end": 1.956541
+        },
+        {
+          "word": "in",
+          "start": 1.956541,
+          "end": 2.065208
+        },
+        {
+          "word": "the",
+          "start": 2.065208,
+          "end": 2.173916
+        },
+        {
+          "word": "books",
+          "start": 2.173916,
+          "end": 3.573375
+        },
+        {
+          "word": "Guildmaster",
+          "start": 3.573375,
+          "end": 4.293458
+        },
+        {
+          "word": "Fergus",
+          "start": 4.293458,
+          "end": 4.769041
+        },
+        {
+          "word": "can",
+          "start": 4.769041,
+          "end": 4.945666
+        },
+        {
+          "word": "tell",
+          "start": 4.945666,
+          "end": 5.203791
+        },
+        {
+          "word": "you",
+          "start": 5.203791,
+          "end": 5.366833
+        },
+        {
+          "word": "about",
+          "start": 5.366833,
+          "end": 5.692916
+        },
+        {
+          "word": "those",
+          "start": 5.692916,
+          "end": 5.942916
+        }
+      ],
+      "voice": "en-GB-AlfieNeural"
+    },
+    {
+      "id": "gc.ewan.done",
+      "speaker": "Ewan",
+      "text": "Out the east gate and along the ridge, Captain. Guildmaster Fergus keeps the hall.",
+      "duration": 6.607,
+      "files": {
+        "webm": "gc.ewan.done.webm",
+        "m4a": "gc.ewan.done.m4a"
+      },
+      "hash": "b5112c228e16bcbf",
+      "words": [
+        {
+          "word": "Out",
+          "start": 0.054333,
+          "end": 0.258166
+        },
+        {
+          "word": "the",
+          "start": 0.258166,
+          "end": 0.394041
+        },
+        {
+          "word": "east",
+          "start": 0.394041,
+          "end": 0.679333
+        },
+        {
+          "word": "gate",
+          "start": 0.679333,
+          "end": 0.951083
+        },
+        {
+          "word": "and",
+          "start": 0.951083,
+          "end": 1.046208
+        },
+        {
+          "word": "along",
+          "start": 1.046208,
+          "end": 1.331541
+        },
+        {
+          "word": "the",
+          "start": 1.331541,
+          "end": 1.440208
+        },
+        {
+          "word": "ridge",
+          "start": 1.440208,
+          "end": 2.065208
+        },
+        {
+          "word": "Captain",
+          "start": 2.065208,
+          "end": 3.586958
+        },
+        {
+          "word": "Guildmaster",
+          "start": 3.586958,
+          "end": 4.307083
+        },
+        {
+          "word": "Fergus",
+          "start": 4.307083,
+          "end": 4.782625
+        },
+        {
+          "word": "keeps",
+          "start": 4.782625,
+          "end": 5.135875
+        },
+        {
+          "word": "the",
+          "start": 5.135875,
+          "end": 5.230958
+        },
+        {
+          "word": "hall",
+          "start": 5.230958,
+          "end": 5.480958
+        }
+      ],
+      "voice": "en-GB-AlfieNeural"
+    },
+    {
+      "id": "gc.fergus.wait",
+      "speaker": "Fergus",
+      "text": "Brother Ewan has a lesson for you first, Captain, in the abbey's chained library.",
+      "duration": 5.307,
+      "files": {
+        "webm": "gc.fergus.wait.webm",
+        "m4a": "gc.fergus.wait.m4a"
+      },
+      "hash": "f7031836f318d71a",
+      "words": [
+        {
+          "word": "Brother",
+          "start": 0.052083,
+          "end": 0.351583
+        },
+        {
+          "word": "Ewan",
+          "start": 0.351583,
+          "end": 0.664083
+        },
+        {
+          "word": "has",
+          "start": 0.664083,
+          "end": 0.872416
+        },
+        {
+          "word": "a",
+          "start": 0.872416,
+          "end": 0.950541
+        },
+        {
+          "word": "lesson",
+          "start": 0.950541,
+          "end": 1.341166
+        },
+        {
+          "word": "for",
+          "start": 1.341166,
+          "end": 1.458333
+        },
+        {
+          "word": "you",
+          "start": 1.458333,
+          "end": 1.640625
+        },
+        {
+          "word": "first",
+          "start": 1.640625,
+          "end": 2.291666
+        },
+        {
+          "word": "Captain",
+          "start": 2.291666,
+          "end": 2.890625
+        },
+        {
+          "word": "in",
+          "start": 2.890625,
+          "end": 3.007833
+        },
+        {
+          "word": "the",
+          "start": 3.007833,
+          "end": 3.138041
+        },
+        {
+          "word": "abbey's",
+          "start": 3.138041,
+          "end": 3.463541
+        },
+        {
+          "word": "chained",
+          "start": 3.463541,
+          "end": 3.802083
+        },
+        {
+          "word": "library",
+          "start": 3.802083,
+          "end": 4.052083
+        }
+      ],
+      "voice": "en-GB-NoahNeural"
+    },
+    {
+      "id": "gc.fergus.01",
+      "speaker": "Fergus",
+      "text": "You don't call one helper for every repair, Captain. You call the plumber, the electrician, the roofer.",
+      "duration": 7.407,
+      "files": {
+        "webm": "gc.fergus.01.webm",
+        "m4a": "gc.fergus.01.m4a"
+      },
+      "hash": "16c224d40fa89b09",
+      "words": [
+        {
+          "word": "You",
+          "start": 0.052083,
+          "end": 0.234375
+        },
+        {
+          "word": "don't",
+          "start": 0.234375,
+          "end": 0.45575
+        },
+        {
+          "word": "call",
+          "start": 0.45575,
+          "end": 0.76825
+        },
+        {
+          "word": "one",
+          "start": 0.76825,
+          "end": 1.015625
+        },
+        {
+          "word": "helper",
+          "start": 1.015625,
+          "end": 1.40625
+        },
+        {
+          "word": "for",
+          "start": 1.40625,
+          "end": 1.588541
+        },
+        {
+          "word": "every",
+          "start": 1.588541,
+          "end": 1.835958
+        },
+        {
+          "word": "repair",
+          "start": 1.835958,
+          "end": 2.460958
+        },
+        {
+          "word": "Captain",
+          "start": 2.460958,
+          "end": 3.90625
+        },
+        {
+          "word": "You",
+          "start": 3.90625,
+          "end": 4.0495
+        },
+        {
+          "word": "call",
+          "start": 4.0495,
+          "end": 4.296875
+        },
+        {
+          "word": "the",
+          "start": 4.296875,
+          "end": 4.414083
+        },
+        {
+          "word": "plumber",
+          "start": 4.414083,
+          "end": 4.934916
+        },
+        {
+          "word": "the",
+          "start": 4.934916,
+          "end": 5.078125
+        },
+        {
+          "word": "electrician",
+          "start": 5.078125,
+          "end": 5.9375
+        },
+        {
+          "word": "the",
+          "start": 5.9375,
+          "end": 6.054708
+        },
+        {
+          "word": "roofer",
+          "start": 6.054708,
+          "end": 6.304708
+        }
+      ],
+      "voice": "en-GB-NoahNeural"
+    },
+    {
+      "id": "gc.fergus.02",
+      "speaker": "Fergus",
+      "text": "A custom agent is a specialist: a name, instructions, and a set of available tools.",
+      "duration": 6.207,
+      "files": {
+        "webm": "gc.fergus.02.webm",
+        "m4a": "gc.fergus.02.m4a"
+      },
+      "hash": "d1f5a0efff14cb9b",
+      "words": [
+        {
+          "word": "A",
+          "start": 0.052083,
+          "end": 0.169291
+        },
+        {
+          "word": "custom",
+          "start": 0.169291,
+          "end": 0.572916
+        },
+        {
+          "word": "agent",
+          "start": 0.572916,
+          "end": 0.911458
+        },
+        {
+          "word": "is",
+          "start": 0.911458,
+          "end": 1.028666
+        },
+        {
+          "word": "a",
+          "start": 1.028666,
+          "end": 1.106791
+        },
+        {
+          "word": "specialist",
+          "start": 1.106791,
+          "end": 2.03125
+        },
+        {
+          "word": "a",
+          "start": 2.03125,
+          "end": 2.096375
+        },
+        {
+          "word": "name",
+          "start": 2.096375,
+          "end": 2.682291
+        },
+        {
+          "word": "instructions",
+          "start": 2.682291,
+          "end": 3.645833
+        },
+        {
+          "word": "and",
+          "start": 3.645833,
+          "end": 3.776041
+        },
+        {
+          "word": "a",
+          "start": 3.776041,
+          "end": 3.854166
+        },
+        {
+          "word": "set",
+          "start": 3.854166,
+          "end": 4.140625
+        },
+        {
+          "word": "of",
+          "start": 4.140625,
+          "end": 4.244791
+        },
+        {
+          "word": "available",
+          "start": 4.244791,
+          "end": 4.726583
+        },
+        {
+          "word": "tools",
+          "start": 4.726583,
+          "end": 4.976583
+        }
+      ],
+      "voice": "en-GB-NoahNeural"
+    },
+    {
+      "id": "gc.fergus.03",
+      "speaker": "Fergus",
+      "text": "A skill supplies the workflow. The agent is the role that does it: not a new mode, or a new model.",
+      "duration": 7.407,
+      "files": {
+        "webm": "gc.fergus.03.webm",
+        "m4a": "gc.fergus.03.m4a"
+      },
+      "hash": "192ebfa5d7766a2f",
+      "words": [
+        {
+          "word": "A",
+          "start": 0.052083,
+          "end": 0.15625
+        },
+        {
+          "word": "skill",
+          "start": 0.15625,
+          "end": 0.494791
+        },
+        {
+          "word": "supplies",
+          "start": 0.494791,
+          "end": 0.963541
+        },
+        {
+          "word": "the",
+          "start": 0.963541,
+          "end": 1.054708
+        },
+        {
+          "word": "workflow",
+          "start": 1.054708,
+          "end": 2.64325
+        },
+        {
+          "word": "The",
+          "start": 2.64325,
+          "end": 2.7995
+        },
+        {
+          "word": "agent",
+          "start": 2.7995,
+          "end": 3.151041
+        },
+        {
+          "word": "is",
+          "start": 3.151041,
+          "end": 3.26825
+        },
+        {
+          "word": "the",
+          "start": 3.26825,
+          "end": 3.372416
+        },
+        {
+          "word": "role",
+          "start": 3.372416,
+          "end": 3.658875
+        },
+        {
+          "word": "that",
+          "start": 3.658875,
+          "end": 3.815125
+        },
+        {
+          "word": "does",
+          "start": 3.815125,
+          "end": 3.997416
+        },
+        {
+          "word": "it",
+          "start": 3.997416,
+          "end": 4.388041
+        },
+        {
+          "word": "not",
+          "start": 4.388041,
+          "end": 4.648458
+        },
+        {
+          "word": "a",
+          "start": 4.648458,
+          "end": 4.726583
+        },
+        {
+          "word": "new",
+          "start": 4.726583,
+          "end": 4.987
+        },
+        {
+          "word": "mode",
+          "start": 4.987,
+          "end": 5.546875
+        },
+        {
+          "word": "or",
+          "start": 5.546875,
+          "end": 5.729166
+        },
+        {
+          "word": "a",
+          "start": 5.729166,
+          "end": 5.807291
+        },
+        {
+          "word": "new",
+          "start": 5.807291,
+          "end": 6.054708
+        },
+        {
+          "word": "model",
+          "start": 6.054708,
+          "end": 6.304708
+        }
+      ],
+      "voice": "en-GB-NoahNeural"
+    },
+    {
+      "id": "gc.fergus.04",
+      "speaker": "Fergus",
+      "text": "Rory's our new journeyman. He'll explain the Book App and change nothing. Come and fit him out.",
+      "duration": 7.707,
+      "files": {
+        "webm": "gc.fergus.04.webm",
+        "m4a": "gc.fergus.04.m4a"
+      },
+      "hash": "158622174a565001",
+      "words": [
+        {
+          "word": "Rory's",
+          "start": 0.052083,
+          "end": 0.533875
+        },
+        {
+          "word": "our",
+          "start": 0.533875,
+          "end": 0.742208
+        },
+        {
+          "word": "new",
+          "start": 0.742208,
+          "end": 1.002625
+        },
+        {
+          "word": "journeyman",
+          "start": 1.002625,
+          "end": 2.513041
+        },
+        {
+          "word": "He'll",
+          "start": 2.513041,
+          "end": 2.760416
+        },
+        {
+          "word": "explain",
+          "start": 2.760416,
+          "end": 3.216166
+        },
+        {
+          "word": "the",
+          "start": 3.216166,
+          "end": 3.333333
+        },
+        {
+          "word": "Book",
+          "start": 3.333333,
+          "end": 3.606791
+        },
+        {
+          "word": "App",
+          "start": 3.606791,
+          "end": 3.776041
+        },
+        {
+          "word": "and",
+          "start": 3.776041,
+          "end": 3.89325
+        },
+        {
+          "word": "change",
+          "start": 3.89325,
+          "end": 4.283875
+        },
+        {
+          "word": "nothing",
+          "start": 4.283875,
+          "end": 5.651041
+        },
+        {
+          "word": "Come",
+          "start": 5.651041,
+          "end": 5.911458
+        },
+        {
+          "word": "and",
+          "start": 5.911458,
+          "end": 6.028666
+        },
+        {
+          "word": "fit",
+          "start": 6.028666,
+          "end": 6.302083
+        },
+        {
+          "word": "him",
+          "start": 6.302083,
+          "end": 6.458333
+        },
+        {
+          "word": "out",
+          "start": 6.458333,
+          "end": 6.708333
+        }
+      ],
+      "voice": "en-GB-NoahNeural"
+    },
+    {
+      "id": "gc.fergus.belt",
+      "speaker": "Fergus",
+      "text": "Rory's toolbelt is waiting in the yard. Follow the lamps, Captain.",
+      "duration": 5.907,
+      "files": {
+        "webm": "gc.fergus.belt.webm",
+        "m4a": "gc.fergus.belt.m4a"
+      },
+      "hash": "80b6d4ae07933d6e",
+      "words": [
+        {
+          "word": "Rory's",
+          "start": 0.052083,
+          "end": 0.546875
+        },
+        {
+          "word": "toolbelt",
+          "start": 0.546875,
+          "end": 1.08075
+        },
+        {
+          "word": "is",
+          "start": 1.08075,
+          "end": 1.263041
+        },
+        {
+          "word": "waiting",
+          "start": 1.263041,
+          "end": 1.666666
+        },
+        {
+          "word": "in",
+          "start": 1.666666,
+          "end": 1.770833
+        },
+        {
+          "word": "the",
+          "start": 1.770833,
+          "end": 1.848958
+        },
+        {
+          "word": "yard",
+          "start": 1.848958,
+          "end": 3.333333
+        },
+        {
+          "word": "Follow",
+          "start": 3.333333,
+          "end": 3.710958
+        },
+        {
+          "word": "the",
+          "start": 3.710958,
+          "end": 3.841166
+        },
+        {
+          "word": "lamps",
+          "start": 3.841166,
+          "end": 4.401041
+        },
+        {
+          "word": "Captain",
+          "start": 4.401041,
+          "end": 4.651041
+        }
+      ],
+      "voice": "en-GB-NoahNeural"
+    },
+    {
+      "id": "gc.fergus.indenture",
+      "speaker": "Fergus",
+      "text": "His indenture's his profile: a name, a description, a tools list, and his instructions below.",
+      "duration": 6.607,
+      "files": {
+        "webm": "gc.fergus.indenture.webm",
+        "m4a": "gc.fergus.indenture.m4a"
+      },
+      "hash": "946fa7ed817e936b",
+      "words": [
+        {
+          "word": "His",
+          "start": 0.052083,
+          "end": 0.234375
+        },
+        {
+          "word": "indenture's",
+          "start": 0.234375,
+          "end": 0.755208
+        },
+        {
+          "word": "his",
+          "start": 0.755208,
+          "end": 0.911458
+        },
+        {
+          "word": "profile",
+          "start": 0.911458,
+          "end": 1.770833
+        },
+        {
+          "word": "a",
+          "start": 1.770833,
+          "end": 1.822916
+        },
+        {
+          "word": "name",
+          "start": 1.822916,
+          "end": 2.421875
+        },
+        {
+          "word": "a",
+          "start": 2.421875,
+          "end": 2.460958
+        },
+        {
+          "word": "description",
+          "start": 2.460958,
+          "end": 3.359375
+        },
+        {
+          "word": "a",
+          "start": 3.359375,
+          "end": 3.411458
+        },
+        {
+          "word": "tools",
+          "start": 3.411458,
+          "end": 3.802083
+        },
+        {
+          "word": "list",
+          "start": 3.802083,
+          "end": 4.283875
+        },
+        {
+          "word": "and",
+          "start": 4.283875,
+          "end": 4.414083
+        },
+        {
+          "word": "his",
+          "start": 4.414083,
+          "end": 4.596375
+        },
+        {
+          "word": "instructions",
+          "start": 4.596375,
+          "end": 5.260416
+        },
+        {
+          "word": "below",
+          "start": 5.260416,
+          "end": 5.510416
+        }
+      ],
+      "voice": "en-GB-NoahNeural"
+    },
+    {
+      "id": "gc.fergus.rack",
+      "speaker": "Fergus",
+      "text": "Match the tools to the task. An explainer only needs to read and search.",
+      "duration": 6.007,
+      "files": {
+        "webm": "gc.fergus.rack.webm",
+        "m4a": "gc.fergus.rack.m4a"
+      },
+      "hash": "7242328b0b12321f",
+      "words": [
+        {
+          "word": "Match",
+          "start": 0.052083,
+          "end": 0.377625
+        },
+        {
+          "word": "the",
+          "start": 0.377625,
+          "end": 0.494791
+        },
+        {
+          "word": "tools",
+          "start": 0.494791,
+          "end": 0.872416
+        },
+        {
+          "word": "to",
+          "start": 0.872416,
+          "end": 0.976583
+        },
+        {
+          "word": "the",
+          "start": 0.976583,
+          "end": 1.106791
+        },
+        {
+          "word": "task",
+          "start": 1.106791,
+          "end": 2.578125
+        },
+        {
+          "word": "An",
+          "start": 2.578125,
+          "end": 2.721375
+        },
+        {
+          "word": "explainer",
+          "start": 2.721375,
+          "end": 3.333333
+        },
+        {
+          "word": "only",
+          "start": 3.333333,
+          "end": 3.632833
+        },
+        {
+          "word": "needs",
+          "start": 3.632833,
+          "end": 3.945333
+        },
+        {
+          "word": "to",
+          "start": 3.945333,
+          "end": 4.075541
+        },
+        {
+          "word": "read",
+          "start": 4.075541,
+          "end": 4.375
+        },
+        {
+          "word": "and",
+          "start": 4.375,
+          "end": 4.479166
+        },
+        {
+          "word": "search",
+          "start": 4.479166,
+          "end": 4.729166
+        }
+      ],
+      "voice": "en-GB-NoahNeural"
+    },
+    {
+      "id": "gc.fergus.door",
+      "speaker": "Fergus",
+      "text": "The app loads custom agents when it starts. Closing the window isn't quitting.",
+      "duration": 6.007,
+      "files": {
+        "webm": "gc.fergus.door.webm",
+        "m4a": "gc.fergus.door.m4a"
+      },
+      "hash": "1c580a4ceb96c81b",
+      "words": [
+        {
+          "word": "The",
+          "start": 0.052083,
+          "end": 0.221375
+        },
+        {
+          "word": "app",
+          "start": 0.221375,
+          "end": 0.429708
+        },
+        {
+          "word": "loads",
+          "start": 0.429708,
+          "end": 0.76825
+        },
+        {
+          "word": "custom",
+          "start": 0.76825,
+          "end": 1.171875
+        },
+        {
+          "word": "agents",
+          "start": 1.171875,
+          "end": 1.614583
+        },
+        {
+          "word": "when",
+          "start": 1.614583,
+          "end": 1.796875
+        },
+        {
+          "word": "it",
+          "start": 1.796875,
+          "end": 1.927083
+        },
+        {
+          "word": "starts",
+          "start": 1.927083,
+          "end": 3.450541
+        },
+        {
+          "word": "Closing",
+          "start": 3.450541,
+          "end": 3.90625
+        },
+        {
+          "word": "the",
+          "start": 3.90625,
+          "end": 4.010416
+        },
+        {
+          "word": "window",
+          "start": 4.010416,
+          "end": 4.401041
+        },
+        {
+          "word": "isn't",
+          "start": 4.401041,
+          "end": 4.661458
+        },
+        {
+          "word": "quitting",
+          "start": 4.661458,
+          "end": 4.911458
+        }
+      ],
+      "voice": "en-GB-NoahNeural"
+    },
+    {
+      "id": "gc.fergus.tests",
+      "speaker": "Fergus",
+      "text": "His belt has no hammer, and that's on purpose. Use the default agent when you need actions.",
+      "duration": 6.908,
+      "files": {
+        "webm": "gc.fergus.tests.webm",
+        "m4a": "gc.fergus.tests.m4a"
+      },
+      "hash": "3545ca1e58dbecee",
+      "words": [
+        {
+          "word": "His",
+          "start": 0.052083,
+          "end": 0.273458
+        },
+        {
+          "word": "belt",
+          "start": 0.273458,
+          "end": 0.533875
+        },
+        {
+          "word": "has",
+          "start": 0.533875,
+          "end": 0.729166
+        },
+        {
+          "word": "no",
+          "start": 0.729166,
+          "end": 0.9375
+        },
+        {
+          "word": "hammer",
+          "start": 0.9375,
+          "end": 1.575541
+        },
+        {
+          "word": "and",
+          "start": 1.575541,
+          "end": 1.666666
+        },
+        {
+          "word": "that's",
+          "start": 1.666666,
+          "end": 1.979166
+        },
+        {
+          "word": "on",
+          "start": 1.979166,
+          "end": 2.122416
+        },
+        {
+          "word": "purpose",
+          "start": 2.122416,
+          "end": 3.619791
+        },
+        {
+          "word": "Use",
+          "start": 3.619791,
+          "end": 3.867208
+        },
+        {
+          "word": "the",
+          "start": 3.867208,
+          "end": 3.984375
+        },
+        {
+          "word": "default",
+          "start": 3.984375,
+          "end": 4.440125
+        },
+        {
+          "word": "agent",
+          "start": 4.440125,
+          "end": 4.804708
+        },
+        {
+          "word": "when",
+          "start": 4.804708,
+          "end": 4.973958
+        },
+        {
+          "word": "you",
+          "start": 4.973958,
+          "end": 5.104166
+        },
+        {
+          "word": "need",
+          "start": 5.104166,
+          "end": 5.377625
+        },
+        {
+          "word": "actions",
+          "start": 5.377625,
+          "end": 5.627625
+        }
+      ],
+      "voice": "en-GB-NoahNeural"
+    },
+    {
+      "id": "gc.fergus.05",
+      "speaker": "Fergus",
+      "text": "The tools list is the limit. Leave it out, and he'd get every tool there is.",
+      "duration": 5.907,
+      "files": {
+        "webm": "gc.fergus.05.webm",
+        "m4a": "gc.fergus.05.m4a"
+      },
+      "hash": "de05aec86e0f02a2",
+      "words": [
+        {
+          "word": "The",
+          "start": 0.052083,
+          "end": 0.208333
+        },
+        {
+          "word": "tools",
+          "start": 0.208333,
+          "end": 0.625
+        },
+        {
+          "word": "list",
+          "start": 0.625,
+          "end": 0.911458
+        },
+        {
+          "word": "is",
+          "start": 0.911458,
+          "end": 1.041666
+        },
+        {
+          "word": "the",
+          "start": 1.041666,
+          "end": 1.158875
+        },
+        {
+          "word": "limit",
+          "start": 1.158875,
+          "end": 2.487
+        },
+        {
+          "word": "Leave",
+          "start": 2.487,
+          "end": 2.786458
+        },
+        {
+          "word": "it",
+          "start": 2.786458,
+          "end": 2.916666
+        },
+        {
+          "word": "out",
+          "start": 2.916666,
+          "end": 3.372416
+        },
+        {
+          "word": "and",
+          "start": 3.372416,
+          "end": 3.463541
+        },
+        {
+          "word": "he'd",
+          "start": 3.463541,
+          "end": 3.632833
+        },
+        {
+          "word": "get",
+          "start": 3.632833,
+          "end": 3.867208
+        },
+        {
+          "word": "every",
+          "start": 3.867208,
+          "end": 4.101583
+        },
+        {
+          "word": "tool",
+          "start": 4.101583,
+          "end": 4.427083
+        },
+        {
+          "word": "there",
+          "start": 4.427083,
+          "end": 4.609375
+        },
+        {
+          "word": "is",
+          "start": 4.609375,
+          "end": 4.859375
+        }
+      ],
+      "voice": "en-GB-NoahNeural"
+    },
+    {
+      "id": "gc.fergus.06",
+      "speaker": "Fergus",
+      "text": "Abbess Seren keeps the bell, up by the tower. She'll test what you've learned.",
+      "duration": 6.107,
+      "files": {
+        "webm": "gc.fergus.06.webm",
+        "m4a": "gc.fergus.06.m4a"
+      },
+      "hash": "1cfccf05132ad12f",
+      "words": [
+        {
+          "word": "Abbess",
+          "start": 0.052083,
+          "end": 0.403666
+        },
+        {
+          "word": "Seren",
+          "start": 0.403666,
+          "end": 0.76825
+        },
+        {
+          "word": "keeps",
+          "start": 0.76825,
+          "end": 1.106791
+        },
+        {
+          "word": "the",
+          "start": 1.106791,
+          "end": 1.237
+        },
+        {
+          "word": "bell",
+          "start": 1.237,
+          "end": 1.744791
+        },
+        {
+          "word": "up",
+          "start": 1.744791,
+          "end": 1.901041
+        },
+        {
+          "word": "by",
+          "start": 1.901041,
+          "end": 2.083333
+        },
+        {
+          "word": "the",
+          "start": 2.083333,
+          "end": 2.213541
+        },
+        {
+          "word": "tower",
+          "start": 2.213541,
+          "end": 3.606791
+        },
+        {
+          "word": "She'll",
+          "start": 3.606791,
+          "end": 3.880208
+        },
+        {
+          "word": "test",
+          "start": 3.880208,
+          "end": 4.192708
+        },
+        {
+          "word": "what",
+          "start": 4.192708,
+          "end": 4.401041
+        },
+        {
+          "word": "you've",
+          "start": 4.401041,
+          "end": 4.609375
+        },
+        {
+          "word": "learned",
+          "start": 4.609375,
+          "end": 4.859375
+        }
+      ],
+      "voice": "en-GB-NoahNeural"
+    },
+    {
+      "id": "gc.fergus.done",
+      "speaker": "Fergus",
+      "text": "Rory's hired, Captain. Abbess Seren's on the tower terrace, up the stair.",
+      "duration": 6.207,
+      "files": {
+        "webm": "gc.fergus.done.webm",
+        "m4a": "gc.fergus.done.m4a"
+      },
+      "hash": "ebb8d77cce3ebaad",
+      "words": [
+        {
+          "word": "Rory's",
+          "start": 0.052083,
+          "end": 0.507833
+        },
+        {
+          "word": "hired",
+          "start": 0.507833,
+          "end": 1.145833
+        },
+        {
+          "word": "Captain",
+          "start": 1.145833,
+          "end": 2.604166
+        },
+        {
+          "word": "Abbess",
+          "start": 2.604166,
+          "end": 2.95575
+        },
+        {
+          "word": "Seren's",
+          "start": 2.95575,
+          "end": 3.411458
+        },
+        {
+          "word": "on",
+          "start": 3.411458,
+          "end": 3.554708
+        },
+        {
+          "word": "the",
+          "start": 3.554708,
+          "end": 3.658875
+        },
+        {
+          "word": "tower",
+          "start": 3.658875,
+          "end": 3.997416
+        },
+        {
+          "word": "terrace",
+          "start": 3.997416,
+          "end": 4.596375
+        },
+        {
+          "word": "up",
+          "start": 4.596375,
+          "end": 4.752625
+        },
+        {
+          "word": "the",
+          "start": 4.752625,
+          "end": 4.856791
+        },
+        {
+          "word": "stair",
+          "start": 4.856791,
+          "end": 5.106791
+        }
+      ],
+      "voice": "en-GB-NoahNeural"
+    },
+    {
+      "id": "gc.rory.01",
+      "speaker": "Rory",
+      "text": "The filters go through filterBooks to make filteredBooks. That same list feeds ReadingStats and the book cards.",
+      "duration": 7.507,
+      "files": {
+        "webm": "gc.rory.01.webm",
+        "m4a": "gc.rory.01.m4a"
+      },
+      "hash": "b3ffc08e7603afa3",
+      "words": [
+        {
+          "word": "The",
+          "start": 0.051,
+          "end": 0.191333
+        },
+        {
+          "word": "filters",
+          "start": 0.191333,
+          "end": 0.6505
+        },
+        {
+          "word": "go",
+          "start": 0.6505,
+          "end": 0.854583
+        },
+        {
+          "word": "through",
+          "start": 0.854583,
+          "end": 1.122458
+        },
+        {
+          "word": "filterBooks",
+          "start": 1.122458,
+          "end": 1.721958
+        },
+        {
+          "word": "to",
+          "start": 1.721958,
+          "end": 1.83675
+        },
+        {
+          "word": "make",
+          "start": 1.83675,
+          "end": 2.079083
+        },
+        {
+          "word": "filteredBooks",
+          "start": 2.079083,
+          "end": 3.7755
+        },
+        {
+          "word": "That",
+          "start": 3.7755,
+          "end": 3.954083
+        },
+        {
+          "word": "same",
+          "start": 3.954083,
+          "end": 4.234708
+        },
+        {
+          "word": "list",
+          "start": 4.234708,
+          "end": 4.540833
+        },
+        {
+          "word": "feeds",
+          "start": 4.540833,
+          "end": 4.885208
+        },
+        {
+          "word": "ReadingStats",
+          "start": 4.885208,
+          "end": 5.61225
+        },
+        {
+          "word": "and",
+          "start": 5.61225,
+          "end": 5.752541
+        },
+        {
+          "word": "the",
+          "start": 5.752541,
+          "end": 5.816333
+        },
+        {
+          "word": "book",
+          "start": 5.816333,
+          "end": 6.071416
+        },
+        {
+          "word": "cards",
+          "start": 6.071416,
+          "end": 6.321416
+        }
+      ],
+      "voice": "en-IE-ConnorNeural"
+    },
+    {
+      "id": "gc.rory.02",
+      "speaker": "Rory",
+      "text": "With Unread on, both show only unread books. I can read the tests but can't run them, so check by hand.",
+      "duration": 8.007,
+      "files": {
+        "webm": "gc.rory.02.webm",
+        "m4a": "gc.rory.02.m4a"
+      },
+      "hash": "e5f2cee10cac4967",
+      "words": [
+        {
+          "word": "With",
+          "start": 0.051,
+          "end": 0.229583
+        },
+        {
+          "word": "Unread",
+          "start": 0.229583,
+          "end": 0.6505
+        },
+        {
+          "word": "on",
+          "start": 0.6505,
+          "end": 1.084166
+        },
+        {
+          "word": "both",
+          "start": 1.084166,
+          "end": 1.364791
+        },
+        {
+          "word": "show",
+          "start": 1.364791,
+          "end": 1.645416
+        },
+        {
+          "word": "only",
+          "start": 1.645416,
+          "end": 1.989791
+        },
+        {
+          "word": "unread",
+          "start": 1.989791,
+          "end": 2.359708
+        },
+        {
+          "word": "books",
+          "start": 2.359708,
+          "end": 3.75
+        },
+        {
+          "word": "I",
+          "start": 3.75,
+          "end": 3.928583
+        },
+        {
+          "word": "can",
+          "start": 3.928583,
+          "end": 4.056125
+        },
+        {
+          "word": "read",
+          "start": 4.056125,
+          "end": 4.285708
+        },
+        {
+          "word": "the",
+          "start": 4.285708,
+          "end": 4.438791
+        },
+        {
+          "word": "tests",
+          "start": 4.438791,
+          "end": 4.872458
+        },
+        {
+          "word": "but",
+          "start": 4.872458,
+          "end": 5.063791
+        },
+        {
+          "word": "can't",
+          "start": 5.063791,
+          "end": 5.306125
+        },
+        {
+          "word": "run",
+          "start": 5.306125,
+          "end": 5.548458
+        },
+        {
+          "word": "them",
+          "start": 5.548458,
+          "end": 5.982125
+        },
+        {
+          "word": "so",
+          "start": 5.982125,
+          "end": 6.2245
+        },
+        {
+          "word": "check",
+          "start": 6.2245,
+          "end": 6.492333
+        },
+        {
+          "word": "by",
+          "start": 6.492333,
+          "end": 6.632666
+        },
+        {
+          "word": "hand",
+          "start": 6.632666,
+          "end": 6.882666
+        }
+      ],
+      "voice": "en-IE-ConnorNeural"
+    },
+    {
+      "id": "gc.seren.wait",
+      "speaker": "Seren",
+      "text": "Fergus's journeyman comes first, Captain. Come back when Rory's fitted out.",
+      "duration": 4.807,
+      "files": {
+        "webm": "gc.seren.wait.webm",
+        "m4a": "gc.seren.wait.m4a"
+      },
+      "hash": "ae0ca19c77edc9ad",
+      "words": [
+        {
+          "word": "Fergus's",
+          "start": 0.031,
+          "end": 0.542
+        },
+        {
+          "word": "journeyman",
+          "start": 0.542,
+          "end": 1.095
+        },
+        {
+          "word": "comes",
+          "start": 1.095,
+          "end": 1.393
+        },
+        {
+          "word": "first",
+          "start": 1.393,
+          "end": 1.819
+        },
+        {
+          "word": "Captain",
+          "start": 1.819,
+          "end": 2.712
+        },
+        {
+          "word": "Come",
+          "start": 2.712,
+          "end": 3.052
+        },
+        {
+          "word": "back",
+          "start": 3.052,
+          "end": 3.393
+        },
+        {
+          "word": "when",
+          "start": 3.393,
+          "end": 3.562
+        },
+        {
+          "word": "Rory's",
+          "start": 3.562,
+          "end": 3.946
+        },
+        {
+          "word": "fitted",
+          "start": 3.946,
+          "end": 4.243
+        },
+        {
+          "word": "out",
+          "start": 4.243,
+          "end": 4.493
+        }
+      ],
+      "voice": "en-GB-Sonia:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.seren.01",
+      "speaker": "Seren",
+      "text": "You've seen the house rules, the pattern books and the journeymen, Captain.",
+      "duration": 4.007,
+      "files": {
+        "webm": "gc.seren.01.webm",
+        "m4a": "gc.seren.01.m4a"
+      },
+      "hash": "1bbebddef3e1e2d7",
+      "words": [
+        {
+          "word": "You've",
+          "start": 0.031,
+          "end": 0.372
+        },
+        {
+          "word": "seen",
+          "start": 0.372,
+          "end": 0.585
+        },
+        {
+          "word": "the",
+          "start": 0.585,
+          "end": 0.712
+        },
+        {
+          "word": "house",
+          "start": 0.712,
+          "end": 1.053
+        },
+        {
+          "word": "rules",
+          "start": 1.053,
+          "end": 1.436
+        },
+        {
+          "word": "the",
+          "start": 1.436,
+          "end": 1.563
+        },
+        {
+          "word": "pattern",
+          "start": 1.563,
+          "end": 1.946
+        },
+        {
+          "word": "books",
+          "start": 1.946,
+          "end": 2.372
+        },
+        {
+          "word": "and",
+          "start": 2.372,
+          "end": 2.584
+        },
+        {
+          "word": "the",
+          "start": 2.584,
+          "end": 2.712
+        },
+        {
+          "word": "journeymen",
+          "start": 2.712,
+          "end": 3.265
+        },
+        {
+          "word": "Captain",
+          "start": 3.265,
+          "end": 3.515
+        }
+      ],
+      "voice": "en-GB-Sonia:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.seren.02",
+      "speaker": "Seren",
+      "text": "Save the craft, choose the right hands, and check the result. The Toolbelt Trial is ready when you are.",
+      "duration": 6.527,
+      "files": {
+        "webm": "gc.seren.02.webm",
+        "m4a": "gc.seren.02.m4a"
+      },
+      "hash": "abf24660a40af355",
+      "words": [
+        {
+          "word": "Save",
+          "start": 0.074,
+          "end": 0.372
+        },
+        {
+          "word": "the",
+          "start": 0.372,
+          "end": 0.5
+        },
+        {
+          "word": "craft",
+          "start": 0.5,
+          "end": 1.223
+        },
+        {
+          "word": "choose",
+          "start": 1.223,
+          "end": 1.563
+        },
+        {
+          "word": "the",
+          "start": 1.563,
+          "end": 1.691
+        },
+        {
+          "word": "right",
+          "start": 1.691,
+          "end": 1.946
+        },
+        {
+          "word": "hands",
+          "start": 1.946,
+          "end": 2.456
+        },
+        {
+          "word": "and",
+          "start": 2.456,
+          "end": 2.67
+        },
+        {
+          "word": "check",
+          "start": 2.67,
+          "end": 2.925
+        },
+        {
+          "word": "the",
+          "start": 2.925,
+          "end": 3.009
+        },
+        {
+          "word": "result",
+          "start": 3.009,
+          "end": 4.243
+        },
+        {
+          "word": "The",
+          "start": 4.243,
+          "end": 4.457
+        },
+        {
+          "word": "Toolbelt",
+          "start": 4.457,
+          "end": 4.882
+        },
+        {
+          "word": "Trial",
+          "start": 4.882,
+          "end": 5.265
+        },
+        {
+          "word": "is",
+          "start": 5.265,
+          "end": 5.436
+        },
+        {
+          "word": "ready",
+          "start": 5.436,
+          "end": 5.776
+        },
+        {
+          "word": "when",
+          "start": 5.776,
+          "end": 5.946
+        },
+        {
+          "word": "you",
+          "start": 5.946,
+          "end": 6.117
+        },
+        {
+          "word": "are",
+          "start": 6.117,
+          "end": 6.367
+        }
+      ],
+      "voice": "en-GB-Sonia:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.seren.retry",
+      "speaker": "Seren",
+      "text": "Not yet, Captain. Read the books again, and come back to the bell.",
+      "duration": 3.907,
+      "files": {
+        "webm": "gc.seren.retry.webm",
+        "m4a": "gc.seren.retry.m4a"
+      },
+      "hash": "0adcc853d469a560",
+      "words": [
+        {
+          "word": "Not",
+          "start": 0.031,
+          "end": 0.329
+        },
+        {
+          "word": "yet",
+          "start": 0.329,
+          "end": 0.542
+        },
+        {
+          "word": "Captain",
+          "start": 0.542,
+          "end": 1.393
+        },
+        {
+          "word": "Read",
+          "start": 1.393,
+          "end": 1.734
+        },
+        {
+          "word": "the",
+          "start": 1.734,
+          "end": 1.861
+        },
+        {
+          "word": "books",
+          "start": 1.861,
+          "end": 2.117
+        },
+        {
+          "word": "again",
+          "start": 2.117,
+          "end": 2.584
+        },
+        {
+          "word": "and",
+          "start": 2.584,
+          "end": 2.755
+        },
+        {
+          "word": "come",
+          "start": 2.755,
+          "end": 2.967
+        },
+        {
+          "word": "back",
+          "start": 2.967,
+          "end": 3.179
+        },
+        {
+          "word": "to",
+          "start": 3.179,
+          "end": 3.308
+        },
+        {
+          "word": "the",
+          "start": 3.308,
+          "end": 3.436
+        },
+        {
+          "word": "bell",
+          "start": 3.436,
+          "end": 3.686
+        }
+      ],
+      "voice": "en-GB-Sonia:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.seren.03",
+      "speaker": "Seren",
+      "text": "Next, Sunspire Sands. You'll connect tools from outside the app, and a plugin that brings its own skill.",
+      "duration": 6.407,
+      "files": {
+        "webm": "gc.seren.03.webm",
+        "m4a": "gc.seren.03.m4a"
+      },
+      "hash": "e4715ebf50e8440f",
+      "words": [
+        {
+          "word": "Next",
+          "start": 0.031,
+          "end": 0.627
+        },
+        {
+          "word": "Sunspire",
+          "start": 0.627,
+          "end": 1.393
+        },
+        {
+          "word": "Sands",
+          "start": 1.393,
+          "end": 2.074
+        },
+        {
+          "word": "You'll",
+          "start": 2.074,
+          "end": 2.456
+        },
+        {
+          "word": "connect",
+          "start": 2.456,
+          "end": 2.712
+        },
+        {
+          "word": "tools",
+          "start": 2.712,
+          "end": 3.052
+        },
+        {
+          "word": "from",
+          "start": 3.052,
+          "end": 3.223
+        },
+        {
+          "word": "outside",
+          "start": 3.223,
+          "end": 3.734
+        },
+        {
+          "word": "the",
+          "start": 3.734,
+          "end": 3.904
+        },
+        {
+          "word": "app",
+          "start": 3.904,
+          "end": 4.287
+        },
+        {
+          "word": "and",
+          "start": 4.287,
+          "end": 4.457
+        },
+        {
+          "word": "a",
+          "start": 4.457,
+          "end": 4.542
+        },
+        {
+          "word": "plugin",
+          "start": 4.542,
+          "end": 5.01
+        },
+        {
+          "word": "that",
+          "start": 5.01,
+          "end": 5.138
+        },
+        {
+          "word": "brings",
+          "start": 5.138,
+          "end": 5.436
+        },
+        {
+          "word": "its",
+          "start": 5.436,
+          "end": 5.563
+        },
+        {
+          "word": "own",
+          "start": 5.563,
+          "end": 5.819
+        },
+        {
+          "word": "skill",
+          "start": 5.819,
+          "end": 6.069
+        }
+      ],
+      "voice": "en-GB-Sonia:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.seren.more",
+      "speaker": "Seren",
+      "text": "I've one more job for you, if you want it. Ask me when you're ready.",
+      "duration": 3.107,
+      "files": {
+        "webm": "gc.seren.more.webm",
+        "m4a": "gc.seren.more.m4a"
+      },
+      "hash": "45ead4823a1367d8",
+      "words": [
+        {
+          "word": "I've",
+          "start": 0.031,
+          "end": 0.287
+        },
+        {
+          "word": "one",
+          "start": 0.287,
+          "end": 0.372
+        },
+        {
+          "word": "more",
+          "start": 0.372,
+          "end": 0.627
+        },
+        {
+          "word": "job",
+          "start": 0.627,
+          "end": 0.797
+        },
+        {
+          "word": "for",
+          "start": 0.797,
+          "end": 0.968
+        },
+        {
+          "word": "you",
+          "start": 0.968,
+          "end": 1.138
+        },
+        {
+          "word": "if",
+          "start": 1.138,
+          "end": 1.308
+        },
+        {
+          "word": "you",
+          "start": 1.308,
+          "end": 1.436
+        },
+        {
+          "word": "want",
+          "start": 1.436,
+          "end": 1.734
+        },
+        {
+          "word": "it",
+          "start": 1.734,
+          "end": 1.861
+        },
+        {
+          "word": "Ask",
+          "start": 1.861,
+          "end": 2.158
+        },
+        {
+          "word": "me",
+          "start": 2.158,
+          "end": 2.287
+        },
+        {
+          "word": "when",
+          "start": 2.287,
+          "end": 2.755
+        },
+        {
+          "word": "you're",
+          "start": 2.755,
+          "end": 3.052
+        },
+        {
+          "word": "ready",
+          "start": 3.052,
+          "end": 3.107
+        }
+      ],
+      "voice": "en-GB-Sonia:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.seren.assign.01",
+      "speaker": "Seren",
+      "text": "One more job: take one recommendation from the review, and carry it through the inner loop.",
+      "duration": 5.507,
+      "files": {
+        "webm": "gc.seren.assign.01.webm",
+        "m4a": "gc.seren.assign.01.m4a"
+      },
+      "hash": "d852baf21a4fd579",
+      "words": [
+        {
+          "word": "One",
+          "start": 0.031,
+          "end": 0.372
+        },
+        {
+          "word": "more",
+          "start": 0.372,
+          "end": 0.585
+        },
+        {
+          "word": "job",
+          "start": 0.585,
+          "end": 1.436
+        },
+        {
+          "word": "take",
+          "start": 1.436,
+          "end": 1.819
+        },
+        {
+          "word": "one",
+          "start": 1.819,
+          "end": 2.117
+        },
+        {
+          "word": "recommendation",
+          "start": 2.117,
+          "end": 2.925
+        },
+        {
+          "word": "from",
+          "start": 2.925,
+          "end": 3.137
+        },
+        {
+          "word": "the",
+          "start": 3.137,
+          "end": 3.265
+        },
+        {
+          "word": "review",
+          "start": 3.265,
+          "end": 3.734
+        },
+        {
+          "word": "and",
+          "start": 3.734,
+          "end": 3.946
+        },
+        {
+          "word": "carry",
+          "start": 3.946,
+          "end": 4.329
+        },
+        {
+          "word": "it",
+          "start": 4.329,
+          "end": 4.372
+        },
+        {
+          "word": "through",
+          "start": 4.372,
+          "end": 4.67
+        },
+        {
+          "word": "the",
+          "start": 4.67,
+          "end": 4.797
+        },
+        {
+          "word": "inner",
+          "start": 4.797,
+          "end": 5.01
+        },
+        {
+          "word": "loop",
+          "start": 5.01,
+          "end": 5.26
+        }
+      ],
+      "voice": "en-GB-Sonia:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.seren.assign.go",
+      "speaker": "Seren",
+      "text": "Do it in the app, Captain, then come back and show me.",
+      "duration": 2.7,
+      "files": {
+        "webm": "gc.seren.assign.go.webm",
+        "m4a": "gc.seren.assign.go.m4a"
+      },
+      "hash": "a1fe6523c70b4b2f",
+      "words": [
+        {
+          "word": "Do",
+          "start": 0.031,
+          "end": 0.202
+        },
+        {
+          "word": "it",
+          "start": 0.202,
+          "end": 0.244
+        },
+        {
+          "word": "in",
+          "start": 0.244,
+          "end": 0.329
+        },
+        {
+          "word": "the",
+          "start": 0.329,
+          "end": 0.5
+        },
+        {
+          "word": "app",
+          "start": 0.5,
+          "end": 0.627
+        },
+        {
+          "word": "Captain",
+          "start": 0.627,
+          "end": 1.18
+        },
+        {
+          "word": "then",
+          "start": 1.18,
+          "end": 1.436
+        },
+        {
+          "word": "come",
+          "start": 1.436,
+          "end": 1.691
+        },
+        {
+          "word": "back",
+          "start": 1.691,
+          "end": 1.904
+        },
+        {
+          "word": "and",
+          "start": 1.904,
+          "end": 2.031
+        },
+        {
+          "word": "show",
+          "start": 2.031,
+          "end": 2.372
+        },
+        {
+          "word": "me",
+          "start": 2.372,
+          "end": 2.622
+        }
+      ],
+      "voice": "en-GB-Sonia:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.seren.assign.ask",
+      "speaker": "Seren",
+      "text": "Back again, Captain? Did you carry the change all the way through?",
+      "duration": 2.697,
+      "files": {
+        "webm": "gc.seren.assign.ask.webm",
+        "m4a": "gc.seren.assign.ask.m4a"
+      },
+      "hash": "080393fa59a54b61",
+      "words": [
+        {
+          "word": "Back",
+          "start": 0.031,
+          "end": 0.244
+        },
+        {
+          "word": "again",
+          "start": 0.244,
+          "end": 0.5
+        },
+        {
+          "word": "Captain",
+          "start": 0.5,
+          "end": 0.925
+        },
+        {
+          "word": "Did",
+          "start": 0.925,
+          "end": 1.053
+        },
+        {
+          "word": "you",
+          "start": 1.053,
+          "end": 1.18
+        },
+        {
+          "word": "carry",
+          "start": 1.18,
+          "end": 1.393
+        },
+        {
+          "word": "the",
+          "start": 1.393,
+          "end": 1.521
+        },
+        {
+          "word": "change",
+          "start": 1.521,
+          "end": 1.819
+        },
+        {
+          "word": "all",
+          "start": 1.819,
+          "end": 1.946
+        },
+        {
+          "word": "the",
+          "start": 1.946,
+          "end": 2.031
+        },
+        {
+          "word": "way",
+          "start": 2.031,
+          "end": 2.202
+        },
+        {
+          "word": "through",
+          "start": 2.202,
+          "end": 2.452
+        }
+      ],
+      "voice": "en-GB-Sonia:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.seren.assign.back",
+      "speaker": "Seren",
+      "text": "A focused change, passing tests, and a record of only what ran. That's the craft.",
+      "duration": 6.707,
+      "files": {
+        "webm": "gc.seren.assign.back.webm",
+        "m4a": "gc.seren.assign.back.m4a"
+      },
+      "hash": "dfaeb9ad972a0a8a",
+      "words": [
+        {
+          "word": "A",
+          "start": 0.031,
+          "end": 0.159
+        },
+        {
+          "word": "focused",
+          "start": 0.159,
+          "end": 0.755
+        },
+        {
+          "word": "change",
+          "start": 0.755,
+          "end": 1.393
+        },
+        {
+          "word": "passing",
+          "start": 1.393,
+          "end": 1.904
+        },
+        {
+          "word": "tests",
+          "start": 1.904,
+          "end": 2.712
+        },
+        {
+          "word": "and",
+          "start": 2.712,
+          "end": 3.009
+        },
+        {
+          "word": "a",
+          "start": 3.009,
+          "end": 3.052
+        },
+        {
+          "word": "record",
+          "start": 3.052,
+          "end": 3.605
+        },
+        {
+          "word": "of",
+          "start": 3.605,
+          "end": 3.776
+        },
+        {
+          "word": "only",
+          "start": 3.776,
+          "end": 4.201
+        },
+        {
+          "word": "what",
+          "start": 4.201,
+          "end": 4.414
+        },
+        {
+          "word": "ran",
+          "start": 4.414,
+          "end": 5.436
+        },
+        {
+          "word": "That's",
+          "start": 5.436,
+          "end": 5.776
+        },
+        {
+          "word": "the",
+          "start": 5.776,
+          "end": 5.946
+        },
+        {
+          "word": "craft",
+          "start": 5.946,
+          "end": 6.196
+        }
+      ],
+      "voice": "en-GB-Sonia:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.seren.done",
+      "speaker": "Seren",
+      "text": "Sunspire Sands is still being charted, Captain. Until then, these waters are yours.",
+      "duration": 5.707,
+      "files": {
+        "webm": "gc.seren.done.webm",
+        "m4a": "gc.seren.done.m4a"
+      },
+      "hash": "39672f13c1fe0988",
+      "words": [
+        {
+          "word": "Sunspire",
+          "start": 0.031,
+          "end": 0.712
+        },
+        {
+          "word": "Sands",
+          "start": 0.712,
+          "end": 1.138
+        },
+        {
+          "word": "is",
+          "start": 1.138,
+          "end": 1.18
+        },
+        {
+          "word": "still",
+          "start": 1.18,
+          "end": 1.606
+        },
+        {
+          "word": "being",
+          "start": 1.606,
+          "end": 1.819
+        },
+        {
+          "word": "charted",
+          "start": 1.819,
+          "end": 2.329
+        },
+        {
+          "word": "Captain",
+          "start": 2.329,
+          "end": 3.308
+        },
+        {
+          "word": "Until",
+          "start": 3.308,
+          "end": 3.69
+        },
+        {
+          "word": "then",
+          "start": 3.69,
+          "end": 4.243
+        },
+        {
+          "word": "these",
+          "start": 4.243,
+          "end": 4.5
+        },
+        {
+          "word": "waters",
+          "start": 4.5,
+          "end": 4.925
+        },
+        {
+          "word": "are",
+          "start": 4.925,
+          "end": 5.053
+        },
+        {
+          "word": "yours",
+          "start": 5.053,
+          "end": 5.303
+        }
+      ],
+      "voice": "en-GB-Sonia:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.moira.market.hello",
+      "speaker": "Moira",
+      "text": "Welcome, Captain! Moira's Model Market. Hire a model that fits the job; bigger ones cost more starfish.",
+      "duration": 7.808,
+      "files": {
+        "webm": "gc.moira.market.hello.webm",
+        "m4a": "gc.moira.market.hello.m4a"
+      },
+      "hash": "033d194d13d00434",
+      "words": [
+        {
+          "word": "Welcome",
+          "start": 0.03,
+          "end": 0.47
+        },
+        {
+          "word": "Captain",
+          "start": 0.47,
+          "end": 1.31
+        },
+        {
+          "word": "Moira's",
+          "start": 1.31,
+          "end": 1.87
+        },
+        {
+          "word": "Model",
+          "start": 1.87,
+          "end": 2.19
+        },
+        {
+          "word": "Market",
+          "start": 2.19,
+          "end": 3.19
+        },
+        {
+          "word": "Hire",
+          "start": 3.19,
+          "end": 3.71
+        },
+        {
+          "word": "a",
+          "start": 3.71,
+          "end": 3.75
+        },
+        {
+          "word": "model",
+          "start": 3.75,
+          "end": 4.27
+        },
+        {
+          "word": "that",
+          "start": 4.27,
+          "end": 4.47
+        },
+        {
+          "word": "fits",
+          "start": 4.47,
+          "end": 4.79
+        },
+        {
+          "word": "the",
+          "start": 4.79,
+          "end": 4.91
+        },
+        {
+          "word": "job",
+          "start": 4.91,
+          "end": 5.19
+        },
+        {
+          "word": "bigger",
+          "start": 5.19,
+          "end": 5.99
+        },
+        {
+          "word": "ones",
+          "start": 5.99,
+          "end": 6.35
+        },
+        {
+          "word": "cost",
+          "start": 6.35,
+          "end": 6.71
+        },
+        {
+          "word": "more",
+          "start": 6.71,
+          "end": 6.91
+        },
+        {
+          "word": "starfish",
+          "start": 6.91,
+          "end": 7.16
+        }
+      ],
+      "voice": "en-GB-Ada:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.moira.market.open",
+      "speaker": "Moira",
+      "text": "Pick a job off the board, then hire a model and set the effort dial.",
+      "duration": 4.608,
+      "files": {
+        "webm": "gc.moira.market.open.webm",
+        "m4a": "gc.moira.market.open.m4a"
+      },
+      "hash": "a183a24064bd9d9a",
+      "words": [
+        {
+          "word": "Pick",
+          "start": 0.07,
+          "end": 0.27
+        },
+        {
+          "word": "a",
+          "start": 0.27,
+          "end": 0.31
+        },
+        {
+          "word": "job",
+          "start": 0.31,
+          "end": 0.63
+        },
+        {
+          "word": "off",
+          "start": 0.63,
+          "end": 0.83
+        },
+        {
+          "word": "the",
+          "start": 0.83,
+          "end": 0.95
+        },
+        {
+          "word": "board",
+          "start": 0.95,
+          "end": 1.71
+        },
+        {
+          "word": "then",
+          "start": 1.71,
+          "end": 2.15
+        },
+        {
+          "word": "hire",
+          "start": 2.15,
+          "end": 2.55
+        },
+        {
+          "word": "a",
+          "start": 2.55,
+          "end": 2.63
+        },
+        {
+          "word": "model",
+          "start": 2.63,
+          "end": 3.19
+        },
+        {
+          "word": "and",
+          "start": 3.19,
+          "end": 3.389
+        },
+        {
+          "word": "set",
+          "start": 3.389,
+          "end": 3.63
+        },
+        {
+          "word": "the",
+          "start": 3.63,
+          "end": 3.75
+        },
+        {
+          "word": "effort",
+          "start": 3.75,
+          "end": 4.11
+        },
+        {
+          "word": "dial",
+          "start": 4.11,
+          "end": 4.36
+        }
+      ],
+      "voice": "en-GB-Ada:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.moira.market.auto",
+      "speaker": "Moira",
+      "text": "Copilot Fusion's on offer too. It isn't one model: it picks models and a workflow for each job. And it isn't Autopilot.",
+      "duration": 10.008,
+      "files": {
+        "webm": "gc.moira.market.auto.webm",
+        "m4a": "gc.moira.market.auto.m4a"
+      },
+      "hash": "cb5ab47afb3721cf",
+      "words": [
+        {
+          "word": "Copilot",
+          "start": 0.07,
+          "end": 0.67
+        },
+        {
+          "word": "Fusion's",
+          "start": 0.67,
+          "end": 1.19
+        },
+        {
+          "word": "on",
+          "start": 1.19,
+          "end": 1.35
+        },
+        {
+          "word": "offer",
+          "start": 1.35,
+          "end": 1.67
+        },
+        {
+          "word": "too",
+          "start": 1.67,
+          "end": 2.67
+        },
+        {
+          "word": "It",
+          "start": 2.67,
+          "end": 2.909
+        },
+        {
+          "word": "isn't",
+          "start": 2.909,
+          "end": 3.23
+        },
+        {
+          "word": "one",
+          "start": 3.23,
+          "end": 3.55
+        },
+        {
+          "word": "model",
+          "start": 3.55,
+          "end": 4.19
+        },
+        {
+          "word": "it",
+          "start": 4.19,
+          "end": 4.47
+        },
+        {
+          "word": "picks",
+          "start": 4.47,
+          "end": 4.83
+        },
+        {
+          "word": "models",
+          "start": 4.83,
+          "end": 5.51
+        },
+        {
+          "word": "and",
+          "start": 5.51,
+          "end": 5.75
+        },
+        {
+          "word": "a",
+          "start": 5.75,
+          "end": 5.79
+        },
+        {
+          "word": "workflow",
+          "start": 5.79,
+          "end": 6.47
+        },
+        {
+          "word": "for",
+          "start": 6.47,
+          "end": 6.67
+        },
+        {
+          "word": "each",
+          "start": 6.67,
+          "end": 6.95
+        },
+        {
+          "word": "job",
+          "start": 6.95,
+          "end": 8.029
+        },
+        {
+          "word": "And",
+          "start": 8.029,
+          "end": 8.389
+        },
+        {
+          "word": "it",
+          "start": 8.389,
+          "end": 8.51
+        },
+        {
+          "word": "isn't",
+          "start": 8.51,
+          "end": 8.91
+        },
+        {
+          "word": "Autopilot",
+          "start": 8.91,
+          "end": 9.16
+        }
+      ],
+      "voice": "en-GB-Ada:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.moira.market.right",
+      "speaker": "Moira",
+      "text": "Right-sized! Here's some starfish back.",
+      "duration": 3.608,
+      "files": {
+        "webm": "gc.moira.market.right.webm",
+        "m4a": "gc.moira.market.right.m4a"
+      },
+      "hash": "e2e2691db1f4a463",
+      "words": [
+        {
+          "word": "Right-sized",
+          "start": 0.03,
+          "end": 1.83
+        },
+        {
+          "word": "Here's",
+          "start": 1.83,
+          "end": 2.15
+        },
+        {
+          "word": "some",
+          "start": 2.15,
+          "end": 2.429
+        },
+        {
+          "word": "starfish",
+          "start": 2.429,
+          "end": 3.07
+        },
+        {
+          "word": "back",
+          "start": 3.07,
+          "end": 3.32
+        }
+      ],
+      "voice": "en-GB-Ada:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.moira.market.fair",
+      "speaker": "Moira",
+      "text": "Right-sized, and a fair price, Captain.",
+      "duration": 2.758,
+      "files": {
+        "webm": "gc.moira.market.fair.webm",
+        "m4a": "gc.moira.market.fair.m4a"
+      },
+      "hash": "839e44d518524a5d",
+      "words": [
+        {
+          "word": "Right-sized",
+          "start": 0.03,
+          "end": 1.07
+        },
+        {
+          "word": "and",
+          "start": 1.07,
+          "end": 1.23
+        },
+        {
+          "word": "a",
+          "start": 1.23,
+          "end": 1.31
+        },
+        {
+          "word": "fair",
+          "start": 1.31,
+          "end": 1.59
+        },
+        {
+          "word": "price",
+          "start": 1.59,
+          "end": 2.07
+        },
+        {
+          "word": "Captain",
+          "start": 2.07,
+          "end": 2.32
+        }
+      ],
+      "voice": "en-GB-Ada:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.moira.market.keep",
+      "speaker": "Moira",
+      "text": "Right-sized. A quick look's fine on the model you've got, at its default effort. Bigger ones just cost more.",
+      "duration": 7.508,
+      "files": {
+        "webm": "gc.moira.market.keep.webm",
+        "m4a": "gc.moira.market.keep.m4a"
+      },
+      "hash": "9fe91192a11e74dd",
+      "words": [
+        {
+          "word": "Right-sized",
+          "start": 0.03,
+          "end": 1.39
+        },
+        {
+          "word": "A",
+          "start": 1.39,
+          "end": 1.63
+        },
+        {
+          "word": "quick",
+          "start": 1.63,
+          "end": 1.87
+        },
+        {
+          "word": "look's",
+          "start": 1.87,
+          "end": 2.19
+        },
+        {
+          "word": "fine",
+          "start": 2.19,
+          "end": 2.55
+        },
+        {
+          "word": "on",
+          "start": 2.55,
+          "end": 2.67
+        },
+        {
+          "word": "the",
+          "start": 2.67,
+          "end": 2.789
+        },
+        {
+          "word": "model",
+          "start": 2.789,
+          "end": 3.03
+        },
+        {
+          "word": "you've",
+          "start": 3.03,
+          "end": 3.27
+        },
+        {
+          "word": "got",
+          "start": 3.27,
+          "end": 3.75
+        },
+        {
+          "word": "at",
+          "start": 3.75,
+          "end": 3.949
+        },
+        {
+          "word": "its",
+          "start": 3.949,
+          "end": 4.15
+        },
+        {
+          "word": "default",
+          "start": 4.15,
+          "end": 4.63
+        },
+        {
+          "word": "effort",
+          "start": 4.63,
+          "end": 5.55
+        },
+        {
+          "word": "Bigger",
+          "start": 5.55,
+          "end": 5.95
+        },
+        {
+          "word": "ones",
+          "start": 5.95,
+          "end": 6.43
+        },
+        {
+          "word": "just",
+          "start": 6.43,
+          "end": 6.75
+        },
+        {
+          "word": "cost",
+          "start": 6.75,
+          "end": 7.03
+        },
+        {
+          "word": "more",
+          "start": 7.03,
+          "end": 7.28
+        }
+      ],
+      "voice": "en-GB-Ada:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.moira.market.over.effort",
+      "speaker": "Moira",
+      "text": "High effort for a quick look? The default effort would've done fine.",
+      "duration": 4.308,
+      "files": {
+        "webm": "gc.moira.market.over.effort.webm",
+        "m4a": "gc.moira.market.over.effort.m4a"
+      },
+      "hash": "4885401072b6d6b8",
+      "words": [
+        {
+          "word": "High",
+          "start": 0.07,
+          "end": 0.31
+        },
+        {
+          "word": "effort",
+          "start": 0.31,
+          "end": 0.63
+        },
+        {
+          "word": "for",
+          "start": 0.63,
+          "end": 0.79
+        },
+        {
+          "word": "a",
+          "start": 0.79,
+          "end": 0.87
+        },
+        {
+          "word": "quick",
+          "start": 0.87,
+          "end": 1.15
+        },
+        {
+          "word": "look",
+          "start": 1.15,
+          "end": 2.07
+        },
+        {
+          "word": "The",
+          "start": 2.07,
+          "end": 2.27
+        },
+        {
+          "word": "default",
+          "start": 2.27,
+          "end": 2.71
+        },
+        {
+          "word": "effort",
+          "start": 2.71,
+          "end": 3.11
+        },
+        {
+          "word": "would've",
+          "start": 3.11,
+          "end": 3.429
+        },
+        {
+          "word": "done",
+          "start": 3.429,
+          "end": 3.63
+        },
+        {
+          "word": "fine",
+          "start": 3.63,
+          "end": 3.88
+        }
+      ],
+      "voice": "en-GB-Ada:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.moira.market.over.auto",
+      "speaker": "Moira",
+      "text": "A higher Fusion level for a quick look? Standard would've done fine.",
+      "duration": 4.508,
+      "files": {
+        "webm": "gc.moira.market.over.auto.webm",
+        "m4a": "gc.moira.market.over.auto.m4a"
+      },
+      "hash": "e1e52a01c49f7d65",
+      "words": [
+        {
+          "word": "A",
+          "start": 0.03,
+          "end": 0.07
+        },
+        {
+          "word": "higher",
+          "start": 0.07,
+          "end": 0.47
+        },
+        {
+          "word": "Fusion",
+          "start": 0.47,
+          "end": 0.95
+        },
+        {
+          "word": "level",
+          "start": 0.95,
+          "end": 1.31
+        },
+        {
+          "word": "for",
+          "start": 1.31,
+          "end": 1.47
+        },
+        {
+          "word": "a",
+          "start": 1.47,
+          "end": 1.55
+        },
+        {
+          "word": "quick",
+          "start": 1.55,
+          "end": 1.87
+        },
+        {
+          "word": "look",
+          "start": 1.87,
+          "end": 2.71
+        },
+        {
+          "word": "Standard",
+          "start": 2.71,
+          "end": 3.389
+        },
+        {
+          "word": "would've",
+          "start": 3.389,
+          "end": 4.03
+        },
+        {
+          "word": "done",
+          "start": 4.03,
+          "end": 4.47
+        },
+        {
+          "word": "fine",
+          "start": 4.47,
+          "end": 4.508
+        }
+      ],
+      "voice": "en-GB-Ada:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.moira.market.short",
+      "speaker": "Moira",
+      "text": "That wasn't enough for this one. Try again with a stronger model or more effort.",
+      "duration": 5.108,
+      "files": {
+        "webm": "gc.moira.market.short.webm",
+        "m4a": "gc.moira.market.short.m4a"
+      },
+      "hash": "b9f7fee8394980dc",
+      "words": [
+        {
+          "word": "That",
+          "start": 0.03,
+          "end": 0.27
+        },
+        {
+          "word": "wasn't",
+          "start": 0.27,
+          "end": 0.63
+        },
+        {
+          "word": "enough",
+          "start": 0.63,
+          "end": 0.95
+        },
+        {
+          "word": "for",
+          "start": 0.95,
+          "end": 1.11
+        },
+        {
+          "word": "this",
+          "start": 1.11,
+          "end": 1.35
+        },
+        {
+          "word": "one",
+          "start": 1.35,
+          "end": 2.029
+        },
+        {
+          "word": "Try",
+          "start": 2.029,
+          "end": 2.429
+        },
+        {
+          "word": "again",
+          "start": 2.429,
+          "end": 2.71
+        },
+        {
+          "word": "with",
+          "start": 2.71,
+          "end": 2.909
+        },
+        {
+          "word": "a",
+          "start": 2.909,
+          "end": 2.949
+        },
+        {
+          "word": "stronger",
+          "start": 2.949,
+          "end": 3.469
+        },
+        {
+          "word": "model",
+          "start": 3.469,
+          "end": 4.03
+        },
+        {
+          "word": "or",
+          "start": 4.03,
+          "end": 4.19
+        },
+        {
+          "word": "more",
+          "start": 4.19,
+          "end": 4.51
+        },
+        {
+          "word": "effort",
+          "start": 4.51,
+          "end": 4.76
+        }
+      ],
+      "voice": "en-GB-Ada:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.moira.market.hard.auto",
+      "speaker": "Moira",
+      "text": "Right-sized! A hard job wants a higher Fusion level: more capable models and deeper reasoning.",
+      "duration": 7.508,
+      "files": {
+        "webm": "gc.moira.market.hard.auto.webm",
+        "m4a": "gc.moira.market.hard.auto.m4a"
+      },
+      "hash": "5226712812a2fc0c",
+      "words": [
+        {
+          "word": "Right-sized",
+          "start": 0.03,
+          "end": 1.67
+        },
+        {
+          "word": "A",
+          "start": 1.67,
+          "end": 1.87
+        },
+        {
+          "word": "hard",
+          "start": 1.87,
+          "end": 2.23
+        },
+        {
+          "word": "job",
+          "start": 2.23,
+          "end": 2.75
+        },
+        {
+          "word": "wants",
+          "start": 2.75,
+          "end": 3.03
+        },
+        {
+          "word": "a",
+          "start": 3.03,
+          "end": 3.15
+        },
+        {
+          "word": "higher",
+          "start": 3.15,
+          "end": 3.51
+        },
+        {
+          "word": "Fusion",
+          "start": 3.51,
+          "end": 3.989
+        },
+        {
+          "word": "level",
+          "start": 3.989,
+          "end": 4.75
+        },
+        {
+          "word": "more",
+          "start": 4.75,
+          "end": 5.03
+        },
+        {
+          "word": "capable",
+          "start": 5.03,
+          "end": 5.55
+        },
+        {
+          "word": "models",
+          "start": 5.55,
+          "end": 6.11
+        },
+        {
+          "word": "and",
+          "start": 6.11,
+          "end": 6.35
+        },
+        {
+          "word": "deeper",
+          "start": 6.35,
+          "end": 6.75
+        },
+        {
+          "word": "reasoning",
+          "start": 6.75,
+          "end": 7
+        }
+      ],
+      "voice": "en-GB-Ada:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.moira.market.broke",
+      "speaker": "Moira",
+      "text": "Out of starfish? There are plenty hidden round the isles. Come back when you've found a few.",
+      "duration": 5.708,
+      "files": {
+        "webm": "gc.moira.market.broke.webm",
+        "m4a": "gc.moira.market.broke.m4a"
+      },
+      "hash": "1cb2aacf8f385382",
+      "words": [
+        {
+          "word": "Out",
+          "start": 0.03,
+          "end": 0.27
+        },
+        {
+          "word": "of",
+          "start": 0.27,
+          "end": 0.39
+        },
+        {
+          "word": "starfish",
+          "start": 0.39,
+          "end": 1.47
+        },
+        {
+          "word": "There",
+          "start": 1.47,
+          "end": 1.75
+        },
+        {
+          "word": "are",
+          "start": 1.75,
+          "end": 1.87
+        },
+        {
+          "word": "plenty",
+          "start": 1.87,
+          "end": 2.309
+        },
+        {
+          "word": "hidden",
+          "start": 2.309,
+          "end": 2.63
+        },
+        {
+          "word": "round",
+          "start": 2.63,
+          "end": 2.869
+        },
+        {
+          "word": "the",
+          "start": 2.869,
+          "end": 3.03
+        },
+        {
+          "word": "isles.",
+          "start": 3.03,
+          "end": 3.869
+        },
+        {
+          "word": "Come",
+          "start": 3.869,
+          "end": 4.23
+        },
+        {
+          "word": "back",
+          "start": 4.23,
+          "end": 4.51
+        },
+        {
+          "word": "when",
+          "start": 4.51,
+          "end": 4.67
+        },
+        {
+          "word": "you've",
+          "start": 4.67,
+          "end": 4.91
+        },
+        {
+          "word": "found",
+          "start": 4.91,
+          "end": 5.19
+        },
+        {
+          "word": "a",
+          "start": 5.19,
+          "end": 5.23
+        },
+        {
+          "word": "few",
+          "start": 5.23,
+          "end": 5.48
+        }
+      ],
+      "voice": "en-GB-Ada:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.moira.market.done",
+      "speaker": "Moira",
+      "text": "The whole board, right-sized! You know your models, Captain.",
+      "duration": 4.208,
+      "files": {
+        "webm": "gc.moira.market.done.webm",
+        "m4a": "gc.moira.market.done.m4a"
+      },
+      "hash": "07bb76ccfc18517b",
+      "words": [
+        {
+          "word": "The",
+          "start": 0.03,
+          "end": 0.11
+        },
+        {
+          "word": "whole",
+          "start": 0.11,
+          "end": 0.47
+        },
+        {
+          "word": "board",
+          "start": 0.47,
+          "end": 1.19
+        },
+        {
+          "word": "right-sized",
+          "start": 1.19,
+          "end": 2.55
+        },
+        {
+          "word": "You",
+          "start": 2.55,
+          "end": 2.67
+        },
+        {
+          "word": "know",
+          "start": 2.67,
+          "end": 2.869
+        },
+        {
+          "word": "your",
+          "start": 2.869,
+          "end": 3.03
+        },
+        {
+          "word": "models",
+          "start": 3.03,
+          "end": 3.51
+        },
+        {
+          "word": "Captain",
+          "start": 3.51,
+          "end": 3.76
+        }
+      ],
+      "voice": "en-GB-Ada:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.moira.market.early",
+      "speaker": "Moira",
+      "text": "Not yet, Captain. Oren on Port Meridian teaches models first. Come back after his lesson.",
+      "duration": 7.408,
+      "files": {
+        "webm": "gc.moira.market.early.webm",
+        "m4a": "gc.moira.market.early.m4a"
+      },
+      "hash": "0635c9ad81c43b0b",
+      "words": [
+        {
+          "word": "Not",
+          "start": 0.03,
+          "end": 0.27
+        },
+        {
+          "word": "yet",
+          "start": 0.27,
+          "end": 0.63
+        },
+        {
+          "word": "Captain",
+          "start": 0.63,
+          "end": 1.63
+        },
+        {
+          "word": "Oren",
+          "start": 1.63,
+          "end": 2.19
+        },
+        {
+          "word": "on",
+          "start": 2.19,
+          "end": 2.429
+        },
+        {
+          "word": "Port",
+          "start": 2.429,
+          "end": 2.789
+        },
+        {
+          "word": "Meridian",
+          "start": 2.789,
+          "end": 3.51
+        },
+        {
+          "word": "teaches",
+          "start": 3.51,
+          "end": 3.989
+        },
+        {
+          "word": "models",
+          "start": 3.989,
+          "end": 4.47
+        },
+        {
+          "word": "first",
+          "start": 4.47,
+          "end": 5.55
+        },
+        {
+          "word": "Come",
+          "start": 5.55,
+          "end": 5.95
+        },
+        {
+          "word": "back",
+          "start": 5.95,
+          "end": 6.27
+        },
+        {
+          "word": "after",
+          "start": 6.27,
+          "end": 6.51
+        },
+        {
+          "word": "his",
+          "start": 6.51,
+          "end": 6.71
+        },
+        {
+          "word": "lesson",
+          "start": 6.71,
+          "end": 6.96
+        }
+      ],
+      "voice": "en-GB-Ada:DragonHDLatestNeural"
+    },
+    {
+      "id": "gc.moira.market.bye",
+      "speaker": "Moira",
+      "text": "Off up the brae? Your starfish and your jobs go with you.",
+      "duration": 4.108,
+      "files": {
+        "webm": "gc.moira.market.bye.webm",
+        "m4a": "gc.moira.market.bye.m4a"
+      },
+      "hash": "c97a0edce2712fcc",
+      "words": [
+        {
+          "word": "Off",
+          "start": 0.03,
+          "end": 0.35
+        },
+        {
+          "word": "up",
+          "start": 0.35,
+          "end": 0.47
+        },
+        {
+          "word": "the",
+          "start": 0.47,
+          "end": 0.67
+        },
+        {
+          "word": "brae",
+          "start": 0.67,
+          "end": 1.03
+        },
+        {
+          "word": "Your",
+          "start": 1.03,
+          "end": 1.79
+        },
+        {
+          "word": "starfish",
+          "start": 1.79,
+          "end": 2.55
+        },
+        {
+          "word": "and",
+          "start": 2.55,
+          "end": 2.71
+        },
+        {
+          "word": "your",
+          "start": 2.71,
+          "end": 2.869
+        },
+        {
+          "word": "jobs",
+          "start": 2.869,
+          "end": 3.27
+        },
+        {
+          "word": "go",
+          "start": 3.27,
+          "end": 3.469
+        },
+        {
+          "word": "with",
+          "start": 3.469,
+          "end": 3.71
+        },
+        {
+          "word": "you",
+          "start": 3.71,
+          "end": 3.96
+        }
+      ],
+      "voice": "en-GB-Ada:DragonHDLatestNeural"
     }
   ]
 }

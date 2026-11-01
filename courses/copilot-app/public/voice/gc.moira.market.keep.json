@@ -1,0 +1,102 @@
+{
+  "id": "gc.moira.market.keep",
+  "speaker": "Moira",
+  "text": "Right-sized. A quick look's fine on the model you've got, at its default effort. Bigger ones just cost more.",
+  "words": [
+    {
+      "word": "Right-sized",
+      "start": 0.03,
+      "end": 1.39
+    },
+    {
+      "word": "A",
+      "start": 1.39,
+      "end": 1.63
+    },
+    {
+      "word": "quick",
+      "start": 1.63,
+      "end": 1.87
+    },
+    {
+      "word": "look's",
+      "start": 1.87,
+      "end": 2.19
+    },
+    {
+      "word": "fine",
+      "start": 2.19,
+      "end": 2.55
+    },
+    {
+      "word": "on",
+      "start": 2.55,
+      "end": 2.67
+    },
+    {
+      "word": "the",
+      "start": 2.67,
+      "end": 2.789
+    },
+    {
+      "word": "model",
+      "start": 2.789,
+      "end": 3.03
+    },
+    {
+      "word": "you've",
+      "start": 3.03,
+      "end": 3.27
+    },
+    {
+      "word": "got",
+      "start": 3.27,
+      "end": 3.75
+    },
+    {
+      "word": "at",
+      "start": 3.75,
+      "end": 3.949
+    },
+    {
+      "word": "its",
+      "start": 3.949,
+      "end": 4.15
+    },
+    {
+      "word": "default",
+      "start": 4.15,
+      "end": 4.63
+    },
+    {
+      "word": "effort",
+      "start": 4.63,
+      "end": 5.55
+    },
+    {
+      "word": "Bigger",
+      "start": 5.55,
+      "end": 5.95
+    },
+    {
+      "word": "ones",
+      "start": 5.95,
+      "end": 6.43
+    },
+    {
+      "word": "just",
+      "start": 6.43,
+      "end": 6.75
+    },
+    {
+      "word": "cost",
+      "start": 6.75,
+      "end": 7.03
+    },
+    {
+      "word": "more",
+      "start": 7.03,
+      "end": 7.28
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "gc.seren.assign.ask",
+  "speaker": "Seren",
+  "text": "Back again, Captain? Did you carry the change all the way through?",
+  "words": [
+    {
+      "word": "Back",
+      "start": 0.031,
+      "end": 0.244
+    },
+    {
+      "word": "again",
+      "start": 0.244,
+      "end": 0.5
+    },
+    {
+      "word": "Captain",
+      "start": 0.5,
+      "end": 0.925
+    },
+    {
+      "word": "Did",
+      "start": 0.925,
+      "end": 1.053
+    },
+    {
+      "word": "you",
+      "start": 1.053,
+      "end": 1.18
+    },
+    {
+      "word": "carry",
+      "start": 1.18,
+      "end": 1.393
+    },
+    {
+      "word": "the",
+      "start": 1.393,
+      "end": 1.521
+    },
+    {
+      "word": "change",
+      "start": 1.521,
+      "end": 1.819
+    },
+    {
+      "word": "all",
+      "start": 1.819,
+      "end": 1.946
+    },
+    {
+      "word": "the",
+      "start": 1.946,
+      "end": 2.031
+    },
+    {
+      "word": "way",
+      "start": 2.031,
+      "end": 2.202
+    },
+    {
+      "word": "through",
+      "start": 2.202,
+      "end": 2.452
+    }
+  ]
+}

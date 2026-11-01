@@ -1,0 +1,117 @@
+{
+  "id": "gc.moira.market.auto",
+  "speaker": "Moira",
+  "text": "Copilot Fusion's on offer too. It isn't one model: it picks models and a workflow for each job. And it isn't Autopilot.",
+  "words": [
+    {
+      "word": "Copilot",
+      "start": 0.07,
+      "end": 0.67
+    },
+    {
+      "word": "Fusion's",
+      "start": 0.67,
+      "end": 1.19
+    },
+    {
+      "word": "on",
+      "start": 1.19,
+      "end": 1.35
+    },
+    {
+      "word": "offer",
+      "start": 1.35,
+      "end": 1.67
+    },
+    {
+      "word": "too",
+      "start": 1.67,
+      "end": 2.67
+    },
+    {
+      "word": "It",
+      "start": 2.67,
+      "end": 2.909
+    },
+    {
+      "word": "isn't",
+      "start": 2.909,
+      "end": 3.23
+    },
+    {
+      "word": "one",
+      "start": 3.23,
+      "end": 3.55
+    },
+    {
+      "word": "model",
+      "start": 3.55,
+      "end": 4.19
+    },
+    {
+      "word": "it",
+      "start": 4.19,
+      "end": 4.47
+    },
+    {
+      "word": "picks",
+      "start": 4.47,
+      "end": 4.83
+    },
+    {
+      "word": "models",
+      "start": 4.83,
+      "end": 5.51
+    },
+    {
+      "word": "and",
+      "start": 5.51,
+      "end": 5.75
+    },
+    {
+      "word": "a",
+      "start": 5.75,
+      "end": 5.79
+    },
+    {
+      "word": "workflow",
+      "start": 5.79,
+      "end": 6.47
+    },
+    {
+      "word": "for",
+      "start": 6.47,
+      "end": 6.67
+    },
+    {
+      "word": "each",
+      "start": 6.67,
+      "end": 6.95
+    },
+    {
+      "word": "job",
+      "start": 6.95,
+      "end": 8.029
+    },
+    {
+      "word": "And",
+      "start": 8.029,
+      "end": 8.389
+    },
+    {
+      "word": "it",
+      "start": 8.389,
+      "end": 8.51
+    },
+    {
+      "word": "isn't",
+      "start": 8.51,
+      "end": 8.91
+    },
+    {
+      "word": "Autopilot",
+      "start": 8.91,
+      "end": 9.16
+    }
+  ]
+}

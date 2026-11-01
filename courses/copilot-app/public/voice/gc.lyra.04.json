@@ -1,0 +1,92 @@
+{
+  "id": "gc.lyra.04",
+  "speaker": "Lyra",
+  "text": "You still check the result, though. A chart doesn't guarantee a good performance. Elspeth's on the square.",
+  "words": [
+    {
+      "word": "You",
+      "start": 0,
+      "end": 0.2
+    },
+    {
+      "word": "still",
+      "start": 0.2,
+      "end": 0.453
+    },
+    {
+      "word": "check",
+      "start": 0.453,
+      "end": 0.74
+    },
+    {
+      "word": "the",
+      "start": 0.74,
+      "end": 0.857
+    },
+    {
+      "word": "result",
+      "start": 0.857,
+      "end": 1.383
+    },
+    {
+      "word": "though",
+      "start": 1.383,
+      "end": 2.42
+    },
+    {
+      "word": "A",
+      "start": 2.42,
+      "end": 2.787
+    },
+    {
+      "word": "chart",
+      "start": 2.787,
+      "end": 3.16
+    },
+    {
+      "word": "doesn't",
+      "start": 3.16,
+      "end": 3.668
+    },
+    {
+      "word": "guarantee",
+      "start": 3.668,
+      "end": 4
+    },
+    {
+      "word": "a",
+      "start": 4,
+      "end": 4.096
+    },
+    {
+      "word": "good",
+      "start": 4.096,
+      "end": 4.22
+    },
+    {
+      "word": "performance",
+      "start": 4.22,
+      "end": 5.493
+    },
+    {
+      "word": "Elspeth's",
+      "start": 5.493,
+      "end": 6.88
+    },
+    {
+      "word": "on",
+      "start": 6.88,
+      "end": 7.06
+    },
+    {
+      "word": "the",
+      "start": 7.06,
+      "end": 7.189
+    },
+    {
+      "word": "square",
+      "start": 7.189,
+      "end": 7.439
+    }
+  ]
+}

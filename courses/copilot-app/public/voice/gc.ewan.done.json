@@ -1,0 +1,77 @@
+{
+  "id": "gc.ewan.done",
+  "speaker": "Ewan",
+  "text": "Out the east gate and along the ridge, Captain. Guildmaster Fergus keeps the hall.",
+  "words": [
+    {
+      "word": "Out",
+      "start": 0.054333,
+      "end": 0.258166
+    },
+    {
+      "word": "the",
+      "start": 0.258166,
+      "end": 0.394041
+    },
+    {
+      "word": "east",
+      "start": 0.394041,
+      "end": 0.679333
+    },
+    {
+      "word": "gate",
+      "start": 0.679333,
+      "end": 0.951083
+    },
+    {
+      "word": "and",
+      "start": 0.951083,
+      "end": 1.046208
+    },
+    {
+      "word": "along",
+      "start": 1.046208,
+      "end": 1.331541
+    },
+    {
+      "word": "the",
+      "start": 1.331541,
+      "end": 1.440208
+    },
+    {
+      "word": "ridge",
+      "start": 1.440208,
+      "end": 2.065208
+    },
+    {
+      "word": "Captain",
+      "start": 2.065208,
+      "end": 3.586958
+    },
+    {
+      "word": "Guildmaster",
+      "start": 3.586958,
+      "end": 4.307083
+    },
+    {
+      "word": "Fergus",
+      "start": 4.307083,
+      "end": 4.782625
+    },
+    {
+      "word": "keeps",
+      "start": 4.782625,
+      "end": 5.135875
+    },
+    {
+      "word": "the",
+      "start": 5.135875,
+      "end": 5.230958
+    },
+    {
+      "word": "hall",
+      "start": 5.230958,
+      "end": 5.480958
+    }
+  ]
+}

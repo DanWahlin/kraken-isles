@@ -1,0 +1,102 @@
+{
+  "id": "gc.brigid.02",
+  "speaker": "Brigid",
+  "text": "Our review book needs two new rules. Find it, read its spine, copy them in, and check every word.",
+  "words": [
+    {
+      "word": "Our",
+      "start": 0,
+      "end": 0.217
+    },
+    {
+      "word": "review",
+      "start": 0.217,
+      "end": 0.624
+    },
+    {
+      "word": "book",
+      "start": 0.624,
+      "end": 0.947
+    },
+    {
+      "word": "needs",
+      "start": 0.947,
+      "end": 1.36
+    },
+    {
+      "word": "two",
+      "start": 1.36,
+      "end": 1.68
+    },
+    {
+      "word": "new",
+      "start": 1.68,
+      "end": 2.027
+    },
+    {
+      "word": "rules",
+      "start": 2.027,
+      "end": 2.944
+    },
+    {
+      "word": "Find",
+      "start": 2.944,
+      "end": 3.947
+    },
+    {
+      "word": "it",
+      "start": 3.947,
+      "end": 4.608
+    },
+    {
+      "word": "read",
+      "start": 4.608,
+      "end": 4.86
+    },
+    {
+      "word": "its",
+      "start": 4.86,
+      "end": 5.12
+    },
+    {
+      "word": "spine",
+      "start": 5.12,
+      "end": 6.064
+    },
+    {
+      "word": "copy",
+      "start": 6.064,
+      "end": 6.352
+    },
+    {
+      "word": "them",
+      "start": 6.352,
+      "end": 6.56
+    },
+    {
+      "word": "in",
+      "start": 6.56,
+      "end": 6.9
+    },
+    {
+      "word": "and",
+      "start": 6.9,
+      "end": 7.267
+    },
+    {
+      "word": "check",
+      "start": 7.267,
+      "end": 7.693
+    },
+    {
+      "word": "every",
+      "start": 7.693,
+      "end": 8.256
+    },
+    {
+      "word": "word",
+      "start": 8.256,
+      "end": 8.506
+    }
+  ]
+}

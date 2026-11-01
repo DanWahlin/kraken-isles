@@ -1,0 +1,92 @@
+{
+  "id": "wingman.gc.01",
+  "speaker": "Wingman",
+  "text": "They write the craft down here, so nobody types the same reminders twice. Skills and agents, Captain!",
+  "words": [
+    {
+      "word": "They",
+      "start": 0,
+      "end": 0.2
+    },
+    {
+      "word": "write",
+      "start": 0.2,
+      "end": 0.42
+    },
+    {
+      "word": "the",
+      "start": 0.42,
+      "end": 0.533
+    },
+    {
+      "word": "craft",
+      "start": 0.533,
+      "end": 0.864
+    },
+    {
+      "word": "down",
+      "start": 0.864,
+      "end": 1.184
+    },
+    {
+      "word": "here",
+      "start": 1.184,
+      "end": 1.893
+    },
+    {
+      "word": "so",
+      "start": 1.893,
+      "end": 2.069
+    },
+    {
+      "word": "nobody",
+      "start": 2.069,
+      "end": 2.52
+    },
+    {
+      "word": "types",
+      "start": 2.52,
+      "end": 2.76
+    },
+    {
+      "word": "the",
+      "start": 2.76,
+      "end": 2.928
+    },
+    {
+      "word": "same",
+      "start": 2.928,
+      "end": 3.176
+    },
+    {
+      "word": "reminders",
+      "start": 3.176,
+      "end": 3.76
+    },
+    {
+      "word": "twice",
+      "start": 3.76,
+      "end": 4.731
+    },
+    {
+      "word": "Skills",
+      "start": 4.731,
+      "end": 5.78
+    },
+    {
+      "word": "and",
+      "start": 5.78,
+      "end": 5.909
+    },
+    {
+      "word": "agents",
+      "start": 5.909,
+      "end": 6.59
+    },
+    {
+      "word": "Captain",
+      "start": 6.59,
+      "end": 6.84
+    }
+  ]
+}

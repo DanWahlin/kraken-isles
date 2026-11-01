@@ -1,0 +1,62 @@
+{
+  "id": "gc.aidan.03",
+  "speaker": "Aidan",
+  "text": "Sister Brigid's in the scriptorium, through the cloister. Mind the ink.",
+  "words": [
+    {
+      "word": "Sister",
+      "start": 0,
+      "end": 0.347
+    },
+    {
+      "word": "Brigid's",
+      "start": 0.347,
+      "end": 0.747
+    },
+    {
+      "word": "in",
+      "start": 0.747,
+      "end": 0.82
+    },
+    {
+      "word": "the",
+      "start": 0.82,
+      "end": 0.926
+    },
+    {
+      "word": "scriptorium",
+      "start": 0.926,
+      "end": 1.78
+    },
+    {
+      "word": "through",
+      "start": 1.78,
+      "end": 1.94
+    },
+    {
+      "word": "the",
+      "start": 1.94,
+      "end": 2.04
+    },
+    {
+      "word": "cloister",
+      "start": 2.04,
+      "end": 2.864
+    },
+    {
+      "word": "Mind",
+      "start": 2.864,
+      "end": 3.14
+    },
+    {
+      "word": "the",
+      "start": 3.14,
+      "end": 3.28
+    },
+    {
+      "word": "ink",
+      "start": 3.28,
+      "end": 3.53
+    }
+  ]
+}

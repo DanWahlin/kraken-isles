@@ -1,0 +1,82 @@
+{
+  "id": "gc.lyra.02",
+  "speaker": "Lyra",
+  "text": "The chart makes everyone play this song the same way. Hand it out, and listen.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0,
+      "end": 0.133
+    },
+    {
+      "word": "chart",
+      "start": 0.133,
+      "end": 0.44
+    },
+    {
+      "word": "makes",
+      "start": 0.44,
+      "end": 0.693
+    },
+    {
+      "word": "everyone",
+      "start": 0.693,
+      "end": 1.168
+    },
+    {
+      "word": "play",
+      "start": 1.168,
+      "end": 1.408
+    },
+    {
+      "word": "this",
+      "start": 1.408,
+      "end": 1.648
+    },
+    {
+      "word": "song",
+      "start": 1.648,
+      "end": 1.86
+    },
+    {
+      "word": "the",
+      "start": 1.86,
+      "end": 1.984
+    },
+    {
+      "word": "same",
+      "start": 1.984,
+      "end": 2.32
+    },
+    {
+      "word": "way",
+      "start": 2.32,
+      "end": 2.88
+    },
+    {
+      "word": "Hand",
+      "start": 2.88,
+      "end": 3.867
+    },
+    {
+      "word": "it",
+      "start": 3.867,
+      "end": 4
+    },
+    {
+      "word": "out",
+      "start": 4,
+      "end": 4.59
+    },
+    {
+      "word": "and",
+      "start": 4.59,
+      "end": 4.857
+    },
+    {
+      "word": "listen",
+      "start": 4.857,
+      "end": 5.107
+    }
+  ]
+}

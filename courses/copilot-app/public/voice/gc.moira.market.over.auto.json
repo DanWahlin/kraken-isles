@@ -1,0 +1,67 @@
+{
+  "id": "gc.moira.market.over.auto",
+  "speaker": "Moira",
+  "text": "A higher Fusion level for a quick look? Standard would've done fine.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.03,
+      "end": 0.07
+    },
+    {
+      "word": "higher",
+      "start": 0.07,
+      "end": 0.47
+    },
+    {
+      "word": "Fusion",
+      "start": 0.47,
+      "end": 0.95
+    },
+    {
+      "word": "level",
+      "start": 0.95,
+      "end": 1.31
+    },
+    {
+      "word": "for",
+      "start": 1.31,
+      "end": 1.47
+    },
+    {
+      "word": "a",
+      "start": 1.47,
+      "end": 1.55
+    },
+    {
+      "word": "quick",
+      "start": 1.55,
+      "end": 1.87
+    },
+    {
+      "word": "look",
+      "start": 1.87,
+      "end": 2.71
+    },
+    {
+      "word": "Standard",
+      "start": 2.71,
+      "end": 3.389
+    },
+    {
+      "word": "would've",
+      "start": 3.389,
+      "end": 4.03
+    },
+    {
+      "word": "done",
+      "start": 4.03,
+      "end": 4.47
+    },
+    {
+      "word": "fine",
+      "start": 4.47,
+      "end": 4.508
+    }
+  ]
+}
