@@ -167,3 +167,111 @@ describe('Guildcrest’s loch (the ship’s way in)', () => {
     expect(inside(G.center.x, G.center.z)).toBe(true);
   });
 });
+
+describe('Guildcrest’s quay and the berthed ship', () => {
+  it('keeps the quay’s ship obstacles half a metre clear of the berthed hull', async () => {
+    const { BRIGANTINE_CAPSULES } = await import('../../ship/lines');
+    const { makeBuckets } = await import('../../village/pieces');
+    const { makeOut } = await import('./build');
+    const { buildTown } = await import('./town-build');
+    const out = makeOut();
+    const steps = buildTown(makeBuckets(), out, false);
+    for (let r = steps.next(); !r.done; r = steps.next());
+    expect(out.shipObstacles.length).toBeGreaterThan(20);
+    const b = H.berth;
+    for (const cap of BRIGANTINE_CAPSULES) {
+      const x = b.x + Math.sin(b.heading) * cap.z;
+      const z = b.z + Math.cos(b.heading) * cap.z;
+      for (const o of out.shipObstacles)
+        expect(Math.hypot(o.x - x, o.z - z), `capsule ${cap.z}`).toBeGreaterThan(o.r + cap.radius + 0.5);
+    }
+  });
+});
+
+describe('Guildcrest’s berth, sailed', () => {
+  it('docks cleanly from the lane and from the turning room', { timeout: 60_000 }, async () => {
+    const { ShipDynamics } = await import('../../ship/dynamics');
+    const { makeBuckets } = await import('../../village/pieces');
+    const { makeOut } = await import('./build');
+    const { buildTown } = await import('./town-build');
+    const out = makeOut();
+    const steps = buildTown(makeBuckets(), out, false);
+    for (let r = steps.next(); !r.done; r = steps.next());
+    const obstacles = out.shipObstacles;
+    const ground = {
+      heightAt: guildcrestHeight,
+      normalAt: (_x: number, _z: number, o: Float32Array | number[]) => {
+        o[0] = 0;
+        o[1] = 1;
+        o[2] = 0;
+        return o;
+      },
+      masksAt: () => ({ sand: 0, grass: 1, rock: 0, cliff: 0 }),
+    };
+    const calm = {
+      heightAt: () => 0,
+      velocityAt: (_x: number, _z: number, _t: number, o: Float32Array | number[]) => {
+        o[0] = 0;
+        o[1] = 0;
+        return o;
+      },
+    };
+    const b = H.berth;
+    const inner = H.lane[3]!;
+    const t = H.turning;
+    for (const [x, z, heading] of [
+      [inner.x, inner.z, Math.atan2(b.x - inner.x, b.z - inner.z)],
+      [t.x + 10, t.z - 10, b.heading],
+    ] as const) {
+      const ship = new ShipDynamics(x, z, heading);
+      ship.dockAssist(b);
+      const env = { waves: calm, ground, obstacles: [...obstacles], t: 0 };
+      let worst = -Infinity;
+      let i = 0;
+      for (; i < 90 * 60 && !ship.dockComplete; i++) {
+        env.t += 1 / 60;
+        ship.step(1 / 60, { trim: 0, rudder: 0 }, env);
+        const s = Math.sin(ship.pose.heading);
+        const c = Math.cos(ship.pose.heading);
+        for (const cap of ship.capsules)
+          for (const o of obstacles)
+            worst = Math.max(
+              worst,
+              cap.radius + o.r - Math.hypot(ship.pose.x + s * cap.z - o.x, ship.pose.z + c * cap.z - o.z),
+            );
+      }
+      expect(ship.dockComplete, `from ${x.toFixed(0)},${z.toFixed(0)}`).toBe(true);
+      expect(i / 60).toBeLessThan(80);
+      expect(worst, `from ${x.toFixed(0)},${z.toFixed(0)}`).toBeLessThan(0.05);
+    }
+  });
+});
+
+describe('Guildcrest arrival flyover', () => {
+  it('clears the ground by 3 m, and the tower and the mills’ sails by 3 m, along its keys', async () => {
+    const { GUILDCREST_ARRIVAL_KEYS } = await import('./arrival');
+    const { MILL, MILLS, TOWER } = await import('./layout');
+    const keys = [...GUILDCREST_ARRIVAL_KEYS, { ...H.landingShot, pace: 1 }];
+    const tower = toWorld(TOWER.u, TOWER.v);
+    for (let i = 0; i < keys.length - 1; i++) {
+      const a = keys[i]!;
+      const b = keys[i + 1]!;
+      const len = Math.hypot(b.x - a.x, b.y - a.y, b.z - a.z);
+      for (let s = 0; s <= len; s += 0.5) {
+        const t = s / len;
+        const x = a.x + (b.x - a.x) * t;
+        const y = a.y + (b.y - a.y) * t;
+        const z = a.z + (b.z - a.z) * t;
+        const at = `key ${i} at ${x.toFixed(0)},${z.toFixed(0)}`;
+        expect(y - guildcrestHeight(x, z), at).toBeGreaterThan(3);
+        if (y < TOWER.top + 3)
+          expect(Math.hypot(x - tower.x, z - tower.z), at).toBeGreaterThan(TOWER.side / 2 + 4);
+        for (const m of MILLS) {
+          const p = toWorld(m.u, m.v);
+          if (y < m.y + MILL.tower + MILL.sail + 4)
+            expect(Math.hypot(x - p.x, z - p.z), at).toBeGreaterThan(MILL.sail + 4);
+        }
+      }
+    }
+  });
+});

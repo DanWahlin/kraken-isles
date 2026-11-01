@@ -4,6 +4,7 @@ import {
   at,
   chimney,
   door,
+  flight,
   GC_PAINT,
   ground,
   groundSpan,
@@ -18,7 +19,7 @@ import {
   YAW_U,
   type GcOut,
 } from './build';
-import { CHARTER_STONE, QUAY, SQUARE, toWorld } from './layout';
+import { BRAE, CHARTER_STONE, QUAY, SQUARE, toWorld } from './layout';
 import { GUILDHALLS, HOUSES, INN_HOUSE, SQUARE_PROPS, type Guildhall, type TownHouse } from './town';
 
 /**
@@ -44,6 +45,7 @@ export function* buildTown(b: Buckets, out: GcOut, lite: boolean): Generator<voi
     yield;
   }
   square(b, out, lite);
+  brae(b, out);
   yield;
   if (!lite) washing(b);
   // The lane's lamps: up from the quay to the square, and at the square's corners.
@@ -333,6 +335,20 @@ function square(b: Buckets, out: GcOut, lite: boolean): void {
     ubox(b, 'paving', w.u, wg + 2.35, w.v, 2.4, 0.12, 1.6, GC_PAINT.slate);
   }
   out.circles.push({ x: wp.x, z: wp.z, r: 1.2, y0: wg - 0.5, y1: wg + 2.4, height: 2.4 });
+}
+
+/**
+ * The Kirk Brae's two stair flights (spec §3.5): the steep middle of each stretch of the lane, stone
+ * steps railed on both sides (Keelhaven P04), the lane's ramp under them (the walker's surface).
+ */
+function brae(b: Buckets, out: GcOut): void {
+  for (let i = 0; i + 1 < BRAE.length; i++) {
+    const a = BRAE[i]!;
+    const e = BRAE[i + 1]!;
+    const at = (t: number) =>
+      [a.u + (e.u - a.u) * t, a.v + (e.v - a.v) * t, a.y + (e.y - a.y) * t + 0.03] as const;
+    flight(b, out, at(0.3), at(0.7), 2.4);
+  }
 }
 
 /** Washing lines between the houses up the town (kinetic in the wind's colours, still here). */

@@ -1,4 +1,5 @@
 import type { VillageAnchor } from '../../village/kit';
+import { SIT } from '../../characters/seat-fit';
 import { guildcrestHeight } from './height';
 import { CIRCUIT_SPOTS } from './circuit';
 import { headingBetween, toWorld, type Uv } from './layout';
@@ -28,6 +29,11 @@ function anchor(u: number, v: number, _planned: number, look?: Uv): VillageAncho
 function spotAnchor(kind: 'book' | 'belt', place: string): VillageAnchor {
   const s = CIRCUIT_SPOTS[kind][place]!;
   return anchor(s.u, s.v, s.y, { u: s.look.u, v: s.look.v });
+}
+
+/** An anchor raised to the top of a seat block on its ground (seat-fit.ts `SIT.height`). */
+function seated(a: VillageAnchor): VillageAnchor {
+  return { ...a, y: a.y + SIT.height };
 }
 
 /** A camera: where it stands (x, y, z, its heading toward the target) and what it looks at. */
@@ -101,7 +107,8 @@ export const GUILDCREST_ANCHORS = {
   extraKids: anchor(-90, 52, 10, LOOK.charterStone),
   extraCopyist: anchor(13.6, 144.6, 36, { u: 16, v: 145.5 }),
   extraMiller: anchor(126, 186, 52, LOOK.fergus),
-  extraShepherd: anchor(40, 20, 40, LOOK.aidan),
+  // Kenna sits on a stone on the glen's south side (seat-fit.ts: the block's top is her anchor).
+  extraShepherd: seated(anchor(40, 20, 40, LOOK.aidan)),
 } as const satisfies Record<string, VillageAnchor>;
 
 /** Every anchor's name (the contract with the course content, spec §10.3). */

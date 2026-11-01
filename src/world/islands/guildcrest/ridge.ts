@@ -17,6 +17,9 @@ import {
   type GcOut,
 } from './build';
 import { CIRCUIT_SPOTS } from './circuit';
+import { GUILDCREST_ANCHORS } from './anchors';
+import { SIT, seatBlock } from '../../characters/seat-fit';
+import { paint } from '../../village/kit';
 import { MILL, MILL_TRACK, MILLS, RIDGE_PATH, YARD } from './layout';
 import { JOURNEYMEN_HALL } from './town';
 
@@ -45,6 +48,7 @@ export function* buildRidge(b: Buckets, out: GcOut, lite: boolean): Generator<vo
   yard(b, out, lite);
   yield;
   ridgeRails(b, out);
+  shepherdSeat(b, out);
   yield;
   const sails: MillSails[] = [];
   for (const m of MILLS) {
@@ -209,6 +213,21 @@ function yard(b: Buckets, out: GcOut, lite: boolean): void {
   // A trough and a barrel by the hall's west end (the yard's at work).
   ubox(b, 'wood', u0 + 4, y + 0.4, JOURNEYMEN_HALL.v1 + 1.6, 0.8, 0.8, 0.8, 0x6b5038);
   solid(out, u0 + 4, JOURNEYMEN_HALL.v1 + 1.6, 0.9, 0.9, y, y + 0.8, false);
+}
+
+/**
+ * Kenna's seat on the glen (a flat granite block, seat-fit.ts's size: her anchor is its top, her shins
+ * down its front edge).
+ */
+function shepherdSeat(b: Buckets, out: GcOut): void {
+  const a = GUILDCREST_ANCHORS.extraShepherd;
+  const floor = a.y - SIT.height;
+  const g = seatBlock(b, a.x, a.z, a.heading, floor - 0.3, a.y);
+  // Granite, not a crate: the block's geometry moves from the wood bucket to the stone one.
+  b.wood.splice(b.wood.indexOf(g), 1);
+  paint(g, GC_PAINT.granite);
+  b.stone.push(g);
+  out.circles.push({ x: a.x, z: a.z, r: 0.45, y0: floor - 0.5, y1: a.y, height: SIT.height + 0.3 });
 }
 
 /** Rails along the ridge path where its downhill side falls steeply (over ~30°). */

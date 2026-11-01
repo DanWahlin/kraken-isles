@@ -1442,4 +1442,10 @@ by the hall's door, the Charter Stone's foot plate, the spine on the pattern boo
 press) are built as blank boards; Rory's banner, the book's new page and the Seal's banners are the
 stage's to show; the sails' pace (`setSailPace`, ¼ with reduced motion); `flickertest` views
 `gc-quay`, `gc-square`, `gc-cloister`, `gc-yard`, `gc-tower` once the island is in `tools/lib/islands.json`.
+- **Later in stage 2A:** the Kirk Brae's two railed stair flights (the middle of each stretch, over the
+  lane's ramp); Kenna's granite seat on the glen (`extraShepherd` is seated: its anchor is the seat's
+  top); the arrival flyover's keys as data (`arrival.ts`, `GUILDCREST_ARRIVAL_KEYS`, §10.5's keys
+  with key 4 at y 48, key 5 at 72 and key 6 at (100, 76, 110), clear of the ground, the tower and the
+  sails by 3 m: a test); a docking test (the dock assist from the lane and from the turning room, no
+  contact with the quay's obstacles) and the silhouette test (one draw, under 30k triangles on High).
 
