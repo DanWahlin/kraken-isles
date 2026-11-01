@@ -1299,4 +1299,19 @@ lines: 'keepers' }`. `course.json` → `hooks.islands.guildcrest` and `islands[g
 
 ## 15. As built
 
-Empty until the build. Each stage writes what moved from this spec, and why.
+Each stage writes what moved from this spec, and why.
+
+### 15.1 Stage 0: the contract (agent A, 2026-11-01)
+
+- `src/world/islands/guildcrest/layout.ts` (the frame, `toWorld`/`toFrame`, `headingUv`, §3's numbers),
+  `anchors.ts` (`GUILDCREST_ANCHORS`, `GcAnchorName`: exactly §3.9's names; the stations are
+  `book.<place>` and `belt.<place>`; `bookCam`/`beltCam` are `CameraAnchor`s with a `target`) and
+  `circuit.ts` (`CIRCUIT_SPOTS.book`, `.belt`: `{ u, v, y, lamp, look }`, lamps `book:<place>`,
+  `belt:<place>`). Positions are §3.9's until stage 1A/2A ground them; the names don't change.
+- `CIRCUIT_PLACES.book`, `.belt` and the schema's enum; `STORY_CONDITIONS.guildcrest`,
+  `STORY_EVENTS.guildcrest = []`.
+- `story.test.ts` skips an island that isn't in the registry while the pack has no quests for it yet
+  (Guildcrest until B's content joins): the check comes back by itself when either lands.
+- `PUZZLE_STEPS` rows for `pattern-book` and `toolbelt` (W.6) are **not** added in stage 0: with no
+  puzzle files in the pack yet, `steps.test.ts` fails on them. B (or stage 3) adds the two rows with
+  the puzzle files.
