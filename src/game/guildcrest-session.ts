@@ -391,6 +391,11 @@ export function createGuildcrestContent(host: IslandContentHost): GuildcrestCont
       seal: () => circuits.seal(),
       lamp: (key: string) => circuits.debug.lamp(key),
       sealing: () => circuits.debug.sealing(),
+      /** The island's lettered signs (their sign names, place and facing): tests look at each. */
+      signs: () =>
+        world?.works.signs.map((g) => ({ lines: g.lines, x: g.x, y: g.y, z: g.z, heading: g.heading })) ?? [],
+      /** Whether the world shows the book's page, Rory's banner or the Seal's banners. */
+      showing: (what: 'page' | 'rory' | 'sealed') => circuits.debug.showing(what),
       stations: () => circuits.debug.spots(),
       /** Every chest and bottle spot (tests walk to each). */
       chestSpots: () => [

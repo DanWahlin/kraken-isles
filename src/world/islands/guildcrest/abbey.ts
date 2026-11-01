@@ -9,6 +9,7 @@ import {
   ground,
   hangLantern,
   lowWall,
+  signAt,
   solid,
   ubox,
   uvSpan,
@@ -393,9 +394,46 @@ function stations(b: Buckets, out: GcOut, lite: boolean): void {
   // The shelf: a tall press of pattern books against the scriptorium's wall (its label is the pack's).
   const wi = C.u - ABBEY.walk;
   bookPress(b, out, wi + 0.25, S.shelf!.v, 'v', 2.2, lite);
+  // Its label on a board over the press, to the walk.
+  ubox(b, 'wood', wi + 0.4, WALK + 2.38, S.shelf!.v, 0.06, 0.3, 1.7, GC_PAINT.timber);
+  out.signs.push(
+    signAt(wi + 0.4, WALK + 2.38, S.shelf!.v, 1, 0, { lines: ['shelfLabel'], w: 1.6, h: 0.26 }, 0.036),
+  );
   // The pattern book's own case, its spine to the walk.
   ubox(b, 'wood', wi + 0.35, WALK + 0.55, S.spine!.v, 0.6, 1.1, 1.0, GC_PAINT.timber);
   ubox(b, 'wood', wi + 0.35, WALK + 1.42, S.spine!.v, 0.5, 0.64, 0.12, 0x5a2e2a);
+  // The book's name up its spine, its file's on the case's front.
+  out.signs.push(
+    signAt(
+      wi + 0.6,
+      WALK + 1.42,
+      S.spine!.v,
+      1,
+      0,
+      {
+        lines: ['bookSpine'],
+        w: 0.6,
+        h: 0.1,
+        roll: Math.PI / 2,
+        fill: '#5a2e2a',
+        colors: ['#e8c87a'],
+      },
+      0.006,
+    ),
+    signAt(wi + 0.65, WALK + 0.86, S.spine!.v, 1, 0, { lines: ['bookFile'], w: 0.5, h: 0.16 }, 0.006),
+  );
+  // Its cover lies on the case beside it; once the book's copied, the new page lies open on it.
+  ubox(b, 'wood', wi + 0.35, WALK + 1.115, S.spine!.v + 0.27, 0.4, 0.03, 0.4, 0x5a2e2a);
+  out.signs.push(
+    signAt(wi + 0.35, WALK + 1.14, S.spine!.v + 0.27, 1, 0, {
+      lines: ['bookSpine', 'bookFile'],
+      w: 0.36,
+      h: 0.34,
+      tilt: Math.PI / 2,
+      look: 'cloth',
+      show: 'page',
+    }),
+  );
   solid(out, wi + 0.35, S.spine!.v, 0.7, 1.1, WALK, WALK + 1.8, false);
   // The copy desk against the library's wall: a sloped top, the open book, ink and a quill.
   const ni = C.v + ABBEY.walk;

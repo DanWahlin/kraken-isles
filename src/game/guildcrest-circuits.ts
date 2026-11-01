@@ -43,6 +43,8 @@ export interface GuildcrestCircuits {
   teardown(): void;
   readonly debug: {
     lamp(key: string): string | null;
+    /** Whether the world shows the book's page, Rory's banner or the Seal's banners. */
+    showing(what: 'page' | 'rory' | 'sealed'): boolean;
     /** Whether the Seal's moment is playing (tests catch it for a shot). */
     sealing(): boolean;
     /** Every station's spot (tests walk to each). */
@@ -111,7 +113,13 @@ export function createGuildcrestCircuits(
           host.audio?.sfx.oneShot('gondola_bell', s, 0.8);
         if (kind === 'book' && at.place === 'desk' && event === 'open')
           host.audio?.sfx.oneShot('quill', s, 0.7);
-        if (kind === 'book' && event === 'done') host.audio?.sfx.oneShot('book_close', s, 0.9);
+        if (kind === 'book' && event === 'done') {
+          host.audio?.sfx.oneShot('book_close', s, 0.9);
+          // The copied book's new page lies open on its case.
+          world?.show('page', true);
+        }
+        // The lap's close hires Rory: his banner unrolls on the roll board.
+        if (kind === 'belt' && event === 'done') world?.show('rory', true, !reduced());
         // Rory's answer once he's read the code at the bench (the station's demo plays his question).
         if (kind === 'belt' && at.place === 'bench' && event === 'pass') {
           const line = puzzleMaybe('toolbelt')?.lines?.benchAnswer;
@@ -125,7 +133,14 @@ export function createGuildcrestCircuits(
   function settle(): void {
     if (!world) return;
     const q = host.puzzleHost.quests();
-    if (storyHolds('guildcrest', 'sealed', q)) sealLamps();
+    // What the save shows (spec W.2): the book's page, Rory's banner, the guilds' banners on the ridge.
+    // Only ever on (a lap's close shows its piece before its quest is through).
+    if (storyHolds('guildcrest', 'bookCopied', q) && !world.showing('page')) world.show('page', true);
+    if (storyHolds('guildcrest', 'journeymanHired', q) && !world.showing('rory')) world.show('rory', true);
+    if (storyHolds('guildcrest', 'sealed', q)) {
+      if (!world.showing('sealed') && !sealing) world.show('sealed', true);
+      sealLamps();
+    }
   }
 
   /** Every station's lamp lit (the Seal's, or after a reload once sealed). */
@@ -152,9 +167,14 @@ export function createGuildcrestCircuits(
       await host.fade(false, 260);
     }
     host.audio?.sfx.oneShot('abbey_bell', { x: t.x, y: TOWER.belfry[0], z: t.z }, 1);
+    // The swifts burst from the belfry at the first stroke.
+    w.swifts?.burst(5);
     await wait(r ? 1200 : 2600);
     sealLamps();
     w.setSailPace(r ? 0.25 : 3);
+    // The guilds' banners unfurl by the mills (with reduced motion they're simply there).
+    if (!r) w.show('sealed', false);
+    w.show('sealed', true, !r);
     fastSails = 10;
     if (!r) {
       await host.fade(true, 220);
@@ -233,6 +253,7 @@ export function createGuildcrestCircuits(
     },
     debug: {
       sealing: () => sealing,
+      showing: (what) => world?.showing(what) ?? false,
       lamp: (key) => world?.circuit.look(key) ?? null,
       spots: () => {
         const out: { id: string; x: number; y: number; z: number }[] = [];

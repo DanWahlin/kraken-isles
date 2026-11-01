@@ -183,14 +183,19 @@ function ridge(u: number, v: number): number {
   return h;
 }
 
+/** Where the lochan's bowl eases out into the moor (m from its middle). */
+const LOCHAN_SKIRT = [62, 96] as const;
+
 /** The upland: moor, the shoulder east of the knoll, the ben and the ridge. */
 function upland(u: number, v: number, x: number, z: number): number {
   const moor = 27 + 6 * fbm2(x / 220, z / 220, 3, SEED + 5);
   const shoulder = 70 - 0.22 * Math.hypot(u - 190, v - 20);
   let h = smax(moor, shoulder, 8);
-  // The lochan's bowl on the knoll's back.
+  // The lochan's bowl on the knoll's back, its skirt easing into the moor (a hard edge at 90 m stood
+  // as a 6 m wall west of the glen: the terrain's triangles drew it as a zigzag).
   const lr = Math.hypot(u - WATER.lochan.u, v - WATER.lochan.v);
-  if (lr < 90) h = smax(h, WATER.lochan.y + 1.6 - Math.max(0, lr - 24) * 0.2, 6);
+  const bowl = 1 - smoothstep(LOCHAN_SKIRT[0], LOCHAN_SKIRT[1], lr);
+  if (bowl > 0) h = lerp(h, smax(h, WATER.lochan.y + 1.6 - Math.max(0, lr - 24) * 0.2, 6), bowl);
   h = smax(h, ben(u, v, x, z), 16);
   h = smax(h, ridge(u, v), 8);
   // Low rolling on the moor (heather hummocks, tens of metres across).

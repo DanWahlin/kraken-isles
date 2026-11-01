@@ -42,6 +42,11 @@ export interface BirdsSystem {
   update(dt: number, t: number, camera: PerspectiveCamera): void;
   /** Puts every bird back where its seed starts it (frozen shots: the same flock in every run). */
   reset(): void;
+  /**
+   * Startles the flock (a bell, a cheer): the perched take off, and every bird climbs away from the
+   * middle at twice its pace for `seconds`, then wheels back.
+   */
+  burst(seconds?: number): void;
   dispose(): void;
 }
 
@@ -89,6 +94,8 @@ function angleDiff(a: number, b: number): number {
 }
 
 const DEFAULT_ALTITUDE: readonly [number, number] = [18, 73];
+/** A startled flock's pace (× its own). */
+const BURST_PACE = 2;
 
 function chooseTarget(
   agent: BirdAgent,
@@ -180,6 +187,9 @@ export function createBirds(options: CreateBirdsOptions): BirdsSystem {
   group.name = 'birds';
   group.add(mesh);
 
+  /** Seconds left of a burst (birds fly at `BURST_PACE`). */
+  let rush = 0;
+
   function updateAgent(agent: BirdAgent, dt: number): void {
     if (agent.state === 'perched') {
       const perch = options.perches[agent.perch];
@@ -241,10 +251,11 @@ export function createBirds(options: CreateBirdsOptions): BirdsSystem {
     const climb = clamp((targetY - agent.pos.y) * 0.55, -2.2, 2.8);
     agent.pitch += (clamp(climb / Math.max(agent.speed, 1), -0.32, 0.38) - agent.pitch) * clamp(dt * 3, 0, 1);
     const wind = world.windSpeed.value * 0.07;
+    const pace = rush > 0 ? agent.speed * BURST_PACE : agent.speed;
     agent.vel.set(
-      Math.sin(agent.yaw) * agent.speed + world.windDir.value.x * wind,
+      Math.sin(agent.yaw) * pace + world.windDir.value.x * wind,
       climb,
-      Math.cos(agent.yaw) * agent.speed + world.windDir.value.y * wind,
+      Math.cos(agent.yaw) * pace + world.windDir.value.y * wind,
     );
     agent.pos.addScaledVector(agent.vel, dt);
     agent.flapAmp +=
@@ -267,6 +278,7 @@ export function createBirds(options: CreateBirdsOptions): BirdsSystem {
   return {
     group,
     update(dt, _t, camera) {
+      if (rush > 0) rush -= Math.min(0.05, dt);
       let visible = 0;
       for (const agent of agents) {
         updateAgent(agent, Math.min(0.05, dt));
@@ -287,6 +299,26 @@ export function createBirds(options: CreateBirdsOptions): BirdsSystem {
       birdTint.needsUpdate = true;
     },
     reset: spawn,
+    burst(seconds = 4) {
+      rush = seconds;
+      for (const agent of agents) {
+        // Away from the middle and up: each its own way out.
+        const a = Math.atan2(agent.pos.x - options.center.x, agent.pos.z - options.center.z) + (rng() - 0.5);
+        agent.yaw = a;
+        agent.target.set(
+          agent.pos.x + Math.sin(a) * options.radius * 0.6,
+          options.center.y + alt[1],
+          agent.pos.z + Math.cos(a) * options.radius * 0.6,
+        );
+        agent.timer = seconds;
+        agent.perch = -1;
+        if (agent.state === 'perched') {
+          agent.state = 'takeoff';
+          agent.timer = 1.2;
+          agent.vel.set(Math.sin(a), 0.8, Math.cos(a)).multiplyScalar(agent.speed);
+        }
+      }
+    },
     dispose() {
       geometry.dispose();
       if (Array.isArray(mesh.material)) for (const material of mesh.material) material.dispose();

@@ -9,6 +9,8 @@ import {
   hangLantern,
   lowWall,
   rail,
+  SIGN_CREAM,
+  signAt,
   solid,
   stoneHall,
   ubox,
@@ -99,6 +101,28 @@ function hall(b: Buckets, out: GcOut): void {
     GC_PAINT.timber,
   );
   ubox(b, 'wood', CIRCUIT_SPOTS.belt.roll!.look.u, floor + 2.62, h.v1 + 0.1, 2.6, 0.14, 0.14, GC_PAINT.tar);
+  // Its heading across the top; Rory's banner, once he's hired, unrolls below it from the top rail.
+  const ru = CIRCUIT_SPOTS.belt.roll!.look.u;
+  out.signs.push(
+    signAt(ru, floor + 2.3, h.v1 + 0.1, 0, 1, { lines: ['rollBoard'], w: 2.2, h: 0.34 }, 0.006),
+    signAt(
+      ru,
+      floor + 2.1,
+      h.v1 + 0.1,
+      0,
+      1,
+      {
+        lines: ['roryBanner'],
+        w: 1.1,
+        h: 1.0,
+        look: 'cloth',
+        show: 'rory',
+        hang: true,
+        pixels: 448,
+      },
+      0.016,
+    ),
+  );
   // Lanterns on brackets either side of the door (the door's and the roll board's station lamps).
   wallLamp(b, out, CIRCUIT_SPOTS.belt.door!.u + 2.2, h.v1, floor + 3.3, 0, 1, 'belt:door');
   wallLamp(b, out, CIRCUIT_SPOTS.belt.roll!.u - 1.8, h.v1, floor + 3.3, 0, 1, 'belt:roll');
@@ -179,6 +203,15 @@ function yard(b: Buckets, out: GcOut, lite: boolean): void {
     ubox(b, 'wood', pu, y + 1.35, v1 + 0.1, 0.05, 0.05, 0.16, GC_PAINT.tar);
     ubox(b, 'cloth', pu, y + 1.05, v1 + 0.08, 0.12, 0.6, 0.04, 0x6b4a30);
   }
+  // The first two belts' tags on the rail: the tools a reader's belt carries (the pack's words).
+  for (const [k, name] of [
+    [0, 'beltRead'],
+    [1, 'beltSearch'],
+  ] as const) {
+    const pu = S.rack!.look.u - 1.3 + (k * 2.6) / (belts - 1);
+    ubox(b, 'wood', pu, y + 1.5, v1 + 0.2, 0.46, 0.16, 0.03, GC_PAINT.timber);
+    out.signs.push(signAt(pu, y + 1.5, v1 + 0.2, 0, -1, { lines: [name], w: 0.42, h: 0.13 }, 0.021));
+  }
   postLamp(b, out, S.rack!.u + 2.4, v1 + 0.6, 0, -1, 'belt:rack');
   // The proof table against the east wall.
   ubox(b, 'wood', S.proof!.look.u, y + 0.8, S.proof!.look.v, 0.8, 0.08, 1.4, GC_PAINT.timber);
@@ -255,6 +288,64 @@ function ridgeRails(b: Buckets, out: GcOut): void {
   }
 }
 
+/** The three guilds' banners on the ridge (one by each mill), in the order of `MILLS`. */
+const SEAL_BANNERS = [
+  { sign: 'guildMasons', fill: GC_PAINT.masons },
+  { sign: 'guildWeavers', fill: GC_PAINT.weavers },
+  { sign: 'guildMillwrights', fill: GC_PAINT.millwrights },
+] as const;
+/** The banner pole's height and its cloth (m). */
+const SEAL_POLE = 6.4;
+const SEAL_CLOTH = { w: 1.2, h: 2.4 } as const;
+
+/**
+ * A guild's banner pole by a mill's door, its cloth facing (fu, fv): the pole and its crossbar always
+ * stand; the cloth (the pack's guild name, both sides) unfurls at the Seal and stays once sealed.
+ */
+function sealBanner(b: Buckets, out: GcOut, u: number, v: number, fu: number, fv: number, i: number): void {
+  const g = ground(u, v);
+  const p = at(u, 0, v);
+  const top = g + SEAL_POLE;
+  rod(b, 'wood', { x: p.x, y: g - 0.3, z: p.z }, { x: p.x, y: top, z: p.z }, 0.07, 6, GC_PAINT.timber);
+  const half = SEAL_CLOTH.w / 2 + 0.1;
+  rod(
+    b,
+    'wood',
+    at(u + fv * half, top - 0.25, v - fu * half),
+    at(u - fv * half, top - 0.25, v + fu * half),
+    0.035,
+    4,
+    GC_PAINT.timber,
+  );
+  out.circles.push({ x: p.x, z: p.z, r: 0.15, y0: g - 0.5, y1: top, height: SEAL_POLE });
+  const look = SEAL_BANNERS[i] ?? SEAL_BANNERS[0];
+  // Hung just in front of the pole, from the crossbar.
+  out.signs.push(
+    signAt(
+      u,
+      top - 0.3,
+      v,
+      fu,
+      fv,
+      {
+        lines: [look.sign],
+        w: SEAL_CLOTH.w,
+        h: SEAL_CLOTH.h,
+        twoSided: true,
+        look: 'cloth',
+        fill: `#${look.fill.toString(16).padStart(6, '0')}`,
+        colors: SIGN_CREAM,
+        show: 'sealed',
+        hang: true,
+        wrap: true,
+        size: 0.2,
+        pixels: 320,
+      },
+      0.1,
+    ),
+  );
+}
+
 /** A stone tower mill on its pad: tapered tower, a door, a timber cap; its sails (`MillSails`). */
 function mill(b: Buckets, out: GcOut, u: number, v: number, y: number, lite: boolean): MillSails | null {
   const p = at(u, y, v);
@@ -276,6 +367,15 @@ function mill(b: Buckets, out: GcOut, u: number, v: number, y: number, lite: boo
   const fu = toYard.du / l;
   const fv = toYard.dv / l;
   door(b, u + fu * 3.05, v + fv * 3.05, y + 0.1, fu, fv, 1.2, 2.2, GC_PAINT.door);
+  sealBanner(
+    b,
+    out,
+    u + fu * 4.6 + fv * 3.2,
+    v + fv * 4.6 - fu * 3.2,
+    fu,
+    fv,
+    MILLS.findIndex((m) => m.u === u),
+  );
   windowPane(b, u + fu * 2.75, v + fv * 2.75, y + 6.5, fu, fv, 0.5, 0.8);
   windowPane(b, u - fu * 2.55, v - fv * 2.55, y + 9.5, -fu, -fv, 0.5, 0.8);
   // The cap: a timber dome turned into the wind, its windshaft out to the sails' hub.

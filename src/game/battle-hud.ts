@@ -3,6 +3,7 @@ import { courseUrl } from '../learn/content';
 import type { ChoiceQuiz, SourceRef } from '../learn/types';
 import './battle-hud.css';
 import { quizOptions } from '../learn/option-order';
+import { inlineHtml } from '../learn/inline-markup';
 
 export interface BattleHudActions {
   fire(which: 'bearing' | 'port' | 'starboard'): void;
@@ -21,13 +22,8 @@ export interface ReadinessSource {
   readiness(side: number, gun: number): number;
 }
 
-function md(text: string): string {
-  return text
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')
-    .replace(/`(.+?)`/g, '<code>$1</code>');
-}
+/** Course copy as safe HTML: `**bold**`, `*italic*` and `code` (src/learn/inline-markup.ts). */
+const md = inlineHtml;
 
 /** The briefing rows: a small diagram, a title, and one line. Your ship points up in every diagram. */
 const SHIP =

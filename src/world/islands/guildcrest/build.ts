@@ -17,7 +17,7 @@ import {
 } from '../../village/pieces';
 import { lineDeck, type WalkDeck } from '../../village/walk-decks';
 import { guildcrestHeight } from './height';
-import { FRAME, toWorld } from './layout';
+import { FRAME, headingUv, toWorld } from './layout';
 
 /**
  * Guildcrest's building helpers (the town, the abbey and the ridge share them): boxes and points in
@@ -40,6 +40,58 @@ export interface GcOut {
   perches: { x: number; y: number; z: number }[];
   /** The chimneys' tops, for the smoke (world). */
   chimneys: { x: number; y: number; z: number }[];
+  /** Lettering with the pack's words (`quests/guildcrest.json` → `signs`), painted by the world's sign set. */
+  signs: GcSign[];
+}
+
+/** What the story shows: the book's new page, Rory's banner, the Seal's banners on the ridge. */
+export type GcShow = 'page' | 'rory' | 'sealed';
+
+/**
+ * A board or banner with the pack's words: `lines` are sign names (each line one sign's words), at
+ * world (x, y, z), facing heading `heading` (`roll` turns it in its own plane, `tilt` leans its top
+ * back). A sign with `show` stays hidden until the story shows it; a `hang` sign hangs from its
+ * origin (it unrolls from there).
+ */
+export interface GcSign {
+  lines: readonly string[];
+  x: number;
+  y: number;
+  z: number;
+  heading: number;
+  w: number;
+  h: number;
+  roll?: number;
+  tilt?: number;
+  twoSided?: boolean;
+  look?: 'board' | 'cloth';
+  fill?: string;
+  colors?: readonly string[];
+  show?: GcShow;
+  hang?: boolean;
+  /** Its words a line each (a banner's name down the cloth). */
+  wrap?: boolean;
+  /** Letter height as a fraction of its width (`SignStyle.size`; it shrinks to fit). */
+  size?: number;
+  /** Its painted width in atlas pixels (a big cloth seen from afar; `SignOptions.pixels`). */
+  pixels?: number;
+}
+
+/** Cream lettering (on a painted board, a banner's colour or bronze). */
+export const SIGN_CREAM = ['#f6e7c8'] as const;
+
+/** A sign on the frame's face (du, dv) at frame (u, y, v), pushed out `off` m along the face. */
+export function signAt(
+  u: number,
+  y: number,
+  v: number,
+  du: number,
+  dv: number,
+  o: Omit<GcSign, 'x' | 'y' | 'z' | 'heading'>,
+  off = 0,
+): GcSign {
+  const p = toWorld(u + du * off, v + dv * off);
+  return { ...o, x: p.x, y, z: p.z, heading: headingUv(du, dv) };
 }
 
 export function makeOut(): GcOut {
@@ -52,6 +104,7 @@ export function makeOut(): GcOut {
     lamps: [],
     perches: [],
     chimneys: [],
+    signs: [],
   };
 }
 

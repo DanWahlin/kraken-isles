@@ -10,6 +10,8 @@ import {
   groundSpan,
   hangLantern,
   lampPost,
+  SIGN_CREAM,
+  signAt,
   solid,
   stoneHall,
   ubox,
@@ -171,7 +173,7 @@ function innPorch(b: Buckets, out: GcOut): void {
   const l = at(h.u - 1.6, 0, front - 2.6);
   hangLantern(b, out, l.x, top, l.z, YAW_U);
   // The sign: a board hanging from an iron bracket at the west corner (its words are the pack's).
-  const corner = at(h.u - h.w / 2 - 0.05, 0, front + 0.6);
+  const corner = at(h.u - h.w / 2 - 0.05, 0, front + 1.0);
   const s = INN_SIGN;
   const bracket = at(s.u, 0, s.v);
   rod(
@@ -183,33 +185,53 @@ function innPorch(b: Buckets, out: GcOut): void {
     4,
     GC_PAINT.iron,
   );
-  for (const o of [-0.35, 0.35]) {
+  for (const o of [-0.45, 0.45]) {
     const q = at(s.u, 0, s.v + o);
     rod(
       b,
       'metal',
-      { x: q.x, y: s.y + 0.36, z: q.z },
+      { x: q.x, y: s.y + 0.4, z: q.z },
       { x: q.x, y: s.y + 0.57, z: q.z },
       0.012,
       3,
       GC_PAINT.iron,
     );
   }
-  ubox(b, 'wood', s.u, s.y, s.v, 0.06, 0.72, 0.92, 0x2f3d4a);
-  out.cameraBoxes.push({ ...at(s.u, 0, s.v), hx: 0.2, hz: 0.6, rot: YAW_U, y0: s.y - 0.4, y1: s.y + 0.6 });
+  ubox(b, 'wood', s.u, s.y, s.v, 0.06, 0.8, 1.2, 0x2f3d4a);
+  // Its name on both faces, 6 mm off the board.
+  for (const du of [-1, 1])
+    out.signs.push(
+      signAt(
+        s.u,
+        s.y,
+        s.v,
+        du,
+        0,
+        { lines: ['innSign'], w: 1.12, h: 0.7, size: 0.16, wrap: true, fill: '#2f3d4a', colors: SIGN_CREAM },
+        0.036,
+      ),
+    );
+  out.cameraBoxes.push({ ...at(s.u, 0, s.v), hx: 0.2, hz: 0.7, rot: YAW_U, y0: s.y - 0.45, y1: s.y + 0.6 });
 }
 
 /** The inn's sign board: hung out from the west corner, its faces to the lane either side. */
 export const INN_SIGN = {
   u: INN_HOUSE.u - INN_HOUSE.w / 2 - 1.1,
-  v: INN_HOUSE.v - INN_HOUSE.d / 2 + 0.6,
+  v: INN_HOUSE.v - INN_HOUSE.d / 2 + 1.0,
   y: 0,
 } as {
   u: number;
   v: number;
   y: number;
 };
-INN_SIGN.y = ground(INN_SIGN.u, INN_SIGN.v) + 5.2;
+INN_SIGN.y = ground(INN_SIGN.u, INN_SIGN.v) + 3.7;
+
+/** Each guildhall's banner's sign name (the pack's words). */
+const GUILD_SIGN: Readonly<Record<Guildhall['id'], string>> = {
+  masons: 'guildMasons',
+  weavers: 'guildWeavers',
+  millwrights: 'guildMillwrights',
+};
 
 /** A guildhall: a stone hall with crow-stepped gables, a door and windows to the square, a banner. */
 function guildhall(b: Buckets, out: GcOut, g: Guildhall): void {
@@ -250,6 +272,28 @@ function guildhall(b: Buckets, out: GcOut, g: Guildhall): void {
   const yaw = yawAlong(fu, fv);
   box(b, 'cloth', bx.x, eaves - 1.55, bx.z, 0.04, 2.0, 1.0, yaw, g.banner);
   box(b, 'cloth', bx.x, eaves - 2.65, bx.z, 0.04, 0.3, 0.6, yaw, g.banner);
+  // The guild's name on the cloth's face to the square.
+  out.signs.push(
+    signAt(
+      du + fu * 1.6,
+      eaves - 1.55,
+      dv + fv * 1.6,
+      fu,
+      fv,
+      {
+        lines: [GUILD_SIGN[g.id]],
+        w: 0.9,
+        h: 1.8,
+        wrap: true,
+        size: 0.2,
+        pixels: 320,
+        look: 'cloth',
+        fill: `#${g.banner.toString(16).padStart(6, '0')}`,
+        colors: SIGN_CREAM,
+      },
+      0.026,
+    ),
+  );
   out.cameraBoxes.push({ x: bx.x, z: bx.z, hx: 0.2, hz: 0.6, rot: yaw, y0: eaves - 2.9, y1: eaves - 0.4 });
 }
 
@@ -275,7 +319,26 @@ function square(b: Buckets, out: GcOut, lite: boolean): void {
   ubox(b, 'stone', cs.u, y + 0.3 + 1.1, cs.v, 0.55, 2.2, 1.1, GC_PAINT.granite);
   ubox(b, 'stone', cs.u, y + 0.3 + 2.2 + 0.35, cs.v, 0.48, 0.7, 0.9, GC_PAINT.granite, 0, 0.08);
   ubox(b, 'stone', cs.u - 0.295, y + 1.75, cs.v, 0.04, 1.6, 0.8, 0xb8b2a6);
-  ubox(b, 'metal', cs.u - 0.82, y + 0.33, cs.v, 0.08, 0.06, 0.9, GC_PAINT.bronze);
+  // The bronze plate stands on the plinth's west end, leaning back a little.
+  ubox(b, 'metal', cs.u - 0.82, y + 0.46, cs.v, 0.04, 0.3, 1.3, GC_PAINT.bronze, 0, 0, -0.2);
+  out.signs.push(
+    signAt(
+      cs.u - 0.82,
+      y + 0.46,
+      cs.v,
+      -1,
+      0,
+      {
+        lines: ['charterFoot'],
+        w: 1.22,
+        h: 0.24,
+        tilt: 0.2,
+        fill: '#8a5a2a',
+        colors: SIGN_CREAM,
+      },
+      0.027,
+    ),
+  );
   const c = at(cs.u, 0, cs.v);
   out.circles.push({ x: c.x, z: c.z, r: 1.1, y0: y - 0.5, y1: y + 3.4, height: 3.4 });
   // The market cross: three square steps, a shaft and a small head.

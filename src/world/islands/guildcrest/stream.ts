@@ -136,6 +136,7 @@ export function createGuildcrestStream(ctx: IslandStreamCreateContext): Guildcre
     for (const f of system.birds) {
       const b = addIslandBirds(ctx, f.center, f.radius, f.seed, f.perches, f.kind);
       if (b) flocks.push(b);
+      if (b && f.kind) system.swifts = b;
     }
     return system;
   };

@@ -3,11 +3,12 @@ import { createRoot } from 'react-dom/client';
 import { PadEdges, standardPad } from '../../game/puzzles/pad-edges';
 import { Bold } from '../components/Bold';
 import { Rich } from '../components/Rich';
+import { inlinePlain } from '../../learn/inline-markup';
 import { isTyping } from '../typing';
 import './sea-choice.css';
 
 /** A line without its `**bold**` and `code` marks (for screen readers). */
-const plain = (text: string) => text.replace(/\*\*|`/g, '');
+const plain = inlinePlain;
 
 /** One choice on the card. `tried` marks a wrong pick already made (it stays, dimmed). */
 export interface SeaChoiceOption {

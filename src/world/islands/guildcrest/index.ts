@@ -1,4 +1,10 @@
 import { Group, Mesh, Vector3, type Camera, type Material } from 'three/webgpu';
+import { islandSign, onCourse } from '../../../course/active';
+import { islandCourseBoard } from '../../../learn/course-board';
+import type { BirdsSystem } from '../../life/birds';
+import { addCourseBoardNotices, addCourseBoardTimber } from '../../sites/course-board';
+import { SignSet, type PaintedSign } from '../../sites/sign';
+import { COURSE_BOARDS } from '../course-boards';
 import { loadLodSimplifier } from '../../characters/character-lod';
 import { ChunkLods, chunkLodEdges, chunkLodFloor } from '../../village/chunks';
 import type { TierSettings } from '../../../engine/quality';
@@ -10,7 +16,7 @@ import { LampSet, type LampLook } from '../../village/lamp-set';
 import { makeBuckets, meshesFromBuckets } from '../../village/pieces';
 import { buildAbbey } from './abbey';
 import { GUILDCREST_ANCHORS } from './anchors';
-import { makeOut, type GcOut } from './build';
+import { makeOut, type GcOut, type GcShow, type GcSign } from './build';
 import { toWorld, TOWER } from './layout';
 import { addGuildcrestMarket } from './market';
 import { createGuildcrestMist } from './mist';
@@ -52,6 +58,15 @@ export interface GuildcrestWorld {
   }[];
   /** How fast the mills' sails turn (1 their usual pace; 0.25 with reduced motion; 3 at the Seal). */
   setSailPace(pace: number): void;
+  /**
+   * Shows or hides what the story shows (the book's new page, Rory's banner, the Seal's banners);
+   * `unroll` lets a hanging cloth unroll from its rail over a second or two (else it's there at once).
+   */
+  show(what: GcShow, on: boolean, unroll?: boolean): void;
+  /** Whether `what` is shown (or unrolling). */
+  showing(what: GcShow): boolean;
+  /** The swifts round the tower (the stream sets them; null on Lite or without birds). */
+  swifts: BirdsSystem | null;
   /** Turns the sails (within `detail`, by the stream's `shown`). */
   update(dt: number, t: number): void;
   /** The island's plants, built a slice at a time, for `vegetation.addPlants`. */
@@ -105,6 +120,18 @@ export async function createGuildcrestWorldAsync(
   for (; !rr.done; rr = ridge.next()) await breathe();
   const sailParts = rr.value;
   addGuildcrestMarket(buckets, out, lite || o.tier.tier === 'low');
+  // The course notice board at the square's west entrance (docs/specs/COURSE-BOARDS.md): its timber in
+  // the town's chunks, its notices in the island's sign set. None without a course (the dev page).
+  const signs = typeof document === 'undefined' ? null : new SignSet('guildcrest-signs');
+  const courseBoard = signs ? islandCourseBoard('guildcrest') : null;
+  if (signs && courseBoard) {
+    const pose = COURSE_BOARDS.guildcrest;
+    const parts = addCourseBoardTimber(buckets, pose, courseBoard);
+    addCourseBoardNotices(signs, pose, courseBoard);
+    out.colliders.push(parts.box);
+    out.cameraBoxes.push(parts.camera);
+  }
+  const lettering = signs ? addLettering(signs, out.signs) : null;
   await breathe();
   const town = new Group();
   town.name = 'guildcrest-town';
@@ -116,6 +143,7 @@ export async function createGuildcrestWorldAsync(
     permissive: true,
   });
   group.add(town);
+  if (signs?.count) group.add(await signs.finalizeAsync(breathe));
   // The lamps that change, one mesh in the kit's glow material.
   const lamps = new LampSet(out.lamps, o.kit.materials.glow as Material);
   out.lamps.length = 0;
@@ -166,8 +194,12 @@ export async function createGuildcrestWorldAsync(
     setSailPace(p) {
       pace = p;
     },
+    show: (what, on, unroll = false) => lettering?.show(what, on, unroll),
+    showing: (what) => lettering?.showing(what) ?? false,
+    swifts: null,
     update(dt) {
       for (const m of sails) m.rotation.z += SAIL_SPIN * pace * dt;
+      if (lettering?.update(dt)) signs!.update();
     },
     frame(camera) {
       chunkLods.update(camera.position.x, camera.position.y, camera.position.z);
@@ -187,6 +219,94 @@ export async function createGuildcrestWorldAsync(
       sailGeometry?.dispose();
       lamps.dispose();
       rocks.dispose();
+      lettering?.release();
+      signs?.dispose();
     },
+  };
+}
+
+/** How long a hanging cloth takes to unroll (s). */
+const UNROLL = 1.6;
+/** A cloth that's rolled up: this much of its height shows (its rail's roll). */
+const ROLLED = 0.04;
+
+interface Lettered {
+  readonly sign: GcSign;
+  readonly board: PaintedSign;
+  /** The story's say (a `show` sign), and how far it's unrolled (0-1). */
+  on: boolean;
+  open: number;
+}
+
+/**
+ * The island's lettering in `signs` (one draw with the course board's notices): every sign's words are
+ * the pack's, painted now and again whenever a course activates (an `onCourse` hook, released with the
+ * world). A sign with no words is hidden; a `show` sign stays hidden until the story shows it, and a
+ * hanging one unrolls from its rail.
+ */
+function addLettering(signs: SignSet, list: readonly GcSign[]) {
+  const words = (s: GcSign) => {
+    const lines = s.lines.map((n) => islandSign('guildcrest', n));
+    return s.wrap ? lines.flatMap((l) => l.split(' ')) : lines;
+  };
+  // One ink for every line (a wrapped name's lines too).
+  const ink = (s: GcSign, lines: readonly string[]) => (s.colors ? lines.map(() => s.colors![0]) : undefined);
+  const all: Lettered[] = list.map((s) => {
+    const lines = words(s);
+    const board = signs.add(lines, s.w, s.h, {
+      twoSided: s.twoSided,
+      look: s.look,
+      fill: s.fill,
+      colors: ink(s, lines),
+      size: s.size,
+      offsetY: s.hang ? -s.h / 2 : 0,
+      pixels: s.pixels,
+    });
+    board.object.position.set(s.x, s.y, s.z);
+    board.object.rotation.set(-(s.tilt ?? 0), s.heading, s.roll ?? 0, 'YXZ');
+    return { sign: s, board, on: !s.show, open: s.show ? 0 : 1 };
+  });
+  let moving = true;
+  const place = (l: Lettered) => {
+    const o = l.board.object;
+    const blank = l.sign.lines.some((n) => !islandSign('guildcrest', n));
+    o.visible = !blank && l.open > 0;
+    o.scale.y = l.sign.hang ? ROLLED + (1 - ROLLED) * l.open : 1;
+    o.updateMatrix();
+  };
+  for (const l of all) place(l);
+  const release = onCourse(() => {
+    for (const l of all) {
+      const lines = words(l.sign);
+      l.board.redraw(lines, { colors: ink(l.sign, lines) });
+      place(l);
+    }
+    moving = true;
+  });
+  return {
+    show(what: GcShow, on: boolean, unroll: boolean): void {
+      for (const l of all) {
+        if (l.sign.show !== what) continue;
+        l.on = on;
+        if (!on || !unroll || !l.sign.hang) l.open = on ? 1 : 0;
+        place(l);
+      }
+      moving = true;
+    },
+    showing: (what: GcShow) => all.some((l) => l.sign.show === what && l.on),
+    /** Unrolls what's on its way; true when a board moved (the set uploads it). */
+    update(dt: number): boolean {
+      if (!moving) return false;
+      let still = true;
+      for (const l of all) {
+        if (!l.on || l.open >= 1) continue;
+        l.open = Math.min(1, l.open + Math.max(dt, 0) / UNROLL);
+        place(l);
+        still = false;
+      }
+      moving = !still;
+      return true;
+    },
+    release,
   };
 }
