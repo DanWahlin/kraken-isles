@@ -571,11 +571,13 @@ export function makeApi(page, rec, { log = () => undefined } = {}) {
 
     /** Answers the open quiz through its own keys (or a click for a hotspot), then Continue (E). */
     async answerQuiz({ wrong = false, readMs = 2600 } = {}) {
-      const q = await S(() => {
+      const q = await S(async () => {
         const a = window.__dev.learn.getState().quiz;
         if (!a) return null;
         const quiz = a.quiz;
-        const opts = quiz.options?.map((o) => o.id) ?? null;
+        // The panel shows the options shuffled (per quiz and voyage): pick by the order shown.
+        const { quizOptions } = await import('/src/learn/option-order.ts');
+        const opts = quiz.options ? quizOptions(quiz).map((o) => o.id) : null;
         return {
           type: quiz.type,
           right: opts ? opts.indexOf(quiz.answer) : -1,

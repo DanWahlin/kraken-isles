@@ -25,6 +25,25 @@ const gc = (api, js) =>
 const P = (api, name, k) =>
   api.S(([n, k]) => window.__dev.session().debug.puzzle(n)?.[k]?.() ?? null, [name, k]);
 
+/**
+ * Walks up to an NPC and opens the talk with them (by id: near the inn's porch the prompt can name
+ * Callum or Isla instead of Lyra), once nothing else is talking.
+ */
+async function talk(api, spot, id) {
+  await api.walkTo(spot.x, spot.z, { tol: 0.45 });
+  await api.face(spot.npc.x, spot.npc.z);
+  // The welcome ignores a talk: wait it out, then ask again until the talk opens.
+  for (let t0 = Date.now(); Date.now() - t0 < 60_000;) {
+    const busy = await api.S(() => window.__dev.state().welcome || window.__dev.state().dialogue);
+    if (!busy) {
+      await api.S((n) => window.__dev.session().debug.talk(n), id);
+      await api.pause(1200);
+      if (await api.S(() => window.__dev.state().dialogue && !window.__dev.state().welcome)) return;
+    } else await api.pause(500);
+  }
+  api.log(`no talk with ${id}`);
+}
+
 /** The island's choice card, if one is up: read it, then pick (a wrong one first where there is one). */
 async function choose(api, tried) {
   const v = await gc(api, 'd.card()');
@@ -86,10 +105,9 @@ async function lap(api, name, tried, keep) {
       for (let k = 0; k < 120 && (await P(api, name, 'open')); k++)
         if (!(await choose(api, tried))) await api.pause(300);
     };
-    if (shown) {
-      api.mark(`${name} ${st.at}`);
-      await api.cutWhile(go, { head: 14_000, tail: 5_000 });
-    } else await api.cut(go);
+    if (!shown) return;
+    api.mark(`${name} ${st.at}`);
+    await api.cutWhile(go, { head: 14_000, tail: 5_000 });
   }
 }
 
@@ -133,10 +151,10 @@ export default {
     await api.cut(() => skipTalk(page, 30_000));
     // Lyra's song chart on the inn's porch.
     const lyra = await api.cut(() => api.approachSpot('lyra_guild', { back: 3 }));
-    await api.talkTo(lyra);
+    await talk(api, lyra, 'lyra_guild');
     api.mark('Lyra');
     await api.cutWhile(() => drive(api, tried, (s) => s.quests['Q4.1'] === 'done' && !s.dialogue), {
-      head: 45_000,
+      head: 28_000,
       tail: 3_000,
     });
     // Off camera: the Charter Stone and Aidan's carrel.
@@ -144,37 +162,40 @@ export default {
       await questsDone(api, ['Q4.2', 'Q4.3']);
       await api.pause(600);
     });
-    // Brigid and the Pattern Book round the cloister: two stations shown, the rest off camera.
+    // Brigid and the Pattern Book round the cloister: one station shown, the rest off camera.
     const brigid = await api.cut(() => api.approachSpot('brigid', { back: 3 }));
-    await api.talkTo(brigid);
+    await talk(api, brigid, 'brigid');
     api.mark('Brigid');
     await api.cutWhile(() => drive(api, tried, (s) => s.quests['Q4.4'] === 'book' && !s.dialogue), {
       head: 8_000,
       tail: 2_000,
     });
-    await lap(api, 'pattern-book', tried, 2);
-    await api.cut(() =>
-      drive(api, tried, (s) => s.quests['Q4.4'] === 'done' && !s.dialogue && !s.quiz && !s.reveal),
-    );
-    // Fergus and the Journeyman's Toolbelt in the yard: its first two stations.
+    await lap(api, 'pattern-book', tried, 1);
+    // The rest of the lap off camera.
+    await api.cut(async () => {
+      await questsDone(api, ['Q4.4']);
+      await api.pause(600);
+    });
+    // Fergus and the Journeyman's Toolbelt in the yard: its first station.
     await api.cut(async () => {
       await questsDone(api, ['Q4.5', 'Q4.6']);
       await api.pause(600);
     });
     const fergus = await api.cut(() => api.approachSpot('fergus', { back: 3 }));
-    await api.talkTo(fergus);
+    await talk(api, fergus, 'fergus');
     api.mark('Fergus');
     await api.cutWhile(() => drive(api, tried, (s) => s.quests['Q4.7'] === 'belt' && !s.dialogue), {
       head: 6_000,
       tail: 2_000,
     });
-    await lap(api, 'toolbelt', tried, 2);
-    await api.cut(() =>
-      drive(api, tried, (s) => s.quests['Q4.7'] === 'done' && !s.dialogue && !s.quiz && !s.reveal),
-    );
+    await lap(api, 'toolbelt', tried, 1);
+    await api.cut(async () => {
+      await questsDone(api, ['Q4.7']);
+      await api.pause(600);
+    });
     // Abbess Seren's Toolbelt Trial (its middle trimmed) and the Seal.
     const seren = await api.cut(() => api.approachSpot('seren', { back: 3 }));
-    await api.talkTo(seren);
+    await talk(api, seren, 'seren');
     api.mark('Trial');
     await api.cutWhile(
       async () => {
@@ -190,7 +211,7 @@ export default {
           } else await api.pause(250);
         }
       },
-      { head: 26_000, tail: 4_000 },
+      { head: 18_000, tail: 4_000 },
     );
     api.mark('Seal');
     await api.waitFor(() => !window.__dev.session().debug.island('guildcrest').sealing(), null, 40_000);

@@ -1,6 +1,6 @@
 # Spec: Island 04, Guildcrest (Chapter 04 · Skills and Custom Agents)
 
-> Status: **design spec, every decision made** (2026-11-01). Dan asked for the island to be built
+> Status: **built and playable** (2026-11-01; stages 0-5, §15). Written as a **design spec, every decision made**. Dan asked for the island to be built
 > overnight with no questions, so this spec decides everything and gives the reason in §0. Course
 > source: `github/copilot-app-for-beginners` `main` at `dd7cffa`, `04-skills-custom-agents/README.md`
 > (chapter hash `349cde01aecd` in `lock.json`). The snapshot is in the pack (commit "Course sync:
@@ -1181,7 +1181,7 @@ record it in §15).
 | A-9 | The chart: miniature, card, status, fast travel; the silhouette from Keelhaven's Gate Light (H7) |
 | A-10 | Starfish 5/5, chests 3/3, bottles 4/4 collectable and saved |
 | A-11 | Voices for every line, one voice per character, lipsync, subtitles |
-| A-12 | Guildcrest Air plays on the island and in the Songbook after the song chart |
+| A-12 | The island's theme (Harp's Return, §15) plays on the island and in the Songbook after the song chart |
 | A-13 | `ASSETS.md`, `ART_PROVENANCE.md`, `docs/voices.md`, credits updated; `check:secrets` passes |
 
 ### 13.2 Screenshots (`tools/guildcrest-shots.mjs`, JPEG, 1920 × 1080)
@@ -1644,3 +1644,41 @@ hitches the game wouldn't); `guildcresttest` walks onto each starfish; `wayfindt
 Guildcrest in its sitting and walks Guildcrest's reach by default (Guildcrest's debug has
 `railedTreads`/`stairHeads` from its flights); the session's debug has `shot` (a still camera) and
 Guildcrest's `signs` and `showing`; video scenarios `battle4` and `guildcrest`.
+
+**Gates (stage 4, re-run on the final head after the music change where noted):**
+
+| Gate | Result |
+| --- | --- |
+| `typecheck`, `lint`, `format:check` (final head) | pass |
+| `npm test` (final head) | pass, 213 files, 1562 tests |
+| `build`, `check:budgets`, `check:secrets` (final head) | pass (vendor-three 251.5/256 KB; there's no music budget) |
+| `guildcresttest` WebGPU High, fight (final head) | pass, 148 shots, no console error, empty hitch guard |
+| `guildcresttest` WebGL2 Lite, skip (final head) | pass, 137 shots |
+| `guildcresttest` WebGL2 Low, fight and skip | pass |
+| `check:audio --flow=islands` (final head, Slow 4G, to Guildcrest) | pass: Harp's Return starts 474 ms after it's asked for, 0 music gaps, 24 voiced, 0 late |
+| `check:audio` (opening) | pass |
+| `guildcrest-savetest` (reload, sail away and back) | pass |
+| `wayfindtest` (Guildcrest's reach), `questtest`, `cardtest` | pass |
+| `battletest` 3 / 4 | pass, peaks 140 / 135 programs |
+| `revoyagetest` | pass |
+| `check:frame-budgets` WebGPU (all tiers) | pass: Guildcrest Lite 186k/70, Low 302k/91, Medium 614k/183, High 1.16M/185, Ultra 1.32M/185 |
+| `check:frame-budgets` WebGL2 (Lite, Low, Medium) | pass |
+| `check:memory` | pass (`heapFloorMB` 15 → 17, measured reason in budgets.json); Guildcrest High 497 MB tracked |
+| `check:opening` | pass, 133 ms worst gap |
+| `flickertest` (Guildcrest's views, `--audit`) | 5/5 ok |
+| Census WebGPU landing/walk | Lite 99/96, Low 119/112, Medium 128/121, High 132/125, Ultra 139/132 (Keelhaven still resident) |
+| Census WebGL2 landing/walk | Lite 97/94, Low 115/108, Medium 118/111 |
+| `cameratest` near Guildcrest | 0 bad frames |
+| `test:e2e` | 6/6 |
+| Video (`tools/video/record.mjs --scenario=guildcrest`, High WebGPU, game audio) | one take, 168 s, 60 fps, 0 gaps over 100 ms |
+
+**The recorder (final head):** its quiz answers went by the pack's option order, but the panel shows
+them shuffled (per quiz and voyage), so a take could sit on a wrong answer until it timed out; it now
+picks by `quizOptions`, the order shown. The Guildcrest tour talks to each NPC by id once the welcome
+is over (a talk during the welcome is ignored, and at the inn's porch the prompt can name Callum or
+Isla), shows one station of each circuit and does the rest off camera. The `battle4` take still stops
+where battle 1's script expects a pick card after a wrong answer (battle 4 offers repairs), so the
+tour has no battle (open, issue 375).
+
+**Open:** issues 366 (five Azure stopgap voices) and 367 (the four `b4.*` lines), both waiting for the
+ElevenLabs credits on 2026-11-10; 374 (no Songbook, Phase 3); 375 (the recorder's battle 4 take).
