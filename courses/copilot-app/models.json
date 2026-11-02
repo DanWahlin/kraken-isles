@@ -2,8 +2,8 @@
   "source": {
     "repo": "github/docs",
     "path": "data/tables/copilot",
-    "commit": "02c25d16369fe27f9bdb28d1201f6b452f0d21dd",
-    "fetchedAt": "2026-10-25T21:52:41.676Z"
+    "commit": "ccee54752cfef83be7f2d18e18b2f74dd191e041",
+    "fetchedAt": "2026-11-02T22:16:25.155Z"
   },
   "models": [
     {
@@ -103,6 +103,15 @@
       "category": "Versatile",
       "taskArea": "General-purpose coding and agent tasks",
       "excelsAt": "Balanced everyday interactive and agentic coding",
+      "ga": true
+    },
+    {
+      "name": "GPT-6.1 Terra",
+      "provider": "openai",
+      "family": "GPT",
+      "category": "Versatile",
+      "taskArea": "General-purpose coding and agent tasks",
+      "excelsAt": "Everyday agentic coding and terminal work",
       "ga": true
     },
     {
