@@ -1,0 +1,87 @@
+{
+  "id": "gc.seren.assign.01",
+  "speaker": "Seren",
+  "text": "One more job: take one recommendation from the review, and carry it through the inner loop.",
+  "words": [
+    {
+      "word": "One",
+      "start": 0.031,
+      "end": 0.372
+    },
+    {
+      "word": "more",
+      "start": 0.372,
+      "end": 0.585
+    },
+    {
+      "word": "job",
+      "start": 0.585,
+      "end": 1.436
+    },
+    {
+      "word": "take",
+      "start": 1.436,
+      "end": 1.819
+    },
+    {
+      "word": "one",
+      "start": 1.819,
+      "end": 2.117
+    },
+    {
+      "word": "recommendation",
+      "start": 2.117,
+      "end": 2.925
+    },
+    {
+      "word": "from",
+      "start": 2.925,
+      "end": 3.137
+    },
+    {
+      "word": "the",
+      "start": 3.137,
+      "end": 3.265
+    },
+    {
+      "word": "review",
+      "start": 3.265,
+      "end": 3.734
+    },
+    {
+      "word": "and",
+      "start": 3.734,
+      "end": 3.946
+    },
+    {
+      "word": "carry",
+      "start": 3.946,
+      "end": 4.329
+    },
+    {
+      "word": "it",
+      "start": 4.329,
+      "end": 4.372
+    },
+    {
+      "word": "through",
+      "start": 4.372,
+      "end": 4.67
+    },
+    {
+      "word": "the",
+      "start": 4.67,
+      "end": 4.797
+    },
+    {
+      "word": "inner",
+      "start": 4.797,
+      "end": 5.01
+    },
+    {
+      "word": "loop",
+      "start": 5.01,
+      "end": 5.26
+    }
+  ]
+}

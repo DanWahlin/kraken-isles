@@ -18,8 +18,17 @@ import type { QuestState } from './story';
  */
 const ISLAND = 'keelhaven';
 
-/** The tracker's header: the island's name (the game's) and the course's chapter, goal and next. */
-export let KEELHAVEN_TRACKER: { name: string; chapter: string; goal: string; next: string } = {
+/**
+ * The tracker's header: the island's name (the game's) and the course's chapter, goal and next.
+ * `nextSail` replaces `next` once the island after it is open (src/game/keelhaven-island.ts).
+ */
+export let KEELHAVEN_TRACKER: {
+  name: string;
+  chapter: string;
+  goal: string;
+  next: string;
+  nextSail?: string;
+} = {
   name: 'Keelhaven',
   chapter: '',
   goal: '',

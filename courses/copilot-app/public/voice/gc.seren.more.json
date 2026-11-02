@@ -1,0 +1,82 @@
+{
+  "id": "gc.seren.more",
+  "speaker": "Seren",
+  "text": "I've one more job for you, if you want it. Ask me when you're ready.",
+  "words": [
+    {
+      "word": "I've",
+      "start": 0.031,
+      "end": 0.287
+    },
+    {
+      "word": "one",
+      "start": 0.287,
+      "end": 0.372
+    },
+    {
+      "word": "more",
+      "start": 0.372,
+      "end": 0.627
+    },
+    {
+      "word": "job",
+      "start": 0.627,
+      "end": 0.797
+    },
+    {
+      "word": "for",
+      "start": 0.797,
+      "end": 0.968
+    },
+    {
+      "word": "you",
+      "start": 0.968,
+      "end": 1.138
+    },
+    {
+      "word": "if",
+      "start": 1.138,
+      "end": 1.308
+    },
+    {
+      "word": "you",
+      "start": 1.308,
+      "end": 1.436
+    },
+    {
+      "word": "want",
+      "start": 1.436,
+      "end": 1.734
+    },
+    {
+      "word": "it",
+      "start": 1.734,
+      "end": 1.861
+    },
+    {
+      "word": "Ask",
+      "start": 1.861,
+      "end": 2.158
+    },
+    {
+      "word": "me",
+      "start": 2.158,
+      "end": 2.287
+    },
+    {
+      "word": "when",
+      "start": 2.287,
+      "end": 2.755
+    },
+    {
+      "word": "you're",
+      "start": 2.755,
+      "end": 3.052
+    },
+    {
+      "word": "ready",
+      "start": 3.052,
+      "end": 3.107
+    }
+  ]
+}

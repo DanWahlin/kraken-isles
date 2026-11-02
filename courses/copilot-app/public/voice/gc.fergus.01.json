@@ -1,0 +1,92 @@
+{
+  "id": "gc.fergus.01",
+  "speaker": "Fergus",
+  "text": "You don't call one helper for every repair, Captain. You call the plumber, the electrician, the roofer.",
+  "words": [
+    {
+      "word": "You",
+      "start": 0.052083,
+      "end": 0.234375
+    },
+    {
+      "word": "don't",
+      "start": 0.234375,
+      "end": 0.45575
+    },
+    {
+      "word": "call",
+      "start": 0.45575,
+      "end": 0.76825
+    },
+    {
+      "word": "one",
+      "start": 0.76825,
+      "end": 1.015625
+    },
+    {
+      "word": "helper",
+      "start": 1.015625,
+      "end": 1.40625
+    },
+    {
+      "word": "for",
+      "start": 1.40625,
+      "end": 1.588541
+    },
+    {
+      "word": "every",
+      "start": 1.588541,
+      "end": 1.835958
+    },
+    {
+      "word": "repair",
+      "start": 1.835958,
+      "end": 2.460958
+    },
+    {
+      "word": "Captain",
+      "start": 2.460958,
+      "end": 3.90625
+    },
+    {
+      "word": "You",
+      "start": 3.90625,
+      "end": 4.0495
+    },
+    {
+      "word": "call",
+      "start": 4.0495,
+      "end": 4.296875
+    },
+    {
+      "word": "the",
+      "start": 4.296875,
+      "end": 4.414083
+    },
+    {
+      "word": "plumber",
+      "start": 4.414083,
+      "end": 4.934916
+    },
+    {
+      "word": "the",
+      "start": 4.934916,
+      "end": 5.078125
+    },
+    {
+      "word": "electrician",
+      "start": 5.078125,
+      "end": 5.9375
+    },
+    {
+      "word": "the",
+      "start": 5.9375,
+      "end": 6.054708
+    },
+    {
+      "word": "roofer",
+      "start": 6.054708,
+      "end": 6.304708
+    }
+  ]
+}

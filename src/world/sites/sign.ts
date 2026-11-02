@@ -162,6 +162,11 @@ export interface SignOptions extends SignStyle {
   twoSided?: boolean;
   /** Moves the board down (negative) or up from `object`'s origin, in metres (a hanging sign). */
   offsetY?: number;
+  /**
+   * Paints the board this many atlas pixels wide instead of by its size (a big cloth seen from afar,
+   * with a few big words, needs far fewer than its metres would give it).
+   */
+  pixels?: number;
 }
 
 /** Boards are laid out (frame, lettering) at this width in pixels, then painted scaled to their size. */
@@ -246,7 +251,8 @@ export class SignSet {
 
   add(lines: readonly string[], w: number, h: number, o: SignOptions = {}): PaintedSign {
     if (this.merged) throw new Error(`SignSet ${this.name}: add() after finalize()`);
-    const { twoSided = false, offsetY = 0, ...style } = o;
+    const { twoSided = false, offsetY = 0, pixels, ...style } = o;
+    const pw = pixels ? Math.round(Math.min(signPixels(w), pixels)) : signPixels(w);
     const object = new Object3D();
     object.name = `sign: ${lines[0]}`;
     const entry: SignEntry = {
@@ -255,8 +261,8 @@ export class SignSet {
       h,
       offsetY,
       twoSided,
-      pw: signPixels(w),
-      ph: Math.max(1, Math.round((signPixels(w) * h) / w)),
+      pw,
+      ph: Math.max(1, Math.round((pw * h) / w)),
       lines,
       style,
       x: 0,

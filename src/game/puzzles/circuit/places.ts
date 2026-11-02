@@ -22,11 +22,17 @@ export const CIRCUIT_PLACES = {
     'gate2',
     'seaGate',
   ],
+  /** A cloister's book round (the Pattern Book): a book found, read, changed, proofed, reloaded and used. */
+  book: ['shelf', 'spine', 'desk', 'proof', 'bell', 'lectern'],
+  /** A guildhall yard (the Journeyman's Toolbelt): a role written, fitted, proofed, loaded, called, used. */
+  belt: ['indenture', 'rack', 'proof', 'door', 'roll', 'bench', 'testBench'],
 } as const;
 
 export type CircuitKind = keyof typeof CIRCUIT_PLACES;
 export type RingPlace = (typeof CIRCUIT_PLACES.ring)[number];
 export type FlightPlace = (typeof CIRCUIT_PLACES.flight)[number];
+export type BookPlace = (typeof CIRCUIT_PLACES.book)[number];
+export type BeltPlace = (typeof CIRCUIT_PLACES.belt)[number];
 
 /**
  * What a station asks of the player: `choose` (one option; a wrong one goes back with its reason),

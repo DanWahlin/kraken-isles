@@ -129,12 +129,17 @@
       "chapter": "04-skills-custom-agents",
       "label": "04 · Skills & Custom Agents",
       "minutes": 60,
+      "seal": "Seal of Guildcrest",
       "topics": [
         "Instructions vs. skills vs. custom agents",
         "Updating the book-app-reviewer skill",
         "A read-only custom agent",
         "Validating a skill-guided change"
-      ]
+      ],
+      "arrival": {
+        "eyebrow": "Chapter 04 · Skills & Custom Agents",
+        "line": "Write the chart once, hire the right hands"
+      }
     },
     {
       "island": "sunspire",
@@ -302,6 +307,14 @@
           "nav": "wingman.kh.03",
           "starfish": "wingman.starfish.keelhaven"
         }
+      },
+      "guildcrest": {
+        "landing": ["gc.juno.arrive.01"],
+        "welcome": ["wingman.gc.01", "@starfish"],
+        "tips": {
+          "nav": "wingman.gc.nav",
+          "starfish": "wingman.starfish.guildcrest"
+        }
       }
     },
     "sail": {
@@ -375,6 +388,28 @@
           {
             "quiz": "N2.3",
             "raiders": ["Port Jam", "Same Lookout"]
+          }
+        ]
+      },
+      "passage-keelhaven-guildcrest": {
+        "chapter": "03",
+        "won": "Three habits sank, and the evidence held. Guildcrest lies ahead, Captain.",
+        "wonLine": "b4.juno.won",
+        "waves": [
+          {
+            "quiz": "N3.1",
+            "raiders": ["Confident Guess", "Looks Fine"],
+            "line": "b4.juno.sails"
+          },
+          {
+            "quiz": "N3.2",
+            "raiders": ["First Take", "Green Enough"],
+            "line": "b4.wingman.wave2"
+          },
+          {
+            "quiz": "N3.3",
+            "raiders": ["Unchecked", "No Second Look"],
+            "line": "b4.wingman.wave3"
           }
         ]
       }

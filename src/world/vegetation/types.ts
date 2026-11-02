@@ -26,7 +26,8 @@ export type PlantSpecies =
   | 'log'
   | 'cactus'
   | 'brush'
-  | 'cypress';
+  | 'cypress'
+  | 'pineTree';
 
 export type GrassKind = 'seaOats' | 'meadow' | 'creeper' | 'moss' | 'seedHead';
 

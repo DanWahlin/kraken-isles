@@ -4,6 +4,12 @@ import { positionWorld } from 'three/tsl';
 import { createPost } from '../engine/post';
 import { compileProgressively, warmProgressively, warmTerrainLods } from '../engine/warm';
 import { ISLANDS } from '../game/islands';
+import { guildcrestTerrainWater } from '../world/islands/guildcrest/height';
+import { GUILDCREST_FLORA } from '../world/islands/guildcrest/flora';
+import { GUILDCREST_PLANT_LOOK } from '../world/islands/guildcrest/vegetation';
+import { createGuildcrestWorldAsync } from '../world/islands/guildcrest';
+import { auditCoplanar, type CoplanarAuditOptions } from './coplanar-audit';
+import { GUILDCREST, toWorld as gcWorld } from '../world/islands/guildcrest/layout';
 import { KEELHAVEN_FLORA } from '../world/islands/keelhaven/flora';
 import { keelhavenTerrainWater } from '../world/islands/keelhaven/height';
 import { loadVillageKit } from '../world/village/kit';
@@ -68,6 +74,7 @@ function noHomePlants(): IslandVegetationRules {
     'cactus',
     'brush',
     'cypress',
+    'pineTree',
   ];
   const empty = { minX: 0, maxX: 0, minZ: 0, maxZ: 0 };
   return {
@@ -109,6 +116,16 @@ const KEELHAVEN_COVE = toWorld(0, 0);
 function keelhavenPose(eye: readonly number[], target: readonly number[]): CamPose {
   const e = toWorld(eye[0]!, eye[1]!);
   const t = toWorld(target[0]!, target[1]!);
+  return [
+    [e.x, eye[2]!, e.z],
+    [t.x, target[2]!, t.z],
+  ];
+}
+
+/** A camera pose in Guildcrest's frame: eye at (u, v, y), looking at (u, v, y). */
+function guildcrestPose(eye: readonly number[], target: readonly number[]): CamPose {
+  const e = gcWorld(eye[0]!, eye[1]!);
+  const t = gcWorld(target[0]!, target[1]!);
   return [
     [e.x, eye[2]!, e.z],
     [t.x, target[2]!, t.z],
@@ -281,6 +298,67 @@ const PACKS: Record<string, PackPreset> = {
   },
 };
 
+PACKS.guildcrest = {
+  sky: GUILDCREST.sky,
+  mood: GUILDCREST.mood,
+  views: {
+    // The hero shots (spec §2.7) and the progress set.
+    approach: [
+      [5480, 24, -230],
+      [5900, 60, 250],
+    ],
+    'sea-1500': [
+      [4700, 10, -500],
+      [5900, 70, 250],
+    ],
+    harbour: guildcrestPose([-232, 30, 8], [-150, 46, 6]),
+    square: [
+      [5858, 16, 120],
+      [5885, 12, 160],
+    ],
+    cloister: guildcrestPose([-12, 122, 57], [24, 128, 36]),
+    ridge: guildcrestPose([70, 140, 56], [150, 205, 58]),
+    tower: [
+      [6060, 46, 250],
+      [6025, 70, 226],
+    ],
+    aerial: guildcrestPose([-620, -260, 420], [20, 60, 30]),
+    top: [
+      [5904, 1100, 258],
+      [5900, 0, 250],
+    ],
+    'from-south': guildcrestPose([300, -700, 30], [60, 60, 80]),
+    // From the Keelhaven passage (H7, 1.1 km off the loch's mouth, the swap distance) and the north-east.
+    horizon: guildcrestPose([-1250, -60, 30], [40, 60, 80]),
+    'far-ne': guildcrestPose([200, 1250, 30], [60, 40, 60]),
+  },
+  groundViews: (groundAt) => {
+    const onGround = (u: number, v: number, above: number) => {
+      const p = gcWorld(u, v);
+      return [p.x, groundAt(p.x, p.z) + above, p.z];
+    };
+    const at = (u: number, v: number, y: number) => {
+      const p = gcWorld(u, v);
+      return [p.x, y, p.z];
+    };
+    return {
+      landing: [onGround(-192, 15, 1.7), at(-150, 50, 8)],
+      'quay-lane': [onGround(-170, 30, 1.7), at(-96, 46, 11)],
+      brae: [onGround(-80, 56, 1.7), at(-18, 106, 38)],
+      linn: [onGround(-74, 44, 1.7), at(-30, 63, 26)],
+      garth: [onGround(9, 118, 1.7), at(40, 140, 40)],
+      'walk-north': [onGround(10, 144, 1.7), at(40, 144, 38)],
+      terrace: [onGround(74, 124, 1.7), at(56, 114, 66)],
+      gate: [onGround(-26, 100, 1.7), at(-10, 118, 38)],
+      guildhalls: [onGround(-112, 34, 2.2), at(-80, 56, 14)],
+      abbey: [onGround(-60, 64, 2.4), at(10, 112, 52)],
+      mills: [onGround(96, 160, 2), at(150, 200, 64)],
+      yard: [onGround(80, 150, 1.7), at(150, 214, 62)],
+      glen: [onGround(30, 64, 1.7), at(-40, 62, 20)],
+    };
+  },
+};
+
 const h = await createDevHarness();
 const { q, backend, tier, canvas, renderer, engine } = h;
 const { scene, camera, clock } = engine;
@@ -312,19 +390,27 @@ const terrain = createTerrain({
         seabed: KEELHAVEN.terrain.seabed,
         freshWater: q.has('noart') ? null : keelhavenTerrainWater(),
       }
-    : {}),
+    : packName === 'guildcrest'
+      ? {
+          prefilter: GUILDCREST.terrain.prefilter,
+          maxMergedTriangles: GUILDCREST.terrain.maxMergedTriangles,
+          morphFrames: GUILDCREST.terrain.morphFrames,
+          seabed: GUILDCREST.terrain.seabed,
+          freshWater: q.has('noart') ? null : guildcrestTerrainWater(),
+        }
+      : {}),
 });
 scene.add(terrain.group);
 // The streamed islands lend the ocean their floor (Anchorage's and Meridian's are in its home tile).
-if (packName === 'thousand-bough' || packName === 'keelhaven') {
+if (packName === 'thousand-bough' || packName === 'keelhaven' || packName === 'guildcrest') {
   const build = waterDepthTileFromTerrain(data, packName);
   let r = build.next();
   while (!r.done) r = build.next();
   addWaterDepthTile(r.value);
 }
 const coastFoam = createCoastFoam(data, terrain.heightField, {
-  exposure: packName === 'keelhaven' ? 1 : 0,
-  maxDistance: packName === 'keelhaven' ? 1100 : 620,
+  exposure: packName === 'keelhaven' || packName === 'guildcrest' ? 1 : 0,
+  maxDistance: packName === 'keelhaven' || packName === 'guildcrest' ? 1100 : 620,
 });
 scene.add(coastFoam);
 
@@ -366,6 +452,63 @@ if (packName === 'keelhaven' && !q.has('noart')) {
     );
     patch.group.visible = true;
   }
+}
+
+// Guildcrest's world art (spec §12 stage 2A), as Keelhaven's: its plants a patch, its gulls and swifts.
+let gcUpdate: ((dt: number, t: number) => void) | null = null;
+if (packName === 'guildcrest' && !q.has('noart')) {
+  const breathe = () => Promise.resolve();
+  const kit = await loadVillageKit();
+  const gcWorld = await createGuildcrestWorldAsync({ tier, heightField: terrain.heightField, kit }, breathe);
+  scene.add(gcWorld.group);
+  khFrame = (c) => gcWorld.frame(c);
+  gcUpdate = (dt, t) => gcWorld.update(dt, t);
+  if (tier.birds > 0)
+    for (const f of gcWorld.birds) {
+      if (f.kind?.count === 0) continue;
+      const b = createBirds({
+        tier,
+        perches: f.perches,
+        center: f.center,
+        radius: f.radius,
+        seed: f.seed,
+        ...f.kind,
+      });
+      scene.add(b.group);
+      khBirds.push(b);
+    }
+  if (!q.has('noveg')) {
+    vegetation = await createVegetation({
+      heightField: terrain.heightField,
+      heightGrid: terrain.heightGrid,
+      tier,
+      renderer,
+      island: noHomePlants(),
+    });
+    scene.add(vegetation.group);
+    const patch = await addIslandPlants(
+      { skipShadows: false },
+      vegetation,
+      await gcWorld.plants(breathe),
+      'guildcrest-plants',
+      GUILDCREST_FLORA,
+      terrain,
+      q.has('nolook') ? undefined : GUILDCREST_PLANT_LOOK,
+    );
+    patch.group.visible = true;
+  }
+}
+
+// `?sil`: Guildcrest's far silhouette in place of its ground, art and plants.
+if (packName === 'guildcrest' && q.has('sil')) {
+  const { createGuildcrestSilhouette } = await import('../world/islands/guildcrest/silhouette');
+  const sil = createGuildcrestSilhouette(tier.tier, () => Promise.resolve());
+  await sil.ready;
+  terrain.group.visible = false;
+  coastFoam.visible = false;
+  for (const o of scene.children) if (o.name === 'guildcrest' || o === vegetation?.group) o.visible = false;
+  for (const b of khBirds) b.group.visible = false;
+  scene.add(sil.group);
 }
 
 // `?sil`: Keelhaven's far silhouette in place of its ground, art and plants (to compare the two).
@@ -410,6 +553,7 @@ engine.add({
     terrain.update(camera);
     vegetation?.update(camera);
     khFrame?.(camera);
+    gcUpdate?.(dt, t);
     for (const b of khBirds) b.update(dt, t, camera);
     focus.set(camera.position.x, 0, camera.position.z);
     sky.update(clock, focus, dt, camera);
@@ -484,13 +628,18 @@ const frozenAt = new Vector3();
   still: () => engine.renderStill(),
   restartJitter: () => post?.restartJitter(),
   terrainStats,
+  /** Static z-fighting audit of the island's world art (coplanar-audit.ts; Keelhaven's or Guildcrest's). */
+  coplanar: (o: Omit<CoplanarAuditOptions, 'skip'> = {}) => {
+    const root = scene.children.find((c) => c.name === 'guildcrest' || c.name === 'keelhaven');
+    return root ? auditCoplanar(root, o) : null;
+  },
   vegetationStats: () => vegetation?.stats() ?? null,
   heightAt: (x: number, z: number) => terrain.heightField.heightAt(x, z),
   /** The town's and the works' chunks: triangles, their index levels (if any), vertices. */
   lodInfo: () => {
     const rows: unknown[] = [];
     scene.traverse((o) => {
-      if (!(o instanceof Mesh) || !o.name.startsWith('kh-yard')) return;
+      if (!(o instanceof Mesh) || !(o.name.startsWith('kh-yard') || o.name.startsWith('gc-town'))) return;
       const g = o.geometry;
       rows.push([o.name, g.index?.count, g.attributes.position!.count, g.userData.lodRanges ?? null]);
     });

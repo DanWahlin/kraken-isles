@@ -5,9 +5,9 @@ course in `courses/` ([COURSE-PACKS.md](specs/COURSE-PACKS.md)), so you can chan
 TypeScript, and the weekly refresh workflows can update it and check it. Each pack is part of the
 build: a change reaches players with the next deploy.
 
-There are two packs: `courses/copilot-app/` (GitHub Copilot app for Beginners: Anchorage, Port Meridian
-and Thousand-Bough, voiced, and Keelhaven's Chapter 03 content, written before its island: see
-[Content ahead of its island](#content-ahead-of-its-island)) and `courses/copilot-cli/` (GitHub Copilot CLI for Beginners: Anchorage only,
+There are two packs: `courses/copilot-app/` (GitHub Copilot app for Beginners: Anchorage, Port Meridian,
+Thousand-Bough, Keelhaven and Guildcrest, voiced; written before their islands, as
+[Content ahead of its island](#content-ahead-of-its-island) describes) and `courses/copilot-cli/` (GitHub Copilot CLI for Beginners: Anchorage only,
 Chapter 00, captions only). To add one, see [Adding a course](adding-a-course.md).
 
 ## The files
@@ -110,7 +110,8 @@ so VS Code and other editors check your edit as you type and show each field's d
   the cabin `briefing`; each island's `welcome` (`@nav` and `@starfish` mark where its `tips` go; they're
   left out when the tips are off), `welcomeBack` and `landing`; the `sail` line; `npcVoiced` (what an
   NPC with no script says instead of a bark); `setPieces` (the gondola's line); and the sea `battles`
-  (each wave's quiz and its raiders' names, and the line when it's won). A battle starts once its home
+  (each wave's quiz and its raiders' names, and the line when it's won; optionally a voiced crew line as
+  each wave sails in, `waves[].line`, and the won line voiced, `wonLine`). A battle starts once its home
   island's story says `sealed`.
 - **`migrations`**: how an older save moves to today's ids when it loads. `quests` are rules in the
   story's format (below), run in order when a session starts: `{ "when": { "Q0.3": "done", "Q0.4": null },
@@ -158,8 +159,10 @@ so VS Code and other editors check your edit as you type and show each field's d
   first welcome), `trialStarted` (Nell waits at the pier head), `sealed`, `gangwayDown`, and the events
   `landed` (a session starts) and `setSail` (you take the helm); Port Meridian `firstVisit` and `sealed`;
   Thousand-Bough `firstVisit`, `gondolaOpen`, `secondBridge`, `practiceStarted`, `basketOpen`,
-  `skipCrownView` and `sealed`. Keelhaven (in build) will ask for `firstVisit`, `dockKitted`,
-  `searchHullDown`, `prHullsDown` and `sealed` (docs/specs/ISLAND-03-keelhaven.md, § Wiring contract).
+  `skipCrownView` and `sealed`; Keelhaven `firstVisit`, `dockKitted`, `searchHullDown`, `prHullsDown` and
+  `sealed`; Guildcrest `firstVisit`, `bookCopied` (the copied book's page), `journeymanHired` (Rory's
+  banner) and `sealed` (the guilds' banners on the ridge) (docs/specs/ISLAND-04-guildcrest.md, § Wiring
+  contract).
   Your quest ids are yours: the game never names one.
 - **What's next** (`tracker.next`): the tracker's line once every task's done. `tracker.nextSail`
   (Anchorage and Thousand-Bough) replaces it once the next island is open: the island whose registry
@@ -319,7 +322,8 @@ so VS Code and other editors check your edit as you type and show each field's d
 ## Content ahead of its island
 
 A course can write an island's content before the game has the island (it isn't in the registry
-yet: its world is in build, docs/adding-an-island.md). Keelhaven's Chapter 03 content is written so.
+yet: its world is in build, docs/adding-an-island.md). Guildcrest's Chapter 04 content was written so
+(and Keelhaven's Chapter 03 before it); both islands are in the game now.
 
 - **The game leaves it out** until the island is in the registry (`withoutIslandsAhead`,
   src/course/split.ts, when a voyage loads the pack): the island's chapter (its core and its part),
@@ -336,7 +340,11 @@ yet: its world is in build, docs/adding-an-island.md). Keelhaven's Chapter 03 co
   line needs no voice in `voice/cast.json` and no audio, `tools/voice/generate.ts` leaves it out (the
   weekly refresh too), and only content ahead of its island may play one. When the voices are chosen,
   give each speaker their cast entry, drop `pending`, and generate the audio: from then on the line's
-  audio is checked as any other's. Keelhaven's lines are voiced (2026-10-25).
+  audio is checked as any other's. Keelhaven's lines are voiced (2026-10-25), and Guildcrest's
+  (2026-11-01; five of its speakers on Azure stopgap voices, docs/voices.md). Battle 4's four crew lines
+  (`b4.*`) are still pending (ElevenLabs credits, 2026-11-10): a battle hook's pending line shows as a
+  caption with no voice (`tools/voice/generate.ts --pending` writes it into the manifest), and the won
+  line only once it's voiced (the win card already shows its words).
 
 ## Voiced lines: change the audio too
 

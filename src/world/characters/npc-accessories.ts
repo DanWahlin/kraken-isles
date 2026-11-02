@@ -327,6 +327,65 @@ export function dressNpcCharacter(root: Group, body: CharacterBody): void {
       addPipe(root);
       addRolledSleeves(root, 0xd4c1a0);
       break;
+    // Guildcrest (spec §4.3).
+    case 'elspeth':
+      addArchivistCoat(root, 0x2f4a36, 0xe9dec8);
+      addLedgerInHand(root, 0x3a2a1d, 1);
+      break;
+    case 'aidan':
+      addAstronomerRobe(root, 0x6e6a64, 0x8c8573);
+      addSash(root, 0xb8a27a, 1);
+      break;
+    case 'brigid':
+      addAstronomerRobe(root, 0x6e6a64, 0x2c2a30);
+      addQuillBehindEar(root, -1);
+      break;
+    case 'ewan':
+      addAstronomerRobe(root, 0x5a4632, 0x8c7350);
+      addSpectacles(root, SPECTACLES.pell, 0xd9d0aa);
+      addBeard(root, 0xe5dfcf);
+      break;
+    case 'fergus':
+      addFlatCap(root, 0x5a5a44);
+      addApron(root, 0x6b4a2c, 0x3e2c1a);
+      addRolledSleeves(root, 0xd4c1a0);
+      break;
+    case 'rory':
+      addSatchel(root, 0x6b5a45, -1);
+      addSash(root, 0x5b3a22, 1);
+      addRolledSleeves(root, 0xd4c1a0);
+      break;
+    case 'seren':
+      addAstronomerRobe(root, 0x24242a, 0xe9e3d3);
+      addHeadscarf(root, 0xf0eee6, 0xf0eee6);
+      break;
+    case 'gc_market':
+      addFlatCap(root, 0x2f5d8a);
+      addApron(root, 0xeadcb4, 0x2f5d8a);
+      addMoneyPouch(root, 0x8b5428, 1);
+      break;
+    case 'gc_fiddler':
+      addFlatCap(root, 0x4a4038);
+      addRolledSleeves(root, 0xd4c1a0);
+      break;
+    case 'gc_whistler':
+      addHeadscarf(root, 0x7a4a7e, 0xe9e3d3);
+      break;
+    case 'gc_kid':
+      addHeadscarf(root, 0x2f6fa1, 0xf0dfbd);
+      break;
+    case 'gc_copyist':
+      addAstronomerRobe(root, 0x5a4632, 0x8c7350);
+      addQuillBehindEar(root, 1);
+      break;
+    case 'gc_miller':
+      addFlatCap(root, 0xe9e3d3);
+      addApron(root, 0xeadcb4, 0x8c8573);
+      addRolledSleeves(root, 0xd4c1a0);
+      break;
+    case 'gc_shepherd':
+      addHeadscarf(root, 0x3a5a4a, 0xd8b97a);
+      break;
   }
 }
 

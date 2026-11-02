@@ -1,0 +1,82 @@
+{
+  "id": "gc.moira.market.short",
+  "speaker": "Moira",
+  "text": "That wasn't enough for this one. Try again with a stronger model or more effort.",
+  "words": [
+    {
+      "word": "That",
+      "start": 0.03,
+      "end": 0.27
+    },
+    {
+      "word": "wasn't",
+      "start": 0.27,
+      "end": 0.63
+    },
+    {
+      "word": "enough",
+      "start": 0.63,
+      "end": 0.95
+    },
+    {
+      "word": "for",
+      "start": 0.95,
+      "end": 1.11
+    },
+    {
+      "word": "this",
+      "start": 1.11,
+      "end": 1.35
+    },
+    {
+      "word": "one",
+      "start": 1.35,
+      "end": 2.029
+    },
+    {
+      "word": "Try",
+      "start": 2.029,
+      "end": 2.429
+    },
+    {
+      "word": "again",
+      "start": 2.429,
+      "end": 2.71
+    },
+    {
+      "word": "with",
+      "start": 2.71,
+      "end": 2.909
+    },
+    {
+      "word": "a",
+      "start": 2.909,
+      "end": 2.949
+    },
+    {
+      "word": "stronger",
+      "start": 2.949,
+      "end": 3.469
+    },
+    {
+      "word": "model",
+      "start": 3.469,
+      "end": 4.03
+    },
+    {
+      "word": "or",
+      "start": 4.03,
+      "end": 4.19
+    },
+    {
+      "word": "more",
+      "start": 4.19,
+      "end": 4.51
+    },
+    {
+      "word": "effort",
+      "start": 4.51,
+      "end": 4.76
+    }
+  ]
+}

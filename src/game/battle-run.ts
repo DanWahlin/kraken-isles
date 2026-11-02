@@ -38,6 +38,8 @@ export interface BattleRunOptions {
   onStart?(): void;
   /** Plays voiced lines of the course's (the crew's calls in a battle with the kraken), one run at a time. */
   say?(ids: readonly string[]): Promise<void>;
+  /** Whether a line has its voice yet (a pending one is written, not voiced: its words show alone). */
+  voiced?(id: string): boolean;
 }
 
 /** The briefing shows before every battle until you tick "Don't show this again". */
@@ -71,6 +73,8 @@ export class BattleRun {
   private endedAt = 0;
   private hudAt = -1;
   private quizWave = -1;
+  /** The last wave whose crew line was said (each wave's once, as it sails in). */
+  private lineWave = -1;
   private musicInBattle = false;
   private navHeld = false;
   private wasDirecting = false;
@@ -275,6 +279,9 @@ export class BattleRun {
   private finish(how: 'won' | 'skipped'): void {
     this.ended = how;
     this.endedAt = this.t;
+    // The won line, spoken: while its voice is pending, the win card already shows its words.
+    const line = this.plan.wonLine;
+    if (how === 'won' && line && (this.o.voiced?.(line) ?? true)) this.say(line);
     this.setMusic(false);
     this.o.onEnd(how);
   }
@@ -324,7 +331,10 @@ export class BattleRun {
     const b = this.battle;
     if (this.started) {
       if (this.hud.choosing) {
-        const y = s.moveY !== 0 ? s.moveY : -s.moveX;
+        // A key steps once per press (an edge, so a quick tap between two frames still counts); the
+        // stick steps once each time it's pushed past the edge.
+        if (s.navY) this.hud.nav(s.navY > 0 ? -1 : 1);
+        const y = s.usingGamepad ? (s.moveY !== 0 ? s.moveY : -s.moveX) : 0;
         if (Math.abs(y) > NAV_EDGE) {
           if (!this.navHeld) this.hud.nav(y > 0 ? -1 : 1);
           this.navHeld = true;
@@ -391,6 +401,12 @@ export class BattleRun {
         this.quizWave = snap.wave;
         const id = this.plan.waves[snap.wave]?.quiz ?? '';
         this.hud.setQuiz((QUIZZES.get(id) as ChoiceQuiz | undefined) ?? null);
+      }
+      // The crew's line as a wave sails in (battle 4 on), once each.
+      if (this.started && snap.phase === 'intro' && snap.wave > this.lineWave) {
+        this.lineWave = snap.wave;
+        const line = this.plan.waves[snap.wave]?.line;
+        if (line) this.say(line);
       }
       const won = snap.phase === 'won';
       this.hud.show(

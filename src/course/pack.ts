@@ -160,6 +160,23 @@ export const ISLAND_SIGNS: Readonly<Record<string, readonly string[]>> = {
     'bellCord',
     'winch',
   ],
+  // Guildcrest's boards and plates (docs/specs/ISLAND-04-guildcrest.md W.7): the Charter Stone's foot,
+  // the shelf's label, the pattern book's spine and file, the roll board, Rory's banner, his belt's two
+  // tools, the inn's sign and the three guilds' banners.
+  guildcrest: [
+    'charterFoot',
+    'shelfLabel',
+    'bookSpine',
+    'bookFile',
+    'rollBoard',
+    'roryBanner',
+    'beltRead',
+    'beltSearch',
+    'innSign',
+    'guildMasons',
+    'guildWeavers',
+    'guildMillwrights',
+  ],
 };
 
 /** The kinds of puzzle the game can run (COURSE-PACKS.md §4): a puzzle file names its mechanic. */

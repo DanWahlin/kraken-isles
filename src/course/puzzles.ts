@@ -38,6 +38,8 @@ const STEPS = {
   // Each lap names its own quest and steps (`laps[].quest`, `step`, `solved`): these are the first's.
   'drydock-ring': ['ring', 'solved'],
   'lock-flight': ['flight', 'solved'],
+  'pattern-book': ['book', 'solved'],
+  toolbelt: ['belt', 'solved'],
 } as const;
 
 export const PUZZLE_STEPS: Readonly<Record<string, readonly string[]>> = STEPS;

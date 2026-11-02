@@ -110,6 +110,28 @@ function put(buckets: Buckets, key: MaterialKey, g: BufferGeometry, colour: numb
   return g;
 }
 
+/**
+ * Masonry's texture laid in world space (a box's own UVs stretch it along a long wall into streaks):
+ * on top faces from x and z, on walls along the wall and up, `metres` a repeat.
+ */
+export function stoneUv(g: BufferGeometry, metres: number): void {
+  const pos = g.getAttribute('position');
+  const nrm = g.getAttribute('normal');
+  const uv = g.getAttribute('uv');
+  const k = 1 / metres;
+  for (let i = 0; i < pos.count; i++) {
+    const x = pos.getX(i);
+    const y = pos.getY(i);
+    const z = pos.getZ(i);
+    const nx = Math.abs(nrm.getX(i));
+    const ny = Math.abs(nrm.getY(i));
+    if (ny > 0.6) uv.setXY(i, x * k, z * k);
+    else if (nx > Math.abs(nrm.getZ(i))) uv.setXY(i, z * k, y * k);
+    else uv.setXY(i, x * k, y * k);
+  }
+  uv.needsUpdate = true;
+}
+
 /** A box centred at (x, y, z), turned `yaw` about +y (then `pitch` about its own x, `roll` about its z). */
 export function box(
   buckets: Buckets,
@@ -273,6 +295,85 @@ export function cone(
   shape?.(g);
   g.translate(x, y, z);
   return put(buckets, key, g, colour);
+}
+
+/**
+ * A crow-stepped gable (Scots and Flemish stone houses, Guildcrest's guildhalls): the gable wall rises
+ * above the roof in `steps` square steps either side to a top block at the ridge. Built of plain boxes
+ * (the wall's material), centred on (x, z) at the eaves' height `y`, `width` across, `rise` from the
+ * eaves to the ridge, `thick` deep, its face turned `yaw` (its width runs along local x).
+ */
+export function crowStepGable(
+  buckets: Buckets,
+  key: MaterialKey,
+  x: number,
+  y: number,
+  z: number,
+  yaw: number,
+  width: number,
+  rise: number,
+  thick: number,
+  steps: number,
+  colour: number,
+): void {
+  const c = Math.cos(yaw);
+  const s = Math.sin(yaw);
+  const tread = width / 2 / (steps + 0.5);
+  const lift = rise / (steps + 0.5);
+  // Each course: a band of wall `steps - k` treads in from each side, one lift tall, standing a little
+  // proud of the roof's line (the steps), and the top block over the ridge.
+  for (let k = 0; k <= steps; k++) {
+    const w = width - 2 * tread * k;
+    // The first course starts 2 cm under the eaves (its foot never on the wall's top face).
+    const foot = k === 0 ? 0.02 : 0;
+    const h = lift + (k === steps ? lift * 0.4 : 0.06) + foot;
+    const yy = y - foot + lift * k + h / 2;
+    // Each course a little thinner than the one under it: where two overlap, no faces share a plane.
+    const g = box(buckets, key, x, yy, z, w, h, thick - 0.012 * k, yaw, colour);
+    if (key === 'stone' || key === 'paving') stoneUv(g, 1.6);
+  }
+  // Cope stones on each step's tread (a thin slab, wider than the wall).
+  for (let k = 1; k <= steps; k++)
+    for (const side of [-1, 1]) {
+      const ox = side * (width / 2 - tread * (k - 0.5));
+      const yy = y + lift * k + 0.04;
+      box(buckets, key, x + c * ox, yy + 0.02, z - s * ox, tread + 0.06, 0.08, thick + 0.12, yaw, colour);
+    }
+}
+
+/**
+ * A pitched roof: two slopes meeting at a ridge along local x (turned `yaw`), `length` long, `span`
+ * across the eaves (each slope overhangs by `eave`), its eaves at `y`, `rise` to the ridge. Its tiles
+ * are laid in world space (`stoneUv`), so a long roof doesn't stretch them.
+ */
+export function pitchedRoof(
+  buckets: Buckets,
+  key: MaterialKey,
+  x: number,
+  y: number,
+  z: number,
+  yaw: number,
+  length: number,
+  span: number,
+  rise: number,
+  colour: number,
+  eave = 0.4,
+  thick = 0.22,
+): void {
+  const half = span / 2;
+  const angle = Math.atan2(rise, half);
+  const slope = Math.hypot(half, rise) + eave;
+  const c = Math.cos(yaw);
+  const s = Math.sin(yaw);
+  for (const side of [-1, 1]) {
+    // The slope's middle, `side` across (local z) from the ridge line.
+    const across = side * Math.cos(angle) * (slope / 2);
+    const up = rise - Math.sin(angle) * (slope / 2);
+    const cx = x + s * across;
+    const cz = z + c * across;
+    const g = box(buckets, key, cx, y + up - thick / 2, cz, length, thick, slope, yaw, colour, side * angle);
+    stoneUv(g, 1.4);
+  }
 }
 
 export { makeBuckets };

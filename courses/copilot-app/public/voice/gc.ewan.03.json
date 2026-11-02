@@ -1,0 +1,102 @@
+{
+  "id": "gc.ewan.03",
+  "speaker": "Ewan",
+  "text": "Some books carry scripts, or tell you to use tools. Read an unfamiliar one before you turn it on.",
+  "words": [
+    {
+      "word": "Some",
+      "start": 0.054333,
+      "end": 0.380416
+    },
+    {
+      "word": "books",
+      "start": 0.380416,
+      "end": 0.66575
+    },
+    {
+      "word": "carry",
+      "start": 0.66575,
+      "end": 0.964666
+    },
+    {
+      "word": "scripts",
+      "start": 0.964666,
+      "end": 1.644041
+    },
+    {
+      "word": "or",
+      "start": 1.644041,
+      "end": 1.766291
+    },
+    {
+      "word": "tell",
+      "start": 1.766291,
+      "end": 2.051625
+    },
+    {
+      "word": "you",
+      "start": 2.051625,
+      "end": 2.173916
+    },
+    {
+      "word": "to",
+      "start": 2.173916,
+      "end": 2.282625
+    },
+    {
+      "word": "use",
+      "start": 2.282625,
+      "end": 2.622291
+    },
+    {
+      "word": "tools",
+      "start": 2.622291,
+      "end": 4.171208
+    },
+    {
+      "word": "Read",
+      "start": 4.171208,
+      "end": 4.456541
+    },
+    {
+      "word": "an",
+      "start": 4.456541,
+      "end": 4.578791
+    },
+    {
+      "word": "unfamiliar",
+      "start": 4.578791,
+      "end": 5.163041
+    },
+    {
+      "word": "one",
+      "start": 5.163041,
+      "end": 5.434791
+    },
+    {
+      "word": "before",
+      "start": 5.434791,
+      "end": 5.706541
+    },
+    {
+      "word": "you",
+      "start": 5.706541,
+      "end": 5.869583
+    },
+    {
+      "word": "turn",
+      "start": 5.869583,
+      "end": 6.154875
+    },
+    {
+      "word": "it",
+      "start": 6.154875,
+      "end": 6.29075
+    },
+    {
+      "word": "on",
+      "start": 6.29075,
+      "end": 6.54075
+    }
+  ]
+}

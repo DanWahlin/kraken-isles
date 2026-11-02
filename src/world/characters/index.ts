@@ -310,6 +310,37 @@ export const BODY_CONFIG: Record<CharacterBody, BodyConfig> = {
   kh_salter: { source: 'henry_npc', scale: 0.95, radius: 0.32, height: 1.66, tint: 0xffffff, hand: 'right' },
   kh_kit: { source: 'henry_npc', scale: 0.97, radius: 0.32, height: 1.7, tint: 0xffffff, hand: 'right' },
   kh_skipper: { source: 'henry_npc', scale: 1.04, radius: 0.35, height: 1.8, tint: 0xffffff, hand: 'left' },
+  // Guildcrest's cast (docs/specs/ISLAND-04-guildcrest.md §4.3) and islanders.
+  elspeth: { source: 'anne_npc', scale: 1, radius: 0.33, height: 1.72, tint: 0xffffff, hand: 'right' },
+  aidan: { source: 'henry_npc', scale: 1, radius: 0.33, height: 1.76, tint: 0xffffff, hand: 'right' },
+  brigid: { source: 'anne_npc', scale: 0.97, radius: 0.32, height: 1.68, tint: 0xffffff, hand: 'right' },
+  ewan: {
+    source: 'henry_npc',
+    scale: 0.96,
+    radius: 0.33,
+    height: 1.7,
+    tint: 0xffffff,
+    hand: 'left',
+    reads: true,
+  },
+  fergus: {
+    source: 'henry_npc',
+    scale: 1.07,
+    radius: 0.37,
+    height: 1.86,
+    tint: 0xffffff,
+    hand: 'right',
+    gestures: 'commander',
+  },
+  rory: { source: 'henry_npc', scale: 1, radius: 0.33, height: 1.76, tint: 0xffffff, hand: 'right' },
+  seren: { source: 'anne_npc', scale: 1, radius: 0.33, height: 1.72, tint: 0xffffff, hand: 'right' },
+  gc_market: { source: 'anne_npc', scale: 1.02, radius: 0.33, height: 1.74, tint: 0xffffff, hand: 'right' },
+  gc_fiddler: { source: 'henry_npc', scale: 0.98, radius: 0.33, height: 1.72, tint: 0xffffff, hand: 'right' },
+  gc_whistler: { source: 'anne_npc', scale: 0.96, radius: 0.31, height: 1.66, tint: 0xffffff, hand: 'left' },
+  gc_kid: { source: 'anne_npc', scale: 0.68, radius: 0.22, height: 1.18, tint: 0xffffff },
+  gc_copyist: { source: 'henry_npc', scale: 0.95, radius: 0.32, height: 1.66, tint: 0xffffff, hand: 'right' },
+  gc_miller: { source: 'henry_npc', scale: 1.04, radius: 0.35, height: 1.8, tint: 0xffffff, hand: 'left' },
+  gc_shepherd: { source: 'anne_npc', scale: 0.97, radius: 0.32, height: 1.68, tint: 0xffffff, hand: 'right' },
 };
 
 /** Atlas columns the jaw carries: skin, plus the captain's beard (hair). */

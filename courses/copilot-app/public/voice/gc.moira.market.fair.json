@@ -1,0 +1,37 @@
+{
+  "id": "gc.moira.market.fair",
+  "speaker": "Moira",
+  "text": "Right-sized, and a fair price, Captain.",
+  "words": [
+    {
+      "word": "Right-sized",
+      "start": 0.03,
+      "end": 1.07
+    },
+    {
+      "word": "and",
+      "start": 1.07,
+      "end": 1.23
+    },
+    {
+      "word": "a",
+      "start": 1.23,
+      "end": 1.31
+    },
+    {
+      "word": "fair",
+      "start": 1.31,
+      "end": 1.59
+    },
+    {
+      "word": "price",
+      "start": 1.59,
+      "end": 2.07
+    },
+    {
+      "word": "Captain",
+      "start": 2.07,
+      "end": 2.32
+    }
+  ]
+}

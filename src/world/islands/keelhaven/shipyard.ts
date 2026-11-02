@@ -3,7 +3,17 @@ import type { BoxCollider } from '../../../game/collision';
 import type { CircleObstacle } from '../../contracts';
 import type { CameraBlockerBox } from '../../terrain/camera-blockers';
 import type { MaterialKey, VillageKit } from '../../village/kit';
-import { beam, box, cone, lanternPaint, makeBuckets, rod, rope, type Buckets } from '../../village/pieces';
+import {
+  beam,
+  box,
+  cone,
+  lanternPaint,
+  makeBuckets,
+  rod,
+  rope,
+  stoneUv,
+  type Buckets,
+} from '../../village/pieces';
 import { BRIGANTINE_HALF_LENGTH, halfBeamAt, keelHeightAt, sheerHeightAt } from '../../ship/lines';
 import { mulberry32 } from '../../../util/math';
 import { addVerandaHouse, type VerandaHouseInfo } from '../../village/veranda-house';
@@ -129,28 +139,6 @@ export function ubox(
   const g = box(b, key, p.x, y, p.z, su, sy, sv, YAW_U + yaw, colour, pitch, roll);
   if (key === 'stone' || key === 'paving') stoneUv(g, key === 'paving' ? 2.2 : 1.6);
   return g;
-}
-
-/**
- * Masonry's texture laid in world space (a box's own UVs stretch it along a long wall into streaks):
- * on top faces from x and z, on walls along the wall and up, `metres` a repeat.
- */
-function stoneUv(g: BufferGeometry, metres: number): void {
-  const pos = g.getAttribute('position');
-  const nrm = g.getAttribute('normal');
-  const uv = g.getAttribute('uv');
-  const k = 1 / metres;
-  for (let i = 0; i < pos.count; i++) {
-    const x = pos.getX(i);
-    const y = pos.getY(i);
-    const z = pos.getZ(i);
-    const nx = Math.abs(nrm.getX(i));
-    const ny = Math.abs(nrm.getY(i));
-    if (ny > 0.6) uv.setXY(i, x * k, z * k);
-    else if (nx > Math.abs(nrm.getZ(i))) uv.setXY(i, z * k, y * k);
-    else uv.setXY(i, x * k, y * k);
-  }
-  uv.needsUpdate = true;
 }
 
 export const ground = (u: number, v: number) => {

@@ -18,6 +18,8 @@ import { lampPost } from './islands/keelhaven/town-build';
 import { lockLamp, type ShipyardOut } from './islands/keelhaven/shipyard';
 import { stationPost } from './islands/keelhaven/circuit';
 import { addStallLantern } from './market-stall/parts';
+import { lampPost as gcLampPost, makeOut as gcOut } from './islands/guildcrest/build';
+import { postLamp as gcPostLamp, wallLamp as gcWallLamp } from './islands/guildcrest/ridge';
 import { millLantern } from './sites/mill';
 import { addLantern as rackLantern } from './sites/gear-rack';
 import { sternLanternGeometry } from './ship/brigantine';
@@ -110,6 +112,29 @@ const LAMPS: Record<string, () => Built> = {
     rod(b, 'wood', { x: 0, y: -0.4, z: 0 }, { x: 0, y: 2.3, z: 0 }, 0.09, 6, 0x555555);
     lantern(b, { x: 0, y: 2.3 + LANTERN_STAND, z: 0, hang: false });
     return b;
+  },
+  'Guildcrest lamp post': () => {
+    const b = makeBuckets();
+    gcLampPost(b, gcOut(), -150, 37, 0.4);
+    return b;
+  },
+  'Guildcrest station lamp post': () => {
+    const b = makeBuckets();
+    const out = gcOut();
+    gcLampPost(b, out, -120, 40, 2.1, { lamp: 'test', look: 'dark' });
+    return { ...b, lamps: out.lamps.map((l) => l.geo) };
+  },
+  'Guildcrest wall lamp': () => {
+    const b = makeBuckets();
+    const out = gcOut();
+    gcWallLamp(b, out, 100, 144, 45.3, 0, 1, 'test');
+    return { ...b, lamps: out.lamps.map((l) => l.geo) };
+  },
+  'Guildcrest lamp on a wall post': () => {
+    const b = makeBuckets();
+    const out = gcOut();
+    gcPostLamp(b, out, 90, 167.6, 0, -1, 'test');
+    return { ...b, lamps: out.lamps.map((l) => l.geo) };
   },
   'Keelhaven lamp post': () => {
     const b = makeBuckets();

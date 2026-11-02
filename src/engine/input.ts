@@ -25,6 +25,12 @@ export interface InputState {
   fireStarboard: boolean;
   /** "Bring her round": your helmsman steers to the best broadside (R / Y). */
   assist: boolean;
+  /**
+   * A move key pressed this poll, as a step through a list of choices: +1 for up or left, −1 for down
+   * or right (edge-triggered, so a quick tap is never lost between two frames; the stick is read from
+   * `moveX`/`moveY`).
+   */
+  navY: number;
   /** A move key or stick is held, even while input is disabled (to cut a cutscene short). */
   stirring: boolean;
   usingGamepad: boolean;
@@ -55,6 +61,10 @@ const KEYMAP: Record<string, keyof InputState | 'up' | 'down' | 'left' | 'right'
 const ALSO: Record<string, string> = { Space: 'fire' };
 
 const EDGE = new Set([
+  'up',
+  'down',
+  'left',
+  'right',
   'interact',
   'jump',
   'map',
@@ -83,6 +93,7 @@ export class Input {
     firePort: false,
     fireStarboard: false,
     assist: false,
+    navY: 0,
     stirring: false,
     usingGamepad: false,
   };
@@ -215,6 +226,7 @@ export class Input {
     s.firePort = on && edges.has('firePort');
     s.fireStarboard = on && edges.has('fireStarboard');
     s.assist = on && edges.has('assist');
+    s.navY = edges.has('up') || edges.has('left') ? 1 : edges.has('down') || edges.has('right') ? -1 : 0;
 
     this.pressed.clear();
     this.look[0] = this.look[1] = 0;

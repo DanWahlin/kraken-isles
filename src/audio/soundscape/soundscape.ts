@@ -177,7 +177,9 @@ function isPuzzleOneShot(name: SliceName): boolean {
     name === 'lute_strum' ||
     name === 'gondola_bell' ||
     name === 'rope_hoist' ||
-    name === 'rock_tumble'
+    name === 'rock_tumble' ||
+    name === 'abbey_bell' ||
+    name === 'book_close'
   );
 }
 

@@ -62,6 +62,20 @@ const PACK_DEFS = [
     id: 'keelhaven/chart',
     include: ['packs/keelhaven/chart.bin', 'packs/keelhaven/chart.json'],
   },
+  {
+    id: 'guildcrest/critical',
+    include: [
+      'packs/guildcrest/terrain.bin',
+      'packs/guildcrest/terrain.json',
+      'packs/testcove/terrain-textures/**',
+      'packs/testcove/rocks/**',
+    ],
+  },
+  {
+    // The opening's 3D chart reads only this coarse copy of Guildcrest's terrain (spec O7).
+    id: 'guildcrest/chart',
+    include: ['packs/guildcrest/chart.bin', 'packs/guildcrest/chart.json'],
+  },
 ];
 
 function toPosix(path) {

@@ -1,0 +1,102 @@
+{
+  "id": "gc.seren.02",
+  "speaker": "Seren",
+  "text": "Save the craft, choose the right hands, and check the result. The Toolbelt Trial is ready when you are.",
+  "words": [
+    {
+      "word": "Save",
+      "start": 0.074,
+      "end": 0.372
+    },
+    {
+      "word": "the",
+      "start": 0.372,
+      "end": 0.5
+    },
+    {
+      "word": "craft",
+      "start": 0.5,
+      "end": 1.223
+    },
+    {
+      "word": "choose",
+      "start": 1.223,
+      "end": 1.563
+    },
+    {
+      "word": "the",
+      "start": 1.563,
+      "end": 1.691
+    },
+    {
+      "word": "right",
+      "start": 1.691,
+      "end": 1.946
+    },
+    {
+      "word": "hands",
+      "start": 1.946,
+      "end": 2.456
+    },
+    {
+      "word": "and",
+      "start": 2.456,
+      "end": 2.67
+    },
+    {
+      "word": "check",
+      "start": 2.67,
+      "end": 2.925
+    },
+    {
+      "word": "the",
+      "start": 2.925,
+      "end": 3.009
+    },
+    {
+      "word": "result",
+      "start": 3.009,
+      "end": 4.243
+    },
+    {
+      "word": "The",
+      "start": 4.243,
+      "end": 4.457
+    },
+    {
+      "word": "Toolbelt",
+      "start": 4.457,
+      "end": 4.882
+    },
+    {
+      "word": "Trial",
+      "start": 4.882,
+      "end": 5.265
+    },
+    {
+      "word": "is",
+      "start": 5.265,
+      "end": 5.436
+    },
+    {
+      "word": "ready",
+      "start": 5.436,
+      "end": 5.776
+    },
+    {
+      "word": "when",
+      "start": 5.776,
+      "end": 5.946
+    },
+    {
+      "word": "you",
+      "start": 5.946,
+      "end": 6.117
+    },
+    {
+      "word": "are",
+      "start": 6.117,
+      "end": 6.367
+    }
+  ]
+}

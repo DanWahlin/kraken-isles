@@ -1,0 +1,293 @@
+{
+  "$schema": "../../schemas/puzzle-circuit.schema.json",
+  "id": "P4.1",
+  "mechanic": "circuit",
+  "chapter": "04-skills-custom-agents",
+  "quest": "Q4.4",
+  "circuit": "book",
+  "$comment": "The Pattern Book round the cloister walk (docs/specs/ISLAND-04-guildcrest.md §5.2): the course skill found in Customize, its spine (the YAML frontmatter) read, two rules copied in, proofed in Changes, reloaded and used in Plan mode. Every wrong pick goes back to the place that fixes it, with the course's reason. The places, lamps and controls are the game's; every word is this file's.",
+  "places": {
+    "shelf": {
+      "acts": "shelf",
+      "name": "The shelf index",
+      "means": "Find skills in **Customize** › **Installed**, filtered to **Skills**",
+      "cite": "update"
+    },
+    "spine": {
+      "acts": "spine",
+      "name": "The book’s spine",
+      "means": "The YAML frontmatter: `name` and `description`",
+      "cite": "skillfile"
+    },
+    "desk": {
+      "acts": "desk",
+      "name": "The copy desk",
+      "means": "Edit only `SKILL.md`",
+      "cite": "update"
+    },
+    "proof": {
+      "acts": "proof",
+      "name": "The proof table",
+      "means": "Inspect **Changes**",
+      "cite": "update"
+    },
+    "bell": {
+      "acts": "bell",
+      "name": "The reading bell",
+      "means": "Reload skills with `/skills reload`",
+      "cite": "update"
+    },
+    "lectern": {
+      "acts": "lectern",
+      "name": "The lectern",
+      "means": "Use the skill in **Plan** mode, and check its activity",
+      "cite": "update"
+    }
+  },
+  "laps": [
+    {
+      "id": "copy",
+      "quest": "Q4.4",
+      "step": "book",
+      "solved": "solved",
+      "close": "brigid.solved",
+      "title": "The Pattern Book: two new review rules",
+      "order": "book-app-reviewer · two new review rules",
+      "stations": [
+        {
+          "id": "find",
+          "at": "shelf",
+          "kind": "choose",
+          "title": "Find the skill",
+          "prompt": "The guild keeps one pattern book for reviews. Where do you look for it?",
+          "line": "gc.brigid.shelf",
+          "options": [
+            {
+              "id": "customize",
+              "text": "The shelf index: **Customize**, the **Installed** tab, the **Skills** filter, then search `book-app-reviewer`",
+              "right": true,
+              "result": "Found: **Project: copilot-app-for-beginners**, and its toggle is on."
+            },
+            {
+              "id": "picker",
+              "text": "The agent picker below the prompt box",
+              "reason": "That’s where you pick custom agents. You find skills in **Customize**.",
+              "backTo": "shelf",
+              "cite": "core"
+            },
+            {
+              "id": "changes",
+              "text": "The **Changes** tab",
+              "reason": "**Changes** shows the session’s edits, not its skills.",
+              "backTo": "shelf",
+              "cite": "update"
+            }
+          ],
+          "hints": [
+            "Which view in the sidebar holds skills?",
+            "**Customize**, then the **Installed** tab.",
+            "Customize › Installed › Skills, then search for `book-app-reviewer`."
+          ],
+          "cite": "update"
+        },
+        {
+          "id": "spine",
+          "at": "spine",
+          "kind": "choose",
+          "title": "Read the frontmatter",
+          "prompt": "The spine has two lines: `name` and `description`. Which one tells the readers when to fetch the book?",
+          "options": [
+            {
+              "id": "description",
+              "text": "The `description`",
+              "right": true,
+              "result": "The app reads the description to decide when to load the skill."
+            },
+            {
+              "id": "name",
+              "text": "The `name`, by itself",
+              "reason": "The name identifies it. The description helps the app decide when to load it.",
+              "backTo": "spine",
+              "cite": "skillfile"
+            },
+            {
+              "id": "never",
+              "text": "Neither: you always have to name the book",
+              "reason": "You can name it, but a task that matches its description can load it too.",
+              "backTo": "spine",
+              "cite": "core"
+            }
+          ],
+          "hints": [
+            "One line is a label. The other says what the book is for.",
+            "The app matches the task against it.",
+            "The `description`."
+          ],
+          "cite": "skillfile"
+        },
+        {
+          "id": "copy",
+          "at": "desk",
+          "kind": "watch",
+          "title": "Edit only SKILL.md",
+          "prompt": "Brother Cuthbert waits at the copy desk, with the book open at Review focus.",
+          "action": "Hand Brother Cuthbert the two rules",
+          "text": "Cuthbert adds two lines under Review focus: headings that describe the page structure, and text alternatives for images and icons. He doesn’t touch another word.",
+          "seconds": 5,
+          "cite": "update"
+        },
+        {
+          "id": "proof",
+          "at": "proof",
+          "kind": "choose",
+          "title": "Inspect Changes",
+          "prompt": "The proof sheet shows the edits. What do you check?",
+          "line": "gc.brigid.proof",
+          "options": [
+            {
+              "id": "two",
+              "text": "Only the two new rules were added to `SKILL.md`",
+              "right": true,
+              "result": "Two lines added. The frontmatter and every old rule are the same."
+            },
+            {
+              "id": "claim",
+              "text": "Accept it: Cuthbert says it’s done",
+              "reason": "A statement isn’t evidence. Check **Changes**.",
+              "backTo": "proof",
+              "cite": "update"
+            },
+            {
+              "id": "app",
+              "text": "The sample app’s headings changed too: accept that as well",
+              "reason": "This step edits only `SKILL.md`. Send the other edits back.",
+              "backTo": "desk",
+              "cite": "update"
+            }
+          ],
+          "hints": [
+            "What did you ask Cuthbert to change?",
+            "Only one file, and only two lines.",
+            "Check that only the two new rules were added to `SKILL.md`."
+          ],
+          "cite": "update"
+        },
+        {
+          "id": "reload",
+          "at": "bell",
+          "kind": "choose",
+          "title": "Reload skills",
+          "prompt": "The book’s changed, but the readers still hold the old copy. What do you do?",
+          "line": "gc.brigid.bell",
+          "options": [
+            {
+              "id": "reload",
+              "text": "Ring the reading bell: `/skills reload`",
+              "right": true,
+              "result": "The readers put down the old copy and fetch the new one."
+            },
+            {
+              "id": "main",
+              "text": "Start a new session from `main`",
+              "reason": "A new worktree from `main` won’t contain this session’s uncommitted edits.",
+              "backTo": "bell",
+              "cite": "practice"
+            },
+            {
+              "id": "prompt",
+              "text": "Copy the rules into every prompt instead",
+              "reason": "That’s a one-off prompt each time. The skill keeps them for you.",
+              "backTo": "bell",
+              "cite": "core"
+            }
+          ],
+          "hints": [
+            "The file changed. The app still has the old one loaded.",
+            "There’s a slash command for it.",
+            "Submit `/skills reload`."
+          ],
+          "cite": "update"
+        },
+        {
+          "id": "use",
+          "at": "lectern",
+          "kind": "choose",
+          "title": "Use the skill in Plan mode",
+          "prompt": "In **Plan** mode, Brother Cuthbert reads with the book. His plan moves the book titles from h2 to h3. What do you check?",
+          "line": "gc.brigid.lectern",
+          "options": [
+            {
+              "id": "evidence",
+              "text": "That the activity shows `book-app-reviewer`, the plan cites the new rules and also changes the `.book-card h2` selector, and it doesn’t claim tests passed",
+              "right": true,
+              "result": "The margin names the book, and the plan holds up against the files."
+            },
+            {
+              "id": "trust",
+              "text": "Nothing: he said he used the skill",
+              "reason": "Check the activity and the code, not only the statement.",
+              "backTo": "lectern",
+              "cite": "update"
+            },
+            {
+              "id": "build",
+              "text": "Build it now",
+              "reason": "Stop before implementation. This step is a plan.",
+              "backTo": "lectern",
+              "cite": "update"
+            },
+            {
+              "id": "css",
+              "text": "The plan’s fine, though it doesn’t mention the CSS",
+              "reason": "The `.book-card h2` selector would stop matching. The plan must account for it.",
+              "backTo": "lectern",
+              "cite": "update"
+            }
+          ],
+          "hints": [
+            "How do you know the book was used?",
+            "Expand the skill activity, then compare the plan with the files.",
+            "The activity names the skill, the plan covers `.book-card h2`, and it claims no tests."
+          ],
+          "cite": "update"
+        }
+      ]
+    }
+  ],
+  "text": {
+    "lampDark": "○ waiting",
+    "lampRunning": "… running",
+    "lampReady": "✓ ready",
+    "lampNotReady": "✗ not ready",
+    "next": "Next station: {name}",
+    "back": "Back to {name}",
+    "skip": "Skip",
+    "leave": "Leave",
+    "hint": "Hint",
+    "sealIt": "Seal it",
+    "sendBack": "Send it back",
+    "darkLamp": "{name} is still dark.",
+    "sticks": "It sticks.",
+    "noStick": "It won’t stick.",
+    "title": "The Pattern Book",
+    "intro": "Find the skill, read its frontmatter, update it, check the change, reload it, and use it."
+  },
+  "cites": {
+    "update": {
+      "anchor": "exercise-update-and-use-the-course-skill",
+      "hash": "ea46465fbcdf"
+    },
+    "skillfile": {
+      "anchor": "skills-save-a-review-checklist",
+      "hash": "688a14a25fe7"
+    },
+    "core": {
+      "anchor": "core-concepts",
+      "hash": "f106792dbf27"
+    },
+    "practice": {
+      "anchor": "create-a-practice-session",
+      "hash": "11035c4aac17"
+    }
+  }
+}

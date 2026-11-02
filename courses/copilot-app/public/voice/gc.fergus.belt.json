@@ -1,0 +1,62 @@
+{
+  "id": "gc.fergus.belt",
+  "speaker": "Fergus",
+  "text": "Rory's toolbelt is waiting in the yard. Follow the lamps, Captain.",
+  "words": [
+    {
+      "word": "Rory's",
+      "start": 0.052083,
+      "end": 0.546875
+    },
+    {
+      "word": "toolbelt",
+      "start": 0.546875,
+      "end": 1.08075
+    },
+    {
+      "word": "is",
+      "start": 1.08075,
+      "end": 1.263041
+    },
+    {
+      "word": "waiting",
+      "start": 1.263041,
+      "end": 1.666666
+    },
+    {
+      "word": "in",
+      "start": 1.666666,
+      "end": 1.770833
+    },
+    {
+      "word": "the",
+      "start": 1.770833,
+      "end": 1.848958
+    },
+    {
+      "word": "yard",
+      "start": 1.848958,
+      "end": 3.333333
+    },
+    {
+      "word": "Follow",
+      "start": 3.333333,
+      "end": 3.710958
+    },
+    {
+      "word": "the",
+      "start": 3.710958,
+      "end": 3.841166
+    },
+    {
+      "word": "lamps",
+      "start": 3.841166,
+      "end": 4.401041
+    },
+    {
+      "word": "Captain",
+      "start": 4.401041,
+      "end": 4.651041
+    }
+  ]
+}

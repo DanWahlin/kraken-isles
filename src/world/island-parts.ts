@@ -12,7 +12,7 @@ import type { TierSettings } from '../engine/quality';
 import { loadLodSimplifier } from './characters/character-lod';
 import type { CircleObstacle } from './contracts';
 import type { FloraRules } from './flora/types';
-import { createBirds, type BirdsSystem } from './life/birds';
+import { createBirds, type BirdsSystem, type CreateBirdsOptions } from './life/birds';
 import { skipSunShadows } from './sky/cached-sun-shadow';
 import type { TerrainBakeData } from './terrain/bake';
 import type { CompositeHeightField } from './terrain/composite-height-field';
@@ -105,9 +105,11 @@ export function addIslandBirds(
   seed: number,
   /** Where gulls may land (a wreck's mast tops). */
   perches: readonly Vector3[] = [],
+  /** A flock of its own kind (Guildcrest's swifts: smaller, faster, darker, their own count). */
+  kind?: Pick<CreateBirdsOptions, 'scale' | 'altitude' | 'speed' | 'count' | 'lightness'>,
 ): BirdsSystem | null {
-  if (!ctx.birds || ctx.tier.birds <= 0) return null;
-  const birds = createBirds({ tier: ctx.tier, perches: [...perches], center, radius, seed });
+  if (!ctx.birds || ctx.tier.birds <= 0 || kind?.count === 0) return null;
+  const birds = createBirds({ tier: ctx.tier, perches: [...perches], center, radius, seed, ...kind });
   birds.group.visible = false;
   ctx.scene.add(birds.group);
   return birds;

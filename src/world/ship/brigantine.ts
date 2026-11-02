@@ -201,7 +201,8 @@ const BOARDING_Z = -0.15;
  * The gangplank's foot in ship-local space: at COVE.mooring the pier's east edge is ~4.65 m out on
  * local +x, so the foot rests 0.4 m onto the deck (1.8 m, the pier deck height at a calm mooring).
  */
-const GANGWAY_FOOT = { x: 5.05, y: 1.86, z: BOARDING_Z } as const;
+/** Where the gangway's foot lands, in the ship's frame (+x the rail it goes down from). */
+export const GANGWAY_FOOT = { x: 5.05, y: 1.86, z: BOARDING_Z } as const;
 
 function localToWorldXZ(
   pose: ShipDynamics['pose'],

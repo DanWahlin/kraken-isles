@@ -1,0 +1,107 @@
+{
+  "id": "gc.lyra.03",
+  "speaker": "Lyra",
+  "text": "A skill is that chart. A custom agent is the specialist who follows it, with the tools for the job.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0,
+      "end": 0.133
+    },
+    {
+      "word": "skill",
+      "start": 0.133,
+      "end": 0.453
+    },
+    {
+      "word": "is",
+      "start": 0.453,
+      "end": 0.592
+    },
+    {
+      "word": "that",
+      "start": 0.592,
+      "end": 0.787
+    },
+    {
+      "word": "chart",
+      "start": 0.787,
+      "end": 1.6
+    },
+    {
+      "word": "A",
+      "start": 1.6,
+      "end": 2.057
+    },
+    {
+      "word": "custom",
+      "start": 2.057,
+      "end": 2.453
+    },
+    {
+      "word": "agent",
+      "start": 2.453,
+      "end": 2.773
+    },
+    {
+      "word": "is",
+      "start": 2.773,
+      "end": 2.9
+    },
+    {
+      "word": "the",
+      "start": 2.9,
+      "end": 3.018
+    },
+    {
+      "word": "specialist",
+      "start": 3.018,
+      "end": 3.64
+    },
+    {
+      "word": "who",
+      "start": 3.64,
+      "end": 3.8
+    },
+    {
+      "word": "follows",
+      "start": 3.8,
+      "end": 4.133
+    },
+    {
+      "word": "it",
+      "start": 4.133,
+      "end": 4.4
+    },
+    {
+      "word": "with",
+      "start": 4.4,
+      "end": 4.74
+    },
+    {
+      "word": "the",
+      "start": 4.74,
+      "end": 4.867
+    },
+    {
+      "word": "tools",
+      "start": 4.867,
+      "end": 5.22
+    },
+    {
+      "word": "for",
+      "start": 5.22,
+      "end": 5.3
+    },
+    {
+      "word": "the",
+      "start": 5.3,
+      "end": 5.44
+    },
+    {
+      "word": "job",
+      "start": 5.44,
+      "end": 5.69
+    }
+  ]
+}

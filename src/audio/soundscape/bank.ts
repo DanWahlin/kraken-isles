@@ -312,6 +312,10 @@ export const BANK = {
   gondola_bell: { file: 'gondola_bell', slices: [[0, 1.9065]], lufs: [-17.9] },
   rope_hoist: { file: 'rope_hoist', slices: [[0, 4.5065]], lufs: [-19] },
   rock_tumble: { file: 'rock_tumble', slices: [[0, 4.2065]], lufs: [-17.7] },
+  // Guildcrest (tools/sfx/synth-guildcrest.sh: synthesized, project-owned): the abbey's bell (three
+  // strikes) and a pattern book shutting.
+  abbey_bell: { file: 'abbey_bell', slices: [[0, 7.5065]], lufs: [-18] },
+  book_close: { file: 'book_close', slices: [[0, 0.9065]], lufs: [-22.4] },
 } as const satisfies Record<string, BankEntry>;
 
 export type SoundName = keyof typeof BANK;

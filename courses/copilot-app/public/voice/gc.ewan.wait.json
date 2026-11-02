@@ -1,0 +1,77 @@
+{
+  "id": "gc.ewan.wait",
+  "speaker": "Ewan",
+  "text": "Sister Brigid's book comes first, Captain. She's in the scriptorium, on the west walk.",
+  "words": [
+    {
+      "word": "Sister",
+      "start": 0.054333,
+      "end": 0.475541
+    },
+    {
+      "word": "Brigid's",
+      "start": 0.475541,
+      "end": 0.9375
+    },
+    {
+      "word": "book",
+      "start": 0.9375,
+      "end": 1.195666
+    },
+    {
+      "word": "comes",
+      "start": 1.195666,
+      "end": 1.535333
+    },
+    {
+      "word": "first",
+      "start": 1.535333,
+      "end": 2.160333
+    },
+    {
+      "word": "Captain",
+      "start": 2.160333,
+      "end": 3.668458
+    },
+    {
+      "word": "She's",
+      "start": 3.668458,
+      "end": 3.994583
+    },
+    {
+      "word": "in",
+      "start": 3.994583,
+      "end": 4.10325
+    },
+    {
+      "word": "the",
+      "start": 4.10325,
+      "end": 4.198375
+    },
+    {
+      "word": "scriptorium",
+      "start": 4.198375,
+      "end": 5.230958
+    },
+    {
+      "word": "on",
+      "start": 5.230958,
+      "end": 5.380416
+    },
+    {
+      "word": "the",
+      "start": 5.380416,
+      "end": 5.475541
+    },
+    {
+      "word": "west",
+      "start": 5.475541,
+      "end": 5.828791
+    },
+    {
+      "word": "walk",
+      "start": 5.828791,
+      "end": 6.078791
+    }
+  ]
+}

@@ -69,6 +69,7 @@ export const STORY_CONDITIONS = {
     'sealed',
   ],
   keelhaven: ['firstVisit', 'dockKitted', 'searchHullDown', 'prHullsDown', 'sealed'],
+  guildcrest: ['firstVisit', 'bookCopied', 'journeymanHired', 'sealed'],
 } as const;
 
 /**
@@ -81,6 +82,7 @@ export const STORY_EVENTS = {
   meridian: [],
   'thousand-bough': [],
   keelhaven: [],
+  guildcrest: [],
 } as const satisfies Readonly<Record<StoryIsland, readonly string[]>>;
 
 export type StoryIsland = keyof typeof STORY_CONDITIONS;

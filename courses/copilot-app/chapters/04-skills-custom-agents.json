@@ -1,0 +1,1378 @@
+{
+  "$schema": "../../schemas/chapter.schema.json",
+  "$comment": "Chapter 04 (Skills and Custom Agents) on Guildcrest (docs/specs/ISLAND-04-guildcrest.md §6). Written ahead of its island: the game leaves it out until Guildcrest is in the registry.",
+  "chapter": "04-skills-custom-agents",
+  "images": [
+    {
+      "id": "ch04/song-chart-skills",
+      "src": "course/ch04/song-chart-skills.webp",
+      "hash": "e25c1aec1e73",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A bandleader hands out a chart so the players play this song the same way: a skill for the session"
+    },
+    {
+      "id": "ch04/skill-vs-one-off-prompt",
+      "src": "course/ch04/skill-vs-one-off-prompt.webp",
+      "hash": "03b8e7dcc4a2",
+      "width": 1536,
+      "height": 1024,
+      "alt": "One-off prompt versus skill: a skill is a reusable checklist that lives in the repo and gives the same guidance each time"
+    },
+    {
+      "id": "ch04/app-customize-skills",
+      "src": "course/ch04/app-customize-skills.webp",
+      "hash": "2edd7f1879fa",
+      "width": 1920,
+      "height": 1080,
+      "alt": "The Customize view’s Installed tab, filtered to Skills, with the book-app-reviewer result and its toggle on"
+    },
+    {
+      "id": "ch04/hiring-specialists-analogy",
+      "src": "course/ch04/hiring-specialists-analogy.webp",
+      "hash": "f6ca9cb588cb",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A plumber, electrician, and roofer illustrate specialist roles, compared with AI agents for code review, testing, security, and documentation"
+    },
+    {
+      "id": "ch04/app-custom-agent-picker",
+      "src": "course/ch04/app-custom-agent-picker.webp",
+      "hash": "1d452eddfdc4",
+      "width": 978,
+      "height": 244,
+      "alt": "The /agent suggestions with book-app-explainer highlighted and its read-only description visible"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "H4.1",
+      "type": "hotspot",
+      "image": "ch04/app-customize-skills",
+      "mask": [
+        [0.160417, 0.230556, 0.028125, 0.05],
+        [0.30625, 0.003704, 0.028125, 0.05],
+        [0.909896, 0.087963, 0.028125, 0.05],
+        [0.261979, 0.268519, 0.028125, 0.05]
+      ],
+      "prompt": "You’re in **Customize**, on the **Installed** tab. Where do you set the type filter to **Skills**?",
+      "targets": [
+        {
+          "id": "skills-filter",
+          "rect": [0.851563, 0.092593, 0.046875, 0.041667],
+          "label": "The Skills type filter",
+          "correct": true
+        },
+        {
+          "id": "installed-tab",
+          "rect": [0.255208, 0.012037, 0.046875, 0.032407],
+          "label": "The Installed tab",
+          "feedback": "That’s the tab you’re on. The type filter is beside the search box."
+        },
+        {
+          "id": "search",
+          "rect": [0.295833, 0.088889, 0.55, 0.050926],
+          "label": "The search box",
+          "feedback": "That’s where you search for `book-app-reviewer`. The type filter is at its right end."
+        },
+        {
+          "id": "customize",
+          "rect": [0.00625, 0.234259, 0.15, 0.040741],
+          "label": "Customize, in the sidebar",
+          "feedback": "That opens the view. The type filter is in the view itself."
+        }
+      ],
+      "explain": {
+        "correct": "Right. Set the type filter to **Skills**, search for `book-app-reviewer`, and check it shows **Project: copilot-app-for-beginners** with its toggle on.",
+        "wrong": "The type filter sits at the right end of the search box."
+      },
+      "hints": [
+        "It’s near the search box.",
+        "Look at the right end of the search box.",
+        "Select **Skills**, beside the search text."
+      ],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-update-and-use-the-course-skill",
+        "hash": "ea46465fbcdf",
+        "image": {
+          "src": "course/ch04/app-customize-skills.webp",
+          "hash": "2edd7f1879fa"
+        }
+      }
+    },
+    {
+      "id": "H4.2",
+      "type": "hotspot",
+      "image": "ch04/app-custom-agent-picker",
+      "mask": [],
+      "prompt": "You typed `/agent`. Which row picks the read-only explainer?",
+      "targets": [
+        {
+          "id": "explainer-row",
+          "rect": [0.018405, 0.262295, 0.965235, 0.106557],
+          "label": "book-app-explainer",
+          "correct": true
+        },
+        {
+          "id": "default-row",
+          "rect": [0.018405, 0.106557, 0.965235, 0.106557],
+          "label": "Default",
+          "feedback": "That row uses the default agent. The explainer’s row has its read-only description."
+        },
+        {
+          "id": "agent-picker",
+          "rect": [0.325153, 0.811475, 0.104294, 0.098361],
+          "label": "The agent picker, showing Default agent",
+          "feedback": "That’s the agent picker. It shows **Default agent** until you send the command; then it shows `book-app-explainer`."
+        },
+        {
+          "id": "mode",
+          "rect": [0.059305, 0.811475, 0.083845, 0.098361],
+          "label": "Interactive",
+          "feedback": "That’s the session mode. A custom agent isn’t a different mode."
+        }
+      ],
+      "explain": {
+        "correct": "Right. Select **book-app-explainer**, send the `/agent book-app-explainer` command, then check the agent picker below the prompt box shows it.",
+        "wrong": "Look for the row with the explainer’s name and its description."
+      },
+      "hints": [
+        "It’s in the list above the prompt box.",
+        "Look for the row that says it won’t change files.",
+        "Select **book-app-explainer**."
+      ],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-create-a-read-only-book-app-explainer",
+        "hash": "428c8ffecae4",
+        "image": {
+          "src": "course/ch04/app-custom-agent-picker.webp",
+          "hash": "1d452eddfdc4"
+        }
+      }
+    },
+    {
+      "id": "K4.1",
+      "type": "mc",
+      "prompt": "In Lyra’s studio, what’s the chart, and who follows it?",
+      "options": [
+        {
+          "id": "skill",
+          "text": "The chart is a skill. The specialist who follows it is a custom agent"
+        },
+        {
+          "id": "agent",
+          "text": "The chart is a custom agent",
+          "feedback": "The agent is the player. The chart is the skill they follow."
+        },
+        {
+          "id": "rules",
+          "text": "The chart is the house rules for every song",
+          "feedback": "House rules are repository instructions. A chart is for one song."
+        },
+        {
+          "id": "nocheck",
+          "text": "With a chart, you don’t need to check the result",
+          "feedback": "A chart doesn’t guarantee a good performance. You still check the result."
+        }
+      ],
+      "answer": "skill",
+      "explain": {
+        "correct": "Right. A skill is the chart: instructions for a repeated task. A custom agent is the specialist who follows it, with a defined role and the tools for the job. You still check the result.",
+        "wrong": "What does the bandleader hand out, and who plays from it?"
+      },
+      "hints": [
+        "What does the chart do for this one song?",
+        "One is a set of instructions; the other is a player with a role.",
+        "The chart is a skill; the specialist who follows it is a custom agent."
+      ],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "from-the-studio-a-song-chart-for-the-session",
+        "hash": "332e29dc140f"
+      }
+    },
+    {
+      "id": "M4.1",
+      "type": "matching",
+      "prompt": "Match each need to the feature that fits it, and where it lives.",
+      "pairs": [
+        {
+          "left": {
+            "id": "question",
+            "text": "Ask a single question about the Book App"
+          },
+          "right": {
+            "id": "prompt",
+            "text": "A one-off prompt, in the current conversation"
+          }
+        },
+        {
+          "left": {
+            "id": "stack",
+            "text": "Keep the Book App’s stack and behavior unchanged across tasks"
+          },
+          "right": {
+            "id": "instructions",
+            "text": "Repository instructions, in `.github/copilot-instructions.md`"
+          }
+        },
+        {
+          "left": {
+            "id": "checklist",
+            "text": "Apply the same review checklist each time"
+          },
+          "right": {
+            "id": "skill",
+            "text": "A skill, in `.github/skills/<name>/SKILL.md`"
+          }
+        },
+        {
+          "left": {
+            "id": "explainer",
+            "text": "A read-only role that explains the code"
+          },
+          "right": {
+            "id": "agent",
+            "text": "A custom agent, in `.github/agents/<name>.agent.md`"
+          }
+        }
+      ],
+      "explain": {
+        "correct": "That’s the course’s table. A prompt is for now, instructions are the house rules, a skill is for work you repeat, and a custom agent is a role with its own tools.",
+        "wrong": "Ask when each one applies: when you send it, across every task, when the task matches, or when you select it."
+      },
+      "hints": [
+        "Which one applies only when you send it?",
+        "House rules apply to every task. A checklist is for one kind of task. A role is something you select.",
+        "Question → prompt · stack → instructions · checklist → skill · explainer → custom agent."
+      ],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "choose-the-feature-that-fits-the-task",
+        "hash": "aa81861f78f8"
+      }
+    },
+    {
+      "id": "K4.2",
+      "type": "mc",
+      "prompt": "When does a skill apply?",
+      "options": [
+        {
+          "id": "match",
+          "text": "When the task matches its description, or when you invoke it"
+        },
+        {
+          "id": "every",
+          "text": "Across every task in the project",
+          "feedback": "That’s repository instructions: the house rules."
+        },
+        {
+          "id": "agent",
+          "text": "Only when you select it with `/agent`",
+          "feedback": "That’s how you select a custom agent."
+        },
+        {
+          "id": "once",
+          "text": "Only in the conversation where you wrote it",
+          "feedback": "That’s a one-off prompt."
+        }
+      ],
+      "answer": "match",
+      "explain": {
+        "correct": "Right. A skill applies when the task matches its description, or when you invoke it. Use one when you repeat the same kind of work.",
+        "wrong": "Look at the table’s “When it applies” column for a skill."
+      },
+      "hints": [
+        "What helps the app decide when to load a skill?",
+        "Its description, or you naming it.",
+        "When the task matches its description, or when you invoke it."
+      ],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "choose-the-feature-that-fits-the-task",
+        "hash": "aa81861f78f8"
+      }
+    },
+    {
+      "id": "K4.3",
+      "type": "mc",
+      "prompt": "You edit a file in your practice session. Where does the edit go?",
+      "options": [
+        {
+          "id": "worktree",
+          "text": "Into this session’s worktree only: a new worktree from `main` won’t have it"
+        },
+        {
+          "id": "all",
+          "text": "Into every session’s worktree",
+          "feedback": "File edits belong to this worktree."
+        },
+        {
+          "id": "main",
+          "text": "Straight into `main`",
+          "feedback": "Nothing reaches `main` until you commit, push and merge. This chapter does none of those."
+        },
+        {
+          "id": "reload",
+          "text": "Nowhere until you reload",
+          "feedback": "Reloading is for skills and agents. The edit is in the worktree as soon as it’s saved."
+        }
+      ],
+      "answer": "worktree",
+      "explain": {
+        "correct": "Right. File edits belong to this worktree. A new worktree from `main` won’t contain this session’s uncommitted edits, so keep the one session for every exercise.",
+        "wrong": "Each session works in its own folder. Where does a saved file go?"
+      },
+      "hints": [
+        "Each session has its own folder.",
+        "Uncommitted edits don’t travel between worktrees.",
+        "Into this session’s worktree only."
+      ],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "create-a-practice-session",
+        "hash": "11035c4aac17"
+      }
+    },
+    {
+      "id": "K4.5",
+      "type": "mc",
+      "prompt": "A skill says “review without editing”. What happens to Copilot’s file-editing tools?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "Nothing: a skill guides the work, but it doesn’t disable tools"
+        },
+        {
+          "id": "off",
+          "text": "They switch off",
+          "feedback": "A skill’s instructions don’t enforce what Copilot is allowed to do."
+        },
+        {
+          "id": "plan",
+          "text": "They switch off, but only in **Plan** mode",
+          "feedback": "The skill changes nothing about the tools, in any mode."
+        },
+        {
+          "id": "ask",
+          "text": "Copilot asks permission for each edit because of the skill",
+          "feedback": "That isn’t something a skill does. It tells Copilot how to approach the task."
+        }
+      ],
+      "answer": "nothing",
+      "explain": {
+        "correct": "Right. A skill tells Copilot how to approach a task, but its instructions don’t enforce what Copilot is allowed to do. Read unfamiliar skills before you turn them on.",
+        "wrong": "Is a skill a lock, or a guide?"
+      },
+      "hints": [
+        "Does a book take the chisel out of your hand?",
+        "A skill is task guidance, not a permission boundary.",
+        "Nothing: a skill guides the work, but it doesn’t disable tools."
+      ],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "core-concepts",
+        "hash": "f106792dbf27"
+      }
+    },
+    {
+      "id": "K4.6",
+      "type": "mc",
+      "prompt": "What makes a custom agent?",
+      "options": [
+        {
+          "id": "parts",
+          "text": "A name, instructions, and a set of available tools"
+        },
+        {
+          "id": "mode",
+          "text": "A different session mode",
+          "feedback": "Custom agents aren’t a different session mode."
+        },
+        {
+          "id": "model",
+          "text": "A different AI model",
+          "feedback": "A custom agent isn’t necessarily a different model."
+        },
+        {
+          "id": "skill",
+          "text": "A skill with a new name",
+          "feedback": "A skill supplies a workflow. A custom agent defines the role that does the work."
+        }
+      ],
+      "answer": "parts",
+      "explain": {
+        "correct": "Right. A custom agent has a name, instructions, and a set of available tools. It defines a role, like a plumber, an electrician or a roofer.",
+        "wrong": "Think of the specialist you hire: what do they bring?"
+      },
+      "hints": [
+        "Who is it, what does it do, and what can it use?",
+        "Three parts: a name, instructions, tools.",
+        "A name, instructions, and a set of available tools."
+      ],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "custom-agents-define-a-role-and-its-tools",
+        "hash": "991db2aad3f9"
+      }
+    },
+    {
+      "id": "K4.9",
+      "type": "multi",
+      "prompt": "Your assignment’s done. What can you show? Select all that apply.",
+      "options": [
+        {
+          "id": "diff",
+          "text": "The skill update and the agent profile in your diff"
+        },
+        {
+          "id": "focused",
+          "text": "One focused app or test change"
+        },
+        {
+          "id": "passes",
+          "text": "Tests and the build pass"
+        },
+        {
+          "id": "record",
+          "text": "A review record that lists only the checks that actually ran"
+        },
+        {
+          "id": "merged",
+          "text": "A merged pull request",
+          "feedback": "The assignment doesn’t merge, or even commit. It stays as practice in this worktree."
+        },
+        {
+          "id": "claimed",
+          "text": "A record that says the browser check passed, though it didn’t run",
+          "feedback": "Record only the commands and checks that actually ran, and why one was blocked."
+        }
+      ],
+      "answers": ["diff", "focused", "passes", "record"],
+      "explain": {
+        "correct": "Right. The skill update, the agent profile, one focused change, tests and build passing, and an honest record. That’s the success criteria.",
+        "wrong": "Read the success criteria again: what do they say about merging, and about the record?"
+      },
+      "hints": [
+        "What does the success criteria list?",
+        "Nothing is committed or merged, and the record is honest.",
+        "Everything but the merge and the claimed browser check."
+      ],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "assignment",
+        "hash": "80a1a1b3729a"
+      }
+    },
+    {
+      "id": "T4.1",
+      "type": "scenario",
+      "situation": "Every task in this project should keep the Book App’s stack and behavior unchanged.",
+      "prompt": "Where does that go?",
+      "options": [
+        {
+          "id": "instructions",
+          "text": "Repository instructions: `.github/copilot-instructions.md`"
+        },
+        {
+          "id": "skill",
+          "text": "A skill",
+          "feedback": "A skill is for one kind of task, when it matches. This rule is for every task."
+        },
+        {
+          "id": "agent",
+          "text": "A custom agent",
+          "feedback": "That’s a role you select. This is a rule for the whole project."
+        },
+        {
+          "id": "prompt",
+          "text": "Type it in each prompt",
+          "feedback": "Easy to forget, and hard to share. Save it once."
+        }
+      ],
+      "answer": "instructions",
+      "explain": {
+        "correct": "Right. Repository instructions are the house rules: they apply across tasks in this project.",
+        "wrong": "Which one applies to every task?"
+      },
+      "hints": ["Which feature applies across tasks?", "Instructions are the house rules.", ""],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "choose-the-feature-that-fits-the-task",
+        "hash": "aa81861f78f8"
+      }
+    },
+    {
+      "id": "T4.2",
+      "type": "scenario",
+      "situation": "You run the same accessibility review on every change to the Book App.",
+      "prompt": "What do you save it as?",
+      "options": [
+        {
+          "id": "skill",
+          "text": "A skill: `.github/skills/<name>/SKILL.md`"
+        },
+        {
+          "id": "prompt",
+          "text": "A one-off prompt",
+          "feedback": "You’d have to type it every time."
+        },
+        {
+          "id": "noagent",
+          "text": "A custom agent with no tools list",
+          "feedback": "Without a tools list it gets every tool. And a checklist is a workflow, not a role."
+        },
+        {
+          "id": "instructions",
+          "text": "Repository instructions",
+          "feedback": "Instructions apply to every task. This checklist is for one kind of task."
+        }
+      ],
+      "answer": "skill",
+      "explain": {
+        "correct": "Right. Use a skill when you repeat the same kind of work. It’s the chart for one kind of song.",
+        "wrong": "Which feature is for work you repeat?"
+      },
+      "hints": [
+        "Is it for every task, or one kind of task?",
+        "A reusable checklist that lives in the repo.",
+        ""
+      ],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "choose-the-feature-that-fits-the-task",
+        "hash": "aa81861f78f8"
+      }
+    },
+    {
+      "id": "T4.3",
+      "type": "scenario",
+      "situation": "You need a helper that can read and search the code but never change it.",
+      "prompt": "What do you create?",
+      "options": [
+        {
+          "id": "agent",
+          "text": "A custom agent whose `tools` list is `read` and `search`"
+        },
+        {
+          "id": "skill",
+          "text": "A skill that says “don’t edit”",
+          "feedback": "A skill isn’t a permission boundary. Its words don’t take the tools away."
+        },
+        {
+          "id": "plan",
+          "text": "A new session in **Plan** mode",
+          "feedback": "A mode isn’t a role. The custom agent’s tools list is what limits it."
+        },
+        {
+          "id": "nolist",
+          "text": "A custom agent with no tools list",
+          "feedback": "Leaving `tools` out allows all available tools."
+        }
+      ],
+      "answer": "agent",
+      "explain": {
+        "correct": "Right. The custom agent’s tools list limits which actions it can take. `read` and `search` inspect files without editing or running commands.",
+        "wrong": "What actually limits what a helper can do?"
+      },
+      "hints": ["Words, or tools?", "The toolbelt is the limit.", ""],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "custom-agents-define-a-role-and-its-tools",
+        "hash": "991db2aad3f9"
+      }
+    },
+    {
+      "id": "T4.4",
+      "type": "mc",
+      "prompt": "What helps the app decide when to load a skill?",
+      "options": [
+        {
+          "id": "description",
+          "text": "The `description` in its YAML frontmatter"
+        },
+        {
+          "id": "size",
+          "text": "The size of its folder",
+          "feedback": "Size doesn’t matter. The frontmatter does."
+        },
+        {
+          "id": "name",
+          "text": "Its `name`, and nothing else",
+          "feedback": "The name identifies it. The description helps the app decide when to load it."
+        },
+        {
+          "id": "order",
+          "text": "Its place in the list in **Customize**",
+          "feedback": "The list is where you find it. The app reads the description."
+        }
+      ],
+      "answer": "description",
+      "explain": {
+        "correct": "Right. The `description` in the YAML frontmatter helps the Copilot app decide when to load the skill.",
+        "wrong": "Read the book’s spine."
+      },
+      "hints": ["Two lines sit between the `---` lines.", "One names it; the other says what it’s for.", ""],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "skills-save-a-review-checklist",
+        "hash": "688a14a25fe7"
+      }
+    },
+    {
+      "id": "T4.5",
+      "type": "scenario",
+      "situation": "You edited `SKILL.md` in your session, but the review still uses the old rules.",
+      "prompt": "What do you do first?",
+      "options": [
+        {
+          "id": "reload",
+          "text": "Submit `/skills reload`, and check the file is saved in this session’s worktree"
+        },
+        {
+          "id": "main",
+          "text": "Start a new session from `main`",
+          "feedback": "A new worktree from `main` won’t contain this session’s uncommitted edits."
+        },
+        {
+          "id": "delete",
+          "text": "Delete the skill and add it again",
+          "feedback": "The skill’s fine. The readers just hold the old copy."
+        },
+        {
+          "id": "remember",
+          "text": "Ask Copilot to remember the new rules",
+          "feedback": "That’s a one-off prompt. Reload the skill instead."
+        }
+      ],
+      "answer": "reload",
+      "explain": {
+        "correct": "Right. Check the file’s saved in this session’s worktree, then `/skills reload`. If the command’s missing, quit and reopen the app.",
+        "wrong": "The book changed. What makes the readers fetch the new copy?"
+      },
+      "hints": ["Is the file saved where the session reads it?", "Ring the reading bell.", ""],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "a-changed-skill-or-new-agent-is-missing",
+        "hash": "52e4a7ccaced"
+      }
+    },
+    {
+      "id": "T4.6",
+      "type": "scenario",
+      "situation": "A skill says “review without editing”.",
+      "prompt": "Can Copilot still edit files?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "Yes: a skill gives guidance; a custom agent’s tools list limits actions"
+        },
+        {
+          "id": "no",
+          "text": "No: the skill turns editing off",
+          "feedback": "A skill’s instructions don’t enforce what Copilot is allowed to do."
+        },
+        {
+          "id": "plan",
+          "text": "Only in **Plan** mode",
+          "feedback": "The skill doesn’t change the tools in any mode."
+        },
+        {
+          "id": "reload",
+          "text": "Not after a `/skills reload`",
+          "feedback": "Reloading loads the new instructions. It doesn’t take tools away."
+        }
+      ],
+      "answer": "yes",
+      "explain": {
+        "correct": "Right. A skill supplies task guidance, not a permission boundary. The custom agent’s tool list limits which actions it can take.",
+        "wrong": "Where are the chains?"
+      },
+      "hints": ["Can a book take a chisel away?", "The chains are on the tools, not in the books.", ""],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "core-concepts",
+        "hash": "f106792dbf27"
+      }
+    },
+    {
+      "id": "T4.7",
+      "type": "scenario",
+      "situation": "You created `book-app-explainer.agent.md`, but `/agent` doesn’t list it.",
+      "prompt": "What do you do?",
+      "options": [
+        {
+          "id": "restart",
+          "text": "Let active work finish, quit the app and open it again, then return to the same session"
+        },
+        {
+          "id": "window",
+          "text": "Close the window and open it again",
+          "feedback": "Closing a window isn’t the same as quitting the app."
+        },
+        {
+          "id": "main",
+          "text": "Start again from `main`",
+          "feedback": "Don’t start from `main` again to reload uncommitted files."
+        },
+        {
+          "id": "rename",
+          "text": "Rename the file",
+          "feedback": "The name’s fine. The app loads custom agents when it starts."
+        }
+      ],
+      "answer": "restart",
+      "explain": {
+        "correct": "Right. The app loads custom agents when it starts. Wait for active work in all sessions to finish, quit and reopen the app, then return to the same session.",
+        "wrong": "When does the app load custom agents?"
+      },
+      "hints": ["The hall opens its doors only at dawn.", "Closing a window isn’t quitting.", ""],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "a-changed-skill-or-new-agent-is-missing",
+        "hash": "52e4a7ccaced"
+      }
+    },
+    {
+      "id": "T4.8",
+      "type": "scenario",
+      "situation": "The read-only explainer can’t run the Book App’s tests.",
+      "prompt": "What now?",
+      "options": [
+        {
+          "id": "default",
+          "text": "Return to the default agent to run commands"
+        },
+        {
+          "id": "shell",
+          "text": "Add shell access to its tools",
+          "feedback": "Don’t add shell access just to make the read-only exercise work."
+        },
+        {
+          "id": "claim",
+          "text": "Ask it to say the tests passed",
+          "feedback": "It can inspect tests but can’t run them. Don’t claim tests passed."
+        },
+        {
+          "id": "skip",
+          "text": "Skip the tests",
+          "feedback": "Changes still need their tests. Run them with the default agent."
+        }
+      ],
+      "answer": "default",
+      "explain": {
+        "correct": "Right. The explainer permits only reading and searching, and that’s on purpose. Use the default agent when you need those actions.",
+        "wrong": "Whose job is it to run commands?"
+      },
+      "hints": ["Rory’s belt has no hammer.", "The guild’s own crew has one.", ""],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "the-custom-agent-cannot-run-tests",
+        "hash": "9dc08d4ddfcb"
+      }
+    },
+    {
+      "id": "T4.9",
+      "type": "scenario",
+      "situation": "Copilot says it followed `book-app-reviewer`.",
+      "prompt": "How do you know?",
+      "options": [
+        {
+          "id": "activity",
+          "text": "Expand the activity, and compare the plan with the skill’s rules and the code"
+        },
+        {
+          "id": "trust",
+          "text": "Trust the statement",
+          "feedback": "Don’t rely only on what Copilot says it did. Check the activity and the results."
+        },
+        {
+          "id": "reword",
+          "text": "Ask again in other words",
+          "feedback": "Different wording alone doesn’t show whether the skill worked."
+        },
+        {
+          "id": "toggle",
+          "text": "Check the skill’s toggle is on",
+          "feedback": "That shows it’s available, not that this answer used it."
+        }
+      ],
+      "answer": "activity",
+      "explain": {
+        "correct": "Right. Expand the activity to see whether it loaded, and check the results against the files.",
+        "wrong": "What evidence shows the skill was used?"
+      },
+      "hints": [
+        "Where does the app show what it loaded?",
+        "Check the activity and the code, not the claim.",
+        ""
+      ],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "key-takeaways",
+        "hash": "e262c06d63b6"
+      }
+    },
+    {
+      "id": "T4.10",
+      "type": "mc",
+      "prompt": "What does leaving `tools` out of an agent profile do?",
+      "options": [
+        {
+          "id": "all",
+          "text": "It allows all available tools"
+        },
+        {
+          "id": "none",
+          "text": "It allows no tools",
+          "feedback": "The opposite: without a list, nothing is limited."
+        },
+        {
+          "id": "read",
+          "text": "It allows only `read` and `search`",
+          "feedback": "You get those only when you list them."
+        },
+        {
+          "id": "load",
+          "text": "The agent won’t load",
+          "feedback": "It loads, with every tool."
+        }
+      ],
+      "answer": "all",
+      "explain": {
+        "correct": "Right. The `tools` list limits the available tools. Omitting it would allow all available tools.",
+        "wrong": "An empty toolbelt rack, or no rack at all?"
+      },
+      "hints": ["What does the list do?", "No list, no limit.", ""],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-create-a-read-only-book-app-explainer",
+        "hash": "428c8ffecae4"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "id": "pg4.studio",
+      "title": "A song chart for the session",
+      "image": "ch04/song-chart-skills",
+      "caption": "The players already know their instruments. The bandleader still hands out a chart so everyone plays this song the same way. A skill is that chart. A custom agent is the specialist who follows it, with a defined role and the tools for the job. You still check the result.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "from-the-studio-a-song-chart-for-the-session",
+        "hash": "332e29dc140f"
+      }
+    },
+    {
+      "id": "pg4.choose",
+      "title": "Choose the feature that fits",
+      "caption": "A one-off prompt lives in the current conversation and applies when you send it. Repository instructions (`.github/copilot-instructions.md`) apply across tasks in this project. A skill (`.github/skills/<name>/SKILL.md`) applies when the task matches its description or you invoke it. A custom agent (`.github/agents/<name>.agent.md`) applies when you select it with `/agent` or the agent picker.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "choose-the-feature-that-fits-the-task",
+        "hash": "aa81861f78f8"
+      }
+    },
+    {
+      "id": "pg4.one-off",
+      "title": "A one-off prompt or a skill?",
+      "image": "ch04/skill-vs-one-off-prompt",
+      "caption": "Instructions are the house rules. A skill is the chart for one kind of song: a reusable checklist that lives in the repository and gives the same guidance each time. Use a skill when you repeat the same kind of work.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "choose-the-feature-that-fits-the-task",
+        "hash": "aa81861f78f8"
+      }
+    },
+    {
+      "id": "pg4.customize",
+      "title": "Find skills in Customize",
+      "image": "ch04/app-customize-skills",
+      "caption": "Select **Customize** in the sidebar, then the **Installed** tab. Set the type filter to **Skills** and search for `book-app-reviewer`: the result shows **Project: copilot-app-for-beginners**, and its toggle is on. You select custom agents with `/agent` or the agent picker in the prompt box.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-update-and-use-the-course-skill",
+        "hash": "ea46465fbcdf"
+      }
+    },
+    {
+      "id": "pg4.install",
+      "title": "Install a skill",
+      "caption": "In **Customize**, select **Add**, then **Install skill…** You can install from a local folder, a ZIP file, a GitHub skill-folder URL or an HTTPS ZIP link. The app shows a review step before it writes anything to your machine, so you can check what the skill includes.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "core-concepts",
+        "hash": "f106792dbf27"
+      }
+    },
+    {
+      "id": "pg4.awesome",
+      "title": "Community skills and agents",
+      "caption": "After this chapter’s exercises, browse the Awesome Copilot directories for community agents and skills. Before you add or use another customization, review the agent’s tools or the skill’s instructions.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "core-concepts",
+        "hash": "f106792dbf27"
+      }
+    },
+    {
+      "id": "pg4.not-a-lock",
+      "title": "A skill isn’t a lock",
+      "caption": "A skill tells Copilot how to approach a task, but its instructions don’t enforce what Copilot is allowed to do. A skill that says “review without editing” doesn’t disable file-editing tools. Skills can also include scripts or tell Copilot to use tools, so read unfamiliar skills before you turn them on. The course review skill contains instructions only.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "core-concepts",
+        "hash": "f106792dbf27"
+      }
+    },
+    {
+      "id": "pg4.practice",
+      "title": "Your practice session",
+      "caption": "Select **Create from** next to your course project, then **Branches** and `main`, to start a session in a new worktree. Set the mode to **Interactive**, and keep this session for every exercise. File edits belong to this worktree, and a new worktree from `main` won’t contain them. Installed tools can have a wider scope.",
+      "code": "Show this session's branch and worktree path. Confirm that .github/skills/book-app-reviewer/SKILL.md and samples/book-app-web exist here. Do not edit files, commit, or push.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "create-a-practice-session",
+        "hash": "11035c4aac17"
+      }
+    },
+    {
+      "id": "pg4.skill-file",
+      "title": "A skill is a folder",
+      "caption": "A skill is a folder with a `SKILL.md` file. It starts with YAML frontmatter between two `---` lines: the `name`, and the `description` that helps the app decide when to load it. The Markdown below holds the instructions. Repository skills are shared through Git; personal skills apply across projects on your machine.",
+      "code": "---\nname: book-app-reviewer\ndescription: Review changes in samples/book-app-web for accessibility, responsive layout, tests/build validation, and small beginner-safe changes.\n---",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "skills-save-a-review-checklist",
+        "hash": "688a14a25fe7"
+      }
+    },
+    {
+      "id": "pg4.update-skill",
+      "title": "Update the skill",
+      "caption": "Ask Copilot to edit only `SKILL.md` and append two rules to Review focus: headings that describe the page structure, and text alternatives for informative images and icons. Inspect the **Changes** tab: only the two rules were added. Then submit `/skills reload` to load the edited skill.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-update-and-use-the-course-skill",
+        "hash": "ea46465fbcdf"
+      }
+    },
+    {
+      "id": "pg4.use-skill",
+      "title": "Use the skill",
+      "caption": "Set the mode to **Plan** and ask Copilot to use the `book-app-reviewer` skill on `@samples/book-app-web/src`. Expand the skill activity to confirm it loaded, and compare the plan with the rules in the file. If it moves book titles to `h3`, it must also account for the `.book-card h2` selector, and it mustn’t claim tests passed. Type `/` to find `/book-app-reviewer`.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-update-and-use-the-course-skill",
+        "hash": "ea46465fbcdf"
+      }
+    },
+    {
+      "id": "pg4.agents",
+      "title": "Hire the specialist",
+      "image": "ch04/hiring-specialists-analogy",
+      "caption": "You don’t call one general helper for every repair: you call a plumber, an electrician or a roofer. A custom agent has a name, instructions and a set of available tools. A skill supplies a workflow; a custom agent defines the role that does the work. It isn’t a different session mode, or necessarily a different model.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "custom-agents-define-a-role-and-its-tools",
+        "hash": "991db2aad3f9"
+      }
+    },
+    {
+      "id": "pg4.profile",
+      "title": "The agent profile",
+      "caption": "An agent profile is a Markdown file with YAML frontmatter, like a skill: `name` identifies it in the agent picker, `description` says what it’s for, `tools` limits the available tools (`read` and `search` inspect files without editing or running commands), and the Markdown below defines its behavior and answer format.",
+      "code": "---\nname: book-app-explainer\ndescription: Explain the Book App's code and tests to a beginner without changing files.\ntools: [\"read\", \"search\"]\n---",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "custom-agents-define-a-role-and-its-tools",
+        "hash": "991db2aad3f9"
+      }
+    },
+    {
+      "id": "pg4.explainer",
+      "title": "The read-only explainer",
+      "image": "ch04/app-custom-agent-picker",
+      "caption": "Create `.github/agents/book-app-explainer.agent.md` and check in **Changes** that `tools` holds only `read` and `search`. The app loads custom agents when it starts: wait for active work to finish, quit the app and open it again (closing the window isn’t quitting). Type `/agent`, select **book-app-explainer**, send it, and check the agent picker below the prompt box shows it.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-create-a-read-only-book-app-explainer",
+        "hash": "428c8ffecae4"
+      }
+    },
+    {
+      "id": "pg4.tools",
+      "title": "The toolbelt is the limit",
+      "caption": "The `tools` list limits the available tools; omitting it would allow all of them. The folder scope in the instructions guides the agent, but it isn’t a file-system sandbox. The explainer can’t run tests or save a report, on purpose: match an agent’s tools to its task, and use the default agent when you need those actions.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-create-a-read-only-book-app-explainer",
+        "hash": "428c8ffecae4"
+      }
+    },
+    {
+      "id": "pg4.suggestions",
+      "title": "Next-step suggestions",
+      "caption": "After a custom agent finishes its response, it may suggest next steps as a pre-filled prompt you can review and edit before you send it. Use one to switch to another agent, or carry on without retyping your intent.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-create-a-read-only-book-app-explainer",
+        "hash": "428c8ffecae4"
+      }
+    },
+    {
+      "id": "pg4.takeaways",
+      "title": "Key takeaways",
+      "caption": "Repository instructions give shared rules across a project; skills give reusable instructions for specific tasks. A custom agent defines a specialist role with its own instructions and tools: match its tools to its task. A skill supplies guidance, not a permission boundary. Don’t rely only on what Copilot says it did: check its activity and results against the files, and run the tests.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "key-takeaways",
+        "hash": "e262c06d63b6"
+      }
+    },
+    {
+      "id": "pg4.assignment",
+      "title": "Your skill-guided change",
+      "image": "shared/assignment",
+      "caption": "Take the skill’s heading recommendation (or a focused test) through the Chapter 03 inner loop: plan it with `/book-app-reviewer` in **Plan** mode, record a baseline in **Terminal**, build it in **Interactive**, check **Changes**, the tests, the build and the **Browser** at a wide and a narrow width, and save a review record of only what ran. Don’t commit or push.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "assignment",
+        "hash": "80a1a1b3729a"
+      }
+    },
+    {
+      "id": "pg4.next",
+      "title": "What’s next",
+      "caption": "You now have reusable review instructions and a small read-only agent. Chapter 05 extends what the app can access: an MCP server for documentation, and a plugin that supplies a reusable skill.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "whats-next",
+        "hash": "c6e8e74c186d"
+      }
+    },
+    {
+      "id": "B4.1",
+      "title": "A changed skill or new agent is missing?",
+      "caption": "Check the file is saved in this session’s worktree, and check its path and YAML frontmatter. For a skill, try `/skills reload`. For a new agent, or no reload command, let active work finish, then quit and reopen the app and return to the same session. Don’t start from `main` again.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "a-changed-skill-or-new-agent-is-missing",
+        "hash": "52e4a7ccaced"
+      }
+    },
+    {
+      "id": "B4.2",
+      "title": "Generic advice?",
+      "caption": "Invoke the skill from the `/` menu, or name it. Expand the activity to see whether it loaded, and ask for file-specific evidence and the rules applied. Different wording alone doesn’t show whether the skill worked.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "generic-advice-from-the-copilot-app",
+        "hash": "a4f9a0a3ecf3"
+      }
+    },
+    {
+      "id": "B4.3",
+      "title": "Can’t find skills or custom agents?",
+      "caption": "Use the **Customize** view in the sidebar. Select custom agents with `/agent` or the agent picker in the prompt box. Labels and commands can vary by app version.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "i-cannot-find-skills-or-custom-agents",
+        "hash": "24f3083ffeec"
+      }
+    },
+    {
+      "id": "B4.4",
+      "title": "The custom agent can’t run tests?",
+      "caption": "That’s on purpose: the example permits only reading and searching. Return to the default agent to run commands, and don’t add shell access just to make the read-only exercise work.",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "the-custom-agent-cannot-run-tests",
+        "hash": "9dc08d4ddfcb"
+      }
+    }
+  ],
+  "chests": [
+    {
+      "id": "C4.1",
+      "page": "pg4.install",
+      "doubloons": 10
+    },
+    {
+      "id": "C4.2",
+      "page": "pg4.awesome",
+      "doubloons": 10
+    },
+    {
+      "id": "C4.3",
+      "page": "pg4.suggestions",
+      "doubloons": 10
+    },
+    {
+      "id": "B4.1",
+      "page": "B4.1",
+      "doubloons": 5,
+      "kind": "bottle"
+    },
+    {
+      "id": "B4.2",
+      "page": "B4.2",
+      "doubloons": 5,
+      "kind": "bottle"
+    },
+    {
+      "id": "B4.3",
+      "page": "B4.3",
+      "doubloons": 5,
+      "kind": "bottle"
+    },
+    {
+      "id": "B4.4",
+      "page": "B4.4",
+      "doubloons": 5,
+      "kind": "bottle"
+    }
+  ],
+  "glossary": [
+    {
+      "id": "skill",
+      "term": "Skill",
+      "definition": "A folder with a `SKILL.md` file of reusable instructions for one kind of task. The Copilot app loads it when the task matches its description, or when you invoke it. Find skills in **Customize**."
+    },
+    {
+      "id": "custom-agent",
+      "term": "Custom agent",
+      "definition": "A specialist role with a name, instructions and a set of available tools, defined in an agent profile. Select one with `/agent` or the agent picker."
+    },
+    {
+      "id": "yaml-frontmatter",
+      "term": "YAML frontmatter",
+      "definition": "The block of metadata between two `---` lines at the top of a skill or agent file, such as its `name` and `description`."
+    },
+    {
+      "id": "repository-instructions",
+      "term": "Repository instructions",
+      "definition": "The house rules in `.github/copilot-instructions.md`: shared guidance that applies across tasks in a project."
+    },
+    {
+      "id": "agent-profile",
+      "term": "Agent profile",
+      "definition": "A Markdown file, `.github/agents/<name>.agent.md`, that defines a custom agent: `name`, `description`, `tools`, and its behavior below the frontmatter."
+    },
+    {
+      "id": "agent-picker",
+      "term": "Agent picker",
+      "definition": "Below the prompt box when a custom agent is available: it shows the agent in use, and you can change it there or with `/agent`."
+    }
+  ],
+  "trials": [
+    {
+      "id": "T4",
+      "title": "The Toolbelt Trial",
+      "items": ["T4.1", "T4.2", "T4.3", "T4.4", "T4.5", "T4.6", "T4.7", "T4.8", "T4.9", "T4.10"],
+      "reward": {
+        "seal": "Seal of Guildcrest",
+        "doubloons": 70
+      }
+    }
+  ],
+  "voiced": {
+    "wingman.gc.01": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "learning-objectives",
+      "hash": "87437423c6c6"
+    },
+    "gc.lyra.01": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "from-the-studio-a-song-chart-for-the-session",
+      "hash": "332e29dc140f"
+    },
+    "gc.lyra.02": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "from-the-studio-a-song-chart-for-the-session",
+      "hash": "332e29dc140f"
+    },
+    "gc.lyra.03": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "from-the-studio-a-song-chart-for-the-session",
+      "hash": "332e29dc140f"
+    },
+    "gc.lyra.04": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "from-the-studio-a-song-chart-for-the-session",
+      "hash": "332e29dc140f"
+    },
+    "gc.elspeth.01": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "choose-the-feature-that-fits-the-task",
+      "hash": "aa81861f78f8"
+    },
+    "gc.elspeth.02": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "choose-the-feature-that-fits-the-task",
+      "hash": "aa81861f78f8"
+    },
+    "gc.elspeth.03": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "choose-the-feature-that-fits-the-task",
+      "hash": "aa81861f78f8"
+    },
+    "gc.elspeth.04": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "core-concepts",
+      "hash": "f106792dbf27"
+    },
+    "gc.aidan.01": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "create-a-practice-session",
+      "hash": "11035c4aac17"
+    },
+    "gc.aidan.02": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "create-a-practice-session",
+      "hash": "11035c4aac17"
+    },
+    "gc.brigid.01": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "skills-save-a-review-checklist",
+      "hash": "688a14a25fe7"
+    },
+    "gc.brigid.02": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "exercise-update-and-use-the-course-skill",
+      "hash": "ea46465fbcdf"
+    },
+    "gc.brigid.shelf": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "exercise-update-and-use-the-course-skill",
+      "hash": "ea46465fbcdf"
+    },
+    "gc.brigid.proof": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "exercise-update-and-use-the-course-skill",
+      "hash": "ea46465fbcdf"
+    },
+    "gc.brigid.bell": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "exercise-update-and-use-the-course-skill",
+      "hash": "ea46465fbcdf"
+    },
+    "gc.brigid.lectern": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "exercise-update-and-use-the-course-skill",
+      "hash": "ea46465fbcdf"
+    },
+    "gc.brigid.03": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "exercise-update-and-use-the-course-skill",
+      "hash": "ea46465fbcdf"
+    },
+    "gc.ewan.01": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "core-concepts",
+      "hash": "f106792dbf27"
+    },
+    "gc.ewan.02": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "core-concepts",
+      "hash": "f106792dbf27"
+    },
+    "gc.ewan.03": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "core-concepts",
+      "hash": "f106792dbf27"
+    },
+    "gc.ewan.04": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "key-takeaways",
+      "hash": "e262c06d63b6"
+    },
+    "gc.fergus.01": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "custom-agents-define-a-role-and-its-tools",
+      "hash": "991db2aad3f9"
+    },
+    "gc.fergus.02": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "custom-agents-define-a-role-and-its-tools",
+      "hash": "991db2aad3f9"
+    },
+    "gc.fergus.03": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "custom-agents-define-a-role-and-its-tools",
+      "hash": "991db2aad3f9"
+    },
+    "gc.fergus.04": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "exercise-create-a-read-only-book-app-explainer",
+      "hash": "428c8ffecae4"
+    },
+    "gc.fergus.indenture": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "custom-agents-define-a-role-and-its-tools",
+      "hash": "991db2aad3f9"
+    },
+    "gc.fergus.rack": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "exercise-create-a-read-only-book-app-explainer",
+      "hash": "428c8ffecae4"
+    },
+    "gc.fergus.door": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "exercise-create-a-read-only-book-app-explainer",
+      "hash": "428c8ffecae4"
+    },
+    "gc.fergus.tests": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "the-custom-agent-cannot-run-tests",
+      "hash": "9dc08d4ddfcb"
+    },
+    "gc.fergus.05": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "exercise-create-a-read-only-book-app-explainer",
+      "hash": "428c8ffecae4"
+    },
+    "gc.rory.01": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "exercise-create-a-read-only-book-app-explainer",
+      "hash": "428c8ffecae4"
+    },
+    "gc.rory.02": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "exercise-create-a-read-only-book-app-explainer",
+      "hash": "428c8ffecae4"
+    },
+    "gc.rory.done": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "exercise-create-a-read-only-book-app-explainer",
+      "hash": "428c8ffecae4"
+    },
+    "gc.seren.01": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "key-takeaways",
+      "hash": "e262c06d63b6"
+    },
+    "gc.seren.02": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "key-takeaways",
+      "hash": "e262c06d63b6"
+    },
+    "gc.seren.03": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "whats-next",
+      "hash": "c6e8e74c186d"
+    },
+    "gc.seren.assign.01": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "assignment",
+      "hash": "80a1a1b3729a"
+    },
+    "gc.seren.assign.back": {
+      "chapter": "04-skills-custom-agents",
+      "anchor": "assignment",
+      "hash": "80a1a1b3729a"
+    }
+  }
+}

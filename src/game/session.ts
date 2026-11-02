@@ -249,6 +249,8 @@ export interface GameSession {
     sailTo(x: number, z: number, heading: number): void;
     /** Sets a quest step, e.g. to lower the gangway without playing the island (tests). */
     quest(id: string, step: string): void;
+    /** Holds the camera on a shot (tests' stills), or hands it back to the follow camera (null). */
+    shot(shot: CameraShot | null): void;
     /** The live sea (Settings → Sea state), and whether a battle or course holds it fixed. */
     sea(): { chosen: string; fixed: boolean; settled: boolean; windSpeed: number; amp: number[] };
     /** Whether the gangway's down, and its world-space foot and top (tests). */
@@ -759,6 +761,7 @@ export async function createSession(o: SessionOptions): Promise<GameSession> {
     toast: (text, seconds) => hud.toast(text, seconds),
     onStart: (id) => puzzleLabel(`battle:${id}`),
     say: (ids) => dialogue.play(ids),
+    voiced: (id) => !hud.line(id)?.pending,
   });
   battles.prefetch(island);
   let scriptRunning = false;
@@ -3219,6 +3222,8 @@ export async function createSession(o: SessionOptions): Promise<GameSession> {
             ground: world.groundAt(n.x, n.z),
           })),
       quest: (id: string, step: string) => setQuest(id, step),
+      /** Holds the camera on a shot (tests' stills), or hands it back to the follow camera (null). */
+      shot: (shot) => (shot ? cam.cut(shot) : cam.release()),
       /** The live sea (Settings → Sea state), and whether a battle or course holds it fixed. */
       sea: () => ({
         chosen: seaState.chosen,

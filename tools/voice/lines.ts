@@ -67,6 +67,12 @@ export function readLines(course: string): LinesFile {
   return { set: data.set, lines: data.lines.filter((l) => !l.pending).map((l) => resolveLine(l, cast)) };
 }
 
+/** The pack's pending lines (written, not voiced yet), as they're written. */
+export function pendingLines(course: string): readonly VoiceLineDefinition[] {
+  const data = JSON.parse(readFileSync(coursePaths(course).lines, 'utf8')) as LinesFile;
+  return data.lines.filter((l) => l.pending);
+}
+
 export const resolvedLines = (course: string): readonly VoiceLineDefinition[] => readLines(course).lines;
 
 /** The generator's cache key for a line in a voice: the same key is the same audio. */

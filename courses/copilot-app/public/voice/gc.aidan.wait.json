@@ -1,0 +1,67 @@
+{
+  "id": "gc.aidan.wait",
+  "speaker": "Aidan",
+  "text": "Reeve Elspeth's expecting you on the square first, Captain. Come back after.",
+  "words": [
+    {
+      "word": "Reeve",
+      "start": 0,
+      "end": 0.293
+    },
+    {
+      "word": "Elspeth's",
+      "start": 0.293,
+      "end": 0.768
+    },
+    {
+      "word": "expecting",
+      "start": 0.768,
+      "end": 1.22
+    },
+    {
+      "word": "you",
+      "start": 1.22,
+      "end": 1.333
+    },
+    {
+      "word": "on",
+      "start": 1.333,
+      "end": 1.46
+    },
+    {
+      "word": "the",
+      "start": 1.46,
+      "end": 1.566
+    },
+    {
+      "word": "square",
+      "start": 1.566,
+      "end": 1.907
+    },
+    {
+      "word": "first",
+      "start": 1.907,
+      "end": 2.465
+    },
+    {
+      "word": "Captain",
+      "start": 2.465,
+      "end": 2.8
+    },
+    {
+      "word": "Come",
+      "start": 2.8,
+      "end": 3.168
+    },
+    {
+      "word": "back",
+      "start": 3.168,
+      "end": 3.427
+    },
+    {
+      "word": "after",
+      "start": 3.427,
+      "end": 3.677
+    }
+  ]
+}

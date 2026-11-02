@@ -1,0 +1,77 @@
+{
+  "id": "gc.brigid.wait",
+  "speaker": "Brigid",
+  "text": "You'll need a carrel first, Captain. Brother Aidan has the keys, at the gate.",
+  "words": [
+    {
+      "word": "You'll",
+      "start": 0,
+      "end": 0.192
+    },
+    {
+      "word": "need",
+      "start": 0.192,
+      "end": 0.36
+    },
+    {
+      "word": "a",
+      "start": 0.36,
+      "end": 0.46
+    },
+    {
+      "word": "carrel",
+      "start": 0.46,
+      "end": 0.787
+    },
+    {
+      "word": "first",
+      "start": 0.787,
+      "end": 1.39
+    },
+    {
+      "word": "Captain",
+      "start": 1.39,
+      "end": 1.75
+    },
+    {
+      "word": "Brother",
+      "start": 1.75,
+      "end": 2.3
+    },
+    {
+      "word": "Aidan",
+      "start": 2.3,
+      "end": 2.62
+    },
+    {
+      "word": "has",
+      "start": 2.62,
+      "end": 2.82
+    },
+    {
+      "word": "the",
+      "start": 2.82,
+      "end": 2.96
+    },
+    {
+      "word": "keys",
+      "start": 2.96,
+      "end": 3.547
+    },
+    {
+      "word": "at",
+      "start": 3.547,
+      "end": 3.62
+    },
+    {
+      "word": "the",
+      "start": 3.62,
+      "end": 3.776
+    },
+    {
+      "word": "gate",
+      "start": 3.776,
+      "end": 4.026
+    }
+  ]
+}

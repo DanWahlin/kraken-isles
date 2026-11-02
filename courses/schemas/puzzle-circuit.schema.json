@@ -33,8 +33,8 @@
       "description": "The course turns this puzzle off: its site stays as scenery and its cue does nothing."
     },
     "circuit": {
-      "description": "Which of the game's circuits it runs: the Drydock Ring or the Lock Flight.",
-      "enum": ["ring", "flight"]
+      "description": "Which of the game's circuits it runs: the Drydock Ring, the Lock Flight, the Pattern Book or the Journeyman's Toolbelt.",
+      "enum": ["ring", "flight", "book", "belt"]
     },
     "places": {
       "description": "The course's place id → the game's place it is (`acts`, each bound once), its name on signs and in the HUD, and what it stands for in the course.",

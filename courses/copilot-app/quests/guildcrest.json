@@ -1,0 +1,872 @@
+{
+  "$schema": "../../schemas/quests.schema.json",
+  "$comment": "Guildcrest (Chapter 04: Skills and Custom Agents), docs/specs/ISLAND-04-guildcrest.md §4. Its cast ids, story names, signs, cues and compass ids are the game’s contract (the spec’s § Wiring contract). Written ahead of its island.",
+  "island": "guildcrest",
+  "tracker": {
+    "chapter": "Chapter 04 · Skills & Custom Agents",
+    "goal": "Save your craft as skills and agents, and earn the Seal of Guildcrest",
+    "next": "Sunspire Sands is next, and she’s still being charted. Until then these waters are yours."
+  },
+  "quests": [
+    {
+      "id": "Q4.1",
+      "title": "The Song Chart",
+      "task": "Hear the Bard’s tale",
+      "steps": {
+        "start": "Lyra’s playing on the inn’s porch, at the quay’s head.",
+        "done": "A skill is the chart for one kind of job. A custom agent is the specialist who follows it. You still check the result."
+      }
+    },
+    {
+      "id": "Q4.2",
+      "title": "The Charter Stone",
+      "task": "Choose the feature that fits",
+      "steps": {
+        "start": "Reeve Elspeth keeps the Charter Stone on Guild Square.",
+        "done": "A prompt is for now. Instructions are the house rules. A skill is for work you repeat. A custom agent is a role with its own tools."
+      }
+    },
+    {
+      "id": "Q4.3",
+      "title": "A Carrel of Your Own",
+      "task": "Start a practice session",
+      "link": {
+        "label": "Create the session in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/04-skills-custom-agents/README.md#create-a-practice-session"
+      },
+      "steps": {
+        "start": "Brother Aidan keeps the abbey’s gate, up the Kirk Brae.",
+        "done": "One session in a new worktree from main, kept for every exercise. Its edits stay in its worktree."
+      }
+    },
+    {
+      "id": "Q4.4",
+      "title": "The Pattern Book",
+      "task": "Update and use a skill",
+      "link": {
+        "label": "Update the skill in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/04-skills-custom-agents/README.md#exercise-update-and-use-the-course-skill"
+      },
+      "steps": {
+        "start": "Sister Brigid runs the scriptorium, through the cloister.",
+        "book": "Walk the Pattern Book round the cloister.",
+        "solved": "Every lamp on the cloister walk is lit. Talk to Brigid.",
+        "done": "A skill is a folder with a SKILL.md file. Update it, reload it, and check its activity against the files."
+      }
+    },
+    {
+      "id": "Q4.5",
+      "title": "The Chained Library",
+      "task": "See what a skill can’t do",
+      "steps": {
+        "start": "Brother Ewan keeps the chained library, along the cloister.",
+        "done": "A skill guides the work. It doesn’t switch off any tools, so read a skill before you turn it on."
+      }
+    },
+    {
+      "id": "Q4.6",
+      "title": "Hire a Specialist",
+      "task": "Learn what makes a custom agent",
+      "steps": {
+        "start": "Guildmaster Fergus is at the guildhall, out the east gate.",
+        "done": "A custom agent has a name, instructions and a set of tools. It’s a role, not a mode or a model."
+      }
+    },
+    {
+      "id": "Q4.7",
+      "title": "The Journeyman’s Toolbelt",
+      "task": "Create a read-only custom agent",
+      "link": {
+        "label": "Create the agent in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/04-skills-custom-agents/README.md#exercise-create-a-read-only-book-app-explainer"
+      },
+      "steps": {
+        "start": "Talk to Fergus again in the guildhall yard.",
+        "belt": "Fit out Rory’s toolbelt in the yard.",
+        "solved": "Every lamp in the yard is lit. Talk to Fergus.",
+        "done": "The tools list is the limit: read and search only. Quit and reopen the app to load it, then pick it with /agent."
+      }
+    },
+    {
+      "id": "Q4.8",
+      "title": "The Toolbelt Trial",
+      "task": "Pass the Trial to earn the Seal",
+      "steps": {
+        "start": "Abbess Seren waits at the bell tower.",
+        "exam": "The Toolbelt Trial is ready when you are.",
+        "done": "The Seal of Guildcrest is yours."
+      }
+    },
+    {
+      "id": "Q4.A",
+      "title": "Your Turn: One Skill-Guided Change",
+      "task": "Make one skill-guided change",
+      "optional": true,
+      "link": {
+        "label": "Do the assignment in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/04-skills-custom-agents/README.md#assignment"
+      },
+      "steps": {
+        "start": "Seren has one more job for you.",
+        "try": "Do the assignment in the app, then show Seren.",
+        "done": "One focused change from the skill’s review, tests and build passing, and an honest record."
+      }
+    }
+  ],
+  "targets": {
+    "Q4.1:start": {
+      "ids": ["npc:lyra_guild"],
+      "label": "Lyra"
+    },
+    "Q4.2:start": {
+      "ids": ["npc:elspeth"],
+      "label": "Elspeth"
+    },
+    "Q4.3:start": {
+      "ids": ["npc:aidan"],
+      "label": "Brother Aidan"
+    },
+    "Q4.4:start": {
+      "ids": ["npc:brigid"],
+      "label": "Sister Brigid"
+    },
+    "Q4.4:book": {
+      "ids": ["book:*"],
+      "label": "The Pattern Book"
+    },
+    "Q4.4:solved": {
+      "ids": ["npc:brigid"],
+      "label": "Sister Brigid"
+    },
+    "Q4.5:start": {
+      "ids": ["npc:ewan"],
+      "label": "Brother Ewan"
+    },
+    "Q4.6:start": {
+      "ids": ["npc:fergus"],
+      "label": "Guildmaster Fergus"
+    },
+    "Q4.7:start": {
+      "ids": ["npc:fergus"],
+      "label": "Guildmaster Fergus"
+    },
+    "Q4.7:belt": {
+      "ids": ["belt:*"],
+      "label": "The Journeyman’s Toolbelt"
+    },
+    "Q4.7:solved": {
+      "ids": ["npc:fergus"],
+      "label": "Guildmaster Fergus"
+    },
+    "Q4.8:start": {
+      "ids": ["npc:seren"],
+      "label": "Abbess Seren"
+    },
+    "Q4.8:exam": {
+      "ids": ["npc:seren"],
+      "label": "Abbess Seren"
+    },
+    "Q4.A:start": {
+      "ids": ["npc:seren"],
+      "label": "Abbess Seren"
+    },
+    "Q4.A:try": {
+      "ids": ["npc:seren"],
+      "label": "Abbess Seren"
+    }
+  },
+  "beats": [
+    {
+      "npc": "lyra_guild",
+      "when": {
+        "Q4.1": "done"
+      },
+      "say": "gc.lyra.done"
+    },
+    {
+      "npc": "lyra_guild",
+      "script": "lyra"
+    },
+    {
+      "npc": "elspeth",
+      "when": {
+        "Q4.1": {
+          "not": "done"
+        }
+      },
+      "say": "gc.elspeth.wait"
+    },
+    {
+      "npc": "elspeth",
+      "when": {
+        "Q4.2": "done"
+      },
+      "say": "gc.elspeth.done"
+    },
+    {
+      "npc": "elspeth",
+      "script": "elspeth"
+    },
+    {
+      "npc": "aidan",
+      "when": {
+        "Q4.2": {
+          "not": "done"
+        }
+      },
+      "say": "gc.aidan.wait"
+    },
+    {
+      "npc": "aidan",
+      "when": {
+        "Q4.3": "done"
+      },
+      "say": "gc.aidan.done"
+    },
+    {
+      "npc": "aidan",
+      "script": "aidan"
+    },
+    {
+      "npc": "brigid",
+      "when": {
+        "Q4.3": {
+          "not": "done"
+        }
+      },
+      "say": "gc.brigid.wait"
+    },
+    {
+      "npc": "brigid",
+      "when": {
+        "Q4.4": "book"
+      },
+      "say": "gc.brigid.book"
+    },
+    {
+      "npc": "brigid",
+      "when": {
+        "Q4.4": "solved"
+      },
+      "script": "brigid.solved"
+    },
+    {
+      "npc": "brigid",
+      "when": {
+        "Q4.4": {
+          "not": "done"
+        }
+      },
+      "script": "brigid"
+    },
+    {
+      "npc": "brigid",
+      "none": true
+    },
+    {
+      "npc": "ewan",
+      "when": {
+        "Q4.4": {
+          "not": "done"
+        }
+      },
+      "say": "gc.ewan.wait"
+    },
+    {
+      "npc": "ewan",
+      "when": {
+        "Q4.5": "done"
+      },
+      "say": "gc.ewan.done"
+    },
+    {
+      "npc": "ewan",
+      "script": "ewan"
+    },
+    {
+      "npc": "fergus",
+      "when": {
+        "Q4.5": {
+          "not": "done"
+        }
+      },
+      "say": "gc.fergus.wait"
+    },
+    {
+      "npc": "fergus",
+      "when": {
+        "Q4.6": {
+          "not": "done"
+        }
+      },
+      "script": "fergus"
+    },
+    {
+      "npc": "fergus",
+      "when": {
+        "Q4.7": "belt"
+      },
+      "say": "gc.fergus.belt"
+    },
+    {
+      "npc": "fergus",
+      "when": {
+        "Q4.7": "solved"
+      },
+      "script": "fergus.belt.solved"
+    },
+    {
+      "npc": "fergus",
+      "when": {
+        "Q4.7": {
+          "not": "done"
+        }
+      },
+      "script": "fergus.belt"
+    },
+    {
+      "npc": "fergus",
+      "say": "gc.fergus.done"
+    },
+    {
+      "npc": "seren",
+      "when": {
+        "Q4.7": {
+          "not": "done"
+        }
+      },
+      "say": "gc.seren.wait"
+    },
+    {
+      "npc": "seren",
+      "when": {
+        "Q4.8": "exam"
+      },
+      "script": "seren.retry"
+    },
+    {
+      "npc": "seren",
+      "when": {
+        "Q4.A": "start"
+      },
+      "script": "seren.assignment"
+    },
+    {
+      "npc": "seren",
+      "when": {
+        "Q4.A": "try"
+      },
+      "script": "seren.assignment.back"
+    },
+    {
+      "npc": "seren",
+      "when": {
+        "Q4.8": "done"
+      },
+      "say": "gc.seren.done"
+    },
+    {
+      "npc": "seren",
+      "script": "seren"
+    }
+  ],
+  "story": {
+    "conditions": {
+      "firstVisit": {
+        "Q4.1": {
+          "not": "done"
+        }
+      },
+      "bookCopied": {
+        "Q4.4": "done"
+      },
+      "journeymanHired": {
+        "Q4.7": ["solved", "done"]
+      },
+      "sealed": {
+        "Q4.8": "done"
+      }
+    },
+    "events": {}
+  },
+  "signs": {
+    "charterFoot": ".github/copilot-instructions.md",
+    "shelfLabel": ".github/skills/",
+    "bookSpine": "book-app-reviewer",
+    "bookFile": "SKILL.md",
+    "rollBoard": ".github/agents/",
+    "roryBanner": "book-app-explainer",
+    "beltRead": "read",
+    "beltSearch": "search",
+    "innSign": "The Harp and Whistle",
+    "guildMasons": "The Masons’ Guild",
+    "guildWeavers": "The Weavers’ Guild",
+    "guildMillwrights": "The Millwrights’ Guild"
+  },
+  "scripts": {
+    "lyra": [
+      {
+        "say": "gc.lyra.01"
+      },
+      {
+        "show": "ch04/song-chart-skills",
+        "caption": "The bandleader hands out a chart, so everyone plays this song the same way."
+      },
+      {
+        "say": "gc.lyra.02"
+      },
+      {
+        "hide": true
+      },
+      {
+        "cue": "gc-chart"
+      },
+      {
+        "say": "gc.lyra.03"
+      },
+      {
+        "quiz": "K4.1"
+      },
+      {
+        "page": "pg4.studio",
+        "doubloons": 15
+      },
+      {
+        "say": "gc.lyra.04"
+      },
+      {
+        "quest": "Q4.1",
+        "step": "done"
+      },
+      {
+        "quest": "Q4.2",
+        "step": "start"
+      }
+    ],
+    "elspeth": [
+      {
+        "say": "gc.elspeth.01"
+      },
+      {
+        "say": "gc.elspeth.02"
+      },
+      {
+        "cue": "gc-charter"
+      },
+      {
+        "quiz": "M4.1"
+      },
+      {
+        "show": "ch04/skill-vs-one-off-prompt",
+        "caption": "A one-off prompt, or a skill: a reusable checklist that lives in the repository."
+      },
+      {
+        "say": "gc.elspeth.03"
+      },
+      {
+        "hide": true
+      },
+      {
+        "quiz": "K4.2"
+      },
+      {
+        "term": "repository-instructions"
+      },
+      {
+        "page": "pg4.choose",
+        "doubloons": 15
+      },
+      {
+        "file": "pg4.one-off"
+      },
+      {
+        "say": "gc.elspeth.04"
+      },
+      {
+        "quest": "Q4.2",
+        "step": "done"
+      },
+      {
+        "quest": "Q4.3",
+        "step": "start"
+      }
+    ],
+    "aidan": [
+      {
+        "say": "gc.aidan.01"
+      },
+      {
+        "say": "gc.aidan.02"
+      },
+      {
+        "quiz": "K4.3"
+      },
+      {
+        "page": "pg4.practice",
+        "doubloons": 15
+      },
+      {
+        "appTask": "A4.1"
+      },
+      {
+        "say": "gc.aidan.03"
+      },
+      {
+        "quest": "Q4.3",
+        "step": "done"
+      },
+      {
+        "quest": "Q4.4",
+        "step": "start"
+      }
+    ],
+    "brigid": [
+      {
+        "say": "gc.brigid.01"
+      },
+      {
+        "say": "gc.brigid.02"
+      },
+      {
+        "quest": "Q4.4",
+        "step": "book"
+      },
+      {
+        "cue": "gc-book"
+      }
+    ],
+    "brigid.solved": [
+      {
+        "say": "gc.brigid.03"
+      },
+      {
+        "term": "skill"
+      },
+      {
+        "term": "yaml-frontmatter"
+      },
+      {
+        "show": "ch04/app-customize-skills",
+        "caption": "① **Customize** · ② the **Installed** tab · ③ the **Skills** type filter · ④ `book-app-reviewer`, with its toggle on."
+      },
+      {
+        "hide": true
+      },
+      {
+        "quiz": "H4.1"
+      },
+      {
+        "file": "pg4.skill-file"
+      },
+      {
+        "file": "pg4.customize"
+      },
+      {
+        "file": "pg4.update-skill"
+      },
+      {
+        "page": "pg4.use-skill",
+        "doubloons": 15
+      },
+      {
+        "appTask": "A4.2"
+      },
+      {
+        "appTask": "A4.3"
+      },
+      {
+        "cue": "gc-chest:C4.1"
+      },
+      {
+        "quest": "Q4.4",
+        "step": "done"
+      },
+      {
+        "quest": "Q4.5",
+        "step": "start"
+      }
+    ],
+    "ewan": [
+      {
+        "say": "gc.ewan.01"
+      },
+      {
+        "cue": "gc-chains"
+      },
+      {
+        "say": "gc.ewan.02"
+      },
+      {
+        "say": "gc.ewan.03"
+      },
+      {
+        "quiz": "K4.5"
+      },
+      {
+        "page": "pg4.not-a-lock",
+        "doubloons": 15
+      },
+      {
+        "say": "gc.ewan.04"
+      },
+      {
+        "quest": "Q4.5",
+        "step": "done"
+      },
+      {
+        "quest": "Q4.6",
+        "step": "start"
+      }
+    ],
+    "fergus": [
+      {
+        "say": "gc.fergus.01"
+      },
+      {
+        "show": "ch04/hiring-specialists-analogy",
+        "caption": "You call the specialist: a plumber, an electrician, a roofer."
+      },
+      {
+        "say": "gc.fergus.02"
+      },
+      {
+        "hide": true
+      },
+      {
+        "say": "gc.fergus.03"
+      },
+      {
+        "quiz": "K4.6"
+      },
+      {
+        "term": "custom-agent"
+      },
+      {
+        "term": "agent-profile"
+      },
+      {
+        "page": "pg4.agents",
+        "doubloons": 15
+      },
+      {
+        "file": "pg4.profile"
+      },
+      {
+        "quest": "Q4.6",
+        "step": "done"
+      },
+      {
+        "quest": "Q4.7",
+        "step": "start"
+      },
+      {
+        "say": "gc.fergus.04"
+      }
+    ],
+    "fergus.belt": [
+      {
+        "quest": "Q4.7",
+        "step": "belt"
+      },
+      {
+        "cue": "gc-belt"
+      }
+    ],
+    "fergus.belt.solved": [
+      {
+        "say": "gc.rory.done"
+      },
+      {
+        "say": "gc.fergus.05"
+      },
+      {
+        "term": "agent-picker"
+      },
+      {
+        "show": "ch04/app-custom-agent-picker",
+        "caption": "Type `/agent`, then select **book-app-explainer** and send the command."
+      },
+      {
+        "hide": true
+      },
+      {
+        "quiz": "H4.2"
+      },
+      {
+        "file": "pg4.explainer"
+      },
+      {
+        "page": "pg4.tools",
+        "doubloons": 15
+      },
+      {
+        "appTask": "A4.4"
+      },
+      {
+        "appTask": "A4.5"
+      },
+      {
+        "cue": "gc-chest:C4.3"
+      },
+      {
+        "say": "gc.fergus.06"
+      },
+      {
+        "quest": "Q4.7",
+        "step": "done"
+      },
+      {
+        "quest": "Q4.8",
+        "step": "start"
+      }
+    ],
+    "seren": [
+      {
+        "say": "gc.seren.01"
+      },
+      {
+        "say": "gc.seren.02"
+      },
+      {
+        "quest": "Q4.8",
+        "step": "exam"
+      },
+      {
+        "trial": "T4"
+      },
+      {
+        "script": "trial.passed"
+      }
+    ],
+    "seren.retry": [
+      {
+        "say": "gc.seren.retry"
+      },
+      {
+        "trial": "T4"
+      },
+      {
+        "script": "trial.passed"
+      }
+    ],
+    "trial.passed": [
+      {
+        "cue": "gc-seal"
+      },
+      {
+        "cue": "celebrate"
+      },
+      {
+        "page": "pg4.takeaways"
+      },
+      {
+        "say": "gc.seren.03"
+      },
+      {
+        "file": "pg4.next"
+      },
+      {
+        "quest": "Q4.8",
+        "step": "done"
+      },
+      {
+        "quest": "Q4.A",
+        "step": "start"
+      },
+      {
+        "say": "gc.seren.more"
+      }
+    ],
+    "seren.assignment": [
+      {
+        "say": "gc.seren.assign.01"
+      },
+      {
+        "page": "pg4.assignment",
+        "doubloons": 15
+      },
+      {
+        "say": "gc.seren.assign.go"
+      },
+      {
+        "appTask": "A4.6",
+        "quiet": true
+      },
+      {
+        "quest": "Q4.A",
+        "step": "try"
+      }
+    ],
+    "seren.assignment.back": [
+      {
+        "say": "gc.seren.assign.ask"
+      },
+      {
+        "appTask": "A4.6",
+        "orStop": true
+      },
+      {
+        "quiz": "K4.9"
+      },
+      {
+        "say": "gc.seren.assign.back"
+      },
+      {
+        "quest": "Q4.A",
+        "step": "done"
+      }
+    ]
+  },
+  "notes": {
+    "lyra": "The song chart (puzzles/song-chart.json, the gc-chart cue): Callum and Isla play from memory, out of step; the player hands out the chart and they play together. Harp’s Return joins the Songbook (04 · from-the-studio-a-song-chart-for-the-session).",
+    "elspeth": "The Charter Stone (gc-charter) frames M4.1, the course's four-row table; then the one-off prompt image and K4.2.",
+    "aidan": "The practice session: K4.3 and its card (A4.1). The carrel key is the session in a new worktree from main.",
+    "brigid": "The Pattern Book (puzzles/pattern-book.json): the brief sets the book step, and the lap opens (gc-book). The lap's end sets solved and plays brigid.solved at once.",
+    "brigid.solved": "The lap's close: the Customize spyglass (H4.1), the skill pages, both cards (A4.2, A4.3), and chest C4.1 in the book press opens.",
+    "ewan": "The chained library (gc-chains): the page says \"review without carving\", and the apprentice still holds the chisel. K4.5 is the course's IMPORTANT note (04 · core-concepts).",
+    "fergus": "Hiring specialists, K4.6, the agent pages. Q4.7 starts; talk to Fergus again in the yard (fergus.belt).",
+    "fergus.belt": "The Journeyman's Toolbelt (puzzles/toolbelt.json): the belt step, and the lap opens (gc-belt). The lap's end plays fergus.belt.solved.",
+    "fergus.belt.solved": "The lap's close: Rory's line, the agent picker spyglass (H4.2), the explainer pages, both cards (A4.4, A4.5), and chest C4.3 in the yard opens.",
+    "seren": "Leaving the Trial ends the script; next time Seren skips her introduction (seren.retry). The reflection comes before the Seal.",
+    "trial.passed": "The Seal: gc-seal rings the bell three times, the swifts burst from the belfry, and the guild banners unfurl along the ridge (§4.5).",
+    "seren.assignment": "Optional, after the Seal: the assignment card goes quietly, and Seren asks when you're back.",
+    "seren.assignment.back": "Later ends the talk; I did it shows K4.9, the success criteria.",
+    "barks.gc_kid": "The second bark paraphrases 04 · choose-the-feature-that-fits-the-task (a one-off prompt).",
+    "barks.gc_copyist": "The second bark paraphrases 04 · exercise-update-and-use-the-course-skill.",
+    "barks.gc_miller": "The second bark paraphrases 04 · from-the-studio-a-song-chart-for-the-session.",
+    "barks.brigid": "Her barks after Q4.4 point to Ewan (nav); the second paraphrases 04 · skills-save-a-review-checklist.",
+    "barks.rory": "Both barks paraphrase 04 · exercise-create-a-read-only-book-app-explainer.",
+    "barks.gc_shepherd": "The second bark paraphrases 04 · key-takeaways (check the result)."
+  },
+  "barks": {
+    "gc_fiddler": [
+      "Isla, you’re a beat ahead again!",
+      "With the chart on the stand, we play it the same every night."
+    ],
+    "gc_whistler": [
+      "I’m not ahead, Callum. You’re behind!",
+      "Lyra’s chart doesn’t play the tune for us. We still have to play it well."
+    ],
+    "gc_kid": [
+      "Errands! Who needs an errand run?",
+      "Tell me once and I’ll do it once, Captain. Ask me again tomorrow."
+    ],
+    "gc_copyist": ["Steady hand, steady hand…", "Two new rules, and not a word more."],
+    "gc_miller": [
+      "Wind’s fair for grinding today.",
+      "The mill grinds the same flour every day. Same chart, same job."
+    ],
+    "gc_shepherd": [
+      "Mind the heather, Captain. It hides the burn.",
+      "I count the flock every evening. The dog says they’re all there, but I count anyway."
+    ],
+    "brigid": [
+      "Brother Ewan’s along the north walk, Captain. Ask him what a book can’t do.",
+      "One book per craft, and its spine says when to fetch it."
+    ],
+    "rory": [
+      "I read and I search. I don’t carve, and I don’t claim the tests passed.",
+      "Need something changed? That’s the guild’s own crew, Captain, not me."
+    ]
+  }
+}

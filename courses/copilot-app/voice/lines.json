@@ -2645,6 +2645,410 @@
       "id": "b3.juno.retreat",
       "speaker": "Juno",
       "text": "It's going back down. We read the signs, Captain, and we're still afloat."
+    },
+    {
+      "id": "gc.juno.arrive.01",
+      "speaker": "Juno",
+      "text": "Guildcrest, Captain. A guild town, an abbey full of copyists, and windmills on the ridge."
+    },
+    {
+      "id": "wingman.gc.01",
+      "speaker": "Wingman",
+      "text": "They write the craft down here, so nobody types the same reminders twice. Skills and agents, Captain!"
+    },
+    {
+      "id": "wingman.gc.nav",
+      "speaker": "Wingman",
+      "text": "Your tasks are in the top left, and the compass up top shows the way, all the way to the bell tower."
+    },
+    {
+      "id": "wingman.starfish.guildcrest",
+      "speaker": "Wingman",
+      "text": "And five starfish are hidden around Guildcrest. Your count's in the top right."
+    },
+    {
+      "id": "gc.lyra.01",
+      "speaker": "Lyra",
+      "text": "Captain! The players already know their instruments. The bandleader still hands out a chart."
+    },
+    {
+      "id": "gc.lyra.02",
+      "speaker": "Lyra",
+      "text": "The chart makes everyone play this song the same way. Hand it out, and listen."
+    },
+    {
+      "id": "gc.lyra.03",
+      "speaker": "Lyra",
+      "text": "A skill is that chart. A custom agent is the specialist who follows it, with the tools for the job."
+    },
+    {
+      "id": "gc.lyra.04",
+      "speaker": "Lyra",
+      "text": "You still check the result, though. A chart doesn't guarantee a good performance. Elspeth's on the square."
+    },
+    {
+      "id": "gc.lyra.done",
+      "speaker": "Lyra",
+      "text": "Reeve Elspeth's on Guild Square, Captain, up the lane from the quay."
+    },
+    {
+      "id": "gc.elspeth.wait",
+      "speaker": "Elspeth",
+      "text": "Hear Lyra's tale first, Captain. She's on the inn's porch, down by the quay."
+    },
+    {
+      "id": "gc.elspeth.01",
+      "speaker": "Elspeth",
+      "text": "Welcome to Guild Square, Captain. There are four ways to tell Copilot what you want, and each fits its own job."
+    },
+    {
+      "id": "gc.elspeth.02",
+      "speaker": "Elspeth",
+      "text": "This stone holds the house rules: repository instructions. They apply across every task in the project."
+    },
+    {
+      "id": "gc.elspeth.03",
+      "speaker": "Elspeth",
+      "text": "A skill is the chart for one kind of song. Use one when you repeat the same kind of work."
+    },
+    {
+      "id": "gc.elspeth.04",
+      "speaker": "Elspeth",
+      "text": "You'll find skills in Customize, and you pick custom agents with /agent. Brother Aidan keeps the abbey gate."
+    },
+    {
+      "id": "gc.elspeth.done",
+      "speaker": "Elspeth",
+      "text": "Brother Aidan keeps the abbey gate, at the top of the Kirk Brae."
+    },
+    {
+      "id": "gc.aidan.wait",
+      "speaker": "Aidan",
+      "text": "Reeve Elspeth's expecting you on the square first, Captain. Come back after."
+    },
+    {
+      "id": "gc.aidan.01",
+      "speaker": "Aidan",
+      "text": "Every copyist gets a carrel of their own, Captain. Yours is a practice session in a new worktree from main."
+    },
+    {
+      "id": "gc.aidan.02",
+      "speaker": "Aidan",
+      "text": "What you write there stays in that worktree. Keep the one session for every exercise."
+    },
+    {
+      "id": "gc.aidan.03",
+      "speaker": "Aidan",
+      "text": "Sister Brigid's in the scriptorium, through the cloister. Mind the ink."
+    },
+    {
+      "id": "gc.aidan.done",
+      "speaker": "Aidan",
+      "text": "Your carrel's waiting, Captain. Sister Brigid's along the west walk."
+    },
+    {
+      "id": "gc.brigid.wait",
+      "speaker": "Brigid",
+      "text": "You'll need a carrel first, Captain. Brother Aidan has the keys, at the gate."
+    },
+    {
+      "id": "gc.brigid.01",
+      "speaker": "Brigid",
+      "text": "One book per craft, Captain. A skill is a folder with a SKILL.md file inside."
+    },
+    {
+      "id": "gc.brigid.02",
+      "speaker": "Brigid",
+      "text": "Our review book needs two new rules. Find it, read its spine, copy them in, and check every word."
+    },
+    {
+      "id": "gc.brigid.book",
+      "speaker": "Brigid",
+      "text": "Follow the lamps round the walk, Captain. One station at a time."
+    },
+    {
+      "id": "gc.brigid.shelf",
+      "speaker": "Brigid",
+      "text": "The shelf index is Customize. Open the Installed tab, then filter to Skills."
+    },
+    {
+      "id": "gc.brigid.proof",
+      "speaker": "Brigid",
+      "text": "Proof it. Only the two rules should have changed."
+    },
+    {
+      "id": "gc.brigid.bell",
+      "speaker": "Brigid",
+      "text": "The readers still hold the old copy. Ring the bell: /skills reload."
+    },
+    {
+      "id": "gc.brigid.lectern",
+      "speaker": "Brigid",
+      "text": "Now read with it in Plan mode. Check the margin names the book, and check the plan against the files."
+    },
+    {
+      "id": "gc.brigid.03",
+      "speaker": "Brigid",
+      "text": "Naming the skill makes your intent clear. It doesn't make the findings right. You check those."
+    },
+    {
+      "id": "gc.ewan.wait",
+      "speaker": "Ewan",
+      "text": "Sister Brigid's book comes first, Captain. She's in the scriptorium, on the west walk."
+    },
+    {
+      "id": "gc.ewan.01",
+      "speaker": "Ewan",
+      "text": "Look at that page, Captain. \"Review without carving.\" And look at the apprentice's hand."
+    },
+    {
+      "id": "gc.ewan.02",
+      "speaker": "Ewan",
+      "text": "A skill tells Copilot how to approach a task. It doesn't switch off a single tool."
+    },
+    {
+      "id": "gc.ewan.03",
+      "speaker": "Ewan",
+      "text": "Some books carry scripts, or tell you to use tools. Read an unfamiliar one before you turn it on."
+    },
+    {
+      "id": "gc.ewan.04",
+      "speaker": "Ewan",
+      "text": "The chains are on the tools, not in the books. Guildmaster Fergus can tell you about those."
+    },
+    {
+      "id": "gc.ewan.done",
+      "speaker": "Ewan",
+      "text": "Out the east gate and along the ridge, Captain. Guildmaster Fergus keeps the hall."
+    },
+    {
+      "id": "gc.fergus.wait",
+      "speaker": "Fergus",
+      "text": "Brother Ewan has a lesson for you first, Captain, in the abbey's chained library."
+    },
+    {
+      "id": "gc.fergus.01",
+      "speaker": "Fergus",
+      "text": "You don't call one helper for every repair, Captain. You call the plumber, the electrician, the roofer."
+    },
+    {
+      "id": "gc.fergus.02",
+      "speaker": "Fergus",
+      "text": "A custom agent is a specialist: a name, instructions, and a set of available tools."
+    },
+    {
+      "id": "gc.fergus.03",
+      "speaker": "Fergus",
+      "text": "A skill supplies the workflow. The agent is the role that does it: not a new mode, or a new model."
+    },
+    {
+      "id": "gc.fergus.04",
+      "speaker": "Fergus",
+      "text": "Rory's our new journeyman. He'll explain the Book App and change nothing. Come and fit him out."
+    },
+    {
+      "id": "gc.fergus.belt",
+      "speaker": "Fergus",
+      "text": "Rory's toolbelt is waiting in the yard. Follow the lamps, Captain."
+    },
+    {
+      "id": "gc.fergus.indenture",
+      "speaker": "Fergus",
+      "text": "His indenture's his profile: a name, a description, a tools list, and his instructions below."
+    },
+    {
+      "id": "gc.fergus.rack",
+      "speaker": "Fergus",
+      "text": "Match the tools to the task. An explainer only needs to read and search."
+    },
+    {
+      "id": "gc.fergus.door",
+      "speaker": "Fergus",
+      "text": "The app loads custom agents when it starts. Closing the window isn't quitting."
+    },
+    {
+      "id": "gc.fergus.tests",
+      "speaker": "Fergus",
+      "text": "His belt has no hammer, and that's on purpose. Use the default agent when you need actions."
+    },
+    {
+      "id": "gc.fergus.05",
+      "speaker": "Fergus",
+      "text": "The tools list is the limit. Leave it out, and he'd get every tool there is."
+    },
+    {
+      "id": "gc.fergus.06",
+      "speaker": "Fergus",
+      "text": "Abbess Seren keeps the bell, up by the tower. She'll test what you've learned."
+    },
+    {
+      "id": "gc.fergus.done",
+      "speaker": "Fergus",
+      "text": "Rory's hired, Captain. Abbess Seren's on the tower terrace, up the stair."
+    },
+    {
+      "id": "gc.rory.01",
+      "speaker": "Rory",
+      "text": "The filters go through filterBooks to make filteredBooks. That same list feeds ReadingStats and the book cards."
+    },
+    {
+      "id": "gc.rory.02",
+      "speaker": "Rory",
+      "text": "With Unread on, both show only unread books. I can read the tests but can't run them, so check by hand."
+    },
+    {
+      "id": "gc.rory.done",
+      "speaker": "Rory",
+      "text": "Read and search, Captain. That's all I carry, and all I need for this job."
+    },
+    {
+      "id": "gc.seren.wait",
+      "speaker": "Seren",
+      "text": "Fergus's journeyman comes first, Captain. Come back when Rory's fitted out."
+    },
+    {
+      "id": "gc.seren.01",
+      "speaker": "Seren",
+      "text": "You've seen the house rules, the pattern books and the journeymen, Captain."
+    },
+    {
+      "id": "gc.seren.02",
+      "speaker": "Seren",
+      "text": "Save the craft, choose the right hands, and check the result. The Toolbelt Trial is ready when you are."
+    },
+    {
+      "id": "gc.seren.retry",
+      "speaker": "Seren",
+      "text": "Not yet, Captain. Read the books again, and come back to the bell."
+    },
+    {
+      "id": "gc.seren.03",
+      "speaker": "Seren",
+      "text": "Next, Sunspire Sands. You'll connect tools from outside the app, and a plugin that brings its own skill."
+    },
+    {
+      "id": "gc.seren.more",
+      "speaker": "Seren",
+      "text": "I've one more job for you, if you want it. Ask me when you're ready."
+    },
+    {
+      "id": "gc.seren.assign.01",
+      "speaker": "Seren",
+      "text": "One more job: take one recommendation from the review, and carry it through the inner loop."
+    },
+    {
+      "id": "gc.seren.assign.go",
+      "speaker": "Seren",
+      "text": "Do it in the app, Captain, then come back and show me."
+    },
+    {
+      "id": "gc.seren.assign.ask",
+      "speaker": "Seren",
+      "text": "Back again, Captain? Did you carry the change all the way through?"
+    },
+    {
+      "id": "gc.seren.assign.back",
+      "speaker": "Seren",
+      "text": "A focused change, passing tests, and a record of only what ran. That's the craft."
+    },
+    {
+      "id": "gc.seren.done",
+      "speaker": "Seren",
+      "text": "Sunspire Sands is still being charted, Captain. Until then, these waters are yours."
+    },
+    {
+      "id": "b4.juno.sails",
+      "speaker": "Juno",
+      "text": "Sails off the bow, Captain! The lead ship’s name board says Confident Guess.",
+      "pending": true
+    },
+    {
+      "id": "b4.wingman.wave2",
+      "speaker": "Wingman",
+      "text": "First Take! They never look back at their own work.",
+      "pending": true
+    },
+    {
+      "id": "b4.wingman.wave3",
+      "speaker": "Wingman",
+      "text": "Unchecked! Nobody read their checks.",
+      "pending": true
+    },
+    {
+      "id": "b4.juno.won",
+      "speaker": "Juno",
+      "text": "Three habits sank, and the evidence held. Guildcrest lies ahead, Captain.",
+      "pending": true
+    },
+    {
+      "id": "gc.moira.market.hello",
+      "speaker": "Moira",
+      "text": "Welcome, Captain! Moira's Model Market. Hire a model that fits the job; bigger ones cost more starfish."
+    },
+    {
+      "id": "gc.moira.market.open",
+      "speaker": "Moira",
+      "text": "Pick a job off the board, then hire a model and set the effort dial."
+    },
+    {
+      "id": "gc.moira.market.auto",
+      "speaker": "Moira",
+      "text": "Copilot Fusion's on offer too. It isn't one model: it picks models and a workflow for each job. And it isn't Autopilot."
+    },
+    {
+      "id": "gc.moira.market.right",
+      "speaker": "Moira",
+      "text": "Right-sized! Here's some starfish back."
+    },
+    {
+      "id": "gc.moira.market.fair",
+      "speaker": "Moira",
+      "text": "Right-sized, and a fair price, Captain."
+    },
+    {
+      "id": "gc.moira.market.keep",
+      "speaker": "Moira",
+      "text": "Right-sized. A quick look's fine on the model you've got, at its default effort. Bigger ones just cost more."
+    },
+    {
+      "id": "gc.moira.market.over.effort",
+      "speaker": "Moira",
+      "text": "High effort for a quick look? The default effort would've done fine."
+    },
+    {
+      "id": "gc.moira.market.over.auto",
+      "speaker": "Moira",
+      "text": "A higher Fusion level for a quick look? Standard would've done fine."
+    },
+    {
+      "id": "gc.moira.market.short",
+      "speaker": "Moira",
+      "text": "That wasn't enough for this one. Try again with a stronger model or more effort."
+    },
+    {
+      "id": "gc.moira.market.hard.auto",
+      "speaker": "Moira",
+      "text": "Right-sized! A hard job wants a higher Fusion level: more capable models and deeper reasoning."
+    },
+    {
+      "id": "gc.moira.market.broke",
+      "speaker": "Moira",
+      "text": "Out of starfish? There are plenty hidden round the isles. Come back when you've found a few."
+    },
+    {
+      "id": "gc.moira.market.done",
+      "speaker": "Moira",
+      "text": "The whole board, right-sized! You know your models, Captain."
+    },
+    {
+      "id": "gc.moira.market.early",
+      "speaker": "Moira",
+      "text": "Not yet, Captain. Oren on Port Meridian teaches models first. Come back after his lesson."
+    },
+    {
+      "id": "gc.moira.market.bye",
+      "speaker": "Moira",
+      "text": "Off up the brae? Your starfish and your jobs go with you."
     }
   ]
 }

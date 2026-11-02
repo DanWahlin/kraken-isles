@@ -2,6 +2,8 @@ import type { IslandCode, IslandContent } from './island-code';
 import type { KeelhavenWorld } from '../world/islands/keelhaven/index';
 import { createKeelhavenStream } from '../world/islands/keelhaven/stream';
 import { KEELHAVEN_WAYS } from '../world/islands/keelhaven/waypoints';
+import { ISLAND_LIST } from '../islands/registry';
+import { islandOpen } from '../islands/open';
 import { storyHolds } from './story';
 import {
   keelhavenCurrent,
@@ -9,12 +11,16 @@ import {
   keelhavenOptionalTargets,
   keelhavenTarget,
   keelhavenTracker,
+  KEELHAVEN_TRACKER,
 } from './keelhaven-quests';
 import { createKeelhavenContent, KEELHAVEN_CHEST_IDS, type KeelhavenContent } from './keelhaven-session';
 import { KEELHAVEN_NPCS, keelhavenExtras } from './keelhaven-npcs';
 import { BOOTH_LAYOUT } from '../world/market-stall/booth';
 import { KEELHAVEN_BOOTH } from '../world/islands/keelhaven/anchors';
 import { KEELHAVEN } from '../world/islands/keelhaven/layout';
+
+/** The island Keelhaven's Seal opens (the next in the voyage), if the game has it. */
+const NEXT_ISLAND = ISLAND_LIST.find((e) => e.open?.after?.island === 'keelhaven') ?? null;
 
 /** Each session's content, for its walk surfaces (made before the content, read once it's there). */
 const own = new WeakMap<IslandContent, KeelhavenContent>();
@@ -31,7 +37,12 @@ export const KEELHAVEN_CODE: IslandCode = {
   ways: KEELHAVEN_WAYS,
   quests: {
     log: keelhavenLog,
-    tracker: keelhavenTracker,
+    // The task list points on to the next island once it's open.
+    tracker: (q) => {
+      const t = keelhavenTracker(q);
+      const sail = KEELHAVEN_TRACKER.nextSail;
+      return sail && NEXT_ISLAND && islandOpen(NEXT_ISLAND.id) ? { ...t, next: sail } : t;
+    },
     target: keelhavenTarget,
     current: keelhavenCurrent,
     optionalTargets: keelhavenOptionalTargets,

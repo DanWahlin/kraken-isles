@@ -43,6 +43,8 @@ function baseRadius(species: PlantSpecies, scale: number): number {
       return 0.7 * scale;
     case 'cypress':
       return 0.6 * scale;
+    case 'pineTree':
+      return 0.5 * scale;
   }
 }
 
@@ -149,6 +151,7 @@ function emptyPlants(): Record<PlantSpecies, PlantInstance[]> {
     cactus: [],
     brush: [],
     cypress: [],
+    pineTree: [],
   };
 }
 

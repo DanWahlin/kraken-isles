@@ -1,0 +1,67 @@
+{
+  "id": "gc.lyra.done",
+  "speaker": "Lyra",
+  "text": "Reeve Elspeth's on Guild Square, Captain, up the lane from the quay.",
+  "words": [
+    {
+      "word": "Reeve",
+      "start": 0,
+      "end": 0.293
+    },
+    {
+      "word": "Elspeth's",
+      "start": 0.293,
+      "end": 0.773
+    },
+    {
+      "word": "on",
+      "start": 0.773,
+      "end": 0.92
+    },
+    {
+      "word": "Guild",
+      "start": 0.92,
+      "end": 1.166
+    },
+    {
+      "word": "Square",
+      "start": 1.166,
+      "end": 1.57
+    },
+    {
+      "word": "Captain",
+      "start": 1.57,
+      "end": 2.373
+    },
+    {
+      "word": "up",
+      "start": 2.373,
+      "end": 2.5
+    },
+    {
+      "word": "the",
+      "start": 2.5,
+      "end": 2.608
+    },
+    {
+      "word": "lane",
+      "start": 2.608,
+      "end": 2.832
+    },
+    {
+      "word": "from",
+      "start": 2.832,
+      "end": 2.98
+    },
+    {
+      "word": "the",
+      "start": 2.98,
+      "end": 3.104
+    },
+    {
+      "word": "quay",
+      "start": 3.104,
+      "end": 3.354
+    }
+  ]
+}

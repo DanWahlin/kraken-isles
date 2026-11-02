@@ -1,0 +1,72 @@
+{
+  "id": "gc.seren.done",
+  "speaker": "Seren",
+  "text": "Sunspire Sands is still being charted, Captain. Until then, these waters are yours.",
+  "words": [
+    {
+      "word": "Sunspire",
+      "start": 0.031,
+      "end": 0.712
+    },
+    {
+      "word": "Sands",
+      "start": 0.712,
+      "end": 1.138
+    },
+    {
+      "word": "is",
+      "start": 1.138,
+      "end": 1.18
+    },
+    {
+      "word": "still",
+      "start": 1.18,
+      "end": 1.606
+    },
+    {
+      "word": "being",
+      "start": 1.606,
+      "end": 1.819
+    },
+    {
+      "word": "charted",
+      "start": 1.819,
+      "end": 2.329
+    },
+    {
+      "word": "Captain",
+      "start": 2.329,
+      "end": 3.308
+    },
+    {
+      "word": "Until",
+      "start": 3.308,
+      "end": 3.69
+    },
+    {
+      "word": "then",
+      "start": 3.69,
+      "end": 4.243
+    },
+    {
+      "word": "these",
+      "start": 4.243,
+      "end": 4.5
+    },
+    {
+      "word": "waters",
+      "start": 4.5,
+      "end": 4.925
+    },
+    {
+      "word": "are",
+      "start": 4.925,
+      "end": 5.053
+    },
+    {
+      "word": "yours",
+      "start": 5.053,
+      "end": 5.303
+    }
+  ]
+}

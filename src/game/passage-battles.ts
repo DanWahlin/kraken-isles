@@ -40,6 +40,8 @@ export interface PassageBattlesOptions {
   onStart?(id: string): void;
   /** Plays the course's voiced lines (the crew's calls in a battle with the kraken). */
   say?(ids: readonly string[]): Promise<void>;
+  /** Whether a line has its voice yet (BattleRunOptions.voiced). */
+  voiced?(id: string): boolean;
 }
 
 /** How often (s) the trigger and the zone are checked while you sail. */
@@ -116,6 +118,7 @@ export class PassageBattles {
           onEnd: (how) => this.end(b, how),
           onStart: () => this.o.onStart?.(b.id),
           say: this.o.say,
+          voiced: this.o.voiced,
         });
         return this.run.ready;
       })

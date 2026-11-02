@@ -1,0 +1,57 @@
+{
+  "id": "gc.aidan.done",
+  "speaker": "Aidan",
+  "text": "Your carrel's waiting, Captain. Sister Brigid's along the west walk.",
+  "words": [
+    {
+      "word": "Your",
+      "start": 0,
+      "end": 0.2
+    },
+    {
+      "word": "carrel's",
+      "start": 0.2,
+      "end": 0.59
+    },
+    {
+      "word": "waiting",
+      "start": 0.59,
+      "end": 0.92
+    },
+    {
+      "word": "Captain",
+      "start": 0.92,
+      "end": 1.371
+    },
+    {
+      "word": "Sister",
+      "start": 1.371,
+      "end": 1.973
+    },
+    {
+      "word": "Brigid's",
+      "start": 1.973,
+      "end": 2.453
+    },
+    {
+      "word": "along",
+      "start": 2.453,
+      "end": 2.74
+    },
+    {
+      "word": "the",
+      "start": 2.74,
+      "end": 2.864
+    },
+    {
+      "word": "west",
+      "start": 2.864,
+      "end": 3.2
+    },
+    {
+      "word": "walk",
+      "start": 3.2,
+      "end": 3.45
+    }
+  ]
+}

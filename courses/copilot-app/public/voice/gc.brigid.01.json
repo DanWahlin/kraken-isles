@@ -1,0 +1,82 @@
+{
+  "id": "gc.brigid.01",
+  "speaker": "Brigid",
+  "text": "One book per craft, Captain. A skill is a folder with a SKILL.md file inside.",
+  "words": [
+    {
+      "word": "One",
+      "start": 0,
+      "end": 0.224
+    },
+    {
+      "word": "book",
+      "start": 0.224,
+      "end": 0.52
+    },
+    {
+      "word": "per",
+      "start": 0.52,
+      "end": 0.707
+    },
+    {
+      "word": "craft",
+      "start": 0.707,
+      "end": 1.18
+    },
+    {
+      "word": "Captain",
+      "start": 1.18,
+      "end": 1.88
+    },
+    {
+      "word": "A",
+      "start": 1.88,
+      "end": 2.147
+    },
+    {
+      "word": "skill",
+      "start": 2.147,
+      "end": 2.533
+    },
+    {
+      "word": "is",
+      "start": 2.533,
+      "end": 2.72
+    },
+    {
+      "word": "a",
+      "start": 2.72,
+      "end": 2.857
+    },
+    {
+      "word": "folder",
+      "start": 2.857,
+      "end": 3.232
+    },
+    {
+      "word": "with",
+      "start": 3.232,
+      "end": 3.4
+    },
+    {
+      "word": "a",
+      "start": 3.4,
+      "end": 3.52
+    },
+    {
+      "word": "SKILL.md",
+      "start": 3.52,
+      "end": 4.8
+    },
+    {
+      "word": "file",
+      "start": 4.8,
+      "end": 5.2
+    },
+    {
+      "word": "inside",
+      "start": 5.2,
+      "end": 5.45
+    }
+  ]
+}

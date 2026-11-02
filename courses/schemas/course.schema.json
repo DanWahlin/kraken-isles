@@ -550,6 +550,10 @@
               "won": {
                 "$ref": "#/$defs/text"
               },
+              "wonLine": {
+                "$ref": "#/$defs/line",
+                "description": "The won line, voiced (a line in voice/lines.json), played as the win card shows."
+              },
               "kraken": {
                 "type": "object",
                 "description": "A battle with the kraken in it (battle 3, docs/specs/BATTLES.md §2.0c): the raiders' flagship it takes, and the crew's voiced lines at each of its beats.",
@@ -587,6 +591,10 @@
                     "quiz": {
                       "type": "string",
                       "minLength": 1
+                    },
+                    "line": {
+                      "$ref": "#/$defs/line",
+                      "description": "A crew line (in voice/lines.json) as the wave sails in."
                     },
                     "raiders": {
                       "type": "array",

@@ -1,0 +1,112 @@
+{
+  "id": "gc.fergus.03",
+  "speaker": "Fergus",
+  "text": "A skill supplies the workflow. The agent is the role that does it: not a new mode, or a new model.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.052083,
+      "end": 0.15625
+    },
+    {
+      "word": "skill",
+      "start": 0.15625,
+      "end": 0.494791
+    },
+    {
+      "word": "supplies",
+      "start": 0.494791,
+      "end": 0.963541
+    },
+    {
+      "word": "the",
+      "start": 0.963541,
+      "end": 1.054708
+    },
+    {
+      "word": "workflow",
+      "start": 1.054708,
+      "end": 2.64325
+    },
+    {
+      "word": "The",
+      "start": 2.64325,
+      "end": 2.7995
+    },
+    {
+      "word": "agent",
+      "start": 2.7995,
+      "end": 3.151041
+    },
+    {
+      "word": "is",
+      "start": 3.151041,
+      "end": 3.26825
+    },
+    {
+      "word": "the",
+      "start": 3.26825,
+      "end": 3.372416
+    },
+    {
+      "word": "role",
+      "start": 3.372416,
+      "end": 3.658875
+    },
+    {
+      "word": "that",
+      "start": 3.658875,
+      "end": 3.815125
+    },
+    {
+      "word": "does",
+      "start": 3.815125,
+      "end": 3.997416
+    },
+    {
+      "word": "it",
+      "start": 3.997416,
+      "end": 4.388041
+    },
+    {
+      "word": "not",
+      "start": 4.388041,
+      "end": 4.648458
+    },
+    {
+      "word": "a",
+      "start": 4.648458,
+      "end": 4.726583
+    },
+    {
+      "word": "new",
+      "start": 4.726583,
+      "end": 4.987
+    },
+    {
+      "word": "mode",
+      "start": 4.987,
+      "end": 5.546875
+    },
+    {
+      "word": "or",
+      "start": 5.546875,
+      "end": 5.729166
+    },
+    {
+      "word": "a",
+      "start": 5.729166,
+      "end": 5.807291
+    },
+    {
+      "word": "new",
+      "start": 5.807291,
+      "end": 6.054708
+    },
+    {
+      "word": "model",
+      "start": 6.054708,
+      "end": 6.304708
+    }
+  ]
+}

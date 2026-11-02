@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="990" height="935" viewBox="0 0 990 935">
+<rect width="100%" height="100%" fill="#1B3A5C"/>
+<polygon fill="#6f8a64" stroke="#2b3a2a" points="645.0,630.0 657.1,619.8 668.1,608.3 677.9,595.6 686.4,581.8 693.6,566.9 699.3,551.2 703.6,534.8 706.4,517.6 707.8,500.0 707.6,482.0 705.9,463.7 702.7,445.3 698.0,427.0 691.9,408.8 684.4,391.0 675.6,373.6 665.5,356.8 654.3,340.7 641.9,325.4 628.5,311.0 614.2,297.8 599.1,285.7 583.3,274.8 567.0,265.3 550.2,257.1 533.1,250.5 515.8,245.3 498.5,241.7 481.3,239.7 464.3,239.3 447.6,240.5 431.4,243.3 415.7,247.7 400.8,253.6 386.8,261.0 373.6,269.8 361.5,280.0 350.5,291.5 340.7,304.2 332.2,318.0 325.1,332.8 319.3,348.5 315.0,365.0 312.2,382.1 310.9,399.8 311.0,417.8 312.7,436.1 315.9,454.4 320.6,472.8 326.7,490.9 334.2,508.8 343.0,526.2 353.1,543.0 364.4,559.1 376.7,574.4 390.1,588.7 404.4,602.0 419.5,614.1 435.3,625.0 451.6,634.5 468.4,642.7 485.5,649.3 502.8,654.5 520.1,658.1 537.3,660.1 554.4,660.5 571.0,659.3 587.3,656.5 602.9,652.1 617.8,646.2 631.9,638.8"/>
+<polygon fill="#2FA39A" points="323.0,266.6 441.0,404.9 470.7,389.5 362.5,236.8"/>
+<polyline fill="none" stroke="#FFF1C8" stroke-width="2" points="450.1,356.7 466.9,360.7 489.8,387.5 507.9,393.1 525.3,397.9 546.6,402.5 556.5,410.2 575.2,408.5 581.4,417.6 593.7,424.8 603.4,434.1 589.4,439.2 578.8,436.1"/>
+<circle cx="444.6" cy="356.8" r="2" fill="#ffffff"/>
+<text x="448.6" y="353.8" font-size="9" fill="#ffffff" font-family="sans-serif">berth</text>
+<circle cx="450.1" cy="356.7" r="2" fill="#ffffff"/>
+<text x="454.1" y="353.7" font-size="9" fill="#ffffff" font-family="sans-serif">landing</text>
+<circle cx="446.4" cy="344.4" r="2" fill="#ffffff"/>
+<text x="450.4" y="341.4" font-size="9" fill="#ffffff" font-family="sans-serif">moira</text>
+<circle cx="466.9" cy="360.7" r="2" fill="#ffffff"/>
+<text x="470.9" y="357.7" font-size="9" fill="#ffffff" font-family="sans-serif">lyra</text>
+<circle cx="494.4" cy="388.1" r="2" fill="#ffffff"/>
+<text x="498.4" y="385.1" font-size="9" fill="#ffffff" font-family="sans-serif">charterStone</text>
+<circle cx="489.8" cy="387.5" r="2" fill="#ffffff"/>
+<text x="493.8" y="384.5" font-size="9" fill="#ffffff" font-family="sans-serif">elspeth</text>
+<circle cx="507.9" cy="393.1" r="2" fill="#ffffff"/>
+<text x="511.9" y="390.1" font-size="9" fill="#ffffff" font-family="sans-serif">braeFoot</text>
+<circle cx="525.3" cy="397.9" r="2" fill="#ffffff"/>
+<text x="529.3" y="394.9" font-size="9" fill="#ffffff" font-family="sans-serif">braeTurn</text>
+<circle cx="546.6" cy="402.5" r="2" fill="#ffffff"/>
+<text x="550.6" y="399.5" font-size="9" fill="#ffffff" font-family="sans-serif">aidan</text>
+<circle cx="556.5" cy="410.2" r="2" fill="#ffffff"/>
+<text x="560.5" y="407.2" font-size="9" fill="#ffffff" font-family="sans-serif">brigid</text>
+<circle cx="575.2" cy="408.5" r="2" fill="#ffffff"/>
+<text x="579.2" y="405.5" font-size="9" fill="#ffffff" font-family="sans-serif">ewan</text>
+<circle cx="581.4" cy="417.6" r="2" fill="#ffffff"/>
+<text x="585.4" y="414.6" font-size="9" fill="#ffffff" font-family="sans-serif">eastGate</text>
+<circle cx="593.7" cy="424.8" r="2" fill="#ffffff"/>
+<text x="597.7" y="421.8" font-size="9" fill="#ffffff" font-family="sans-serif">ridge</text>
+<circle cx="603.4" cy="434.1" r="2" fill="#ffffff"/>
+<text x="607.4" y="431.1" font-size="9" fill="#ffffff" font-family="sans-serif">fergus</text>
+<circle cx="608.1" cy="434.7" r="2" fill="#ffffff"/>
+<text x="612.1" y="431.7" font-size="9" fill="#ffffff" font-family="sans-serif">rory</text>
+<circle cx="589.4" cy="439.2" r="2" fill="#ffffff"/>
+<text x="593.4" y="436.2" font-size="9" fill="#ffffff" font-family="sans-serif">towerStair</text>
+<circle cx="578.8" cy="436.1" r="2" fill="#ffffff"/>
+<text x="582.8" y="433.1" font-size="9" fill="#ffffff" font-family="sans-serif">seren</text>
+<circle cx="574.6" cy="432.4" r="4" fill="#D9452B"/>
+<text x="578.6" y="429.4" font-size="9" fill="#ffffff" font-family="sans-serif">towerTop</text>
+<circle cx="560.5" cy="410.0" r="2" fill="#ffffff"/>
+<circle cx="566.6" cy="405.3" r="2" fill="#ffffff"/>
+<circle cx="571.7" cy="408.4" r="2" fill="#ffffff"/>
+<circle cx="576.3" cy="414.5" r="2" fill="#ffffff"/>
+<circle cx="569.3" cy="419.8" r="2" fill="#ffffff"/>
+<circle cx="563.6" cy="415.9" r="2" fill="#ffffff"/>
+<circle cx="603.9" cy="431.0" r="2" fill="#ffffff"/>
+<circle cx="611.4" cy="433.6" r="2" fill="#ffffff"/>
+<circle cx="612.0" cy="440.0" r="2" fill="#ffffff"/>
+<circle cx="606.3" cy="441.5" r="2" fill="#ffffff"/>
+<circle cx="601.2" cy="438.5" r="2" fill="#ffffff"/>
+<circle cx="599.7" cy="432.7" r="2" fill="#ffffff"/>
+<circle cx="600.3" cy="428.1" r="2" fill="#ffffff"/>
+<circle cx="629.8" cy="436.2" r="4" fill="#D9452B"/>
+<text x="633.8" y="433.2" font-size="9" fill="#ffffff" font-family="sans-serif">mill1</text>
+<circle cx="649.6" cy="440.6" r="4" fill="#D9452B"/>
+<text x="653.6" y="437.6" font-size="9" fill="#ffffff" font-family="sans-serif">mill2</text>
+<circle cx="639.8" cy="465.9" r="4" fill="#D9452B"/>
+<text x="643.8" y="462.9" font-size="9" fill="#ffffff" font-family="sans-serif">mill3</text>
+<circle cx="565.7" cy="579.6" r="4" fill="#D9452B"/>
+<text x="569.7" y="576.6" font-size="9" fill="#ffffff" font-family="sans-serif">benScrivener</text>
+<circle cx="528.3" cy="403.9" r="2" fill="#ffffff"/>
+<text x="532.3" y="400.9" font-size="9" fill="#ffffff" font-family="sans-serif">linnLip</text>
+<circle cx="518.2" cy="397.7" r="2" fill="#ffffff"/>
+<text x="522.2" y="394.7" font-size="9" fill="#ffffff" font-family="sans-serif">linnPool</text>
+<circle cx="558.6" cy="462.3" r="2" fill="#ffffff"/>
+<text x="562.6" y="459.3" font-size="9" fill="#ffffff" font-family="sans-serif">lochan</text>
+<circle cx="350.5" cy="266.6" r="2" fill="#ffffff"/>
+<text x="354.5" y="263.6" font-size="9" fill="#ffffff" font-family="sans-serif">mouth</text>
+<circle cx="307.5" cy="209.5" r="2" fill="#ffffff"/>
+<text x="311.5" y="206.5" font-size="9" fill="#ffffff" font-family="sans-serif">laneStart</text>
+<circle cx="393.5" cy="323.7" r="2" fill="#ffffff"/>
+<text x="397.5" y="320.7" font-size="9" fill="#ffffff" font-family="sans-serif">turning</text>
+<text x="10" y="18" font-size="12" fill="#ffffff" font-family="sans-serif">Guildcrest top-down (north up, 0.55 px/m). draw.py, docs/specs/ISLAND-04-guildcrest.md</text>
+</svg>

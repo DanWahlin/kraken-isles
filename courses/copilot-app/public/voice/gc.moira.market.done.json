@@ -1,0 +1,52 @@
+{
+  "id": "gc.moira.market.done",
+  "speaker": "Moira",
+  "text": "The whole board, right-sized! You know your models, Captain.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.03,
+      "end": 0.11
+    },
+    {
+      "word": "whole",
+      "start": 0.11,
+      "end": 0.47
+    },
+    {
+      "word": "board",
+      "start": 0.47,
+      "end": 1.19
+    },
+    {
+      "word": "right-sized",
+      "start": 1.19,
+      "end": 2.55
+    },
+    {
+      "word": "You",
+      "start": 2.55,
+      "end": 2.67
+    },
+    {
+      "word": "know",
+      "start": 2.67,
+      "end": 2.869
+    },
+    {
+      "word": "your",
+      "start": 2.869,
+      "end": 3.03
+    },
+    {
+      "word": "models",
+      "start": 3.03,
+      "end": 3.51
+    },
+    {
+      "word": "Captain",
+      "start": 3.51,
+      "end": 3.76
+    }
+  ]
+}

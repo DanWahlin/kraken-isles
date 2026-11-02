@@ -238,6 +238,59 @@
         "anchor": "outer-loop-move-the-work-through-github",
         "hash": "fe635c153065"
       }
+    },
+    "battle:passage-keelhaven-guildcrest": {
+      "game": "battle",
+      "k": "The Passage to Guildcrest · Sea Battle",
+      "t": "Evidence Agrees",
+      "b": "Between waves, the bosun asks about Keelhaven: which evidence answers which question, the inner loop, and a failing check.",
+      "ch": "03",
+      "c": "Key takeaways",
+      "chLine": "Questions from Course Chapter 03",
+      "source": {
+        "chapter": "03-development-workflows",
+        "anchor": "key-takeaways",
+        "hash": "81bc07b99b37"
+      }
+    },
+    "arrival:guildcrest": {
+      "game": "arrival",
+      "k": "Guildcrest · Landfall",
+      "t": "Save the craft, hire the right hands",
+      "b": "Instructions are the house rules, a skill is the chart for one kind of job, and a custom agent is a specialist with its own tools.",
+      "ch": "04",
+      "c": "Skills and Custom Agents",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "choose-the-feature-that-fits-the-task",
+        "hash": "aa81861f78f8"
+      }
+    },
+    "puzzle:P4.1": {
+      "game": "puzzle",
+      "k": "Guildcrest · The Pattern Book",
+      "t": "Update and use a skill",
+      "b": "Find it in Customize, read its frontmatter, add two rules, check Changes, reload it, and check its activity.",
+      "ch": "04",
+      "c": "Skills",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-update-and-use-the-course-skill",
+        "hash": "ea46465fbcdf"
+      }
+    },
+    "puzzle:P4.2": {
+      "game": "puzzle",
+      "k": "Guildcrest · The Journeyman’s Toolbelt",
+      "t": "A role and its tools",
+      "b": "Write the profile, give it only read and search, reopen the app, select it with /agent, and leave the tests to the default agent.",
+      "ch": "04",
+      "c": "Custom agents",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-create-a-read-only-book-app-explainer",
+        "hash": "428c8ffecae4"
+      }
     }
   }
 }

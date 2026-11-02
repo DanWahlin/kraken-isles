@@ -162,6 +162,49 @@
     "Bram": {
       "tts": "elevenlabs",
       "voice": "JbAJPrBwqw2dm8hxfklG"
+    },
+    "Elspeth": {
+      "tts": "elevenlabs",
+      "voice": "TVmbglAk3F1GkiCoOq47"
+    },
+    "Aidan": {
+      "tts": "elevenlabs",
+      "voice": "B5jEZPqk2OJ2vkPw3wBM"
+    },
+    "Brigid": {
+      "tts": "elevenlabs",
+      "voice": "WtSj8ZSBSK3JEi9xgqBG"
+    },
+    "Ewan": {
+      "voice": "en-GB-AlfieNeural",
+      "prosody": {
+        "rate": "-8%",
+        "pitch": "-2st"
+      }
+    },
+    "Fergus": {
+      "voice": "en-GB-NoahNeural",
+      "prosody": {
+        "rate": "-4%",
+        "pitch": "-1st"
+      }
+    },
+    "Rory": {
+      "voice": "en-IE-ConnorNeural",
+      "prosody": {
+        "rate": "-2%"
+      }
+    },
+    "Seren": {
+      "voice": "en-GB-Sonia:DragonHDLatestNeural",
+      "fallbackVoice": "en-GB-SoniaNeural",
+      "prosody": {
+        "rate": "-6%"
+      }
+    },
+    "Moira": {
+      "voice": "en-GB-Ada:DragonHDLatestNeural",
+      "fallbackVoice": "en-GB-AdaMultilingualNeural"
     }
   }
 }

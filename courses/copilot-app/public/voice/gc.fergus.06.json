@@ -1,0 +1,77 @@
+{
+  "id": "gc.fergus.06",
+  "speaker": "Fergus",
+  "text": "Abbess Seren keeps the bell, up by the tower. She'll test what you've learned.",
+  "words": [
+    {
+      "word": "Abbess",
+      "start": 0.052083,
+      "end": 0.403666
+    },
+    {
+      "word": "Seren",
+      "start": 0.403666,
+      "end": 0.76825
+    },
+    {
+      "word": "keeps",
+      "start": 0.76825,
+      "end": 1.106791
+    },
+    {
+      "word": "the",
+      "start": 1.106791,
+      "end": 1.237
+    },
+    {
+      "word": "bell",
+      "start": 1.237,
+      "end": 1.744791
+    },
+    {
+      "word": "up",
+      "start": 1.744791,
+      "end": 1.901041
+    },
+    {
+      "word": "by",
+      "start": 1.901041,
+      "end": 2.083333
+    },
+    {
+      "word": "the",
+      "start": 2.083333,
+      "end": 2.213541
+    },
+    {
+      "word": "tower",
+      "start": 2.213541,
+      "end": 3.606791
+    },
+    {
+      "word": "She'll",
+      "start": 3.606791,
+      "end": 3.880208
+    },
+    {
+      "word": "test",
+      "start": 3.880208,
+      "end": 4.192708
+    },
+    {
+      "word": "what",
+      "start": 4.192708,
+      "end": 4.401041
+    },
+    {
+      "word": "you've",
+      "start": 4.401041,
+      "end": 4.609375
+    },
+    {
+      "word": "learned",
+      "start": 4.609375,
+      "end": 4.859375
+    }
+  ]
+}

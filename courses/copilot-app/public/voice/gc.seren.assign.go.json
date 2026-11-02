@@ -1,0 +1,67 @@
+{
+  "id": "gc.seren.assign.go",
+  "speaker": "Seren",
+  "text": "Do it in the app, Captain, then come back and show me.",
+  "words": [
+    {
+      "word": "Do",
+      "start": 0.031,
+      "end": 0.202
+    },
+    {
+      "word": "it",
+      "start": 0.202,
+      "end": 0.244
+    },
+    {
+      "word": "in",
+      "start": 0.244,
+      "end": 0.329
+    },
+    {
+      "word": "the",
+      "start": 0.329,
+      "end": 0.5
+    },
+    {
+      "word": "app",
+      "start": 0.5,
+      "end": 0.627
+    },
+    {
+      "word": "Captain",
+      "start": 0.627,
+      "end": 1.18
+    },
+    {
+      "word": "then",
+      "start": 1.18,
+      "end": 1.436
+    },
+    {
+      "word": "come",
+      "start": 1.436,
+      "end": 1.691
+    },
+    {
+      "word": "back",
+      "start": 1.691,
+      "end": 1.904
+    },
+    {
+      "word": "and",
+      "start": 1.904,
+      "end": 2.031
+    },
+    {
+      "word": "show",
+      "start": 2.031,
+      "end": 2.372
+    },
+    {
+      "word": "me",
+      "start": 2.372,
+      "end": 2.622
+    }
+  ]
+}

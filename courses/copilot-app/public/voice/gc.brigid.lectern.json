@@ -1,0 +1,107 @@
+{
+  "id": "gc.brigid.lectern",
+  "speaker": "Brigid",
+  "text": "Now read with it in Plan mode. Check the margin names the book, and check the plan against the files.",
+  "words": [
+    {
+      "word": "Now",
+      "start": 0,
+      "end": 0.24
+    },
+    {
+      "word": "read",
+      "start": 0.24,
+      "end": 0.592
+    },
+    {
+      "word": "with",
+      "start": 0.592,
+      "end": 0.773
+    },
+    {
+      "word": "it",
+      "start": 0.773,
+      "end": 0.933
+    },
+    {
+      "word": "in",
+      "start": 0.933,
+      "end": 1.12
+    },
+    {
+      "word": "Plan",
+      "start": 1.12,
+      "end": 1.52
+    },
+    {
+      "word": "mode",
+      "start": 1.52,
+      "end": 2.013
+    },
+    {
+      "word": "Check",
+      "start": 2.013,
+      "end": 2.52
+    },
+    {
+      "word": "the",
+      "start": 2.52,
+      "end": 2.709
+    },
+    {
+      "word": "margin",
+      "start": 2.709,
+      "end": 3.173
+    },
+    {
+      "word": "names",
+      "start": 3.173,
+      "end": 3.48
+    },
+    {
+      "word": "the",
+      "start": 3.48,
+      "end": 3.664
+    },
+    {
+      "word": "book",
+      "start": 3.664,
+      "end": 4.18
+    },
+    {
+      "word": "and",
+      "start": 4.18,
+      "end": 4.293
+    },
+    {
+      "word": "check",
+      "start": 4.293,
+      "end": 4.6
+    },
+    {
+      "word": "the",
+      "start": 4.6,
+      "end": 4.8
+    },
+    {
+      "word": "plan",
+      "start": 4.8,
+      "end": 5.17
+    },
+    {
+      "word": "against",
+      "start": 5.17,
+      "end": 5.56
+    },
+    {
+      "word": "the",
+      "start": 5.56,
+      "end": 5.787
+    },
+    {
+      "word": "files",
+      "start": 5.787,
+      "end": 6.037
+    }
+  ]
+}

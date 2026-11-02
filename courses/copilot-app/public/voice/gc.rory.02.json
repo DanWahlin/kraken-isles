@@ -1,0 +1,112 @@
+{
+  "id": "gc.rory.02",
+  "speaker": "Rory",
+  "text": "With Unread on, both show only unread books. I can read the tests but can't run them, so check by hand.",
+  "words": [
+    {
+      "word": "With",
+      "start": 0.051,
+      "end": 0.229583
+    },
+    {
+      "word": "Unread",
+      "start": 0.229583,
+      "end": 0.6505
+    },
+    {
+      "word": "on",
+      "start": 0.6505,
+      "end": 1.084166
+    },
+    {
+      "word": "both",
+      "start": 1.084166,
+      "end": 1.364791
+    },
+    {
+      "word": "show",
+      "start": 1.364791,
+      "end": 1.645416
+    },
+    {
+      "word": "only",
+      "start": 1.645416,
+      "end": 1.989791
+    },
+    {
+      "word": "unread",
+      "start": 1.989791,
+      "end": 2.359708
+    },
+    {
+      "word": "books",
+      "start": 2.359708,
+      "end": 3.75
+    },
+    {
+      "word": "I",
+      "start": 3.75,
+      "end": 3.928583
+    },
+    {
+      "word": "can",
+      "start": 3.928583,
+      "end": 4.056125
+    },
+    {
+      "word": "read",
+      "start": 4.056125,
+      "end": 4.285708
+    },
+    {
+      "word": "the",
+      "start": 4.285708,
+      "end": 4.438791
+    },
+    {
+      "word": "tests",
+      "start": 4.438791,
+      "end": 4.872458
+    },
+    {
+      "word": "but",
+      "start": 4.872458,
+      "end": 5.063791
+    },
+    {
+      "word": "can't",
+      "start": 5.063791,
+      "end": 5.306125
+    },
+    {
+      "word": "run",
+      "start": 5.306125,
+      "end": 5.548458
+    },
+    {
+      "word": "them",
+      "start": 5.548458,
+      "end": 5.982125
+    },
+    {
+      "word": "so",
+      "start": 5.982125,
+      "end": 6.2245
+    },
+    {
+      "word": "check",
+      "start": 6.2245,
+      "end": 6.492333
+    },
+    {
+      "word": "by",
+      "start": 6.492333,
+      "end": 6.632666
+    },
+    {
+      "word": "hand",
+      "start": 6.632666,
+      "end": 6.882666
+    }
+  ]
+}

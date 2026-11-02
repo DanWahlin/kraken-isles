@@ -120,6 +120,42 @@ export function buildMaquisBush(seed = 3): BufferGeometry {
 }
 
 /**
+ * A Scots pine, built in code (Guildcrest, spec G13): a bare, slightly leaning upper trunk in the
+ * species' orange bark, a few stubs of dead branches, and three to five flat, dark crown clumps
+ * stepped up its top third (the umbrella of an old pine). About eleven metres; the loader scales it.
+ */
+export function buildPine(seed = 9): BufferGeometry {
+  const rand = seeded(seed);
+  const parts: BufferGeometry[] = [];
+  const lean = (rand() - 0.5) * 0.5;
+  const trunk = new SphereGeometry(1, 6, 4);
+  trunk.scale(0.24, 4.6, 0.24);
+  trunk.translate(lean * 0.5, 4.6, 0);
+  parts.push(tagged(trunk, [0.52, 0.33, 0.22], 0));
+  // The upper trunk's orange bark, thinner.
+  const upper = new SphereGeometry(1, 5, 3);
+  upper.scale(0.13, 1.9, 0.13);
+  upper.translate(lean, 8.4, 0);
+  parts.push(tagged(upper, [0.66, 0.38, 0.22], 0));
+  const clumps = 3 + Math.floor(rand() * 3);
+  for (let i = 0; i < clumps; i++) {
+    const t = i / Math.max(1, clumps - 1);
+    const a = rand() * Math.PI * 2;
+    const d = (1 - t) * (0.9 + rand() * 0.7);
+    const r = (2.4 - t * 0.8) * (0.85 + rand() * 0.3);
+    const g = new SphereGeometry(1, 8, 4);
+    g.scale(r, r * 0.45, r * (0.8 + rand() * 0.3));
+    g.rotateY(rand() * Math.PI);
+    g.translate(lean + Math.cos(a) * d, 6.6 + t * 3.6, Math.sin(a) * d);
+    const k = 0.8 + rand() * 0.25;
+    parts.push(tagged(g, [0.16 * k, 0.25 * k, 0.17 * k], 1));
+  }
+  const merged = mergeGeometries(parts, false)!;
+  for (const g of parts) g.dispose();
+  return merged;
+}
+
+/**
  * An Italian cypress, built in code: a short trunk and a tall, dense flame of dark foliage (stacked
  * domes, widest a third of the way up, closing to a point). About seven metres; the loader scales it.
  */

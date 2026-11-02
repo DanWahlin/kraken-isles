@@ -6,10 +6,10 @@
 //  2. Every sea lane the chart joins has deep water for the brigantine along it and to either side.
 //  3. One sitting: board at Anchorage, sail to Port Meridian (the compass's route, followed with the
 //     helm), dock, and the gangway's "Board your ship" is there on Meridian's quay; the same on to
-//     Thousand-Bough, and on to Keelhaven once its Seal is won; and after a chart jump back. Each time the compass ashore points at the gangway
+//     Thousand-Bough, on to Keelhaven once its Seal is won, and on to Guildcrest once Keelhaven's is; and after a chart jump back. Each time the compass ashore points at the gangway
 //     once the step says to board, and every quest step of every island has a compass target.
 //  4. In irons by Port Meridian's harbour, Wingman's tacking tip plays once a voyage.
-//  5. Reach: on each island in `--reach` (Keelhaven by default), a walker follows the compass's route
+//  5. Reach: on each island in `--reach` (Keelhaven and Guildcrest by default), a walker follows the compass's route
 //     from the landing to every interact point (each NPC, chest, bottle, board and circuit station, each
 //     part's spot) and must come within talking range; on every stair with rails (Keelhaven's Gate
 //     Light), a walker pushed at each rail must stay on the treads; and anyone waiting by a stair's
@@ -25,8 +25,8 @@ const base = opt.base || 'http://127.0.0.1:5301';
 const out = opt.out || 'tmp/shots/wayfind';
 mkdirSync(out, { recursive: true });
 const only = opt.only ? String(opt.only).split(',') : ['legs', 'sea', 'sitting', 'tack', 'reach'];
-/** `--reach=keelhaven,…`: the islands whose every interact point is walked to (no lifts on the way). */
-const reachIslands = opt.reach ? String(opt.reach).split(',') : ['keelhaven'];
+/** `--reach=keelhaven,…`: the islands whose every interact point is walked to (no lifts on the way; Keelhaven and Guildcrest by default). */
+const reachIslands = opt.reach ? String(opt.reach).split(',') : ['keelhaven', 'guildcrest'];
 const tag = opt.webgl ? 'gl' : 'gpu';
 /** `--islands=keelhaven,…`: walk only these islands' legs. */
 const islands = opt.islands ? String(opt.islands).split(',') : ISLAND_IDS;
@@ -423,6 +423,20 @@ if (only.includes('sitting')) {
           await mark('boarded at Keelhaven');
           await arrive('keelhaven', berths.keelhaven);
           await mark('docked at Keelhaven again');
+          // Keelhaven's Seal: the compass sends you on to Guildcrest (battle 4 on the way, skipped).
+          const kh = await pack('keelhaven');
+          await quests(kh.filter((q) => !q.optional).map((q) => [q.id, 'done']));
+          await page.waitForTimeout(400);
+          if (await boardByKeys('keelhaven-sealed')) {
+            h = await hud();
+            if (!/Guildcrest/.test(h.name)) fail(`sailing from Keelhaven sealed: compass on "${h.compass}"`);
+            await arrive('guildcrest', berths.guildcrest);
+            await mark('docked at Guildcrest');
+            await boardByKeys('guildcrest');
+            await mark('boarded at Guildcrest');
+            await arrive('guildcrest', berths.guildcrest);
+            await mark('docked at Guildcrest again');
+          }
         }
       }
     }
@@ -450,8 +464,12 @@ if (only.includes('sitting')) {
       }
       await quests([[d.id, 'done']]);
     }
-    await page.waitForTimeout(120);
-    h = await hud();
+    // The compass settles on the ship within a moment (it re-plans on its own clock).
+    for (let w = 0; w < 20; w++) {
+      await page.waitForTimeout(120);
+      h = await hud();
+      if (/Your ship/.test(h.name)) break;
+    }
     if (!/Your ship/.test(h.name)) fail(`${id} all done: compass "${h.compass}"`);
     note(`${id}: every step has a compass target`);
     await mark(id);

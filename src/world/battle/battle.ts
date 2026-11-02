@@ -39,6 +39,8 @@ export interface WaveSpec {
    * wave stands for (.plans/battle-plan.md "Teaching map"). The battle only carries the id.
    */
   quiz: string;
+  /** A crew line (the course's, by id) as this wave sails in, if it has one. */
+  line?: string;
 }
 
 /**
@@ -60,11 +62,13 @@ export interface BattlePlan {
   /** A battle with the kraken: its flagship's name and the crew's lines (the course's, by id). */
   kraken: KrakenHooks | null;
   /** The course chapter it recaps. */
-  chapter: '00' | '01' | '02';
+  chapter: '00' | '01' | '02' | '03';
   title: string;
   waves: readonly WaveSpec[];
   /** The win card's line (player copy). */
   won: string;
+  /** The won line, spoken (the course's, by id), if it has one. */
+  wonLine?: string;
 }
 
 /**
@@ -91,8 +95,10 @@ function plan(
     waves: kinds.map((wave, w) => ({
       raiders: wave.map((kind, r) => ({ name: h.waves[w]?.raiders[r] ?? '', kind })),
       quiz: h.waves[w]?.quiz ?? '',
+      ...(h.waves[w]?.line ? { line: h.waves[w].line } : {}),
     })),
     won: h.won,
+    ...(h.wonLine ? { wonLine: h.wonLine } : {}),
   };
 }
 
@@ -138,12 +144,31 @@ const keelhavenPassage = (c: CourseMeta) =>
   );
 export let KEELHAVEN_BATTLE: BattlePlan = keelhavenPassage(COURSE);
 
-export let BATTLE_PLANS: readonly BattlePlan[] = [PASSAGE_BATTLE, MERIDIAN_BATTLE, KEELHAVEN_BATTLE];
+/**
+ * Battle 4, "Evidence Agrees": the passage from Keelhaven to Guildcrest, three waves with no kraken,
+ * each with the course's quiz and a crew line as it sails in (its `hooks.battles`;
+ * docs/specs/ISLAND-04-guildcrest.md §9).
+ */
+const guildcrestPassage = (c: CourseMeta) =>
+  plan(c, 'passage-keelhaven-guildcrest', 'Keelhaven → Guildcrest', [
+    ['cutter', 'cutter'],
+    ['brigantine', 'cutter'],
+    ['brigantine', 'cutter'],
+  ]);
+export let GUILDCREST_BATTLE: BattlePlan = guildcrestPassage(COURSE);
+
+export let BATTLE_PLANS: readonly BattlePlan[] = [
+  PASSAGE_BATTLE,
+  MERIDIAN_BATTLE,
+  KEELHAVEN_BATTLE,
+  GUILDCREST_BATTLE,
+];
 onCourseSelected((c) => {
   PASSAGE_BATTLE = passage(c);
   MERIDIAN_BATTLE = meridianPassage(c);
   KEELHAVEN_BATTLE = keelhavenPassage(c);
-  BATTLE_PLANS = [PASSAGE_BATTLE, MERIDIAN_BATTLE, KEELHAVEN_BATTLE];
+  GUILDCREST_BATTLE = guildcrestPassage(c);
+  BATTLE_PLANS = [PASSAGE_BATTLE, MERIDIAN_BATTLE, KEELHAVEN_BATTLE, GUILDCREST_BATTLE];
 });
 
 /** The plan's events after wave `wave` (1-based). */
