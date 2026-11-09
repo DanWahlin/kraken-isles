@@ -2,8 +2,8 @@
   "$comment": "Written by tools/course/sync.mjs (PLAN §8.2). Section hashes are the first 12 hex digits of the SHA-256 of normalizeForCompare(markdown); images keep the full SHA-256. Do not edit by hand.",
   "repo": "github/copilot-app-for-beginners",
   "ref": "main",
-  "sha": "dd7cffaae361c51a6def4cc5a4981003e0f7a8e4",
-  "syncedAt": "2026-11-01",
+  "sha": "8cb27928ebfefa978617dd4b7663d4338fc3faeb",
+  "syncedAt": "2026-11-09",
   "catalog": [
     {
       "id": "00-setup",
@@ -592,7 +592,7 @@
     "02-sessions-worktrees-context": {
       "short": "ch02",
       "title": "Sessions, Worktrees, and Context",
-      "hash": "7c319c8c88b3",
+      "hash": "d59d6e2c5334",
       "sections": {
         "learning-objectives": {
           "title": "Learning Objectives",
@@ -614,7 +614,7 @@
         "core-concepts": {
           "title": "Core Concepts",
           "level": 2,
-          "hash": "e7adbe589a77",
+          "hash": "707815da7fee",
           "images": [
             "02-sessions-worktrees-context/assets/one-repo-many-worktrees.webp",
             "02-sessions-worktrees-context/assets/app-where-sessions-run.webp"
@@ -626,7 +626,8 @@
             "Current checkout",
             "New worktree",
             "Create from",
-            "files and branches"
+            "files and branches",
+            "New"
           ]
         },
         "what-is-a-git-worktree": {
@@ -663,7 +664,8 @@
         "attaching-files": {
           "title": "Attaching Files",
           "level": 3,
-          "hash": "0d9a0a736d27"
+          "hash": "866e75043a2a",
+          "terms": ["New"]
         },
         "slash-commands": {
           "title": "Slash Commands",
