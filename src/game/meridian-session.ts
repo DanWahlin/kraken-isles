@@ -38,10 +38,13 @@ const NO_CAST: readonly Npc[] = [];
  * The Three Helms (with Rhea aboard), Mina's tour and the Seal's lighthouse. It comes in with the
  * town (`setup`) and goes with it (`teardown`); what the player has done lives in the save.
  */
-export function createMeridianContent(host: IslandContentHost): IslandContent {
+export function createMeridianContent(
+  host: IslandContentHost<MeridianTownSystem>,
+): IslandContent<MeridianTownSystem> {
   const { world, interactions, puzzles, cues } = host;
+  // Port Meridian's own stream: it also holds the camera blockers of its coastal rocks.
   const stream = host.stream as MeridianStream;
-  const town = (): MeridianTownSystem | null => stream.world as MeridianTownSystem | null;
+  const town = (): MeridianTownSystem | null => stream.world;
   const quests = () => host.puzzleHost.quests();
   const castIds = new Set(MERIDIAN_NPCS.map((m) => m.id));
   let crowd: NpcCrowd | null = null;
@@ -340,8 +343,7 @@ export function createMeridianContent(host: IslandContentHost): IslandContent {
     scope.puzzles.push(p);
   };
 
-  const setup = async (built: unknown): Promise<IslandSetup | null> => {
-    const tn = built as MeridianTownSystem | null;
+  const setup = async (tn: MeridianTownSystem | null): Promise<IslandSetup | null> => {
     if (!tn || host.disposed() || crowd) return null;
     addTownColliders(tn);
     const sc = scope;
@@ -491,7 +493,7 @@ export function createMeridianContent(host: IslandContentHost): IslandContent {
     setup,
     // Gilda's stall on the plaza (the stall's part of the town).
     market: (built) => {
-      const at = (built as MeridianTownSystem).anchors.modelMarket;
+      const at = built.anchors.modelMarket;
       return at ? { at, layout: MARKET_LAYOUT } : null;
     },
     /** Takes the cast, chests, sites, puzzles and colliders out (before the town is freed). */

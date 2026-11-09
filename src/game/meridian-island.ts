@@ -21,7 +21,7 @@ import {
  * Port Meridian's code (Chapter 01; its registry entry is src/islands/meridian.ts): its stream, its
  * quest line, its town's walks and water, and its content (src/game/meridian-session.ts).
  */
-export const MERIDIAN_CODE: IslandCode = {
+export const MERIDIAN_CODE: IslandCode<MeridianTownSystem> = {
   stream: createMeridianStream,
   chests: MERIDIAN_CHESTS.map((c) => c.id),
   cast: (anchors) => [...MERIDIAN_NPCS, ...meridianExtras(anchors)],
@@ -40,7 +40,7 @@ export const MERIDIAN_CODE: IslandCode = {
     box: MERIDIAN.bounds,
     surfaces: [
       {
-        heightAt: (x, z) => (stream?.world as MeridianTownSystem | null)?.walkable(x, z) ?? null,
+        heightAt: (x, z) => stream?.world?.walkable(x, z) ?? null,
         kind: 'stone',
       },
       { heightAt: meridianQuayHeight, kind: 'stone' },

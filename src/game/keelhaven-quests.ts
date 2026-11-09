@@ -20,7 +20,7 @@ const ISLAND = 'keelhaven';
 
 /**
  * The tracker's header: the island's name (the game's) and the course's chapter, goal and next.
- * `nextSail` replaces `next` once the island after it is open (src/game/keelhaven-island.ts).
+ * `nextSail` replaces `next` once the island after it is open (src/game/streamed-island-code.ts).
  */
 export let KEELHAVEN_TRACKER: {
   name: string;

@@ -1,7 +1,5 @@
 import type { Object3D } from 'three/webgpu';
-import { buildSlice } from '../engine/build-slice';
 import { puzzleContent, puzzleOn, textOf } from '../course/puzzles';
-import type { CircleObstacle } from '../world/contracts';
 import { naturalWaterAt } from '../world/islands/fresh-water-natural';
 import { GUILDCREST_ANCHORS } from '../world/islands/guildcrest/anchors';
 import { guildcrestWater } from '../world/islands/guildcrest/height';
@@ -14,19 +12,17 @@ import {
   toFrame,
   toWorld,
 } from '../world/islands/guildcrest/layout';
-import { createBottles, type BottleSite } from '../world/sites/bottles';
-import { loadVillageKit } from '../world/village/kit';
 import { DeckIndex } from '../world/village/walk-decks';
 import { createChoiceCard } from './choice-card';
-import type { BoxCollider, InlandWater, WalkSurface } from './collision';
+import type { InlandWater, WalkSurface } from './collision';
 import type { CameraShot } from './follow-camera';
 import { createGuildcrestCircuits } from './guildcrest-circuits';
 import { GUILDCREST_NPCS, guildcrestExtras } from './guildcrest-npcs';
 import { guildcrestNpcScript } from './guildcrest-quests';
 import type { IslandContentHost } from './island-code';
+import { createIslandSite } from './island-site';
 import { MARKET_PUZZLE, marketStall } from './market/stalls';
-import { NpcCrowd, type Npc } from './npcs';
-import type { Puzzle } from './puzzles/types';
+import type { Npc } from './npcs';
 import type { ScriptStep } from './script';
 
 /**
@@ -109,8 +105,6 @@ export const GUILDCREST_CHEST_IDS: readonly string[] = [
 export function createGuildcrestContent(host: IslandContentHost): GuildcrestContent {
   let world: GuildcrestWorld | null = null;
   let decks: DeckIndex | null = null;
-  let crowd: NpcCrowd | null = null;
-  let bottleSite: BottleSite | null = null;
   let disposed = false;
   const ids = new Set(GUILDCREST_NPCS.map((n) => n.id));
   const q = () => host.puzzleHost.quests();
@@ -134,13 +128,8 @@ export function createGuildcrestContent(host: IslandContentHost): GuildcrestCont
 
   /** Bumped by each teardown, so a setup still building for a freed world stops. */
   let generation = 0;
-  /** What this setup added to the session's world, interactions, chests and puzzles. */
-  const added = {
-    colliders: [] as (BoxCollider | CircleObstacle)[],
-    interactions: [] as string[],
-    chests: [] as string[],
-    puzzles: [] as Puzzle[],
-  };
+  /** What a setup adds to the session's world, interactions, chests and puzzles. */
+  const site = createIslandSite(host);
 
   // ---- Cues the scripts wait on (spec W.4) ----
 
@@ -239,10 +228,7 @@ export function createGuildcrestContent(host: IslandContentHost): GuildcrestCont
     const gone = () => disposed || gen !== generation;
     const works = w.works;
     decks = new DeckIndex(works.decks, toFrame);
-    for (const b of works.colliders) host.world.addBox(b);
-    for (const c of works.circles) host.world.addCircle(c);
-    for (const b of works.cameraBoxes) host.world.addCameraBox(b);
-    added.colliders.push(...works.colliders, ...works.circles, ...works.cameraBoxes);
+    site.colliders(works.colliders, works.circles, works.cameraBoxes);
     w.setSailPace(host.reducedMotion() ? 0.25 : 1);
 
     // The cast at their anchors (on the walk surfaces there), a character a slice.
@@ -253,76 +239,26 @@ export function createGuildcrestContent(host: IslandContentHost): GuildcrestCont
         (n) => n.id !== marketStall('guildcrest').keeper.npc || puzzleOn(MARKET_PUZZLE),
       ),
     ];
-    const made = await NpcCrowd.createAsync(
-      host.characters,
-      cast,
-      anchors,
-      host.world,
-      host.tier,
-      host.camera,
-      { ...anchors.lyra! },
-      buildSlice,
-      () => !gone(),
-    );
-    if (gone()) {
-      made.dispose();
-      return none;
-    }
-    crowd = made;
-    await buildSlice();
     const roots: Object3D[] = [];
-    for (const n of crowd.list) {
-      n.character.group.visible = false;
-      host.scene.add(n.character.group);
-      host.detail.add(n.character.group);
-      host.addNpcTalk(n);
-      added.interactions.push(`npc:${n.spec.id}`);
-      roots.push(n.character.group);
-    }
-    await buildSlice();
-    if (gone()) return none;
+    if (!(await site.cast({ cast, anchors, fallback: anchors.lyra!, alive: () => !gone(), roots })))
+      return none;
 
     for (const c of CHESTS) {
       const p = toWorld(c.u, c.v);
       const y = host.world.surfaceHeightAt(p.x, p.z) ?? host.world.groundAt(p.x, p.z);
       const f = toWorld(c.u + c.face[0], c.v + c.face[1]);
-      const g = host.placeChest(c.id, p.x, y, p.z, Math.atan2(f.x - p.x, f.z - p.z), host.detail);
-      if (!g) continue;
-      added.chests.push(c.id);
-      g.visible = false;
-      roots.push(g);
+      site.chest(c.id, p.x, y, p.z, Math.atan2(f.x - p.x, f.z - p.z), roots);
     }
     // Message bottles (B4.1-B4.4): the chapter's troubleshooting.
-    const kit = await loadVillageKit();
-    if (gone()) return none;
-    bottleSite = createBottles({
-      kit,
-      ground: (x, z) => host.world.surfaceHeightAt(x, z) ?? host.world.groundAt(x, z),
+    const bottled = await site.bottles({
       spots: BOTTLES.map((b, i) => ({ id: b.id, ...toWorld(b.u, b.v), yaw: 0.6 + i * 1.9 })),
+      ground: (x, z) => host.world.surfaceHeightAt(x, z) ?? host.world.groundAt(x, z),
+      alive: () => !gone(),
+      roots,
     });
-    bottleSite.group.visible = false;
-    host.scene.add(bottleSite.group);
-    host.detail.add(bottleSite.group);
-    roots.push(bottleSite.group);
-    for (const [id, p] of Object.entries(bottleSite.spots())) {
-      if (host.learn?.isChestOpen(id)) bottleSite.setCollected(id, true);
-      added.interactions.push(`bottle:${id}`);
-      host.interactions.add({
-        id: `bottle:${id}`,
-        label: () => 'Read the message in the bottle',
-        x: p.x,
-        y: p.y,
-        z: p.z,
-        radius: 2,
-        enabled: () => host.puzzleHost.canAct() && !!host.learn && !host.learn.isChestOpen(id),
-        onInteract: () => void readBottle(id, p),
-      });
-    }
+    if (!bottled) return none;
     // The circuits: their stations and lamps, laid out as the save says.
-    for (const p of circuits.create(w)) {
-      host.puzzles.push(p);
-      added.puzzles.push(p);
-    }
+    for (const p of circuits.create(w)) site.puzzle(p);
     return {
       roots,
       reveal() {
@@ -331,33 +267,12 @@ export function createGuildcrestContent(host: IslandContentHost): GuildcrestCont
     };
   }
 
-  async function readBottle(id: string, at: { x: number; y: number; z: number }): Promise<void> {
-    host.audio?.sfx.oneShot('bottle_pop', at, 0.9);
-    bottleSite?.setCollected(id, true);
-    await host.learn?.openChest(id);
-  }
-
   function teardown(): void {
     generation++;
     card.close();
     circuits.teardown();
     if (!world) return;
-    host.world.remove(added.colliders);
-    for (const id of added.interactions) host.interactions.remove(id);
-    for (const p of added.puzzles) {
-      const i = host.puzzles.indexOf(p);
-      if (i >= 0) host.puzzles.splice(i, 1);
-      p.dispose();
-    }
-    host.removeChests(added.chests);
-    added.colliders.length = added.interactions.length = added.chests.length = added.puzzles.length = 0;
-    crowd?.dispose();
-    crowd = null;
-    if (bottleSite) {
-      bottleSite.group.removeFromParent();
-      bottleSite.dispose();
-      bottleSite = null;
-    }
+    site.clear();
     decks = null;
     world = null;
   }
@@ -371,24 +286,18 @@ export function createGuildcrestContent(host: IslandContentHost): GuildcrestCont
     setup,
     teardown,
     get npcs() {
-      return crowd?.list ?? [];
+      return site.npcs;
     },
     ids,
     script: (id) => guildcrestNpcScript(id, q()),
     updateNpcs(dt, at, eye) {
-      if (crowd && Math.hypot(eye.x - GUILDCREST.center.x, eye.z - GUILDCREST.center.z) < NEAR)
-        crowd.update(dt, at);
+      if (Math.hypot(eye.x - GUILDCREST.center.x, eye.z - GUILDCREST.center.z) < NEAR)
+        site.crowd?.update(dt, at);
     },
     update(dt) {
       if (world) circuits.update(dt);
     },
-    bottles: () =>
-      Object.entries(bottleSite?.spots() ?? {}).map(([id, p]) => ({
-        id,
-        x: p.x,
-        z: p.z,
-        read: !!host.learn?.isChestOpen(id),
-      })),
+    bottles: () => site.bottleList(),
     debug: {
       ready: () => !!world,
       decks: () => world?.works.decks.length ?? 0,

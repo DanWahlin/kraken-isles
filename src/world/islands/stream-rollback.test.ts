@@ -34,6 +34,12 @@ vi.mock('./meridian-silhouette', () => ({
 vi.mock('./thousand-bough/tree/silhouette', () => ({
   createThousandBoughSilhouette: () => ({ group: new Group(), ready: Promise.resolve() }),
 }));
+vi.mock('./keelhaven/silhouette', () => ({
+  createKeelhavenSilhouette: () => ({ group: new Group(), ready: Promise.resolve() }),
+}));
+vi.mock('./guildcrest/silhouette', () => ({
+  createGuildcrestSilhouette: () => ({ group: new Group(), ready: Promise.resolve() }),
+}));
 vi.mock('./meridian', async (importOriginal) => ({
   ...(await importOriginal<typeof import('./meridian')>()),
   // eslint-disable-next-line require-yield
@@ -44,6 +50,8 @@ vi.mock('./meridian', async (importOriginal) => ({
 
 const { createMeridianStream } = await import('./meridian-stream');
 const { createThousandBoughStream } = await import('./thousand-bough/stream');
+const { createKeelhavenStream } = await import('./keelhaven/stream');
+const { createGuildcrestStream } = await import('./guildcrest/stream');
 const { ISLANDS } = await import('../../game/islands');
 
 function context(island: (typeof ISLANDS)[keyof typeof ISLANDS]) {
@@ -70,6 +78,8 @@ function context(island: (typeof ISLANDS)[keyof typeof ISLANDS]) {
 describe.each([
   ['Port Meridian', createMeridianStream, ISLANDS.meridian],
   ['Thousand-Bough', createThousandBoughStream, ISLANDS['thousand-bough']],
+  ['Keelhaven', createKeelhavenStream, ISLANDS.keelhaven],
+  ['Guildcrest', createGuildcrestStream, ISLANDS.guildcrest],
 ] as const)('%s stream that fails part-way', (_name, create, island) => {
   beforeEach(() => {
     terrains.length = 0;

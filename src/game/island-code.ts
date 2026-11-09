@@ -1,8 +1,11 @@
-import type { Object3D } from 'three/webgpu';
+import type { Object3D, PerspectiveCamera } from 'three/webgpu';
+import type { IslesAudio } from '../audio';
 import type { QuestTarget } from '../course/pack';
 import type { InputState } from '../engine/input';
 import type { TierSettings } from '../engine/quality';
-import type { Character } from '../world/characters';
+import type { ChartLabelId } from '../learn/content/labels';
+import type { LearnStore } from '../learn/store';
+import type { Character, CharacterLibrary } from '../world/characters';
 import type { CoveScene } from '../world/cove-scene';
 import type { CircleObstacle } from '../world/contracts';
 import type { FarCull } from '../world/far-cull';
@@ -11,31 +14,32 @@ import type { Brigantine } from '../world/ship';
 import type { IslandWays } from '../world/islands/waypoints';
 import type { VillageAnchor } from '../world/village/kit';
 import type { MarketStallLayout } from '../world/market-stall/layout';
-import type { InlandWater, WalkBox, WalkSurface } from './collision';
+import type { CollisionWorld, InlandWater, WalkBox, WalkSurface } from './collision';
 import type { CameraShot, FollowCamera } from './follow-camera';
+import type { Interactions } from './interaction';
 import type { Npc } from './npcs';
 import type { HelmsHost } from './puzzles/three-helms';
-import type { PuzzleHost } from './puzzles/types';
+import type { Puzzle, PuzzleHost } from './puzzles/types';
 import type { QuestTracker } from './quest-list';
 import type { ScriptStep } from './script';
 import type { QuestState } from './story';
-import type { ThousandBoughHost } from './thousand-bough-session';
 
 /**
  * An island's code (its package's index, `IslandEntry.code`), loaded with the voyage as a chunk of
  * its own: its stream (the world: terrain, town or village, plants), its quest line, how the walker
  * meets its world, and its content on the island (cast, chests, sites, puzzles and set pieces). The
  * world (src/world/cove-scene.ts) and the session (src/game/session.ts) run every island through
- * this, so neither names one.
+ * this, so neither names one. `W` is the island's own world (what its stream builds and its content
+ * is set up on): an island's code names it once, and the shared systems read it as `unknown`.
  */
-export interface IslandCode {
+export interface IslandCode<W = unknown> {
   /** A streamed island's stream maker (the home island is built with the world instead). */
-  stream?: IslandStreamFactory;
+  stream?: IslandStreamFactory<W>;
   quests: IslandQuests;
   /** How the walker meets the island's world: its walk surfaces, standing colliders and wading water. */
-  walk?(ctx: IslandWalkContext): IslandWalk;
+  walk?(ctx: IslandWalkContext<W>): IslandWalk;
   /** The island's content in the session (a streamed island); the home island's is the session's own. */
-  content?(host: IslandContentHost): IslandContent;
+  content?(host: IslandContentHost<W>): IslandContent<W>;
   /** Its routes for the compass, the crew and Unstuck: its walking graph ashore and its waters. */
   ways: IslandWays;
   /** The chests and message bottles the island places (their ids; what's in them is the course's). */
@@ -69,10 +73,10 @@ export interface IslandQuests {
 }
 
 /** What an island's `walk` gets: its stream, the tier, and its content once it's made. */
-export interface IslandWalkContext {
-  stream: IslandStream | null;
+export interface IslandWalkContext<W = unknown> {
+  stream: IslandStream<W> | null;
   tier: TierSettings;
-  content(): IslandContent | null;
+  content(): IslandContent<W> | null;
 }
 
 /** The island's part of the session's collision world (src/game/collision.ts). */
@@ -96,13 +100,57 @@ export interface IslandSetup {
 }
 
 /**
+ * What every island's content may use of the session: the walker, the camera, talk and its shots,
+ * the HUD's fades, chests, puzzles and cues. A content that needs no more than this (and its tests'
+ * stand-in host) takes this; `IslandContentHost` adds the island's stream, the ship and rides.
+ */
+export interface IslandSessionHost {
+  characters: CharacterLibrary;
+  tier: TierSettings;
+  camera: PerspectiveCamera;
+  scene: { add(o: Object3D): void };
+  world: CollisionWorld;
+  detail: FarCull;
+  learn: LearnStore | null;
+  audio: IslesAudio | null;
+  interactions: Interactions;
+  puzzleHost: PuzzleHost;
+  /** The player's feet (walk mode). */
+  player: { readonly x: number; readonly y: number; readonly z: number };
+  walking(): boolean;
+  say(ids: readonly string[]): Promise<void>;
+  /** An unvoiced line (a keeper's reasons, Wingman's hints). */
+  text(speaker: string, line: string): Promise<void>;
+  frame(shot: CameraShot | null): void;
+  cut(shot: CameraShot): void;
+  fade(on: boolean, ms?: number): Promise<void>;
+  /** Back to the open conversation's shot (after a cutaway). */
+  backToTalk(): void;
+  /** Puts the walker somewhere, facing `heading`, with the camera behind. */
+  place(x: number, z: number, heading: number, y?: number): void;
+  /** A board or a hoist owns the keys and camera. */
+  setModal(on: boolean): void;
+  reducedMotion(): boolean;
+  /** A puzzle's chart label (docs/specs/LOWER-THIRDS.md): shows the first time in a save. */
+  label(id: ChartLabelId): void;
+  addNpcTalk(n: Npc): void;
+  /** A treasure chest at a spot (the session's chests, saved and opened like the others). */
+  placeChest(id: string, x: number, y: number, z: number, heading: number, detail: FarCull): Object3D | null;
+  /** Takes chests away again (the island is being freed; whether each is open is in the save). */
+  removeChests(ids: readonly string[]): void;
+  openChest(id: string): Promise<void>;
+  cues: Map<string, () => Promise<void>>;
+  puzzles: Puzzle[];
+}
+
+/**
  * The session's side of an island's content: what the content may use and do (the walker, the
  * camera, the HUD's fades, chests, puzzles, cues). The content keeps what it adds (colliders,
  * interactions, puzzles, chests) and takes it out again in `teardown`.
  */
-export interface IslandContentHost extends ThousandBoughHost {
+export interface IslandContentHost<W = unknown> extends IslandSessionHost {
   /** The island's own stream (its world, once streamed). */
-  stream: IslandStream;
+  stream: IslandStream<W>;
   /** The walker (where the captain stands and faces). */
   player: { readonly x: number; readonly y: number; readonly z: number; readonly heading: number };
   cove: CoveScene;
@@ -130,7 +178,7 @@ export interface IslandContentHost extends ThousandBoughHost {
 }
 
 /** An island's content in the session (Port Meridian's town life, Thousand-Bough's tree village). */
-export interface IslandContent {
+export interface IslandContent<W = unknown> {
   readonly npcs: readonly Npc[];
   /** Whether an NPC is one of the island's cast (its scripts are the island's). */
   owns(npc: string): boolean;
@@ -140,9 +188,9 @@ export interface IslandContent {
    * Builds the cast, chests and sites on the island's streamed world (hidden until `reveal`), or
    * null when there's nothing to add (the world went again, or the session ended).
    */
-  setup(world: unknown): Promise<IslandSetup | null>;
+  setup(world: W): Promise<IslandSetup | null>;
   /** The island's Model Market stall (its lettering goes on this anchor), if it has one. */
-  market?(world: unknown): { at: VillageAnchor; layout: MarketStallLayout } | null;
+  market?(world: W): { at: VillageAnchor; layout: MarketStallLayout } | null;
   /**
    * Takes everything `setup` added out again before the island's world is freed. Whatever the
    * player has done there lives in the save; the next setup reads it back.

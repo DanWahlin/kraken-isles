@@ -1,22 +1,13 @@
-import { Vector3, type Object3D, type PerspectiveCamera } from 'three/webgpu';
-import type { IslesAudio } from '../audio';
+import { Vector3, type Object3D } from 'three/webgpu';
 import type { SoundLoopHandle, SoundLoopName } from '../audio/soundscape/soundscape';
 import type { SliceName } from '../audio/soundscape/bank';
-import { buildSlice } from '../engine/build-slice';
-import type { TierSettings } from '../engine/quality';
-import type { ChartLabelId } from '../learn/content/labels';
-import type { LearnStore } from '../learn/store';
-import type { CharacterLibrary } from '../world/characters';
-import type { FarCull } from '../world/far-cull';
 import type { ThousandBoughSystem } from '../world/islands/thousand-bough/contract';
 import { THOUSAND_BOUGH } from '../world/islands/thousand-bough/layout';
-import { createBottles, type BottleSite } from '../world/sites/bottles';
-import { loadVillageKit } from '../world/village/kit';
-import type { BoxCollider, CollisionWorld, InlandWater, WalkSurface } from './collision';
-import type { CircleObstacle } from '../world/contracts';
+import type { InlandWater, WalkSurface } from './collision';
 import type { CameraShot } from './follow-camera';
-import type { Interactions } from './interaction';
-import { NpcCrowd, type Npc } from './npcs';
+import type { IslandSessionHost } from './island-code';
+import { createIslandSite } from './island-site';
+import type { Npc } from './npcs';
 import { createChannelRouting } from './puzzles/channel-routing/puzzle';
 import {
   FlagHoist,
@@ -33,7 +24,6 @@ import {
 import { lineOf, puzzleOn, textOf } from '../course/puzzles';
 import { storyHolds, type StoryCondition } from './story';
 import { createPracticeSession } from './puzzles/practice-session';
-import type { Puzzle, PuzzleHost } from './puzzles/types';
 import type { ScriptStep } from './script';
 import { THOUSAND_BOUGH_NPCS, thousandBoughExtras } from './thousand-bough-npcs';
 import { MARKET_PUZZLE, marketStall } from './market/stalls';
@@ -49,44 +39,7 @@ import { COURSE } from '../course/catalog';
  * Thousand Lanterns. It talks to the world only through the island's contract (`ThousandBoughSystem`)
  * and its layout data, and to the session through this host.
  */
-export interface ThousandBoughHost {
-  characters: CharacterLibrary;
-  tier: TierSettings;
-  camera: PerspectiveCamera;
-  scene: { add(o: Object3D): void };
-  world: CollisionWorld;
-  detail: FarCull;
-  learn: LearnStore | null;
-  audio: IslesAudio | null;
-  interactions: Interactions;
-  puzzleHost: PuzzleHost;
-  /** The player's feet (walk mode). */
-  player: { readonly x: number; readonly y: number; readonly z: number };
-  walking(): boolean;
-  say(ids: readonly string[]): Promise<void>;
-  /** An unvoiced line (Ines's reasons, Wingman's hints). */
-  text(speaker: string, line: string): Promise<void>;
-  frame(shot: CameraShot | null): void;
-  cut(shot: CameraShot): void;
-  fade(on: boolean, ms?: number): Promise<void>;
-  /** Back to the open conversation's shot (after a cutaway). */
-  backToTalk(): void;
-  /** Puts the walker somewhere, facing `heading`, with the camera behind. */
-  place(x: number, z: number, heading: number, y?: number): void;
-  /** The board or the hoist owns the keys and camera. */
-  setModal(on: boolean): void;
-  reducedMotion(): boolean;
-  /** A puzzle's chart label (docs/specs/LOWER-THIRDS.md): shows the first time in a save. */
-  label(id: ChartLabelId): void;
-  addNpcTalk(n: Npc): void;
-  /** A treasure chest at a spot (the session's chests, saved and opened like the others). */
-  placeChest(id: string, x: number, y: number, z: number, heading: number, detail: FarCull): Object3D | null;
-  /** Takes chests away again (the island is being freed; whether each is open is in the save). */
-  removeChests(ids: readonly string[]): void;
-  openChest(id: string): Promise<void>;
-  cues: Map<string, () => Promise<void>>;
-  puzzles: Puzzle[];
-}
+export type ThousandBoughHost = IslandSessionHost;
 
 export interface ThousandBoughContent {
   /** The island's walk surfaces (decks, the stair, bridges), live once the world's streamed. */
@@ -181,8 +134,6 @@ export async function playSeal(
 
 export function createThousandBoughContent(host: ThousandBoughHost): ThousandBoughContent {
   let sys: ThousandBoughSystem | null = null;
-  let crowd: NpcCrowd | null = null;
-  let bottleSite: BottleSite | null = null;
   let disposed = false;
   let unwatchBranch: (() => void) | null = null;
   const ids = new Set(THOUSAND_BOUGH_NPCS.map((n) => n.id));
@@ -404,17 +355,9 @@ export function createThousandBoughContent(host: ThousandBoughHost): ThousandBou
 
   /** Bumped by each teardown, so a setup still building for a freed world stops. */
   let generation = 0;
-  /** What this setup added to the session's world, interactions and puzzles. */
-  const added = {
-    colliders: [] as (BoxCollider | CircleObstacle)[],
-    interactions: [] as string[],
-    chests: [] as string[],
-    puzzles: [] as Puzzle[],
-  };
-  const addInteraction = (i: Parameters<Interactions['add']>[0]) => {
-    added.interactions.push(i.id);
-    return host.interactions.add(i);
-  };
+  /** What a setup adds to the session's world, interactions, chests and puzzles. */
+  const site = createIslandSite(host);
+  const addInteraction = site.interaction;
 
   async function setup(s: ThousandBoughSystem): Promise<{ roots: Object3D[]; reveal(): void }> {
     const none = { roots: [] as Object3D[], reveal() {} };
@@ -427,10 +370,7 @@ export function createThousandBoughContent(host: ThousandBoughHost): ThousandBou
     const branch = () => host.learn?.getState().setup.branch ?? null;
     s.setPracticeBranch(branch());
     unwatchBranch = host.learn?.subscribe(() => sys?.setPracticeBranch(branch())) ?? null;
-    for (const b of s.colliders()) host.world.addBox(b);
-    for (const c of s.circles()) host.world.addCircle(c);
-    for (const b of s.cameraBoxes()) host.world.addCameraBox(b);
-    added.colliders.push(...s.colliders(), ...s.circles(), ...s.cameraBoxes());
+    site.colliders(s.colliders(), s.circles(), s.cameraBoxes());
 
     // The cast at their anchors (decks keep the anchor's height).
     const anchors = s.anchors as unknown as Record<string, typeof s.anchors.tamsin>;
@@ -440,72 +380,24 @@ export function createThousandBoughContent(host: ThousandBoughHost): ThousandBou
         (n) => n.id !== marketStall('thousand-bough').keeper.npc || puzzleOn(MARKET_PUZZLE),
       ),
     ];
-    // A character a slice: the whole cast at once stalled a frame for ~190 ms while you sailed.
-    const made = await NpcCrowd.createAsync(
-      host.characters,
-      cast,
-      anchors,
-      host.world,
-      host.tier,
-      host.camera,
-      { ...anchors.tamsin },
-      buildSlice,
-      () => !gone(),
-    );
-    if (gone()) {
-      made.dispose();
-      return none;
-    }
-    crowd = made;
-    await buildSlice();
     const roots: Object3D[] = [];
-    for (const n of crowd.list) {
-      n.character.group.visible = false;
-      host.scene.add(n.character.group);
-      host.detail.add(n.character.group);
-      host.addNpcTalk(n);
-      added.interactions.push(`npc:${n.spec.id}`);
-      roots.push(n.character.group);
-    }
-    await buildSlice();
-    if (gone()) return none;
+    if (!(await site.cast({ cast, anchors, fallback: anchors.tamsin, alive: () => !gone(), roots })))
+      return none;
 
     // Chests: Lyra's by the third booth, and one in the cave behind Great Falls, each facing the way
     // you come to it.
     for (const c of THOUSAND_BOUGH.chests) {
       const f = c.face;
-      const g = host.placeChest(c.id, c.x, c.y, c.z, Math.atan2(f.x - c.x, f.z - c.z), host.detail);
-      if (g) added.chests.push(c.id);
-      if (g) {
-        g.visible = false;
-        roots.push(g);
-      }
+      site.chest(c.id, c.x, c.y, c.z, Math.atan2(f.x - c.x, f.z - c.z), roots);
     }
     // Message bottles (B2.1-B2.3): the chapter's troubleshooting.
-    const kit = await loadVillageKit();
-    if (gone()) return none;
-    bottleSite = createBottles({
-      kit,
-      ground: (x, z) => host.world.groundAt(x, z),
+    const bottled = await site.bottles({
       spots: THOUSAND_BOUGH.bottles.map((b, i) => ({ id: b.id, x: b.x, z: b.z, yaw: 0.7 + i * 1.9 })),
+      ground: (x, z) => host.world.groundAt(x, z),
+      alive: () => !gone(),
+      roots,
     });
-    bottleSite.group.visible = false;
-    host.scene.add(bottleSite.group);
-    host.detail.add(bottleSite.group);
-    roots.push(bottleSite.group);
-    for (const [id, p] of Object.entries(bottleSite.spots())) {
-      if (host.learn?.isChestOpen(id)) bottleSite.setCollected(id, true);
-      addInteraction({
-        id: `bottle:${id}`,
-        label: () => 'Read the message in the bottle',
-        x: p.x,
-        y: p.y,
-        z: p.z,
-        radius: 2,
-        enabled: () => host.puzzleHost.canAct() && !!host.learn && !host.learn.isChestOpen(id),
-        onInteract: () => void readBottle(id, p),
-      });
-    }
+    if (!bottled) return none;
 
     // Set pieces.
     // A course can turn a puzzle off (`"disabled": true`): the Gate Board and the deck stay as scenery.
@@ -535,11 +427,7 @@ export function createThousandBoughContent(host: ThousandBoughHost): ThousandBou
           setup: () => host.learn?.getState().setup ?? null,
           started: () => story('practiceStarted'),
         });
-    for (const p of [routing, practice]) {
-      if (!p) continue;
-      host.puzzles.push(p);
-      added.puzzles.push(p);
-    }
+    for (const p of [routing, practice]) if (p) site.puzzle(p);
     addInteraction({
       id: 'gondola:bell',
       label: () => 'Ring the gondola bell',
@@ -591,12 +479,6 @@ export function createThousandBoughContent(host: ThousandBoughHost): ThousandBou
     };
   }
 
-  async function readBottle(id: string, at: { x: number; y: number; z: number }): Promise<void> {
-    sfx('bottle_pop', at, 0.9);
-    bottleSite?.setCollected(id, true);
-    await host.learn?.openChest(id);
-  }
-
   let gondolaBusy = false;
   async function ringGondola(): Promise<void> {
     if (!sys || gondolaBusy) return;
@@ -644,22 +526,7 @@ export function createThousandBoughContent(host: ThousandBoughHost): ThousandBou
     setHearing(false);
     unwatchBranch?.();
     unwatchBranch = null;
-    host.world.remove(added.colliders);
-    for (const id of added.interactions) host.interactions.remove(id);
-    for (const p of added.puzzles) {
-      const i = host.puzzles.indexOf(p);
-      if (i >= 0) host.puzzles.splice(i, 1);
-      p.dispose();
-    }
-    host.removeChests(added.chests);
-    added.colliders.length = added.interactions.length = added.chests.length = added.puzzles.length = 0;
-    crowd?.dispose();
-    crowd = null;
-    if (bottleSite) {
-      bottleSite.group.removeFromParent();
-      bottleSite.dispose();
-      bottleSite = null;
-    }
+    site.clear();
     routing = null;
     openBoardSoon = false;
     inBooth = null;
@@ -672,15 +539,15 @@ export function createThousandBoughContent(host: ThousandBoughHost): ThousandBou
     setup,
     teardown,
     get npcs() {
-      return crowd?.list ?? [];
+      return site.npcs;
     },
     ids,
     script: (id) => thousandBoughNpcScript(id, q()),
     modal: () => modal,
     near: (x, z) => Math.hypot(x - THOUSAND_BOUGH.center.x, z - THOUSAND_BOUGH.center.z) < 700,
     updateNpcs(dt, at, eye) {
-      if (crowd && Math.hypot(eye.x - THOUSAND_BOUGH.center.x, eye.z - THOUSAND_BOUGH.center.z) < 700)
-        crowd.update(dt, at);
+      if (Math.hypot(eye.x - THOUSAND_BOUGH.center.x, eye.z - THOUSAND_BOUGH.center.z) < 700)
+        site.crowd?.update(dt, at);
     },
     update(dt) {
       if (!sys) return;
@@ -712,13 +579,7 @@ export function createThousandBoughContent(host: ThousandBoughHost): ThousandBou
         );
       }
     },
-    bottles: () =>
-      Object.entries(bottleSite?.spots() ?? {}).map(([id, p]) => ({
-        id,
-        x: p.x,
-        z: p.z,
-        read: !!host.learn?.isChestOpen(id),
-      })),
+    bottles: () => site.bottleList(),
     debug: {
       ready: () => !!sys,
       routing: () => routing?.debug ?? null,
@@ -741,12 +602,8 @@ export function createThousandBoughContent(host: ThousandBoughHost): ThousandBou
       disposed = true;
       unwatchBranch?.();
       setHearing(false);
-      crowd?.dispose();
+      site.dropLife();
       unmountHoist?.();
-      if (bottleSite) {
-        bottleSite.group.removeFromParent();
-        bottleSite.dispose();
-      }
       for (const id of ['gondola:bell', 'basket:bottom', 'basket:top', 'lantern:lever'])
         host.interactions.remove(id);
       for (const b of THOUSAND_BOUGH.bottles) host.interactions.remove(`bottle:${b.id}`);

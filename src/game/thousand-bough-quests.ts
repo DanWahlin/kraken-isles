@@ -22,7 +22,7 @@ const ISLAND = 'thousand-bough';
 
 /**
  * The island this quest line belongs to, for the tracker's header (its name is the game's). `nextSail`
- * replaces `next` once the island after it is open (src/game/thousand-bough-island.ts).
+ * replaces `next` once the island after it is open (src/game/streamed-island-code.ts).
  */
 export let THOUSAND_BOUGH_ISLAND: {
   name: string;
