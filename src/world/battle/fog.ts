@@ -14,7 +14,7 @@ import {
 import type { TierSettings } from '../../engine/quality';
 import { releaseInstanceAttributes } from '../../engine/instance-buffers';
 import { releaseSpriteQuad, useSpriteQuad } from '../../engine/sprite-quad';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 
 // TSL fluent typings do not cover this mixed scalar/vector graph.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

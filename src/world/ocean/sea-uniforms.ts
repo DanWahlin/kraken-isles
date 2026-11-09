@@ -1,5 +1,5 @@
 import { uniform } from 'three/tsl';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import { seaState, type SeaParams } from './sea-state';
 import { ALL_WAVES } from './waves';
 

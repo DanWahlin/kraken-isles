@@ -6,7 +6,7 @@ import { createDistantRanges } from '../world/terrain/distant-ranges';
 import { createBrigantine, gullPerches, type BrigantineEnv } from '../world/ship';
 import type { LeapsSystem, ScreenRect } from '../world/life/leaps';
 import type { BirdsSystem } from '../world/life/birds';
-import { world } from '../world/uniforms';
+import { world } from '../engine/uniforms';
 import { seaState } from '../world/ocean/sea-state';
 import { bindTitleDrag, TitleOrbit } from './title-orbit';
 import type { TierSettings } from '../engine/quality';

@@ -15,7 +15,6 @@ import {
   feedback,
   jobById,
   levelLastTime,
-  marketText as T,
   price,
   refundFor,
   retryChanges,
@@ -25,7 +24,13 @@ import {
   type Hire,
   type JobId,
 } from '../market/jobs';
-import { GILDA_KEYS, MARKET, type GildaKey, type QuestKeeperKey } from '../../content/market';
+import {
+  GILDA_KEYS,
+  MARKET,
+  marketText as T,
+  type GildaKey,
+  type QuestKeeperKey,
+} from '../../content/market';
 import { applyRules, whenHolds, type When } from '../story';
 import { MARKET_PUZZLE, questStall, type MarketStallSpec } from '../market/stalls';
 import { firstModel, modelsIn, savedHireName } from '../market/models';

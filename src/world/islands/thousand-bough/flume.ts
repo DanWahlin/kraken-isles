@@ -16,7 +16,7 @@ import { mergeWithRigidParts, type RigidParts } from '../../sites/rigid-parts';
 import type { SignSet } from '../../sites/sign';
 import { ROCK_ASSETS } from '../../terrain/rock-assets';
 import { mulberry32, smoothstep } from '../../../util/math';
-import { CREW_LOOK } from '../../../game/puzzles/channel-routing/boards';
+import { CREW_LOOK } from './crew-look';
 import type { ChannelRoutingState, Crew, Flow, FlumeTerraceView } from './contract';
 import type { FlumeStones } from './rocks';
 import type { CameraBlockerBox } from '../../terrain/camera-blockers';

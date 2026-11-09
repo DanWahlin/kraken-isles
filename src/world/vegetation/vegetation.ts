@@ -23,7 +23,7 @@ import type { CircleObstacle, Tier } from '../contracts';
 import { createHeightDataTexture } from './materials';
 import { GrassField } from './grass';
 import { updateFloraPushers } from '../flora/nodes';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import { ImpostorBatch, bakeImpostorAtlas } from './impostors';
 import {
   loadVegetationGeometries,

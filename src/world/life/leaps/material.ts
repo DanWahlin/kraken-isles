@@ -23,7 +23,7 @@ import {
   vec3,
 } from 'three/tsl';
 import { shapeBeforeInstancing } from '../../../engine/instancing';
-import { world } from '../../uniforms';
+import { world } from '../../../engine/uniforms';
 
 // TSL fluent typings do not cover this mixed scalar/vector graph.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

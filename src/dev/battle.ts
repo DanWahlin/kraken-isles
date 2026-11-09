@@ -11,7 +11,7 @@ import { BATTLE_PLANS, Battle, emptyBattleSnapshot } from '../world/battle/battl
 import { createOcean } from '../world/ocean/ocean';
 import { createBrigantine } from '../world/ship';
 import { createSky } from '../world/sky/sky-system';
-import { world } from '../world/uniforms';
+import { world } from '../engine/uniforms';
 import { compileAndStart, createDevHarness, engineStats, seaOrbitControls } from './harness';
 import { activateCourse } from '../course/load';
 

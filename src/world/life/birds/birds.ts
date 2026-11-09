@@ -14,7 +14,7 @@ import {
 } from 'three/webgpu';
 import { tierSettings, type TierSettings } from '../../../engine/quality';
 import type { Tier } from '../../contracts';
-import { world } from '../../uniforms';
+import { world } from '../../../engine/uniforms';
 import { createBirdGeometry } from './geometry';
 import { createBirdMaterial } from './material';
 import { clamp, seededRandom } from '../../../util/math';

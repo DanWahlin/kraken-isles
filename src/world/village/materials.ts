@@ -14,7 +14,7 @@ import {
   uv,
 } from 'three/tsl';
 import { plainShadowColor } from '../../engine/shadow-color';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 
 // three's fluent TSL node typings do not cover every scalar/vector mix used below.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

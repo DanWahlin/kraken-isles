@@ -1,5 +1,6 @@
 import {
   MARKET,
+  marketText,
   sectionTitle,
   sourceOf,
   type EffortId,
@@ -15,8 +16,6 @@ import { onCourse } from '../../course/active';
 import type { SourceRef } from '../../learn/types';
 import type { ModelCategory } from './catalog';
 import type { ModelTier } from '../../content/market';
-import type { PuzzleFile } from '../../course/pack';
-import { puzzleContent, textOf } from '../../course/puzzles';
 
 /**
  * The Model Market's rules (docs/specs/MODEL-MARKET.md §3, §5): the jobs on Gilda's board, what a
@@ -42,9 +41,6 @@ const quote = (q: MarketQuoteData): CourseQuote => ({
   source: sourceOf(q),
 });
 
-/** The market's words (`puzzles/market.json`): the overlay, the hire's name, the summaries, the signs. */
-export const marketText = (key: string, v?: Readonly<Record<string, string | number>>) =>
-  textOf(puzzleContent<PuzzleFile>('market'), key, v);
 const T = marketText;
 
 export let QUOTES = {} as Readonly<Record<QuoteKey, CourseQuote> & Record<string, CourseQuote>>;

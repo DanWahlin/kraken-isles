@@ -3,7 +3,7 @@ import type { TierSettings } from '../../engine/quality';
 import type { CircleObstacle, HeightField, WaveSampler } from '../contracts';
 import { createBrigantine, type Brigantine, type BrigantineEnv } from '../ship';
 import { BRIGANTINE_HALF_LENGTH, sheerHeightAt } from '../ship/lines';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import { windAt } from '../wind';
 import { ARC_FIRING, ARC_WARNING, ArcSet } from './arcs';
 import { elevationFor, insideHull, leadPoint, MUZZLE_SPEED, muzzleLocal } from './ballistics';

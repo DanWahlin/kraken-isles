@@ -1,4 +1,6 @@
 import { onCourse } from '../course/active';
+import type { PuzzleFile } from '../course/pack';
+import { puzzleContent, textOf } from '../course/puzzles';
 import type { ChapterId } from '../learn/course/chapters';
 import type { SourceRef } from '../learn/types';
 
@@ -159,6 +161,10 @@ onCourse((p) => {
   MARKET = p.market;
   locked = p.lock.chapters;
 });
+
+/** The market's words (`puzzles/market.json`): the overlay, the hire's name, the summaries, the signs. */
+export const marketText = (key: string, v?: Readonly<Record<string, string | number>>) =>
+  textOf(puzzleContent<PuzzleFile>('market'), key, v);
 
 /** A cited section's title in the course lock ("Models and Reasoning Effort"), or its anchor. */
 export function sectionTitle(c: CourseCite): string {

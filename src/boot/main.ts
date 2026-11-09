@@ -90,7 +90,7 @@ async function boot(): Promise<void> {
       return showFallback(webgl.webgl2 ? 'software' : 'no-webgl2');
     }
     console.warn('WebGPU init failed; retrying on the WebGL2 backend', err);
-    renderer.dispose();
+    void renderer.dispose();
     backend = 'webgl2';
     renderer = create(backend);
     await renderer.init();
@@ -99,7 +99,7 @@ async function boot(): Promise<void> {
   // once; real recovery (recreate device + re-upload packs) is issues.md #5.
   renderer.onDeviceLost = (info: unknown) => {
     console.warn('GPU device lost', info);
-    renderer.setAnimationLoop(null);
+    void renderer.setAnimationLoop(null);
     if (!q.has('recovered')) {
       const url = new URL(location.href);
       url.searchParams.set('recovered', '1');

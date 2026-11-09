@@ -5,7 +5,7 @@ import { SplashPool } from '../battle/fx';
 import type { HeightField, WaveSampler } from '../contracts';
 import type { QuietSea } from '../life/quiet-sea';
 import { leapPixels } from '../life/leaps/director';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import { Kraken, poseFreeArm, type KrakenArm } from './kraken';
 import { freeStance, type FreeStance } from './arm-paths';
 

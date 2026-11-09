@@ -30,7 +30,7 @@ import {
 } from 'three/tsl';
 import { packs } from '../../engine/packs';
 import { plainShadowColor } from '../../engine/shadow-color';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import type { Tier } from '../contracts';
 import { ISLAND_TERRAIN_REGIONS } from '../islands/terrain-regions';
 import { combineTerrainRegions, type TerrainRegions } from './terrain-regions';

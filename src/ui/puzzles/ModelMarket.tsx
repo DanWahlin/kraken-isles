@@ -18,7 +18,6 @@ import {
   effortLastTime,
   jobById,
   levelLastTime,
-  marketText as T,
   price,
   usedLastTime,
   type CourseQuote,
@@ -30,7 +29,7 @@ import {
   type RetryPlan,
 } from '../../game/market/jobs';
 import { boardOf, modelsIn } from '../../game/market/models';
-import { MARKET, type GildaKey } from '../../content/market';
+import { MARKET, marketText as T, type GildaKey } from '../../content/market';
 import { Bold } from '../components/Bold';
 import { isTyping } from '../typing';
 import './model-market.css';

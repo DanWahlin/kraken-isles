@@ -30,7 +30,7 @@ import {
 import { markInstancesChanged, sharedInstancedMesh } from '../../engine/instancing';
 import type { TierSettings } from '../../engine/quality';
 import { FADE_DISTANCE, wavesForTier } from '../ocean/waves';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import { ARC_HALF_ANGLE, MAX_RANGE, MIN_RANGE } from './gunnery';
 
 // TSL fluent typings do not cover this mixed scalar/vector graph.

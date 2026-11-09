@@ -1,7 +1,7 @@
 // Adapted from Tidewater © 2026 DRG Software Solutions LLC, MIT, src/sky/Atmosphere.js@fd6cae6
 import { Color, type Node } from 'three/webgpu';
 import { clamp, dot, exp, float, max, mix, normalize, pow, smoothstep, uniform, vec3 } from 'three/tsl';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 
 export interface AnalyticSky {
   /** Sky colour along a unit direction (no sun disc, no clouds). */

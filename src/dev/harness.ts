@@ -11,7 +11,7 @@ import type { DayClock } from '../engine/day-clock';
 import { Engine } from '../engine/engine';
 import { TIERS, type TierSettings } from '../engine/quality';
 import type { Tier } from '../world/contracts';
-import { world } from '../world/uniforms';
+import { world } from '../engine/uniforms';
 
 /** What every dev page starts from: the query string, the chosen backend and tier, and a running engine. */
 export interface DevHarness {

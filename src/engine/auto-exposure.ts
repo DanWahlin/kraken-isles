@@ -1,5 +1,5 @@
 import { StorageInstancedBufferAttribute, type Node, type Texture, type WebGPURenderer } from 'three/webgpu';
-import { world } from '../world/uniforms';
+import { world } from './uniforms';
 import {
   Fn,
   If,
@@ -126,7 +126,7 @@ export function createAutoExposure(renderer: WebGPURenderer, source: Texture): A
     update(dt, keyedExposure) {
       dtU.value = Math.min(Math.max(dt, 0), 0.25);
       keyedLog.value = Math.log2(Math.max(keyedExposure, 1e-4));
-      renderer.compute(kernel);
+      void renderer.compute(kernel);
     },
     async read() {
       const buf = new Float32Array(await renderer.getArrayBufferAsync(attr));

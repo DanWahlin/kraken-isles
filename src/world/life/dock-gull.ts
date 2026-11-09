@@ -16,7 +16,7 @@ import {
 import { Fn, attribute, cos, positionLocal, sin, uniform, vec3 } from 'three/tsl';
 import type { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { ownMap } from '../../engine/own-map';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 
 export interface DockGull {
   readonly group: Group;

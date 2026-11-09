@@ -1,7 +1,7 @@
 // Adapted from Tidewater © 2026 DRG Software Solutions LLC, MIT, src/core/Globals.js@fd6cae6
 import { Color, Vector3 } from 'three/webgpu';
 import { uniform } from 'three/tsl';
-import { world } from '../../uniforms';
+import { world } from '../../../engine/uniforms';
 
 export const G = {
   time: world.time,

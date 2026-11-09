@@ -1,10 +1,9 @@
 import { Group, Vector3 } from 'three/webgpu';
-import { MARKET } from '../../content/market';
+import { MARKET, marketText as T } from '../../content/market';
 import { unreflected } from '../reflection';
 import { anchorFrame, type VillageAnchor } from '../village/kit';
 import type { MarketStallLayout } from '../market-stall/layout';
 import { SignSet, type PaintedSign } from './sign';
-import { marketText as T } from '../../game/market/jobs';
 
 /** A held camera shot: the eye, and the point it looks at (the follow camera's `CameraShot`). */
 export interface MarketShot {

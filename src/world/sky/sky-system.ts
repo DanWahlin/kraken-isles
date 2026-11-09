@@ -41,7 +41,7 @@ import {
 import { sunShadowReach, type TierSettings } from '../../engine/quality';
 import type { DayClock } from '../../engine/day-clock';
 import type { Backend } from '../contracts';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import { seaState } from '../ocean/sea-state';
 import { smoothstep as ss } from '../../util/math';
 import { sunState, type SunState } from './sun';

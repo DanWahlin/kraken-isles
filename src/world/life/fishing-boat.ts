@@ -42,7 +42,7 @@ import {
 import type { GLTF, GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import type { CircleObstacle, WaveSampler } from '../contracts';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 
 /** Where a fishing boat lies at anchor, and which way its bow points (radians, 0 = +z). */
 export interface FishingBoatSpot {

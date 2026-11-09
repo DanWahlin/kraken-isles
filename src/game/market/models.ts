@@ -1,7 +1,8 @@
 import { onCourse } from '../../course/active';
 import { AUTO_HIRE } from '../../learn/progress';
 import { CATEGORIES, boardFor, type ModelCategory, type ModelEntry, type ModelsFile } from './catalog';
-import { HOUSE_LEVEL_LABEL, marketText as T } from './jobs';
+import { marketText as T } from '../../content/market';
+import { HOUSE_LEVEL_LABEL } from './jobs';
 
 /**
  * The models on Gilda's boards: the course pack's models.json (written by the weekly sync,

@@ -8,7 +8,7 @@ import { createBrigantine, type Brigantine, type BrigantineEnv } from '../world/
 import { BRIGANTINE_HALF_LENGTH, halfBeamAt } from '../world/ship/lines';
 import { skipSunShadows, skipSunShadowsWhereOff } from '../world/sky/cached-sun-shadow';
 import { createSky } from '../world/sky/sky-system';
-import { world } from '../world/uniforms';
+import { world } from '../engine/uniforms';
 import { wrapAngle } from '../util/math';
 import type { HazardArea, HazardHit, HazardKind, KrakenHull, TellPlan } from '../world/kraken/hazards';
 import type { Kraken } from '../world/kraken/kraken';

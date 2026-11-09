@@ -319,6 +319,9 @@ export class BattleCamera {
         set(aim, sx, 5, sz);
         break;
       }
+      // No beat is playing: the camera stays where the last one left it.
+      case null:
+        break;
     }
   }
 }

@@ -14,7 +14,7 @@ import {
 } from 'three/tsl';
 import type { HeightField } from '../contracts';
 import { COVE } from '../layout';
-import { foamLight, world } from '../uniforms';
+import { foamLight, world } from '../../engine/uniforms';
 import { seaUniforms } from '../ocean/sea-uniforms';
 import type { TerrainBakeData } from './bake';
 import { seaStackWaterlineRadius } from './sea-stack-shape';

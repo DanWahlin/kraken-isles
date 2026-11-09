@@ -6,7 +6,7 @@ import {
   MeshBasicNodeMaterial,
 } from 'three/webgpu';
 import { attribute, float, positionWorld, sin } from 'three/tsl';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyNode = any;

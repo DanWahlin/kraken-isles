@@ -1,7 +1,7 @@
 import { Fn, float, sin, vec2 } from 'three/tsl';
 import type { Node } from 'three/webgpu';
 import { GUST } from './wind';
-import { world } from './uniforms';
+import { world } from '../engine/uniforms';
 
 type N = Node<'float'> | ReturnType<typeof float>;
 

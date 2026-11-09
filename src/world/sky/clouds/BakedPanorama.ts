@@ -31,7 +31,7 @@ import {
   vec4,
 } from 'three/tsl';
 import { sunState, type SunState } from '../sun';
-import { world } from '../../uniforms';
+import { world } from '../../../engine/uniforms';
 
 /**
  * The clouds on WebGL2, Low, Lite and Medium: the WebGPU High clouds (Tidewater's volumetric clouds and

@@ -49,7 +49,7 @@ import {
 } from 'three/tsl';
 import type { TierSettings } from '../../engine/quality';
 import { COVE } from '../layout';
-import { foamLight, world } from '../uniforms';
+import { foamLight, world } from '../../engine/uniforms';
 import type { HarborMirrorInput } from './harbor-mirror';
 import { shipOcean } from './ship-interaction';
 import { MatchedDepth } from './depth-copy';

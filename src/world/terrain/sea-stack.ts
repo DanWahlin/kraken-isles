@@ -26,7 +26,7 @@ import {
   vec3,
 } from 'three/tsl';
 import type { Tier } from '../contracts';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import { clamp01, smoothstep as smooth } from '../../util/math';
 import { ROCK_ASSETS } from './rock-assets';
 import { terrainNoiseTexture } from './noise-texture';

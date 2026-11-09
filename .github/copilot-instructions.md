@@ -52,6 +52,9 @@ Solutions LLC, MIT, <path>@<commit>`), and the full notice goes in `THIRD_PARTY_
   once in TS, and the GPU side is built from the same TS as TSL nodes (no second shader copy).
 - **Hot loops don't allocate.** Reuse vectors/matrices, keep a fixed timestep, and after warm-up the hitch guard
   (`window.__isles.hitches()`) must stay empty.
+- **Imports point down the layers:** `src/util` imports nothing else, `src/engine` only itself and `util`,
+  `src/world` never game, UI, opening or title code, and nothing but the dev pages imports `src/dev`. Type-only
+  imports are free. `npm run lint` enforces it (`eslint.config.js`); tests may cross layers.
 - **Course content is data:** every course word (quests, scripts, barks, quizzes, pages, labels, board
   text, arrival lines, voice lines and audio, the snapshot) lives in a course pack, `courses/<id>/`
   (docs/specs/COURSE-PACKS.md, docs/content-data.md). The game reads it through `src/course/` after a
