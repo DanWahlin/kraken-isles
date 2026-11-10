@@ -8,6 +8,7 @@ import {
   halfBeamAt,
   keelHeightAt,
   sheerHeightAt,
+  sternTuckAt,
   waterlineHalfBeamAt,
 } from './lines';
 import { detailForTier, type Detail } from './brigantine-detail';
@@ -17,6 +18,19 @@ import { MeshBuilder, type P3 } from './mesh-builder';
 export const QUARTERDECK_Z = -8.0;
 /** The ship's wheel stands athwartships on the quarterdeck, its hub this high above the deck line. */
 export const WHEEL = { z: -8.95, hub: 0.78 } as const;
+
+/** The hull's aft end: the sternpost stands here and the counter springs from it. */
+const STERN_Z = -BRIGANTINE_HALF_LENGTH;
+
+/** Half the sternpost's thickness: a little proud of the planking that closes on it. */
+export const STERNPOST_HALF = 0.15;
+
+/** The planked skin's half breadth: the lines, with the extra tumblehome the mesh carries above the wales. */
+export function hullSkinHalfBeamAt(z: number, y: number): number {
+  const sheer = sheerHeightAt(z);
+  const tumble = y > 0.25 ? 1 - 0.11 * clamp01((y - 0.25) / Math.max(0.1, sheer - 0.25)) : 1;
+  return halfBeamAt(z, y) * tumble;
+}
 
 /** Builds the brigantine hull, deck, rail, trim, and name-board geometry. */
 export function createHullGeometry(tier: Tier): BufferGeometry {
@@ -38,8 +52,7 @@ export function createHullGeometry(tier: Tier): BufferGeometry {
       const eased =
         f < 0.55 ? Math.pow(f / 0.55, 0.78) * 0.55 : 0.55 + Math.pow((f - 0.55) / 0.45, 1.18) * 0.45;
       const y = keel + (sheer - keel) * eased;
-      const tumble = y > 0.25 ? 1 - 0.11 * clamp01((y - 0.25) / Math.max(0.1, sheer - 0.25)) : 1;
-      const x = halfBeamAt(z, y) * tumble;
+      const x = hullSkinHalfBeamAt(z, y);
       star[zi]![yi] = builder.addVertex(x, y, z, zi / d.hullZ, f);
       port[zi]![yi] = builder.addVertex(-x, y, z, zi / d.hullZ, f);
     }
@@ -286,27 +299,58 @@ function addLadder(builder: MeshBuilder, side: -1 | 1, z0: number, z1: number): 
   }
 }
 
-function addSternCounter(builder: MeshBuilder, detail: Detail): void {
+/**
+ * The counter under the stern gallery, the sternpost, and the rudder hung on it. The counter is a
+ * closed shape: each ring is its aft face at one height, and its sides run forward into the hull's end
+ * (inside the planking, so it joins the hull on every tier with no face lying on another).
+ */
+function addSternCounter(builder: MeshBuilder, detail: Detail, rich: boolean): void {
   builder.setRegion(0);
   builder.setColor(0x17100c);
+  const hullEnd = (y: number) => hullSkinHalfBeamAt(STERN_Z, y);
+  // Below the knuckle the counter follows the tuck in to the sternpost's head; above it, the gallery.
   const rings = [
-    { y: -0.75, z: -11.58, half: 0.26 },
-    { y: -0.18, z: -12.12, half: 0.62 },
-    { y: 0.56, z: -12.42, half: 1.28 },
+    { y: 0.38, z: -12.03, half: 0.9 * hullEnd(0.38) },
+    { y: 0.62, z: -12.24, half: 0.9 * hullEnd(0.62) },
+    { y: 0.95, z: -12.38, half: 0.9 * hullEnd(0.95) },
     { y: 1.26, z: -12.42, half: 2.1 },
     { y: 2.08, z: -12.2, half: 2.62 },
     { y: 2.86, z: -12.05, half: 2.34 },
   ];
+  const rootZ = STERN_Z + 0.2;
+  const root = rings.map((r) => Math.min(r.half, hullEnd(r.y) - 0.08));
   for (let i = 0; i < rings.length - 1; i++) {
     const a = rings[i]!;
     const b = rings[i + 1]!;
     builder.addQuad(
-      { x: -a.half, y: a.y, z: a.z },
       { x: a.half, y: a.y, z: a.z },
-      { x: b.half, y: b.y, z: b.z },
+      { x: -a.half, y: a.y, z: a.z },
       { x: -b.half, y: b.y, z: b.z },
+      { x: b.half, y: b.y, z: b.z },
     );
+    for (const side of [-1, 1] as const) {
+      const fa = { x: side * root[i]!, y: a.y, z: rootZ };
+      const fb = { x: side * root[i + 1]!, y: b.y, z: rootZ };
+      const aa = { x: side * a.half, y: a.y, z: a.z };
+      const ab = { x: side * b.half, y: b.y, z: b.z };
+      if (side > 0) builder.addQuad(fa, aa, ab, fb);
+      else builder.addQuad(aa, fa, fb, ab);
+    }
   }
+  const foot = rings[0]!;
+  const head = rings[rings.length - 1]!;
+  builder.addQuad(
+    { x: -root[0]!, y: foot.y, z: rootZ },
+    { x: root[0]!, y: foot.y, z: rootZ },
+    { x: foot.half, y: foot.y, z: foot.z },
+    { x: -foot.half, y: foot.y, z: foot.z },
+  );
+  builder.addQuad(
+    { x: root[rings.length - 1]!, y: head.y, z: rootZ },
+    { x: -root[rings.length - 1]!, y: head.y, z: rootZ },
+    { x: -head.half, y: head.y, z: head.z },
+    { x: head.half, y: head.y, z: head.z },
+  );
   builder.setRegion(3);
   builder.setColor(0xd2a352);
   for (const ring of [rings[2]!, rings[3]!, rings[4]!]) {
@@ -317,15 +361,60 @@ function addSternCounter(builder: MeshBuilder, detail: Detail): void {
       detail.cyl,
     );
   }
+
+  // The sternpost closes the hull's end from the keel to the counter; its aft face stands proud of
+  // the planking, and the rudder's leading edge sits inside it.
+  const keel = keelHeightAt(STERN_Z);
+  const postTop = 0.5;
+  const postAft = STERN_Z - 0.06;
   builder.setRegion(4);
   builder.setColor(0x17110c);
-  builder.addBox(0, 0.0, -12.56, 0.48, 1.95, 0.16);
+  builder.addBox(0, (keel + postTop) * 0.5, postAft + 0.1, 2 * STERNPOST_HALF, postTop - keel, 0.2);
+  // The rudder: a blade deepest at the heel, drawn in to a head that runs up into the counter.
   builder.setRegion(1);
   builder.setColor(0x4a2a1a);
-  builder.addBox(0, -0.18, -12.68, 0.34, 1.72, 0.12);
-  builder.setRegion(3);
-  builder.setColor(0xd2a352);
-  builder.addCylinderBetween({ x: -0.26, y: 1.1, z: -12.6 }, { x: 0.26, y: 1.1, z: -12.6 }, 0.03, detail.cyl);
+  const rudderHalf = 0.08;
+  const lead = postAft + 0.03;
+  const blade = [
+    { y: keel + 0.06, z: -12.92 },
+    { y: -0.55, z: -12.8 },
+    { y: 0.22, z: -12.62 },
+    { y: 0.6, z: -12.44 },
+    { y: 0.88, z: -12.34 },
+  ];
+  for (let i = 0; i < blade.length - 1; i++) {
+    const a = blade[i]!;
+    const b = blade[i + 1]!;
+    builder.addQuad(
+      { x: rudderHalf, y: a.y, z: a.z },
+      { x: -rudderHalf, y: a.y, z: a.z },
+      { x: -rudderHalf, y: b.y, z: b.z },
+      { x: rudderHalf, y: b.y, z: b.z },
+    );
+    for (const side of [-1, 1] as const) {
+      const x = side * rudderHalf;
+      const p0 = { x, y: a.y, z: lead };
+      const p1 = { x, y: a.y, z: a.z };
+      const p2 = { x, y: b.y, z: b.z };
+      const p3 = { x, y: b.y, z: lead };
+      if (side > 0) builder.addQuad(p0, p1, p2, p3);
+      else builder.addQuad(p1, p0, p3, p2);
+    }
+  }
+  const heel = blade[0]!;
+  builder.addQuad(
+    { x: -rudderHalf, y: heel.y, z: lead },
+    { x: rudderHalf, y: heel.y, z: lead },
+    { x: rudderHalf, y: heel.y, z: heel.z },
+    { x: -rudderHalf, y: heel.y, z: heel.z },
+  );
+  if (rich) {
+    // Pintle-and-gudgeon straps: iron bands round the post and onto the blade.
+    builder.setRegion(4);
+    builder.setColor(0x22201e);
+    for (const y of [-1.55, -0.7, 0.16])
+      builder.addBox(0, y, postAft - 0.14, 2 * STERNPOST_HALF + 0.05, 0.075, 0.6);
+  }
 }
 
 function addHeadRails(builder: MeshBuilder, detail: Detail): void {
@@ -360,7 +449,7 @@ function addHeadRails(builder: MeshBuilder, detail: Detail): void {
 }
 
 function addGunport(builder: MeshBuilder, side: -1 | 1, z: number, detail: Detail, rich: boolean): void {
-  const x = side * (waterlineHalfBeamAt(z) + 0.12);
+  const x = side * (waterlineHalfBeamAt(z) + sternTuckAt(z, 1.55) + 0.12);
   const seg = rich ? detail.cyl : Math.min(8, detail.cyl);
   builder.setRegion(2);
   builder.setColor(0x8f2016);
@@ -472,9 +561,12 @@ export function createDeckGeometry(tier: Tier): BufferGeometry {
   builder.setRegion(1);
   builder.setColor(0xd8b078);
   const sections = tier === 'lite' || tier === 'low' ? 44 : 82;
-  for (let i = 0; i < sections; i++) {
-    const z0 = -10.95 + (21.25 * i) / sections;
-    const z1 = -10.95 + (21.25 * (i + 1)) / sections;
+  // The planking runs from the transom (two sections of taffrail deck) to the forecastle's break.
+  const taffrail = 2;
+  for (let i = -taffrail; i < sections; i++) {
+    const z0 = i < 0 ? lerp(STERN_Z + 0.02, -10.95, 1 + i / taffrail) : -10.95 + (21.25 * i) / sections;
+    const z1 =
+      i < 0 ? lerp(STERN_Z + 0.02, -10.95, 1 + (i + 1) / taffrail) : -10.95 + (21.25 * (i + 1)) / sections;
     const y0 = deckHeightAt(z0);
     const y1 = deckHeightAt(z1);
     const x00 = -halfBeamAt(z0, y0) * 0.76;
@@ -633,22 +725,24 @@ export function createTrimGeometry(tier: Tier): BufferGeometry {
     for (const side of [-1, 1] as const) {
       const x0 = side * (waterlineHalfBeamAt(z0) + 0.055);
       const x1 = side * (waterlineHalfBeamAt(z1) + 0.055);
+      // The bands above the water ride the stern's tuck out to the transom's breadth.
+      const out = (z: number, y: number) => side * sternTuckAt(z, y);
       // Painted strake, ochre wale, black boot-top, and a dark lower fairing at the waterline.
       builder.setRegion(2);
       builder.setColor(0x8f2016);
       builder.addQuad(
-        { x: x0, y: 0.75, z: z0 },
-        { x: x1, y: 0.75, z: z1 },
-        { x: x1, y: 1.06, z: z1 },
-        { x: x0, y: 1.06, z: z0 },
+        { x: x0 + out(z0, 0.75), y: 0.75, z: z0 },
+        { x: x1 + out(z1, 0.75), y: 0.75, z: z1 },
+        { x: x1 + out(z1, 1.06), y: 1.06, z: z1 },
+        { x: x0 + out(z0, 1.06), y: 1.06, z: z0 },
       );
       builder.setRegion(3);
       builder.setColor(0xd2a352);
       builder.addQuad(
-        { x: x0, y: 1.96, z: z0 },
-        { x: x1, y: 1.96, z: z1 },
-        { x: x1, y: 2.16, z: z1 },
-        { x: x0, y: 2.16, z: z0 },
+        { x: x0 + out(z0, 1.96), y: 1.96, z: z0 },
+        { x: x1 + out(z1, 1.96), y: 1.96, z: z1 },
+        { x: x1 + out(z1, 2.16), y: 2.16, z: z1 },
+        { x: x0 + out(z0, 2.16), y: 2.16, z: z0 },
       );
       builder.setRegion(4);
       builder.setColor(0x11100f);
@@ -675,7 +769,7 @@ export function createTrimGeometry(tier: Tier): BufferGeometry {
     }
   }
   // Stern gallery, quarter galleries, transom frame, rudder, catheads, anchors, channels, chainplates, deadeyes.
-  addSternCounter(builder, detail);
+  addSternCounter(builder, detail, tier !== 'lite' && tier !== 'low');
   builder.setRegion(0);
   builder.setColor(0x17100c);
   builder.addBox(0, 2.1, -12.22, 4.9, 1.15, 0.22);
@@ -719,9 +813,6 @@ export function createTrimGeometry(tier: Tier): BufferGeometry {
   builder.setColor(0x8f2016);
   builder.addBox(0, 1.58, -12.36, 4.65, 0.18, 0.08);
   builder.addBox(0, 2.48, -12.37, 4.35, 0.16, 0.08);
-  builder.setRegion(4);
-  builder.setColor(0x17110c);
-  builder.addBox(0, 0.05, -12.43, 0.44, 2.25, 0.18);
   const foreDeadeyes = [1.1, 2.8, 4.5, 6.2, 7.9];
   const mainDeadeyes = [-8.4, -6.8, -5.2, -3.6, -2.0];
   const mizzenDeadeyes = [-9.4, -8.4, -7.4, -6.4];

@@ -1,4 +1,4 @@
-import { clamp01, smoothstep } from '../../util/math';
+import { clamp01, lerp, smoothstep } from '../../util/math';
 
 export const BRIGANTINE_LENGTH = 24;
 export const BRIGANTINE_BEAM = 6.6;
@@ -31,21 +31,48 @@ function stationT(z: number): number {
   return clamp01((z + BRIGANTINE_HALF_LENGTH) / BRIGANTINE_LENGTH);
 }
 
+/** Where the stern's run starts to close (as a fraction of length from the sternpost); forward of it the lines are one curve. */
+const STERN_RUN_END = 0.18;
+/** The share of the half beam the transom keeps above the tuck. */
+const TRANSOM_FULLNESS = 0.75;
+/** The height at which the tuck has opened out from the sternpost to the transom's full breadth. */
+const STERN_TUCK_TOP = 1.25;
+
+/** The midship body's fullness along the length, before either end is drawn in. */
+function fullnessAt(t: number): number {
+  return Math.pow(Math.sin(Math.PI * clamp01(t * 0.92 + 0.05)), 0.42);
+}
+
 /**
- * Half-breadth curve for the brigantine's naval lines. The stern keeps a broad transom,
- * the bow pinches sharply into a raked stem, and the midship body stays full for carrying canvas.
+ * Half-breadth curve for the brigantine's naval lines at the waterline. The run closes aft onto the
+ * sternpost, the bow pinches sharply into a raked stem, and the midship body stays full for carrying canvas.
  */
 export function waterlineHalfBeamAt(z: number): number {
   const t = stationT(z);
-  const sternTuck = smoothstep(0.02, 0.18, t);
+  const sternRun = smoothstep(-0.02, STERN_RUN_END, t);
   const bowTaper = 1 - smoothstep(0.82, 0.995, t);
-  const fullness = Math.pow(Math.sin(Math.PI * clamp01(t * 0.92 + 0.05)), 0.42);
-  const transom = 0.58 * (1 - smoothstep(0, 0.075, t));
-  const run = Math.max(transom, fullness * sternTuck) * bowTaper;
+  const run = fullnessAt(t) * sternRun * bowTaper;
   return BRIGANTINE_HALF_BEAM * Math.max(0.035, run);
 }
 
-/** Half breadth at a section height. Below the waterline it narrows to a fine keel; above it tumbles home. */
+/**
+ * The stern's tuck: how much wider than her waterline the hull is at height `y`. The topsides carry a
+ * broad transom aft to the gallery while the waterline closes on the sternpost, and the planking
+ * between them sweeps in over the first `STERN_TUCK_TOP` metres. Zero forward of the run and at or
+ * below the waterline.
+ */
+export function sternTuckAt(z: number, y: number): number {
+  const t = stationT(z);
+  if (y <= 0 || t >= STERN_RUN_END) return 0;
+  const topside = lerp(TRANSOM_FULLNESS, fullnessAt(t), smoothstep(0.03, STERN_RUN_END, t));
+  const extra = BRIGANTINE_HALF_BEAM * topside - waterlineHalfBeamAt(z);
+  return Math.max(0, extra) * smoothstep(0, STERN_TUCK_TOP, y);
+}
+
+/**
+ * Half breadth at a section height. Below the waterline it narrows to a fine keel; above it the stern
+ * opens out through the tuck (`sternTuckAt`), and the topsides flare, then tumble home.
+ */
 export function halfBeamAt(z: number, y: number): number {
   const wl = waterlineHalfBeamAt(z);
   if (y <= 0) {
@@ -56,7 +83,7 @@ export function halfBeamAt(z: number, y: number): number {
   const t = clamp01(y / Math.max(0.001, sheer));
   const flare = 1 + 0.08 * smoothstep(0.08, 0.46, t);
   const tumblehome = 1 - 0.19 * smoothstep(0.55, 1, t);
-  return wl * flare * tumblehome;
+  return (wl + sternTuckAt(z, y)) * flare * tumblehome;
 }
 
 /** Deck sheer, including raised quarterdeck aft and forecastle forward. */
