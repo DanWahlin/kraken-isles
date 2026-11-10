@@ -3,7 +3,7 @@ import { buildSlice } from '../engine/build-slice';
 import type { Character } from '../world/characters';
 import type { CircleObstacle } from '../world/contracts';
 import { MERIDIAN } from '../world/islands/meridian';
-import type { MeridianStream } from '../world/islands/meridian-stream';
+import type { MeridianWorld } from '../world/islands/meridian-stream';
 import { MARKET_LAYOUT } from '../world/meridian-town/model-market';
 import type { MeridianTownSystem } from '../world/meridian-town';
 import { MERIDIAN_YARD } from '../world/sites/crate-yard-logic';
@@ -38,26 +38,26 @@ const NO_CAST: readonly Npc[] = [];
  * The Three Helms (with Rhea aboard), Mina's tour and the Seal's lighthouse. It comes in with the
  * town (`setup`) and goes with it (`teardown`); what the player has done lives in the save.
  */
-export function createMeridianContent(host: IslandContentHost): IslandContent {
+export function createMeridianContent(host: IslandContentHost<MeridianWorld>): IslandContent<MeridianWorld> {
   const { world, interactions, puzzles, cues } = host;
-  const stream = host.stream as MeridianStream;
-  const town = (): MeridianTownSystem | null => stream.world as MeridianTownSystem | null;
+  const { stream } = host;
+  const town = (): MeridianTownSystem | null => stream.world?.town ?? null;
   const quests = () => host.puzzleHost.quests();
   const castIds = new Set(MERIDIAN_NPCS.map((m) => m.id));
   let crowd: NpcCrowd | null = null;
   /** The town's colliders and camera blockers while it's in (taken out when it's freed). */
   const townColliders: (CircleObstacle | BoxCollider)[] = [];
-  const addTownColliders = (t: MeridianTownSystem) => {
+  const addTownColliders = ({ town: t, rockCameraBlockers }: MeridianWorld) => {
     if (host.disposed() || townColliders.length) return;
     for (const c of t.colliders.circles) world.addCircle(c);
     for (const b of t.colliders.boxes) world.addBox(b);
     for (const b of t.cameraBlockers) world.addCameraBox(b);
-    for (const b of stream.rockCameraBlockers) world.addCameraBox(b);
+    for (const b of rockCameraBlockers) world.addCameraBox(b);
     townColliders.push(
       ...t.colliders.circles,
       ...t.colliders.boxes,
       ...t.cameraBlockers,
-      ...stream.rockCameraBlockers,
+      ...rockCameraBlockers,
     );
   };
   const sites: { update(dt: number, t: number): void; dispose(): void; group: Group }[] = [];
@@ -340,10 +340,10 @@ export function createMeridianContent(host: IslandContentHost): IslandContent {
     scope.puzzles.push(p);
   };
 
-  const setup = async (built: unknown): Promise<IslandSetup | null> => {
-    const tn = built as MeridianTownSystem | null;
-    if (!tn || host.disposed() || crowd) return null;
-    addTownColliders(tn);
+  const setup = async (built: MeridianWorld | null): Promise<IslandSetup | null> => {
+    const tn = built?.town;
+    if (!built || !tn || host.disposed() || crowd) return null;
+    addTownColliders(built);
     const sc = scope;
     const cast = [...MERIDIAN_NPCS, ...meridianExtras(tn.anchors)];
     // A character a slice: the whole cast at once stalled a frame for ~150 ms while you sailed.
@@ -491,7 +491,7 @@ export function createMeridianContent(host: IslandContentHost): IslandContent {
     setup,
     // Gilda's stall on the plaza (the stall's part of the town).
     market: (built) => {
-      const at = (built as MeridianTownSystem).anchors.modelMarket;
+      const at = built.town.anchors.modelMarket;
       return at ? { at, layout: MARKET_LAYOUT } : null;
     },
     /** Takes the cast, chests, sites, puzzles and colliders out (before the town is freed). */

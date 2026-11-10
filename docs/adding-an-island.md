@@ -23,9 +23,10 @@ Read these first:
 | Content | `src/game/<id>-session.ts` | The cast, chests, sites, puzzles and set pieces in the play session. |
 | Course pack | `courses/<id>/` | Every course word: quests, scripts, barks, pages, quizzes, labels, voice. |
 
-Port Meridian (`src/islands/meridian.ts`, `src/game/meridian-island.ts`, `src/game/meridian-session.ts`)
-and Thousand-Bough Isle (`src/islands/thousand-bough.ts`, `src/game/thousand-bough-island.ts`,
-`src/game/thousand-bough-session.ts`, `src/world/islands/thousand-bough/`) are the examples to copy.
+Keelhaven (`src/islands/keelhaven.ts`, `src/game/keelhaven-island.ts`, `src/game/keelhaven-session.ts`,
+`src/world/islands/keelhaven/`) and Thousand-Bough Isle (the same files under `thousand-bough`) are
+the examples to copy. Port Meridian is older: its code and its content do not use the shared helpers
+(sections 3 and 5).
 
 Build the world package from the shared builders, so a new island adds data and no new shader:
 
@@ -108,20 +109,38 @@ shows each table that still needs a row for the new island (section 6).
 | `chests` | The ids of the chests and message bottles that the island places. The course pack fills them. |
 | `cast(anchors)` | Every NPC that can be on the island, with all extras. The content check uses it. |
 
+Make it with `streamedIslandCode` (`src/game/streamed-island-code.ts`). You give the island's id, its
+stream, its quest functions, its bounds, its content and its market stall. The function adds what
+every streamed island shares: the task list that points on to the next island, the hint task,
+`sailHere` (from the gate in the registry entry) and the walk surfaces that read the content. Name
+the island's world type once (`streamedIslandCode<MyWorld, MyContent>`): then `setup(world)` and
+`market(world)` are typed, and you need no casts. Keelhaven's `src/game/keelhaven-island.ts` is the
+example to copy.
+
 ## 4. The stream (`src/world/islands/<id>/stream.ts`)
 
-The stream is a `StreamLifecycle` (`src/world/stream-lifecycle.ts`). Copy Thousand-Bough's stream.
+Make the stream with `createStreamedIsland(ctx, spec)` (`src/world/islands/streamed-island.ts`). Do
+not write the lifecycle again. The spec holds only what is the island's own:
 
-- Make the silhouette at once (`silhouetteReady`). The world waits for it before its warm-up.
-- In `load`, build the terrain, the foam, the world and the plants hidden, a part a breath
-  (`breathe()`). Add the height field and the ship obstacles (`addIslandGround`).
-- In `unload`, free a part a frame (`freeInSlices`) and remove what you added (`removeIslandGround`,
-  `vegetation.removePlants`). If a load fails part-way, take back what it added.
-- In `update`, measure `footprintDistance(ctx.island.footprint, …)`, load within `ranges.load` when
-  `ctx.nearLoads()` is true, and swap with the silhouette through `SilhouetteSwap(ranges.show)`.
-- Make a `FarCull` for `detail` at `ctx.island.center` with `ranges.detail`, and update it in `update`.
-- Push the roots that the harbour mirror must not draw in `mirrorHidden`.
-- The world (`IslandStream.world`) is what the content builds on (the town, the tree village).
+- `silhouette`: the far shape. The world waits for it before its warm-up.
+- `terrain`: the island's terrain options (fresh water, prefilter, a pin or a skin). It can make
+  something first, a slice a breath (Keelhaven's apron).
+- `afterTerrain`: work on the built terrain before anything draws it (Thousand-Bough's Lite rocks).
+- `foam` and `seaFloor`: the coast foam's options, and a sea floor that the bake does not hold.
+- `world`: builds the town or village on the terrain. It must have `group`, `shipObstacles()`,
+  `plants()`, `frame(camera)`, `update(dt, t)` and `dispose()` (`StreamedWorld`).
+- `flora`, `plantLook`, `flocks`, `onFlock` and `mood`: its plants, its birds and its air.
+- `worldKeepsSunShadows` and `silhouetteFromAbove`: only Port Meridian sets them. Low draws its
+  cached shadow map for that town, and its far shape draws from any height.
+
+The shared stream does the rest: it loads the terrain pack `<id>/terrain` with the course data, adds
+the parts hidden in a fixed order, takes back what a failed or abandoned load added, shows and hides
+the island by range, swaps it with the silhouette, lends the depth tile, and frees a part a frame.
+Keelhaven's `stream.ts` is the example to copy. Port Meridian's stream
+(`src/world/islands/meridian-stream.ts`) shows a world that wraps an older town: water that rides
+with the terrain (`afterTerrain` returns how to free it) and camera blockers built before the town.
+
+The world (`IslandStream.world`) is what the content builds on (the town, the tree village).
 
 ## 5. The content (`IslandContent`, `src/game/island-code.ts`)
 
@@ -130,12 +149,15 @@ The session makes one content object for each streamed island when the voyage st
 
 - Use only the host (`IslandContentHost`): the walker, the camera, the HUD fades, chests, puzzles,
   cues, interactions, the ship and the sea host. Do not import `session.ts`.
-- `setup` builds the cast (`NpcCrowd.createAsync`), the chests (`host.placeChest`,
-  `host.placeChestBy`), the sites and the puzzles, all hidden. It returns their roots and a `reveal`.
-  The flow warms the roots, then calls `reveal`. Return `null` when the world went again or the
-  session ended.
-- `teardown` removes all that `setup` added: colliders, interactions, puzzles, chests, the cast and
-  sounds. The next `setup` reads the save again.
+- `setup` builds the cast, the chests, the message bottles, the sites and the puzzles, all hidden. It
+  returns their roots and a `reveal`. The flow warms the roots, then calls `reveal`. Return no roots
+  when the world went again or the session ended.
+- Add them through a site (`createIslandSite(host)`, `src/game/island-site.ts`): `site.colliders`,
+  `site.cast`, `site.chest`, `site.bottles`, `site.interaction` and `site.puzzle`. The site keeps what
+  it adds.
+- `teardown` calls `site.clear()`, which removes all of that: colliders, interactions, puzzles,
+  chests, the cast and the bottles. Stop the island's own sounds and set pieces there too. The next
+  `setup` reads the save again.
 - Whatever the player can see after a reload comes from the save, not from scene objects.
 - The session adds the course notice board and the Model Market stall (`market(world)`) for you.
 - Optional hooks: `busy()` (a ride holds residency), `ride()` (each frame of a ride), `onBoard()`,

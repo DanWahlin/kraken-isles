@@ -76,4 +76,4 @@ export interface IslandStreamCreateContext extends IslandStreamContext {
 }
 
 /** A streamed island's stream maker (its `IslandCode.stream`, src/game/island-code.ts). */
-export type IslandStreamFactory = (ctx: IslandStreamCreateContext) => IslandStream;
+export type IslandStreamFactory<W = unknown> = (ctx: IslandStreamCreateContext) => IslandStream<W>;
