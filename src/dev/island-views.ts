@@ -29,6 +29,31 @@ export const TOUR_LAP = 50;
 export const TOUR_INSIDE_SHOW = 60;
 
 /**
+ * Brings a point in toward the island's middle (on the ground plane) until it's inside the island's
+ * swap distance, less `TOUR_INSIDE_SHOW`. Past that distance the game draws the island's far
+ * silhouette, and from high up not even that: the bare sea shows over its footprint. Returns whether
+ * it moved the point. No allocation.
+ */
+export function keepInsideShow(island: IslandEntry, p: { x: number; z: number }): boolean {
+  const { center, footprint } = island;
+  const limit = island.ranges.show - TOUR_INSIDE_SHOW;
+  let moved = false;
+  for (let k = 0; k < 4; k++) {
+    const over = footprintDistance(footprint, p.x, p.z) - limit;
+    if (over <= 0) break;
+    const dx = p.x - center.x;
+    const dz = p.z - center.z;
+    const out = Math.hypot(dx, dz);
+    if (out < 1e-6) break;
+    const keep = Math.max(0, out - over) / out;
+    p.x = center.x + dx * keep;
+    p.z = center.z + dz * keep;
+    moved = true;
+  }
+  return moved;
+}
+
+/**
  * The island tour: the camera circles the island, looking at its middle, and shows it from different
  * angles on the way. It starts high over the side the berth is on (the overview), comes down and
  * closer round the far side, and climbs back as it comes round again; then it goes on round. It
@@ -49,15 +74,10 @@ export function islandTour(island: IslandEntry, seconds: number, out: TourShot):
   const high = reach * (1.05 - 0.6 * far);
   const away = Math.hypot(off, high);
   // It comes in to where the island still draws as itself, and climbs to keep it all in view.
-  const limit = island.ranges.show - TOUR_INSIDE_SHOW;
-  for (let k = 0; k < 4; k++) {
-    const d = footprintDistance(footprint, center.x + sin * off, center.z + cos * off);
-    if (d <= limit) break;
-    off -= d - limit;
-  }
   out.x = center.x + sin * off;
-  out.y = Math.sqrt(Math.max(away * away - off * off, (reach * 0.3) ** 2));
   out.z = center.z + cos * off;
+  if (keepInsideShow(island, out)) off = Math.hypot(out.x - center.x, out.z - center.z);
+  out.y = Math.sqrt(Math.max(away * away - off * off, (reach * 0.3) ** 2));
   out.tx = center.x;
   out.ty = 20;
   out.tz = center.z;
