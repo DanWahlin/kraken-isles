@@ -185,9 +185,15 @@ export function createOcean({
   const vFade = varying(fade, 'vFade');
   const vH = varying(offset.y.mul(fade), 'vH');
   const vSpan = varying(spanAttr, 'vSpan');
+  // How deep the water is, for each pixel of the sea (not each corner of its mesh). The mesh follows
+  // the camera and its far rings are coarse, so depths taken at its corners and blended between drew
+  // a far shore as a sawtooth that jumped as the camera moved: the corners fell on new spots of the
+  // floor every frame, and the shallows and the shore's foam flickered from the air (an arrival's
+  // flight, a high view). The floor's height is read at the pixel's own place on the sea's rest plane
+  // (level 0: the tiles have no mips, and it may be read inside a branch).
   let terrainDepthNode: Node<'float'> = float(58);
   if (floorTex) {
-    const floorUvRaw = rest
+    const floorUvRaw = vRest
       .sub(vec2(WATER_DEPTH_BOUNDS.minX, WATER_DEPTH_BOUNDS.minZ))
       .div(
         vec2(
@@ -201,20 +207,20 @@ export function createOcean({
       .and(floorUvRaw.x.lessThanEqual(1))
       .and(floorUvRaw.y.greaterThanEqual(0))
       .and(floorUvRaw.y.lessThanEqual(1));
-    const homeY = select(floorOk, texture(floorTex, floorUv).r, float(-58));
+    const homeY = select(floorOk, texture(floorTex, floorUv).level(float(0)).r, float(-58));
     // The nearest streamed island's own tile (`addWaterDepthTile`), in a second slot: its bounds and
     // texture change with a uniform and the node's value, so a swap builds no shader.
-    const tileUvRaw = rest.sub(islandTileBounds.xy).mul(islandTileBounds.zw);
+    const tileUvRaw = vRest.sub(islandTileBounds.xy).mul(islandTileBounds.zw);
     const tileOk = tileUvRaw.x
       .greaterThanEqual(0)
       .and(tileUvRaw.x.lessThanEqual(1))
       .and(tileUvRaw.y.greaterThanEqual(0))
       .and(tileUvRaw.y.lessThanEqual(1));
-    const tileY = islandTile!.sample(clamp(tileUvRaw, vec2(0.001), vec2(0.999))).r;
+    const tileY = islandTile!.sample(clamp(tileUvRaw, vec2(0.001), vec2(0.999))).level(float(0)).r;
     const floorY = select(tileOk, tileY, homeY);
-    terrainDepthNode = max(offset.y.mul(fade).sub(floorY), 0);
+    terrainDepthNode = max(vH.sub(floorY), 0);
   }
-  const vTerrainDepth = varying(terrainDepthNode, 'vTerrainDepth');
+  const seaDepth = terrainDepthNode;
 
   mat.colorNode = Fn(() => {
     const p = vRest;
@@ -328,9 +334,9 @@ export function createOcean({
     const spec = world.sunColor.mul(D.mul(NdL).mul(0.25).mul(F.add(0.02))).mul(smoothstep(-0.03, 0.05, L.y));
 
     // Baked analytic seabed depth: keeps Lite/Low vivid even when screen-space refraction is off.
-    const deepWaterMask = smoothstep(10, 30, vTerrainDepth);
+    const deepWaterMask = smoothstep(10, 30, seaDepth);
     const deepTerrainStabilize = deepWaterMask.mul(smoothstep(130, 260, dist));
-    const terrainDepth = mix(vTerrainDepth, float(58), deepTerrainStabilize);
+    const terrainDepth = mix(seaDepth, float(58), deepTerrainStabilize);
 
     // Refraction: depth-aware screen offset, rejecting samples that land on things above the water.
     const ambient = world.skyColor.mul(0.55).add(world.sunColor.mul(max(world.sunDir.y, 0).mul(0.22)));
