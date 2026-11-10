@@ -15,8 +15,8 @@ vi.mock('../ui/puzzles/LostLetters', () => ({ mountLostLetters: () => () => unde
 vi.mock('../ui/puzzles/ModelMarket', () => ({ mountModelMarket: () => () => undefined }));
 
 /**
- * An island that was freed and streamed in again gets new sites and new puzzles (session.ts's
- * island scope, `ThousandBoughContent.teardown`): whatever the player did there must come back from
+ * An island that was freed and streamed in again gets new sites and new puzzles
+ * (src/game/session/island-setups.ts, `ThousandBoughContent.teardown`): whatever the player did there must come back from
  * the save, not from the old objects. These build a puzzle, play it, throw it away as an unload
  * does, and build it again from the same save.
  */

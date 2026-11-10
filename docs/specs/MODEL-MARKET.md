@@ -66,7 +66,7 @@ shutter slats and flowers, and uses fewer segments).
 **Colliders:** the walls, piers, counter, barrel, pots and planter stop the walker; the wall over the arches, the
 upper storey, the passage's lintel, the counter, the shelves and the cypress are camera blockers (not the boards or
 the awning, so the follow camera never folds in at the counter). All come off with Meridian when it unloads (the town's colliders and the
-island scope in `session.ts`).
+island's setup in `src/game/session/island-setups.ts`).
 
 **Reload:** a stall is part of its island's town, so it comes back with it. The signs and the counter are rebuilt
 with the island's setup (the session adds each streamed island's stall after its content's `setup`, from its
