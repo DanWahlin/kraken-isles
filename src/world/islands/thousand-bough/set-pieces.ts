@@ -11,6 +11,7 @@ import type { BridgeSpec } from './layout';
 import { hasActiveCourse } from '../../../course/active';
 import type { PuzzleFile } from '../../../course/pack';
 import { puzzleMaybe } from '../../../course/puzzles';
+import { lampBurning } from '../../lighthouse-lamp';
 
 /**
  * The tree village's moving set pieces: the Signal Deck's mast and its four flags (the course's symbols), the
@@ -305,6 +306,7 @@ export function createSetPieces(kit: VillageKit, statics: Buckets, signs: SignSe
   let sendT = 0;
   let basketOn = false;
   let basket = 0;
+  /** The Seal has lit the Beacon (its flame burns after dark without the Seal: `lampBurning`). */
   let beaconOn = false;
   // The two lanterns: on which bridge, how far along (0 the Three Landings, 1 the Spire), where
   // they're walking to, and the jam's bump (seconds since it started; −1: none).
@@ -378,7 +380,7 @@ export function createSetPieces(kit: VillageKit, statics: Buckets, signs: SignSe
         ),
       );
     else wood.set(1, M.compose(V.set(BASKET.x, TB.skyBasket.topY, BASKET.z), Q, ONE));
-    glow.set(0, beaconOn ? M.compose(V.set(TREE.x, beaconY, TREE.z), Q, ONE) : HIDE);
+    glow.set(0, lampBurning(beaconOn) ? M.compose(V.set(TREE.x, beaconY, TREE.z), Q, ONE) : HIDE);
     placeLanterns();
     wood.commit();
     glow.commit();

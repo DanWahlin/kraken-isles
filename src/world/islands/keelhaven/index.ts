@@ -26,6 +26,10 @@ import { buildKeelhavenProps, createToolChest, type ToolChest } from './props';
 import { buildCircuitProps, FLIGHT_HULLS, HULL_REST, type FlightHull } from './circuit';
 import { LampSet, type LampLook } from './lamps';
 import { headingUv } from './anchors';
+import { lampBurning } from '../../lighthouse-lamp';
+
+/** The Gate Light's lantern in the island's lamp set (town-build.ts `gateLight`). */
+const GATE_LIGHT = 'gateLight';
 
 /**
  * Keelhaven's world (no gameplay yet), the world its stream will build (`IslandStream.world`, like
@@ -168,9 +172,18 @@ export async function createKeelhavenWorldAsync(
     group.add(m);
   }
   const chambers = (water.mesh.userData.chambers ?? {}) as Record<string, [number, number]>;
+  // The Gate Light: banked until the Seal kindles it, and kindled after dark on any night (`lampBurning`).
+  let gateLook: LampLook = lamps.look(GATE_LIGHT) ?? 'banked';
+  const paintGateLight = () =>
+    lamps.set(GATE_LIGHT, lampBurning(gateLook === 'kindled') ? 'kindled' : gateLook);
   const circuit: KeelhavenCircuitWorld = {
-    lamp: (key, look) => lamps.set(key, look),
-    look: (key) => lamps.look(key),
+    lamp(key, look) {
+      if (key !== GATE_LIGHT) return lamps.set(key, look);
+      gateLook = look;
+      paintGateLight();
+    },
+    // The Gate Light's look is the story's (after dark it's painted kindled whatever that is).
+    look: (key) => (key === GATE_LIGHT ? gateLook : lamps.look(key)),
     hull(id, u, v, y, du, dv, roll = 0) {
       const m = hulls[id];
       const p = toWorld(u, v);
@@ -213,7 +226,9 @@ export async function createKeelhavenWorldAsync(
       { center: new Vector3(harbour.x, 0, harbour.z), radius: 180, seed: 0x6b1d5, perches: [] },
       { center: new Vector3(reef.x, 0, reef.z), radius: 120, seed: 0x6b1d6, perches: wrecks.perches },
     ],
-    update() {},
+    update() {
+      paintGateLight();
+    },
     frame(camera) {
       chunkLods.update(camera.position.x, camera.position.y, camera.position.z);
     },

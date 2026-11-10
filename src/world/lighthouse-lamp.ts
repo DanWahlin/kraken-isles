@@ -1,8 +1,25 @@
 import { AdditiveBlending, DoubleSide, MeshBasicNodeMaterial } from 'three/webgpu';
 import { color, float, smoothstep, uv } from 'three/tsl';
+import { world } from '../engine/uniforms';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyNode = any;
+
+/**
+ * How far into the night (`world.night`: 0 while the sun is up, 1 at full night) the lamps are lit:
+ * a little after sunset, with the sun about 4° under the horizon.
+ */
+const LAMPS_LIT_AT = 0.3;
+
+/**
+ * Whether a light its island's Seal lights (a lighthouse, Keelhaven's Gate Light, Thousand-Bough's
+ * Crown Beacon) is burning: once the Seal has lit it, by day too (the story's reward), and on every
+ * island after dark whatever the story says (a lighthouse is lit at night). Every island's own time
+ * of day in the game is daylight, so there only the Seal lights one.
+ */
+export function lampBurning(sealLit: boolean): boolean {
+  return sealLit || world.night.value > LAMPS_LIT_AT;
+}
 
 /**
  * The lit lighthouse lamp's two materials (the Seal beat, PLAN §3), shared by every island's
