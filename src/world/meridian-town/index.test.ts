@@ -342,6 +342,28 @@ describe('createMeridianTown', () => {
     kit.dispose();
   });
 
+  it("stands the citadel's gatehouse in the curtain wall's ring, along the wall", () => {
+    const kit = testKit();
+    const town = createMeridianTown({ tier: tierSettings('low'), heightField, kit });
+    const gate = town.colliders.boxes.find((b) => b.hx === 4.1 && b.hz === 1.35)!;
+    expect(gate).toBeDefined();
+    // The ring is an ellipse round the citadel's middle: 0.78 and 0.68 of the wall's 39 m. The
+    // gatehouse was placed for a round wall and left 5 m outside the ellipse, over the bluff's drop.
+    const c = MERIDIAN.pads.citadel;
+    const rx = 39 * 0.78;
+    const rz = 39 * 0.68;
+    expect(Math.hypot((gate.x - c.x) / rx, (gate.z - c.z) / rz)).toBeCloseTo(1, 3);
+    // Its long side follows the wall there (a box's width lies along (cos rot, -sin rot)).
+    const a = Math.atan2((gate.z - c.z) / rz, (gate.x - c.x) / rx);
+    const along = [-Math.sin(a) * rx, Math.cos(a) * rz];
+    const len = Math.hypot(along[0]!, along[1]!);
+    const dot = (Math.cos(gate.rot) * along[0]! - Math.sin(gate.rot) * along[1]!) / len;
+    expect(Math.abs(dot)).toBeCloseTo(1, 4);
+
+    town.dispose();
+    kit.dispose();
+  });
+
   it('connects the shipyard apron to the mole, lighthouse, and fisher without blocking the lane', () => {
     const kit = testKit();
     const town = createMeridianTown({ tier: tierSettings('high'), heightField, kit });

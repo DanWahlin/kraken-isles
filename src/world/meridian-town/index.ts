@@ -201,6 +201,11 @@ export const MOLE_PAVING_TOP = MERIDIAN.mole.height + 0.08;
 export const EXTRA_BENCH_PAVING = 3.51;
 const TAVERN_PAD = { x0: 607, x1: 637, z0: -813, z1: -779, height: MERIDIAN.pads.tavern.height } as const;
 const CITADEL = { x: MERIDIAN.pads.citadel.x, z: MERIDIAN.pads.citadel.z, r: 39, height: 40 } as const;
+/** The curtain wall's ring is an ellipse: these shares of the citadel's radius along x and z. */
+const CURTAIN_RX = 0.78;
+const CURTAIN_RZ = 0.68;
+/** Where the gatehouse stands in the ring (the ellipse's angle from +x toward +z): the harbour side. */
+const CITADEL_GATE_BEARING = -153 * DEG;
 /** The Hall of Records on the citadel, raised on a stone podium with a paved portico in front. */
 const HALL_OF_RECORDS = { x: 809.3, z: -778.0 } as const;
 /** The admiral's terrace: on the citadel's pad, but outside its curtain wall's ring. */
@@ -1620,7 +1625,7 @@ function addCitadel(
   addRoundTower(buckets, colliders, perches, 788, y, -781, 4.5, 10.5, true);
   addRoundTower(buckets, colliders, perches, 821, y, -760, 4.2, 9.6, true);
   addRoundTower(buckets, colliders, perches, 842, y, -796, 4.8, 10.8, true);
-  addCitadelGate(buckets, colliders, 784, y, -800, -35 * DEG);
+  addCitadelGate(buckets, colliders, CITADEL.x, y, CITADEL.z, CITADEL.r, CITADEL_GATE_BEARING);
 
   addObservatory(buckets, colliders, perches, 826.5, y, -804.5);
   anchor('oren', { x: 821.4, y, z: -800.2, heading: 2.35, tx: 826.5, ty: y + 6.2, tz: -804.5 });
@@ -3177,18 +3182,55 @@ function addFountain(
   perches.push(new Vector3(x, y + MONUMENT_TOP, z));
 }
 
+/**
+ * The citadel's gatehouse: a stone block in the curtain wall's ring (at `bearing`, the ellipse's angle
+ * of `addCurtainWall`), along the wall there, with a barred door on each face. It was placed for a
+ * round wall; when the ring became an ellipse it was left 5 m outside it, over the bluff's drop, with
+ * its door inside the stone.
+ */
 function addCitadelGate(
   buckets: Buckets,
   colliders: ColliderSet,
-  x: number,
+  cx: number,
   y: number,
-  z: number,
-  rot: number,
+  cz: number,
+  r: number,
+  bearing: number,
 ): void {
-  addBox(buckets, 'stone', x, y, z, 7.8, 6.0, 2.2, rot, 0xf0d7aa);
-  addBox(buckets, 'wood', x, y, z - 0.15, 3.4, 4.0, 0.35, rot, DARK_WOOD);
-  addCylinderGeom(buckets.metal, x - 1.2, y + 0.8, z - 0.42, 0.08, 0.08, 3.0, 6, 0, METAL);
-  addCylinderGeom(buckets.metal, x + 1.2, y + 0.8, z - 0.42, 0.08, 0.08, 3.0, 6, 0, METAL);
+  const rx = r * CURTAIN_RX;
+  const rz = r * CURTAIN_RZ;
+  const x = cx + Math.cos(bearing) * rx;
+  const z = cz + Math.sin(bearing) * rz;
+  // Along the wall there. A box's `rot` is a yaw about +y (three's: it turns +x toward -z).
+  const ax = -Math.sin(bearing) * rx;
+  const az = Math.cos(bearing) * rz;
+  const along = Math.hypot(ax, az);
+  const tx = ax / along;
+  const tz = az / along;
+  const rot = Math.atan2(-tz, tx);
+  const depth = 2.2;
+  addBox(buckets, 'stone', x, y, z, 7.8, 6.0, depth, rot, 0xf0d7aa);
+  // A door on each face, a little proud of the stone, and its two iron bars proud of the door.
+  for (const side of [-1, 1]) {
+    const nx = -tz * side;
+    const nz = tx * side;
+    const door = depth / 2 - 0.08;
+    addBox(buckets, 'wood', x + nx * door, y, z + nz * door, 3.4, 4.0, 0.35, rot, DARK_WOOD);
+    const bar = depth / 2 + 0.14;
+    for (const u of [-1.2, 1.2])
+      addCylinderGeom(
+        buckets.metal,
+        x + tx * u + nx * bar,
+        y + 0.8,
+        z + tz * u + nz * bar,
+        0.08,
+        0.08,
+        3.0,
+        6,
+        0,
+        METAL,
+      );
+  }
   colliders.boxes.push({ x, z, hx: 4.1, hz: 1.35, rot, height: 6.4 });
 }
 
@@ -3384,8 +3426,8 @@ function addCurtainWall(
   embrasures: readonly Embrasure[] = [],
   passes: readonly { x: number; z: number }[] = [],
 ): void {
-  const rx = r * 0.78;
-  const rz = r * 0.68;
+  const rx = r * CURTAIN_RX;
+  const rz = r * CURTAIN_RZ;
   const thickness = 1.55;
   const h = 3.15;
   // The ring's samples: 48 even steps, and each embrasure's two cheeks (narrow on the inner face,
