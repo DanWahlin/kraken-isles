@@ -55,6 +55,11 @@ Solutions LLC, MIT, <path>@<commit>`), and the full notice goes in `THIRD_PARTY_
 - **Imports point down the layers:** `src/util` imports nothing else, `src/engine` only itself and `util`,
   `src/world` never game, UI, opening or title code, and nothing but the dev pages imports `src/dev`. Type-only
   imports are free. `npm run lint` enforces it (`eslint.config.js`); tests may cross layers.
+- **The play session is put together from parts.** `createSession` (`src/game/session.ts`) builds the parts
+  in `src/game/session/` (conversations, treasure, markets, island setups, the compass, Unstuck, the welcome,
+  the arrival flight…) and runs the frame. Each part owns its own state and takes a host: the objects it
+  needs, the read-only `SessionStatus`, and a function for anything else. A new system of the session is a
+  new part with its own test, not more lines in `createSession`.
 - **Course content is data:** every course word (quests, scripts, barks, quizzes, pages, labels, board
   text, arrival lines, voice lines and audio, the snapshot) lives in a course pack, `courses/<id>/`
   (docs/specs/COURSE-PACKS.md, docs/content-data.md). The game reads it through `src/course/` after a
