@@ -17,6 +17,13 @@ export const MERIDIAN_SILHOUETTE_SKY = { hours: 17.35, azimuth: -45 } as const;
 /** The town's paint at a distance: weathered toward stone (the real walls' shading and dirt). */
 const WEATHERED = 0x9c8c74;
 
+/**
+ * How far the harbour's stone stands over the ground under it (m). The bake's pads are at the quay's,
+ * the arm's and the mole's own heights, so a block with its top there would share a face with the
+ * ground: two faces at one height flicker (most from above, where the tops are all you see).
+ */
+const HARBOUR_PROUD = 0.4;
+
 /** A storey of the town's houses (m), and its ground floor's plinth. */
 const STOREY = 3.1;
 
@@ -92,7 +99,7 @@ function meridianMasses(tier: Tier): { blocks: SilhouetteBlock[]; towers: Silhou
       hz: (b.z1 - b.z0) / 2,
       rot: 0,
       y0: -1.5,
-      y1: b.height,
+      y1: b.height + HARBOUR_PROUD,
       color: 0x8a7a66,
     });
   const m = MERIDIAN.mole;
@@ -103,7 +110,7 @@ function meridianMasses(tier: Tier): { blocks: SilhouetteBlock[]; towers: Silhou
     hz: m.width / 2,
     rot: -Math.atan2(m.end.z - m.start.z, m.end.x - m.start.x),
     y0: -1.5,
-    y1: m.height,
+    y1: m.height + HARBOUR_PROUD,
     color: 0x8a7a66,
   });
   const towers: SilhouetteTower[] = [
