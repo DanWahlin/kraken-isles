@@ -2,12 +2,11 @@ import { naturalWaterAt } from '../world/islands/fresh-water-natural';
 import { meridianTownTrunks } from '../world/meridian-town/plantings';
 import { meridianQuayHeight, meridianWater } from '../world/islands/meridian';
 import { MERIDIAN } from '../world/islands/meridian-layout';
-import type { MeridianTownSystem } from '../world/meridian-town';
 import { MERIDIAN_CHESTS, currentQuest } from './cove-quests';
 import { MERIDIAN_NPCS, meridianExtras } from './meridian-npcs';
 import type { IslandCode } from './island-code';
 import { MERIDIAN_WAYS } from '../world/islands/meridian-waypoints';
-import { createMeridianStream } from '../world/islands/meridian-stream';
+import { createMeridianStream, type MeridianWorld } from '../world/islands/meridian-stream';
 import { createMeridianContent } from './meridian-session';
 import {
   meridianCurrent,
@@ -21,7 +20,7 @@ import {
  * Port Meridian's code (Chapter 01; its registry entry is src/islands/meridian.ts): its stream, its
  * quest line, its town's walks and water, and its content (src/game/meridian-session.ts).
  */
-export const MERIDIAN_CODE: IslandCode<MeridianTownSystem> = {
+export const MERIDIAN_CODE: IslandCode<MeridianWorld> = {
   stream: createMeridianStream,
   chests: MERIDIAN_CHESTS.map((c) => c.id),
   cast: (anchors) => [...MERIDIAN_NPCS, ...meridianExtras(anchors)],
@@ -40,7 +39,7 @@ export const MERIDIAN_CODE: IslandCode<MeridianTownSystem> = {
     box: MERIDIAN.bounds,
     surfaces: [
       {
-        heightAt: (x, z) => stream?.world?.walkable(x, z) ?? null,
+        heightAt: (x, z) => stream?.world?.town.walkable(x, z) ?? null,
         kind: 'stone',
       },
       { heightAt: meridianQuayHeight, kind: 'stone' },

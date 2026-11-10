@@ -36,9 +36,9 @@ export interface StreamedWorld {
   shipObstacles(): CircleObstacle[];
   /** Its plants, built a slice at a time, for `vegetation.addPlants`. */
   plants(breathe: () => Promise<void>): Promise<PlantInstance[]>;
-  /** Picks levels of detail for the camera (no allocation). */
-  frame(camera: Camera): void;
-  update(dt: number, t: number): void;
+  /** Picks levels of detail for the camera (no allocation), where its update doesn't. */
+  frame?(camera: Camera): void;
+  update(dt: number, t: number, camera: Camera): void;
   dispose(): void;
 }
 
@@ -68,21 +68,35 @@ export interface StreamedWorldParts {
 export interface StreamedIslandSpec<W extends StreamedWorld> {
   /** The far shape that stands on the horizon until the island's own ground is drawn. */
   silhouette(tier: Tier, breathe: () => Promise<void>): { group: Group; ready: Promise<void> };
-  /** Its air (haze, tint, fill, exposure), eased in with its light as the camera nears. */
-  mood: IslandMood;
+  /** Its air (haze, tint, fill, exposure), eased in with its light as the camera nears; none: the open sea's. */
+  mood?: IslandMood;
   /**
    * Its terrain's own options, on each load. It may make something first, a slice a breath (an apron
    * its terrain is skinned with); the stream checks it's still wanted before it builds the terrain.
    */
   terrain(breathe: () => Promise<void>): TerrainPart | Promise<TerrainPart>;
-  /** Work on the built terrain before anything draws it (so nothing uploads twice). */
-  afterTerrain?(terrain: CreatedTerrain): Promise<void>;
+  /**
+   * Work on the built terrain before anything draws it (so nothing uploads twice). What it adds to
+   * the terrain's group shows, warms and hides with it; it returns how to free that, if the terrain's
+   * own dispose doesn't (water strips with their own material).
+   */
+  afterTerrain?(terrain: CreatedTerrain): Promise<(() => void) | void>;
   /** Its coast foam: how far it shows, surf on exposed feet, washes round wrecks, shores without any. */
   foam: CoastFoamOptions;
   /** A sea floor the bake doesn't hold, for the ocean's depth colour (a cut that's deep to its walls). */
   seaFloor?: (x: number, z: number) => number | null;
   /** Builds its world on the terrain, a slice a breath. */
   world(parts: StreamedWorldParts, breathe: () => Promise<void>): Promise<W>;
+  /**
+   * Its world takes the sun's shadows even where the tier's islands don't (`ctx.skipShadows`): Low
+   * draws its cached shadow map for Port Meridian's town only (engine/quality.ts).
+   */
+  worldKeepsSunShadows?: boolean;
+  /**
+   * Its silhouette draws from any height. Without it, the far shape hides above 150 m, where a
+   * coarse one would show as a sheet.
+   */
+  silhouetteFromAbove?: boolean;
   /** Its plants' rules, and how they're drawn if not as every island's. */
   flora: FloraRules;
   plantLook?: PlantPatchLook;
@@ -123,6 +137,8 @@ export function createStreamedIsland<W extends StreamedWorld>(
   let plants: VegetationPatch | null = null;
   const flocks: BirdsSystem[] = [];
   let obstacles: CircleObstacle[] = [];
+  /** Frees what `afterTerrain` added to the terrain. */
+  let freeExtras: (() => void) | null = null;
   let priority: RequestPriority = 'auto';
   // Its own floor for the ocean's depth colour (its shallows), lent while it's in memory.
   const depth = ctx.island.stream?.depthTile ? createIslandDepthTile(id) : null;
@@ -143,7 +159,7 @@ export function createStreamedIsland<W extends StreamedWorld>(
     );
     // Owned from here: a failure later takes it back (teardown).
     self.terrain = terrain;
-    await spec.afterTerrain?.(terrain);
+    freeExtras = (await spec.afterTerrain?.(terrain)) ?? null;
     await ctx.breathe();
     if (ctx.skipShadows) skipSunShadows(terrain.group);
     const foam = createCoastFoam(data, terrain.heightField, spec.foam);
@@ -164,7 +180,7 @@ export function createStreamedIsland<W extends StreamedWorld>(
       return null;
     }
     system.group.visible = false;
-    if (ctx.skipShadows) skipSunShadows(system.group);
+    if (ctx.skipShadows && !spec.worldKeepsSunShadows) skipSunShadows(system.group);
     scene.add(system.group);
     self.system = system;
     obstacles = system.shipObstacles();
@@ -196,6 +212,8 @@ export function createStreamedIsland<W extends StreamedWorld>(
     const { terrain, foam, system } = self;
     const patch = plants;
     const birds = flocks.splice(0);
+    const extras = freeExtras;
+    freeExtras = null;
     self.ready = false;
     self.terrain = null;
     self.foam = null;
@@ -205,7 +223,7 @@ export function createStreamedIsland<W extends StreamedWorld>(
     obstacles = [];
     depth?.drop();
     // Its air goes back to the open sea's.
-    resetMood(ctx.sky.mood);
+    if (spec.mood) resetMood(ctx.sky.mood);
     const vegetation = ctx.vegetation();
     await freeInSlices(
       scene,
@@ -216,6 +234,7 @@ export function createStreamedIsland<W extends StreamedWorld>(
           for (const b of birds) b.dispose();
         },
         () => system?.dispose(),
+        () => extras?.(),
         () => foam && disposeTree(foam),
         () => terrain?.dispose(),
       ],
@@ -235,6 +254,7 @@ export function createStreamedIsland<W extends StreamedWorld>(
 
   const life = new StreamLifecycle<W>(build, teardown, ctx.disabled);
   const reach = ctx.island.skyReach ?? DEFAULT_SKY_REACH;
+  const aerial = spec.silhouetteFromAbove === true;
 
   const self: StreamedIsland<W> & {
     terrain: CreatedTerrain | null;
@@ -289,11 +309,13 @@ export function createStreamedIsland<W extends StreamedWorld>(
       return held;
     },
     update(camera, dt, t) {
-      const d = Math.hypot(camera.position.x - center.x, camera.position.z - center.z);
-      // The island's air eases in with its light (the passage blend, from the identity at sea).
-      const k0 = Math.min(1, Math.max(0, (reach.reach - d) / (reach.reach - reach.full)));
-      const k = k0 * k0 * (3 - 2 * k0);
-      applyIslandMood(ctx.sky.mood, spec.mood, k);
+      if (spec.mood) {
+        const d = Math.hypot(camera.position.x - center.x, camera.position.z - center.z);
+        // The island's air eases in with its light (the passage blend, from the identity at sea).
+        const k0 = Math.min(1, Math.max(0, (reach.reach - d) / (reach.reach - reach.full)));
+        const k = k0 * k0 * (3 - 2 * k0);
+        applyIslandMood(ctx.sky.mood, spec.mood, k);
+      }
       const off = footprintDistance(footprint, camera.position.x, camera.position.z);
       if (off < ranges.load && ctx.nearLoads()) void self.load();
       const near = !swap.update(off);
@@ -308,13 +330,13 @@ export function createStreamedIsland<W extends StreamedWorld>(
       }
       if (show) self.terrain?.update(camera);
       // Held for its warm-up: the levels of detail stay as the warm shows them (both drawn once).
-      if (show && !held) self.system?.frame(camera);
+      if (show && !held) self.system?.frame?.(camera);
       // The far shape stands in until the island's own ground is drawn.
       // From high above (an aerial view) the coarse silhouette would show as a sheet: only from low.
-      silhouette.visible = !(near && self.ready) && camera.position.y < 150;
+      silhouette.visible = !(near && self.ready) && (aerial || camera.position.y < 150);
       detail.update(camera.position.x, camera.position.z);
       if (!show) return;
-      self.system?.update(dt, t);
+      self.system?.update(dt, t, camera);
       for (let i = 0; i < flocks.length; i++) flocks[i]!.update(dt, t, camera);
     },
     mirrorHidden(out) {
@@ -327,6 +349,8 @@ export function createStreamedIsland<W extends StreamedWorld>(
       depth?.drop();
       scene.remove(silhouette);
       disposeTree(silhouette);
+      freeExtras?.();
+      freeExtras = null;
       if (self.terrain) {
         scene.remove(self.terrain.group);
         self.terrain.dispose();

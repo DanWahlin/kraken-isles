@@ -25,8 +25,8 @@ Read these first:
 
 Keelhaven (`src/islands/keelhaven.ts`, `src/game/keelhaven-island.ts`, `src/game/keelhaven-session.ts`,
 `src/world/islands/keelhaven/`) and Thousand-Bough Isle (the same files under `thousand-bough`) are
-the examples to copy. Port Meridian is older: its stream and its code do not use the shared helpers
-(sections 3 to 5).
+the examples to copy. Port Meridian is older: its code and its content do not use the shared helpers
+(sections 3 and 5).
 
 Build the world package from the shared builders, so a new island adds data and no new shader:
 
@@ -130,12 +130,15 @@ not write the lifecycle again. The spec holds only what is the island's own:
 - `world`: builds the town or village on the terrain. It must have `group`, `shipObstacles()`,
   `plants()`, `frame(camera)`, `update(dt, t)` and `dispose()` (`StreamedWorld`).
 - `flora`, `plantLook`, `flocks`, `onFlock` and `mood`: its plants, its birds and its air.
+- `worldKeepsSunShadows` and `silhouetteFromAbove`: only Port Meridian sets them. Low draws its
+  cached shadow map for that town, and its far shape draws from any height.
 
 The shared stream does the rest: it loads the terrain pack `<id>/terrain` with the course data, adds
 the parts hidden in a fixed order, takes back what a failed or abandoned load added, shows and hides
 the island by range, swaps it with the silhouette, lends the depth tile, and frees a part a frame.
-Keelhaven's `stream.ts` is the example to copy. Port Meridian's stream is older and has its own
-lifecycle (`src/world/islands/meridian-stream.ts`): do not copy it.
+Keelhaven's `stream.ts` is the example to copy. Port Meridian's stream
+(`src/world/islands/meridian-stream.ts`) shows a world that wraps an older town: water that rides
+with the terrain (`afterTerrain` returns how to free it) and camera blockers built before the town.
 
 The world (`IslandStream.world`) is what the content builds on (the town, the tree village).
 

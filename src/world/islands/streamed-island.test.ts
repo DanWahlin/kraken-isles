@@ -69,14 +69,14 @@ function fakeWorld(): TestWorld {
     group: new Group(),
     shipObstacles: () => [{ x: 3, z: 3, r: 2 } as CircleObstacle],
     plants: async () => [],
-    frame: vi.fn<StreamedWorld['frame']>(),
+    frame: vi.fn<NonNullable<StreamedWorld['frame']>>(),
     update: vi.fn<StreamedWorld['update']>(),
     dispose: vi.fn<StreamedWorld['dispose']>(),
     kept: null,
   };
 }
 
-function setup(over: Partial<StreamedIslandSpec<TestWorld>> = {}) {
+function setup(over: Partial<StreamedIslandSpec<TestWorld>> = {}, skipShadows = false) {
   const scene = new Scene();
   const heightField = new CompositeHeightField();
   const shipObstacles: CircleObstacle[] = [{ x: 1, z: 1, r: 1 } as CircleObstacle];
@@ -90,7 +90,7 @@ function setup(over: Partial<StreamedIslandSpec<TestWorld>> = {}) {
     breathe: async () => {},
     vegetation: () => null,
     birds: true,
-    skipShadows: false,
+    skipShadows,
     disabled: false,
     sky: { mood },
     island: ISLE,
@@ -114,8 +114,8 @@ function setup(over: Partial<StreamedIslandSpec<TestWorld>> = {}) {
   };
   const stream = createStreamedIsland(ctx, spec);
   const camera = new PerspectiveCamera();
-  const at = (x: number) => {
-    camera.position.set(x, 10, 0);
+  const at = (x: number, y = 10) => {
+    camera.position.set(x, y, 0);
     stream.update(camera, 0.016, 1);
   };
   return { ctx, scene, heightField, shipObstacles, mood, world, far, seaFloor, stream, at };
@@ -256,5 +256,54 @@ describe('a streamed island', () => {
     expect(s.world.dispose).toHaveBeenCalledTimes(1);
     expect(s.world.group.parent).toBeNull();
     expect(s.far.parent).toBeNull();
+  });
+
+  it("frees what its terrain step added, with the island and at the voyage's end", async () => {
+    const free = vi.fn();
+    const s = setup({ afterTerrain: async () => free });
+    await s.stream.load();
+    await s.stream.unload();
+    expect(free).toHaveBeenCalledTimes(1);
+
+    await s.stream.load();
+    s.stream.dispose();
+    expect(free).toHaveBeenCalledTimes(2);
+  });
+
+  it('leaves the sky to the open sea when it has no air of its own', async () => {
+    const s = setup({ mood: undefined });
+    await s.stream.load();
+    s.mood.fogScale = 1.5;
+    s.at(0);
+    expect(s.mood.fogScale).toBe(1.5);
+    await s.stream.unload();
+    expect(s.mood.fogScale).toBe(1.5);
+  });
+
+  it('hides its silhouette from high above, unless it draws from any height', () => {
+    const low = setup();
+    low.at(2000, 400);
+    expect(low.far.visible).toBe(false);
+    low.at(2000, 100);
+    expect(low.far.visible).toBe(true);
+
+    const any = setup({ silhouetteFromAbove: true });
+    any.at(2000, 400);
+    expect(any.far.visible).toBe(true);
+  });
+
+  it("skips the sun's shadows on its world where the tier's islands do, unless its world keeps them", async () => {
+    const part = () => {
+      const w = fakeWorld();
+      w.group.add(new Mesh());
+      return w;
+    };
+    const skipped = part();
+    await setup({ world: async () => skipped }, true).stream.load();
+    expect(skipped.group.children[0]!.userData.sunShadow).toBe(false);
+
+    const kept = part();
+    await setup({ world: async () => kept, worldKeepsSunShadows: true }, true).stream.load();
+    expect(kept.group.children[0]!.userData.sunShadow).toBeUndefined();
   });
 });
