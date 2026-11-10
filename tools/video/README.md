@@ -161,8 +161,8 @@ Rook's part and on the Three Helms' Plan and Autopilot parts (each after the low
 and an end card. The sluice, sea-battle, Three Helms and Channel Routing cards read their text from
 the game's `courses/copilot-app/labels.json` (`label('<id>')` in `reels/highlights.mjs`), so the reel and the
 game show the same words. `highlights-v8` is the previous cut (its mp4 is kept as a compressed copy
-in the repo's ignored `videos/` folder); v1–v7's reel files are kept, but their takes were deleted
-to save disk, so only v8 and v9 rebuild with `--refinish`. v9 films the reworked puzzles again:
+in the repo's ignored `videos/` folder); v1–v7's reel files are in the git history only (their
+takes were deleted to save disk, so they couldn't rebuild), and v8 and v9 rebuild with `--refinish`. v9 films the reworked puzzles again:
 `sluice-wide` (workflows on at the lever before the crane, a channel turned too far and back with
 Shift+E, the tee feeding the wheel and the jammed check gate) and `helms-reel` (the `helms`
 scenario with the game's own cards marked shown: Interactive heading picks, Autopilot stopping short

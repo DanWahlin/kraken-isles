@@ -7,7 +7,7 @@ import { createBrigantine, type Brigantine, type BrigantineEnv } from '../ship';
 import { pointOfSailCurve } from '../ship/dynamics';
 import { halfBeamAt } from '../ship/lines';
 import { windAt } from '../wind';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import { KrakenEncounter, type KrakenEvent } from '../kraken/encounter';
 import {
   HAZARD_SPECS,

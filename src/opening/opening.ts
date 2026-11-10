@@ -978,7 +978,7 @@ export function createOpening(o: OpeningOptions): Opening {
       const audio = o.audio();
       if (audio) {
         const sfx = audio.sfx;
-        sfx.preload([...OPENING_SOUNDS, ...CUES.map((c) => c[1])]);
+        void sfx.preload([...OPENING_SOUNDS, ...CUES.map((c) => c[1])]);
         // Quiet in the cabin before the chest opens (reduced motion starts the cue now).
         // (Continue starts it with the dive, below, so its peak still lands at the splash however long
         // the chart waits for the island.)

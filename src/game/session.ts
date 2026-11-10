@@ -58,7 +58,7 @@ import { noteIslandStory } from '../islands/open';
 import type { IslandContent, IslandContentHost, IslandCode, IslandSetup, IslandWalk } from './island-code';
 import { terrainRockCameraBlockersSliced } from '../world/terrain/terrain-rocks';
 import { FlyoverPath } from './flyover';
-import { world as worldUniforms } from '../world/uniforms';
+import { world as worldUniforms } from '../engine/uniforms';
 import { Helm } from './helm';
 import { Hud } from './hud';
 import { Interactions, type Interactable } from './interaction';

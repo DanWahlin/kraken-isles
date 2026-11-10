@@ -18,7 +18,7 @@ import { SkyMesh } from 'three/addons/objects/SkyMesh.js';
 import { tierSettings } from '../engine/quality';
 import type { HeightField, Tier } from '../world/contracts';
 import { COVE } from '../world/layout';
-import { world } from '../world/uniforms';
+import { world } from '../engine/uniforms';
 import { ANCHORAGE_VEGETATION } from '../world/islands/anchorage/vegetation-rules';
 import { ANCHORAGE_FLORA } from '../world/islands/anchorage/flora';
 import { createVegetation, type HeightGrid } from '../world/vegetation';
@@ -256,7 +256,7 @@ async function main(): Promise<void> {
   (window as unknown as { __vegetationDebug: unknown; __dev: unknown }).__vegetationDebug = debugApi;
   (window as unknown as { __dev: unknown }).__dev = debugApi;
 
-  renderer.setAnimationLoop(() => {
+  void renderer.setAnimationLoop(() => {
     world.time.value = performance.now() * 0.001;
     controls.update();
     vegetation.update(camera);

@@ -12,7 +12,7 @@ import {
 } from 'three/webgpu';
 import type { WaveSampler } from '../contracts';
 import { createSparkleMaterial, sparklePulse } from '../sites/sparkle';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 
 /**
  * The kraken's evidence on the water before it acts, and the danger area it will strike: a dark

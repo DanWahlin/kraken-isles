@@ -1,7 +1,7 @@
 import { ACESFilmicToneMapping, HalfFloatType, PerspectiveCamera, Scene, WebGPURenderer } from 'three/webgpu';
 import { setKtx2Renderer } from './ktx2';
 import type { Backend } from '../world/contracts';
-import { world } from '../world/uniforms';
+import { world } from './uniforms';
 import { AdaptiveResolution } from './adaptive-res';
 import { DayClock } from './day-clock';
 import { FixedStep } from './fixed-step';
@@ -193,13 +193,13 @@ export class Engine {
     this.running = true;
     this.last = performance.now();
     this.counters.arm();
-    this.renderer.setAnimationLoop((now: number) => this.tick(now));
+    void this.renderer.setAnimationLoop((now: number) => this.tick(now));
     document.addEventListener('visibilitychange', this.onVisibility);
   }
 
   stop(): void {
     this.running = false;
-    this.renderer.setAnimationLoop(null);
+    void this.renderer.setAnimationLoop(null);
     document.removeEventListener('visibilitychange', this.onVisibility);
   }
 
@@ -244,12 +244,12 @@ export class Engine {
   private readonly onVisibility = () => {
     // PLAN §12.8: nothing renders while hidden; resume without a time jump.
     if (document.hidden) {
-      this.renderer.setAnimationLoop(null);
+      void this.renderer.setAnimationLoop(null);
       this.adaptive.setPaused(true);
     } else if (this.running) {
       this.last = performance.now();
       this.adaptive.setPaused(false);
-      this.renderer.setAnimationLoop((now: number) => this.tick(now));
+      void this.renderer.setAnimationLoop((now: number) => this.tick(now));
     }
   };
 
@@ -307,6 +307,6 @@ export class Engine {
   dispose(): void {
     this.stop();
     this.resizeObs?.disconnect();
-    this.renderer.dispose();
+    void this.renderer.dispose();
   }
 }

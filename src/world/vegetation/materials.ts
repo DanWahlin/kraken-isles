@@ -59,7 +59,7 @@ import {
   vec3,
   vec4,
 } from 'three/tsl';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import { terrainNoiseTexture } from '../terrain/noise-texture';
 import { gustNode } from '../wind-nodes';
 import { trackedPosition } from '../../engine/motion-vectors';

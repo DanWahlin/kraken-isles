@@ -37,3 +37,6 @@ tests/visual/baseline/
 
 # Rendered videos (large binaries; GitHub rejects files over 100 MB)
 videos/
+
+# Screenshots the browser test tools write by default (tools/wayfindtest.mjs, tools/thousandboughtest.mjs)
+tmp/

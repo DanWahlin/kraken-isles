@@ -14,7 +14,7 @@ import {
   smoothstep,
   vec3,
 } from 'three/tsl';
-import { world } from '../../uniforms';
+import { world } from '../../../engine/uniforms';
 
 // three's TSL fluent node typings do not cover this mixed scalar/vector graph.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -12,7 +12,7 @@ import {
 } from 'three/webgpu';
 import { color, float, mix, positionLocal, sin, smoothstep } from 'three/tsl';
 import { unreflected } from '../reflection';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import { STARFISH, type StarfishSpot } from './spots';
 
 // three's fluent TSL typings don't cover every scalar/vector mix used below.

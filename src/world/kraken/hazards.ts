@@ -1,5 +1,5 @@
 import { Vector3, type Camera } from 'three/webgpu';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import type { SplashPool } from '../battle/fx';
 import type { Tier, WaveSampler } from '../contracts';
 import { Kraken, poseFreeArm, type KrakenArm } from './kraken';

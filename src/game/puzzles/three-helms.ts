@@ -19,7 +19,7 @@ import {
   type HelmsFile,
   type ReviewAct,
 } from '../../world/sites/helms-logic';
-import { world as worldUniforms } from '../../world/uniforms';
+import { world as worldUniforms } from '../../engine/uniforms';
 import type { SeaChoiceOption, SeaChoiceView } from '../../ui/puzzles/SeaChoice';
 import type { HintTier, Puzzle, PuzzleHost, PuzzleTerminal, SailAction } from './types';
 import { onCourse } from '../../course/active';

@@ -3,7 +3,7 @@ import { attribute, color, float, mix } from 'three/tsl';
 import type { TierSettings } from '../../engine/quality';
 import { clamp01, smoothstep } from '../../util/math';
 import { fbm2, ridged2 } from './cove-height';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 
 type QualityTier = TierSettings['tier'];
 

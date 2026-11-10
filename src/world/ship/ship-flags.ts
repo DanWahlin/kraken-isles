@@ -31,7 +31,7 @@ import {
   vec3,
 } from 'three/tsl';
 import type { UniformNode } from 'three/webgpu';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import { plainShadowColor } from '../../engine/shadow-color';
 import { mulberry32 } from '../../util/math';
 

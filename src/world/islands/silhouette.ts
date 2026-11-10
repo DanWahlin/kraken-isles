@@ -21,7 +21,7 @@ import {
   vec4,
   vertexColor,
 } from 'three/tsl';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 
 /** Ground cover weights at a point (an island's baked masks: they sum to 1). */
 export interface SilhouetteMasks {

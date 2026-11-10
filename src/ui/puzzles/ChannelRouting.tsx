@@ -281,7 +281,7 @@ function ChannelRouting({ store }: { store: ChannelRoutingStore }) {
     if (!v.open || !v.cursor || v.twist || v.round === 3) return;
     const el = tileRefs.current[v.cursor[0] * COLS + v.cursor[1]];
     if (el && document.activeElement !== el && document.activeElement?.closest('.ci-cr-grid')) el.focus();
-  }, [v.open, v.cursor, v.twist]);
+  }, [v.open, v.cursor, v.twist, v.round]);
 
   useEffect(() => {
     document.body.classList.toggle('ci-cr-open', v.open);

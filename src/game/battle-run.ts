@@ -12,7 +12,7 @@ import type { CoveScene } from '../world/cove-scene';
 import { unreflected } from '../world/reflection';
 import type { ShipDynamics } from '../world/ship';
 import { skipSunShadows } from '../world/sky/cached-sun-shadow';
-import { world } from '../world/uniforms';
+import { world } from '../engine/uniforms';
 import { seaState } from '../world/ocean/sea-state';
 import { BATTLE_SOUNDS, createBattleAudio } from './battle-audio';
 import { BattleCamera } from './battle-camera';

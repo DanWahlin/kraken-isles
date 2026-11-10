@@ -1,7 +1,7 @@
 import { InstancedBufferAttribute, InstancedMesh, Matrix4, PerspectiveCamera, Vector3 } from 'three/webgpu';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { WaveSampler } from '../../contracts';
-import { world } from '../../uniforms';
+import { world } from '../../../engine/uniforms';
 import { QuietSea } from '../quiet-sea';
 import { createLeaps, leapDive, leapHeight } from './system';
 

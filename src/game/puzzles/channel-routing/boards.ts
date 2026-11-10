@@ -1,8 +1,11 @@
-import { onCourse } from '../../../course/active';
 import type { PuzzleFile } from '../../../course/pack';
-import { byActs, puzzleContent, puzzleMaybe } from '../../../course/puzzles';
+import { puzzleContent } from '../../../course/puzzles';
 import type { TwistAnswer } from './model';
+import type { CrewWords } from '../../../world/islands/thousand-bough/crew-look';
 import type { Crew, Rot, Tile, TileKind } from './types';
+
+// The crews and their look are the island's (its Flume Terrace paints them too).
+export { CREWS, CREW_LOOK, type CrewWords } from '../../../world/islands/thousand-bough/crew-look';
 
 /**
  * Channel Routing's board (docs/specs/ISLAND-02-thousand-bough.md §5.2-5.3; drawn and solved by
@@ -11,22 +14,11 @@ import type { Crew, Rot, Tile, TileKind } from './types';
 export const ROWS = 4;
 export const COLS = 5;
 
-/** The game's crews, by the colour of their water: a course binds each of its crews to one (`acts`). */
-export const CREWS: readonly Crew[] = ['blue', 'green', 'teal'];
-
 /** Each crew's gate, above a column of the north edge. */
 export const GATE_COL: Readonly<Record<Crew, number>> = { blue: 1, green: 2, teal: 3 };
 
 /** The south edge's outlets: c0, c2 and c4 turn a crew's wheel; c1 and c3 spill into the Great Hall. */
 export const WHEEL_AT: readonly (Crew | null)[] = ['blue', null, 'green', null, 'teal'];
-
-/** A crew as the course names it: what its water carries, and its icon (never colour alone). */
-export interface CrewWords {
-  name: string;
-  float: string;
-  icon: string;
-  iconName: string;
-}
 
 /** `puzzles/channel-routing.json` (route: each crew's water to its own wheel). */
 export interface ChannelRoutingFile extends PuzzleFile {
@@ -38,30 +30,6 @@ export interface ChannelRoutingFile extends PuzzleFile {
 }
 
 export const routingContent = () => puzzleContent<ChannelRoutingFile>('channel-routing');
-
-/** Each crew's water colour (the game's; colourblind-safe with the icon beside it). */
-const CREW_COLOUR: Readonly<Record<Crew, string>> = {
-  blue: '#3B82F6',
-  green: '#3FA34D',
-  teal: '#1EA7A7',
-};
-
-/** What each crew's water carries and its icon (colourblind-safe: never colour alone). */
-export let CREW_LOOK: Readonly<Record<Crew, CrewWords & { colour: string }>> = {} as Record<
-  Crew,
-  CrewWords & { colour: string }
->;
-onCourse(() => {
-  const none = { name: '', float: '', icon: '', iconName: '' };
-  const c = puzzleMaybe<ChannelRoutingFile>('channel-routing');
-  const crews: Partial<Record<Crew, CrewWords>> = c ? byActs(c.crews) : {};
-  CREW_LOOK = Object.fromEntries(
-    CREWS.map((k) => {
-      const { name, float, icon, iconName } = crews[k] ?? none;
-      return [k, { name, float, icon, iconName, colour: CREW_COLOUR[k] }];
-    }),
-  ) as Record<Crew, CrewWords & { colour: string }>;
-});
 
 const KIND: Readonly<Record<string, TileKind>> = { S: 'straight', L: 'elbow', R: 'rock' };
 

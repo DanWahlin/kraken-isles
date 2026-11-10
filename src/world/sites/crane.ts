@@ -18,7 +18,7 @@ import type { TierSettings } from '../../engine/quality';
 import type { CircleObstacle } from '../contracts';
 import { COVE } from '../layout';
 import { deckHeightAt } from '../ship/lines';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import type { VillageAnchor, VillageBoxCollider, VillageKit } from '../village/kit';
 import { CRANE_CARGO, CRANE_FACINGS, craneContent, jibLines, lineTone, type LineTone } from './crane-logic';
 import { textOf } from '../../course/puzzles';

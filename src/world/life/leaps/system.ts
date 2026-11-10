@@ -13,7 +13,7 @@ import { tierSettings, type TierSettings } from '../../../engine/quality';
 import type { HeightField, Tier, WaveSampler } from '../../contracts';
 import { unreflected } from '../../reflection';
 import type { QuietSea } from '../quiet-sea';
-import { world } from '../../uniforms';
+import { world } from '../../../engine/uniforms';
 import { seededRandom } from '../../../util/math';
 import { LeapsDirector, type LeapArc, type LeapKind, type ScreenRect } from './director';
 import { createDolphinGeometry, createFlyingFishGeometry, createSplashGeometry } from './geometry';

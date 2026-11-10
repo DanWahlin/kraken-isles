@@ -41,7 +41,7 @@ import {
 } from 'three/tsl';
 import { packs } from '../../engine/packs';
 import { plainShadowColor } from '../../engine/shadow-color';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import { gustNode } from '../wind-nodes';
 import { hasActiveCourse, onCourse } from '../../course/active';
 import { puzzleMaybe, textOf } from '../../course/puzzles';

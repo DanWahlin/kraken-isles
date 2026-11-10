@@ -16,5 +16,5 @@
     "resolveJsonModule": true,
     "types": ["vite/client", "@webgpu/types"]
   },
-  "include": ["src", "tests", "vite.config.ts", "playwright.config.ts"]
+  "include": ["src", "tests", "tools/**/*.ts", "vite.config.ts", "playwright.config.ts"]
 }

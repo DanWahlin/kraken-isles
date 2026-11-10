@@ -16,7 +16,7 @@ import type { CircleObstacle, HeightField } from '../contracts';
 import { COVE } from '../layout';
 import { ROCK_ASSETS } from '../terrain/rock-assets';
 import { createRockMaterial } from '../terrain/terrain-material';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import type { VillageAnchor, VillageBoxCollider, VillageKit } from '../village/kit';
 import { box, cylinder, merge, plank, TRIM } from './geo';
 import { mergeWithRigidParts } from './rigid-parts';

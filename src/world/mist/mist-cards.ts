@@ -16,7 +16,7 @@ import {
 } from 'three/tsl';
 import { releaseInstanceAttributes } from '../../engine/instance-buffers';
 import { releaseSpriteQuad, useSpriteQuad } from '../../engine/sprite-quad';
-import { world } from '../uniforms';
+import { world } from '../../engine/uniforms';
 import { terrainNoiseTexture } from '../terrain/noise-texture';
 
 // three's fluent TSL typings don't cover every scalar/vector mix used below.

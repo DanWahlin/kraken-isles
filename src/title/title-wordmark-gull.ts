@@ -1,5 +1,5 @@
 import { Object3D, Vector3, type Group, type PerspectiveCamera } from 'three/webgpu';
-import { world } from '../world/uniforms';
+import { world } from '../engine/uniforms';
 import { clamp, lerp, seededRandom, smoothstep } from '../util/math';
 
 export interface TitleWordmarkGull {

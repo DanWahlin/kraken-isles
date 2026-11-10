@@ -22,7 +22,7 @@ import type { Tier } from '../world/contracts';
 import type { CharacterLibrary } from '../world/characters';
 import type { CoveScene } from '../world/cove-scene';
 import { prewarmWaterDepthTexture } from '../world/ocean/water-depth-texture';
-import { world } from '../world/uniforms';
+import { world } from '../engine/uniforms';
 import { isSeaStateId, seaState } from '../world/ocean/sea-state';
 import { buildChart, coveTravelPoints, prewarmChart } from './chart';
 import { islandOpen } from '../islands/open';
