@@ -28,7 +28,7 @@ import {
 import type { Tier } from '../contracts';
 import { world } from '../../engine/uniforms';
 import { clamp01, smoothstep as smooth } from '../../util/math';
-import { ROCK_ASSETS } from './rock-assets';
+import { rockAssets } from './rock-assets';
 import { terrainNoiseTexture } from './noise-texture';
 import {
   SEA_STACK_BASE_Y,
@@ -237,7 +237,7 @@ function mergeBlocks(stack: BufferGeometry, count: number): BufferGeometry {
   const v = new Vector3();
   for (let b = 0; b < Math.min(count, BLOCKS.length); b++) {
     const block = BLOCKS[b]!;
-    const asset = ROCK_ASSETS[block.asset]!;
+    const asset = rockAssets()[block.asset]!;
     const r = seaStackWaterlineRadius(block.a) + block.out;
     p.set(
       COVE.seaStack.x + Math.cos(block.a) * r,

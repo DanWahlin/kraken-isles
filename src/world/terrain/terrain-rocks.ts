@@ -2,7 +2,7 @@ import { sharedInstancedMesh } from '../../engine/instancing';
 import { BufferAttribute, BufferGeometry, Euler, Group, Matrix4, Quaternion, Vector3 } from 'three/webgpu';
 import type { HeightField, Tier } from '../contracts';
 import { COVE } from '../layout';
-import { ROCK_ASSETS } from './rock-assets';
+import { ROCK_KEYS, rockAssets, type RockAsset } from './rock-assets';
 import { createRockMaterial } from './terrain-material';
 import { createSeaStack, createSeaStackMaterial } from './sea-stack';
 import { createHeadlandCliff, headlandCliffCameraBlockerSteps } from './headland-cliff';
@@ -23,7 +23,7 @@ interface RockInstance {
   yOffset?: number;
 }
 
-const ROCK_VARIANTS = Math.min(3, ROCK_ASSETS.length);
+const ROCK_VARIANTS = Math.min(3, ROCK_KEYS.length);
 const STOREHOUSE_EAST_PAD = { x0: -71, x1: -53, z0: -75, z1: -51 };
 const VILLAGE_MEADOW_PAD = { x0: -174, x1: -55, z0: -50, z1: 18 };
 
@@ -213,7 +213,7 @@ function allRockInstances(): RockInstance[] {
   return kept;
 }
 
-function rockGeometry(asset: (typeof ROCK_ASSETS)[number]): BufferGeometry {
+function rockGeometry(asset: RockAsset): BufferGeometry {
   const geometry = new BufferGeometry();
   geometry.setAttribute('position', new BufferAttribute(asset.positions, 3));
   geometry.setAttribute('normal', new BufferAttribute(asset.normals, 3));
@@ -257,7 +257,7 @@ export function* terrainRockCameraBlockersSliced(
   const matrix = new Matrix4();
   for (const r of allRockInstances()) {
     if (Math.max(r.sx, r.sy, r.sz) < 0.9) continue;
-    meshCameraBlockers(ROCK_ASSETS[r.asset].positions, rockMatrix(r, heightField, matrix), out);
+    meshCameraBlockers(rockAssets()[r.asset].positions, rockMatrix(r, heightField, matrix), out);
   }
   yield;
   yield* headlandCliffCameraBlockerSteps(heightField, out, tier);
@@ -290,7 +290,7 @@ export function* buildTerrainRocks(
   yield;
 
   for (const [assetIndex, list] of [...grouped.entries()].sort(([a], [b]) => a - b)) {
-    const asset = ROCK_ASSETS[assetIndex];
+    const asset = rockAssets()[assetIndex];
     const mesh = sharedInstancedMesh(rockGeometry(asset), material, list.length);
     mesh.name = `terrain-rocks-${asset.key}`;
     mesh.castShadow = false;

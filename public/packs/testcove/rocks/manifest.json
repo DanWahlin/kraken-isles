@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "kit": "Quaternius Stylized Nature MegaKit — Standard",
   "source": "https://opengameart.org/sites/default/files/stylized_nature_megakitstandard.zip",
   "sha256": "298f6732b872e4cf7b30e6e7abf9641c7f6dc6b326df37ac089533ed7e3d58c9",
@@ -7,29 +7,28 @@
   "sources": [
     {
       "key": "Rock_Medium_1",
-      "gltf": "glTF/Rock_Medium_1.gltf",
-      "optimizedBytes": 28352
+      "gltf": "glTF/Rock_Medium_1.gltf"
     },
     {
       "key": "Rock_Medium_2",
-      "gltf": "glTF/Rock_Medium_2.gltf",
-      "optimizedBytes": 27164
+      "gltf": "glTF/Rock_Medium_2.gltf"
     },
     {
       "key": "Rock_Medium_3",
-      "gltf": "glTF/Rock_Medium_3.gltf",
-      "optimizedBytes": 30588
+      "gltf": "glTF/Rock_Medium_3.gltf"
     },
     {
       "key": "RockPath_Round_Wide",
-      "gltf": "glTF/RockPath_Round_Wide.gltf",
-      "optimizedBytes": 93384
+      "gltf": "glTF/RockPath_Round_Wide.gltf"
     },
     {
       "key": "RockPath_Round_Thin",
-      "gltf": "glTF/RockPath_Round_Thin.gltf",
-      "optimizedBytes": 67820
+      "gltf": "glTF/RockPath_Round_Thin.gltf"
     }
   ],
+  "pack": {
+    "file": "rocks.bin",
+    "bytes": 347836
+  },
   "textures": ["rocks.webp", "path-rocks.webp", "grass.webp"]
 }

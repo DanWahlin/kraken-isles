@@ -14,7 +14,7 @@ import { markInstancesChanged, sharedInstancedMesh } from '../../../engine/insta
 import type { VillageKit } from '../../village/kit';
 import { mergeWithRigidParts, type RigidParts } from '../../sites/rigid-parts';
 import type { SignSet } from '../../sites/sign';
-import { ROCK_ASSETS } from '../../terrain/rock-assets';
+import { ROCK_HEIGHTS, rockAssets } from '../../terrain/rock-assets';
 import { mulberry32, smoothstep } from '../../../util/math';
 import { CREW_LOOK } from './crew-look';
 import type { ChannelRoutingState, Crew, Flow, FlumeTerraceView } from './contract';
@@ -498,12 +498,8 @@ const DRAIN_SPEED = 8;
 const FLOATS = 4;
 const FLOAT_LOOP = WATER_RUN + 1.2;
 
-function rockHeight(asset: number): number {
-  const p = ROCK_ASSETS[asset]!.positions;
-  let top = 0;
-  for (let i = 1; i < p.length; i += 3) top = Math.max(top, p[i]!);
-  return top;
-}
+/** A rock's height at scale 1, from the table (this module sizes its tiles as it loads, before the pack is in). */
+const rockHeight = (asset: number): number => ROCK_HEIGHTS[asset]!;
 /** The board's rock tiles: one of the island's mossy basalt rocks in each. */
 const TILE_ROCK_ASSET = 0;
 const TILE_ROCK_SCALE = new Vector3(2.2, 1.65 / rockHeight(TILE_ROCK_ASSET), 2.05);
@@ -945,7 +941,7 @@ export function createFlumeTerrace(
       for (const p of stoneIndex.rocks) stoneParts.set(p, ZERO);
       stones = s;
       const mesh = sharedInstancedMesh(s.geometries[TILE_ROCK_ASSET]!, s.material, TILE_ROCKS, { count: 0 });
-      mesh.name = `thousand-bough-flume-rocks-${ROCK_ASSETS[TILE_ROCK_ASSET]!.key}`;
+      mesh.name = `thousand-bough-flume-rocks-${rockAssets()[TILE_ROCK_ASSET]!.key}`;
       mesh.castShadow = false;
       mesh.receiveShadow = true;
       mesh.visible = false;

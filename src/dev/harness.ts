@@ -12,6 +12,7 @@ import { Engine } from '../engine/engine';
 import { TIERS, type TierSettings } from '../engine/quality';
 import type { Tier } from '../world/contracts';
 import { world } from '../engine/uniforms';
+import { loadRockAssets } from '../world/terrain/rock-assets';
 
 /** What every dev page starts from: the query string, the chosen backend and tier, and a running engine. */
 export interface DevHarness {
@@ -39,6 +40,8 @@ export async function createDevHarness(): Promise<DevHarness> {
   const backend = q.has('webgl') ? 'webgl2' : 'webgpu';
   const tier = TIERS[(q.get('tier') as Tier) ?? 'high'] ?? TIERS.high;
   if (q.has('shot')) document.body.classList.add('shot');
+  // Most pages build terrain, cliffs or a mill: the rock meshes they're made from.
+  await loadRockAssets();
   const canvas = document.getElementById('gl') as HTMLCanvasElement;
   const renderer: WebGPURenderer = Engine.createRenderer({ canvas, backend, tier });
   await renderer.init();

@@ -40,6 +40,7 @@ import {
   terraceRun,
 } from '../world/meridian-town/terraces';
 import { buildHeadlandCliffGeometry, HEADLAND_CLIFF_DETAIL } from '../world/terrain/headland-cliff';
+import { loadRockAssets } from '../world/terrain/rock-assets';
 import { headlandCliffPlantSpots } from '../world/terrain/headland-cliff-shape';
 import { buildSeaStackGeometry, createSeaStackMaterial } from '../world/terrain/sea-stack';
 import { seaStackPlantSpots } from '../world/terrain/sea-stack-shape';
@@ -595,7 +596,12 @@ export async function createIslandProps(o: IslandPropsOptions): Promise<IslandPr
       for (const p of seaStackPlantSpots())
         plant(parts, p.species, p.x, p.y, p.z, p.scale, delayAt(p.x, p.z), r);
       await breathe();
-      const rocks = chartRocks(grid, hf, tier, o.islandRise.get('anchorage'));
+      // The cliff and the stack are the game's rock meshes; without the pack the chart goes without.
+      const rocksIn = await loadRockAssets().then(
+        () => true,
+        () => false,
+      );
+      const rocks = rocksIn ? chartRocks(grid, hf, tier, o.islandRise.get('anchorage')) : null;
       await breathe();
       if (rocks) {
         group.add(rocks.mesh);

@@ -46,6 +46,10 @@
       "maxGzipKB": 28
     }
   },
+  "$otherChunk": "Every chunk without a row above (the world, the session, each island's code, the UI's screens), gzip -9. Measured 2026-11-09 with the rock meshes out of the bundle: cove-scene 56.7, thousand-bough-island 56.5, session 56.3, meridian-island 49.8, flow 46.5, keelhaven-island 43.3 KB. The cap is the largest plus ~25 %. Before, one chunk held the rock meshes as number literals: 143.8 KB gz, 667 KB to parse, and no budget.",
+  "otherChunkMaxGzipKB": 72,
+  "$rockPack": "public/packs/testcove/rocks/rocks.bin (five meshes, 12 771 vertices, lossless at five decimals): 112.6 KB gz, 339.7 KB raw. GitHub Pages serves .bin gzipped.",
+  "rockPackMaxGzipKB": 128,
   "titleWireMaxKB": 4096,
   "skyKeyMaxKB": 112,
   "memory": {

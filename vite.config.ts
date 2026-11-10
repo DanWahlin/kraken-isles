@@ -125,7 +125,7 @@ export default defineConfig({
   },
   test: {
     include: ['src/**/*.test.ts'],
-    setupFiles: ['src/course/test-setup.ts'],
+    setupFiles: ['src/course/test-setup.ts', 'src/world/terrain/rock-test-setup.ts'],
     environment: 'node',
   },
 });

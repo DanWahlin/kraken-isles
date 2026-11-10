@@ -4,7 +4,7 @@ import type { CircleObstacle, WaveSampler } from '../contracts';
 import { ShipDynamics } from '../ship/dynamics';
 import { BERTH_APPROACH } from '../sites/helms-logic';
 import type { CameraBlockerBox } from '../terrain/camera-blockers';
-import { ROCK_ASSETS } from '../terrain/rock-assets';
+import { rockAssets } from '../terrain/rock-assets';
 import {
   MERIDIAN,
   MERIDIAN_ROCK_COUNT,
@@ -38,7 +38,7 @@ describe("Port Meridian's coastal rock camera blockers", () => {
     const uncovered: string[] = [];
     let testedRocks = 0;
     for (let assetIndex = 0; assetIndex < 3; assetIndex++) {
-      const asset = ROCK_ASSETS[assetIndex]!;
+      const asset = rockAssets()[assetIndex]!;
       for (let instance = 0; instance < MERIDIAN_ROCK_COUNT; instance++) {
         meridianRockMatrix(assetIndex, instance, MERIDIAN_HEIGHT_FIELD, matrix);
         const e = matrix.elements;
