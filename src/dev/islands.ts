@@ -225,6 +225,9 @@ await compileAndStart(renderer, engine, scene, camera, post ? () => post.compile
 (window as unknown as { __dev: object }).__dev = {
   ready: true,
   camera,
+  /** The world and the scene (probes: what's drawn, an island's terrain and its levels of detail). */
+  cove,
+  scene,
   setCam,
   setTime,
   /** Opens an island's tab (and one of its views). */
