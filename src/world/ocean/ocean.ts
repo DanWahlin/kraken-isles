@@ -112,6 +112,13 @@ export function oceanGrid(tier: TierSettings): PolarGridOptions {
 }
 
 /**
+ * The draw order of what must be in the depth buffer before the sea's surface is drawn (the sea is
+ * see-through, so it draws after everything solid, in this order): a cover that keeps the surface out
+ * of an open boat (src/world/life/dry-hull.ts). The sea's own two draws come next.
+ */
+export const BEFORE_SEA = -3;
+
+/**
  * The Phase 0a ocean (PLAN §6 Water system, S4): analytic Gerstner surface on a camera-centred polar
  * grid, per-pixel normals with procedural ripples, PMREM sky reflection with Fresnel, GGX sun/moon
  * glints, screen-space refraction with Beer-Lambert absorption, crest scattering, and whitecap and
@@ -548,7 +555,7 @@ export function createOcean({
   const mesh = new Mesh(geo, mat);
   mesh.name = 'ocean';
   mesh.frustumCulled = false;
-  mesh.renderOrder = -1;
+  mesh.renderOrder = BEFORE_SEA + 2;
   mesh.receiveShadow = false;
   // Its look is its own (no other mesh shares it), so it keeps its shadow-free shader: as a skipped
   // receiver it carried the shadow lookup for nothing, and changing the flag later built it again.
@@ -561,7 +568,7 @@ export function createOcean({
   const near = new Mesh(geo, mat);
   near.name = 'ocean near';
   near.frustumCulled = false;
-  near.renderOrder = -2;
+  near.renderOrder = BEFORE_SEA + 1;
   near.receiveShadow = false;
   near.userData.sunShadowNever = true;
   mesh.add(near);

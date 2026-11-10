@@ -16,7 +16,9 @@ import {
 } from '../characters/character-lod';
 import { mergeSkinnedParts, shareSkinning } from '../characters/shared-skinning';
 import { palettedMaterial, stagedMaterial } from '../characters/stage-light';
+import { BEFORE_SEA } from '../ocean/ocean';
 import { unreflected } from '../reflection';
+import { dryHullCover } from './dry-hull';
 import {
   AnimationMixer,
   Box3,
@@ -28,6 +30,7 @@ import {
   Group,
   LoopOnce,
   Mesh,
+  MeshBasicNodeMaterial,
   MeshStandardNodeMaterial,
   Object3D,
   Quaternion,
@@ -64,6 +67,11 @@ export interface FishingBoat {
 const BOAT_LENGTH = 4.2;
 /** How far the hull sits below the water at its lowest point (its draught). */
 const DRAUGHT = 0.28;
+/**
+ * How far above the waterline the cover that keeps the sea out of the hull lies (dry-hull.ts): over
+ * any water the swell lifts inside her, under the rail (about half a metre up).
+ */
+const DRY_ABOVE_WATER = 0.3;
 /** The fishermen's standing height (the island's NPCs are about 1.75 m). */
 const FISHER_TALL = 1.62;
 /** Arm-layer bones (KayKit rig, names as three sanitises them): the rest of the body stays sitting. */
@@ -320,6 +328,21 @@ export function createFishingBoat(o: {
     boat.position.set(-(box.min.x + box.max.x) / 2, -box.min.y - DRAUGHT, -(box.min.z + box.max.z) / 2);
     gunwale = box.max.y - box.min.y - DRAUGHT;
     hull.add(boat);
+
+    // Her floor rides under the waterline, and the sea's surface is one sheet: a cover inside the
+    // hull, drawn before the sea with depth only, keeps the surface from showing through her boards.
+    boat.updateMatrix();
+    const coverGeo = dryHullCover(merged.getAttribute('position').array, boat.matrix, DRY_ABOVE_WATER);
+    if (coverGeo) {
+      const coverMat = new MeshBasicNodeMaterial({ colorWrite: false, transparent: true, depthWrite: true });
+      owned.push(coverGeo, coverMat);
+      const cover = new Mesh(coverGeo, coverMat);
+      cover.name = 'rowboat dry hull';
+      cover.renderOrder = BEFORE_SEA;
+      // It takes no light: it keeps its bare shader (cached-sun-shadow.ts).
+      cover.userData.sunShadowNever = true;
+      hull.add(cover);
+    }
 
     // The fisherman sits aft facing starboard, rod out over the side; his mate sits forward, facing him.
     const seatY = gunwale - 0.32;
