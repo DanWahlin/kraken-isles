@@ -100,6 +100,30 @@ describe("the island viewer's views", () => {
     }
   });
 
+  it('flies each tour smoothly: no frame turns or checks the camera sharply', () => {
+    // Round Port Meridian and Keelhaven the tour runs along the swap distance for most of a lap. It
+    // follows the island's outline, which has corners: stopped at it, the camera's velocity changed by
+    // more than its own size from one frame to the next.
+    const shot: TourShot = { x: 0, y: 0, z: 0, tx: 0, ty: 0, tz: 0 };
+    const dt = 1 / 60;
+    for (const island of ISLAND_LIST) {
+      const at: number[][] = [];
+      for (let s = -dt; s <= TOUR_LAP + dt; s += dt) {
+        islandTour(island, s, shot);
+        at.push([shot.x, shot.y, shot.z]);
+      }
+      let worst = 0;
+      for (let i = 2; i < at.length; i++) {
+        const v0 = at[i - 1]!.map((n, k) => n - at[i - 2]![k]!);
+        const v1 = at[i]!.map((n, k) => n - at[i - 1]![k]!);
+        const change = Math.hypot(...v1.map((n, k) => n - v0[k]!));
+        worst = Math.max(worst, change / Math.hypot(...v0));
+      }
+      // Under 2% of its velocity a frame, right round (and across the lap's end).
+      expect(worst).toBeLessThan(0.02);
+    }
+  });
+
   it('keeps a camera inside the swap distance, where the island draws as itself', () => {
     for (const island of ISLAND_LIST) {
       const { center, footprint } = island;
