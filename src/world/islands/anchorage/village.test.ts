@@ -1,4 +1,6 @@
+import { PerspectiveCamera } from 'three/webgpu';
 import { describe, expect, it } from 'vitest';
+import { world as worldUniforms } from '../../../engine/uniforms';
 import { tierSettings } from '../../../engine/quality';
 import type { HeightField } from '../../contracts';
 import { COVE } from '../../layout';
@@ -150,9 +152,21 @@ describe('createVillage', () => {
     expect(village.shipObstacles.some((c) => c.x === lh.x && c.z === lh.z && c.r >= 12)).toBe(true);
     // The lookout keeps watch from the gallery.
     expect(village.anchors.lookout!.y).toBeGreaterThan(lh.top + 15);
+    // The lamp: dark until the Seal lights it, except after dark, when it burns whatever the story says.
+    const lamp = village.group.getObjectByName('anchorage-lighthouse-lamp')!;
+    const camera = new PerspectiveCamera();
     expect(village.lighthouseLit()).toBe(false);
+    expect(lamp.visible).toBe(false);
+    worldUniforms.night.value = 1;
+    village.update(0, 0, camera);
+    expect(lamp.visible).toBe(true);
+    expect(village.lighthouseLit()).toBe(false);
+    worldUniforms.night.value = 0;
+    village.update(0, 0, camera);
+    expect(lamp.visible).toBe(false);
     village.setLighthouseLit(true);
     expect(village.lighthouseLit()).toBe(true);
+    expect(lamp.visible).toBe(true);
     // The path is walkable from the door step to the quay.
     const mid = { x: (lh.x + lh.neck.x) / 2, z: (lh.z + lh.neck.z) / 2 };
     expect(walkable(mid.x, mid.z)).toBeCloseTo(heightField.heightAt(mid.x, mid.z) + 0.08, 5);

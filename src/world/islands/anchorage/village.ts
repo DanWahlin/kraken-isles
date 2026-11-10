@@ -38,7 +38,11 @@ import {
 } from '../../village/chunks';
 import { loadLodSimplifier } from '../../characters/character-lod';
 import { wrapAngle } from '../../../util/math';
-import { createLighthouseHaloMaterial, createLighthouseLitMaterial } from '../../lighthouse-lamp';
+import {
+  createLighthouseHaloMaterial,
+  createLighthouseLitMaterial,
+  lampBurning,
+} from '../../lighthouse-lamp';
 import { coloredIndexedGeometry } from '../../sites/geo';
 import { WaterStrips } from '../../sites/water';
 import type { PlantInstance } from '../../vegetation/types';
@@ -319,6 +323,8 @@ export async function createVillage({
   }
   group.userData.villageMetrics = metrics;
   const lighthouseLamp = createLighthouseLamp();
+  /** The Seal has lit the lamp (it burns after dark without it: `lampBurning`). */
+  let lighthouseSealLit = false;
   group.add(lighthouseLamp);
 
   return {
@@ -333,10 +339,12 @@ export async function createVillage({
     plantings,
     neighbourDetail,
     setLighthouseLit(on: boolean): void {
-      lighthouseLamp.visible = on;
+      lighthouseSealLit = on;
+      lighthouseLamp.visible = lampBurning(on);
     },
-    lighthouseLit: () => lighthouseLamp.visible,
+    lighthouseLit: () => lighthouseSealLit,
     update(_dt: number, _t: number, camera: Camera): void {
+      lighthouseLamp.visible = lampBurning(lighthouseSealLit);
       updateLighthouseLamp(lighthouseLamp, camera);
       chunkLods.update(camera.position.x, camera.position.y, camera.position.z);
       group.userData.lastCameraDistance = Math.hypot(

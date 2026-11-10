@@ -52,7 +52,7 @@ import {
   terraceRun,
   type TerraceRowSpec,
 } from './terraces';
-import { createLighthouseHaloMaterial, createLighthouseLitMaterial } from '../lighthouse-lamp';
+import { createLighthouseHaloMaterial, createLighthouseLitMaterial, lampBurning } from '../lighthouse-lamp';
 import {
   localToWorld,
   makeBuckets,
@@ -278,6 +278,8 @@ function* buildMeridianTown({
   const lighthouseGlow = new Group();
   lighthouseGlow.name = 'meridian-lighthouse-glow';
   lighthouseGlow.visible = false;
+  /** The Seal has lit the lamp (it burns after dark without it: `lampBurning`). */
+  let lighthouseSealLit = false;
   const mooringLines = createMooringLines(kit.materials);
 
   const rim = plazaRimWalk(heightField);
@@ -441,7 +443,8 @@ function* buildMeridianTown({
     anchors,
     metrics,
     setLighthouseLit(on: boolean): void {
-      lighthouseGlow.visible = on;
+      lighthouseSealLit = on;
+      lighthouseGlow.visible = lampBurning(on);
     },
     setMooringLines(on: boolean): void {
       mooringLines.visible = on;
@@ -450,6 +453,7 @@ function* buildMeridianTown({
       setLiftCarPosition(liftCar, t);
     },
     update(_dt: number, _t: number, camera: Camera): void {
+      lighthouseGlow.visible = lampBurning(lighthouseSealLit);
       chunkLods.update(camera.position.x, camera.position.y, camera.position.z);
       for (const child of lighthouseGlow.children) {
         if (child.userData.billboard) child.quaternion.copy(camera.quaternion);
