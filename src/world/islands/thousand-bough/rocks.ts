@@ -9,7 +9,7 @@ import {
 } from 'three/webgpu';
 import { sharedInstancedMesh } from '../../../engine/instancing';
 import type { CircleObstacle, HeightField } from '../../contracts';
-import { ROCK_ASSETS } from '../../terrain/rock-assets';
+import { rockAssets } from '../../terrain/rock-assets';
 import { createRockMaterial } from '../../terrain/terrain-material';
 import type { CameraBlockerBox } from '../../terrain/camera-blockers';
 import { meshCameraBlockers } from '../../terrain/camera-blockers';
@@ -320,7 +320,7 @@ export function spireGeometry(columns: readonly SpireColumn[] = spireColumns()):
  * shared island geometries and material.
  */
 export interface FlumeStones {
-  /** One geometry per rock asset (`ROCK_ASSETS` order). */
+  /** One geometry per rock asset (the rock pack's order). */
   geometries: BufferGeometry[];
   /** The same rock material used by the island batches. */
   readonly material: Material;
@@ -361,7 +361,7 @@ export function createThousandBoughRocks(
   const cameraBoxes: CameraBlockerBox[] = [];
   const flumeStones: FlumeStones = { geometries: [], material, shadows };
   for (let a = 0; a < 3; a++) {
-    const asset = ROCK_ASSETS[a]!;
+    const asset = rockAssets()[a]!;
     const mine = spots.filter((s) => s.asset === a);
     // The cave's roof: two great slabs across the notch, in the first asset's batch.
     const roof = a === 0 ? 2 : 0;

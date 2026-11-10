@@ -11,7 +11,7 @@ import {
 } from 'three/webgpu';
 import type { CircleObstacle, HeightField, Tier } from '../contracts';
 import { fbm2, ridged2 } from '../terrain/cove-height';
-import { ROCK_ASSETS } from '../terrain/rock-assets';
+import { rockAssets } from '../terrain/rock-assets';
 import { meshSurfaceCameraBlockers, type CameraBlockerBox } from '../terrain/camera-blockers';
 import { createRockMaterial } from '../terrain/terrain-material';
 import { clamp01, segmentDistance, smoothstep } from '../../util/math';
@@ -634,8 +634,8 @@ export function* meridianRockCameraBlockersSliced(
       meridianRockMatrix(assetIndex, i, heightField, matrix);
       if (rockScale.x <= 0) continue;
       meshSurfaceCameraBlockers(
-        ROCK_ASSETS[assetIndex].positions,
-        ROCK_ASSETS[assetIndex].indices,
+        rockAssets()[assetIndex].positions,
+        rockAssets()[assetIndex].indices,
         matrix,
         out,
         3,
@@ -669,7 +669,7 @@ export function meridianRockShipObstacles(heightField: HeightField): CircleObsta
   const out: CircleObstacle[] = [];
   const matrix = new Matrix4();
   for (let assetIndex = 0; assetIndex < 3; assetIndex++) {
-    const positions = ROCK_ASSETS[assetIndex].positions;
+    const positions = rockAssets()[assetIndex].positions;
     for (let i = ROCK_MOLE_COUNT + ROCK_COAST_COUNT; i < ROCK_COUNT; i++) {
       meridianRockMatrix(assetIndex, i, heightField, matrix);
       if (rockScale.x <= 0) continue;
@@ -718,7 +718,7 @@ export function createMeridianRocks(heightField: HeightField, _data?: unknown, t
     .map((st, i) => ({ st, i, asset: Math.floor(rand(1299 + i * 13) * 3) }))
     .filter(({ i }) => streamStoneKept(i, SMALL_ROCKS[tier]));
   const instanced = (assetIndex: number, count: number, name: string): InstancedMesh => {
-    const asset = ROCK_ASSETS[assetIndex];
+    const asset = rockAssets()[assetIndex];
     const geometry = new BufferGeometry();
     geometry.setAttribute('position', new BufferAttribute(asset.positions, 3));
     geometry.setAttribute('normal', new BufferAttribute(asset.normals, 3));

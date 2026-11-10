@@ -1,7 +1,7 @@
 import { BufferAttribute, BufferGeometry, Group, Matrix4, Quaternion, Vector3 } from 'three/webgpu';
 import { sharedInstancedMesh } from '../../../engine/instancing';
 import type { CircleObstacle, Tier } from '../../contracts';
-import { ROCK_ASSETS } from '../../terrain/rock-assets';
+import { rockAssets } from '../../terrain/rock-assets';
 import { createRockMaterial } from '../../terrain/terrain-material';
 import { mulberry32 } from '../../../util/math';
 import { guildcrestHeight, guildcrestMasks, guildcrestTrodden } from './height';
@@ -107,7 +107,7 @@ export function createGuildcrestRocks(tier: Tier): GuildcrestRocks {
   const circles: CircleObstacle[] = [];
   const geometries: BufferGeometry[] = [];
   for (let a = 0; a < 3; a++) {
-    const asset = ROCK_ASSETS[a]!;
+    const asset = rockAssets()[a]!;
     const mine = spots.filter((s) => s.asset === a);
     if (mine.length === 0) continue;
     const geometry = new BufferGeometry();

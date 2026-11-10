@@ -33,6 +33,8 @@ const partFiles = existsSync(assetsDir)
   : [];
 const partOf = (f) => f.replace(/-[0-9a-f]{10}\.json$/, '');
 const budgeted = new Set();
+/** The chunk files that have a row of their own (the rest share `otherChunkMaxGzipKB`). */
+const named = new Set();
 
 let failed = false;
 const rows = [];
@@ -51,6 +53,7 @@ for (const [label, rule] of Object.entries(budgets.chunks)) {
     rows.push([label, '-', `${rule.maxGzipKB}`, 'not built']);
     continue;
   }
+  if (!rule.asset) named.add(file);
   const size = gz(file);
   const ok = size <= rule.maxGzipKB * 1024;
   if (!ok) failed = true;
@@ -75,6 +78,26 @@ for (const f of partFiles) {
   failed = true;
   rows.push([partOf(f), kb(gz(`assets/${f}`)), '-', 'NO BUDGET (add it to tools/budgets.json)']);
 }
+// Every other chunk (the world, the session, each island's code, the UI's screens) under one cap: a
+// chunk that outgrows it has taken in data that belongs in a pack (the rock meshes were 144 KB of one)
+// or wants splitting. The row shows the largest.
+const others = entries
+  .map(([, v]) => v.file)
+  .filter((f, i, all) => f.endsWith('.js') && !named.has(f) && all.indexOf(f) === i)
+  .map((f) => ({ f, size: gz(f) }))
+  .sort((a, b) => b.size - a.size);
+for (const o of others.filter((x) => x.size > budgets.otherChunkMaxGzipKB * 1024)) {
+  failed = true;
+  rows.push([o.f.replace(/^assets\//, ''), kb(o.size), `${budgets.otherChunkMaxGzipKB}`, 'OVER']);
+}
+if (others[0] && others[0].size <= budgets.otherChunkMaxGzipKB * 1024)
+  rows.push([
+    `largest other (${others[0].f.replace(/^assets\//, '').replace(/-[\w-]{8}\.js$/, '')})`,
+    kb(others[0].size),
+    `${budgets.otherChunkMaxGzipKB}`,
+    'ok',
+  ]);
+
 const titleOk = title <= budgets.titleWireMaxKB * 1024;
 if (!titleOk) failed = true;
 rows.push(['title (wire, gz)', kb(title), `${budgets.titleWireMaxKB}`, titleOk ? 'ok' : 'OVER']);
@@ -102,6 +125,18 @@ const coursePacks = entries.filter(([, v]) => isPackChunk(v.name ?? '')).length;
 const packsOk = coursePacks === packIds.length;
 if (!packsOk) failed = true;
 rows.push(['course packs (lazy chunks)', `${coursePacks}`, `${packIds.length}`, packsOk ? 'ok' : 'MISSING']);
+
+// The rock pack (src/world/terrain/rock-assets.ts): every island's rocks, fetched once with the world.
+const rockPack = join(dist, 'packs/testcove/rocks/rocks.bin');
+if (existsSync(rockPack)) {
+  const size = gzipSync(readFileSync(rockPack), { level: 9 }).length;
+  const ok = size <= budgets.rockPackMaxGzipKB * 1024;
+  if (!ok) failed = true;
+  rows.push(['packs/…/rocks.bin', kb(size), `${budgets.rockPackMaxGzipKB}`, ok ? 'ok' : 'OVER']);
+} else {
+  failed = true;
+  rows.push(['packs/…/rocks.bin', '-', `${budgets.rockPackMaxGzipKB}`, 'MISSING']);
+}
 
 // The baked cloud keys (BakedPanorama.ts) load at run time, one or two at a time: each stays small.
 const skyDir = join(dist, 'sky');

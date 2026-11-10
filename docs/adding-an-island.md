@@ -37,7 +37,7 @@ Build the world package from the shared builders, so a new island adds data and 
 | Wrecks | `src/world/wreck/` (`WreckDesign`) | Wrecked brigantines in the ship's look: a pose, holes, rig, a broken half. Keelhaven's are `src/world/islands/keelhaven/wrecks.ts`. |
 | Mist | `src/world/mist/mist-cards.ts` | Valley mist and fall spray: one look for every island. |
 | Plants | `addIslandPlants(…, look)` (`src/world/island-parts.ts`), `PlantPatchLook` | The island's plants as a patch of the world's vegetation, with an optional look (bark simplify, impostor handoff, tints). |
-| Rocks | `src/world/terrain/rock-assets.ts` with `createRockMaterial`, instanced | Boulders and stream stones (Thousand-Bough's and Keelhaven's `rocks.ts`). |
+| Rocks | `rockAssets()` (`src/world/terrain/rock-assets.ts`, the rock pack) with `createRockMaterial`, instanced | Boulders and stream stones (Thousand-Bough's and Keelhaven's `rocks.ts`). |
 
 Keelhaven's world (`src/world/islands/keelhaven/index.ts`, `createKeelhavenWorldAsync`) is built but
 not yet in the game: it's in `ISLANDS_IN_BUILD` only, and the terrain dev page shows it

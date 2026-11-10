@@ -1,5 +1,4 @@
 import { mulberry32, smoothstep } from '../../util/math';
-import { ROCK_ASSETS } from '../terrain/rock-assets';
 import type { FreshWater } from './meridian-water';
 
 /** A stone in or beside one of an island's natural streams. */
@@ -14,12 +13,8 @@ export interface StreamStone {
   inBed: boolean;
 }
 
-/** Each rock asset's height at scale 1 (its base is at y 0). */
-export const ROCK_HEIGHTS: readonly number[] = ROCK_ASSETS.map((a) => {
-  let top = -Infinity;
-  for (let i = 1; i < a.positions.length; i += 3) top = Math.max(top, a.positions[i]!);
-  return top;
-});
+// Each rock's height at scale 1: with the rock pack's keys (terrain/rock-assets.ts).
+export { ROCK_HEIGHTS } from '../terrain/rock-assets';
 
 /** The share of an island's small stones each tier keeps (the streams' stones thin the same way). */
 export const SMALL_ROCKS = { lite: 0.1, low: 0.4, medium: 1, high: 1, ultra: 1 } as const;

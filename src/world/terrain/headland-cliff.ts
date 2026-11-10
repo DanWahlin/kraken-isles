@@ -12,7 +12,7 @@ import type { HeightField, Tier } from '../contracts';
 import { clamp01, smoothstep } from '../../util/math';
 import { COVE } from '../layout';
 import { headlandCliffEdge } from './cove-height';
-import { ROCK_ASSETS } from './rock-assets';
+import { rockAssets } from './rock-assets';
 import {
   HEADLAND_CAVE_BULGE,
   HEADLAND_CLIFF_BASE_Y,
@@ -78,7 +78,7 @@ function placeRock(
   const m = new Matrix4().compose(position, rotation, scale);
   const nm = new Matrix4().extractRotation(m);
   const v = new Vector3();
-  const asset = ROCK_ASSETS[assetIndex % 3]!;
+  const asset = rockAssets()[assetIndex % 3]!;
   const n = asset.positions.length / 3;
   const pos = new Float32Array(n * 3);
   const nrm = new Float32Array(n * 3);

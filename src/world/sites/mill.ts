@@ -14,7 +14,7 @@ import { color, float, mix, positionWorld, sin, uniform } from 'three/tsl';
 import type { TierSettings } from '../../engine/quality';
 import type { CircleObstacle, HeightField } from '../contracts';
 import { COVE } from '../layout';
-import { ROCK_ASSETS } from '../terrain/rock-assets';
+import { rockAssets } from '../terrain/rock-assets';
 import { createRockMaterial } from '../terrain/terrain-material';
 import { world } from '../../engine/uniforms';
 import type { VillageAnchor, VillageBoxCollider, VillageKit } from '../village/kit';
@@ -1104,7 +1104,7 @@ function buildWheel(r: number, w: number): BufferGeometry {
 }
 
 function rockGeometry(index: number): BufferGeometry {
-  const a = ROCK_ASSETS[index % ROCK_ASSETS.length]!;
+  const a = rockAssets()[index % rockAssets().length]!;
   const g = new BufferGeometry();
   g.setAttribute('position', new BufferAttribute(a.positions.slice(), 3));
   g.setAttribute('normal', new BufferAttribute(a.normals.slice(), 3));

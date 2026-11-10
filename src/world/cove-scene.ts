@@ -16,6 +16,7 @@ import { seaStackShipObstacle } from './terrain/sea-stack-shape';
 import { HEADLAND_CLIFF_AREA, headlandCaveShipObstacle } from './terrain/headland-cliff-shape';
 import { createDistantRangesAsync } from './terrain/distant-ranges';
 import { loadTerrainPack } from './terrain/bake';
+import { loadRockAssets } from './terrain/rock-assets';
 import { createTerrainAsync, type CreatedTerrain } from './terrain/terrain-mesh';
 import { releaseTerrainTextures } from './terrain/terrain-material';
 import { releaseTerrainNoiseTexture } from './terrain/noise-texture';
@@ -171,7 +172,11 @@ export async function createCove(engine: Engine, o: CoveOptions = {}): Promise<C
   scene.add(ocean.mesh);
 
   report(0.3, 'Charting the cove');
-  const data = await loadTerrainPack(`${o.packBase ?? '/packs'}/testcove/terrain`);
+  // The rock meshes come in with the home island's terrain: every island's rocks are built from them.
+  const [data] = await Promise.all([
+    loadTerrainPack(`${o.packBase ?? '/packs'}/testcove/terrain`),
+    loadRockAssets(),
+  ]);
   await breathe();
   const terrain = await createTerrainAsync(
     { tier, data, cloudShadowNode, recessSteep: HEADLAND_CLIFF_AREA },
