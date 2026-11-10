@@ -199,6 +199,10 @@ npm run build && npm run check:budgets && npm run check:secrets
 npm run bake        # the other islands' hashes do not change
 ```
 
+Look at the island in the island viewer (`devpages/islands.html` on the dev server). It gets a tab
+from its registry entry with no change to the viewer: a tour round it, its harbour and quay, and its
+arrival flight. The viewer shows the world only (no cast, chests or puzzles).
+
 Then, on a no-HMR dev server, run the play tests and the gates in the skill's §6:
 `check:frame-budgets`, `check:memory`, `cameratest`, `check:perf`, `check:opening`, `check:audio`, and the
 program census for each tier. After the build, look for the island's own chunk
