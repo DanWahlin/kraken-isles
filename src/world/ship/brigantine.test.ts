@@ -2,11 +2,17 @@ import { describe, expect, it } from 'vitest';
 import type { BufferAttribute, Mesh, Object3D } from 'three/webgpu';
 import { addLiteShipLods, createBrigantine, fitShipNameFontSize } from './brigantine';
 import { TIERS } from '../../engine/quality';
-import { QUARTERDECK_Z, WHEEL } from './brigantine-hull';
+import {
+  QUARTERDECK_Z,
+  STERNPOST_HALF,
+  WHEEL,
+  createHullGeometry,
+  createTrimGeometry,
+} from './brigantine-hull';
 import { SCORCH_SLOTS, shipScorch } from './brigantine-materials';
 import { CUTTER_FLAG, createCutterSailGeometry, createRiggingGeometry } from './brigantine-rig';
 import { COVE } from '../layout';
-import { BRIGANTINE_HALF_LENGTH, deckHeightAt } from './lines';
+import { BRIGANTINE_HALF_LENGTH, deckHeightAt, halfBeamAt, waterlineHalfBeamAt } from './lines';
 
 interface MeshSignature {
   name: string;
@@ -22,25 +28,25 @@ const HIGH_TIER_MESH_SIGNATURES: MeshSignature[] = [
     name: 'rounded planked hull',
     vertices: 10505,
     indices: 61887,
-    position: '54024027',
+    position: '646cde7f',
     uv: 'fb751034',
     color: '147597e7',
   },
   {
     name: 'deck planking rails and fittings',
-    vertices: 13986,
-    indices: 73296,
-    position: '66df62b5',
-    uv: 'cfbebd63',
-    color: '3ea0eee1',
+    vertices: 13994,
+    indices: 73308,
+    position: '2eff9695',
+    uv: 'a305d463',
+    color: 'dd141b31',
   },
   {
     name: 'wales strakes gunports galleries anchors',
-    vertices: 12107,
-    indices: 41949,
-    position: 'b326431e',
-    uv: '0760d908',
-    color: '70cb0d74',
+    vertices: 12193,
+    indices: 41919,
+    position: '5aebd4f6',
+    uv: '340786dc',
+    color: '648e7968',
   },
   // The deck guns were split out of the deck mesh (same vertices) so each can recoil.
   {
@@ -79,7 +85,7 @@ const HIGH_TIER_MESH_SIGNATURES: MeshSignature[] = [
     name: 'masts yards boom bowsprit jibboom',
     vertices: 3343,
     indices: 18078,
-    position: 'c3d6b2c2',
+    position: '5713dda6',
     uv: 'f7de7d45',
     color: '016fcd69',
   },
@@ -447,5 +453,78 @@ describe('createBrigantine', () => {
     ship.clearScorch();
     expect(moved()).toHaveLength(0);
     ship.dispose();
+  });
+});
+
+describe('the stern', () => {
+  const STERN = -BRIGANTINE_HALF_LENGTH;
+
+  it('closes on the sternpost at the waterline and keeps a broad transom above the tuck', () => {
+    // The run narrows all the way aft: no waist, and no slab at the water.
+    for (let z = -7.5; z > STERN; z -= 0.25)
+      expect(waterlineHalfBeamAt(z - 0.25)).toBeLessThanOrEqual(waterlineHalfBeamAt(z));
+    expect(waterlineHalfBeamAt(STERN)).toBeLessThan(0.15);
+    // Above the tuck the topsides carry their breadth to the gallery.
+    for (let z = STERN; z <= -8; z += 0.5) expect(halfBeamAt(z, 2)).toBeGreaterThan(2.4);
+    // The end section opens out from the post, widening all the way up the tuck.
+    for (let y = 0; y < 1.25; y += 0.125)
+      expect(halfBeamAt(STERN, y + 0.125)).toBeGreaterThan(halfBeamAt(STERN, y));
+  });
+
+  it("joins the counter, sternpost and rudder to the hull's end, whatever detail each is built at", () => {
+    const tiers = ['lite', 'low', 'medium', 'high'] as const;
+    const same = (a: number, b: number) => Math.abs(a - b) < 1e-6;
+    for (const hullTier of tiers) {
+      // The hull's end section as built: half breadth against height.
+      const hull = createHullGeometry(hullTier).getAttribute('position') as BufferAttribute;
+      const end: [number, number][] = [];
+      for (let i = 0; i < hull.count; i++)
+        if (same(hull.getZ(i), STERN) && hull.getX(i) > 0) end.push([hull.getY(i), hull.getX(i)]);
+      end.sort((a, b) => a[0] - b[0]);
+      const halfAt = (y: number) => {
+        const i = Math.max(
+          1,
+          end.findIndex(([ey]) => ey >= y),
+        );
+        const [y0, x0] = end[i - 1]!;
+        const [y1, x1] = end[i]!;
+        return x0 + ((x1 - x0) * (y - y0)) / (y1 - y0);
+      };
+      for (const trimTier of tiers) {
+        const trim = createTrimGeometry(trimTier);
+        const pos = trim.getAttribute('position') as BufferAttribute;
+        const color = trim.getAttribute('color') as BufferAttribute;
+        let roots = 0;
+        const post = { fore: -Infinity, aft: Infinity };
+        const rudder = { fore: -Infinity, aft: Infinity, top: -Infinity };
+        for (let i = 0; i < pos.count; i++) {
+          const x = pos.getX(i);
+          const y = pos.getY(i);
+          const z = pos.getZ(i);
+          // The counter's sides start a hand inside the planking (its root is 0.2 forward of the end).
+          if (same(z, STERN + 0.2) && y > 0.3 && y < 3) {
+            expect(Math.abs(x)).toBeLessThan(halfAt(y) - 0.01);
+            roots++;
+          }
+          if (same(color.getX(i), 0x4a / 255) && same(color.getY(i), 0x2a / 255)) {
+            rudder.fore = Math.max(rudder.fore, z);
+            rudder.aft = Math.min(rudder.aft, z);
+            rudder.top = Math.max(rudder.top, y);
+          } else if (same(Math.abs(x), STERNPOST_HALF) && y < 0.6 && z < STERN + 0.5) {
+            post.fore = Math.max(post.fore, z);
+            post.aft = Math.min(post.aft, z);
+          }
+        }
+        expect(roots).toBeGreaterThan(0);
+        // The post stands in the hull's end, the rudder's leading edge inside the post: no water between.
+        expect(post.fore).toBeGreaterThan(STERN);
+        expect(post.aft).toBeLessThan(STERN);
+        expect(rudder.fore).toBeGreaterThan(post.aft);
+        // A blade, not a slab, and its head reaches the counter.
+        expect(rudder.fore - rudder.aft).toBeGreaterThan(0.7);
+        expect(rudder.top).toBeGreaterThan(0.6);
+        trim.dispose();
+      }
+    }
   });
 });

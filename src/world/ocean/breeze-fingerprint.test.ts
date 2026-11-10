@@ -10,11 +10,16 @@ import { WaveField, wavesForTier } from './waves';
  * model existed: the wave samples (heights and orbital velocities, every tier's wave set, with the
  * camera fade), the wind field, and a ship's simulated track (sailing, tacking, through a gusty
  * reach, fending off a pile and docking) over a fixed input. If one moves, Breeze isn't today's sea.
+ *
+ * The ship's hash was taken again when her stern was reshaped to close on the sternpost: her two
+ * aftmost collision capsules follow the new waterline (6 to 7 cm wider), which moves how she fends off
+ * the pile. With those two radii as they were, the track still matched b1db17d: the sea, the wind and
+ * her buoyancy did not move.
  */
 const EXPECTED = {
   waves: '9d932b956b77b886ee51cf3057f9e680e1bd1641f05835a53441bfec72a542c8',
   wind: 'e95da8c7be5adb75a434088ef42035dbb1ceafda27bf02b53f3729e33a66937e',
-  ship: 'a84c2e9f75ee097886d32bfaf063874f4155e715dc5358555c0fb2c974436ae3',
+  ship: '7ed6dcd1026559e1d68f8644c4c3e0a4bd0a19d086de1f9df3a3b515086c7830',
 };
 
 /**
