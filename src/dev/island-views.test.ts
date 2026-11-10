@@ -1,7 +1,14 @@
 import { describe, expect, it } from 'vitest';
 import { ISLAND_LIST } from '../islands/registry';
 import { footprintDistance } from '../world/islands/footprint';
-import { islandTour, islandViews, TOUR_INSIDE_SHOW, TOUR_LAP, type TourShot } from './island-views';
+import {
+  islandTour,
+  islandViews,
+  keepInsideShow,
+  TOUR_INSIDE_SHOW,
+  TOUR_LAP,
+  type TourShot,
+} from './island-views';
 
 describe("the island viewer's views", () => {
   const flat = () => 2;
@@ -90,6 +97,30 @@ describe("the island viewer's views", () => {
       expect(shot.x).toBeCloseTo(eye[0]!, 6);
       expect(shot.y).toBeCloseTo(eye[1]!, 6);
       expect(shot.z).toBeCloseTo(eye[2]!, 6);
+    }
+  });
+
+  it('keeps a camera inside the swap distance, where the island draws as itself', () => {
+    for (const island of ISLAND_LIST) {
+      const { center, footprint } = island;
+      const limit = island.ranges.show - TOUR_INSIDE_SHOW;
+      // Pulled back far past it on eight bearings: it comes in to the limit, along its own bearing.
+      for (let b = 0; b < 8; b++) {
+        const a = (b / 8) * Math.PI * 2;
+        const p = { x: center.x + Math.sin(a) * 4000, z: center.z + Math.cos(a) * 4000 };
+        expect(keepInsideShow(island, p)).toBe(true);
+        const off = footprintDistance(footprint, p.x, p.z);
+        expect(off).toBeLessThanOrEqual(limit + 1);
+        expect(off).toBeGreaterThan(limit - 40);
+        expect(Math.atan2(p.x - center.x, p.z - center.z)).toBeCloseTo(
+          Math.atan2(Math.sin(a), Math.cos(a)),
+          6,
+        );
+      }
+      // Already inside: left where it is.
+      const near = { x: center.x + 30, z: center.z - 20 };
+      expect(keepInsideShow(island, near)).toBe(false);
+      expect(near).toEqual({ x: center.x + 30, z: center.z - 20 });
     }
   });
 });

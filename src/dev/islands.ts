@@ -6,7 +6,7 @@ import type { IslandEntry } from '../islands/types';
 import { footprintDistance } from '../world/islands/footprint';
 import { createCovePage } from './cove-page';
 import { bindSkyPanel, compileAndStart, engineStats, seaOrbitControls, showSkyReadouts } from './harness';
-import { islandTour, islandViews, type IslandView } from './island-views';
+import { islandTour, islandViews, keepInsideShow, type IslandView } from './island-views';
 
 /**
  * Island viewer dev page: every island in the registry on a tab. Opening a tab flies the camera
@@ -194,7 +194,12 @@ engine.add({
       controls.target.set(shot.tx, shot.ty, shot.tz);
       camera.lookAt(controls.target);
       if (done) endFlight();
-    } else controls.update();
+    } else {
+      controls.update();
+      // Turning or pulling back past the island's swap distance would swap it for its far silhouette
+      // (or, from high up, for the bare sea): the camera stops there, as the tour does.
+      if (keepInsideShow(current, camera.position)) camera.lookAt(controls.target);
+    }
     if (++n % 20 !== 0) return;
 
     // An island you've left is freed once the camera is past its range (as the game's residency does),
