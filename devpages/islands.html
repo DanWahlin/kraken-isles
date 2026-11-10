@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kraken Isles · Island Viewer</title>
+    <link rel="icon" href="data:," />
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        background: #0a1720;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          sans-serif;
+      }
+      canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .panel {
+        position: fixed;
+        z-index: 5;
+        color: #f4fbff;
+        background: rgb(8 21 30 / 70%);
+        backdrop-filter: blur(14px);
+        font-size: 12px;
+      }
+      /* The islands, across the top. */
+      #tabs {
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 4px;
+        max-width: calc(100vw - 32px);
+        padding: 5px;
+        border-radius: 999px;
+        overflow-x: auto;
+      }
+      #tabs button {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        border: 0;
+        border-radius: 999px;
+        padding: 8px 14px;
+        color: #d8eff9;
+        background: transparent;
+        cursor: pointer;
+        font: inherit;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+      #tabs button:hover {
+        background: rgb(216 239 249 / 12%);
+      }
+      #tabs button[aria-selected='true'] {
+        color: #09202d;
+        background: #d8eff9;
+        font-weight: 600;
+      }
+      /* Where the island's world is: not in memory, streaming in, in memory, failed. */
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #6f8794;
+      }
+      [data-state='resident'] .dot {
+        background: #3fbf7f;
+      }
+      [data-state='loading'] .dot,
+      [data-state='unloading'] .dot {
+        background: #f0b34a;
+        animation: pulse 0.9s ease-in-out infinite alternate;
+      }
+      [data-state='failed'] .dot {
+        background: #e0604f;
+      }
+      @keyframes pulse {
+        to {
+          opacity: 0.35;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .dot {
+          animation: none !important;
+        }
+      }
+      #hud {
+        left: 16px;
+        top: 16px;
+        width: 260px;
+        padding: 12px 14px;
+        border-radius: 12px;
+      }
+      #hud strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 13px;
+      }
+      #hud h2 {
+        margin: 10px 0 3px;
+        color: #b9d8e5;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      #hud label.slider {
+        display: grid;
+        grid-template-columns: 58px 1fr 38px;
+        gap: 6px;
+        align-items: center;
+        margin: 4px 0;
+      }
+      #hud label.check {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        margin: 5px 0;
+      }
+      #hud button {
+        margin: 2px;
+        border: 0;
+        border-radius: 999px;
+        padding: 5px 9px;
+        color: #09202d;
+        background: #d8eff9;
+        cursor: pointer;
+        font-size: 11px;
+      }
+      #hud button[aria-pressed='true'] {
+        background: #ffd98a;
+      }
+      #stops button {
+        min-width: 26px;
+        padding: 5px 0;
+      }
+      button:focus-visible,
+      input:focus-visible {
+        outline: 2px solid #ffd98a;
+        outline-offset: 2px;
+      }
+      #state {
+        margin-top: 8px;
+        color: #f4fbff;
+      }
+      #stats {
+        margin-top: 4px;
+        color: #b9d8e5;
+        font:
+          11px/1.4 ui-monospace,
+          Menlo,
+          monospace;
+        white-space: pre;
+      }
+      /* The tabs drop below the panel when there's no room beside it. */
+      @media (max-width: 900px) {
+        #tabs {
+          top: auto;
+          bottom: 16px;
+        }
+      }
+      body.shot .panel {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="gl"></canvas>
+    <div id="tabs" class="panel" role="tablist" aria-label="Islands"></div>
+    <div id="hud" class="panel">
+      <strong>Island viewer</strong>
+      <h2>Views</h2>
+      <div id="views"></div>
+      <h2>Arrival flight</h2>
+      <div><button id="fly" type="button" aria-pressed="false">Fly the arrival</button></div>
+      <div id="stops" aria-label="Stops of the arrival flight"></div>
+      <h2>Light</h2>
+      <label class="check"
+        ><input id="ownLight" type="checkbox" checked /> Each island in its own light</label
+      >
+      <label class="slider"
+        >Time <input id="time" type="range" min="0" max="24" step="0.05" /><span id="timeV"></span
+      ></label>
+      <label class="slider"
+        >Sun az <input id="az" type="range" min="-180" max="180" step="1" /><span id="azV"></span
+      ></label>
+      <label class="slider"
+        >Wind <input id="wind" type="range" min="1" max="14" step="0.1" /><span id="windV"></span
+      ></label>
+      <div>
+        <button data-time="7">Dawn</button>
+        <button data-time="12">Noon</button>
+        <button data-time="16.5">Golden</button>
+        <button data-time="18.3">Sunset</button>
+        <button data-time="23">Night</button>
+      </div>
+      <h2>Memory</h2>
+      <label class="check"><input id="keep" type="checkbox" /> Keep islands you've left in memory</label>
+      <div id="state">Loading…</div>
+      <div id="stats"></div>
+    </div>
+    <script type="module" src="/src/dev/islands.ts"></script>
+  </body>
+</html>
