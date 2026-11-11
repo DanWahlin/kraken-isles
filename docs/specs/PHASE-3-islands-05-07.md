@@ -204,11 +204,11 @@ gates (§7) → **5** records. An island moves from `ISLANDS_IN_BUILD` to the re
 |---|---|---|
 | 1 | Sync chapters 05–07 into the course snapshot and lock | **done** |
 | 2 | The `dial` station kind (generic) with tests | **done** |
-| 3 | [ISLAND-05-sunspire-sands.md](ISLAND-05-sunspire-sands.md), then the build, stages 0–5 | **in the game; play-test, polish, battle 5 and gates left** (its §12.2) |
+| 3 | [ISLAND-05-sunspire-sands.md](ISLAND-05-sunspire-sands.md), then the build, stages 0–5 | **played end to end; battle 5 in; cast, flicker and wayfinding gates pass.** Left: lip-sync, frame, memory and perf gates, some art (its §12.3) |
 | 4 | ISLAND-06-inkwell-bluffs.md, then the build | not started |
 | 5 | ISLAND-07-tidewheel-caldera.md, then the build | not started |
 | 6 | The Long Light (§6), the certificate, the credits | not started |
-| 7 | PLAN §1 status, §4 rows, §10 roadmap, README, the skill's island table | not started |
+| 7 | PLAN §1 status, §4 rows, §10 roadmap, README, the skill's island table | README and the skill's table have Sunspire; PLAN not started |
 
 Voices follow ISLAND-04 G22 (one ElevenLabs voice per speaker, none shared on an island). Lines stay
 `"pending": true` until their audio exists, so an island is playable with subtitles before it is

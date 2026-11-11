@@ -386,7 +386,10 @@
     "cardBearing": "https://mcp.context7.com/mcp",
     "caravanRow": "awesome-copilot",
     "bellPlate": "/skills reload",
-    "crateStencil": "modern-web-guidance"
+    "crateStencil": "modern-web-guidance",
+    "beamFlag": "Connected",
+    "crateTag": "Installed",
+    "sealBanner": "Seal of Sunspire"
   },
   "scripts": {
     "lyra": [

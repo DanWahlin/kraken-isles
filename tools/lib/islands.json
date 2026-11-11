@@ -292,6 +292,30 @@
           [6733.2, 62, 3453.6],
           [6760.8, 74, 3480.4],
           "Sundial Terrace, Sun Stair head, the Sunspire"
+        ],
+        [
+          "ss-fly-n",
+          [6565, 110, 2760],
+          [6565, 30, 3380],
+          "the whole island from the air, north side (the tour's distance): far shore, far terrain, the tables"
+        ],
+        [
+          "ss-fly-e",
+          [7185, 110, 3380],
+          [6565, 30, 3380],
+          "the whole island from the air, east side (the tour's distance): far shore, far terrain, the tables"
+        ],
+        [
+          "ss-fly-s",
+          [6565, 110, 4000],
+          [6565, 30, 3380],
+          "the whole island from the air, south side (the tour's distance): far shore, far terrain, the tables"
+        ],
+        [
+          "ss-fly-w",
+          [5945, 110, 3380],
+          [6565, 30, 3380],
+          "the whole island from the air, west side (the tour's distance): far shore, far terrain, the tables"
         ]
       ]
     }

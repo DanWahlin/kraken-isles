@@ -1442,6 +1442,7 @@ export async function createSession(o: SessionOptions): Promise<GameSession> {
             y: n.y,
             z: n.z,
             h: n.heading,
+            clip: n.spec.clip,
             ground: world.groundAt(n.x, n.z),
           })),
       quest: (id: string, step: string) => setQuest(id, step),

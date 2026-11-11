@@ -329,7 +329,7 @@ async function loadSpecies(loader: GLTFLoader, species: PlantSpecies): Promise<V
                 : species === 'pineTree'
                   ? 0x3a5236
                   : species === 'saguaro'
-                    ? 0x6f8f5c
+                    ? 0x93ae6c
                     : 0x3d5a34,
           ),
           name: 'vegetation-procedural',

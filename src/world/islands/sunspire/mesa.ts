@@ -1,5 +1,5 @@
 import { CylinderGeometry, type BufferGeometry } from 'three/webgpu';
-import { box, rod, type Buckets } from '../../village/pieces';
+import { box, rod, rope, type Buckets } from '../../village/pieces';
 import { uvDeck } from '../../village/walk-decks';
 import {
   adobeHouse,
@@ -21,6 +21,9 @@ import {
 } from './build';
 import { CIRCUIT_SPOTS, MIRROR } from './circuit';
 import { COURT, HIGH_MESA, LOW_MESA, SIGNAL_HOUSE, SIGNAL_STAIR, SUN_STAIR, YARD, type Uvy } from './layout';
+
+/** The stations whose lamp stands on their left (the rest have it on their right). */
+const LAMP_ON_LEFT = new Set(['shutter', 'mirror', 'scale', 'bell']);
 
 /**
  * Builds the Low Mesa (spec §3, §5): the Signal Stair's steps and rails, the Signal House with the
@@ -50,12 +53,16 @@ export function* buildMesa(b: Buckets, out: SsOut, lite: boolean): Generator<voi
   // The stations' lamps: a post at each, its arm toward the place the station looks at.
   for (const [kind, spots] of Object.entries(CIRCUIT_SPOTS))
     for (const [place, s] of Object.entries(spots)) {
-      // A step to the station's left, clear of where the player stands and of what it looks at.
+      // Well to one side of the station and a little past it: clear of where the player stands and of
+      // what it looks at. The camera's behind you to your right, so a lamp on the right sits at the
+      // shot's edge (under the card); the stations in the court's middle keep theirs on the left,
+      // where the right would stand in the next station.
       const du = s.look.u - s.u;
       const dv = s.look.v - s.v;
       const len = Math.hypot(du, dv) || 1;
-      const lu = s.u + (du / len) * 1.2 - (dv / len) * 1.7;
-      const lv = s.v + (dv / len) * 1.2 + (du / len) * 1.7;
+      const side = LAMP_ON_LEFT.has(place) ? 2.5 : -2.5;
+      const lu = s.u + (du / len) * 1.9 - (dv / len) * side;
+      const lv = s.v + (dv / len) * 1.9 + (du / len) * side;
       lampPost(b, out, lu, lv, yawAlong(dv / len, -du / len), { lamp: `${kind}:${place}`, look: 'dark' });
     }
 }
@@ -118,7 +125,28 @@ function signalHouse(b: Buckets, out: SsOut): void {
       { lines: ['rollHead'], w: 2.0, h: 0.3, fill: '#3a2a20', colors: SIGN_CREAM },
       0.1,
     ),
+    // The tower's flag beside the roll: it unrolls once the beam has landed (the story's `beam`).
+    signAt(
+      roll.look.u - 1.75,
+      base + 2.1,
+      front,
+      0,
+      -1,
+      {
+        lines: ['beamFlag'],
+        w: 1.05,
+        h: 0.9,
+        look: 'cloth',
+        fill: '#2c5c9a',
+        colors: SIGN_CREAM,
+        show: 'beam',
+        hang: true,
+        pixels: 448,
+      },
+      0.14,
+    ),
   );
+  ubox(b, 'wood', roll.look.u - 1.75, base + 2.13, front - 0.12, 1.25, 0.05, 0.05, SS_PAINT.darkTimber);
 }
 
 /**
@@ -239,6 +267,38 @@ function court(b: Buckets, out: SsOut, lite: boolean): void {
     const t = at(key.look.u + o, 0, key.look.v);
     box(b, 'cloth', t.x, y + 1.07, t.z, 0.5, 0.02, 0.6, YAW_U, SS_PAINT.canvas, 0.32);
   }
+  // The key itself: a brass lever on a block at the desk's right end, and a stool tucked beside it.
+  ubox(b, 'metal', key.look.u + 0.82, y + 0.97, key.look.v + 0.12, 0.34, 0.07, 0.22, SS_PAINT.brass);
+  rod(
+    b,
+    'metal',
+    at(key.look.u + 0.7, y + 1.02, key.look.v + 0.12),
+    at(key.look.u + 1.0, y + 1.14, key.look.v + 0.12),
+    0.022,
+    6,
+    SS_PAINT.brass,
+  );
+  rod(
+    b,
+    'wood',
+    at(key.look.u + 1.0, y + 1.12, key.look.v + 0.12),
+    at(key.look.u + 1.0, y + 1.19, key.look.v + 0.12),
+    0.05,
+    8,
+    SS_PAINT.darkTimber,
+  );
+  const st = at(key.look.u - 1.7, 0, key.look.v + 0.5);
+  rod(b, 'wood', { x: st.x, y, z: st.z }, { x: st.x, y: y + 0.46, z: st.z }, 0.2, 8, SS_PAINT.timber, 0.17);
+  rod(
+    b,
+    'cloth',
+    { x: st.x, y: y + 0.46, z: st.z },
+    { x: st.x, y: y + 0.52, z: st.z },
+    0.2,
+    8,
+    SS_PAINT.madder,
+  );
+  out.circles.push({ x: st.x, z: st.z, r: 0.24, y0: y - 0.3, y1: y + 0.52, height: 0.52 });
   solid(out, key.look.u, key.look.v, 2.3, 0.9, y, y + 1.1, false);
   // The chart tent: a canopy on four poles, a table with the ship's own chart on it.
   const tn = CIRCUIT_SPOTS.signal.tent!;
@@ -290,6 +350,76 @@ export function mirrorHeadGeometry(): BufferGeometry {
   g.rotateZ(Math.PI / 2);
   return g;
 }
+
+/**
+ * The yard's scale: a balance on a stone plinth. A timber gallows over a planked deck, a brass beam
+ * hung from it across the view, a pan of brass weights on one end and a crate in a rope sling on the
+ * other (the crate being weighed in), a brass dial on the post.
+ */
+function scale(b: Buckets, out: SsOut, u: number, v: number, y: number): void {
+  ubox(b, 'stone', u, y + 0.1, v, 2.6, 0.26, 2.6, SS_PAINT.paleStone);
+  ubox(b, 'wood', u, y + 0.27, v, 2.2, 0.08, 2.2, SS_PAINT.timber);
+  // The gallows: a post behind the deck and an arm out over its middle, with a brace.
+  const post = at(u + 1.0, 0, v);
+  ubox(b, 'wood', u + 1.0, y + 1.6, v, 0.18, 2.7, 0.18, SS_PAINT.darkTimber);
+  ubox(b, 'wood', u + 0.4, y + 2.86, v, 1.5, 0.16, 0.16, SS_PAINT.darkTimber);
+  rod(b, 'wood', at(u + 0.92, y + 2.2, v), at(u + 0.3, y + 2.8, v), 0.05, 5, SS_PAINT.darkTimber);
+  // The beam hangs from the arm's end on a link, and tips a little to the crate.
+  const top = at(u - 0.2, y + 2.78, v);
+  const pivot = at(u - 0.2, y + 2.45, v);
+  rod(b, 'metal', top, pivot, 0.025, 5, SS_PAINT.iron);
+  const tip = 0.09;
+  const crateEnd = at(u - 0.2, y + 2.45 - tip, v - 0.85);
+  const panEnd = at(u - 0.2, y + 2.45 + tip, v + 0.85);
+  rod(b, 'metal', crateEnd, panEnd, 0.045, 7, SS_PAINT.brass);
+  rod(b, 'metal', at(u - 0.2, y + 2.38, v), at(u - 0.2, y + 2.56, v), 0.09, 8, SS_PAINT.brass, 0.05);
+  // The pan: three chains down to a brass dish with a stack of weights.
+  const pan = at(u - 0.2, y + 1.25, v + 0.85);
+  for (const [du, dv] of [
+    [0.34, 0],
+    [-0.17, 0.3],
+    [-0.17, -0.3],
+  ] as const)
+    rod(b, 'metal', panEnd, at(u - 0.2 + du, y + 1.27, v + 0.85 + dv), 0.012, 4, SS_PAINT.iron);
+  rod(b, 'metal', pan, { x: pan.x, y: pan.y + 0.05, z: pan.z }, 0.3, 12, SS_PAINT.brass, 0.42);
+  for (const [k, r] of [0.17, 0.14, 0.1].entries())
+    rod(
+      b,
+      'metal',
+      { x: pan.x, y: pan.y + 0.05 + k * 0.13, z: pan.z },
+      { x: pan.x, y: pan.y + 0.17 + k * 0.13, z: pan.z },
+      r,
+      9,
+      SS_PAINT.brass,
+      r * 0.88,
+    );
+  // The crate in its sling: four ropes from the beam's end to its corners, a hand's width off the deck.
+  const cu = u - 0.2;
+  const cv = v - 0.85;
+  const cy = y + 0.44;
+  ubox(b, 'wood', cu, cy + 0.36, cv, 0.72, 0.72, 0.72, 0xb08a5a);
+  ubox(b, 'wood', cu, cy + 0.73, cv, 0.78, 0.07, 0.78, SS_PAINT.timber);
+  for (const o of [-0.2, 0.2])
+    ubox(b, 'metal', cu - 0.365, cy + 0.36, cv + o, 0.012, 0.74, 0.05, SS_PAINT.iron);
+  for (const du of [-0.34, 0.34])
+    for (const dv of [-0.34, 0.34]) rope(b, crateEnd, at(cu + du, cy + 0.76, cv + dv), 0, 0.012);
+  // The dial on the post: a brass face toward the yard with a dark hand.
+  const dial = at(u + 0.9, y + 1.75, v);
+  rod(b, 'metal', dial, at(u + 0.84, y + 1.75, v), 0.26, 14, SS_PAINT.brass);
+  rod(b, 'metal', at(u + 0.84, y + 1.75, v), at(u + 0.82, y + 1.75, v), 0.21, 14, SS_PAINT.canvas);
+  ubox(b, 'metal', u + 0.81, y + 1.82, v + 0.04, 0.012, 0.2, 0.025, SS_PAINT.iron, 0, 0, 0.4);
+  out.circles.push({ x: post.x, z: post.z, r: 0.22, y0: y - 0.3, y1: y + 2.9, height: 2.9 });
+  solid(out, u - 0.2, v, 1.2, 2.3, y, y + 1.6, false);
+}
+
+/** The sealed crate on Samir's bench (frame): its middle, its top and its size (the world's lid sits on it). */
+export const BENCH_CRATE = {
+  u: CIRCUIT_SPOTS.crate.bench!.look.u - 0.4,
+  v: CIRCUIT_SPOTS.crate.bench!.look.v,
+  top: YARD.y + 0.03 + 1.44,
+  w: 0.9,
+  d: 0.7,
+} as const;
 
 /**
  * The Crate Yard: paving, the caravan row's arch with its board, the lading desk, the scale, the bell
@@ -350,31 +480,7 @@ function yard(b: Buckets, out: SsOut, lite: boolean): void {
   solid(out, la.look.u, la.look.v, 1.7, 0.8, y, y + 1.15, false);
   // The scale: a timber platform, an iron post and a brass beam with a weight.
   const sc = CIRCUIT_SPOTS.crate.scale!;
-  ubox(b, 'wood', sc.look.u, y + 0.08, sc.look.v, 2.2, 0.16, 2.2, SS_PAINT.timber);
-  const sp = at(sc.look.u + 1.3, 0, sc.look.v);
-  rod(b, 'metal', { x: sp.x, y, z: sp.z }, { x: sp.x, y: y + 2.4, z: sp.z }, 0.07, 6, SS_PAINT.iron);
-  const sb = at(sc.look.u + 0.3, 0, sc.look.v);
-  rod(
-    b,
-    'metal',
-    { x: sp.x, y: y + 2.3, z: sp.z },
-    { x: sb.x, y: y + 2.3, z: sb.z },
-    0.03,
-    5,
-    SS_PAINT.brass,
-  );
-  rod(b, 'metal', { x: sb.x, y: y + 2.3, z: sb.z }, { x: sb.x, y: y + 1.9, z: sb.z }, 0.01, 4, SS_PAINT.iron);
-  rod(
-    b,
-    'metal',
-    { x: sb.x, y: y + 1.7, z: sb.z },
-    { x: sb.x, y: y + 1.9, z: sb.z },
-    0.12,
-    8,
-    SS_PAINT.brass,
-    0.08,
-  );
-  out.circles.push({ x: sp.x, z: sp.z, r: 0.2, y0: y - 0.3, y1: y + 2.4, height: 2.4 });
+  scale(b, out, sc.look.u, sc.look.v, y);
   // The bell: a post with an arm, a brass bell and its plate (the pack's words).
   const be = CIRCUIT_SPOTS.crate.bell!;
   const bp = at(be.look.u, 0, be.look.v);
@@ -423,9 +529,35 @@ function yard(b: Buckets, out: SsOut, lite: boolean): void {
   // Samir's bench: a work bench against the north side with the sealed crate on it.
   const bn = CIRCUIT_SPOTS.crate.bench!;
   ubox(b, 'wood', bn.look.u, y + 0.45, bn.look.v, 2.6, 0.9, 0.9, SS_PAINT.timber);
-  ubox(b, 'wood', bn.look.u - 0.4, y + 1.2, bn.look.v, 0.9, 0.6, 0.7, 0x8a6a48);
+  // The crate's box (its lid is the world's: it comes off when the story opens it).
+  ubox(b, 'wood', bn.look.u - 0.4, y + 1.17, bn.look.v, 0.9, 0.54, 0.7, 0x8a6a48);
   for (const s of [-0.25, 0.25])
-    ubox(b, 'metal', bn.look.u - 0.4 + s, y + 1.2, bn.look.v - 0.355, 0.05, 0.62, 0.012, SS_PAINT.iron);
+    ubox(b, 'metal', bn.look.u - 0.4 + s, y + 1.17, bn.look.v - 0.355, 0.05, 0.56, 0.012, SS_PAINT.iron);
+  // Its tag on a rail over the bench: it unrolls once the crate's open (the story's `crate`).
+  ubox(b, 'wood', bn.look.u + 0.85, y + 2.33, bn.look.v + 0.3, 1.2, 0.05, 0.05, SS_PAINT.darkTimber);
+  for (const s of [-0.55, 0.55])
+    ubox(b, 'wood', bn.look.u + 0.85 + s, y + 1.63, bn.look.v + 0.3, 0.06, 1.45, 0.06, SS_PAINT.darkTimber);
+  out.signs.push(
+    signAt(
+      bn.look.u + 0.85,
+      y + 2.3,
+      bn.look.v + 0.3,
+      0,
+      -1,
+      {
+        lines: ['crateTag'],
+        w: 1.0,
+        h: 0.8,
+        look: 'cloth',
+        fill: '#b0492e',
+        colors: SIGN_CREAM,
+        show: 'crate',
+        hang: true,
+        pixels: 448,
+      },
+      0.05,
+    ),
+  );
   out.signs.push(
     signAt(
       bn.look.u - 0.4,

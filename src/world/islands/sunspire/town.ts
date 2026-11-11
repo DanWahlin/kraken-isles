@@ -84,7 +84,8 @@ export const SQUARE_PROPS = {
   fountain: { u: -90, v: 49 },
   benches: [
     { u: -97, v: 56, fu: 0, fv: -1 },
-    { u: -84, v: 44, fu: -1, fv: 0 },
+    // (South of the way out to the oasis: the square's east leg runs along v 43-45.)
+    { u: -84, v: 38.5, fu: -1, fv: 0 },
   ] as readonly { u: number; v: number; fu: number; fv: number }[],
 } as const;
 

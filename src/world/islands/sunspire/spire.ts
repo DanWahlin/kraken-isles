@@ -1,6 +1,19 @@
 import { cone, rod, type Buckets } from '../../village/pieces';
 import { uvDeck } from '../../village/walk-decks';
-import { at, door, ground, pennants, solid, SS_PAINT, ubox, uvSpan, windowPane, type SsOut } from './build';
+import {
+  at,
+  door,
+  ground,
+  pennants,
+  SIGN_CREAM,
+  signAt,
+  solid,
+  SS_PAINT,
+  ubox,
+  uvSpan,
+  windowPane,
+  type SsOut,
+} from './build';
 import { LIBRARY_ROCK, NEEDLE, SPIRE, TERRACE } from './layout';
 
 /**
@@ -183,6 +196,41 @@ function tower(b: Buckets, out: SsOut, lite: boolean): void {
   out.lamps.push({ key: 'spire:mirror', geo: face });
   // A door at its foot on the terrace's side, windows up the shaft, and pennants from the gallery.
   door(b, s.u - TIERS[1].side / 2 - 0.62, s.v, y + 0.05, -1, 0, 1.5, 2.6, SS_PAINT.cobalt);
+  // The Seal's banners either side of the door, on rails under the first band: they unroll when the
+  // Trial is passed (the story's `sealed`).
+  for (const [side, fill] of [
+    [-1, '#b0492e'],
+    [1, '#2c5c9a'],
+  ] as const) {
+    const bu = s.u - TIERS[1].side / 2;
+    const bv = s.v + side * 3.1;
+    ubox(b, 'wood', bu - 0.16, y + 9.3, bv, 0.08, 0.08, 1.9, SS_PAINT.darkTimber);
+    for (const e of [-0.85, 0.85])
+      ubox(b, 'metal', bu - 0.08, y + 9.3, bv + e, 0.16, 0.05, 0.05, SS_PAINT.iron);
+    out.signs.push(
+      signAt(
+        bu,
+        y + 9.25,
+        bv,
+        -1,
+        0,
+        {
+          lines: ['sealBanner'],
+          w: 1.6,
+          h: 5.6,
+          look: 'cloth',
+          fill,
+          colors: SIGN_CREAM,
+          show: 'sealed',
+          hang: true,
+          wrap: true,
+          size: 0.2,
+          pixels: 320,
+        },
+        0.2,
+      ),
+    );
+  }
   ubox(b, 'stone', s.u - TIERS[0].side / 2 - 0.8, y - 0.1, s.v, 1.6, 0.3, 3, SS_PAINT.paleStone);
   for (const [t, wy] of [
     [1, 8],

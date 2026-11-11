@@ -1,10 +1,13 @@
 import {
   BoxGeometry,
   BufferAttribute,
+  Color,
+  CylinderGeometry,
   Group,
   Mesh,
   PlaneGeometry,
   Vector3,
+  type BufferGeometry,
   type Camera,
   type Material,
 } from 'three/webgpu';
@@ -34,7 +37,7 @@ import { at, makeOut, type SsOut, type SsShow } from './build';
 import { BEAM_ENDS, MIRROR } from './circuit';
 import { LIBRARY_ROCK, NEEDLE, SIGNAL_HOUSE, SPIRE, SUNSPIRE as S, toWorld, WATER } from './layout';
 import { addSunspireMarket } from './market';
-import { buildMesa, mirrorHeadGeometry } from './mesa';
+import { BENCH_CRATE, buildMesa, mirrorHeadGeometry } from './mesa';
 import { buildSpire } from './spire';
 import { buildTown } from './town-build';
 import { sunspirePlantsSliced } from './vegetation';
@@ -86,7 +89,15 @@ export interface SunspireWorld {
   /** The island's light: the Seal has lit the Sunspire (it burns after dark without it: `lampBurning`). */
   setSealLit(on: boolean): void;
   sealLit(): boolean;
-  /** Shows or hides what the story shows (the standing beam, the opened crate, the Seal's dress). */
+  /**
+   * Holds the Sunspire's own flash off for `seconds` (the mirror's dial is open: the tower must stay
+   * dark until the beam lands on it, so its answer reads).
+   */
+  hush(seconds: number): void;
+  /**
+   * Shows or hides what the story shows: the tower's flag (the beam has landed), the opened crate (its
+   * lid off and its tag out), the Seal's banners.
+   */
   show(what: SsShow, on: boolean, unroll?: boolean): void;
   showing(what: SsShow): boolean;
   /** Turns the mirror, flashes the Sunspire, unrolls cloth (within `detail`, by the stream's `shown`). */
@@ -118,6 +129,9 @@ const MIRROR_TURN = 2.2;
 /** The beam's thickness (m) and its warm white (over 1: the lit material adds it to the scene). */
 const BEAM_WIDTH = 0.22;
 const BEAM_PAINT = [1.5, 1.36, 1.0] as const;
+/** The amber sheath round the court's beam: this many times the beam's thickness, and its colour. */
+const SHEATH = 2.4;
+const SHEATH_PAINT = [1.9, 0.62, 0.05] as const;
 /** The Sunspire's flash: its mirror kindles for `on` s of every `every` s. */
 const FLASH = { every: 3.4, on: 0.5 } as const;
 
@@ -200,6 +214,15 @@ export async function createSunspireWorldAsync(
   });
   const spireIndex = BEAM_ENDS.findIndex((e) => e.id === 'spire');
 
+  /** Paints a geometry one colour (the kit's materials read vertex colours). */
+  const paintGeo = (g: BufferGeometry, hex: number) => {
+    const c = new Color(hex);
+    const n = g.getAttribute('position').count;
+    const a = new Float32Array(n * 3);
+    for (let i = 0; i < n; i++) a.set([c.r, c.g, c.b], i * 3);
+    g.setAttribute('color', new BufferAttribute(a, 3));
+    return g;
+  };
   // The beams: the court's (it follows the mirror) and the two hops on from the Sunspire, all in the
   // lit-lamp material (additive: the same program as every island's lit lamp).
   const lit = createLighthouseLitMaterial('sunspire-beam');
@@ -213,6 +236,8 @@ export async function createSunspireWorldAsync(
     m.name = name;
     m.rotation.order = 'YZX';
     m.visible = false;
+    // Shown for the island's warm-up, so its first real showing builds no shader mid-play.
+    m.userData.prewarm = true;
     m.frustumCulled = false;
     m.castShadow = false;
     m.receiveShadow = false;
@@ -221,6 +246,22 @@ export async function createSunspireWorldAsync(
   };
   const beam = makeBeam('sunspire-beam');
   beam.position.copy(head.position);
+  // The court beam's sheath: a wider ribbon of strong amber in the same lit material, so the beam
+  // reads over sunlit sand (a warm white on pale sand is lost) as well as against the sky.
+  const sheathGeo = beamGeo.clone();
+  const amber = new Float32Array(sheathGeo.getAttribute('position').count * 3);
+  for (let i = 0; i < amber.length; i += 3) amber.set(SHEATH_PAINT, i);
+  sheathGeo.setAttribute('color', new BufferAttribute(amber, 3));
+  const sheath = new Mesh(sheathGeo, lit);
+  sheath.name = 'sunspire-beam-sheath';
+  sheath.rotation.order = 'YZX';
+  sheath.visible = false;
+  sheath.userData.prewarm = true;
+  sheath.frustumCulled = false;
+  sheath.castShadow = false;
+  sheath.receiveShadow = false;
+  sheath.position.copy(head.position);
+  group.add(sheath);
   /** Lays a beam from `a` to `b`. */
   const lay = (m: Mesh, a: { x: number; y: number; z: number }, b: { x: number; y: number; z: number }) => {
     const dx = b.x - a.x;
@@ -255,18 +296,55 @@ export async function createSunspireWorldAsync(
     m.position.set(p.x, p.y, p.z);
     m.scale.setScalar(size);
     m.visible = false;
+    m.userData.prewarm = true;
     m.castShadow = false;
     m.receiveShadow = false;
     group.add(m);
     return m;
   };
   const spireHalo = makeHalo('sunspire-spire-halo', at(SPIRE.u - 4.4, SPIRE.mirror, SPIRE.v), 16);
-  const endHalo = makeHalo('sunspire-beam-end', mp, 3.2);
+  const endHalo = makeHalo('sunspire-beam-end', mp, 5.5);
   const rockHalo = makeHalo('sunspire-library-halo', rockLamp, 9);
   const halos = [spireHalo, endHalo, rockHalo];
   await breathe();
 
+  // The sealed crate's lid on Samir's bench: on the crate until the story opens it, then stood on the
+  // bench leaning on the crate's side, with the guide's scroll standing in the crate.
+  const lidGeo = paintGeo(new BoxGeometry(BENCH_CRATE.w + 0.06, 0.07, BENCH_CRATE.d + 0.06), 0x9a7850);
+  const lid = new Mesh(lidGeo, o.kit.materials.wood);
+  lid.name = 'sunspire-crate-lid';
+  lid.castShadow = true;
+  const lidOn = at(BENCH_CRATE.u, BENCH_CRATE.top + 0.035, BENCH_CRATE.v);
+  // Off: on its end on the bench top, its upper end against the crate's east side.
+  const LEAN = 1.2;
+  const half = (BENCH_CRATE.w + 0.06) / 2;
+  const lidOff = at(
+    BENCH_CRATE.u + BENCH_CRATE.w / 2 + half * Math.cos(LEAN) + 0.05,
+    BENCH_CRATE.top - 0.54 + half * Math.sin(LEAN) + 0.03,
+    BENCH_CRATE.v,
+  );
+  const yawU = Math.atan2(-(at(1, 0, 0).z - at(0, 0, 0).z), at(1, 0, 0).x - at(0, 0, 0).x);
+  group.add(lid);
+  const scrollGeo = paintGeo(new CylinderGeometry(0.07, 0.07, 0.62, 10), 0xf0e6d0);
+  const scroll = new Mesh(scrollGeo, o.kit.materials.cloth);
+  scroll.name = 'sunspire-crate-scroll';
+  const sp = at(BENCH_CRATE.u + 0.12, BENCH_CRATE.top + 0.12, BENCH_CRATE.v + 0.05);
+  scroll.position.set(sp.x, sp.y, sp.z);
+  scroll.rotation.set(0.32, yawU, 0.22);
+  scroll.castShadow = true;
+  scroll.userData.prewarm = true;
+  group.add(scroll);
+  let crateOpen = false;
+  const placeCrate = () => {
+    const p = crateOpen ? lidOff : lidOn;
+    lid.position.set(p.x, p.y, p.z);
+    lid.rotation.set(0, yawU, crateOpen ? -LEAN : 0, 'YZX');
+    scroll.visible = crateOpen;
+  };
+  placeCrate();
+
   let aimIndex = 0;
+  let hushed = 0;
   let yaw = ends[0]!.yaw;
   let tilt = ends[0]!.tilt;
   let beamOn = false;
@@ -276,6 +354,7 @@ export async function createSunspireWorldAsync(
   const placeHead = () => {
     head.rotation.set(0, yaw, tilt);
     beam.rotation.set(0, yaw, tilt);
+    sheath.rotation.set(0, yaw, tilt);
   };
   placeHead();
   /** Whether the head has come round to its bearing. */
@@ -289,6 +368,8 @@ export async function createSunspireWorldAsync(
     const through = beamOn && aimIndex === spireIndex && settled();
     beam.visible = beamOn;
     beam.scale.set(e.len, 1, 1);
+    sheath.visible = beamOn;
+    sheath.scale.set(e.len, SHEATH, SHEATH);
     endHalo.visible = beamOn && settled() && !through;
     endHalo.position.set(e.x, e.y, e.z);
     hopA.visible = through;
@@ -338,8 +419,17 @@ export async function createSunspireWorldAsync(
       paintBeam();
     },
     sealLit: () => sealed,
-    show: (what, on, unroll = false) => lettering?.show(what, on, unroll),
-    showing: (what) => lettering?.showing(what) ?? false,
+    hush(seconds) {
+      hushed = Math.max(hushed, seconds);
+    },
+    show(what, on, unroll = false) {
+      lettering?.show(what, on, unroll);
+      if (what === 'crate') {
+        crateOpen = on;
+        placeCrate();
+      }
+    },
+    showing: (what) => (what === 'crate' ? crateOpen : (lettering?.showing(what) ?? false)),
     update(dt) {
       if (!settled()) {
         const e = ends[aimIndex]!;
@@ -354,8 +444,10 @@ export async function createSunspireWorldAsync(
       }
       // The Sunspire's mirror: a flash every few seconds; steady once the Seal has lit it or after dark.
       clock += Math.max(dt, 0);
+      hushed = Math.max(0, hushed - Math.max(dt, 0));
       const steady = lampBurning(sealed);
-      const on = steady || clock % FLASH.every < FLASH.on || (beamOn && aimIndex === spireIndex && settled());
+      const answering = beamOn && aimIndex === spireIndex && settled();
+      const on = steady || answering || (hushed <= 0 && clock % FLASH.every < FLASH.on);
       if (on !== flashing) {
         flashing = on;
         lamps.set('spire:mirror', on ? 'kindled' : 'banked');
@@ -381,6 +473,9 @@ export async function createSunspireWorldAsync(
       water.dispose();
       for (const m of meshes) m.geometry.dispose();
       headGeo.dispose();
+      lidGeo.dispose();
+      sheathGeo.dispose();
+      scrollGeo.dispose();
       beamGeo.dispose();
       haloGeo.dispose();
       lit.dispose();

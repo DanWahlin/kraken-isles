@@ -30,14 +30,15 @@ const tag = `${opt.webgl ? 'gl' : 'gpu'}-${tier}`;
 // --nokraken: battle 3 without its kraken (its census without it).
 const url = `${base}/?debug&tier=${tier}${opt.webgl ? '&webgl' : ''}${opt.nokraken ? '&nokraken' : ''}`;
 const BATTLE = Number(opt.battle ?? 1);
-if (![1, 3, 4].includes(BATTLE)) throw new Error('--battle=1, --battle=3 or --battle=4');
-/** Battles 3 and 4 sail from a later island (by the chart) to the next. */
+if (![1, 3, 4, 5].includes(BATTLE)) throw new Error('--battle=1, --battle=3, --battle=4 or --battle=5');
+/** Battles 3, 4 and 5 sail from a later island (by the chart) to the next. */
 const LATER = BATTLE >= 3;
 /** The passage's two islands. */
 const PASSAGE = {
   1: ['anchorage', 'meridian'],
   3: ['thousand-bough', 'keelhaven'],
   4: ['keelhaven', 'guildcrest'],
+  5: ['guildcrest', 'sunspire'],
 }[BATTLE];
 // Battles 3 and 4 have an island on each side of the passage in memory: the peak keeps room for the next.
 const PROGRAM_CAP = LATER ? 140 : 150;
@@ -45,14 +46,22 @@ const BATTLE_ID = {
   1: 'passage-anchorage-meridian',
   3: 'passage-thousand-bough-keelhaven',
   4: 'passage-keelhaven-guildcrest',
+  5: 'passage-guildcrest-sunspire',
 }[BATTLE];
 /** The quests done before the battle (each chapter's island and its Seal). */
 const CH0 = ['Q0.2', 'Q0.3', 'Q0.4', 'Q0.5', 'Q0.6', 'Q0.7', 'Q0.8', 'Q0.9', 'Q0.10', 'Q0.11'];
 const CH1 = ['Q1.1', 'Q1.2', 'Q1.3', 'Q1.4', 'Q1.5', 'Q1.6', 'Q1.7', 'Q1.8', 'Q1.A'];
 const CH2 = ['Q2.1', 'Q2.2', 'Q2.3', 'Q2.4', 'Q2.5', 'Q2.6', 'Q2.7', 'Q2.8', 'Q2.9', 'Q2.A'];
 const CH3 = ['Q3.1', 'Q3.2', 'Q3.3', 'Q3.4', 'Q3.5', 'Q3.6', 'Q3.7', 'Q3.8', 'Q3.9', 'Q3.10', 'Q3.A', 'Q3.B'];
+const CH4 = ['Q4.1', 'Q4.2', 'Q4.3', 'Q4.4', 'Q4.5', 'Q4.6', 'Q4.7', 'Q4.8', 'Q4.A'];
 const QUESTS =
-  BATTLE === 4 ? [...CH0, ...CH1, ...CH2, ...CH3] : BATTLE === 3 ? [...CH0, ...CH1, ...CH2] : CH0;
+  BATTLE === 5
+    ? [...CH0, ...CH1, ...CH2, ...CH3, ...CH4]
+    : BATTLE === 4
+      ? [...CH0, ...CH1, ...CH2, ...CH3]
+      : BATTLE === 3
+        ? [...CH0, ...CH1, ...CH2]
+        : CH0;
 
 const browser = await launchChrome({ autoplay: true });
 const report = { url, play: null, skip: null };
@@ -222,7 +231,7 @@ async function boardAndSailOut(page) {
     const { from, to } = await passageEnds(page);
     await sailToward(page, to.x, to.z, 30_000, started);
     if (!(await started())) {
-      const k = BATTLE === 4 ? 0.5 : 0.3;
+      const k = BATTLE >= 4 ? 0.5 : 0.3;
       const h = Math.atan2(to.x - from.x, to.z - from.z);
       await page.evaluate(
         ([x, z, h]) => window.__flow.debugSession.debug.sailTo(x, z, h),

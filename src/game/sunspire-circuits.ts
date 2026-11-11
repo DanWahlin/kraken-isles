@@ -1,6 +1,6 @@
 import { puzzleMaybe, puzzleOn, textOf } from '../course/puzzles';
 import { SUNSPIRE_ANCHORS } from '../world/islands/sunspire/anchors';
-import { BEAM_ENDS, CIRCUIT_SPOTS } from '../world/islands/sunspire/circuit';
+import { BEAM_ENDS, CIRCUIT_SPOTS, MIRROR } from '../world/islands/sunspire/circuit';
 import type { SunspireWorld } from '../world/islands/sunspire/index';
 import { SPIRE, TERRACE, toWorld } from '../world/islands/sunspire/layout';
 import type { LampLook } from '../world/village/lamp-set';
@@ -77,6 +77,35 @@ export function createSunspireCircuits(
     return { x: c.x, y: c.y, z: c.z, tx: c.target.x, ty: c.target.y, tz: c.target.z };
   };
 
+  /**
+   * The mirror's own shot: over the court from the beam's right, along it toward where it ends. It
+   * turns with the dial, so every landmark the beam can land on is seen, clear of the card on the
+   * screen's right.
+   */
+  const beamShot = (index: number): CameraShot => {
+    const e = BEAM_ENDS[Math.max(0, Math.min(BEAM_ENDS.length - 1, index))]!;
+    const du = e.u - MIRROR.u;
+    const dv = e.v - MIRROR.v;
+    const d = Math.hypot(du, dv) || 1;
+    const fu = du / d;
+    const fv = dv / d;
+    // Behind the mirror and well out to the beam's right (the frame's +v is to the left of +u, so its
+    // right is (fv, -fu)): from the side the beam crosses half the frame, from the mirror at the left
+    // to its end right of the middle. Lower when the beam climbs, so its foot and its end both show.
+    const eye = toWorld(MIRROR.u - fu * 16 + fv * 16, MIRROR.v - fv * 16 - fu * 16);
+    const rise = e.y - MIRROR.head;
+    const k = Math.min(1, 70 / d);
+    const t = toWorld(MIRROR.u + du * k, MIRROR.v + dv * k);
+    return {
+      x: eye.x,
+      y: MIRROR.head + 9 - Math.min(6, Math.max(0, rise / 8)),
+      z: eye.z,
+      tx: t.x,
+      ty: MIRROR.head + rise * k * 0.5,
+      tz: t.z,
+    };
+  };
+
   /** A camera behind you and to your right, looking at the station's piece. */
   function shotAt(u: number, v: number, y: number, look: { u: number; y: number; v: number }): CameraShot {
     const du = u - look.u;
@@ -96,10 +125,10 @@ export function createSunspireCircuits(
     const sp = CIRCUIT_SPOTS[kind][place]!;
     const p = toWorld(sp.u, sp.v);
     const y = host.world.groundAt(p.x, p.z, sp.y + 1.5);
-    // The shutter and the mirror are watched from the court's wide shot: what matters is the beam.
+    // The shutter and the mirror are watched down the beam (where it points first: the cliff).
     const shot =
       kind === 'signal' && (place === 'shutter' || place === 'mirror')
-        ? wide()
+        ? beamShot(0)
         : shotAt(sp.u, sp.v, y, sp.look);
     s = { x: p.x, y, z: p.z, lamp: sp.lamp, shot };
     spotCache.set(key, s);
@@ -119,6 +148,7 @@ export function createSunspireCircuits(
           if (at.place === 'shutter' && event === 'open') {
             world?.aim(0, true);
             world?.beam(true);
+            world?.hush(40);
             host.audio?.sfx.oneShot('lever', s, 0.8);
           }
           // The mirror's set on the Sunspire: the beam runs on to Library Rock.
@@ -139,6 +169,9 @@ export function createSunspireCircuits(
         if (kind !== 'signal' || at.place !== 'mirror') return;
         world?.aim(index, reduced());
         world?.beam(true);
+        // The Sunspire stays dark while you turn the mirror: its flash is the answer.
+        world?.hush(40);
+        host.frame(beamShot(index));
       },
       settle: () => settle(),
     };

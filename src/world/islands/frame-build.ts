@@ -95,6 +95,8 @@ export function makeIslandOut<S extends string = string>(): IslandOut<S> {
 /** The paints the shared pieces use when a call names none. */
 export interface FramePaint {
   iron: number;
+  /** Lamp posts in timber of this colour instead of ironwork (their arms and hangers stay iron). */
+  post?: number;
   stone: number;
   rubble: number;
   door: number;
@@ -378,7 +380,15 @@ export function frameBuilder<S extends string = string>(
   ): void {
     const g = ground(u, v);
     const p = at(u, g, v);
-    rod(b, 'metal', { x: p.x, y: g - 0.3, z: p.z }, { x: p.x, y: g + 3.4, z: p.z }, 0.07, 6, paint.iron);
+    rod(
+      b,
+      paint.post === undefined ? 'metal' : 'wood',
+      { x: p.x, y: g - 0.3, z: p.z },
+      { x: p.x, y: g + 3.4, z: p.z },
+      paint.post === undefined ? 0.07 : 0.08,
+      6,
+      paint.post ?? paint.iron,
+    );
     const arm = { x: p.x + Math.cos(armYaw) * 0.7, y: g + 3.3, z: p.z - Math.sin(armYaw) * 0.7 };
     const root = { x: p.x + Math.cos(armYaw) * 0.05, y: g + 3.3, z: p.z - Math.sin(armYaw) * 0.05 };
     rod(b, 'metal', root, arm, 0.03, 4, paint.iron);

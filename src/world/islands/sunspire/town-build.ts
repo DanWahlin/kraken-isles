@@ -1,3 +1,4 @@
+import { dressTown } from './dressing';
 import { box, rod, rope, type Buckets } from '../../village/pieces';
 import { lineDeck, uvDeck } from '../../village/walk-decks';
 import {
@@ -50,6 +51,8 @@ export function* buildTown(b: Buckets, out: SsOut, lite: boolean): Generator<voi
     pennants(b, [-136.5, 48.4, ground(-136, 48) + 4.4], [-120.5, 44, SQUARE.y + 4.2]);
     pennants(b, [-110, 67, SQUARE.y + 4.6], [-104, 32, SQUARE.y + 4.4], 0.9);
     washing(b);
+    dressTown(b, out);
+    yield;
   }
   // Lanterns on posts up the lane and at the square's corners.
   const o = toWorld(0, 0);
@@ -238,7 +241,8 @@ function caravanserai(b: Buckets, out: SsOut): void {
   // The arcade along the north wall: posts, a beam, a reed roof.
   const a = SERAI.arcade;
   const front = v1 - t - a.depth;
-  for (let u = u0 + t + 1.2; u <= u1 - t - 1.19; u += (u1 - u0 - 2 * t - 2.4) / 4) {
+  // Two posts at each end and a wide middle bay: nothing stands between the players and the court.
+  for (const u of [u0 + t + 1.2, C.u - 4.2, C.u + 4.2, u1 - t - 1.2]) {
     const p = at(u, y, front);
     ubox(b, 'stone', u, y + 0.14, front, 0.5, 0.3, 0.5, SS_PAINT.redStone);
     rod(

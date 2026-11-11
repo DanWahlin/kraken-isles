@@ -425,6 +425,24 @@
             "line": "b4.wingman.wave3"
           }
         ]
+      },
+      "passage-guildcrest-sunspire": {
+        "chapter": "04",
+        "won": "Three habits sank, and the tools list held. Sunspire Sands lies ahead, Captain.",
+        "waves": [
+          {
+            "quiz": "N4.1",
+            "raiders": ["Say It Again", "One-Off"]
+          },
+          {
+            "quiz": "N4.2",
+            "raiders": ["Paper Lock", "Just A Note"]
+          },
+          {
+            "quiz": "N4.3",
+            "raiders": ["Every Tool", "No Role"]
+          }
+        ]
       }
     }
   },

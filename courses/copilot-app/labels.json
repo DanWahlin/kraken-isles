@@ -253,6 +253,20 @@
         "hash": "81bc07b99b37"
       }
     },
+    "battle:passage-guildcrest-sunspire": {
+      "game": "battle",
+      "k": "The Passage to Sunspire Sands · Sea Battle",
+      "t": "Guide, Not Lock",
+      "b": "Between waves, the bosun asks about Guildcrest: when to save a skill, what a skill can’t enforce, and what limits an agent.",
+      "ch": "04",
+      "c": "Key takeaways",
+      "chLine": "Questions from Course Chapter 04",
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "key-takeaways",
+        "hash": "e262c06d63b6"
+      }
+    },
     "arrival:guildcrest": {
       "game": "arrival",
       "k": "Guildcrest · Landfall",

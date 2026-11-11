@@ -162,13 +162,32 @@ export function buildPine(seed = 9): BufferGeometry {
 export function buildSaguaro(seed = 11): BufferGeometry {
   const rand = seeded(seed);
   const parts: BufferGeometry[] = [];
-  const green = (k: number): [number, number, number] => [0.3 * k, 0.42 * k, 0.26 * k];
-  /** A ribbed column from `y0` to `y1` round (x, z), `r` thick, with a domed top. */
+  const green = (k: number): [number, number, number] => [0.5 * k, 0.68 * k, 0.38 * k];
+  /**
+   * A ribbed column from `y0` to `y1` round (x, z), `r` thick, with a domed top: its ribs are pleats
+   * in the round (crest out, furrow in) with the furrows a darker green.
+   */
   const column = (x: number, z: number, y0: number, y1: number, r: number) => {
-    const g = new SphereGeometry(1, 9, 6);
+    const g = new SphereGeometry(1, 14, 6);
+    const pos = g.getAttribute('position');
+    for (let i = 0; i < pos.count; i++) {
+      const rib = Math.cos(Math.atan2(pos.getZ(i), pos.getX(i)) * 7) * 0.5 + 0.5;
+      const pleat = 0.9 + rib * 0.1;
+      pos.setXYZ(i, pos.getX(i) * pleat, pos.getY(i), pos.getZ(i) * pleat);
+    }
     g.scale(r, (y1 - y0) / 2 + r * 0.4, r);
     g.translate(x, (y0 + y1) / 2, z);
-    parts.push(tagged(g, green(0.9 + rand() * 0.2), 0));
+    const k = 0.9 + rand() * 0.2;
+    const tone = tagged(g, green(k), 1);
+    // Painted before the geometry's un-indexed: the ribs' tone a vertex each.
+    const out = tone.getAttribute('color');
+    const at = tone.getAttribute('position');
+    for (let i = 0; i < out.count; i++) {
+      const rib = Math.cos(Math.atan2(at.getZ(i) - z, at.getX(i) - x) * 7) * 0.5 + 0.5;
+      const c = green(k * (0.74 + rib * 0.32));
+      out.setXYZ(i, c[0], c[1], c[2]);
+    }
+    return parts.push(tone);
   };
   const height = 5.4 + rand() * 1.2;
   column(0, 0, -0.2, height, 0.36);
@@ -183,7 +202,7 @@ export function buildSaguaro(seed = 11): BufferGeometry {
     elbow.scale(reach / 2 + 0.2, 0.26, 0.26);
     elbow.rotateY(-a);
     elbow.translate((Math.cos(a) * reach) / 2, from, (Math.sin(a) * reach) / 2);
-    parts.push(tagged(elbow, green(0.9), 0));
+    parts.push(tagged(elbow, green(0.9), 1));
     column(Math.cos(a) * reach, Math.sin(a) * reach, from - 0.1, top, 0.25);
   }
   const merged = mergeGeometries(parts, false)!;

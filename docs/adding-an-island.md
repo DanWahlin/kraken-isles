@@ -38,6 +38,15 @@ Build the world package from the shared builders, so a new island adds data and 
 | Mist | `src/world/mist/mist-cards.ts` | Valley mist and fall spray: one look for every island. |
 | Plants | `addIslandPlants(…, look)` (`src/world/island-parts.ts`), `PlantPatchLook` | The island's plants as a patch of the world's vegetation, with an optional look (bark simplify, impostor handoff, tints). |
 | Rocks | `rockAssets()` (`src/world/terrain/rock-assets.ts`, the rock pack) with `createRockMaterial`, instanced | Boulders and stream stones (Thousand-Bough's and Keelhaven's `rocks.ts`). |
+| Frame builders | `frameBuilder(FRAME, heightAt, paint)` (`src/world/islands/frame-build.ts`) | Everything a town is laid out with in the island's own frame (u, v): boxes, spans, solids, rails, low walls, flights of steps, lamp posts, hung lanterns, doors, windows, signs. `paint.post` gives timber lamp posts. Sunspire's `build.ts` shows its use. |
+| Lettering | `addIslandLettering(island, signs, list)` (`src/world/islands/lettering.ts`) | The island's painted signs from the pack's words. A sign with `show` stays hidden until the story shows it, and a `hang` one unrolls. |
+| Quests | `createIslandQuests(island, name)` (`src/game/island-quests.ts`) | The island's quest helpers (welcome, tracker, targets, scripts) from the pack, with no code of its own. |
+| Coast for the sea chart | `npx tsx tools/islands/trace-coast.ts <id>` | Prints the island's coast polygons and footprint from its height function, for `waypoints.ts`. |
+
+Give every story state something to see. Sunspire's first play-through found that its three `show`
+states had no sign or mesh at all. A sign with `show`, or a mesh the world moves in `show()`, makes
+the state real; mark any mesh that starts hidden `userData.prewarm = true`, or its first showing
+builds a shader in play.
 
 Keelhaven's world (`src/world/islands/keelhaven/index.ts`, `createKeelhavenWorldAsync`) is built but
 not yet in the game: it's in `ISLANDS_IN_BUILD` only, and the terrain dev page shows it
@@ -187,6 +196,15 @@ add the registry line.
   `src/islands/registry.test.ts` fails until it matches the registry.
 - The tools read that list: `budgettest`, `memorytest`, `perftest`, `cameratest`, `wayfindtest`,
   `flickertest`, `starfishtest` and `audiotest`.
+- Give the island four `flicker` views from the air at its tour's distance, one from each side
+  (Sunspire's `ss-fly-n/e/s/w`): the far shore and the far terrain are where a fly-by flickers.
+- Write its play-through (`tools/<id>test.mjs`, from `tools/sunspiretest.mjs`): every stop by real
+  input, a wrong pick first at each choice, the Trial failed once, every chest, bottle and starfish.
+- Run `node tools/casttest.mjs --island=<id>` and look at both contact sheets: every figure, and every
+  pair of feet or seat. A market keeper stands on the booth's boards (`--raised=<npc>:0.33`).
+- Run `node tools/wayfindtest.mjs --only=legs,reach --islands=<id> --reach=<id>` before anything else
+  ships. On Sunspire it found a bench across a leg, rails across a stair's head, a leg under water, a
+  chest behind a wall and a bottle on the sea floor.
 - Scripted routes (the audio route, the wayfinding story path) name the islands in voyage order. Add
   the new leg.
 

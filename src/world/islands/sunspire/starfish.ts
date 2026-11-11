@@ -9,7 +9,7 @@ import { toWorld } from './layout';
  */
 const SPOTS: readonly { id: string; name: string; u: number; v: number; y?: number }[] = [
   { id: 'sf.s.quay', name: "By the quay's water steps", u: -153, v: 9 },
-  { id: 'sf.s.falaj', name: 'Where the falaj meets the cove', u: -121, v: -8 },
+  { id: 'sf.s.falaj', name: 'Where the falaj meets the cove', u: -103, v: -16 },
   { id: 'sf.s.beach', name: "On the cove's crescent beach", u: -230, v: -128 },
   { id: 'sf.s.dunes', name: "In the first dune's hollow", u: -70, v: -120 },
   { id: 'sf.s.oasis', name: "On the oasis pool's bank", u: -4, v: -18 },

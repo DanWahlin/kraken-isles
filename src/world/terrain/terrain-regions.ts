@@ -59,6 +59,11 @@ export interface TerrainRegionMasks {
    * place of the grey-brown rock and cliff colours, wherever the bake has cliff or rock.
    */
   redRock?: AnyNode;
+  /**
+   * A desert's open floor (Sunspire): golden sand in broad drifts of tone with wind ripples, in place
+   * of pale beach sand, wherever the bake has neither grass, rock nor cliff.
+   */
+  desertSand?: AnyNode;
 }
 
 export type TerrainRegionKey = keyof TerrainRegionMasks;
@@ -81,6 +86,7 @@ const REGION_KEYS: readonly TerrainRegionKey[] = [
   'forestFloor',
   'paliWall',
   'redRock',
+  'desertSand',
 ];
 
 /**

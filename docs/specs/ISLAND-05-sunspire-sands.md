@@ -419,15 +419,70 @@ Looked at on WebGPU High: the terrain dev page, the island viewer (its tab, the 
 (travel to the quay; the arrival flight and its card play; the content reports 13 decks, 11
 stations and the mirror's state; no console error).
 
+### 12.3 Play-through, fixes, art pass, battle 5 and gates (2026-11-11)
+
+**Played and fixed.** `tools/sunspiretest.mjs` plays Chapter 05 by real input: the chart to the
+quay, the arrival, all six stops, both circuits (a wrong pick first at each choice; the mirror held
+on the cliff once), the Trial failed once and then passed, the Seal, Q5.A, chest C5.1 opened by E,
+the four bottles and the five starfish. The second run passed with no failure. What the first run
+found, and the fix:
+
+| Found | Fix |
+|---|---|
+| The story's dress (`beam`, `crate`, `sealed`) showed nothing: no sign carried a `show` | A flag by the roll of towers (`beamFlag`), a tag over Samir's bench (`crateTag`) and two banners on the Sunspire (`sealBanner`), each a hanging cloth that unrolls. The crate's lid is the world's own mesh: it comes off and leans on the crate, and the guide's scroll stands in it |
+| The first beam built two shaders in play (a hitch) | The beams, halos and scroll are `userData.prewarm` |
+| The mirror's dial was watched from a fixed shot: the beam left the frame | `beamShot(index)`: the camera stands over the court on the beam's right and turns with the dial, so the mirror, the beam across the frame and the landmark it lands on all show. The beam has an amber sheath (the same lit material), because a warm white beam is lost over sunlit sand |
+| The Sunspire flashed on its own timer while you turned the mirror | `world.hush(seconds)`: no timed flash while the shutter or the dial is open. The flash is the answer |
+| A post of the arcade stood between Lyra and the camera | The arcade has a wide middle bay |
+| A lamp post stood in the middle of each station's shot | Timber posts (`FramePaint.post`), and seven of the eleven moved to the station's right |
+
+**Wayfinding (`tools/wayfindtest.mjs --only=legs,reach`).** The first run failed on fourteen
+checks. A bench stood on the square's east leg (it blocked the way to the oasis). The Sun Stair's
+rails closed its head (node `sun.out`). The beach leg crossed the cove under water (seven dry nodes
+now). Chest C5.1 had no node in the court (`serai.east`). Bottle B5.1 lay 1.8 m under water (moved to
+the beach). The falaj's starfish moved to dry sand. The run now passes: every leg both ways, and the
+compass route to every NPC, chest, bottle, board and station.
+
+**Art pass.**
+
+- **Ground:** a new shared region, `desertSand`: golden sand in broad drifts of tone with wind
+  ripples square to the south-west wind. Each ripple set fades to its mean as its lines near a pixel
+  apart, so it does not shimmer from the air. The beach keeps the bake's pale sand. The lane, the
+  quay's apron and the town's ground are trodden earth (`town`).
+- **Plants:** the saguaro is a lighter green with pleated ribs. Ten palms stand at chosen spots in
+  the town.
+- **Town dressing (`dressing.ts`, off on Lite):** two clay jars and a string of peppers at every
+  house, a plastered bench with a carpet at every third, sacks, barrels, crates and a hand cart on the
+  quay, baskets at the stalls, two beehive ovens, two shade cloths over the lane.
+- **Stations:** the yard's scale is a balance (a gallows, a brass beam, a pan of weights, a crate in
+  a sling, a dial). The key desk has a brass key and a stool. Timber is sun-bleached, not dark.
+
+**Battle 5** ("Guide, Not Lock", `passage-guildcrest-sunspire`): the plan, the passage entry, the
+hook in `course.json`, N4.1–N4.3 in Chapter 04, its chart label and a unit test.
+`tools/battletest.mjs --battle=5` plays it to the win and docks at Sunspire. Its peak is 140 programs
+with both islands in memory, which is the cap: there is no room to spare. Its crew lines are not
+written (battle 4's are still pending too).
+
+**Gates.**
+
+| Gate | Result |
+|---|---|
+| Q1 cast contact (`tools/casttest.mjs --island=sunspire --raised=yusuf:0.33`) | Pass: 17 cast, each 0.00 m from its ground; the two players on their seat blocks; stills of every figure and every pair of feet looked at |
+| Q2 flicker (`flickertest --audit`) | Pass: the six `ss-*` views, and four views from the air at the tour's distance (`ss-fly-n/e/s/w`), 0.000–0.064 % in regions against 0.2 %. The audit found one real overlap (the shade cloth's seam), now gone |
+| Q3 wayfinding | Pass (above) |
+| Q5 frame budgets (`budgettest --islands=sunspire --tiers=lite,low,high`) | Pass: Lite 177k of 300k triangles and 77 of 100 draws; Low 270k of 500k and 101 of 150; High 807k of 2.0M and 183 of 300 |
+| Play-through | Four full runs; the last three pass with no failure |
+| Code | Format, lint, typecheck, 1,656 unit tests, the content check, drift, the build, size budgets, secrets |
+
 **Not done yet.**
 
 | # | What | Note |
 |---|---|---|
-| 1 | **A play-through by real input** (`tools/sunspiretest.mjs`: every stop, both circuits, the Trial, the Seal, a reload, away and back) | The quests and puzzles have not been played in the game yet. Expect fixes |
-| 2 | **Lip-sync cues** for the new lines | `npm run voice:lipsync` needs Rhubarb, which `npm run toolchain` downloads. Not installed on this machine; needs Dan's go-ahead |
-| 3 | **Art polish** | The sand is too pale and flat from the air; the town wants more dressing (palms in tubs, garden walls, market goods); boulders in the red-rock look; the fall's spray; the well's wheel should turn; the decoy crate's contraption |
-| 4 | **Battle 5** (§7) | N4.1–N4.3, the hook, the lines |
-| 5 | **PHASE-3 gates Q1–Q8** | The cast contact audit, `flickertest --audit` on the six `ss-*` views and the tour, `wayfindtest`, frame budgets, memory, perf, the program census (the terrain graph changed: `redRock`) |
-| 6 | **Records** | README, PLAN, `docs/voices.md`, ASSETS, ART_PROVENANCE, the skill's island table, `docs/adding-an-island.md` (the shared helpers above) |
+| 1 | **Lip-sync cues** for the new lines | `npm run voice:lipsync` needs Rhubarb, which `npm run toolchain` downloads. Not installed on this machine; needs Dan's go-ahead |
+| 2 | **Art, still open** | Boulders in the red-rock look; the fall's spray; the well's wheel should turn; the lading desk, the bell and the tent are still plain |
+| 3 | **Battle 5's crew lines** | Written and voiced with battle 4's |
+| 4 | **Gates still to run** | Memory, perf, and the program census with battle 5 at its cap |
+| 5 | **A reload and an away-and-back** in the play-through | The tool does not do either yet |
+| 6 | **Records** | PLAN, `docs/voices.md`, ASSETS, ART_PROVENANCE, the skill's island table, `docs/adding-an-island.md` (the shared helpers above) |
 | 7 | **Music** | `theme` is `music_bards_tale` until the Suno track arrives (PHASE-3 §8) |
 

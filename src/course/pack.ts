@@ -187,6 +187,9 @@ export const ISLAND_SIGNS: Readonly<Record<string, readonly string[]>> = {
     'caravanRow',
     'bellPlate',
     'crateStencil',
+    'beamFlag',
+    'crateTag',
+    'sealBanner',
   ],
 };
 

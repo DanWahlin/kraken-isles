@@ -447,6 +447,37 @@ export function createTerrainMaterial(options: TerrainMaterialOptions = {}): Mes
   base = mix(base, closeSand, sandFinger.mul(0.62));
   base = mix(base, rootGreen, grassFinger.mul(0.5));
   base = mix(base, color(0xe7d39b), bardCampSand.mul(0.86));
+  // A desert's open floor (`desertSand`): golden sand in broad drifts of tone (paler flats, redder
+  // where the tables' dust blows down), with wind ripples square to the south-west wind: long ones
+  // out to the middle distance, fine ones at your feet. Each ripple set fades to its mean as its
+  // lines near a pixel apart (no shimmer from the air), and neither shows on the miniature.
+  // (Only the bake's real grass keeps its green: a faint grass mask on the open floor is sand.)
+  const desertBare = R.desertSand.mul(float(1).sub(smoothstep(0.45, 0.8, grassMask)));
+  const desert = desertBare
+    .mul(float(1).sub(saturate(cliffMask.add(rockMask))))
+    .mul(float(1).sub(underwater));
+  const desertDrift = saturate(broadNoise.mul(0.6).add(noiseLow.a.mul(0.4)));
+  const desertTone = mix(
+    mix(color(0xc58647), color(0xe6ba74), desertDrift),
+    color(0xb1653a),
+    pow(saturate(noiseLow.b.sub(0.5).mul(2.4)), 1.6).mul(0.42),
+  );
+  const windPhase = P.x.mul(-0.799).add(P.z.mul(0.602));
+  const dunePhase = windPhase.mul(2.3).add(noiseLow.r.mul(5.0)).add(noiseMid.g.mul(1.6));
+  const finePhase = windPhase.mul(15).add(noiseMid.b.mul(4.0)).add(noiseFine.g.mul(1.2));
+  const duneShow = options.miniature
+    ? float(0)
+    : midDetail.mul(float(1).sub(smoothstep(0.5, 1.4, dunePhase.fwidth())));
+  const fineShow = options.miniature
+    ? float(0)
+    : closeDetail.mul(float(1).sub(smoothstep(0.5, 1.4, finePhase.fwidth())));
+  const duneRipple = mix(float(0.5), sin(dunePhase).mul(0.5).add(0.5), duneShow);
+  const fineRipple = mix(float(0.5), sin(finePhase).mul(0.5).add(0.5), fineShow);
+  const desertShade = float(1.06)
+    .sub(duneRipple.mul(0.1))
+    .sub(fineRipple.mul(0.13))
+    .mul(float(0.95).add(sandGrain.mul(0.1)));
+  base = mix(base, desertTone.mul(desertShade), desert.mul(0.95));
   base = mix(base, color(0xf4daa4), beachRipples.mul(0.13));
   base = mix(
     base,
@@ -798,6 +829,7 @@ export function createTerrainMaterial(options: TerrainMaterialOptions = {}): Mes
     .mul(float(1).sub(R.town))
     .mul(float(1).sub(R.limestoneRidge))
     .mul(float(1).sub(R.bluff))
+    .mul(float(1).sub(desertBare))
     .mul(float(1).sub(R.paths))
     .mul(float(1).sub(R.forestFloor))
     .mul(float(1).sub(underwater))

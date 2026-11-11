@@ -147,7 +147,16 @@ export interface GameSession {
     /** A puzzle's test hooks (state, solve, …) by id, e.g. 'P0.1'. */
     puzzle(id: string): Puzzle['debug'] | null;
     /** The streamed islands' cast where they stand (tests), empty until an island's up. */
-    cast(): { id: string; name: string; x: number; y: number; z: number; h: number; ground: number }[];
+    cast(): {
+      id: string;
+      name: string;
+      x: number;
+      y: number;
+      z: number;
+      h: number;
+      clip: string;
+      ground: number;
+    }[];
     /** The lift's two landings (tests), null until the town's up. */
     liftSpots(): {
       bottom: { x: number; z: number; h: number };

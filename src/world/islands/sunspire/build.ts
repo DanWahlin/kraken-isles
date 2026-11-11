@@ -28,10 +28,11 @@ export const SS_PAINT = {
   paleStone: 0xd9b48a,
   wetStone: 0x6e5444,
   paving: 0xf2dcb4,
-  timber: 0x6b4a30,
-  darkTimber: 0x3a2a20,
+  // Sun-bleached timber: the kit's planks are dark, and dark wood reads as black blocks on sand.
+  timber: 0xcaa472,
+  darkTimber: 0x8a6444,
   iron: 0x3c3b3a,
-  brass: 0xc89b3c,
+  brass: 0xe0b040,
   cobalt: 0x2c5c9a,
   saffron: 0xe0a030,
   madder: 0xb8443a,
@@ -46,6 +47,8 @@ export const CLOTHS = [SS_PAINT.saffron, SS_PAINT.madder, SS_PAINT.indigo, SS_PA
 
 const B = frameBuilder<SsShow>(FRAME, sunspireHeight, {
   iron: SS_PAINT.iron,
+  // Lamp posts are timber here: black iron reads as bars against the sand.
+  post: SS_PAINT.timber,
   stone: SS_PAINT.paleStone,
   rubble: SS_PAINT.redStone,
   door: SS_PAINT.cobalt,

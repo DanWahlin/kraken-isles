@@ -42,7 +42,8 @@ at('square', -100, 45);
 at('square.ne', -82, 60);
 at('square.east', -81, 43);
 path('quay.landing', 'lane.1', 'lane.2', 'lane.3', 'square.west', 'square', 'square.ne');
-path('lane.1', 'serai.gate', 'serai.court');
+at('serai.east', -156.5, 47.2);
+path('lane.1', 'serai.gate', 'serai.court', 'serai.east');
 path('serai.gate', 'lane.2');
 path('square', 'square.east');
 // The oasis: down from the square's east side to the camp, the well and the pool's bank.
@@ -83,17 +84,38 @@ at('sun.1', 144, 44, 31);
 at('sun.2', 146, 70, 40);
 at('sun.3', 146, 96, 50);
 at('sun.top', 152, 110, top);
+// A step on past the flight's rails before the turn to the terrace (their ends stand at the top).
+at('sun.out', 153, 112.3, top);
 at('sun.head', 165, 104, top);
 at('terrace', 173, 99.5, top);
-path('yard.ne', 'sun.foot', 'sun.1', 'sun.2', 'sun.3', 'sun.top', 'sun.head', 'terrace');
+path('yard.ne', 'sun.foot', 'sun.1', 'sun.2', 'sun.3', 'sun.top', 'sun.out', 'sun.head', 'terrace');
 // The cove's head (where the falaj comes in), its crescent beach, and the first dune's hollow.
 at('falaj.1', -70, -18);
-at('cove.head', -118, -10);
-at('beach.1', -160, -72);
+// (The beach's nodes keep to dry sand a metre and more over the sea: the cove's floor drops off fast.)
+at('cove.head', -99, -13);
+at('beach.1', -104, -30);
+at('beach.2', -111, -42);
+at('beach.3', -126, -58);
+at('beach.4', -142, -74);
+at('beach.5', -160, -91);
+at('beach.6', -184, -101);
+at('beach.7', -206, -109);
 at('beach', -228, -126);
 at('dune.1', -52, -52);
 at('dune.hollow', -70, -118);
-path('oasis.2', 'falaj.1', 'cove.head', 'beach.1', 'beach');
+path(
+  'oasis.2',
+  'falaj.1',
+  'cove.head',
+  'beach.1',
+  'beach.2',
+  'beach.3',
+  'beach.4',
+  'beach.5',
+  'beach.6',
+  'beach.7',
+  'beach',
+);
 path('camp', 'dune.1', 'dune.hollow');
 
 export const SUNSPIRE_WAYS: IslandWays = {

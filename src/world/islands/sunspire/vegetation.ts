@@ -12,7 +12,7 @@ import {
   sunspireTrodden,
   sunspireWater,
 } from './height';
-import { DUNES, SUNSPIRE as S, toFrame } from './layout';
+import { DUNES, SUNSPIRE as S, toFrame, toWorld } from './layout';
 import { inBuilt } from './town';
 
 /**
@@ -37,6 +37,23 @@ const SPREAD: Partial<Record<PlantSpecies, number>> = {
   palmYoung: 1.6,
   fern: 0.9,
 };
+
+/**
+ * The town's own palms (frame), planted where the eye wants one: at the quay's ends, either side of
+ * the caravanserai's gate, and at the square's corners. On every tier.
+ */
+const TOWN_PALMS: readonly (readonly [number, number, PlantSpecies, number])[] = [
+  [-146, 24.5, 'palmTall', 1.05],
+  [-238.5, 22, 'palmTall', 0.95],
+  [-240.5, 25.5, 'palmYoung', 1],
+  [-168.6, 39.2, 'palmTall', 0.9],
+  [-155.4, 39.4, 'palmTall', 1],
+  [-80.5, 67.5, 'palmTall', 1.1],
+  [-78, 33.5, 'palmCluster', 0.9],
+  [-123, 34.2, 'palmTall', 0.95],
+  [-121.5, 66.8, 'palmYoung', 1.1],
+  [-193.5, 40.5, 'palmYoung', 1],
+];
 
 /** The island's own functions as a height field (for the tests; the game passes its baked one). */
 export const SUNSPIRE_HEIGHT_FIELD: HeightField = {
@@ -139,6 +156,23 @@ export function* sunspirePlantsSliced(
       }
     }
     yield;
+  }
+  for (const [k, [u, v, species, scale]] of TOWN_PALMS.entries()) {
+    const p = toWorld(u, v);
+    const h = field.heightAt(p.x, p.z);
+    out.push({
+      species,
+      x: p.x,
+      y: lowestOnRing(heightAt, p.x, p.z, h, 0.6, 4) - 0.1,
+      z: p.z,
+      scale,
+      rotation: sinHash(k, 7, 1) * Math.PI * 2,
+      leanX: 0.05 + sinHash(k, 7, 2) * 0.04,
+      leanZ: -0.04 + (sinHash(k, 7, 3) - 0.5) * 0.03,
+      colorSeed: sinHash(k, 7, 4),
+      lodSeed: sinHash(k, 7, 5),
+      slopeDeg: 0,
+    });
   }
   return out;
 }

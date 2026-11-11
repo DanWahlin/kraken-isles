@@ -97,7 +97,7 @@ const CHESTS = [
 
 /** The message bottles (the chapter's troubleshooting, B5.1-B5.4). */
 const BOTTLES = [
-  { id: 'B5.1', u: -168, v: -76 },
+  { id: 'B5.1', u: -166, v: -91.5 },
   { id: 'B5.2', u: -12, v: -12.5 },
   { id: 'B5.3', u: -76.5, v: 67.5 },
   { id: 'B5.4', u: -60, v: -108 },
