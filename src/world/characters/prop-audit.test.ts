@@ -91,9 +91,9 @@ describe('held-prop audit', () => {
         checked++;
       }
     }
-    // Twenty-three NPCs carry something in a hand (Keelhaven's Hester, Dory, Cass and Stroud, and
-    // Guildcrest's Elspeth, among them).
-    expect(checked).toBe(23);
+    // Twenty-eight NPCs carry something in a hand (Keelhaven's Hester, Dory, Cass and Stroud,
+    // Guildcrest's Elspeth, and Sunspire's Zahra, Idris, Noor, Samir and Paloma, among them).
+    expect(checked).toBe(28);
   });
 
   it(

@@ -1,0 +1,92 @@
+{
+  "id": "wingman.ss.01",
+  "speaker": "Wingman",
+  "text": "This crew doesn't know everything, Captain. Here they learn to look things up, and to pack light!",
+  "words": [
+    {
+      "word": "This",
+      "start": 0,
+      "end": 0.384
+    },
+    {
+      "word": "crew",
+      "start": 0.384,
+      "end": 0.68
+    },
+    {
+      "word": "doesn't",
+      "start": 0.68,
+      "end": 0.992
+    },
+    {
+      "word": "know",
+      "start": 0.992,
+      "end": 1.164
+    },
+    {
+      "word": "everything",
+      "start": 1.164,
+      "end": 1.73
+    },
+    {
+      "word": "Captain",
+      "start": 1.73,
+      "end": 2.368
+    },
+    {
+      "word": "Here",
+      "start": 2.368,
+      "end": 2.928
+    },
+    {
+      "word": "they",
+      "start": 2.928,
+      "end": 3.147
+    },
+    {
+      "word": "learn",
+      "start": 3.147,
+      "end": 3.333
+    },
+    {
+      "word": "to",
+      "start": 3.333,
+      "end": 3.472
+    },
+    {
+      "word": "look",
+      "start": 3.472,
+      "end": 3.646
+    },
+    {
+      "word": "things",
+      "start": 3.646,
+      "end": 3.973
+    },
+    {
+      "word": "up",
+      "start": 3.973,
+      "end": 4.4
+    },
+    {
+      "word": "and",
+      "start": 4.4,
+      "end": 4.933
+    },
+    {
+      "word": "to",
+      "start": 4.933,
+      "end": 5.104
+    },
+    {
+      "word": "pack",
+      "start": 5.104,
+      "end": 5.427
+    },
+    {
+      "word": "light",
+      "start": 5.427,
+      "end": 5.677
+    }
+  ]
+}

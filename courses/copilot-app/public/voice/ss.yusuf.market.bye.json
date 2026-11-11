@@ -1,0 +1,87 @@
+{
+  "id": "ss.yusuf.market.bye",
+  "speaker": "Yusuf",
+  "text": "Off to the bazaar? Your starfish and your jobs go with you. Come back any time.",
+  "words": [
+    {
+      "word": "Off",
+      "start": 0.05,
+      "end": 0.325
+    },
+    {
+      "word": "to",
+      "start": 0.325,
+      "end": 0.45
+    },
+    {
+      "word": "the",
+      "start": 0.45,
+      "end": 0.575
+    },
+    {
+      "word": "bazaar",
+      "start": 0.575,
+      "end": 1.9125
+    },
+    {
+      "word": "Your",
+      "start": 1.9125,
+      "end": 2.15
+    },
+    {
+      "word": "starfish",
+      "start": 2.15,
+      "end": 2.55
+    },
+    {
+      "word": "and",
+      "start": 2.55,
+      "end": 2.6875
+    },
+    {
+      "word": "your",
+      "start": 2.6875,
+      "end": 2.85
+    },
+    {
+      "word": "jobs",
+      "start": 2.85,
+      "end": 3.2
+    },
+    {
+      "word": "go",
+      "start": 3.2,
+      "end": 3.3375
+    },
+    {
+      "word": "with",
+      "start": 3.3375,
+      "end": 3.5125
+    },
+    {
+      "word": "you",
+      "start": 3.5125,
+      "end": 4.65
+    },
+    {
+      "word": "Come",
+      "start": 4.65,
+      "end": 4.925
+    },
+    {
+      "word": "back",
+      "start": 4.925,
+      "end": 5.1625
+    },
+    {
+      "word": "any",
+      "start": 5.1625,
+      "end": 5.425
+    },
+    {
+      "word": "time",
+      "start": 5.425,
+      "end": 5.675
+    }
+  ]
+}

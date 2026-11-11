@@ -54,6 +54,11 @@ export interface TerrainRegionMasks {
    * gullies, overhangs and the sea-cliff band.
    */
   paliWall?: AnyNode;
+  /**
+   * Red desert sandstone (Sunspire's tables and sea cliffs): warm banded stone with pale beds, in
+   * place of the grey-brown rock and cliff colours, wherever the bake has cliff or rock.
+   */
+  redRock?: AnyNode;
 }
 
 export type TerrainRegionKey = keyof TerrainRegionMasks;
@@ -75,6 +80,7 @@ const REGION_KEYS: readonly TerrainRegionKey[] = [
   'basalt',
   'forestFloor',
   'paliWall',
+  'redRock',
 ];
 
 /**

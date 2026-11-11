@@ -1,0 +1,117 @@
+{
+  "id": "ss.samir.bench",
+  "speaker": "Samir",
+  "text": "Check its work against the code. If it offers text-wrap balance, it must say what happens where a browser doesn't support it.",
+  "words": [
+    {
+      "word": "Check",
+      "start": 0.0515409,
+      "end": 0.2835
+    },
+    {
+      "word": "its",
+      "start": 0.2835,
+      "end": 0.451041
+    },
+    {
+      "word": "work",
+      "start": 0.451041,
+      "end": 0.670083
+    },
+    {
+      "word": "against",
+      "start": 0.670083,
+      "end": 1.018041
+    },
+    {
+      "word": "the",
+      "start": 1.018041,
+      "end": 1.159791
+    },
+    {
+      "word": "code",
+      "start": 1.159791,
+      "end": 2.371125
+    },
+    {
+      "word": "If",
+      "start": 2.371125,
+      "end": 2.5
+    },
+    {
+      "word": "it",
+      "start": 2.5,
+      "end": 2.667541
+    },
+    {
+      "word": "offers",
+      "start": 2.667541,
+      "end": 3.028333
+    },
+    {
+      "word": "text-wrap",
+      "start": 3.028333,
+      "end": 3.518041
+    },
+    {
+      "word": "balance",
+      "start": 3.518041,
+      "end": 4.085041
+    },
+    {
+      "word": "it",
+      "start": 4.085041,
+      "end": 4.239708
+    },
+    {
+      "word": "must",
+      "start": 4.239708,
+      "end": 4.368541
+    },
+    {
+      "word": "say",
+      "start": 4.368541,
+      "end": 4.6005
+    },
+    {
+      "word": "what",
+      "start": 4.6005,
+      "end": 4.780916
+    },
+    {
+      "word": "happens",
+      "start": 4.780916,
+      "end": 5.154625
+    },
+    {
+      "word": "where",
+      "start": 5.154625,
+      "end": 5.25775
+    },
+    {
+      "word": "a",
+      "start": 5.25775,
+      "end": 5.373708
+    },
+    {
+      "word": "browser",
+      "start": 5.373708,
+      "end": 5.721666
+    },
+    {
+      "word": "doesn't",
+      "start": 5.721666,
+      "end": 5.979375
+    },
+    {
+      "word": "support",
+      "start": 5.979375,
+      "end": 6.353083
+    },
+    {
+      "word": "it",
+      "start": 6.353083,
+      "end": 6.603083
+    }
+  ]
+}

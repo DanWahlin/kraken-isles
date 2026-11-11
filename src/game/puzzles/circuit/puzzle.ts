@@ -7,6 +7,8 @@ import type { SeaChoiceOption } from '../../../ui/puzzles/SeaChoice';
 import type { HintTier, Puzzle, PuzzleHost } from '../types';
 import {
   activeLap,
+  dialStart,
+  dialTurn,
   gateDark,
   LapRun,
   petitionReady,
@@ -46,6 +48,11 @@ export interface CircuitStage {
    * `lap` is the lap's index; `place` and `kind` are the game's.
    */
   station(at: StationAt, event: 'open' | 'pass' | 'fail' | 'done', seconds?: number): void;
+  /**
+   * A `dial` station's control now reads position `index` of `count` (the player turned it, or the
+   * station opened): the world turns what the control turns. A stage with no dials leaves it out.
+   */
+  dial?(at: StationAt, index: number, count: number): void;
   /** Lays the world out as the quests say (where the hulls are, which lamps are lit). */
   settle(): void;
 }
@@ -78,6 +85,9 @@ const SKIP = '·skip';
 const HOIST = '·hoist';
 const SEAL = '·seal';
 const ACT = '·act';
+const TURN_BACK = '·turn-back';
+const TURN_ON = '·turn-on';
+const SET = '·set';
 
 export function createCircuit(host: CircuitHost, name: string): Puzzle {
   const file = puzzleContent<CircuitFile>(name);
@@ -241,6 +251,8 @@ export function createCircuit(host: CircuitHost, name: string): Puzzle {
         return tiles(s);
       case 'gate':
         return gate(s);
+      case 'dial':
+        return dial(s);
       default:
         return choose(s);
     }
@@ -472,6 +484,68 @@ export function createCircuit(host: CircuitHost, name: string): Puzzle {
     await wait(1300);
     save();
     return true;
+  }
+
+  /**
+   * A control the player turns a position at a time (the world turns with it), then sets. A wrong
+   * setting says why and leaves the control in the player's hands; the right one lights the lamp.
+   */
+  async function dial(s: CircuitStation): Promise<boolean> {
+    const r = run!;
+    const positions = s.positions ?? [];
+    const count = positions.length;
+    let index = dialStart(s);
+    const tried = new Set<number>();
+    host.stage.dial?.(where(s), index, count);
+    for (;;) {
+      const pick = await host.ask({
+        ...head(s),
+        prompt: s.prompt ?? s.text ?? '',
+        detail: [`${tried.has(index) ? '✗ ' : ''}${positions[index]?.text ?? ''}`],
+        options: [
+          { id: TURN_BACK, label: T('turnBack') },
+          { id: TURN_ON, label: T('turnOn') },
+          { id: SET, label: s.action ?? T('set') },
+          leave(),
+        ],
+        ordered: true,
+      });
+      if (!pick || pick === LEAVE) return leaveStation(s);
+      if (pick === TURN_BACK || pick === TURN_ON) {
+        index = dialTurn(index, pick === TURN_ON ? 1 : -1, count);
+        host.sfx('tap', host.player);
+        host.stage.dial?.(where(s), index, count);
+        continue;
+      }
+      if (pick !== SET) continue;
+      const res = r.set(index);
+      const o = res.position;
+      if (!o) continue;
+      if (res.right) {
+        host.sfx('lamp', host.player);
+        host.card.message(o.result ?? T('lampReady'), 'good');
+        if (o.line) {
+          host.card.busy(true);
+          await host.say([o.line]);
+          host.card.busy(false);
+        } else await wait(1300);
+        lampOf(s, 'ready');
+        host.stage.station(where(s), 'pass');
+        host.image(null);
+        save();
+        return true;
+      }
+      tried.add(index);
+      host.sfx('wrong', host.player);
+      lampOf(s, 'notReady');
+      host.stage.station(where(s), 'fail');
+      host.card.message(o.reason ?? T('lampNotReady'), 'bad');
+      if (o.line) {
+        host.card.busy(true);
+        await host.say([o.line]);
+        host.card.busy(false);
+      } else await wait(1600);
+    }
   }
 
   /** You stepped away: the station starts again next time (§5.4), its lamp as it was. */

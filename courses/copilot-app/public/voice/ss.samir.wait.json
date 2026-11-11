@@ -1,0 +1,42 @@
+{
+  "id": "ss.samir.wait",
+  "speaker": "Samir",
+  "text": "See Noor in the Mirror Court first, Captain.",
+  "words": [
+    {
+      "word": "See",
+      "start": 0.0515409,
+      "end": 0.322166
+    },
+    {
+      "word": "Noor",
+      "start": 0.322166,
+      "end": 0.502583
+    },
+    {
+      "word": "in",
+      "start": 0.502583,
+      "end": 0.618541
+    },
+    {
+      "word": "the",
+      "start": 0.618541,
+      "end": 0.721666
+    },
+    {
+      "word": "Mirror Court",
+      "start": 0.721666,
+      "end": 1.237125
+    },
+    {
+      "word": "first",
+      "start": 1.237125,
+      "end": 1.855666
+    },
+    {
+      "word": "Captain",
+      "start": 1.855666,
+      "end": 2.1056660000000003
+    }
+  ]
+}

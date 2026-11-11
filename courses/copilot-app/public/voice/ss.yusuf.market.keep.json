@@ -1,0 +1,102 @@
+{
+  "id": "ss.yusuf.market.keep",
+  "speaker": "Yusuf",
+  "text": "Right-sized. A quick look's fine on the model you've got, at its default effort. Bigger ones just cost more.",
+  "words": [
+    {
+      "word": "Right-sized",
+      "start": 0.05,
+      "end": 1.6625
+    },
+    {
+      "word": "A",
+      "start": 1.6625,
+      "end": 1.8625
+    },
+    {
+      "word": "quick",
+      "start": 1.8625,
+      "end": 2.0875
+    },
+    {
+      "word": "look's",
+      "start": 2.0875,
+      "end": 2.3375
+    },
+    {
+      "word": "fine",
+      "start": 2.3375,
+      "end": 2.5625
+    },
+    {
+      "word": "on",
+      "start": 2.5625,
+      "end": 2.7125
+    },
+    {
+      "word": "the",
+      "start": 2.7125,
+      "end": 2.8
+    },
+    {
+      "word": "model",
+      "start": 2.8,
+      "end": 3.125
+    },
+    {
+      "word": "you've",
+      "start": 3.125,
+      "end": 3.3625
+    },
+    {
+      "word": "got",
+      "start": 3.3625,
+      "end": 3.825
+    },
+    {
+      "word": "at",
+      "start": 3.825,
+      "end": 3.9875
+    },
+    {
+      "word": "its",
+      "start": 3.9875,
+      "end": 4.2125
+    },
+    {
+      "word": "default",
+      "start": 4.2125,
+      "end": 4.6
+    },
+    {
+      "word": "effort",
+      "start": 4.6,
+      "end": 5.9875
+    },
+    {
+      "word": "Bigger",
+      "start": 5.9875,
+      "end": 6.3875
+    },
+    {
+      "word": "ones",
+      "start": 6.3875,
+      "end": 6.7
+    },
+    {
+      "word": "just",
+      "start": 6.7,
+      "end": 6.9875
+    },
+    {
+      "word": "cost",
+      "start": 6.9875,
+      "end": 7.2625
+    },
+    {
+      "word": "more",
+      "start": 7.2625,
+      "end": 7.5125
+    }
+  ]
+}

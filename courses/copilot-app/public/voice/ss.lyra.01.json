@@ -1,0 +1,87 @@
+{
+  "id": "ss.lyra.01",
+  "speaker": "Lyra",
+  "text": "Captain! A song chart tells the players what to play. It doesn't plug in a microphone.",
+  "words": [
+    {
+      "word": "Captain",
+      "start": 0,
+      "end": 1.16
+    },
+    {
+      "word": "A",
+      "start": 1.16,
+      "end": 1.824
+    },
+    {
+      "word": "song",
+      "start": 1.824,
+      "end": 2.133
+    },
+    {
+      "word": "chart",
+      "start": 2.133,
+      "end": 2.453
+    },
+    {
+      "word": "tells",
+      "start": 2.453,
+      "end": 2.74
+    },
+    {
+      "word": "the",
+      "start": 2.74,
+      "end": 2.84
+    },
+    {
+      "word": "players",
+      "start": 2.84,
+      "end": 3.168
+    },
+    {
+      "word": "what",
+      "start": 3.168,
+      "end": 3.413
+    },
+    {
+      "word": "to",
+      "start": 3.413,
+      "end": 3.6
+    },
+    {
+      "word": "play",
+      "start": 3.6,
+      "end": 4.293
+    },
+    {
+      "word": "It",
+      "start": 4.293,
+      "end": 4.587
+    },
+    {
+      "word": "doesn't",
+      "start": 4.587,
+      "end": 4.848
+    },
+    {
+      "word": "plug",
+      "start": 4.848,
+      "end": 5.067
+    },
+    {
+      "word": "in",
+      "start": 5.067,
+      "end": 5.16
+    },
+    {
+      "word": "a",
+      "start": 5.16,
+      "end": 5.258
+    },
+    {
+      "word": "microphone",
+      "start": 5.258,
+      "end": 5.508
+    }
+  ]
+}

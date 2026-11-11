@@ -227,6 +227,73 @@
         ["gc-yard", [6053.9, 52, 221.7], [6081.2, 42.5, 231.2], "guildhall yard, stations, hall"],
         ["gc-tower", [6033.6, 48, 254.5], [6032.4, 41, 232.9], "tower terrace, stair, bell tower"]
       ]
+    },
+    {
+      "id": "sunspire",
+      "flag": "sunspire",
+      "name": "Sunspire Sands",
+      "home": false,
+      "terrain": "sunspire-terrain",
+      "silhouette": "sunspire-silhouette",
+      "budget": {
+        "box": [6310.7, 3090.1, 6829.2, 3649.9],
+        "named": [
+          ["quay", "quay"],
+          ["square", 6544.8, 3270.0],
+          ["oasis", 6540.2, 3373.7],
+          ["court", 6663.5, 3411.0, 28],
+          ["yard", 6653.2, 3463.8, 28],
+          ["spire", 6749.2, 3461.6, 56]
+        ]
+      },
+      "decks": [
+        [6463.4, 3218.6, 2.2],
+        [6474.7, 3235.2, 2.2],
+        [6663.5, 3411.0, 28],
+        [6653.2, 3463.8, 28],
+        [6749.2, 3461.6, 56]
+      ],
+      "perf": {
+        "sunspire": {
+          "quay": true
+        },
+        "ss-court": {
+          "at": [6661.0, 3397.8, 0.6]
+        }
+      },
+      "flicker": [
+        [
+          "ss-quay",
+          [6442.6, 10, 3194.3],
+          [6463.4, 2.2, 3218.6],
+          "quay, bollards, Yusuf's booth, water steps"
+        ],
+        [
+          "ss-bazaar",
+          [6517.9, 17, 3257.7],
+          [6544.8, 8.6, 3270.0],
+          "bazaar square, stalls, awnings, course board"
+        ],
+        [
+          "ss-oasis",
+          [6541.7, 15, 3342.5],
+          [6549.0, 10, 3402.0],
+          "oasis pool, falaj, palms, the Weeping Wall"
+        ],
+        [
+          "ss-court",
+          [6658.6, 36, 3384.6],
+          [6670.7, 29, 3420.6],
+          "Mirror Court, stations, mirror stands, chart tent"
+        ],
+        ["ss-yard", [6652.3, 36, 3439.4], [6654.0, 29, 3468.2], "Crate Yard, arch, crates, stations"],
+        [
+          "ss-spire",
+          [6733.2, 62, 3453.6],
+          [6760.8, 74, 3480.4],
+          "Sundial Terrace, Sun Stair head, the Sunspire"
+        ]
+      ]
     }
   ]
 }

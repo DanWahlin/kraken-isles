@@ -1,0 +1,102 @@
+{
+  "id": "ss.noor.04",
+  "speaker": "Noor",
+  "text": "You set these up in Customize, with the type filter on MCP, not Extensions. And one connection per service.",
+  "words": [
+    {
+      "word": "You",
+      "start": 0.052083,
+      "end": 0.221375
+    },
+    {
+      "word": "set",
+      "start": 0.221375,
+      "end": 0.46875
+    },
+    {
+      "word": "these",
+      "start": 0.46875,
+      "end": 0.677083
+    },
+    {
+      "word": "up",
+      "start": 0.677083,
+      "end": 0.872416
+    },
+    {
+      "word": "in",
+      "start": 0.872416,
+      "end": 1.002625
+    },
+    {
+      "word": "Customize",
+      "start": 1.002625,
+      "end": 1.966166
+    },
+    {
+      "word": "with",
+      "start": 1.966166,
+      "end": 2.109375
+    },
+    {
+      "word": "the",
+      "start": 2.109375,
+      "end": 2.226583
+    },
+    {
+      "word": "type",
+      "start": 2.226583,
+      "end": 2.565125
+    },
+    {
+      "word": "filter",
+      "start": 2.565125,
+      "end": 2.994791
+    },
+    {
+      "word": "on",
+      "start": 2.994791,
+      "end": 3.203125
+    },
+    {
+      "word": "MCP",
+      "start": 3.203125,
+      "end": 4.114583
+    },
+    {
+      "word": "not",
+      "start": 4.114583,
+      "end": 4.453125
+    },
+    {
+      "word": "Extensions",
+      "start": 4.453125,
+      "end": 6.302083
+    },
+    {
+      "word": "And",
+      "start": 6.302083,
+      "end": 6.497416
+    },
+    {
+      "word": "one",
+      "start": 6.497416,
+      "end": 6.809916
+    },
+    {
+      "word": "connection",
+      "start": 6.809916,
+      "end": 7.434916
+    },
+    {
+      "word": "per",
+      "start": 7.434916,
+      "end": 7.565125
+    },
+    {
+      "word": "service",
+      "start": 7.565125,
+      "end": 7.815125
+    }
+  ]
+}

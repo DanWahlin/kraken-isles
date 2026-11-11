@@ -1,0 +1,147 @@
+{
+  "id": "ss.noor.01",
+  "speaker": "Noor",
+  "text": "Signal Master Noor, Captain. A browser extension can connect your browser to a service. An MCP server gives the app a connection like that, to tools and data.",
+  "words": [
+    {
+      "word": "Signal",
+      "start": 0.052083,
+      "end": 0.481791
+    },
+    {
+      "word": "Master",
+      "start": 0.481791,
+      "end": 0.950541
+    },
+    {
+      "word": "Noor",
+      "start": 0.950541,
+      "end": 1.458333
+    },
+    {
+      "word": "Captain",
+      "start": 1.458333,
+      "end": 3.033875
+    },
+    {
+      "word": "A",
+      "start": 3.033875,
+      "end": 3.098958
+    },
+    {
+      "word": "browser",
+      "start": 3.098958,
+      "end": 3.554708
+    },
+    {
+      "word": "extension",
+      "start": 3.554708,
+      "end": 4.335958
+    },
+    {
+      "word": "can",
+      "start": 4.335958,
+      "end": 4.661458
+    },
+    {
+      "word": "connect",
+      "start": 4.661458,
+      "end": 5.078125
+    },
+    {
+      "word": "your",
+      "start": 5.078125,
+      "end": 5.208333
+    },
+    {
+      "word": "browser",
+      "start": 5.208333,
+      "end": 5.677083
+    },
+    {
+      "word": "to",
+      "start": 5.677083,
+      "end": 5.872416
+    },
+    {
+      "word": "a",
+      "start": 5.872416,
+      "end": 5.9245
+    },
+    {
+      "word": "service",
+      "start": 5.9245,
+      "end": 7.513041
+    },
+    {
+      "word": "An",
+      "start": 7.513041,
+      "end": 7.669291
+    },
+    {
+      "word": "MCP",
+      "start": 7.669291,
+      "end": 8.359375
+    },
+    {
+      "word": "server",
+      "start": 8.359375,
+      "end": 8.815125
+    },
+    {
+      "word": "gives",
+      "start": 8.815125,
+      "end": 9.114583
+    },
+    {
+      "word": "the",
+      "start": 9.114583,
+      "end": 9.283875
+    },
+    {
+      "word": "app",
+      "start": 9.283875,
+      "end": 9.505208
+    },
+    {
+      "word": "a",
+      "start": 9.505208,
+      "end": 9.557291
+    },
+    {
+      "word": "connection",
+      "start": 9.557291,
+      "end": 10.208333
+    },
+    {
+      "word": "like",
+      "start": 10.208333,
+      "end": 10.46875
+    },
+    {
+      "word": "that",
+      "start": 10.46875,
+      "end": 10.9375
+    },
+    {
+      "word": "to",
+      "start": 10.9375,
+      "end": 11.184916
+    },
+    {
+      "word": "tools",
+      "start": 11.184916,
+      "end": 11.5495
+    },
+    {
+      "word": "and",
+      "start": 11.5495,
+      "end": 11.71875
+    },
+    {
+      "word": "data",
+      "start": 11.71875,
+      "end": 11.96875
+    }
+  ]
+}

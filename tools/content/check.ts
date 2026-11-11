@@ -1242,6 +1242,8 @@ function checkCircuit(rel: string, p: PuzzleFile & Record<string, unknown>, issu
     options?: CircuitOption[];
     tiles?: { sticks: boolean; reason?: string; cite?: string }[];
     lamps?: unknown[];
+    positions?: { right?: boolean; reason?: string; cite?: string }[];
+    start?: number;
     planks?: number;
     action?: string;
     prompt?: string;
@@ -1251,12 +1253,30 @@ function checkCircuit(rel: string, p: PuzzleFile & Record<string, unknown>, issu
       const path = `laps[${i}].stations[${j}]`;
       known(issue, rel, `${path}.at`, st.at, places, 'a key of "places"');
       cited(`${path}.cite`, st.cite);
-      const needs = { choose: 'options', seal: 'options', tiles: 'tiles', gate: 'lamps', sound: 'planks' }[
-        st.kind
-      ] as keyof Station | undefined;
+      const needs = {
+        choose: 'options',
+        seal: 'options',
+        tiles: 'tiles',
+        gate: 'lamps',
+        sound: 'planks',
+        dial: 'positions',
+      }[st.kind] as keyof Station | undefined;
       if (needs && st[needs] === undefined) issue(rel, path, `a "${st.kind}" station needs "${needs}"`);
-      if (st.action !== undefined && st.kind !== 'watch')
-        issue(rel, `${path}.action`, 'only a "watch" station acts');
+      if (st.action !== undefined && st.kind !== 'watch' && st.kind !== 'dial')
+        issue(rel, `${path}.action`, 'only a "watch" or a "dial" station acts');
+      if (st.positions) {
+        if (st.kind !== 'dial') issue(rel, `${path}.positions`, 'only a "dial" station has positions');
+        if (!st.positions.some((o) => o.right)) issue(rel, `${path}.positions`, 'needs a right position');
+        if (st.positions[st.start ?? 0]?.right)
+          issue(rel, `${path}.start`, 'a dial mustn’t start at a right position');
+        if ((st.start ?? 0) >= st.positions.length) issue(rel, `${path}.start`, 'isn’t one of its positions');
+        st.positions.forEach((o, k) => {
+          if (o.right) return;
+          const at = `${path}.positions[${k}]`;
+          if (!o.reason) issue(rel, at, 'a wrong position needs its "reason"');
+          cited(`${at}.cite`, o.cite);
+        });
+      }
       if (st.action !== undefined && !st.prompt)
         issue(rel, path, 'a station with an "action" needs its "prompt"');
       if (st.options) {

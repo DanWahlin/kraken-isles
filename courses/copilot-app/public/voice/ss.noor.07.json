@@ -1,0 +1,62 @@
+{
+  "id": "ss.noor.07",
+  "speaker": "Noor",
+  "text": "Samir's in the Crate Yard, past the court. He sells packages.",
+  "words": [
+    {
+      "word": "Samir's",
+      "start": 0.052083,
+      "end": 0.625
+    },
+    {
+      "word": "in",
+      "start": 0.625,
+      "end": 0.742208
+    },
+    {
+      "word": "the",
+      "start": 0.742208,
+      "end": 0.859375
+    },
+    {
+      "word": "Crate",
+      "start": 0.859375,
+      "end": 1.197916
+    },
+    {
+      "word": "Yard",
+      "start": 1.197916,
+      "end": 1.783875
+    },
+    {
+      "word": "past",
+      "start": 1.783875,
+      "end": 2.265625
+    },
+    {
+      "word": "the",
+      "start": 2.265625,
+      "end": 2.369791
+    },
+    {
+      "word": "court",
+      "start": 2.369791,
+      "end": 3.841166
+    },
+    {
+      "word": "He",
+      "start": 3.841166,
+      "end": 4.010416
+    },
+    {
+      "word": "sells",
+      "start": 4.010416,
+      "end": 4.375
+    },
+    {
+      "word": "packages",
+      "start": 4.375,
+      "end": 4.625
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "id": "ss.noor.shutter",
+  "speaker": "Noor",
+  "text": "An open shutter doesn't prove the beam arrives. An enabled toggle alone doesn't prove a server is connected.",
+  "words": [
+    {
+      "word": "An",
+      "start": 0.052083,
+      "end": 0.195333
+    },
+    {
+      "word": "open",
+      "start": 0.195333,
+      "end": 0.598958
+    },
+    {
+      "word": "shutter",
+      "start": 0.598958,
+      "end": 1.106791
+    },
+    {
+      "word": "doesn't",
+      "start": 1.106791,
+      "end": 1.614583
+    },
+    {
+      "word": "prove",
+      "start": 1.614583,
+      "end": 1.927083
+    },
+    {
+      "word": "the",
+      "start": 1.927083,
+      "end": 2.044291
+    },
+    {
+      "word": "beam",
+      "start": 2.044291,
+      "end": 2.369791
+    },
+    {
+      "word": "arrives",
+      "start": 2.369791,
+      "end": 3.997416
+    },
+    {
+      "word": "An",
+      "start": 3.997416,
+      "end": 4.127625
+    },
+    {
+      "word": "enabled",
+      "start": 4.127625,
+      "end": 4.635416
+    },
+    {
+      "word": "toggle",
+      "start": 4.635416,
+      "end": 5.013041
+    },
+    {
+      "word": "alone",
+      "start": 5.013041,
+      "end": 5.46875
+    },
+    {
+      "word": "doesn't",
+      "start": 5.46875,
+      "end": 5.9245
+    },
+    {
+      "word": "prove",
+      "start": 5.9245,
+      "end": 6.210958
+    },
+    {
+      "word": "a",
+      "start": 6.210958,
+      "end": 6.289083
+    },
+    {
+      "word": "server",
+      "start": 6.289083,
+      "end": 6.783875
+    },
+    {
+      "word": "is",
+      "start": 6.783875,
+      "end": 6.979166
+    },
+    {
+      "word": "connected",
+      "start": 6.979166,
+      "end": 7.229166
+    }
+  ]
+}

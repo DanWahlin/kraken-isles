@@ -24,6 +24,10 @@ public/packs/guildcrest/terrain.bin
 public/packs/guildcrest/terrain.json
 public/packs/guildcrest/chart.bin
 public/packs/guildcrest/chart.json
+public/packs/sunspire/terrain.bin
+public/packs/sunspire/terrain.json
+public/packs/sunspire/chart.bin
+public/packs/sunspire/chart.json
 
 # Downloaded CC0 source kits (fetch scripts re-create them; sha256-pinned)
 tools/.cache/

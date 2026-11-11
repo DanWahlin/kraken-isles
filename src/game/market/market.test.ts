@@ -548,6 +548,7 @@ describe('the market at every stall (MODEL-MARKET.md §2, §5)', () => {
       'guildcrest',
       'keelhaven',
       'meridian',
+      'sunspire',
       'thousand-bough',
     ]);
     expect(MARKET_STALLS.filter((s) => s.lines === 'gilda').map((s) => s.puzzle)).toEqual(['market']);

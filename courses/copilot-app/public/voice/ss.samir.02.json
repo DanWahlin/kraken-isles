@@ -1,0 +1,102 @@
+{
+  "id": "ss.samir.02",
+  "speaker": "Samir",
+  "text": "A plugin can hold skills, custom agents, MCP servers, or canvas extensions. A marketplace is a catalog of plugins.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.0515409,
+      "end": 0.219083
+    },
+    {
+      "word": "plugin",
+      "start": 0.219083,
+      "end": 0.567
+    },
+    {
+      "word": "can",
+      "start": 0.567,
+      "end": 0.695875
+    },
+    {
+      "word": "hold",
+      "start": 0.695875,
+      "end": 0.940708
+    },
+    {
+      "word": "skills",
+      "start": 0.940708,
+      "end": 1.67525
+    },
+    {
+      "word": "custom",
+      "start": 1.67525,
+      "end": 2.036083
+    },
+    {
+      "word": "agents",
+      "start": 2.036083,
+      "end": 2.590208
+    },
+    {
+      "word": "MCP",
+      "start": 2.590208,
+      "end": 3.015458
+    },
+    {
+      "word": "servers",
+      "start": 3.015458,
+      "end": 3.685583
+    },
+    {
+      "word": "or",
+      "start": 3.685583,
+      "end": 3.840208
+    },
+    {
+      "word": "canvas",
+      "start": 3.840208,
+      "end": 4.1495
+    },
+    {
+      "word": "extensions",
+      "start": 4.1495,
+      "end": 5.773208
+    },
+    {
+      "word": "A",
+      "start": 5.773208,
+      "end": 5.902041
+    },
+    {
+      "word": "marketplace",
+      "start": 5.902041,
+      "end": 6.469083
+    },
+    {
+      "word": "is",
+      "start": 6.469083,
+      "end": 6.585041
+    },
+    {
+      "word": "a",
+      "start": 6.585041,
+      "end": 6.713916
+    },
+    {
+      "word": "catalog",
+      "start": 6.713916,
+      "end": 7.087625
+    },
+    {
+      "word": "of",
+      "start": 7.087625,
+      "end": 7.255166
+    },
+    {
+      "word": "plugins",
+      "start": 7.255166,
+      "end": 7.505166
+    }
+  ]
+}

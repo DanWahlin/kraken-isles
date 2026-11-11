@@ -1,0 +1,92 @@
+{
+  "id": "ss.noor.06",
+  "speaker": "Noor",
+  "text": "The beam landed, and the answer came back with its sources. That's a connection you can check.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.052083,
+      "end": 0.14325
+    },
+    {
+      "word": "beam",
+      "start": 0.14325,
+      "end": 0.481791
+    },
+    {
+      "word": "landed",
+      "start": 0.481791,
+      "end": 1.067708
+    },
+    {
+      "word": "and",
+      "start": 1.067708,
+      "end": 1.354166
+    },
+    {
+      "word": "the",
+      "start": 1.354166,
+      "end": 1.523458
+    },
+    {
+      "word": "answer",
+      "start": 1.523458,
+      "end": 1.901041
+    },
+    {
+      "word": "came",
+      "start": 1.901041,
+      "end": 2.213541
+    },
+    {
+      "word": "back",
+      "start": 2.213541,
+      "end": 2.565125
+    },
+    {
+      "word": "with",
+      "start": 2.565125,
+      "end": 2.721375
+    },
+    {
+      "word": "its",
+      "start": 2.721375,
+      "end": 2.877625
+    },
+    {
+      "word": "sources",
+      "start": 2.877625,
+      "end": 4.427083
+    },
+    {
+      "word": "That's",
+      "start": 4.427083,
+      "end": 4.700541
+    },
+    {
+      "word": "a",
+      "start": 4.700541,
+      "end": 4.778666
+    },
+    {
+      "word": "connection",
+      "start": 4.778666,
+      "end": 5.377625
+    },
+    {
+      "word": "you",
+      "start": 5.377625,
+      "end": 5.559916
+    },
+    {
+      "word": "can",
+      "start": 5.559916,
+      "end": 5.690125
+    },
+    {
+      "word": "check",
+      "start": 5.690125,
+      "end": 5.940125
+    }
+  ]
+}

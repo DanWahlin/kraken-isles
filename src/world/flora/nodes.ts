@@ -9,7 +9,7 @@ import type { FloraSpecies } from './types';
 type AnyNode = any;
 
 /** Room in the species table (every island's species, in `ISLAND_FLORA_PALETTES` order). */
-export const FLORA_SPECIES_MAX = 24;
+export const FLORA_SPECIES_MAX = 36;
 
 /** How the grass material colours a form's heads: 0 round (eye to rim), 1 along (base to tip). */
 const FORM_CODE = { bloom: 0, cap: 0, spike: 1, frond: 1 } as const;

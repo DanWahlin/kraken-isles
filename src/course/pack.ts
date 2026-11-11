@@ -177,6 +177,17 @@ export const ISLAND_SIGNS: Readonly<Record<string, readonly string[]>> = {
     'guildWeavers',
     'guildMillwrights',
   ],
+  // Sunspire's boards and plates (src/world/islands/sunspire/town-build.ts, mesa.ts).
+  sunspire: [
+    'seraiSign',
+    'rollHead',
+    'cardName',
+    'cardKind',
+    'cardBearing',
+    'caravanRow',
+    'bellPlate',
+    'crateStencil',
+  ],
 };
 
 /** The kinds of puzzle the game can run (COURSE-PACKS.md §4): a puzzle file names its mechanic. */

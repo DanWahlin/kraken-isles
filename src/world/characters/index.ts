@@ -341,6 +341,38 @@ export const BODY_CONFIG: Record<CharacterBody, BodyConfig> = {
   gc_copyist: { source: 'henry_npc', scale: 0.95, radius: 0.32, height: 1.66, tint: 0xffffff, hand: 'right' },
   gc_miller: { source: 'henry_npc', scale: 1.04, radius: 0.35, height: 1.8, tint: 0xffffff, hand: 'left' },
   gc_shepherd: { source: 'anne_npc', scale: 0.97, radius: 0.32, height: 1.68, tint: 0xffffff, hand: 'right' },
+  // Sunspire's cast (docs/specs/ISLAND-05-sunspire-sands.md §4), Lyra's players and the islanders.
+  zahra: { source: 'anne_npc', scale: 1, radius: 0.33, height: 1.72, tint: 0xffffff, hand: 'right' },
+  idris: { source: 'henry_npc', scale: 1.02, radius: 0.34, height: 1.78, tint: 0xffffff, hand: 'left' },
+  noor: {
+    source: 'anne_npc',
+    scale: 1.02,
+    radius: 0.33,
+    height: 1.74,
+    tint: 0xffffff,
+    hand: 'right',
+    gestures: 'commander',
+  },
+  samir: { source: 'henry_npc', scale: 0.98, radius: 0.34, height: 1.72, tint: 0xffffff, hand: 'right' },
+  paloma: { source: 'anne_npc', scale: 0.98, radius: 0.32, height: 1.7, tint: 0xffffff, hand: 'right' },
+  ss_market: { source: 'henry_npc', scale: 1.02, radius: 0.34, height: 1.78, tint: 0xffffff, hand: 'right' },
+  ss_player_a: { source: 'anne_npc', scale: 0.97, radius: 0.32, height: 1.68, tint: 0xffffff, hand: 'right' },
+  ss_player_b: {
+    source: 'henry_npc',
+    scale: 0.98,
+    radius: 0.33,
+    height: 1.72,
+    tint: 0xffffff,
+    hand: 'right',
+  },
+  ss_trader: { source: 'henry_npc', scale: 1, radius: 0.33, height: 1.76, tint: 0xffffff, hand: 'left' },
+  ss_weaver: { source: 'anne_npc', scale: 0.98, radius: 0.32, height: 1.7, tint: 0xffffff, hand: 'right' },
+  ss_carrier: { source: 'henry_npc', scale: 1.03, radius: 0.34, height: 1.8, tint: 0xffffff, hand: 'right' },
+  ss_camper: { source: 'henry_npc', scale: 0.97, radius: 0.33, height: 1.7, tint: 0xffffff, hand: 'right' },
+  ss_signaller: { source: 'anne_npc', scale: 0.99, radius: 0.32, height: 1.7, tint: 0xffffff, hand: 'left' },
+  ss_porter: { source: 'henry_npc', scale: 1.04, radius: 0.35, height: 1.8, tint: 0xffffff, hand: 'right' },
+  ss_child: { source: 'anne_npc', scale: 0.68, radius: 0.22, height: 1.18, tint: 0xffffff, hand: 'right' },
+  ss_fisher: { source: 'henry_npc', scale: 0.96, radius: 0.32, height: 1.68, tint: 0xffffff, hand: 'right' },
 };
 
 /** Atlas columns the jaw carries: skin, plus the captain's beard (hair). */

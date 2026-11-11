@@ -1,0 +1,1314 @@
+{
+  "$schema": "../../schemas/chapter.schema.json",
+  "$comment": "Chapter 05 (MCP Servers and Plugins) on Sunspire Sands (docs/specs/ISLAND-05-sunspire-sands.md §6).",
+  "chapter": "05-mcp-plugins",
+  "images": [
+    {
+      "id": "ch05/extending-copilot-app",
+      "src": "course/ch05/extending-copilot-app.webp",
+      "hash": "6a1b5d9aa0f5",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Skills and agents customize the Copilot app's work; MCP servers and plugins extend its capabilities"
+    },
+    {
+      "id": "ch05/least-tool-principle",
+      "src": "course/ch05/least-tool-principle.webp",
+      "hash": "3602ba1e0a6f",
+      "width": 1536,
+      "height": 1024,
+      "alt": "A toolbox where only Repo, Docs, and Skill are highlighted: give the agent only what it needs for less noise"
+    },
+    {
+      "id": "ch05/browser-extensions-analogy",
+      "src": "course/ch05/browser-extensions-analogy.webp",
+      "hash": "5f6946188413",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Browser extensions connect a browser to services, just as MCP servers connect the Copilot app to GitHub, files, and Context7 documentation"
+    },
+    {
+      "id": "ch05/app-customize-mcp",
+      "src": "course/ch05/app-customize-mcp.webp",
+      "hash": "b2b7336d5ea4",
+      "width": 1530,
+      "height": 380,
+      "alt": "Customize Installed tab with the MCP filter and a context7 search, showing one connected and enabled Context7 server"
+    },
+    {
+      "id": "ch05/app-context7-configuration",
+      "src": "course/ch05/app-context7-configuration.webp",
+      "hash": "4be98a4533e4",
+      "width": 800,
+      "height": 700,
+      "alt": "Context7 MCP server dialog with server name context7, HTTP selected, and URL https://mcp.context7.com/mcp"
+    },
+    {
+      "id": "ch05/app-customize-plugins",
+      "src": "course/ch05/app-customize-plugins.webp",
+      "hash": "9aad06076e3e",
+      "width": 1530,
+      "height": 470,
+      "alt": "Customize Browse tab with callouts for Browse, the Plugins type filter, the modern-web-guidance search, and Install"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "K5.1",
+      "type": "mc",
+      "prompt": "In Lyra’s studio, what do an MCP server and a plugin each stand for?",
+      "options": [
+        {
+          "id": "same",
+          "text": "They’re two names for one thing",
+          "feedback": "A plugin can include an MCP server, but the two aren’t interchangeable."
+        },
+        {
+          "id": "swap",
+          "text": "A plugin is the connection. An MCP server is the package",
+          "feedback": "It’s the other way round: the server is the connection, and the plugin is the package."
+        },
+        {
+          "id": "both",
+          "text": "An MCP server is a connection to equipment: it exposes tools. A plugin is a packaged set of additions you install"
+        },
+        {
+          "id": "trust",
+          "text": "Both are safe to switch on without a look",
+          "feedback": "Check what’s included and what access it needs before you enable it."
+        }
+      ],
+      "answer": "both",
+      "explain": {
+        "correct": "Right. The server is the connection that gives the crew tools. The plugin is a package. Check what it holds, and what access it needs, before you enable it.",
+        "wrong": "A song chart tells the players what to play. What does the session still need connected?"
+      },
+      "hints": [
+        "Which one is like plugging in a microphone?",
+        "One connects. One is a package.",
+        "The MCP server is the connection; the plugin is the packaged set of additions."
+      ],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "from-the-studio-connecting-the-gear",
+        "hash": "49ec83da8d2a"
+      }
+    },
+    {
+      "id": "M5.1",
+      "type": "matching",
+      "prompt": "Match each one to what the course says it adds, and its example in this chapter.",
+      "pairs": [
+        {
+          "left": {
+            "id": "server",
+            "text": "An MCP server adds…"
+          },
+          "right": {
+            "id": "tools",
+            "text": "Tools that connect the Copilot app to a service or data source"
+          }
+        },
+        {
+          "left": {
+            "id": "plugin",
+            "text": "A plugin adds…"
+          },
+          "right": {
+            "id": "package",
+            "text": "An installable package of skills, agents, or other capabilities"
+          }
+        },
+        {
+          "left": {
+            "id": "serverEx",
+            "text": "This chapter’s MCP server"
+          },
+          "right": {
+            "id": "c7",
+            "text": "Context7, to retrieve React’s input-label guidance"
+          }
+        },
+        {
+          "left": {
+            "id": "pluginEx",
+            "text": "This chapter’s plugin"
+          },
+          "right": {
+            "id": "mwg",
+            "text": "Modern Web Guidance, to plan a small CSS improvement"
+          }
+        }
+      ],
+      "explain": {
+        "correct": "That’s the course’s table. A server connects the app to a service. A plugin is a package you install. A plugin can hold a server, but they aren’t interchangeable.",
+        "wrong": "Which one connects to something outside, and which one do you install as a package?"
+      },
+      "hints": [
+        "Which one talks to a service?",
+        "A server connects. A plugin is installed.",
+        "Server → tools for a service · plugin → installable package · Context7 → server · Modern Web Guidance → plugin."
+      ],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "mcp-server-versus-plugin",
+        "hash": "abf0d4488ca1"
+      }
+    },
+    {
+      "id": "K5.2",
+      "type": "mc",
+      "prompt": "The task needs nothing the app’s own tools can’t do. What do you add?",
+      "options": [
+        {
+          "id": "all",
+          "text": "Every server in the catalog, to be ready",
+          "feedback": "Every extra tool is more noise for the agent and more access to review."
+        },
+        {
+          "id": "none",
+          "text": "Nothing. Add an integration only when it supplies something the task needs"
+        },
+        {
+          "id": "big",
+          "text": "The biggest plugin, so nothing is missing",
+          "feedback": "Start with the tools you already have. A bigger package is more to review, not a better answer."
+        },
+        {
+          "id": "later",
+          "text": "A server now. I’ll review its access later",
+          "feedback": "The access is yours to review before it goes in, not after."
+        }
+      ],
+      "answer": "none",
+      "explain": {
+        "correct": "Right. Start with the tools you already have. Every extra tool is more noise for the agent and more access for you to review.",
+        "wrong": "What does every extra tool cost the crew, and you?"
+      },
+      "hints": [
+        "Zahra says to pack for the crossing.",
+        "More tools mean more noise and more access to review.",
+        "Add an integration only when it supplies something the task needs."
+      ],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "mcp-server-versus-plugin",
+        "hash": "abf0d4488ca1"
+      }
+    },
+    {
+      "id": "K5.3",
+      "type": "mc",
+      "prompt": "You add an MCP server while you work in one session’s worktree. Which sessions can it affect?",
+      "options": [
+        {
+          "id": "only",
+          "text": "Only this session: a worktree isolates everything",
+          "feedback": "A worktree isolates files. MCP connections and plugins can affect other sessions."
+        },
+        {
+          "id": "branch",
+          "text": "Only sessions on the same branch",
+          "feedback": "It doesn’t go by branch. Installed tools aren’t part of a worktree’s files."
+        },
+        {
+          "id": "none",
+          "text": "None, until I commit it",
+          "feedback": "It isn’t a file change in the worktree, so there’s nothing to commit. It’s there for other sessions too."
+        },
+        {
+          "id": "others",
+          "text": "Other sessions too: a worktree separates file changes, not installed tools"
+        }
+      ],
+      "answer": "others",
+      "explain": {
+        "correct": "Right. Every tent has its own floor, and one well. Before you add a server or a plugin, check whether it’s already installed and enabled, so you don’t make a duplicate.",
+        "wrong": "What does a worktree keep apart, and what does it share?"
+      },
+      "hints": [
+        "Think of the well.",
+        "A worktree separates file changes.",
+        "Installed tools are shared: MCP connections and plugins can affect other sessions."
+      ],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "create-a-practice-session",
+        "hash": "8691f68a9c1f"
+      }
+    },
+    {
+      "id": "K5.4",
+      "type": "mc",
+      "prompt": "When does a task call for an MCP server?",
+      "options": [
+        {
+          "id": "needs",
+          "text": "When it needs information or actions that the current tools don’t supply"
+        },
+        {
+          "id": "files",
+          "text": "To read and search the files in my worktree",
+          "feedback": "The app already has tools to read and search local files."
+        },
+        {
+          "id": "github",
+          "text": "For the issue and pull request work from Chapter 03",
+          "feedback": "You don’t need to add another GitHub server for that work."
+        },
+        {
+          "id": "always",
+          "text": "Always: more servers make every answer better",
+          "feedback": "Each one is more noise and more access to review. Use one when the task needs it."
+        }
+      ],
+      "answer": "needs",
+      "explain": {
+        "correct": "Right. The app can already read and search your files. Use MCP when the task needs information or actions those tools lack. And use one connection per service.",
+        "wrong": "What can the app do already, with no server at all?"
+      },
+      "hints": [
+        "What’s missing from the tools you have?",
+        "The app reads and searches local files by itself.",
+        "Use MCP when the task needs information or actions that the current tools don’t supply."
+      ],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "mcp-servers-get-information-from-another-service",
+        "hash": "7c70da2c1f2b"
+      }
+    },
+    {
+      "id": "K5.6",
+      "type": "mc",
+      "prompt": "You installed a plugin that supplies a skill. What does that prove?",
+      "options": [
+        {
+          "id": "ran",
+          "text": "That its skill ran",
+          "feedback": "Installing a plugin is different from invoking one of the skills or agents inside it."
+        },
+        {
+          "id": "safe",
+          "text": "That it’s safe: the marketplace listed it",
+          "feedback": "Read its contents, not only the marketplace description. Some plugins start processes, call services, or run hooks."
+        },
+        {
+          "id": "installed",
+          "text": "Only that it’s installed. You still invoke the skill and inspect its activity"
+        },
+        {
+          "id": "every",
+          "text": "That every session will use it for every task",
+          "feedback": "It’s there to be invoked. Nothing in it runs until it’s called for."
+        }
+      ],
+      "answer": "installed",
+      "explain": {
+        "correct": "Right. A plugin can hold skills, custom agents, MCP servers or canvas extensions. Installing one doesn’t run its contents.",
+        "wrong": "What’s the difference between a crate on your bench and a tool in your hand?"
+      },
+      "hints": [
+        "Installed, or invoked?",
+        "Nothing inside has run yet.",
+        "It proves it’s installed. You still invoke the skill and inspect its activity."
+      ],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "plugins-use-a-packaged-capability",
+        "hash": "78b16e5f879c"
+      }
+    },
+    {
+      "id": "K5.9",
+      "type": "mc",
+      "prompt": "Your evidence table is done. Which row is written the way the course asks?",
+      "options": [
+        {
+          "id": "claims",
+          "text": "Every check marked passed, as the agent said",
+          "feedback": "Correct any unsupported claims. Compare the table with the tool activity, the retrieved guidance and the sources."
+        },
+        {
+          "id": "split",
+          "text": "Completed work in one place, proposed browser checks in another, and a source link or a guide name and ID for each tool"
+        },
+        {
+          "id": "invent",
+          "text": "A link for every row, made up where one was missing",
+          "feedback": "If the tool returned a guide without a source link, give the guide name and ID. Don’t invent a link."
+        },
+        {
+          "id": "ran",
+          "text": "An exercise your organization blocked, written as if it ran",
+          "feedback": "If an exercise couldn’t run, state why. Don’t invent results or sources."
+        }
+      ],
+      "answer": "split",
+      "explain": {
+        "correct": "Right. Completed work apart from proposed checks, real sources, and nothing invented. And **Changes** lists no changed files.",
+        "wrong": "What does the table separate, and what must it never invent?"
+      },
+      "hints": [
+        "Completed, or only proposed?",
+        "A source link when one came back; a guide name and ID when it did not.",
+        "Completed work apart from proposed checks, with real source evidence for each tool."
+      ],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "assignment",
+        "hash": "d64b0750a772"
+      }
+    },
+    {
+      "id": "H5.1",
+      "type": "hotspot",
+      "image": "ch05/app-customize-mcp",
+      "mask": [],
+      "prompt": "The **Installed** tab lists **Context7** under **MCP Servers**. Which mark shows it’s connected, not only enabled?",
+      "targets": [
+        {
+          "id": "connected",
+          "rect": [0.820261, 0.789474, 0.022222, 0.089474],
+          "label": "The connected icon",
+          "correct": true
+        },
+        {
+          "id": "toggle",
+          "rect": [0.843791, 0.789474, 0.031373, 0.089474],
+          "label": "The enabled toggle",
+          "feedback": "That’s the enabled toggle. It says the server is switched on, not that it answers."
+        },
+        {
+          "id": "filter",
+          "rect": [0.815033, 0.252632, 0.068627, 0.142105],
+          "label": "The MCP type filter",
+          "feedback": "That’s the type filter. It chooses what the list shows."
+        },
+        {
+          "id": "add",
+          "rect": [0.794118, 0.513158, 0.090196, 0.102632],
+          "label": "Add server",
+          "feedback": "That adds another server. Use one connection per service."
+        }
+      ],
+      "explain": {
+        "correct": "Right. After you add the server, confirm that **Context7** appears under **MCP Servers** with its connected icon and its enabled toggle.",
+        "wrong": "Two marks sit at the right end of the server’s row. One is a toggle."
+      },
+      "hints": [
+        "Look at the right end of Context7’s row.",
+        "One mark is a switch. The other is a small tick.",
+        "The tick beside the toggle is the connected icon."
+      ],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "exercise-check-the-book-apps-input-labels-with-context7",
+        "hash": "531f67f51964",
+        "image": {
+          "src": "course/ch05/app-customize-mcp.webp",
+          "hash": "b2b7336d5ea4"
+        }
+      }
+    },
+    {
+      "id": "H5.2",
+      "type": "hotspot",
+      "image": "ch05/app-context7-configuration",
+      "mask": [],
+      "prompt": "Context7 is a hosted server. Which **Server type** makes the app connect to it instead of starting a local process?",
+      "targets": [
+        {
+          "id": "http",
+          "rect": [0.7725, 0.392857, 0.09375, 0.054286],
+          "label": "HTTP",
+          "correct": true
+        },
+        {
+          "id": "local",
+          "rect": [0.68, 0.392857, 0.09, 0.054286],
+          "label": "Local",
+          "feedback": "The course’s value for Context7 is `HTTP`: a hosted server the app connects to."
+        },
+        {
+          "id": "sse",
+          "rect": [0.86875, 0.392857, 0.0775, 0.054286],
+          "label": "SSE",
+          "feedback": "The course’s value for Context7 is `HTTP`."
+        },
+        {
+          "id": "url",
+          "rect": [0.03125, 0.522857, 0.915, 0.054286],
+          "label": "The URL field",
+          "feedback": "That’s where the hosted server lives. The type is set beside the server’s name."
+        }
+      ],
+      "explain": {
+        "correct": "Right. Server name `context7`, Server type `HTTP`, and the URL. `HTTP` means the app connects to a hosted server instead of starting a local process.",
+        "wrong": "The type is a row of three choices beside the server name."
+      },
+      "hints": ["Find the row of three choices.", "It’s beside the server name.", "Select `HTTP`."],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "exercise-check-the-book-apps-input-labels-with-context7",
+        "hash": "531f67f51964",
+        "image": {
+          "src": "course/ch05/app-context7-configuration.webp",
+          "hash": "4be98a4533e4"
+        }
+      }
+    },
+    {
+      "id": "H5.3",
+      "type": "hotspot",
+      "image": "ch05/app-customize-plugins",
+      "mask": [
+        [0.020261, 0.129787, 0.033987, 0.110638],
+        [0.07451, 0.206383, 0.033987, 0.110638],
+        [0.888235, 0.206383, 0.033987, 0.110638],
+        [0.898039, 0.755319, 0.033987, 0.110638]
+      ],
+      "prompt": "You searched for the plugin on **Browse**. Before you select **Install**, where do you open its details to review what it is?",
+      "targets": [
+        {
+          "id": "name",
+          "rect": [0.162745, 0.765957, 0.12549, 0.055319],
+          "label": "modern-web-guidance, the result",
+          "correct": true
+        },
+        {
+          "id": "install",
+          "rect": [0.813725, 0.774468, 0.055556, 0.07234],
+          "label": "Install",
+          "feedback": "Not yet. Open its details and review them first, then compare them with the plugin’s repository."
+        },
+        {
+          "id": "filter",
+          "rect": [0.800654, 0.204255, 0.083007, 0.114894],
+          "label": "The Plugins type filter",
+          "feedback": "That’s the type filter. You’ve set it already."
+        },
+        {
+          "id": "browse",
+          "rect": [0.010458, 0.025532, 0.053595, 0.080851],
+          "label": "The Browse tab",
+          "feedback": "You’re on **Browse**. The plugin’s own row opens its details."
+        }
+      ],
+      "explain": {
+        "correct": "Right. Select **modern-web-guidance** to open its details and review the description. The details don’t show the source, so compare them with the plugin’s repository. Then select **Install**.",
+        "wrong": "The plugin’s own row is the way into its details."
+      },
+      "hints": [
+        "Look at the result row.",
+        "The plugin’s name is on the left of its row.",
+        "Select **modern-web-guidance** to open its details."
+      ],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "exercise-plan-a-css-improvement-with-modern-web-guidance",
+        "hash": "b0743e577ce2",
+        "image": {
+          "src": "course/ch05/app-customize-plugins.webp",
+          "hash": "9aad06076e3e"
+        }
+      }
+    },
+    {
+      "id": "T5.1",
+      "type": "scenario",
+      "situation": "You want a packaged skill that searches web-platform guides. You don’t need a connection to a service of your own.",
+      "prompt": "What are you looking for?",
+      "options": [
+        {
+          "id": "server",
+          "text": "An MCP server",
+          "feedback": "A server adds tools that connect the app to a service or data source. This is a package of capabilities."
+        },
+        {
+          "id": "plugin",
+          "text": "A plugin"
+        },
+        {
+          "id": "agent",
+          "text": "A custom agent",
+          "feedback": "That’s a role with its own tools, from Chapter 04. This is an installable package."
+        },
+        {
+          "id": "prompt",
+          "text": "A longer prompt",
+          "feedback": "A prompt doesn’t add a capability the app lacks."
+        }
+      ],
+      "answer": "plugin",
+      "explain": {
+        "correct": "Right. A plugin is an installable package of skills, agents, or other capabilities.",
+        "wrong": "Which one do you install as a package?"
+      },
+      "hints": ["A connection, or a package?", "You install it.", ""],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "mcp-server-versus-plugin",
+        "hash": "abf0d4488ca1"
+      }
+    },
+    {
+      "id": "T5.2",
+      "type": "scenario",
+      "situation": "In the **Context7** dialog you see Server name `context7`, Server type `HTTP`, and a URL.",
+      "prompt": "What does `HTTP` tell you?",
+      "options": [
+        {
+          "id": "hosted",
+          "text": "The app connects to a hosted server instead of starting a local process"
+        },
+        {
+          "id": "local",
+          "text": "The app starts the server on my machine",
+          "feedback": "That’s what `HTTP` avoids: it reaches a hosted server."
+        },
+        {
+          "id": "code",
+          "text": "The server will be added to the Book App",
+          "feedback": "It doesn’t become a dependency of the Book App."
+        },
+        {
+          "id": "open",
+          "text": "Anyone can read my repository through it",
+          "feedback": "It’s the server’s type, not a permission on your repository."
+        }
+      ],
+      "answer": "hosted",
+      "explain": {
+        "correct": "Right. `HTTP` means a hosted server the app connects to. It doesn’t become a dependency of the Book App.",
+        "wrong": "Where does the server run?"
+      },
+      "hints": ["Hosted, or local?", "The app connects to it.", ""],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "exercise-check-the-book-apps-input-labels-with-context7",
+        "hash": "531f67f51964"
+      }
+    },
+    {
+      "id": "T5.3",
+      "type": "scenario",
+      "situation": "Context7’s toggle is on, but its tools fail.",
+      "prompt": "What do you check?",
+      "options": [
+        {
+          "id": "toggle",
+          "text": "Nothing: an enabled toggle proves it’s connected",
+          "feedback": "An enabled toggle alone doesn’t prove that a server is connected."
+        },
+        {
+          "id": "second",
+          "text": "Add a second Context7 connection",
+          "feedback": "Use one connection per service."
+        },
+        {
+          "id": "status",
+          "text": "The connection status, the URL, authentication, network access, and organization policy"
+        },
+        {
+          "id": "secret",
+          "text": "Paste a credential into the prompt",
+          "feedback": "Don’t put credentials in prompts or repository files."
+        }
+      ],
+      "answer": "status",
+      "explain": {
+        "correct": "Right. Check the connection, not the switch. If the service reports a rate limit, wait or use its approved authentication process.",
+        "wrong": "What does an open shutter not prove?"
+      },
+      "hints": ["Enabled, or connected?", "Check the connection.", ""],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "an-mcp-server-is-enabled-but-its-tools-fail",
+        "hash": "6bcecf0c4f5d"
+      }
+    },
+    {
+      "id": "T5.4",
+      "type": "scenario",
+      "situation": "You ask Context7 how nested labels compare with `htmlFor` and `id`.",
+      "prompt": "What do you send to the service?",
+      "options": [
+        {
+          "id": "file",
+          "text": "`BookFilters.tsx`, so it can check the labels itself",
+          "feedback": "Don’t send repository code or paths to Context7. Compare the answer with the file locally."
+        },
+        {
+          "id": "path",
+          "text": "The file’s path in the repository",
+          "feedback": "Paths stay home too. The question is general: it doesn’t need them."
+        },
+        {
+          "id": "all",
+          "text": "Everything in the worktree, for context",
+          "feedback": "General documentation questions don’t need repository code."
+        },
+        {
+          "id": "general",
+          "text": "Only the general question"
+        }
+      ],
+      "answer": "general",
+      "explain": {
+        "correct": "Right. Keeping the external question general lets you use the documentation without sending repository content to the service.",
+        "wrong": "What does a documentation service need to answer a general question?"
+      },
+      "hints": ["What stays local?", "The question travels. The code stays.", ""],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "exercise-check-the-book-apps-input-labels-with-context7",
+        "hash": "531f67f51964"
+      }
+    },
+    {
+      "id": "T5.5",
+      "type": "scenario",
+      "situation": "The agent tells you the integration worked.",
+      "prompt": "What do you check?",
+      "options": [
+        {
+          "id": "word",
+          "text": "Nothing more: it said so",
+          "feedback": "Check the evidence, not only the agent’s statement that an integration worked."
+        },
+        {
+          "id": "activity",
+          "text": "The tool activity, the retrieved guidance, and any source links it returned"
+        },
+        {
+          "id": "toggle",
+          "text": "That the toggle is still on",
+          "feedback": "A toggle isn’t evidence that a tool returned anything."
+        },
+        {
+          "id": "ask",
+          "text": "Ask it again whether it worked",
+          "feedback": "A second statement isn’t evidence either. Expand the tool activity."
+        }
+      ],
+      "answer": "activity",
+      "explain": {
+        "correct": "Right. Expand the tool activity, confirm that a tool returned documentation, then open a source link and compare it with the summary.",
+        "wrong": "Where does the proof that a tool ran show up?"
+      },
+      "hints": ["A statement, or evidence?", "Expand the tool activity.", ""],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "key-takeaways",
+        "hash": "179f39f1bb67"
+      }
+    },
+    {
+      "id": "T5.6",
+      "type": "scenario",
+      "situation": "The plugin is installed, but its skill isn’t in the `/` menu.",
+      "prompt": "What’s the first thing to do?",
+      "options": [
+        {
+          "id": "reload",
+          "text": "Check the plugin’s enabled toggle, run `/skills reload`, then search the `/` menu for the skill, with any plugin prefix"
+        },
+        {
+          "id": "other",
+          "text": "Install a different plugin that sounds close",
+          "feedback": "If the plugin no longer supplies the skill, record the exercise as blocked rather than installing an unrelated plugin."
+        },
+        {
+          "id": "window",
+          "text": "Close the window and open it again",
+          "feedback": "Closing a window isn’t the same as quitting the app."
+        },
+        {
+          "id": "assume",
+          "text": "Carry on: it probably ran anyway",
+          "feedback": "Installation alone doesn’t prove that the skill ran."
+        }
+      ],
+      "answer": "reload",
+      "explain": {
+        "correct": "Right. If it still doesn’t appear, wait for active work in all sessions to finish, quit and reopen the app, then return to this session.",
+        "wrong": "What does the bell on Samir’s post say?"
+      },
+      "hints": ["Reload first.", "`/skills reload`, then the `/` menu.", ""],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "a-plugin-is-installed-but-its-skill-is-missing",
+        "hash": "dbb32fed0e08"
+      }
+    },
+    {
+      "id": "T5.7",
+      "type": "scenario",
+      "situation": "A new task could be done with the tools the app already has.",
+      "prompt": "Which integration do you add for it?",
+      "options": [
+        {
+          "id": "one",
+          "text": "One server, just in case",
+          "feedback": "Every extra tool is more noise for the agent and more access to review."
+        },
+        {
+          "id": "plugin",
+          "text": "One plugin, since it holds more",
+          "feedback": "More inside is more to review. The task needs nothing new."
+        },
+        {
+          "id": "none",
+          "text": "None. Add one only when it supplies something the task needs"
+        },
+        {
+          "id": "both",
+          "text": "A server and a plugin, to compare them",
+          "feedback": "Compare them when a task needs one. This task doesn’t."
+        }
+      ],
+      "answer": "none",
+      "explain": {
+        "correct": "Right. Start with the tools you already have.",
+        "wrong": "What did Zahra weigh on her scales?"
+      },
+      "hints": ["Pack light.", "Only what the task needs.", ""],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "mcp-server-versus-plugin",
+        "hash": "abf0d4488ca1"
+      }
+    },
+    {
+      "id": "T5.8",
+      "type": "scenario",
+      "situation": "You finish the chapter and don’t want to keep Context7.",
+      "prompt": "What do you disable?",
+      "options": [
+        {
+          "id": "all",
+          "text": "Every MCP server and plugin, to start clean",
+          "feedback": "Leave pre-existing tools unchanged."
+        },
+        {
+          "id": "worktree",
+          "text": "Nothing: deleting the worktree removes it",
+          "feedback": "A worktree doesn’t isolate installed tools from other sessions, so it doesn’t remove them either."
+        },
+        {
+          "id": "policy",
+          "text": "My organization’s policy for integrations",
+          "feedback": "Don’t change company-managed settings to finish an exercise."
+        },
+        {
+          "id": "mine",
+          "text": "Only the MCP connection or plugin I added for this exercise"
+        }
+      ],
+      "answer": "mine",
+      "explain": {
+        "correct": "Right. Disable only what you added. Chapter 06 doesn’t need either integration to stay enabled.",
+        "wrong": "Whose tools were here before you came?"
+      },
+      "hints": ["Only what you added.", "Leave the rest as it was.", ""],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "assignment",
+        "hash": "d64b0750a772"
+      }
+    },
+    {
+      "id": "T5.9",
+      "type": "scenario",
+      "situation": "The agent can’t use the integration at all.",
+      "prompt": "What do you check first?",
+      "options": [
+        {
+          "id": "widen",
+          "text": "Give the read-only explainer more tools",
+          "feedback": "Don’t broaden an agent’s tools or change policy just to finish the exercise."
+        },
+        {
+          "id": "agent",
+          "text": "That the agent picker shows **Default agent**, then **Tool permissions**, then organization policy"
+        },
+        {
+          "id": "policy",
+          "text": "Change the organization’s policy",
+          "feedback": "Don’t change policy to finish an exercise. If it’s blocked, note that you couldn’t run it."
+        },
+        {
+          "id": "reinstall",
+          "text": "Add the server a second time",
+          "feedback": "Use one connection per service."
+        }
+      ],
+      "answer": "agent",
+      "explain": {
+        "correct": "Right. If an agent picker appears below the prompt box, it should show **Default agent**, not the read-only explainer from Chapter 04.",
+        "wrong": "Which agent did you leave selected on Guildcrest?"
+      },
+      "hints": ["Check who is at the helm.", "**Default agent**, then **Tool permissions**.", ""],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "the-agent-cannot-use-the-integration",
+        "hash": "84c6bff1e9d2"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "id": "pg5.studio",
+      "title": "Connecting the gear",
+      "image": "ch05/extending-copilot-app",
+      "caption": "A song chart tells the players what to play. It doesn’t connect a microphone or add an effect to the desk. An MCP server is a connection to gear like that: it exposes tools the agent can use. A plugin is a packaged set of additions you install. Check what’s included and what access it needs before you enable it.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "from-the-studio-connecting-the-gear",
+        "hash": "49ec83da8d2a"
+      }
+    },
+    {
+      "id": "pg5.versus",
+      "title": "MCP server or plugin?",
+      "caption": "An MCP server adds tools that connect the Copilot app to a service or data source. A plugin is an installable package of skills, agents, or other capabilities. A plugin can include an MCP server, but the two aren’t interchangeable. Find both in **Customize**.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "mcp-server-versus-plugin",
+        "hash": "abf0d4488ca1"
+      }
+    },
+    {
+      "id": "pg5.least",
+      "title": "Pack light",
+      "image": "ch05/least-tool-principle",
+      "caption": "Start with the tools you already have. Add an integration only when it supplies something the task needs. Every extra tool is more noise for the agent and more access for you to review.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "mcp-server-versus-plugin",
+        "hash": "abf0d4488ca1"
+      }
+    },
+    {
+      "id": "pg5.practice",
+      "title": "A session for the chapter",
+      "caption": "Select **Create from** next to your course project, then **Branches**, then `main`, for a session in a new worktree. Set the mode to **Interactive**. If an agent picker appears, it should show **Default agent**. Keep the session for both exercises and the assignment. A worktree separates file changes, not installed tools.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "create-a-practice-session",
+        "hash": "8691f68a9c1f"
+      }
+    },
+    {
+      "id": "pg5.mcp",
+      "title": "MCP servers",
+      "image": "ch05/browser-extensions-analogy",
+      "caption": "A browser extension can connect your browser to a service. An MCP server gives the Copilot app a connection like that, to tools and data. The server can run on your machine or at a remote service. The app can already read and search local files: use MCP when the task needs information or actions that the current tools don’t supply.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "mcp-servers-get-information-from-another-service",
+        "hash": "7c70da2c1f2b"
+      }
+    },
+    {
+      "id": "pg5.context7",
+      "title": "Add the Context7 server",
+      "image": "ch05/app-context7-configuration",
+      "caption": "In **Customize**, select the **Browse** tab and set the type filter to **MCP**. Search for `context7`, then select **Add server**. Review the dialog: Server name `context7`, Server type `HTTP`, and the URL. Select **Add server**, then check **Installed**: **Context7** shows under **MCP Servers** with its connected icon and its enabled toggle.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "exercise-check-the-book-apps-input-labels-with-context7",
+        "hash": "531f67f51964"
+      }
+    },
+    {
+      "id": "pg5.local",
+      "title": "Ask out, compare at home",
+      "caption": "Ask Context7 only the general question about labels, and tell it not to take repository code or paths. Expand the tool activity, confirm that a **Context7** tool returned documentation, and open a source link. Then compare the guidance with the file locally, with no more external requests. The Book App’s inputs sit inside their labels, so a missing `htmlFor` isn’t a defect there.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "exercise-check-the-book-apps-input-labels-with-context7",
+        "hash": "531f67f51964"
+      }
+    },
+    {
+      "id": "pg5.plugins",
+      "title": "Plugins",
+      "caption": "You can add skills and MCP servers one by one, or install them as part of a plugin. A plugin can include skills, custom agents, MCP servers, or canvas extensions. A marketplace is a catalog of plugins. Read a plugin’s contents, not only the marketplace description: some start processes, call services, or run hooks.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "plugins-use-a-packaged-capability",
+        "hash": "78b16e5f879c"
+      }
+    },
+    {
+      "id": "pg5.marketplace",
+      "title": "Find and install the plugin",
+      "image": "ch05/app-customize-plugins",
+      "caption": "In **Customize**, select **Browse** and set the type filter to **Plugins**. Search for `modern-web-guidance`. If nothing shows, select **Add** > **Manage marketplaces…** and confirm that **awesome-copilot** is in the **Marketplaces** list. Open the plugin’s details, compare them with its repository, then select **Install**. On **Installed** it shows under **Plugins** with its toggle on.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "exercise-plan-a-css-improvement-with-modern-web-guidance",
+        "hash": "b0743e577ce2"
+      }
+    },
+    {
+      "id": "pg5.invoke",
+      "title": "Installed isn’t invoked",
+      "caption": "Back in your session, submit `/skills reload`, type `/` and select the `modern-web-guidance` skill (the command can carry a plugin prefix), then add the course’s prompt. Inspect the skill activity and its guide-search output. A recommendation such as `text-wrap: balance` must say what happens in browsers that don’t support it. Installation alone doesn’t prove that the skill ran.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "exercise-plan-a-css-improvement-with-modern-web-guidance",
+        "hash": "b0743e577ce2"
+      }
+    },
+    {
+      "id": "pg5.takeaways",
+      "title": "What Sunspire’s guild knows",
+      "caption": "A server supplies tools through a connected service. A plugin packages capabilities, and installing one doesn’t run them. Review what each tool can do and what data it sends. Check the tool activity and the sources, not only what the agent says. Add only what you need: a worktree doesn’t isolate installed tools.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "key-takeaways",
+        "hash": "179f39f1bb67"
+      }
+    },
+    {
+      "id": "pg5.assignment",
+      "title": "Your evidence table",
+      "image": "shared/assignment",
+      "caption": "In the same session, ask the default agent for a short table of both exercises: the capability used, the evidence that it ran, the source evidence, and what you learned about the Book App. Compare it with the tool activity and correct any unsupported claim. Open **Changes** and confirm it lists no changed files. Then disable only what you added, if you don’t want to keep it.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "assignment",
+        "hash": "d64b0750a772"
+      }
+    },
+    {
+      "id": "pg5.next",
+      "title": "What’s next",
+      "caption": "You can now connect an outside tool and use a packaged capability without mixing up installed and run. Chapter 06 keeps a session’s plan, progress and evidence in view on a canvas, starting with a community canvas installed through a plugin.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "whats-next",
+        "hash": "3eefb4c2c724"
+      }
+    },
+    {
+      "id": "pg5.awesome",
+      "title": "More plugins, with care",
+      "caption": "After the exercise you can browse the Awesome Copilot plugin directory for other community plugins. Before you install another one, review its source, the capabilities it includes, and the access it needs.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "plugins-use-a-packaged-capability",
+        "hash": "78b16e5f879c"
+      }
+    },
+    {
+      "id": "pg5.remote",
+      "title": "Where a server runs",
+      "caption": "Model Context Protocol defines how an AI application connects to tools and data. An MCP server supplies those tools. It can run on your machine or at a remote service. Configure MCP connections in **Customize** with the type filter set to **MCP**, not **Extensions**, and use one connection per service.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "mcp-servers-get-information-from-another-service",
+        "hash": "7c70da2c1f2b"
+      }
+    },
+    {
+      "id": "pg5.blocked",
+      "title": "If your organization blocks it",
+      "caption": "The Context7 exercise needs internet access and permission to add an MCP server. The plugin exercise needs permission to install a plugin. If your organization blocks an integration, read its example and expected output, note that you couldn’t run it, and go on with the other exercise. Neither one depends on the other.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "prerequisites",
+        "hash": "07decfa586e3"
+      }
+    },
+    {
+      "id": "B5.1",
+      "title": "Can’t find MCP or plugins in Settings?",
+      "caption": "Use the **Customize** view in the sidebar. Labels and the commands on offer can vary by app version.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "i-cannot-find-mcp-or-plugins-in-settings",
+        "hash": "a8f368794af1"
+      }
+    },
+    {
+      "id": "B5.2",
+      "title": "A server is enabled but its tools fail?",
+      "caption": "Check the connection status, the URL, authentication, network access, and organization policy. An enabled toggle alone doesn’t prove that a server is connected. Use one connection per service. Don’t put credentials in prompts or repository files.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "an-mcp-server-is-enabled-but-its-tools-fail",
+        "hash": "6bcecf0c4f5d"
+      }
+    },
+    {
+      "id": "B5.3",
+      "title": "A plugin is installed but its skill is missing?",
+      "caption": "Check the plugin’s enabled toggle and what it holds now. Run `/skills reload`, then search the `/` menu for the skill’s name, with any plugin prefix. Still missing? Wait for active work in every session to finish, quit and reopen the app, and come back to this session. Closing a window isn’t quitting.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "a-plugin-is-installed-but-its-skill-is-missing",
+        "hash": "dbb32fed0e08"
+      }
+    },
+    {
+      "id": "B5.4",
+      "title": "The agent can’t use the integration?",
+      "caption": "If an agent picker appears below the prompt box, confirm that it shows **Default agent**, not the read-only explainer. Then check **Tool permissions** in the mode menu, and organization policy. Don’t broaden an agent’s tools or change policy just to finish the exercise.",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "the-agent-cannot-use-the-integration",
+        "hash": "84c6bff1e9d2"
+      }
+    }
+  ],
+  "chests": [
+    {
+      "id": "C5.1",
+      "page": "pg5.awesome",
+      "doubloons": 10
+    },
+    {
+      "id": "C5.2",
+      "page": "pg5.remote",
+      "doubloons": 10
+    },
+    {
+      "id": "C5.3",
+      "page": "pg5.blocked",
+      "doubloons": 10
+    },
+    {
+      "id": "B5.1",
+      "page": "B5.1",
+      "doubloons": 5,
+      "kind": "bottle"
+    },
+    {
+      "id": "B5.2",
+      "page": "B5.2",
+      "doubloons": 5,
+      "kind": "bottle"
+    },
+    {
+      "id": "B5.3",
+      "page": "B5.3",
+      "doubloons": 5,
+      "kind": "bottle"
+    },
+    {
+      "id": "B5.4",
+      "page": "B5.4",
+      "doubloons": 5,
+      "kind": "bottle"
+    }
+  ],
+  "glossary": [
+    {
+      "id": "mcp-server",
+      "term": "MCP server",
+      "definition": "A server that supplies tools through Model Context Protocol, so the Copilot app can reach a service or data source. It can run on your machine or at a remote service. Configure one in **Customize** with the type filter set to **MCP**."
+    },
+    {
+      "id": "plugin",
+      "term": "Plugin",
+      "definition": "An installable package of skills, custom agents, MCP servers, or canvas extensions. Installing a plugin is different from invoking one of the skills or agents inside it."
+    },
+    {
+      "id": "marketplace",
+      "term": "Marketplace",
+      "definition": "A catalog of plugins. In **Customize**, **Add** > **Manage marketplaces…** lists the marketplaces the app reads."
+    },
+    {
+      "id": "context7",
+      "term": "Context7",
+      "definition": "A documentation service with an MCP server. In Chapter 05 it supplies React documentation. It doesn’t become a dependency of the Book App."
+    }
+  ],
+  "trials": [
+    {
+      "id": "T5",
+      "title": "The Trial of the Sunspire",
+      "items": ["T5.1", "T5.2", "T5.3", "T5.4", "T5.5", "T5.6", "T5.7", "T5.8", "T5.9"],
+      "reward": {
+        "seal": "Seal of Sunspire",
+        "doubloons": 70
+      }
+    }
+  ],
+  "voiced": {
+    "wingman.ss.01": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "learning-objectives",
+      "hash": "63b41976f466"
+    },
+    "ss.lyra.01": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "from-the-studio-connecting-the-gear",
+      "hash": "49ec83da8d2a"
+    },
+    "ss.lyra.02": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "from-the-studio-connecting-the-gear",
+      "hash": "49ec83da8d2a"
+    },
+    "ss.lyra.03": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "from-the-studio-connecting-the-gear",
+      "hash": "49ec83da8d2a"
+    },
+    "ss.lyra.04": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "from-the-studio-connecting-the-gear",
+      "hash": "49ec83da8d2a"
+    },
+    "ss.zahra.02": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "mcp-server-versus-plugin",
+      "hash": "abf0d4488ca1"
+    },
+    "ss.zahra.03": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "mcp-server-versus-plugin",
+      "hash": "abf0d4488ca1"
+    },
+    "ss.zahra.04": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "mcp-server-versus-plugin",
+      "hash": "abf0d4488ca1"
+    },
+    "ss.idris.01": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "create-a-practice-session",
+      "hash": "8691f68a9c1f"
+    },
+    "ss.idris.02": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "create-a-practice-session",
+      "hash": "8691f68a9c1f"
+    },
+    "ss.idris.04": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "create-a-practice-session",
+      "hash": "8691f68a9c1f"
+    },
+    "ss.noor.01": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "mcp-servers-get-information-from-another-service",
+      "hash": "7c70da2c1f2b"
+    },
+    "ss.noor.02": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "mcp-servers-get-information-from-another-service",
+      "hash": "7c70da2c1f2b"
+    },
+    "ss.noor.03": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "mcp-servers-get-information-from-another-service",
+      "hash": "7c70da2c1f2b"
+    },
+    "ss.noor.04": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "mcp-servers-get-information-from-another-service",
+      "hash": "7c70da2c1f2b"
+    },
+    "ss.noor.05": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "mcp-servers-get-information-from-another-service",
+      "hash": "7c70da2c1f2b"
+    },
+    "ss.noor.roll": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "exercise-check-the-book-apps-input-labels-with-context7",
+      "hash": "531f67f51964"
+    },
+    "ss.noor.shutter": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "an-mcp-server-is-enabled-but-its-tools-fail",
+      "hash": "6bcecf0c4f5d"
+    },
+    "ss.noor.aim": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "exercise-check-the-book-apps-input-labels-with-context7",
+      "hash": "531f67f51964"
+    },
+    "ss.noor.key": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "exercise-check-the-book-apps-input-labels-with-context7",
+      "hash": "531f67f51964"
+    },
+    "ss.noor.tent": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "exercise-check-the-book-apps-input-labels-with-context7",
+      "hash": "531f67f51964"
+    },
+    "ss.noor.06": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "exercise-check-the-book-apps-input-labels-with-context7",
+      "hash": "531f67f51964"
+    },
+    "ss.samir.01": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "plugins-use-a-packaged-capability",
+      "hash": "78b16e5f879c"
+    },
+    "ss.samir.02": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "plugins-use-a-packaged-capability",
+      "hash": "78b16e5f879c"
+    },
+    "ss.samir.03": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "plugins-use-a-packaged-capability",
+      "hash": "78b16e5f879c"
+    },
+    "ss.samir.04": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "plugins-use-a-packaged-capability",
+      "hash": "78b16e5f879c"
+    },
+    "ss.samir.row": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "exercise-plan-a-css-improvement-with-modern-web-guidance",
+      "hash": "b0743e577ce2"
+    },
+    "ss.samir.lading": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "exercise-plan-a-css-improvement-with-modern-web-guidance",
+      "hash": "b0743e577ce2"
+    },
+    "ss.samir.bell": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "exercise-plan-a-css-improvement-with-modern-web-guidance",
+      "hash": "b0743e577ce2"
+    },
+    "ss.samir.bench": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "exercise-plan-a-css-improvement-with-modern-web-guidance",
+      "hash": "b0743e577ce2"
+    },
+    "ss.samir.05": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "exercise-plan-a-css-improvement-with-modern-web-guidance",
+      "hash": "b0743e577ce2"
+    },
+    "ss.paloma.03": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "key-takeaways",
+      "hash": "179f39f1bb67"
+    },
+    "ss.paloma.assign.01": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "assignment",
+      "hash": "d64b0750a772"
+    },
+    "ss.paloma.assign.back": {
+      "chapter": "05-mcp-plugins",
+      "anchor": "assignment",
+      "hash": "d64b0750a772"
+    }
+  }
+}

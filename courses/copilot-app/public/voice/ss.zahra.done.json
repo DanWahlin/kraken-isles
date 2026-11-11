@@ -1,0 +1,82 @@
+{
+  "id": "ss.zahra.done",
+  "speaker": "Zahra",
+  "text": "Idris is at the oasis camp, Captain, down the path from the square's east side.",
+  "words": [
+    {
+      "word": "Idris",
+      "start": 0.049,
+      "end": 0.477958
+    },
+    {
+      "word": "is",
+      "start": 0.477958,
+      "end": 0.63725
+    },
+    {
+      "word": "at",
+      "start": 0.63725,
+      "end": 0.747541
+    },
+    {
+      "word": "the",
+      "start": 0.747541,
+      "end": 0.870083
+    },
+    {
+      "word": "oasis",
+      "start": 0.870083,
+      "end": 1.323541
+    },
+    {
+      "word": "camp",
+      "start": 1.323541,
+      "end": 1.88725
+    },
+    {
+      "word": "Captain",
+      "start": 1.88725,
+      "end": 2.634791
+    },
+    {
+      "word": "down",
+      "start": 2.634791,
+      "end": 2.892166
+    },
+    {
+      "word": "the",
+      "start": 2.892166,
+      "end": 2.990208
+    },
+    {
+      "word": "path",
+      "start": 2.990208,
+      "end": 3.370083
+    },
+    {
+      "word": "from",
+      "start": 3.370083,
+      "end": 3.529416
+    },
+    {
+      "word": "the",
+      "start": 3.529416,
+      "end": 3.627458
+    },
+    {
+      "word": "square's",
+      "start": 3.627458,
+      "end": 4.093125
+    },
+    {
+      "word": "east",
+      "start": 4.093125,
+      "end": 4.375
+    },
+    {
+      "word": "side",
+      "start": 4.375,
+      "end": 4.625
+    }
+  ]
+}

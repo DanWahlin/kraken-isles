@@ -27,6 +27,7 @@ export const PLANT_SPECIES: Record<PlantSpecies, PlantSpeciesData> = {
   brush: { height: 1.45, base: 0.6, trunk: false },
   cypress: { height: 8.5, base: 0.4, trunk: true },
   pineTree: { height: 11, base: 0.32, trunk: true },
+  saguaro: { height: 6, base: 0.4, trunk: true },
 };
 
 /** A plant this tall (m) or more blocks a walker, if its species has a base; smaller ones bend aside. */

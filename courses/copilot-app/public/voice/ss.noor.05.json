@@ -1,0 +1,107 @@
+{
+  "id": "ss.noor.05",
+  "speaker": "Noor",
+  "text": "Today's far tower is Context7, a documentation service. It won't become part of your Book App. Come into the court.",
+  "words": [
+    {
+      "word": "Today's",
+      "start": 0.052083,
+      "end": 0.46875
+    },
+    {
+      "word": "far",
+      "start": 0.46875,
+      "end": 0.794291
+    },
+    {
+      "word": "tower",
+      "start": 0.794291,
+      "end": 1.210958
+    },
+    {
+      "word": "is",
+      "start": 1.210958,
+      "end": 1.367208
+    },
+    {
+      "word": "Context7",
+      "start": 1.367208,
+      "end": 2.591166
+    },
+    {
+      "word": "a",
+      "start": 2.591166,
+      "end": 2.7995
+    },
+    {
+      "word": "documentation",
+      "start": 2.7995,
+      "end": 3.737
+    },
+    {
+      "word": "service",
+      "start": 3.737,
+      "end": 5.3125
+    },
+    {
+      "word": "It",
+      "start": 5.3125,
+      "end": 5.442708
+    },
+    {
+      "word": "won't",
+      "start": 5.442708,
+      "end": 5.794291
+    },
+    {
+      "word": "become",
+      "start": 5.794291,
+      "end": 6.158875
+    },
+    {
+      "word": "part",
+      "start": 6.158875,
+      "end": 6.484375
+    },
+    {
+      "word": "of",
+      "start": 6.484375,
+      "end": 6.575541
+    },
+    {
+      "word": "your",
+      "start": 6.575541,
+      "end": 6.744791
+    },
+    {
+      "word": "Book",
+      "start": 6.744791,
+      "end": 7.005208
+    },
+    {
+      "word": "App",
+      "start": 7.005208,
+      "end": 8.255208
+    },
+    {
+      "word": "Come",
+      "start": 8.255208,
+      "end": 8.502625
+    },
+    {
+      "word": "into",
+      "start": 8.502625,
+      "end": 8.880208
+    },
+    {
+      "word": "the",
+      "start": 8.880208,
+      "end": 8.984375
+    },
+    {
+      "word": "court",
+      "start": 8.984375,
+      "end": 9.234375
+    }
+  ]
+}

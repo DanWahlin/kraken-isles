@@ -291,6 +291,45 @@
         "anchor": "exercise-create-a-read-only-book-app-explainer",
         "hash": "428c8ffecae4"
       }
+    },
+    "arrival:sunspire": {
+      "game": "arrival",
+      "k": "Sunspire Sands · Landfall",
+      "t": "Reach farther, carry only what you need",
+      "b": "An MCP server connects the app to a service. A plugin is a package you install. Add one only when the task needs it.",
+      "ch": "05",
+      "c": "MCP Servers and Plugins",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "mcp-server-versus-plugin",
+        "hash": "abf0d4488ca1"
+      }
+    },
+    "puzzle:P5.1": {
+      "game": "puzzle",
+      "k": "Sunspire Sands · Mirror Beams",
+      "t": "Connect a server, check its answer",
+      "b": "Add Context7, see that it connects, ask only the general question, check the tool activity and its sources, and compare at home.",
+      "ch": "05",
+      "c": "MCP servers",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "exercise-check-the-book-apps-input-labels-with-context7",
+        "hash": "531f67f51964"
+      }
+    },
+    "puzzle:P5.2": {
+      "game": "puzzle",
+      "k": "Sunspire Sands · The Sealed Crate",
+      "t": "Install a plugin, invoke its skill",
+      "b": "Find it, read what’s inside, install it, reload, call for its skill, and check its work against the code.",
+      "ch": "05",
+      "c": "Plugins",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "exercise-plan-a-css-improvement-with-modern-web-guidance",
+        "hash": "b0743e577ce2"
+      }
     }
   }
 }

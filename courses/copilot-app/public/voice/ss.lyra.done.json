@@ -1,0 +1,62 @@
+{
+  "id": "ss.lyra.done",
+  "speaker": "Lyra",
+  "text": "Zahra runs the bazaar, Captain, up the lane from the quay.",
+  "words": [
+    {
+      "word": "Zahra",
+      "start": 0,
+      "end": 0.464
+    },
+    {
+      "word": "runs",
+      "start": 0.464,
+      "end": 0.74
+    },
+    {
+      "word": "the",
+      "start": 0.74,
+      "end": 0.88
+    },
+    {
+      "word": "bazaar",
+      "start": 0.88,
+      "end": 1.25
+    },
+    {
+      "word": "Captain",
+      "start": 1.25,
+      "end": 1.947
+    },
+    {
+      "word": "up",
+      "start": 1.947,
+      "end": 2.04
+    },
+    {
+      "word": "the",
+      "start": 2.04,
+      "end": 2.192
+    },
+    {
+      "word": "lane",
+      "start": 2.192,
+      "end": 2.352
+    },
+    {
+      "word": "from",
+      "start": 2.352,
+      "end": 2.5
+    },
+    {
+      "word": "the",
+      "start": 2.5,
+      "end": 2.64
+    },
+    {
+      "word": "quay",
+      "start": 2.64,
+      "end": 2.89
+    }
+  ]
+}

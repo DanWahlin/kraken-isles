@@ -1,0 +1,112 @@
+{
+  "id": "ss.paloma.03",
+  "speaker": "Paloma",
+  "text": "The Seal of Sunspire is yours. Check the activity and the sources, add only what you need, and remember the well.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.052625,
+      "end": 0.289458
+    },
+    {
+      "word": "Seal",
+      "start": 0.289458,
+      "end": 0.578958
+    },
+    {
+      "word": "of",
+      "start": 0.578958,
+      "end": 0.75
+    },
+    {
+      "word": "Sunspire",
+      "start": 0.75,
+      "end": 1.421041
+    },
+    {
+      "word": "is",
+      "start": 1.421041,
+      "end": 1.64475
+    },
+    {
+      "word": "yours",
+      "start": 1.64475,
+      "end": 3.052625
+    },
+    {
+      "word": "Check",
+      "start": 3.052625,
+      "end": 3.39475
+    },
+    {
+      "word": "the",
+      "start": 3.39475,
+      "end": 3.513166
+    },
+    {
+      "word": "activity",
+      "start": 3.513166,
+      "end": 4.276333
+    },
+    {
+      "word": "and",
+      "start": 4.276333,
+      "end": 4.447375
+    },
+    {
+      "word": "the",
+      "start": 4.447375,
+      "end": 4.592125
+    },
+    {
+      "word": "sources",
+      "start": 4.592125,
+      "end": 5.539458
+    },
+    {
+      "word": "add",
+      "start": 5.539458,
+      "end": 5.723666
+    },
+    {
+      "word": "only",
+      "start": 5.723666,
+      "end": 6.039458
+    },
+    {
+      "word": "what",
+      "start": 6.039458,
+      "end": 6.276333
+    },
+    {
+      "word": "you",
+      "start": 6.276333,
+      "end": 6.381583
+    },
+    {
+      "word": "need",
+      "start": 6.381583,
+      "end": 6.85525
+    },
+    {
+      "word": "and",
+      "start": 6.85525,
+      "end": 7.052625
+    },
+    {
+      "word": "remember",
+      "start": 7.052625,
+      "end": 7.513166
+    },
+    {
+      "word": "the",
+      "start": 7.513166,
+      "end": 7.671041
+    },
+    {
+      "word": "well",
+      "start": 7.671041,
+      "end": 7.921041
+    }
+  ]
+}

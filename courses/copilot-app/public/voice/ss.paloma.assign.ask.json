@@ -1,0 +1,42 @@
+{
+  "id": "ss.paloma.assign.ask",
+  "speaker": "Paloma",
+  "text": "Back, Captain? What did your table show?",
+  "words": [
+    {
+      "word": "Back",
+      "start": 0.052625,
+      "end": 0.763166
+    },
+    {
+      "word": "Captain",
+      "start": 0.763166,
+      "end": 2.236833
+    },
+    {
+      "word": "What",
+      "start": 2.236833,
+      "end": 2.539458
+    },
+    {
+      "word": "did",
+      "start": 2.539458,
+      "end": 2.75
+    },
+    {
+      "word": "your",
+      "start": 2.75,
+      "end": 2.881583
+    },
+    {
+      "word": "table",
+      "start": 2.881583,
+      "end": 3.289458
+    },
+    {
+      "word": "show",
+      "start": 3.289458,
+      "end": 3.539458
+    }
+  ]
+}

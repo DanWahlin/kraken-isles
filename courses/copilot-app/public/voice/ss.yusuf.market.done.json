@@ -1,0 +1,52 @@
+{
+  "id": "ss.yusuf.market.done",
+  "speaker": "Yusuf",
+  "text": "The whole board, right-sized! You know your models, Captain.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.05,
+      "end": 0.2625
+    },
+    {
+      "word": "whole",
+      "start": 0.2625,
+      "end": 0.5375
+    },
+    {
+      "word": "board",
+      "start": 0.5375,
+      "end": 0.925
+    },
+    {
+      "word": "right-sized",
+      "start": 0.925,
+      "end": 2.475
+    },
+    {
+      "word": "You",
+      "start": 2.475,
+      "end": 2.675
+    },
+    {
+      "word": "know",
+      "start": 2.675,
+      "end": 2.8375
+    },
+    {
+      "word": "your",
+      "start": 2.8375,
+      "end": 2.95
+    },
+    {
+      "word": "models",
+      "start": 2.95,
+      "end": 3.675
+    },
+    {
+      "word": "Captain",
+      "start": 3.675,
+      "end": 3.925
+    }
+  ]
+}

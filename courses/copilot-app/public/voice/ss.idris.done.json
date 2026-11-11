@@ -1,0 +1,72 @@
+{
+  "id": "ss.idris.done",
+  "speaker": "Idris",
+  "text": "Up the Signal Stair from the square's corner, Captain. Signal Master Noor's waiting.",
+  "words": [
+    {
+      "word": "Up",
+      "start": 0.051,
+      "end": 0.255083
+    },
+    {
+      "word": "the",
+      "start": 0.255083,
+      "end": 0.357125
+    },
+    {
+      "word": "Signal",
+      "start": 0.357125,
+      "end": 0.752541
+    },
+    {
+      "word": "Stair",
+      "start": 0.752541,
+      "end": 1.007666
+    },
+    {
+      "word": "from",
+      "start": 1.007666,
+      "end": 1.23725
+    },
+    {
+      "word": "the",
+      "start": 1.23725,
+      "end": 1.326541
+    },
+    {
+      "word": "square's",
+      "start": 1.326541,
+      "end": 1.760208
+    },
+    {
+      "word": "corner",
+      "start": 1.760208,
+      "end": 2.385208
+    },
+    {
+      "word": "Captain",
+      "start": 2.385208,
+      "end": 3.73725
+    },
+    {
+      "word": "Signal",
+      "start": 3.73725,
+      "end": 4.183666
+    },
+    {
+      "word": "Master",
+      "start": 4.183666,
+      "end": 4.553583
+    },
+    {
+      "word": "Noor's",
+      "start": 4.553583,
+      "end": 4.821416
+    },
+    {
+      "word": "waiting",
+      "start": 4.821416,
+      "end": 5.071416
+    }
+  ]
+}

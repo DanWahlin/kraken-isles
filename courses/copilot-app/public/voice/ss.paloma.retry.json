@@ -1,0 +1,42 @@
+{
+  "id": "ss.paloma.retry",
+  "speaker": "Paloma",
+  "text": "Again, Captain? The sun's in no hurry.",
+  "words": [
+    {
+      "word": "Again",
+      "start": 0.052625,
+      "end": 0.881583
+    },
+    {
+      "word": "Captain",
+      "start": 0.881583,
+      "end": 2.368416
+    },
+    {
+      "word": "The",
+      "start": 2.368416,
+      "end": 2.578958
+    },
+    {
+      "word": "sun's",
+      "start": 2.578958,
+      "end": 2.907875
+    },
+    {
+      "word": "in",
+      "start": 2.907875,
+      "end": 3.092125
+    },
+    {
+      "word": "no",
+      "start": 3.092125,
+      "end": 3.302625
+    },
+    {
+      "word": "hurry",
+      "start": 3.302625,
+      "end": 3.552625
+    }
+  ]
+}

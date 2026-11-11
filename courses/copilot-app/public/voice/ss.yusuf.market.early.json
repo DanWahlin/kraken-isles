@@ -1,0 +1,82 @@
+{
+  "id": "ss.yusuf.market.early",
+  "speaker": "Yusuf",
+  "text": "Not yet, Captain. Oren on Port Meridian teaches models first. Come back after his lesson.",
+  "words": [
+    {
+      "word": "Not",
+      "start": 0.05,
+      "end": 0.425
+    },
+    {
+      "word": "yet",
+      "start": 0.425,
+      "end": 0.8625
+    },
+    {
+      "word": "Captain",
+      "start": 0.8625,
+      "end": 2.25
+    },
+    {
+      "word": "Oren",
+      "start": 2.25,
+      "end": 2.575
+    },
+    {
+      "word": "on",
+      "start": 2.575,
+      "end": 2.7875
+    },
+    {
+      "word": "Port",
+      "start": 2.7875,
+      "end": 3
+    },
+    {
+      "word": "Meridian",
+      "start": 3,
+      "end": 3.5
+    },
+    {
+      "word": "teaches",
+      "start": 3.5,
+      "end": 3.85
+    },
+    {
+      "word": "models",
+      "start": 3.85,
+      "end": 4.25
+    },
+    {
+      "word": "first",
+      "start": 4.25,
+      "end": 5.575
+    },
+    {
+      "word": "Come",
+      "start": 5.575,
+      "end": 5.8375
+    },
+    {
+      "word": "back",
+      "start": 5.8375,
+      "end": 6.025
+    },
+    {
+      "word": "after",
+      "start": 6.025,
+      "end": 6.3
+    },
+    {
+      "word": "his",
+      "start": 6.3,
+      "end": 6.5
+    },
+    {
+      "word": "lesson",
+      "start": 6.5,
+      "end": 6.75
+    }
+  ]
+}

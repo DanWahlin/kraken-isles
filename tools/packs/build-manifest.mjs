@@ -76,6 +76,20 @@ const PACK_DEFS = [
     id: 'guildcrest/chart',
     include: ['packs/guildcrest/chart.bin', 'packs/guildcrest/chart.json'],
   },
+  {
+    id: 'sunspire/critical',
+    include: [
+      'packs/sunspire/terrain.bin',
+      'packs/sunspire/terrain.json',
+      'packs/testcove/terrain-textures/**',
+      'packs/testcove/rocks/**',
+    ],
+  },
+  {
+    // The opening's 3D chart reads only this coarse copy of Sunspire's terrain.
+    id: 'sunspire/chart',
+    include: ['packs/sunspire/chart.bin', 'packs/sunspire/chart.json'],
+  },
 ];
 
 function toPosix(path) {

@@ -1,0 +1,92 @@
+{
+  "id": "ss.yusuf.market.hello",
+  "speaker": "Yusuf",
+  "text": "Welcome, Captain! Yusuf's Model Market. Hire a model that fits the job; bigger ones cost more starfish.",
+  "words": [
+    {
+      "word": "Welcome",
+      "start": 0.05,
+      "end": 0.75
+    },
+    {
+      "word": "Captain",
+      "start": 0.75,
+      "end": 2.1125
+    },
+    {
+      "word": "Yusuf's",
+      "start": 2.1125,
+      "end": 2.625
+    },
+    {
+      "word": "Model",
+      "start": 2.625,
+      "end": 2.925
+    },
+    {
+      "word": "Market",
+      "start": 2.925,
+      "end": 4.3625
+    },
+    {
+      "word": "Hire",
+      "start": 4.3625,
+      "end": 4.725
+    },
+    {
+      "word": "a",
+      "start": 4.725,
+      "end": 4.825
+    },
+    {
+      "word": "model",
+      "start": 4.825,
+      "end": 5.175
+    },
+    {
+      "word": "that",
+      "start": 5.175,
+      "end": 5.35
+    },
+    {
+      "word": "fits",
+      "start": 5.35,
+      "end": 5.675
+    },
+    {
+      "word": "the",
+      "start": 5.675,
+      "end": 5.8125
+    },
+    {
+      "word": "job",
+      "start": 5.8125,
+      "end": 6.2625
+    },
+    {
+      "word": "bigger",
+      "start": 6.2625,
+      "end": 6.5375
+    },
+    {
+      "word": "ones",
+      "start": 6.5375,
+      "end": 6.8375
+    },
+    {
+      "word": "cost",
+      "start": 6.8375,
+      "end": 7.125
+    },
+    {
+      "word": "more",
+      "start": 7.125,
+      "end": 7.275
+    },
+    {
+      "word": "starfish",
+      "start": 7.275,
+      "end": 7.525
+    }
+  ]
+}

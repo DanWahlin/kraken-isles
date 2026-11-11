@@ -1,0 +1,137 @@
+{
+  "id": "ss.paloma.assign.01",
+  "speaker": "Paloma",
+  "text": "The course's assignment is one table of evidence: what each tool was, what proves it ran, its source, and what you learned about the Book App.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.052625,
+      "end": 0.236833
+    },
+    {
+      "word": "course's",
+      "start": 0.236833,
+      "end": 0.64475
+    },
+    {
+      "word": "assignment",
+      "start": 0.64475,
+      "end": 1.263166
+    },
+    {
+      "word": "is",
+      "start": 1.263166,
+      "end": 1.460541
+    },
+    {
+      "word": "one",
+      "start": 1.460541,
+      "end": 1.75
+    },
+    {
+      "word": "table",
+      "start": 1.75,
+      "end": 2.092125
+    },
+    {
+      "word": "of",
+      "start": 2.092125,
+      "end": 2.263166
+    },
+    {
+      "word": "evidence",
+      "start": 2.263166,
+      "end": 3.131583
+    },
+    {
+      "word": "what",
+      "start": 3.131583,
+      "end": 3.39475
+    },
+    {
+      "word": "each",
+      "start": 3.39475,
+      "end": 3.697375
+    },
+    {
+      "word": "tool",
+      "start": 3.697375,
+      "end": 3.973666
+    },
+    {
+      "word": "was",
+      "start": 3.973666,
+      "end": 4.64475
+    },
+    {
+      "word": "what",
+      "start": 4.64475,
+      "end": 4.881583
+    },
+    {
+      "word": "proves",
+      "start": 4.881583,
+      "end": 5.223666
+    },
+    {
+      "word": "it",
+      "start": 5.223666,
+      "end": 5.421041
+    },
+    {
+      "word": "ran",
+      "start": 5.421041,
+      "end": 6.065791
+    },
+    {
+      "word": "its",
+      "start": 6.065791,
+      "end": 6.302625
+    },
+    {
+      "word": "source",
+      "start": 6.302625,
+      "end": 7.052625
+    },
+    {
+      "word": "and",
+      "start": 7.052625,
+      "end": 7.236833
+    },
+    {
+      "word": "what",
+      "start": 7.236833,
+      "end": 7.473666
+    },
+    {
+      "word": "you",
+      "start": 7.473666,
+      "end": 7.565791
+    },
+    {
+      "word": "learned",
+      "start": 7.565791,
+      "end": 7.842125
+    },
+    {
+      "word": "about",
+      "start": 7.842125,
+      "end": 8.14475
+    },
+    {
+      "word": "the",
+      "start": 8.14475,
+      "end": 8.289458
+    },
+    {
+      "word": "Book",
+      "start": 8.289458,
+      "end": 8.565791
+    },
+    {
+      "word": "App",
+      "start": 8.565791,
+      "end": 8.815791
+    }
+  ]
+}

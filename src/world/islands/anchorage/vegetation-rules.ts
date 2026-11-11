@@ -274,6 +274,14 @@ const RULES: SpeciesRuleMap = {
     scale: () => 1,
     lean: () => ({ x: 0, z: 0 }),
   },
+  saguaro: {
+    countHigh: 0,
+    minDistance: 3,
+    maxSlopeDeg: 30,
+    score: () => 0,
+    scale: () => 1,
+    lean: () => ({ x: 0, z: 0 }),
+  },
   brush: {
     countHigh: 0,
     minDistance: 3,

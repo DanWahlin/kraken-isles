@@ -1,0 +1,107 @@
+{
+  "id": "ss.paloma.01",
+  "speaker": "Paloma",
+  "text": "Warden Paloma, Captain. From up here you can see what you connected today, and how little of it you needed.",
+  "words": [
+    {
+      "word": "Warden",
+      "start": 0.052625,
+      "end": 0.513166
+    },
+    {
+      "word": "Paloma",
+      "start": 0.513166,
+      "end": 1.342125
+    },
+    {
+      "word": "Captain",
+      "start": 1.342125,
+      "end": 2.815791
+    },
+    {
+      "word": "From",
+      "start": 2.815791,
+      "end": 3.131583
+    },
+    {
+      "word": "up",
+      "start": 3.131583,
+      "end": 3.315791
+    },
+    {
+      "word": "here",
+      "start": 3.315791,
+      "end": 3.578958
+    },
+    {
+      "word": "you",
+      "start": 3.578958,
+      "end": 3.710541
+    },
+    {
+      "word": "can",
+      "start": 3.710541,
+      "end": 3.986833
+    },
+    {
+      "word": "see",
+      "start": 3.986833,
+      "end": 4.171041
+    },
+    {
+      "word": "what",
+      "start": 4.171041,
+      "end": 4.407875
+    },
+    {
+      "word": "you",
+      "start": 4.407875,
+      "end": 4.513166
+    },
+    {
+      "word": "connected",
+      "start": 4.513166,
+      "end": 5
+    },
+    {
+      "word": "today",
+      "start": 5,
+      "end": 5.842125
+    },
+    {
+      "word": "and",
+      "start": 5.842125,
+      "end": 6
+    },
+    {
+      "word": "how",
+      "start": 6,
+      "end": 6.223666
+    },
+    {
+      "word": "little",
+      "start": 6.223666,
+      "end": 6.552625
+    },
+    {
+      "word": "of",
+      "start": 6.552625,
+      "end": 6.697375
+    },
+    {
+      "word": "it",
+      "start": 6.697375,
+      "end": 6.868416
+    },
+    {
+      "word": "you",
+      "start": 6.868416,
+      "end": 6.973666
+    },
+    {
+      "word": "needed",
+      "start": 6.973666,
+      "end": 7.223666
+    }
+  ]
+}

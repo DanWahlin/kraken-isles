@@ -1,7 +1,16 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { CIRCUIT_PLACES } from './places';
-import { activeLap, gateDark, LapRun, petitionReady, type CircuitFile } from './logic';
+import {
+  activeLap,
+  dialStart,
+  dialTurn,
+  gateDark,
+  LapRun,
+  petitionReady,
+  type CircuitFile,
+  type CircuitLap,
+} from './logic';
 
 const load = (name: string) =>
   JSON.parse(readFileSync(`courses/copilot-app/puzzles/${name}.json`, 'utf8')) as CircuitFile;
@@ -111,5 +120,66 @@ describe('circuit logic', () => {
     const a = run.choose('hide');
     const b = run.choose('test');
     expect(a).toBe(b);
+  });
+
+  /** A lap with a dial between two stations: a mirror with four bearings, one of them the tower's. */
+  const DIAL_LAP: CircuitLap = {
+    id: 'aim',
+    quest: 'Q',
+    step: 'go',
+    solved: 'solved',
+    close: 'done',
+    title: 'Aim',
+    order: 'Aim the mirror',
+    stations: [
+      { id: 'open', at: 'shutter', kind: 'watch', title: 'Open', cite: 'c' },
+      {
+        id: 'aim',
+        at: 'mirror',
+        kind: 'dial',
+        title: 'Aim',
+        cite: 'c',
+        start: 3,
+        positions: [
+          { id: 'n', text: 'North: the open sea', reason: 'Nothing answers there.', cite: 'c' },
+          { id: 'e', text: 'East: the tower', right: true, result: 'The beam lands.' },
+          { id: 's', text: 'South: the dunes', reason: 'Nothing answers there.', cite: 'c' },
+          { id: 'w', text: 'West: the cliff', reason: 'Nothing answers there.', cite: 'c' },
+        ],
+      },
+      { id: 'read', at: 'reply', kind: 'watch', title: 'Read', cite: 'c' },
+    ],
+  };
+
+  it('turns a dial a position at a time, round both ways', () => {
+    expect(dialTurn(0, 1, 4)).toBe(1);
+    expect(dialTurn(3, 1, 4)).toBe(0);
+    expect(dialTurn(0, -1, 4)).toBe(3);
+    expect(dialTurn(2, -7, 4)).toBe(3);
+    expect(dialTurn(0, 1, 0)).toBe(0);
+    expect(dialStart(DIAL_LAP.stations[1]!)).toBe(3);
+    expect(dialStart({ ...DIAL_LAP.stations[1]!, start: 9 })).toBe(1);
+    expect(dialStart(DIAL_LAP.stations[0]!)).toBe(0);
+  });
+
+  it('keeps a dial in your hands when it is set wrong, and passes it when it is set right', () => {
+    const run = new LapRun(DIAL_LAP);
+    run.pass();
+    expect(run.station!.id).toBe('aim');
+    const wrong = run.set(3);
+    expect(wrong.right).toBe(false);
+    expect(wrong.position!.reason).toBe('Nothing answers there.');
+    // No way back: the station still waits, its lamp not ready, the one before it still lit.
+    expect(run.station!.id).toBe('aim');
+    expect(run.lamps.get('mirror')).toBe('notReady');
+    expect(run.lamps.get('shutter')).toBe('ready');
+    const right = run.set(1);
+    expect(right.right).toBe(true);
+    expect(right).toBe(wrong);
+    expect(run.station!.id).toBe('read');
+    expect(run.lamps.get('mirror')).toBe('ready');
+    // A position the dial hasn't got does nothing.
+    expect(run.set(7).position).toBeNull();
+    expect(run.station!.id).toBe('read');
   });
 });

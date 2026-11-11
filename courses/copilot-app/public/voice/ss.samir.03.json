@@ -1,0 +1,117 @@
+{
+  "id": "ss.samir.03",
+  "speaker": "Samir",
+  "text": "Installing a plugin isn't the same as using what's inside it. And read its contents, not only the label on the stall.",
+  "words": [
+    {
+      "word": "Installing",
+      "start": 0.0515409,
+      "end": 0.554125
+    },
+    {
+      "word": "a",
+      "start": 0.554125,
+      "end": 0.683
+    },
+    {
+      "word": "plugin",
+      "start": 0.683,
+      "end": 1.005166
+    },
+    {
+      "word": "isn't",
+      "start": 1.005166,
+      "end": 1.262875
+    },
+    {
+      "word": "the",
+      "start": 1.262875,
+      "end": 1.404625
+    },
+    {
+      "word": "same",
+      "start": 1.404625,
+      "end": 1.623708
+    },
+    {
+      "word": "as",
+      "start": 1.623708,
+      "end": 1.778333
+    },
+    {
+      "word": "using",
+      "start": 1.778333,
+      "end": 2.087625
+    },
+    {
+      "word": "what's",
+      "start": 2.087625,
+      "end": 2.35825
+    },
+    {
+      "word": "inside",
+      "start": 2.35825,
+      "end": 2.706166
+    },
+    {
+      "word": "it",
+      "start": 2.706166,
+      "end": 3.827333
+    },
+    {
+      "word": "And",
+      "start": 3.827333,
+      "end": 4.00775
+    },
+    {
+      "word": "read",
+      "start": 4.00775,
+      "end": 4.252583
+    },
+    {
+      "word": "its",
+      "start": 4.252583,
+      "end": 4.471666
+    },
+    {
+      "word": "contents",
+      "start": 4.471666,
+      "end": 5.219083
+    },
+    {
+      "word": "not",
+      "start": 5.219083,
+      "end": 5.451041
+    },
+    {
+      "word": "only",
+      "start": 5.451041,
+      "end": 5.644333
+    },
+    {
+      "word": "the",
+      "start": 5.644333,
+      "end": 5.760291
+    },
+    {
+      "word": "label",
+      "start": 5.760291,
+      "end": 6.10825
+    },
+    {
+      "word": "on",
+      "start": 6.10825,
+      "end": 6.224208
+    },
+    {
+      "word": "the",
+      "start": 6.224208,
+      "end": 6.327333
+    },
+    {
+      "word": "stall",
+      "start": 6.327333,
+      "end": 6.577333
+    }
+  ]
+}

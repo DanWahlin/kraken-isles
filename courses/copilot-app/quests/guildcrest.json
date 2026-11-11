@@ -5,7 +5,8 @@
   "tracker": {
     "chapter": "Chapter 04 · Skills & Custom Agents",
     "goal": "Save your craft as skills and agents, and earn the Seal of Guildcrest",
-    "next": "Sunspire Sands is next, and she’s still being charted. Until then these waters are yours."
+    "next": "Sunspire Sands is next, and she’s still being charted. Until then these waters are yours.",
+    "nextSail": "Sunspire Sands is next. Board your ship and follow the compass south."
   },
   "quests": [
     {

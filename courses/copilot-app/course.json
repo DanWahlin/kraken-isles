@@ -146,12 +146,17 @@
       "chapter": "05-mcp-plugins",
       "label": "05 · MCP Servers & Plugins",
       "minutes": 45,
+      "seal": "Seal of Sunspire",
       "topics": [
         "What an MCP server is, and how it differs from a plugin",
         "Connecting a server and checking its tools",
         "Installing a plugin and using its skill",
         "Reviewing permissions and tool activity"
-      ]
+      ],
+      "arrival": {
+        "eyebrow": "Chapter 05 · MCP Servers & Plugins",
+        "line": "Reach farther, and carry only what you need"
+      }
     },
     {
       "island": "inkwell",
@@ -314,6 +319,14 @@
         "tips": {
           "nav": "wingman.gc.nav",
           "starfish": "wingman.starfish.guildcrest"
+        }
+      },
+      "sunspire": {
+        "landing": ["ss.juno.arrive.01"],
+        "welcome": ["wingman.ss.01", "@starfish"],
+        "tips": {
+          "nav": "wingman.ss.nav",
+          "starfish": "wingman.starfish.sunspire"
         }
       }
     },

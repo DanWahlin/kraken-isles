@@ -1,0 +1,72 @@
+{
+  "id": "ss.samir.crate",
+  "speaker": "Samir",
+  "text": "Work round the yard, Captain. The caravan row's board first, under the arch.",
+  "words": [
+    {
+      "word": "Work",
+      "start": 0.0515409,
+      "end": 0.335041
+    },
+    {
+      "word": "round",
+      "start": 0.335041,
+      "end": 0.567
+    },
+    {
+      "word": "the",
+      "start": 0.567,
+      "end": 0.644333
+    },
+    {
+      "word": "yard",
+      "start": 0.644333,
+      "end": 1.237125
+    },
+    {
+      "word": "Captain",
+      "start": 1.237125,
+      "end": 2.551541
+    },
+    {
+      "word": "The",
+      "start": 2.551541,
+      "end": 2.706166
+    },
+    {
+      "word": "caravan",
+      "start": 2.706166,
+      "end": 3.157208
+    },
+    {
+      "word": "row's",
+      "start": 3.157208,
+      "end": 3.505166
+    },
+    {
+      "word": "board",
+      "start": 3.505166,
+      "end": 3.724208
+    },
+    {
+      "word": "first",
+      "start": 3.724208,
+      "end": 4.355666
+    },
+    {
+      "word": "under",
+      "start": 4.355666,
+      "end": 4.6005
+    },
+    {
+      "word": "the",
+      "start": 4.6005,
+      "end": 4.755166
+    },
+    {
+      "word": "arch",
+      "start": 4.755166,
+      "end": 5.005166
+    }
+  ]
+}

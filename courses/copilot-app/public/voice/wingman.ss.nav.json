@@ -1,0 +1,112 @@
+{
+  "id": "wingman.ss.nav",
+  "speaker": "Wingman",
+  "text": "Your tasks are in the top left, and the compass up top shows the way, all the way to the Sunspire.",
+  "words": [
+    {
+      "word": "Your",
+      "start": 0,
+      "end": 0.24
+    },
+    {
+      "word": "tasks",
+      "start": 0.24,
+      "end": 0.68
+    },
+    {
+      "word": "are",
+      "start": 0.68,
+      "end": 0.827
+    },
+    {
+      "word": "in",
+      "start": 0.827,
+      "end": 0.9
+    },
+    {
+      "word": "the",
+      "start": 0.9,
+      "end": 1.04
+    },
+    {
+      "word": "top",
+      "start": 1.04,
+      "end": 1.344
+    },
+    {
+      "word": "left",
+      "start": 1.344,
+      "end": 2.12
+    },
+    {
+      "word": "and",
+      "start": 2.12,
+      "end": 2.26
+    },
+    {
+      "word": "the",
+      "start": 2.26,
+      "end": 2.37
+    },
+    {
+      "word": "compass",
+      "start": 2.37,
+      "end": 2.773
+    },
+    {
+      "word": "up",
+      "start": 2.773,
+      "end": 2.96
+    },
+    {
+      "word": "top",
+      "start": 2.96,
+      "end": 3.267
+    },
+    {
+      "word": "shows",
+      "start": 3.267,
+      "end": 3.62
+    },
+    {
+      "word": "the",
+      "start": 3.62,
+      "end": 3.76
+    },
+    {
+      "word": "way",
+      "start": 3.76,
+      "end": 4.2
+    },
+    {
+      "word": "all",
+      "start": 4.2,
+      "end": 4.6
+    },
+    {
+      "word": "the",
+      "start": 4.6,
+      "end": 4.78
+    },
+    {
+      "word": "way",
+      "start": 4.78,
+      "end": 5.013
+    },
+    {
+      "word": "to",
+      "start": 5.013,
+      "end": 5.14
+    },
+    {
+      "word": "the",
+      "start": 5.14,
+      "end": 5.28
+    },
+    {
+      "word": "Sunspire",
+      "start": 5.28,
+      "end": 5.53
+    }
+  ]
+}

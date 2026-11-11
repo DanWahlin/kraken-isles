@@ -1,0 +1,52 @@
+{
+  "id": "ss.samir.done",
+  "speaker": "Samir",
+  "text": "Up the Sun Stair, Captain. Paloma's on the terrace.",
+  "words": [
+    {
+      "word": "Up",
+      "start": 0.0515409,
+      "end": 0.270625
+    },
+    {
+      "word": "the",
+      "start": 0.270625,
+      "end": 0.373708
+    },
+    {
+      "word": "Sun",
+      "start": 0.373708,
+      "end": 0.631458
+    },
+    {
+      "word": "Stair",
+      "start": 0.631458,
+      "end": 1.288666
+    },
+    {
+      "word": "Captain",
+      "start": 1.288666,
+      "end": 2.603083
+    },
+    {
+      "word": "Paloma's",
+      "start": 2.603083,
+      "end": 3.028333
+    },
+    {
+      "word": "on",
+      "start": 3.028333,
+      "end": 3.131458
+    },
+    {
+      "word": "the",
+      "start": 3.131458,
+      "end": 3.260291
+    },
+    {
+      "word": "terrace",
+      "start": 3.260291,
+      "end": 3.510291
+    }
+  ]
+}

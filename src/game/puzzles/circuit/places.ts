@@ -26,6 +26,10 @@ export const CIRCUIT_PLACES = {
   book: ['shelf', 'spine', 'desk', 'proof', 'bell', 'lectern'],
   /** A guildhall yard (the Journeyman's Toolbelt): a role written, fitted, proofed, loaded, called, used. */
   belt: ['indenture', 'rack', 'proof', 'door', 'roll', 'bench', 'testBench'],
+  /** A mirror court (Mirror Beams): a far tower found, read, opened, aimed, signalled, and its answer compared at home. */
+  signal: ['roll', 'card', 'shutter', 'mirror', 'key', 'tent'],
+  /** A crate yard (the Sealed Crate): a crate found, its lading read, taken in, called for, and its work checked. */
+  crate: ['row', 'lading', 'scale', 'bell', 'bench'],
 } as const;
 
 export type CircuitKind = keyof typeof CIRCUIT_PLACES;
@@ -37,7 +41,8 @@ export type BeltPlace = (typeof CIRCUIT_PLACES.belt)[number];
 /**
  * What a station asks of the player: `choose` (one option; a wrong one goes back with its reason),
  * `watch` (a short demo, skippable), `sound` (tap each plank, then float the hull), `seal` (the
- * player's approval), `tiles` (claims that stick or don't), `gate` (a seal that waits for its lamps).
+ * player's approval), `tiles` (claims that stick or don't), `gate` (a seal that waits for its lamps),
+ * `dial` (a control the player turns a position at a time, watching what it does, then sets).
  */
-export const STATION_KINDS = ['choose', 'watch', 'sound', 'seal', 'tiles', 'gate'] as const;
+export const STATION_KINDS = ['choose', 'watch', 'sound', 'seal', 'tiles', 'gate', 'dial'] as const;
 export type StationKind = (typeof STATION_KINDS)[number];

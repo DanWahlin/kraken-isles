@@ -1,0 +1,77 @@
+{
+  "id": "ss.samir.row",
+  "speaker": "Samir",
+  "text": "In Customize, on Browse, set the type filter to Plugins and search for modern-web-guidance.",
+  "words": [
+    {
+      "word": "In",
+      "start": 0.0515409,
+      "end": 0.2835
+    },
+    {
+      "word": "Customize",
+      "start": 0.2835,
+      "end": 1.10825
+    },
+    {
+      "word": "on",
+      "start": 1.10825,
+      "end": 1.327333
+    },
+    {
+      "word": "Browse",
+      "start": 1.327333,
+      "end": 1.868541
+    },
+    {
+      "word": "set",
+      "start": 1.868541,
+      "end": 2.087625
+    },
+    {
+      "word": "the",
+      "start": 2.087625,
+      "end": 2.268041
+    },
+    {
+      "word": "type",
+      "start": 2.268041,
+      "end": 2.474208
+    },
+    {
+      "word": "filter",
+      "start": 2.474208,
+      "end": 2.873708
+    },
+    {
+      "word": "to",
+      "start": 2.873708,
+      "end": 3.002583
+    },
+    {
+      "word": "Plugins",
+      "start": 3.002583,
+      "end": 3.337625
+    },
+    {
+      "word": "and",
+      "start": 3.337625,
+      "end": 3.453625
+    },
+    {
+      "word": "search",
+      "start": 3.453625,
+      "end": 3.737125
+    },
+    {
+      "word": "for",
+      "start": 3.737125,
+      "end": 3.904625
+    },
+    {
+      "word": "modern-web-guidance",
+      "start": 3.904625,
+      "end": 4.154624999999999
+    }
+  ]
+}

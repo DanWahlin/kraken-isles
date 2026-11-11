@@ -1,0 +1,122 @@
+{
+  "id": "ss.idris.01",
+  "speaker": "Idris",
+  "text": "Pitch a tent of your own, Captain. In the app: Create from, then Branches, then main. That's a session in a new worktree.",
+  "words": [
+    {
+      "word": "Pitch",
+      "start": 0.051,
+      "end": 0.293375
+    },
+    {
+      "word": "a",
+      "start": 0.293375,
+      "end": 0.420916
+    },
+    {
+      "word": "tent",
+      "start": 0.420916,
+      "end": 0.6505
+    },
+    {
+      "word": "of",
+      "start": 0.6505,
+      "end": 0.803583
+    },
+    {
+      "word": "your",
+      "start": 0.803583,
+      "end": 1.007666
+    },
+    {
+      "word": "own",
+      "start": 1.007666,
+      "end": 1.581625
+    },
+    {
+      "word": "Captain",
+      "start": 1.581625,
+      "end": 2.997458
+    },
+    {
+      "word": "In",
+      "start": 2.997458,
+      "end": 3.188791
+    },
+    {
+      "word": "the",
+      "start": 3.188791,
+      "end": 3.367333
+    },
+    {
+      "word": "app",
+      "start": 3.367333,
+      "end": 3.890291
+    },
+    {
+      "word": "Create",
+      "start": 3.890291,
+      "end": 4.170916
+    },
+    {
+      "word": "from",
+      "start": 4.170916,
+      "end": 4.719375
+    },
+    {
+      "word": "then",
+      "start": 4.719375,
+      "end": 4.96175
+    },
+    {
+      "word": "Branches",
+      "start": 4.96175,
+      "end": 5.727041
+    },
+    {
+      "word": "then",
+      "start": 5.727041,
+      "end": 5.892875
+    },
+    {
+      "word": "main",
+      "start": 5.892875,
+      "end": 7.091833
+    },
+    {
+      "word": "That's",
+      "start": 7.091833,
+      "end": 7.436208
+    },
+    {
+      "word": "a",
+      "start": 7.436208,
+      "end": 7.51275
+    },
+    {
+      "word": "session",
+      "start": 7.51275,
+      "end": 7.908166
+    },
+    {
+      "word": "in",
+      "start": 7.908166,
+      "end": 8.022958
+    },
+    {
+      "word": "a",
+      "start": 8.022958,
+      "end": 8.11225
+    },
+    {
+      "word": "new",
+      "start": 8.11225,
+      "end": 8.329083
+    },
+    {
+      "word": "worktree",
+      "start": 8.329083,
+      "end": 8.579083
+    }
+  ]
+}

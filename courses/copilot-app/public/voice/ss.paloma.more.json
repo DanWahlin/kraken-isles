@@ -1,0 +1,122 @@
+{
+  "id": "ss.paloma.more",
+  "speaker": "Paloma",
+  "text": "Inkwell Bluffs is next, where the whole job is kept on one great chart. And I've one more task, if you'd like it.",
+  "words": [
+    {
+      "word": "Inkwell",
+      "start": 0.052625,
+      "end": 0.592125
+    },
+    {
+      "word": "Bluffs",
+      "start": 0.592125,
+      "end": 0.947375
+    },
+    {
+      "word": "is",
+      "start": 0.947375,
+      "end": 1.118416
+    },
+    {
+      "word": "next",
+      "start": 1.118416,
+      "end": 1.973666
+    },
+    {
+      "word": "where",
+      "start": 1.973666,
+      "end": 2.157875
+    },
+    {
+      "word": "the",
+      "start": 2.157875,
+      "end": 2.25
+    },
+    {
+      "word": "whole",
+      "start": 2.25,
+      "end": 2.539458
+    },
+    {
+      "word": "job",
+      "start": 2.539458,
+      "end": 2.828958
+    },
+    {
+      "word": "is",
+      "start": 2.828958,
+      "end": 3.052625
+    },
+    {
+      "word": "kept",
+      "start": 3.052625,
+      "end": 3.368416
+    },
+    {
+      "word": "on",
+      "start": 3.368416,
+      "end": 3.552625
+    },
+    {
+      "word": "one",
+      "start": 3.552625,
+      "end": 3.842125
+    },
+    {
+      "word": "great",
+      "start": 3.842125,
+      "end": 4.157875
+    },
+    {
+      "word": "chart",
+      "start": 4.157875,
+      "end": 5.592125
+    },
+    {
+      "word": "And",
+      "start": 5.592125,
+      "end": 5.776333
+    },
+    {
+      "word": "I've",
+      "start": 5.776333,
+      "end": 6
+    },
+    {
+      "word": "one",
+      "start": 6,
+      "end": 6.210541
+    },
+    {
+      "word": "more",
+      "start": 6.210541,
+      "end": 6.513166
+    },
+    {
+      "word": "task",
+      "start": 6.513166,
+      "end": 7.236833
+    },
+    {
+      "word": "if",
+      "start": 7.236833,
+      "end": 7.421041
+    },
+    {
+      "word": "you'd",
+      "start": 7.421041,
+      "end": 7.631583
+    },
+    {
+      "word": "like",
+      "start": 7.631583,
+      "end": 7.868416
+    },
+    {
+      "word": "it",
+      "start": 7.868416,
+      "end": 8.118416
+    }
+  ]
+}

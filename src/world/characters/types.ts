@@ -82,6 +82,23 @@ const NPC_IDS = [
   'gc_copyist',
   'gc_miller',
   'gc_shepherd',
+  // Sunspire Sands (Chapter 05): the cast, Yusuf's market body, Lyra's players and the islanders.
+  'zahra',
+  'idris',
+  'noor',
+  'samir',
+  'paloma',
+  'ss_market',
+  'ss_player_a',
+  'ss_player_b',
+  'ss_trader',
+  'ss_weaver',
+  'ss_carrier',
+  'ss_camper',
+  'ss_signaller',
+  'ss_porter',
+  'ss_child',
+  'ss_fisher',
 ] as const;
 export const CHARACTER_BODIES = [...PLAYER_BODIES, ...NPC_IDS] as const;
 export const CHARACTER_CLIPS = [

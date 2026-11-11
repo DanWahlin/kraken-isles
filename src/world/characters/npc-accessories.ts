@@ -386,6 +386,75 @@ export function dressNpcCharacter(root: Group, body: CharacterBody): void {
     case 'gc_shepherd':
       addHeadscarf(root, 0x3a5a4a, 0xd8b97a);
       break;
+    // Sunspire Sands (docs/specs/ISLAND-05-sunspire-sands.md §4).
+    case 'zahra':
+      addHeadscarf(root, 0xe0a030, 0x34507e);
+      addMerchantScales(root, 1);
+      break;
+    case 'idris':
+      addSunBleachedCap(root);
+      addRolledSleeves(root, 0xd4c1a0);
+      addBucket(root, 0x8a6444, -1);
+      break;
+    case 'noor':
+      addHeadscarf(root, 0x34507e, 0xc89b3c);
+      addSpyglassInHand(root, 1);
+      addSash(root, 0xc89b3c, 1);
+      break;
+    case 'samir':
+      addWideBrimFeltHat(root, 0x6b4a30, 0xb8443a);
+      addApron(root, 0x7a5a3c, 0x3a2a20);
+      addScroll(root, 1);
+      break;
+    case 'paloma':
+      addAstronomerRobe(root, 0xf0e6d0, 0xc89b3c);
+      addAstrolabeInHand(root, 1);
+      break;
+    case 'ss_market':
+      addSunHat(root, 0xd9b97a, 0xe0a030);
+      addApron(root, 0xeadcb4, 0xe0a030);
+      addMoneyPouch(root, 0x8b5428, 1);
+      break;
+    case 'ss_player_a':
+      addHeadscarf(root, 0xb8443a, 0xf0e6d0);
+      break;
+    case 'ss_player_b':
+      addSunBleachedCap(root);
+      addBeard(root, 0xb7b3a3);
+      break;
+    case 'ss_trader':
+      addSunHat(root, 0xd9b97a, 0xb8443a);
+      addMarketBasket(root, -1);
+      break;
+    case 'ss_weaver':
+      addHeadscarf(root, 0x5f426f, 0xe0a030);
+      break;
+    case 'ss_carrier':
+      addStrawHat(root);
+      addBucket(root, 0x8a6444, 1);
+      addRolledSleeves(root, 0xb7a281);
+      break;
+    case 'ss_camper':
+      addWideBrimFeltHat(root, 0x8a7a5a, 0x34507e);
+      addNeckerchief(root, 0xb8443a);
+      break;
+    case 'ss_signaller':
+      addSoftStarCap(root, 0x34507e, 0xc89b3c);
+      addSpyglass(root, -1);
+      break;
+    case 'ss_porter':
+      addBandana(root, 0xb8443a, 0xf0e6d0);
+      addRolledSleeves(root, 0xb7a281);
+      break;
+    case 'ss_child':
+      addChildSailorCap(root, 0xf0e6d0, 0xe0a030);
+      addToyPinwheel(root, 1);
+      break;
+    case 'ss_fisher':
+      addStrawHat(root);
+      addTacklePouch(root, 0x6b4a30, 1);
+      addPipe(root);
+      break;
   }
 }
 

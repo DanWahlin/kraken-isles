@@ -156,6 +156,42 @@ export function buildPine(seed = 9): BufferGeometry {
 }
 
 /**
+ * A saguaro, built in code (Sunspire's desert): a tall ribbed column with a rounded crown and one to
+ * three arms that leave it sideways and turn up. About six metres; the loader scales it.
+ */
+export function buildSaguaro(seed = 11): BufferGeometry {
+  const rand = seeded(seed);
+  const parts: BufferGeometry[] = [];
+  const green = (k: number): [number, number, number] => [0.3 * k, 0.42 * k, 0.26 * k];
+  /** A ribbed column from `y0` to `y1` round (x, z), `r` thick, with a domed top. */
+  const column = (x: number, z: number, y0: number, y1: number, r: number) => {
+    const g = new SphereGeometry(1, 9, 6);
+    g.scale(r, (y1 - y0) / 2 + r * 0.4, r);
+    g.translate(x, (y0 + y1) / 2, z);
+    parts.push(tagged(g, green(0.9 + rand() * 0.2), 0));
+  };
+  const height = 5.4 + rand() * 1.2;
+  column(0, 0, -0.2, height, 0.36);
+  const arms = 1 + Math.floor(rand() * 3);
+  for (let i = 0; i < arms; i++) {
+    const a = rand() * Math.PI * 2 + i * 2.1;
+    const from = height * (0.34 + rand() * 0.22);
+    const reach = 0.85 + rand() * 0.35;
+    const top = Math.min(height - 0.4, from + 1.4 + rand() * 1.6);
+    // The elbow: a short thick piece out from the trunk, then the arm straight up from its end.
+    const elbow = new SphereGeometry(1, 7, 4);
+    elbow.scale(reach / 2 + 0.2, 0.26, 0.26);
+    elbow.rotateY(-a);
+    elbow.translate((Math.cos(a) * reach) / 2, from, (Math.sin(a) * reach) / 2);
+    parts.push(tagged(elbow, green(0.9), 0));
+    column(Math.cos(a) * reach, Math.sin(a) * reach, from - 0.1, top, 0.25);
+  }
+  const merged = mergeGeometries(parts, false)!;
+  for (const g of parts) g.dispose();
+  return merged;
+}
+
+/**
  * An Italian cypress, built in code: a short trunk and a tall, dense flame of dark foliage (stacked
  * domes, widest a third of the way up, closing to a point). About seven metres; the loader scales it.
  */

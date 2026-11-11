@@ -644,6 +644,23 @@ export function createTerrainMaterial(options: TerrainMaterialOptions = {}): Mes
   );
   const basaltMossTone = mix(color(0x34502a), color(0x6b8a3c), noiseFine.g.mul(0.6).add(noiseMid.r.mul(0.4)));
   base = mix(base, mix(basaltTone, basaltMossTone, basaltMoss.mul(0.92)), R.basalt);
+  // Sunspire's red sandstone: warm stone with the triplanar grain, darker bedding planes, and one pale
+  // bed in each (the same wandering phase as the cliff beds, with its screen-space width, so the
+  // bands don't shimmer far off); the island's regions say where.
+  const paleBed = options.miniature
+    ? float(0.2)
+    : smoothstep(float(0.42).sub(bedWidth), float(0.42).add(bedWidth), bedPhase).mul(
+        float(1).sub(smoothstep(float(0.62).sub(bedWidth), float(0.62).add(bedWidth), bedPhase)),
+      );
+  const redRockTone = mix(
+    mix(color(0x7a3a24), color(0xb5562e), faceNoise.mul(0.6).add(faceGrain.mul(0.4))),
+    color(0xd9a066),
+    paleBed.mul(0.5),
+  )
+    .mul(float(1).sub(cliffBeds.mul(0.26)))
+    .mul(float(1).sub(smoothstep(0.62, 0.8, faceNoise).mul(0.16)));
+  // On the bake's own cliff and rock (not the drawn slope: a far level's faces are gentler).
+  base = mix(base, redRockTone, R.redRock.mul(saturate(cliffMask.add(rockMask.mul(0.85)))));
 
   // Fluted green walls (`paliWall`): a forest canopy over the whole region (walls up to near-sheer,
   // crests, valley floors), yellow-green on the open ribs and crests and dark wet green in the gullies

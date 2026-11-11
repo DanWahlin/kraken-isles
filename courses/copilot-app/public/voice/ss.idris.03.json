@@ -1,0 +1,97 @@
+{
+  "id": "ss.idris.03",
+  "speaker": "Idris",
+  "text": "Now look at the well. Every tent has its own floor, but they all drink from one well.",
+  "words": [
+    {
+      "word": "Now",
+      "start": 0.051,
+      "end": 0.344375
+    },
+    {
+      "word": "look",
+      "start": 0.344375,
+      "end": 0.535708
+    },
+    {
+      "word": "at",
+      "start": 0.535708,
+      "end": 0.6505
+    },
+    {
+      "word": "the",
+      "start": 0.6505,
+      "end": 0.790833
+    },
+    {
+      "word": "well",
+      "start": 0.790833,
+      "end": 1.938791
+    },
+    {
+      "word": "Every",
+      "start": 1.938791,
+      "end": 2.283166
+    },
+    {
+      "word": "tent",
+      "start": 2.283166,
+      "end": 2.51275
+    },
+    {
+      "word": "has",
+      "start": 2.51275,
+      "end": 2.716833
+    },
+    {
+      "word": "its",
+      "start": 2.716833,
+      "end": 2.933666
+    },
+    {
+      "word": "own",
+      "start": 2.933666,
+      "end": 3.0995
+    },
+    {
+      "word": "floor",
+      "start": 3.0995,
+      "end": 3.75
+    },
+    {
+      "word": "but",
+      "start": 3.75,
+      "end": 3.877541
+    },
+    {
+      "word": "they",
+      "start": 3.877541,
+      "end": 4.068875
+    },
+    {
+      "word": "all",
+      "start": 4.068875,
+      "end": 4.298458
+    },
+    {
+      "word": "drink",
+      "start": 4.298458,
+      "end": 4.528041
+    },
+    {
+      "word": "from",
+      "start": 4.528041,
+      "end": 4.770416
+    },
+    {
+      "word": "one",
+      "start": 4.770416,
+      "end": 4.9745
+    },
+    {
+      "word": "well",
+      "start": 4.9745,
+      "end": 5.2245
+    }
+  ]
+}

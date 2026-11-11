@@ -1,0 +1,92 @@
+{
+  "id": "ss.samir.lading",
+  "speaker": "Samir",
+  "text": "The details don't show the source. Compare them with the plugin's repository before you take it in.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.0515409,
+      "end": 0.231958
+    },
+    {
+      "word": "details",
+      "start": 0.231958,
+      "end": 0.670083
+    },
+    {
+      "word": "don't",
+      "start": 0.670083,
+      "end": 0.902041
+    },
+    {
+      "word": "show",
+      "start": 0.902041,
+      "end": 1.10825
+    },
+    {
+      "word": "the",
+      "start": 1.10825,
+      "end": 1.224208
+    },
+    {
+      "word": "source",
+      "start": 1.224208,
+      "end": 2.603083
+    },
+    {
+      "word": "Compare",
+      "start": 2.603083,
+      "end": 2.989708
+    },
+    {
+      "word": "them",
+      "start": 2.989708,
+      "end": 3.170083
+    },
+    {
+      "word": "with",
+      "start": 3.170083,
+      "end": 3.247416
+    },
+    {
+      "word": "the",
+      "start": 3.247416,
+      "end": 3.414958
+    },
+    {
+      "word": "plugin's",
+      "start": 3.414958,
+      "end": 3.775791
+    },
+    {
+      "word": "repository",
+      "start": 3.775791,
+      "end": 4.355666
+    },
+    {
+      "word": "before",
+      "start": 4.355666,
+      "end": 4.639166
+    },
+    {
+      "word": "you",
+      "start": 4.639166,
+      "end": 4.793833
+    },
+    {
+      "word": "take",
+      "start": 4.793833,
+      "end": 4.974208
+    },
+    {
+      "word": "it",
+      "start": 4.974208,
+      "end": 5.115958
+    },
+    {
+      "word": "in",
+      "start": 5.115958,
+      "end": 5.365958
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "id": "ss.samir.bell",
+  "speaker": "Samir",
+  "text": "It's in the yard now. Ring the bell: skills reload. Then call for the skill by name from the slash menu.",
+  "words": [
+    {
+      "word": "It's",
+      "start": 0.0515409,
+      "end": 0.25775
+    },
+    {
+      "word": "in",
+      "start": 0.25775,
+      "end": 0.373708
+    },
+    {
+      "word": "the",
+      "start": 0.373708,
+      "end": 0.476791
+    },
+    {
+      "word": "yard",
+      "start": 0.476791,
+      "end": 0.747416
+    },
+    {
+      "word": "now",
+      "start": 0.747416,
+      "end": 1.9455
+    },
+    {
+      "word": "Ring",
+      "start": 1.9455,
+      "end": 2.177458
+    },
+    {
+      "word": "the",
+      "start": 2.177458,
+      "end": 2.332083
+    },
+    {
+      "word": "bell",
+      "start": 2.332083,
+      "end": 2.731583
+    },
+    {
+      "word": "skills",
+      "start": 2.731583,
+      "end": 3.156833
+    },
+    {
+      "word": "reload",
+      "start": 3.156833,
+      "end": 4.484541
+    },
+    {
+      "word": "Then",
+      "start": 4.484541,
+      "end": 4.768041
+    },
+    {
+      "word": "call",
+      "start": 4.768041,
+      "end": 5
+    },
+    {
+      "word": "for",
+      "start": 5,
+      "end": 5.14175
+    },
+    {
+      "word": "the",
+      "start": 5.14175,
+      "end": 5.231958
+    },
+    {
+      "word": "skill",
+      "start": 5.231958,
+      "end": 5.515458
+    },
+    {
+      "word": "by",
+      "start": 5.515458,
+      "end": 5.683
+    },
+    {
+      "word": "name",
+      "start": 5.683,
+      "end": 5.902041
+    },
+    {
+      "word": "from",
+      "start": 5.902041,
+      "end": 6.121125
+    },
+    {
+      "word": "the",
+      "start": 6.121125,
+      "end": 6.224208
+    },
+    {
+      "word": "slash",
+      "start": 6.224208,
+      "end": 6.546375
+    },
+    {
+      "word": "menu",
+      "start": 6.546375,
+      "end": 6.796375
+    }
+  ]
+}

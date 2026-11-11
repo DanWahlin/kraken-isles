@@ -205,6 +205,40 @@
     "Moira": {
       "voice": "en-GB-Ada:DragonHDLatestNeural",
       "fallbackVoice": "en-GB-AdaMultilingualNeural"
+    },
+    "Zahra": {
+      "voice": "en-GB-BellaNeural",
+      "prosody": {
+        "rate": "+2%"
+      }
+    },
+    "Idris": {
+      "voice": "en-NG-AbeoNeural",
+      "prosody": {
+        "rate": "-2%"
+      }
+    },
+    "Noor": {
+      "voice": "en-GB-LibbyNeural",
+      "prosody": {
+        "rate": "-4%",
+        "pitch": "-1st"
+      }
+    },
+    "Samir": {
+      "voice": "en-ZA-LukeNeural",
+      "prosody": {
+        "rate": "-3%"
+      }
+    },
+    "Paloma": {
+      "voice": "en-ZA-LeahNeural",
+      "prosody": {
+        "rate": "-5%"
+      }
+    },
+    "Yusuf": {
+      "voice": "en-KE-ChilembaNeural"
     }
   }
 }

@@ -1,0 +1,77 @@
+{
+  "id": "ss.paloma.assign.go",
+  "speaker": "Paloma",
+  "text": "Do it in the same session. Then come and tell me what you saw.",
+  "words": [
+    {
+      "word": "Do",
+      "start": 0.052625,
+      "end": 0.302625
+    },
+    {
+      "word": "it",
+      "start": 0.302625,
+      "end": 0.592125
+    },
+    {
+      "word": "in",
+      "start": 0.592125,
+      "end": 0.763166
+    },
+    {
+      "word": "the",
+      "start": 0.763166,
+      "end": 0.947375
+    },
+    {
+      "word": "same",
+      "start": 0.947375,
+      "end": 1.25
+    },
+    {
+      "word": "session",
+      "start": 1.25,
+      "end": 2.671041
+    },
+    {
+      "word": "Then",
+      "start": 2.671041,
+      "end": 2.973666
+    },
+    {
+      "word": "come",
+      "start": 2.973666,
+      "end": 3.210541
+    },
+    {
+      "word": "and",
+      "start": 3.210541,
+      "end": 3.421041
+    },
+    {
+      "word": "tell",
+      "start": 3.421041,
+      "end": 3.684208
+    },
+    {
+      "word": "me",
+      "start": 3.684208,
+      "end": 3.89475
+    },
+    {
+      "word": "what",
+      "start": 3.89475,
+      "end": 4.131583
+    },
+    {
+      "word": "you",
+      "start": 4.131583,
+      "end": 4.276333
+    },
+    {
+      "word": "saw",
+      "start": 4.276333,
+      "end": 4.526333
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "id": "ss.samir.04",
+  "speaker": "Samir",
+  "text": "Some plugins start processes, call services, or run hooks: commands that fire on agent events. So look inside first.",
+  "words": [
+    {
+      "word": "Some",
+      "start": 0.0515409,
+      "end": 0.373708
+    },
+    {
+      "word": "plugins",
+      "start": 0.373708,
+      "end": 0.657208
+    },
+    {
+      "word": "start",
+      "start": 0.657208,
+      "end": 0.99225
+    },
+    {
+      "word": "processes",
+      "start": 0.99225,
+      "end": 1.829916
+    },
+    {
+      "word": "call",
+      "start": 1.829916,
+      "end": 2.023208
+    },
+    {
+      "word": "services",
+      "start": 2.023208,
+      "end": 2.731958
+    },
+    {
+      "word": "or",
+      "start": 2.731958,
+      "end": 2.860833
+    },
+    {
+      "word": "run",
+      "start": 2.860833,
+      "end": 3.067
+    },
+    {
+      "word": "hooks",
+      "start": 3.067,
+      "end": 3.595375
+    },
+    {
+      "word": "commands",
+      "start": 3.595375,
+      "end": 3.981958
+    },
+    {
+      "word": "that",
+      "start": 3.981958,
+      "end": 4.123708
+    },
+    {
+      "word": "fire",
+      "start": 4.123708,
+      "end": 4.433
+    },
+    {
+      "word": "on",
+      "start": 4.433,
+      "end": 4.6005
+    },
+    {
+      "word": "agent",
+      "start": 4.6005,
+      "end": 4.948458
+    },
+    {
+      "word": "events",
+      "start": 4.948458,
+      "end": 6.327333
+    },
+    {
+      "word": "So",
+      "start": 6.327333,
+      "end": 6.546375
+    },
+    {
+      "word": "look",
+      "start": 6.546375,
+      "end": 6.739708
+    },
+    {
+      "word": "inside",
+      "start": 6.739708,
+      "end": 7.1005
+    },
+    {
+      "word": "first",
+      "start": 7.1005,
+      "end": 7.3505
+    }
+  ]
+}

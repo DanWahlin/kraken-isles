@@ -3049,6 +3049,386 @@
       "id": "gc.moira.market.bye",
       "speaker": "Moira",
       "text": "Off up the brae? Your starfish and your jobs go with you."
+    },
+    {
+      "id": "ss.juno.arrive.01",
+      "speaker": "Juno",
+      "text": "Sunspire Sands, Captain. See that flash on the tall tower? The Signal Guild talks across the sea with mirrors."
+    },
+    {
+      "id": "wingman.ss.01",
+      "speaker": "Wingman",
+      "text": "This crew doesn't know everything, Captain. Here they learn to look things up, and to pack light!"
+    },
+    {
+      "id": "wingman.ss.nav",
+      "speaker": "Wingman",
+      "text": "Your tasks are in the top left, and the compass up top shows the way, all the way to the Sunspire."
+    },
+    {
+      "id": "wingman.starfish.sunspire",
+      "speaker": "Wingman",
+      "text": "And five starfish are hidden around Sunspire Sands. Your count's in the top right."
+    },
+    {
+      "id": "ss.lyra.01",
+      "speaker": "Lyra",
+      "text": "Captain! A song chart tells the players what to play. It doesn't plug in a microphone."
+    },
+    {
+      "id": "ss.lyra.02",
+      "speaker": "Lyra",
+      "text": "You choose the gear, and connect it when the session needs it. Listen to us without it first."
+    },
+    {
+      "id": "ss.lyra.03",
+      "speaker": "Lyra",
+      "text": "An MCP server is a connection to gear like that: it gives the crew tools. A plugin is a packaged set of additions you install."
+    },
+    {
+      "id": "ss.lyra.04",
+      "speaker": "Lyra",
+      "text": "Check what's in the package, and what access it needs, before you switch it on. Zahra's in the bazaar, up the lane."
+    },
+    {
+      "id": "ss.lyra.done",
+      "speaker": "Lyra",
+      "text": "Zahra runs the bazaar, Captain, up the lane from the quay."
+    },
+    {
+      "id": "ss.zahra.wait",
+      "speaker": "Zahra",
+      "text": "Lyra's in the caravanserai by the quay, Captain. Hear her first."
+    },
+    {
+      "id": "ss.zahra.01",
+      "speaker": "Zahra",
+      "text": "Welcome to the bazaar, Captain. Two kinds of goods here, and people mix them up."
+    },
+    {
+      "id": "ss.zahra.02",
+      "speaker": "Zahra",
+      "text": "An MCP server adds tools that connect the app to a service or a data source. A plugin is a package you install: skills, agents, or other capabilities."
+    },
+    {
+      "id": "ss.zahra.03",
+      "speaker": "Zahra",
+      "text": "A plugin can carry a server inside, but they aren't the same thing. You'll find both in Customize."
+    },
+    {
+      "id": "ss.zahra.04",
+      "speaker": "Zahra",
+      "text": "Now the desert's rule. Start with the tools you have. Every extra one is more noise for the crew, and more access for you to review."
+    },
+    {
+      "id": "ss.zahra.05",
+      "speaker": "Zahra",
+      "text": "Idris keeps the camp at the oasis. Go and pitch your tent."
+    },
+    {
+      "id": "ss.zahra.done",
+      "speaker": "Zahra",
+      "text": "Idris is at the oasis camp, Captain, down the path from the square's east side."
+    },
+    {
+      "id": "ss.idris.wait",
+      "speaker": "Idris",
+      "text": "Zahra's on the bazaar square, Captain. See her before you make camp."
+    },
+    {
+      "id": "ss.idris.01",
+      "speaker": "Idris",
+      "text": "Pitch a tent of your own, Captain. In the app: Create from, then Branches, then main. That's a session in a new worktree."
+    },
+    {
+      "id": "ss.idris.02",
+      "speaker": "Idris",
+      "text": "Set the mode to Interactive. If an agent picker shows, it should say Default agent, not the read-only explainer from Guildcrest."
+    },
+    {
+      "id": "ss.idris.03",
+      "speaker": "Idris",
+      "text": "Now look at the well. Every tent has its own floor, but they all drink from one well."
+    },
+    {
+      "id": "ss.idris.04",
+      "speaker": "Idris",
+      "text": "A worktree separates file changes, not installed tools. Before you add a server or a plugin, check it isn't there already."
+    },
+    {
+      "id": "ss.idris.05",
+      "speaker": "Idris",
+      "text": "Keep that session for the whole island. The Signal House is up the stair, on the mesa."
+    },
+    {
+      "id": "ss.idris.done",
+      "speaker": "Idris",
+      "text": "Up the Signal Stair from the square's corner, Captain. Signal Master Noor's waiting."
+    },
+    {
+      "id": "ss.noor.wait",
+      "speaker": "Noor",
+      "text": "Make your camp with Idris first, Captain. Then come up."
+    },
+    {
+      "id": "ss.noor.01",
+      "speaker": "Noor",
+      "text": "Signal Master Noor, Captain. A browser extension can connect your browser to a service. An MCP server gives the app a connection like that, to tools and data."
+    },
+    {
+      "id": "ss.noor.02",
+      "speaker": "Noor",
+      "text": "Model Context Protocol says how an AI application connects to tools and data. A server supplies the tools. It can run on your machine, or at a remote service."
+    },
+    {
+      "id": "ss.noor.03",
+      "speaker": "Noor",
+      "text": "The app can already read and search your files. Use MCP when the task needs something those tools don't supply."
+    },
+    {
+      "id": "ss.noor.04",
+      "speaker": "Noor",
+      "text": "You set these up in Customize, with the type filter on MCP, not Extensions. And one connection per service."
+    },
+    {
+      "id": "ss.noor.05",
+      "speaker": "Noor",
+      "text": "Today's far tower is Context7, a documentation service. It won't become part of your Book App. Come into the court."
+    },
+    {
+      "id": "ss.noor.signal",
+      "speaker": "Noor",
+      "text": "Walk the court's stations in order, Captain. The roll first, on the house wall."
+    },
+    {
+      "id": "ss.noor.roll",
+      "speaker": "Noor",
+      "text": "The roll of towers is Customize. Open Browse, set the type filter to MCP, and search for context7."
+    },
+    {
+      "id": "ss.noor.shutter",
+      "speaker": "Noor",
+      "text": "An open shutter doesn't prove the beam arrives. An enabled toggle alone doesn't prove a server is connected."
+    },
+    {
+      "id": "ss.noor.aim",
+      "speaker": "Noor",
+      "text": "Turn her till she lands on the Sunspire. Then look for the answer: the connected icon, beside the toggle."
+    },
+    {
+      "id": "ss.noor.key",
+      "speaker": "Noor",
+      "text": "Flash the general question only. Your own chart stays in the tent: no repository code, and no paths."
+    },
+    {
+      "id": "ss.noor.tent",
+      "speaker": "Noor",
+      "text": "Now compare the answer with your own file, here at home. No more flashes."
+    },
+    {
+      "id": "ss.noor.06",
+      "speaker": "Noor",
+      "text": "The beam landed, and the answer came back with its sources. That's a connection you can check."
+    },
+    {
+      "id": "ss.noor.07",
+      "speaker": "Noor",
+      "text": "Samir's in the Crate Yard, past the court. He sells packages."
+    },
+    {
+      "id": "ss.noor.done",
+      "speaker": "Noor",
+      "text": "Samir's crates are in the yard, Captain, out by the court's east side."
+    },
+    {
+      "id": "ss.samir.wait",
+      "speaker": "Samir",
+      "text": "See Noor in the Mirror Court first, Captain."
+    },
+    {
+      "id": "ss.samir.01",
+      "speaker": "Samir",
+      "text": "Samir, Captain. Skills and servers you can add one at a time. Or they come packed together, as a plugin."
+    },
+    {
+      "id": "ss.samir.02",
+      "speaker": "Samir",
+      "text": "A plugin can hold skills, custom agents, MCP servers, or canvas extensions. A marketplace is a catalog of plugins."
+    },
+    {
+      "id": "ss.samir.03",
+      "speaker": "Samir",
+      "text": "Installing a plugin isn't the same as using what's inside it. And read its contents, not only the label on the stall."
+    },
+    {
+      "id": "ss.samir.04",
+      "speaker": "Samir",
+      "text": "Some plugins start processes, call services, or run hooks: commands that fire on agent events. So look inside first."
+    },
+    {
+      "id": "ss.samir.crate",
+      "speaker": "Samir",
+      "text": "Work round the yard, Captain. The caravan row's board first, under the arch."
+    },
+    {
+      "id": "ss.samir.row",
+      "speaker": "Samir",
+      "text": "In Customize, on Browse, set the type filter to Plugins and search for modern-web-guidance."
+    },
+    {
+      "id": "ss.samir.lading",
+      "speaker": "Samir",
+      "text": "The details don't show the source. Compare them with the plugin's repository before you take it in."
+    },
+    {
+      "id": "ss.samir.bell",
+      "speaker": "Samir",
+      "text": "It's in the yard now. Ring the bell: skills reload. Then call for the skill by name from the slash menu."
+    },
+    {
+      "id": "ss.samir.bench",
+      "speaker": "Samir",
+      "text": "Check its work against the code. If it offers text-wrap balance, it must say what happens where a browser doesn't support it."
+    },
+    {
+      "id": "ss.samir.05",
+      "speaker": "Samir",
+      "text": "It came in a package, and you still called for it, watched it work, and checked its answer. Installed isn't the same as run."
+    },
+    {
+      "id": "ss.samir.06",
+      "speaker": "Samir",
+      "text": "Warden Paloma keeps the Sunspire. Take the Sun Stair from the yard's corner."
+    },
+    {
+      "id": "ss.samir.done",
+      "speaker": "Samir",
+      "text": "Up the Sun Stair, Captain. Paloma's on the terrace."
+    },
+    {
+      "id": "ss.paloma.wait",
+      "speaker": "Paloma",
+      "text": "Finish in the Crate Yard first, Captain. Then climb."
+    },
+    {
+      "id": "ss.paloma.01",
+      "speaker": "Paloma",
+      "text": "Warden Paloma, Captain. From up here you can see what you connected today, and how little of it you needed."
+    },
+    {
+      "id": "ss.paloma.02",
+      "speaker": "Paloma",
+      "text": "One trial, then the Seal. Take your time. Nothing here is a trick."
+    },
+    {
+      "id": "ss.paloma.retry",
+      "speaker": "Paloma",
+      "text": "Again, Captain? The sun's in no hurry."
+    },
+    {
+      "id": "ss.paloma.03",
+      "speaker": "Paloma",
+      "text": "The Seal of Sunspire is yours. Check the activity and the sources, add only what you need, and remember the well."
+    },
+    {
+      "id": "ss.paloma.more",
+      "speaker": "Paloma",
+      "text": "Inkwell Bluffs is next, where the whole job is kept on one great chart. And I've one more task, if you'd like it."
+    },
+    {
+      "id": "ss.paloma.assign.01",
+      "speaker": "Paloma",
+      "text": "The course's assignment is one table of evidence: what each tool was, what proves it ran, its source, and what you learned about the Book App."
+    },
+    {
+      "id": "ss.paloma.assign.go",
+      "speaker": "Paloma",
+      "text": "Do it in the same session. Then come and tell me what you saw."
+    },
+    {
+      "id": "ss.paloma.assign.ask",
+      "speaker": "Paloma",
+      "text": "Back, Captain? What did your table show?"
+    },
+    {
+      "id": "ss.paloma.assign.back",
+      "speaker": "Paloma",
+      "text": "Completed work apart from proposed checks, real sources, and nothing invented. That's the habit."
+    },
+    {
+      "id": "ss.paloma.done",
+      "speaker": "Paloma",
+      "text": "The Sunspire's lit, Captain. Sail on when you're ready."
+    },
+    {
+      "id": "ss.yusuf.market.hello",
+      "speaker": "Yusuf",
+      "text": "Welcome, Captain! Yusuf's Model Market. Hire a model that fits the job; bigger ones cost more starfish."
+    },
+    {
+      "id": "ss.yusuf.market.open",
+      "speaker": "Yusuf",
+      "text": "Pick a job off the board, then hire a model and set the effort dial."
+    },
+    {
+      "id": "ss.yusuf.market.auto",
+      "speaker": "Yusuf",
+      "text": "Copilot Fusion's on offer too. It isn't one model: it picks models and a workflow for each job. And it isn't Autopilot."
+    },
+    {
+      "id": "ss.yusuf.market.right",
+      "speaker": "Yusuf",
+      "text": "Right-sized! Here's some starfish back."
+    },
+    {
+      "id": "ss.yusuf.market.fair",
+      "speaker": "Yusuf",
+      "text": "Right-sized, and a fair price, Captain."
+    },
+    {
+      "id": "ss.yusuf.market.keep",
+      "speaker": "Yusuf",
+      "text": "Right-sized. A quick look's fine on the model you've got, at its default effort. Bigger ones just cost more."
+    },
+    {
+      "id": "ss.yusuf.market.over.effort",
+      "speaker": "Yusuf",
+      "text": "High effort for a quick look? The default effort would've done fine."
+    },
+    {
+      "id": "ss.yusuf.market.over.auto",
+      "speaker": "Yusuf",
+      "text": "A higher Fusion level for a quick look? Standard would've done fine."
+    },
+    {
+      "id": "ss.yusuf.market.short",
+      "speaker": "Yusuf",
+      "text": "That wasn't enough for this one. Try again with a stronger model or more effort."
+    },
+    {
+      "id": "ss.yusuf.market.hard.auto",
+      "speaker": "Yusuf",
+      "text": "Right-sized! A hard job wants a higher Fusion level: more capable models and deeper reasoning."
+    },
+    {
+      "id": "ss.yusuf.market.broke",
+      "speaker": "Yusuf",
+      "text": "Out of starfish? There are plenty hidden round the isles. Come back when you've found a few."
+    },
+    {
+      "id": "ss.yusuf.market.done",
+      "speaker": "Yusuf",
+      "text": "The whole board, right-sized! You know your models, Captain."
+    },
+    {
+      "id": "ss.yusuf.market.early",
+      "speaker": "Yusuf",
+      "text": "Not yet, Captain. Oren on Port Meridian teaches models first. Come back after his lesson."
+    },
+    {
+      "id": "ss.yusuf.market.bye",
+      "speaker": "Yusuf",
+      "text": "Off to the bazaar? Your starfish and your jobs go with you. Come back any time."
     }
   ]
 }
