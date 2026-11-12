@@ -1,0 +1,77 @@
+{
+  "id": "iw.petra.order",
+  "speaker": "Petra",
+  "text": "Say what the board holds, and what must not happen while it’s being made.",
+  "words": [
+    {
+      "word": "Say",
+      "start": 0.049,
+      "end": 0.281875
+    },
+    {
+      "word": "what",
+      "start": 0.281875,
+      "end": 0.441166
+    },
+    {
+      "word": "the",
+      "start": 0.441166,
+      "end": 0.551458
+    },
+    {
+      "word": "board",
+      "start": 0.551458,
+      "end": 0.808833
+    },
+    {
+      "word": "holds",
+      "start": 0.808833,
+      "end": 1.458333
+    },
+    {
+      "word": "and",
+      "start": 1.458333,
+      "end": 1.8505
+    },
+    {
+      "word": "what",
+      "start": 1.8505,
+      "end": 2.083333
+    },
+    {
+      "word": "must",
+      "start": 2.083333,
+      "end": 2.340666
+    },
+    {
+      "word": "not",
+      "start": 2.340666,
+      "end": 2.53675
+    },
+    {
+      "word": "happen",
+      "start": 2.53675,
+      "end": 2.867666
+    },
+    {
+      "word": "while",
+      "start": 2.867666,
+      "end": 3.1495
+    },
+    {
+      "word": "it’s",
+      "start": 3.1495,
+      "end": 3.284333
+    },
+    {
+      "word": "being",
+      "start": 3.284333,
+      "end": 3.541666
+    },
+    {
+      "word": "made",
+      "start": 3.541666,
+      "end": 3.791666
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "id": "tw.ansel.01",
+  "speaker": "Ansel",
+  "text": "Ansel, wheelwright. We’ll build a review readiness report: which pull requests are ready to merge, and what’s blocking the rest.",
+  "words": [
+    {
+      "word": "Ansel",
+      "start": 0.0515409,
+      "end": 0.734541
+    },
+    {
+      "word": "wheelwright",
+      "start": 0.734541,
+      "end": 2.332458
+    },
+    {
+      "word": "We’ll",
+      "start": 2.332458,
+      "end": 2.564416
+    },
+    {
+      "word": "build",
+      "start": 2.564416,
+      "end": 2.847958
+    },
+    {
+      "word": "a",
+      "start": 2.847958,
+      "end": 2.8995
+    },
+    {
+      "word": "review",
+      "start": 2.8995,
+      "end": 3.260291
+    },
+    {
+      "word": "readiness",
+      "start": 3.260291,
+      "end": 3.659791
+    },
+    {
+      "word": "report",
+      "start": 3.659791,
+      "end": 4.329916
+    },
+    {
+      "word": "which",
+      "start": 4.329916,
+      "end": 4.561875
+    },
+    {
+      "word": "pull",
+      "start": 4.561875,
+      "end": 4.780916
+    },
+    {
+      "word": "requests",
+      "start": 4.780916,
+      "end": 5.270625
+    },
+    {
+      "word": "are",
+      "start": 5.270625,
+      "end": 5.322166
+    },
+    {
+      "word": "ready",
+      "start": 5.322166,
+      "end": 5.605666
+    },
+    {
+      "word": "to",
+      "start": 5.605666,
+      "end": 5.70875
+    },
+    {
+      "word": "merge",
+      "start": 5.70875,
+      "end": 6.275791
+    },
+    {
+      "word": "and",
+      "start": 6.275791,
+      "end": 6.417541
+    },
+    {
+      "word": "what’s",
+      "start": 6.417541,
+      "end": 6.6495
+    },
+    {
+      "word": "blocking",
+      "start": 6.6495,
+      "end": 7.023208
+    },
+    {
+      "word": "the",
+      "start": 7.023208,
+      "end": 7.1005
+    },
+    {
+      "word": "rest",
+      "start": 7.1005,
+      "end": 7.3505
+    }
+  ]
+}

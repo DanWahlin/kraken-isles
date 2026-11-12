@@ -344,6 +344,111 @@
         "anchor": "exercise-plan-a-css-improvement-with-modern-web-guidance",
         "hash": "b0743e577ce2"
       }
+    },
+    "arrival:inkwell": {
+      "game": "arrival",
+      "k": "Inkwell Bluffs · Landfall",
+      "t": "Keep the work where you both can see it",
+      "b": "A canvas is a shared board in the side panel. You and the agent can both see it, and both change it.",
+      "ch": "06",
+      "c": "Canvases",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "a-canvas-is-a-shared-control-panel",
+        "hash": "258a840d9be4"
+      }
+    },
+    "puzzle:P6.1": {
+      "game": "puzzle",
+      "k": "Inkwell Bluffs · The Borrowed Board",
+      "t": "Try a community canvas",
+      "b": "Install it, restart canvas extensions, open it by the name the app shows, and move one card to Plan.",
+      "ch": "06",
+      "c": "A community canvas",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-1-try-your-first-canvas",
+        "hash": "1fc9e1017bb6"
+      }
+    },
+    "puzzle:P6.2": {
+      "game": "puzzle",
+      "k": "Inkwell Bluffs · Two Hands, One Chart",
+      "t": "Create a Session Board",
+      "b": "Create a small board with /create-canvas, mark it, and check that the agent’s summary matches. No repository files change.",
+      "ch": "06",
+      "c": "A Session Board",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-2-create-a-session-board",
+        "hash": "21b5e247f33c"
+      }
+    },
+    "puzzle:P6.3": {
+      "game": "puzzle",
+      "k": "Inkwell Bluffs · The Shared Chart",
+      "t": "Run the Feature Workbench",
+      "b": "Approve in the Plan tab, record a baseline first, and mark a stage only from recorded evidence.",
+      "ch": "06",
+      "c": "The Feature Workbench",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-3-create-a-feature-workbench",
+        "hash": "74377c083aef"
+      }
+    },
+    "battle:passage-sunspire-inkwell": {
+      "game": "battle",
+      "k": "The Passage to Inkwell Bluffs · Sea Battle",
+      "t": "Check the Beam",
+      "b": "Between waves, the bosun asks about Sunspire: enabled or connected, what you send out, and installed or invoked.",
+      "ch": "05",
+      "c": "Key takeaways",
+      "chLine": "Questions from Course Chapter 05",
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "key-takeaways",
+        "hash": "179f39f1bb67"
+      }
+    },
+    "arrival:tidewheel": {
+      "game": "arrival",
+      "k": "Tidewheel Caldera · Landfall",
+      "t": "Test it by hand before the clock runs it",
+      "b": "An automation is a saved agent run. Start manual and local, so you can test the prompt safely.",
+      "ch": "07",
+      "c": "Automations",
+      "source": {
+        "chapter": "07-automations",
+        "anchor": "start-manual-and-local",
+        "hash": "d258fd3120f6"
+      }
+    },
+    "puzzle:P7.1": {
+      "game": "puzzle",
+      "k": "Tidewheel Caldera · The Lever",
+      "t": "Create a manual report",
+      "b": "A read-only prompt, the Manual trigger, the cloud off. Create and run, then read the run.",
+      "ch": "07",
+      "c": "A manual automation",
+      "source": {
+        "chapter": "07-automations",
+        "anchor": "exercise-create-a-manual-review-readiness-report",
+        "hash": "c77f03fd8c5f"
+      }
+    },
+    "puzzle:P7.2": {
+      "game": "puzzle",
+      "k": "Tidewheel Caldera · Gears & Bells",
+      "t": "Schedule the report",
+      "b": "Daily at 08:00 and no other hour. A local run needs your computer awake and the app running.",
+      "ch": "07",
+      "c": "A scheduled automation",
+      "source": {
+        "chapter": "07-automations",
+        "anchor": "exercise-schedule-the-review-readiness-report",
+        "hash": "3fc0f26b2de5"
+      }
     }
   }
 }

@@ -1,0 +1,72 @@
+{
+  "id": "tw.ansel.pull",
+  "speaker": "Ansel",
+  "text": "Don’t just save it. The arrow next to Create, then Create and run.",
+  "words": [
+    {
+      "word": "Don’t",
+      "start": 0.0515409,
+      "end": 0.322166
+    },
+    {
+      "word": "just",
+      "start": 0.322166,
+      "end": 0.592791
+    },
+    {
+      "word": "save",
+      "start": 0.592791,
+      "end": 0.876291
+    },
+    {
+      "word": "it",
+      "start": 0.876291,
+      "end": 2.036083
+    },
+    {
+      "word": "The",
+      "start": 2.036083,
+      "end": 2.255166
+    },
+    {
+      "word": "arrow",
+      "start": 2.255166,
+      "end": 2.512875
+    },
+    {
+      "word": "next",
+      "start": 2.512875,
+      "end": 2.822166
+    },
+    {
+      "word": "to",
+      "start": 2.822166,
+      "end": 2.8995
+    },
+    {
+      "word": "Create",
+      "start": 2.8995,
+      "end": 3.543833
+    },
+    {
+      "word": "then",
+      "start": 3.543833,
+      "end": 3.762875
+    },
+    {
+      "word": "Create",
+      "start": 3.762875,
+      "end": 4.433
+    },
+    {
+      "word": "and",
+      "start": 4.433,
+      "end": 4.561875
+    },
+    {
+      "word": "run",
+      "start": 4.561875,
+      "end": 4.811875
+    }
+  ]
+}

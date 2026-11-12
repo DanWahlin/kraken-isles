@@ -1,0 +1,62 @@
+{
+  "id": "iw.petra.02",
+  "speaker": "Petra",
+  "text": "Type a slash, select create-canvas, and describe the board you want.",
+  "words": [
+    {
+      "word": "Type",
+      "start": 0.049,
+      "end": 0.318625
+    },
+    {
+      "word": "a",
+      "start": 0.318625,
+      "end": 0.379916
+    },
+    {
+      "word": "slash",
+      "start": 0.379916,
+      "end": 0.992666
+    },
+    {
+      "word": "select",
+      "start": 0.992666,
+      "end": 1.507333
+    },
+    {
+      "word": "create-canvas",
+      "start": 1.507333,
+      "end": 2.53675
+    },
+    {
+      "word": "and",
+      "start": 2.53675,
+      "end": 2.745083
+    },
+    {
+      "word": "describe",
+      "start": 2.745083,
+      "end": 3.223041
+    },
+    {
+      "word": "the",
+      "start": 3.223041,
+      "end": 3.321083
+    },
+    {
+      "word": "board",
+      "start": 3.321083,
+      "end": 3.639708
+    },
+    {
+      "word": "you",
+      "start": 3.639708,
+      "end": 3.76225
+    },
+    {
+      "word": "want",
+      "start": 3.76225,
+      "end": 4.01225
+    }
+  ]
+}

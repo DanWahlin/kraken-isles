@@ -1,0 +1,107 @@
+{
+  "id": "wingman.iw.01",
+  "speaker": "Wingman",
+  "text": "Golden hour, Captain! Here the crew learns to keep the whole job on one board that you can both mark.",
+  "words": [
+    {
+      "word": "Golden",
+      "start": 0,
+      "end": 0.448
+    },
+    {
+      "word": "hour",
+      "start": 0.448,
+      "end": 0.77
+    },
+    {
+      "word": "Captain",
+      "start": 0.77,
+      "end": 1.424
+    },
+    {
+      "word": "Here",
+      "start": 1.424,
+      "end": 2.34
+    },
+    {
+      "word": "the",
+      "start": 2.34,
+      "end": 2.448
+    },
+    {
+      "word": "crew",
+      "start": 2.448,
+      "end": 2.697
+    },
+    {
+      "word": "learns",
+      "start": 2.697,
+      "end": 3.067
+    },
+    {
+      "word": "to",
+      "start": 3.067,
+      "end": 3.168
+    },
+    {
+      "word": "keep",
+      "start": 3.168,
+      "end": 3.38
+    },
+    {
+      "word": "the",
+      "start": 3.38,
+      "end": 3.493
+    },
+    {
+      "word": "whole",
+      "start": 3.493,
+      "end": 3.84
+    },
+    {
+      "word": "job",
+      "start": 3.84,
+      "end": 4.187
+    },
+    {
+      "word": "on",
+      "start": 4.187,
+      "end": 4.48
+    },
+    {
+      "word": "one",
+      "start": 4.48,
+      "end": 4.787
+    },
+    {
+      "word": "board",
+      "start": 4.787,
+      "end": 5.2
+    },
+    {
+      "word": "that",
+      "start": 5.2,
+      "end": 5.56
+    },
+    {
+      "word": "you",
+      "start": 5.56,
+      "end": 5.72
+    },
+    {
+      "word": "can",
+      "start": 5.72,
+      "end": 5.904
+    },
+    {
+      "word": "both",
+      "start": 5.904,
+      "end": 6.256
+    },
+    {
+      "word": "mark",
+      "start": 6.256,
+      "end": 6.506
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Phase 3: Islands 05–07 and the finale (plan review and build plan)
 
-> Status: **plan reviewed; island 05 in the game, not yet play-tested** (2026-11-11; §9). This page reviews `.plans/PLAN.md` §4's rows
+> Status: **islands 05, 06 and 07 and the Long Light are in the game and played end to end** (2026-11-11; §9). This page reviews `.plans/PLAN.md` §4's rows
 > for the three islands that are not built (05 Sunspire Sands, 06 Inkwell Bluffs, 07 Tidewheel
 > Caldera) against one question: **would Walt Disney approve this level of quality?** It records
 > what the plan lacks, the decisions that fill each gap, the gates every new island must pass, and
@@ -30,7 +30,7 @@ a place where a guest would see the seams.
 | E7 | **Characters are not specified to a contact standard.** Feet in a plank, hips in a bench, a hand through a rail break the illusion at once | "An illusion breaker" is a hard no in every island's review | The cast contact audit (§7, Q1) |
 | E8 | **Flicker is not gated per island.** A far shore flickered in the tour until the sea read its depth per pixel | One shimmering shore in the fly-by is a "no" | Flicker gates for every new island (§7, Q2) |
 | E9 | **Battles 5–7 are not planned,** and BATTLES §2.2 wants a fourth, new-mechanic battle at the end | Four battles in three islands is repetition, and the ending should not be a fight | Two passage battles, one quiet passage, no finale battle (§6.3) |
-| E10 | **No music for the three islands or the ending** | The score tells you where you are before you see it | Dan makes the tracks in Suno from the briefs in §8. Until a track arrives the island plays `music_bards_tale` |
+| E10 | **No music for the three islands or the ending** | The score tells you where you are before you see it | Dan made the four tracks in Suno from the briefs in §8 (2026-11-11). "Sunspire Crossing", "Inkwell Waltz" and "Tidewheel Lullaby" are their islands' themes; "The Long Light" plays once, in the ending (the `ending` music cue) |
 
 What stays from the plan: the island names, biomes, the chart positions, the music moods, the bird
 casts, the palettes (red sandstone at Sunspire, dark basalt at Tidewheel), the metaphor table in
@@ -204,11 +204,15 @@ gates (§7) → **5** records. An island moves from `ISLANDS_IN_BUILD` to the re
 |---|---|---|
 | 1 | Sync chapters 05–07 into the course snapshot and lock | **done** |
 | 2 | The `dial` station kind (generic) with tests | **done** |
-| 3 | [ISLAND-05-sunspire-sands.md](ISLAND-05-sunspire-sands.md), then the build, stages 0–5 | **played end to end; battle 5 in; cast, flicker and wayfinding gates pass.** Left: lip-sync, frame, memory and perf gates, some art (its §12.3) |
-| 4 | ISLAND-06-inkwell-bluffs.md, then the build | not started |
-| 5 | ISLAND-07-tidewheel-caldera.md, then the build | not started |
-| 6 | The Long Light (§6), the certificate, the credits | not started |
-| 7 | PLAN §1 status, §4 rows, §10 roadmap, README, the skill's island table | README and the skill's table have Sunspire; PLAN not started |
+| 3 | [ISLAND-05-sunspire-sands.md](ISLAND-05-sunspire-sands.md), then the build, stages 0–5 | **played end to end; battle 5 in; cast, flicker and wayfinding gates pass.** Left: frame, memory and perf gates, some art (its §12.3) |
+| 4 | [ISLAND-06-inkwell-bluffs.md](ISLAND-06-inkwell-bluffs.md), then the build, stages 0–5 | **played end to end** with its world, content, voices and battle 6 in. Left: its §12.2 |
+| 5 | [ISLAND-07-tidewheel-caldera.md](ISLAND-07-tidewheel-caldera.md), then the build | **played end to end; voiced; cast, wayfinding and flicker gates pass.** Left: its §12.2 |
+| 6 | The Long Light (§6), the certificate, the credits | **in the game** (`src/game/tidewheel-ending.ts`): nightfall, the night chart's eight lights, the kraken's farewell, Juno's last word; then the certificate. The credits list both tracks |
+| 7 | PLAN §1 status, §4 rows, §10 roadmap, README, the skill's island table | **done**: README, the skill's table, `docs/adding-an-island.md` (the shared modules) and PLAN's status |
+
+The three islands and Guildcrest now stand on one set of shared modules (`docs/adding-an-island.md`,
+"A cove island from the shared modules"), and their play-throughs on one engine
+(`tools/lib/island-play.mjs`; `--watch` shows a run live in a web page).
 
 Voices follow ISLAND-04 G22 (one ElevenLabs voice per speaker, none shared on an island). Lines stay
 `"pending": true` until their audio exists, so an island is playable with subtitles before it is

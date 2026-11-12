@@ -1,0 +1,112 @@
+{
+  "id": "iw.juno.arrive.01",
+  "speaker": "Juno",
+  "text": "Inkwell Bluffs, Captain. White walls, blue doors, and the mapmakers’ Dome up on the head. They chart every isle we’ve sailed.",
+  "words": [
+    {
+      "word": "Inkwell",
+      "start": 0,
+      "end": 0.453
+    },
+    {
+      "word": "Bluffs",
+      "start": 0.453,
+      "end": 1.02
+    },
+    {
+      "word": "Captain",
+      "start": 1.02,
+      "end": 1.733
+    },
+    {
+      "word": "White",
+      "start": 1.733,
+      "end": 2.48
+    },
+    {
+      "word": "walls",
+      "start": 2.48,
+      "end": 3.008
+    },
+    {
+      "word": "blue",
+      "start": 3.008,
+      "end": 3.28
+    },
+    {
+      "word": "doors",
+      "start": 3.28,
+      "end": 3.86
+    },
+    {
+      "word": "and",
+      "start": 3.86,
+      "end": 4.18
+    },
+    {
+      "word": "the",
+      "start": 4.18,
+      "end": 4.32
+    },
+    {
+      "word": "mapmakers",
+      "start": 4.32,
+      "end": 4.944
+    },
+    {
+      "word": "Dome",
+      "start": 4.944,
+      "end": 5.253
+    },
+    {
+      "word": "up",
+      "start": 5.253,
+      "end": 5.387
+    },
+    {
+      "word": "on",
+      "start": 5.387,
+      "end": 5.46
+    },
+    {
+      "word": "the",
+      "start": 5.46,
+      "end": 5.6
+    },
+    {
+      "word": "head",
+      "start": 5.6,
+      "end": 6.352
+    },
+    {
+      "word": "They",
+      "start": 6.352,
+      "end": 6.707
+    },
+    {
+      "word": "chart",
+      "start": 6.707,
+      "end": 7.12
+    },
+    {
+      "word": "every",
+      "start": 7.12,
+      "end": 7.6
+    },
+    {
+      "word": "isle",
+      "start": 7.6,
+      "end": 7.893
+    },
+    {
+      "word": "we’ve",
+      "start": 7.893,
+      "end": 8.16
+    },
+    {
+      "word": "sailed",
+      "start": 8.16,
+      "end": 8.41
+    }
+  ]
+}

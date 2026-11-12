@@ -1,19 +1,13 @@
 import {
   BoxGeometry,
   BufferAttribute,
-  Color,
   CylinderGeometry,
   Group,
   Mesh,
   PlaneGeometry,
   Vector3,
-  type BufferGeometry,
   type Camera,
-  type Material,
 } from 'three/webgpu';
-import { islandCourseBoard } from '../../../learn/course-board';
-import type { IslandId } from '../../../islands/registry';
-import { loadLodSimplifier } from '../../characters/character-lod';
 import { seatBlock } from '../../characters/seat-fit';
 import type { CircleObstacle, HeightField } from '../../contracts';
 import type { TierSettings } from '../../../engine/quality';
@@ -23,28 +17,20 @@ import {
   lampBurning,
 } from '../../lighthouse-lamp';
 import type { BirdsSystem, CreateBirdsOptions } from '../../life/birds';
-import { addCourseBoardNotices, addCourseBoardTimber } from '../../sites/course-board';
-import { SignSet } from '../../sites/sign';
 import type { PlantInstance } from '../../vegetation/types';
-import { ChunkLods, chunkLodEdges, chunkLodFloor } from '../../village/chunks';
 import type { VillageKit } from '../../village/kit';
-import { LampSet, type LampLook } from '../../village/lamp-set';
-import { makeBuckets, meshesFromBuckets } from '../../village/pieces';
-import { COURSE_BOARDS, type CourseBoardPlacement } from '../course-boards';
-import { addIslandLettering } from '../lettering';
+import { makeBuckets } from '../../village/pieces';
+import { flatPaint, raiseIslandWorks, runSliced, type IslandCircuitWorld } from '../island-works';
 import { SUNSPIRE_ANCHORS } from './anchors';
-import { at, makeOut, type SsOut, type SsShow } from './build';
+import { at, makeOut, YAW_U, type SsOut, type SsShow } from './build';
 import { BEAM_ENDS, MIRROR } from './circuit';
-import { LIBRARY_ROCK, NEEDLE, SIGNAL_HOUSE, SPIRE, SUNSPIRE as S, toWorld, WATER } from './layout';
+import { LIBRARY_ROCK, NEEDLE, SPIRE, toWorld } from './layout';
 import { addSunspireMarket } from './market';
 import { BENCH_CRATE, buildMesa, mirrorHeadGeometry } from './mesa';
 import { buildSpire } from './spire';
 import { buildTown } from './town-build';
 import { sunspirePlantsSliced } from './vegetation';
 import { createSunspireWaterMesh } from './water-mesh';
-
-/** The island's id for the shared tables (a string until its registry line makes it an `IslandId`). */
-const ID = 'sunspire' as IslandId;
 
 /**
  * Sunspire's world (spec §8; no gameplay here): the world its stream builds (`IslandStream.world`):
@@ -60,7 +46,7 @@ export interface SunspireWorld {
   /** Where the cast, the islanders and the stations stand. */
   anchors: typeof SUNSPIRE_ANCHORS;
   /** The circuits' lamps (`signal:<place>`, `crate:<place>`). */
-  circuit: SunspireCircuitWorld;
+  circuit: IslandCircuitWorld;
   /** The quay's circles, for the ship. */
   shipObstacles(): CircleObstacle[];
   /** Picks the levels of detail for the camera, and turns the lights' halos to it (no allocation). */
@@ -107,12 +93,6 @@ export interface SunspireWorld {
   dispose(): void;
 }
 
-/** The circuits' lamps (the game's puzzle drives them; nothing here keeps time). */
-export interface SunspireCircuitWorld {
-  lamp(key: string, look: LampLook): void;
-  look(key: string): LampLook | null;
-}
-
 export interface SunspireWorldOptions {
   tier: TierSettings;
   /** The island's own baked ground (the drawn ground: the water's depth reads over it). */
@@ -135,8 +115,6 @@ const SHEATH_PAINT = [1.9, 0.62, 0.05] as const;
 /** The Sunspire's flash: its mirror kindles for `on` s of every `every` s. */
 const FLASH = { every: 3.4, on: 0.5 } as const;
 
-const tmp = new Vector3();
-
 /** Builds Sunspire's world a few milliseconds a frame (`breathe` between parts). */
 export async function createSunspireWorldAsync(
   o: SunspireWorldOptions,
@@ -155,44 +133,18 @@ export async function createSunspireWorldAsync(
     buildMesa(buckets, out, lite),
     buildSpire(buckets, out, lite),
   ])
-    for (let r = steps.next(); !r.done; r = steps.next()) await breathe();
+    await runSliced(steps, breathe);
   addSunspireMarket(buckets, out, lite || o.tier.tier === 'low');
   // Lyra's two players sit on blocks under the arcade (seat-fit.ts: the block's top is the anchor).
   for (const a of [SUNSPIRE_ANCHORS.lyraPlayerA, SUNSPIRE_ANCHORS.lyraPlayerB])
     seatBlock(buckets, a.x, a.z, a.heading, a.y - 0.2, a.y);
-  // The course notice board at the square's west entrance (docs/specs/COURSE-BOARDS.md): its timber in
-  // the town's chunks, its notices in the island's sign set. None without a course (the dev page).
-  const signs = typeof document === 'undefined' ? null : new SignSet('sunspire-signs');
-  const courseBoard = signs ? islandCourseBoard(ID) : null;
-  const pose = (COURSE_BOARDS as Partial<Record<string, CourseBoardPlacement>>).sunspire;
-  if (signs && courseBoard && pose) {
-    const parts = addCourseBoardTimber(buckets, pose, courseBoard);
-    addCourseBoardNotices(signs, pose, courseBoard);
-    out.colliders.push(parts.box);
-    out.cameraBoxes.push(parts.camera);
-  }
-  const lettering = signs ? addIslandLettering('sunspire', signs, out.signs) : null;
-  await breathe();
-  const town = new Group();
-  town.name = 'sunspire-town';
-  const chunkLods = new ChunkLods(chunkLodEdges(o.tier), chunkLodFloor(o.tier));
-  const simplify = await loadLodSimplifier();
-  const meshes: Mesh[] = await meshesFromBuckets(buckets, o.kit, o.tier, 'ss-town', town, breathe, true, {
-    simplify,
-    chunkLods,
-    permissive: true,
-  });
-  group.add(town);
-  if (signs?.count) group.add(await signs.finalizeAsync(breathe));
-  // The lamps that change (the stations' lamps, the three mirrors' faces), one mesh in the kit's glow.
-  const lamps = new LampSet(out.lamps, o.kit.materials.glow as Material);
-  out.lamps.length = 0;
-  if (lamps.mesh) {
-    lamps.mesh.updateMatrixWorld(true);
-    group.add(lamps.mesh);
-  }
+  const works = await raiseIslandWorks(
+    { id: 'sunspire', chunks: 'ss-town', tier: o.tier, kit: o.kit, group, buckets, out },
+    breathe,
+  );
+  // The lamps that change: the stations' lamps and the three mirrors' faces.
+  const { lamps } = works;
   for (const key of ['spire:mirror', 'needle:mirror', 'library:lamp']) lamps.set(key, 'banked');
-  await breathe();
 
   // The court's great mirror: its head turns about the stand's post.
   const headGeo = mirrorHeadGeometry();
@@ -214,15 +166,6 @@ export async function createSunspireWorldAsync(
   });
   const spireIndex = BEAM_ENDS.findIndex((e) => e.id === 'spire');
 
-  /** Paints a geometry one colour (the kit's materials read vertex colours). */
-  const paintGeo = (g: BufferGeometry, hex: number) => {
-    const c = new Color(hex);
-    const n = g.getAttribute('position').count;
-    const a = new Float32Array(n * 3);
-    for (let i = 0; i < n; i++) a.set([c.r, c.g, c.b], i * 3);
-    g.setAttribute('color', new BufferAttribute(a, 3));
-    return g;
-  };
   // The beams: the court's (it follows the mirror) and the two hops on from the Sunspire, all in the
   // lit-lamp material (additive: the same program as every island's lit lamp).
   const lit = createLighthouseLitMaterial('sunspire-beam');
@@ -310,7 +253,7 @@ export async function createSunspireWorldAsync(
 
   // The sealed crate's lid on Samir's bench: on the crate until the story opens it, then stood on the
   // bench leaning on the crate's side, with the guide's scroll standing in the crate.
-  const lidGeo = paintGeo(new BoxGeometry(BENCH_CRATE.w + 0.06, 0.07, BENCH_CRATE.d + 0.06), 0x9a7850);
+  const lidGeo = flatPaint(new BoxGeometry(BENCH_CRATE.w + 0.06, 0.07, BENCH_CRATE.d + 0.06), 0x9a7850);
   const lid = new Mesh(lidGeo, o.kit.materials.wood);
   lid.name = 'sunspire-crate-lid';
   lid.castShadow = true;
@@ -323,14 +266,13 @@ export async function createSunspireWorldAsync(
     BENCH_CRATE.top - 0.54 + half * Math.sin(LEAN) + 0.03,
     BENCH_CRATE.v,
   );
-  const yawU = Math.atan2(-(at(1, 0, 0).z - at(0, 0, 0).z), at(1, 0, 0).x - at(0, 0, 0).x);
   group.add(lid);
-  const scrollGeo = paintGeo(new CylinderGeometry(0.07, 0.07, 0.62, 10), 0xf0e6d0);
+  const scrollGeo = flatPaint(new CylinderGeometry(0.07, 0.07, 0.62, 10), 0xf0e6d0);
   const scroll = new Mesh(scrollGeo, o.kit.materials.cloth);
   scroll.name = 'sunspire-crate-scroll';
   const sp = at(BENCH_CRATE.u + 0.12, BENCH_CRATE.top + 0.12, BENCH_CRATE.v + 0.05);
   scroll.position.set(sp.x, sp.y, sp.z);
-  scroll.rotation.set(0.32, yawU, 0.22);
+  scroll.rotation.set(0.32, YAW_U, 0.22);
   scroll.castShadow = true;
   scroll.userData.prewarm = true;
   group.add(scroll);
@@ -338,7 +280,7 @@ export async function createSunspireWorldAsync(
   const placeCrate = () => {
     const p = crateOpen ? lidOff : lidOn;
     lid.position.set(p.x, p.y, p.z);
-    lid.rotation.set(0, yawU, crateOpen ? -LEAN : 0, 'YZX');
+    lid.rotation.set(0, YAW_U, crateOpen ? -LEAN : 0, 'YZX');
     scroll.visible = crateOpen;
   };
   placeCrate();
@@ -386,7 +328,7 @@ export async function createSunspireWorldAsync(
     group,
     works: out,
     anchors: SUNSPIRE_ANCHORS,
-    circuit: { lamp: (key, look) => lamps.set(key, look), look: (key) => lamps.look(key) },
+    circuit: works.circuit,
     shipObstacles: () => out.shipObstacles,
     birds: [
       { center: new Vector3(cove.x, 0, cove.z), radius: 170, seed: 0x5a0b1, perches: [] },
@@ -423,13 +365,13 @@ export async function createSunspireWorldAsync(
       hushed = Math.max(hushed, seconds);
     },
     show(what, on, unroll = false) {
-      lettering?.show(what, on, unroll);
+      works.show(what, on, unroll);
       if (what === 'crate') {
         crateOpen = on;
         placeCrate();
       }
     },
-    showing: (what) => (what === 'crate' ? crateOpen : (lettering?.showing(what) ?? false)),
+    showing: (what) => (what === 'crate' ? crateOpen : works.showing(what)),
     update(dt) {
       if (!settled()) {
         const e = ends[aimIndex]!;
@@ -454,24 +396,16 @@ export async function createSunspireWorldAsync(
         spireHalo.visible = on;
         if (lampBurning(false)) paintBeam();
       }
-      if (lettering?.update(dt)) signs!.update();
+      works.update(dt);
     },
     frame(camera) {
-      chunkLods.update(camera.position.x, camera.position.y, camera.position.z);
+      works.frame(camera);
       for (const h of halos) if (h.visible) h.quaternion.copy(camera.quaternion);
-      void tmp;
     },
-    async plants(breatheNow) {
-      const steps = sunspirePlantsSliced(o.tier.tier, o.heightField);
-      for (;;) {
-        const r = steps.next();
-        if (r.done) return r.value;
-        await breatheNow();
-      }
-    },
+    plants: (breatheNow) => runSliced(sunspirePlantsSliced(o.tier.tier, o.heightField), breatheNow),
     dispose() {
       water.dispose();
-      for (const m of meshes) m.geometry.dispose();
+      works.dispose();
       headGeo.dispose();
       lidGeo.dispose();
       sheathGeo.dispose();
@@ -480,9 +414,6 @@ export async function createSunspireWorldAsync(
       haloGeo.dispose();
       lit.dispose();
       haloMat.dispose();
-      lamps.dispose();
-      lettering?.release();
-      signs?.dispose();
     },
   };
 }
@@ -494,10 +425,3 @@ function angleTo(a: number, b: number): number {
   if (d < -Math.PI) d += Math.PI * 2;
   return d;
 }
-
-/** Where the fall lands in the oasis pool (for its spray) and the Signal House (for the stream's birds). */
-export const SUNSPIRE_SPOTS = {
-  fallFoot: toWorld(WATER.pool.u + 6, WATER.pool.v + 3),
-  signalHouse: toWorld(SIGNAL_HOUSE.u, SIGNAL_HOUSE.v),
-  bounds: S.bounds,
-} as const;

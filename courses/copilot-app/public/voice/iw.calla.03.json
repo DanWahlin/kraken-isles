@@ -1,0 +1,142 @@
+{
+  "id": "iw.calla.03",
+  "speaker": "Calla",
+  "text": "It pulls your repository’s issues onto a board that you can triage and track inside a session. It comes in a plugin, as you learned on Sunspire.",
+  "words": [
+    {
+      "word": "It",
+      "start": 0.052625,
+      "end": 0.157875
+    },
+    {
+      "word": "pulls",
+      "start": 0.157875,
+      "end": 0.486833
+    },
+    {
+      "word": "your",
+      "start": 0.486833,
+      "end": 0.631583
+    },
+    {
+      "word": "repository’s",
+      "start": 0.631583,
+      "end": 1.328958
+    },
+    {
+      "word": "issues",
+      "start": 1.328958,
+      "end": 1.89475
+    },
+    {
+      "word": "onto",
+      "start": 1.89475,
+      "end": 2.35525
+    },
+    {
+      "word": "a",
+      "start": 2.35525,
+      "end": 2.381583
+    },
+    {
+      "word": "board",
+      "start": 2.381583,
+      "end": 2.828958
+    },
+    {
+      "word": "that",
+      "start": 2.828958,
+      "end": 3.039458
+    },
+    {
+      "word": "you",
+      "start": 3.039458,
+      "end": 3.210541
+    },
+    {
+      "word": "can",
+      "start": 3.210541,
+      "end": 3.302625
+    },
+    {
+      "word": "triage",
+      "start": 3.302625,
+      "end": 4
+    },
+    {
+      "word": "and",
+      "start": 4,
+      "end": 4.289458
+    },
+    {
+      "word": "track",
+      "start": 4.289458,
+      "end": 4.631583
+    },
+    {
+      "word": "inside",
+      "start": 4.631583,
+      "end": 5.118416
+    },
+    {
+      "word": "a",
+      "start": 5.118416,
+      "end": 5.197375
+    },
+    {
+      "word": "session",
+      "start": 5.197375,
+      "end": 6.657875
+    },
+    {
+      "word": "It",
+      "start": 6.657875,
+      "end": 6.776333
+    },
+    {
+      "word": "comes",
+      "start": 6.776333,
+      "end": 7.10525
+    },
+    {
+      "word": "in",
+      "start": 7.10525,
+      "end": 7.236833
+    },
+    {
+      "word": "a",
+      "start": 7.236833,
+      "end": 7.289458
+    },
+    {
+      "word": "plugin",
+      "start": 7.289458,
+      "end": 8.013166
+    },
+    {
+      "word": "as",
+      "start": 8.013166,
+      "end": 8.236833
+    },
+    {
+      "word": "you",
+      "start": 8.236833,
+      "end": 8.421041
+    },
+    {
+      "word": "learned",
+      "start": 8.421041,
+      "end": 8.802625
+    },
+    {
+      "word": "on",
+      "start": 8.802625,
+      "end": 9
+    },
+    {
+      "word": "Sunspire",
+      "start": 9,
+      "end": 9.25
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "ll.juno.tide",
+  "speaker": "Juno",
+  "text": "And Tidewheel: manual and scheduled automations, used safely.",
+  "words": [
+    {
+      "word": "And",
+      "start": 0,
+      "end": 0.32
+    },
+    {
+      "word": "Tidewheel",
+      "start": 0.32,
+      "end": 1.52
+    },
+    {
+      "word": "manual",
+      "start": 1.52,
+      "end": 2.04
+    },
+    {
+      "word": "and",
+      "start": 2.04,
+      "end": 2.208
+    },
+    {
+      "word": "scheduled",
+      "start": 2.208,
+      "end": 2.693
+    },
+    {
+      "word": "automations",
+      "start": 2.693,
+      "end": 3.744
+    },
+    {
+      "word": "used",
+      "start": 3.744,
+      "end": 4.069
+    },
+    {
+      "word": "safely",
+      "start": 4.069,
+      "end": 4.319
+    }
+  ]
+}

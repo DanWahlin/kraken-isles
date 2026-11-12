@@ -1,0 +1,82 @@
+{
+  "id": "iw.doran.07",
+  "speaker": "Doran",
+  "text": "All five stages green, and a slate behind every one. That’s a chart I’ll ink.",
+  "words": [
+    {
+      "word": "All",
+      "start": 0.052083,
+      "end": 0.286458
+    },
+    {
+      "word": "five",
+      "start": 0.286458,
+      "end": 0.572916
+    },
+    {
+      "word": "stages",
+      "start": 0.572916,
+      "end": 1.015625
+    },
+    {
+      "word": "green",
+      "start": 1.015625,
+      "end": 1.614583
+    },
+    {
+      "word": "and",
+      "start": 1.614583,
+      "end": 1.757833
+    },
+    {
+      "word": "a",
+      "start": 1.757833,
+      "end": 1.809916
+    },
+    {
+      "word": "slate",
+      "start": 1.809916,
+      "end": 2.226583
+    },
+    {
+      "word": "behind",
+      "start": 2.226583,
+      "end": 2.747416
+    },
+    {
+      "word": "every",
+      "start": 2.747416,
+      "end": 2.994791
+    },
+    {
+      "word": "one",
+      "start": 2.994791,
+      "end": 4.335958
+    },
+    {
+      "word": "That’s",
+      "start": 4.335958,
+      "end": 4.726583
+    },
+    {
+      "word": "a",
+      "start": 4.726583,
+      "end": 4.791666
+    },
+    {
+      "word": "chart",
+      "start": 4.791666,
+      "end": 5.117208
+    },
+    {
+      "word": "I’ll",
+      "start": 5.117208,
+      "end": 5.325541
+    },
+    {
+      "word": "ink",
+      "start": 5.325541,
+      "end": 5.575541
+    }
+  ]
+}

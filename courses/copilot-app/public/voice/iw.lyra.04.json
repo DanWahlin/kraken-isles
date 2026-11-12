@@ -1,0 +1,82 @@
+{
+  "id": "iw.lyra.04",
+  "speaker": "Lyra",
+  "text": "Thea keeps the Gossip Stair, up the first flight. She knows all about long threads.",
+  "words": [
+    {
+      "word": "Thea",
+      "start": 0,
+      "end": 0.213
+    },
+    {
+      "word": "keeps",
+      "start": 0.213,
+      "end": 0.5
+    },
+    {
+      "word": "the",
+      "start": 0.5,
+      "end": 0.6
+    },
+    {
+      "word": "Gossip",
+      "start": 0.6,
+      "end": 1.013
+    },
+    {
+      "word": "Stair",
+      "start": 1.013,
+      "end": 1.493
+    },
+    {
+      "word": "up",
+      "start": 1.493,
+      "end": 1.62
+    },
+    {
+      "word": "the",
+      "start": 1.62,
+      "end": 1.733
+    },
+    {
+      "word": "first",
+      "start": 1.733,
+      "end": 2.046
+    },
+    {
+      "word": "flight",
+      "start": 2.046,
+      "end": 2.64
+    },
+    {
+      "word": "She",
+      "start": 2.64,
+      "end": 3.16
+    },
+    {
+      "word": "knows",
+      "start": 3.16,
+      "end": 3.4
+    },
+    {
+      "word": "all",
+      "start": 3.4,
+      "end": 3.587
+    },
+    {
+      "word": "about",
+      "start": 3.587,
+      "end": 3.984
+    },
+    {
+      "word": "long",
+      "start": 3.984,
+      "end": 4.3
+    },
+    {
+      "word": "threads",
+      "start": 4.3,
+      "end": 4.55
+    }
+  ]
+}

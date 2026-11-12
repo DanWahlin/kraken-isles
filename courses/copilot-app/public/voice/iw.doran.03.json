@@ -1,0 +1,107 @@
+{
+  "id": "iw.doran.03",
+  "speaker": "Doran",
+  "text": "Five stages on the rail: Propose, Plan, Baseline, Implement, Validate. There’s no Approve stage. Approval happens in the Plan tab.",
+  "words": [
+    {
+      "word": "Five",
+      "start": 0.052083,
+      "end": 0.416666
+    },
+    {
+      "word": "stages",
+      "start": 0.416666,
+      "end": 0.911458
+    },
+    {
+      "word": "on",
+      "start": 0.911458,
+      "end": 1.002625
+    },
+    {
+      "word": "the",
+      "start": 1.002625,
+      "end": 1.067708
+    },
+    {
+      "word": "rail",
+      "start": 1.067708,
+      "end": 1.70575
+    },
+    {
+      "word": "Propose",
+      "start": 1.70575,
+      "end": 2.513041
+    },
+    {
+      "word": "Plan",
+      "start": 2.513041,
+      "end": 3.138041
+    },
+    {
+      "word": "Baseline",
+      "start": 3.138041,
+      "end": 3.958333
+    },
+    {
+      "word": "Implement",
+      "start": 3.958333,
+      "end": 4.713541
+    },
+    {
+      "word": "Validate",
+      "start": 4.713541,
+      "end": 6.341166
+    },
+    {
+      "word": "There’s",
+      "start": 6.341166,
+      "end": 6.627625
+    },
+    {
+      "word": "no",
+      "start": 6.627625,
+      "end": 6.875
+    },
+    {
+      "word": "Approve",
+      "start": 6.875,
+      "end": 7.226583
+    },
+    {
+      "word": "stage",
+      "start": 7.226583,
+      "end": 8.697916
+    },
+    {
+      "word": "Approval",
+      "start": 8.697916,
+      "end": 9.20575
+    },
+    {
+      "word": "happens",
+      "start": 9.20575,
+      "end": 9.6745
+    },
+    {
+      "word": "in",
+      "start": 9.6745,
+      "end": 9.765625
+    },
+    {
+      "word": "the",
+      "start": 9.765625,
+      "end": 9.83075
+    },
+    {
+      "word": "Plan",
+      "start": 9.83075,
+      "end": 10.169291
+    },
+    {
+      "word": "tab",
+      "start": 10.169291,
+      "end": 10.419291
+    }
+  ]
+}

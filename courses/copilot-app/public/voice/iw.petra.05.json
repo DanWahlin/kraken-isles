@@ -1,0 +1,102 @@
+{
+  "id": "iw.petra.05",
+  "speaker": "Petra",
+  "text": "The Great Chart is the same idea with bell pulls. Follow the Kite Walk along the cliff to Doran.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.049,
+      "end": 0.147041
+    },
+    {
+      "word": "Great",
+      "start": 0.147041,
+      "end": 0.453416
+    },
+    {
+      "word": "Chart",
+      "start": 0.453416,
+      "end": 0.882333
+    },
+    {
+      "word": "is",
+      "start": 0.882333,
+      "end": 1.029416
+    },
+    {
+      "word": "the",
+      "start": 1.029416,
+      "end": 1.151958
+    },
+    {
+      "word": "same",
+      "start": 1.151958,
+      "end": 1.470583
+    },
+    {
+      "word": "idea",
+      "start": 1.470583,
+      "end": 1.985291
+    },
+    {
+      "word": "with",
+      "start": 1.985291,
+      "end": 2.169125
+    },
+    {
+      "word": "bell",
+      "start": 2.169125,
+      "end": 2.451
+    },
+    {
+      "word": "pulls",
+      "start": 2.451,
+      "end": 3.872541
+    },
+    {
+      "word": "Follow",
+      "start": 3.872541,
+      "end": 4.215666
+    },
+    {
+      "word": "the",
+      "start": 4.215666,
+      "end": 4.301458
+    },
+    {
+      "word": "Kite",
+      "start": 4.301458,
+      "end": 4.656875
+    },
+    {
+      "word": "Walk",
+      "start": 4.656875,
+      "end": 4.96325
+    },
+    {
+      "word": "along",
+      "start": 4.96325,
+      "end": 5.269625
+    },
+    {
+      "word": "the",
+      "start": 5.269625,
+      "end": 5.367666
+    },
+    {
+      "word": "cliff",
+      "start": 5.367666,
+      "end": 5.710791
+    },
+    {
+      "word": "to",
+      "start": 5.710791,
+      "end": 5.821083
+    },
+    {
+      "word": "Doran",
+      "start": 5.821083,
+      "end": 6.071083
+    }
+  ]
+}

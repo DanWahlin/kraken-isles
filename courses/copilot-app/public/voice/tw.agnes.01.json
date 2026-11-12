@@ -1,0 +1,137 @@
+{
+  "id": "tw.agnes.01",
+  "speaker": "Agnes",
+  "text": "Keeper Agnes, Captain. The tide turns the wheel, and the wheel winds the light. But nothing here runs itself until somebody has tested it by hand.",
+  "words": [
+    {
+      "word": "Keeper",
+      "start": 0.0515409,
+      "end": 0.42525
+    },
+    {
+      "word": "Agnes",
+      "start": 0.42525,
+      "end": 1.25
+    },
+    {
+      "word": "Captain",
+      "start": 1.25,
+      "end": 2.719083
+    },
+    {
+      "word": "The",
+      "start": 2.719083,
+      "end": 2.835041
+    },
+    {
+      "word": "tide",
+      "start": 2.835041,
+      "end": 3.195875
+    },
+    {
+      "word": "turns",
+      "start": 3.195875,
+      "end": 3.543833
+    },
+    {
+      "word": "the",
+      "start": 3.543833,
+      "end": 3.646916
+    },
+    {
+      "word": "wheel",
+      "start": 3.646916,
+      "end": 4.29125
+    },
+    {
+      "word": "and",
+      "start": 4.29125,
+      "end": 4.445875
+    },
+    {
+      "word": "the",
+      "start": 4.445875,
+      "end": 4.536083
+    },
+    {
+      "word": "wheel",
+      "start": 4.536083,
+      "end": 4.755166
+    },
+    {
+      "word": "winds",
+      "start": 4.755166,
+      "end": 5.064416
+    },
+    {
+      "word": "the",
+      "start": 5.064416,
+      "end": 5.154625
+    },
+    {
+      "word": "light",
+      "start": 5.154625,
+      "end": 6.572166
+    },
+    {
+      "word": "But",
+      "start": 6.572166,
+      "end": 6.739708
+    },
+    {
+      "word": "nothing",
+      "start": 6.739708,
+      "end": 7.113416
+    },
+    {
+      "word": "here",
+      "start": 7.113416,
+      "end": 7.293833
+    },
+    {
+      "word": "runs",
+      "start": 7.293833,
+      "end": 7.590208
+    },
+    {
+      "word": "itself",
+      "start": 7.590208,
+      "end": 8.118541
+    },
+    {
+      "word": "until",
+      "start": 8.118541,
+      "end": 8.363416
+    },
+    {
+      "word": "somebody",
+      "start": 8.363416,
+      "end": 8.827333
+    },
+    {
+      "word": "has",
+      "start": 8.827333,
+      "end": 9.00775
+    },
+    {
+      "word": "tested",
+      "start": 9.00775,
+      "end": 9.394333
+    },
+    {
+      "word": "it",
+      "start": 9.394333,
+      "end": 9.497416
+    },
+    {
+      "word": "by",
+      "start": 9.497416,
+      "end": 9.677833
+    },
+    {
+      "word": "hand",
+      "start": 9.677833,
+      "end": 9.927833
+    }
+  ]
+}

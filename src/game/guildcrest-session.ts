@@ -1,69 +1,37 @@
-import type { Object3D } from 'three/webgpu';
-import { puzzleContent, puzzleOn, textOf } from '../course/puzzles';
 import { naturalWaterAt } from '../world/islands/fresh-water-natural';
 import { GUILDCREST_ANCHORS } from '../world/islands/guildcrest/anchors';
 import { guildcrestWater } from '../world/islands/guildcrest/height';
 import type { GuildcrestWorld } from '../world/islands/guildcrest/index';
+import { CHARTER_STONE, FRAME_KIT, GUILDCREST, SQUARE } from '../world/islands/guildcrest/layout';
 import {
-  CHARTER_STONE,
-  GUILDCREST,
-  headingUv,
-  SQUARE,
-  toFrame,
-  toWorld,
-} from '../world/islands/guildcrest/layout';
-import { DeckIndex } from '../world/village/walk-decks';
-import { createChoiceCard } from './choice-card';
-import type { InlandWater, WalkSurface } from './collision';
-import type { CameraShot } from './follow-camera';
+  chestIds,
+  createFrameIslandContent,
+  frameShot,
+  playBandSong,
+  type BottleSpot,
+  type ChestSpot,
+  type FrameIslandContent,
+} from './frame-island-content';
 import { createGuildcrestCircuits } from './guildcrest-circuits';
 import { GUILDCREST_NPCS, guildcrestExtras } from './guildcrest-npcs';
 import { guildcrestNpcScript } from './guildcrest-quests';
 import type { IslandContentHost } from './island-code';
-import { createIslandSite } from './island-site';
-import { MARKET_PUZZLE, marketStall } from './market/stalls';
-import type { Npc } from './npcs';
-import type { ScriptStep } from './script';
 
 /**
- * Guildcrest's content in the play session (docs/specs/ISLAND-04-guildcrest.md §4-§7, W.3-W.8): the
- * cast at the island's anchors, its chests and bottles, the town's, abbey's and ridge's colliders and
- * camera boxes, its walk surfaces (the quay, the brae's and the tower's stairs, the terrace, the
- * cloister's walks) and its water, and the set pieces the scripts wait on (the cues: the song chart,
- * the Charter Stone, the chained rack, the two circuits, the chests and the Seal). It talks to the
- * world only through `GuildcrestWorld` and its layout data, and to the session through the host.
+ * Guildcrest's content in the play session (docs/specs/ISLAND-04-guildcrest.md §4-§7, W.3-W.8) on the
+ * shared content (frame-island-content.ts): its cast, its chests and bottles, its water (the loch's
+ * burn and the mill pond), and its set pieces (the cues, spec W.4: the song chart, the Charter Stone,
+ * the chained library, the two circuits and the Seal).
  */
-export interface GuildcrestContent {
-  /** The island's walk surfaces, live once the world's streamed. */
-  readonly surface: WalkSurface;
-  /** The burn, the linn's pool and the lochan (wade their shallows). */
-  inland(x: number, z: number, ground: number, out: InlandWater): boolean;
-  setup(world: GuildcrestWorld): Promise<{ roots: Object3D[]; reveal(): void }>;
-  teardown(): void;
-  readonly npcs: readonly Npc[];
-  readonly ids: ReadonlySet<string>;
-  script(id: string): { steps: readonly ScriptStep[] } | null;
-  updateNpcs(dt: number, at: { x: number; y: number; z: number }, eye: { x: number; z: number }): void;
-  update(dt: number, t: number): void;
-  bottles(): { id: string; x: number; z: number; read: boolean }[];
-  debug: Record<string, (...args: never[]) => unknown>;
-  dispose(): void;
-}
+export type GuildcrestContent = FrameIslandContent<GuildcrestWorld>;
 
-/** Within this distance (m) of the island's centre its cast runs. */
-const NEAR = 800;
-
-/** An island frame point (u, y, v) and what to look at, as a camera shot. */
-function shotUv(u: number, y: number, v: number, tu: number, ty: number, tv: number): CameraShot {
-  const p = toWorld(u, v);
-  const t = toWorld(tu, tv);
-  return { x: p.x, y, z: p.z, tx: t.x, ty, tz: t.z };
-}
+const shot = (u: number, y: number, v: number, tu: number, ty: number, tv: number) =>
+  frameShot(FRAME_KIT, u, y, v, tu, ty, tv);
 
 const RACK = GUILDCREST_ANCHORS.chainRack;
 const SHOTS = {
   // Over the square from its south-west, down at the Charter Stone.
-  charter: shotUv(
+  charter: shot(
     CHARTER_STONE.u - 9,
     SQUARE.y + 5.2,
     CHARTER_STONE.v - 7,
@@ -72,275 +40,77 @@ const SHOTS = {
     CHARTER_STONE.v,
   ),
   // From the north walk into the library's bay, at the chained tools.
-  chains: { ...shotUv(24.4, 40.2, 142.6, 24.6, 37.2, 152.6), ty: RACK.y + 1.2 },
+  chains: { ...shot(24.4, 40.2, 142.6, 24.6, 37.2, 152.6), ty: RACK.y + 1.2 },
   // The inn's porch: Lyra's players by the music stand.
-  chart: shotUv(-174, 7.2, 30, -162, 4, 40),
+  chart: shot(-174, 7.2, 30, -162, 4, 40),
 } as const;
 
 /**
  * The chests the island places (spec §3.10, as built): on the cloister's west walk by the scriptorium,
- * in the chained library's bay, and in the guildhall yard by its north wall. `face` is where its lid
- * opens toward (frame).
+ * in the chained library's bay, and in the guildhall yard by its north wall.
  */
-const CHESTS = [
+const CHESTS: readonly ChestSpot[] = [
   { id: 'C4.1', u: 7.1, v: 124.6, face: [1, 0] },
   { id: 'C4.2', u: 27.6, v: 147.8, face: [-0.4, -1] },
   { id: 'C4.3', u: 104, v: 164.6, face: [0, -1] },
-] as const;
+];
 
 /** The message bottles (the chapter's troubleshooting, B4.1-B4.4). */
-const BOTTLES = [
+const BOTTLES: readonly BottleSpot[] = [
   { id: 'B4.1', u: -46.5, v: 82.5 },
   { id: 'B4.2', u: -86.2, v: 36.6 },
   { id: 'B4.3', u: 57.2, v: 144.4 },
   { id: 'B4.4', u: 82.6, v: 163.2 },
-] as const;
-
-/** Every chest and bottle id the island places (`IslandCode.chests`). */
-export const GUILDCREST_CHEST_IDS: readonly string[] = [
-  ...CHESTS.map((c) => c.id),
-  ...BOTTLES.map((b) => b.id),
 ];
 
+/** Every chest and bottle id the island places (`IslandCode.chests`). */
+export const GUILDCREST_CHEST_IDS = chestIds(CHESTS, BOTTLES);
+
 export function createGuildcrestContent(host: IslandContentHost): GuildcrestContent {
-  let world: GuildcrestWorld | null = null;
-  let decks: DeckIndex | null = null;
-  let disposed = false;
-  const ids = new Set(GUILDCREST_NPCS.map((n) => n.id));
-  const q = () => host.puzzleHost.quests();
   const water = guildcrestWater();
-  const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
-  const card = createChoiceCard({ blocked: () => !!host.learn?.busy, reduced: host.reducedMotion });
-  /** The set pieces' card: it has the keys while it's up. */
-  const ask = async (a: Parameters<typeof card.ask>[0]): Promise<string> => {
-    host.setModal(true);
-    try {
-      return await card.ask(a);
-    } finally {
-      host.setModal(false);
-    }
-  };
-
-  const surface: WalkSurface = {
-    heightAt: (x, z, y) => decks?.heightAt(x, z, y) ?? null,
-    kind: (x, z) => (decks?.woodAt(x, z) ? 'wood' : 'stone'),
-  };
-
-  /** Bumped by each teardown, so a setup still building for a freed world stops. */
-  let generation = 0;
-  /** What a setup adds to the session's world, interactions, chests and puzzles. */
-  const site = createIslandSite(host);
-
-  // ---- Cues the scripts wait on (spec W.4) ----
-
-  /**
-   * The song chart (puzzles/song-chart.json, a ceremony): the players play from memory and drift
-   * apart; you hand out the chart, and they play the song the same way.
-   */
-  host.cues.set('gc-chart', async () => {
-    if (!puzzleOn('song-chart') || !world) return;
-    const T = (k: string) => textOf(puzzleContent('song-chart'), k);
-    const lyra = GUILDCREST_ANCHORS.lyra;
-    const at = { x: lyra.x, y: lyra.y + 1.2, z: lyra.z };
-    const play = async (n: number, apart: boolean) => {
-      for (let i = 0; i < n; i++) {
-        host.audio?.sfx.oneShot('lute_strum', at, 0.8);
-        // Out of step: the second player comes in late.
-        if (apart) {
-          await wait(host.reducedMotion() ? 120 : 230);
-          host.audio?.sfx.oneShot('lute_strum', at, 0.55);
-        }
-        await wait(host.reducedMotion() ? 260 : 520);
-      }
-    };
-    host.frame(SHOTS.chart);
-    const head = { eyebrow: 'Lyra Wren', title: T('playFree') };
-    const free = await ask({ ...head, prompt: T('hint1'), options: [{ id: 'free', label: T('playFree') }] });
-    if (!free || !world) return card.close();
-    card.busy(true);
-    await play(3, true);
-    card.busy(false);
-    card.message(T('apart'), 'bad');
-    await wait(1100);
-    const hand = await ask({
-      ...head,
-      title: T('handOut'),
-      prompt: T('hint2'),
-      options: [{ id: 'hand', label: T('handOut') }],
-    });
-    if (!hand || !world) return card.close();
-    host.audio?.sfx.oneShot('quill', at, 0.6);
-    const together = await ask({
-      ...head,
-      title: T('playChart'),
-      prompt: T('hint2'),
-      options: [{ id: 'chart', label: T('playChart') }],
-    });
-    if (!together || !world) return card.close();
-    card.busy(true);
-    await play(4, false);
-    host.audio?.sfx.oneShot('chime_solve', at, 0.8);
-    card.message(T('together'), 'good');
-    await wait(1300);
-    card.message(T('unlocked'), 'good');
-    await wait(1300);
-    card.busy(false);
-    card.close();
-    host.backToTalk();
-  });
-
-  /** The Charter Stone: the camera turns to it for its matching quiz (M4.1, the next step). */
-  host.cues.set('gc-charter', async () => {
-    host.frame(SHOTS.charter);
-    await wait(host.reducedMotion() ? 500 : 1400);
-  });
-
-  /** The chained library: the camera turns to the tools on their chains. */
-  host.cues.set('gc-chains', async () => {
-    host.frame(SHOTS.chains);
-    await wait(host.reducedMotion() ? 500 : 1400);
-  });
-
-  for (const c of CHESTS)
-    host.cues.set(`gc-chest:${c.id}`, async () => {
-      await host.openChest(c.id);
-    });
-
-  // ---- The two circuits (spec §5) and the Seal (§4.5) ----
-  const circuits = createGuildcrestCircuits(host, {
-    ask,
-    card: {
-      message: (t, tone) => card.message(t, tone),
-      busy: (on) => card.busy(on),
-      close: () => card.close(),
-      choose: (id) => card.choose(id),
-    },
-  });
-  host.cues.set('gc-book', () => circuits.cue('book'));
-  host.cues.set('gc-belt', () => circuits.cue('belt'));
-  host.cues.set('gc-seal', () => circuits.seal());
-
-  async function setup(w: GuildcrestWorld): Promise<{ roots: Object3D[]; reveal(): void }> {
-    const none = { roots: [] as Object3D[], reveal() {} };
-    if (disposed || world) return none;
-    world = w;
-    const gen = generation;
-    const gone = () => disposed || gen !== generation;
-    const works = w.works;
-    decks = new DeckIndex(works.decks, toFrame);
-    site.colliders(works.colliders, works.circles, works.cameraBoxes);
-    w.setSailPace(host.reducedMotion() ? 0.25 : 1);
-
-    // The cast at their anchors (on the walk surfaces there), a character a slice.
-    const anchors = { ...w.anchors } as Record<string, (typeof w.anchors)['lyra']>;
-    const cast = [
-      ...GUILDCREST_NPCS,
-      ...guildcrestExtras(anchors).filter(
-        (n) => n.id !== marketStall('guildcrest').keeper.npc || puzzleOn(MARKET_PUZZLE),
-      ),
-    ];
-    const roots: Object3D[] = [];
-    if (!(await site.cast({ cast, anchors, fallback: anchors.lyra!, alive: () => !gone(), roots })))
-      return none;
-
-    for (const c of CHESTS) {
-      const p = toWorld(c.u, c.v);
-      const y = host.world.surfaceHeightAt(p.x, p.z) ?? host.world.groundAt(p.x, p.z);
-      const f = toWorld(c.u + c.face[0], c.v + c.face[1]);
-      site.chest(c.id, p.x, y, p.z, Math.atan2(f.x - p.x, f.z - p.z), roots);
-    }
-    // Message bottles (B4.1-B4.4): the chapter's troubleshooting.
-    const bottled = await site.bottles({
-      spots: BOTTLES.map((b, i) => ({ id: b.id, ...toWorld(b.u, b.v), yaw: 0.6 + i * 1.9 })),
-      ground: (x, z) => host.world.surfaceHeightAt(x, z) ?? host.world.groundAt(x, z),
-      alive: () => !gone(),
-      roots,
-    });
-    if (!bottled) return none;
-    // The circuits: their stations and lamps, laid out as the save says.
-    for (const p of circuits.create(w)) site.puzzle(p);
-    return {
-      roots,
-      reveal() {
-        for (const r of roots) r.visible = true;
-      },
-    };
-  }
-
-  function teardown(): void {
-    generation++;
-    card.close();
-    circuits.teardown();
-    if (!world) return;
-    site.clear();
-    decks = null;
-    world = null;
-  }
-
-  return {
-    surface,
-    inland(x, z, ground, out) {
-      if (!world) return false;
-      return naturalWaterAt(water, x, z, ground, out);
-    },
-    setup,
-    teardown,
-    get npcs() {
-      return site.npcs;
-    },
-    ids,
-    script: (id) => guildcrestNpcScript(id, q()),
-    updateNpcs(dt, at, eye) {
-      if (Math.hypot(eye.x - GUILDCREST.center.x, eye.z - GUILDCREST.center.z) < NEAR)
-        site.crowd?.update(dt, at);
-    },
-    update(dt) {
-      if (world) circuits.update(dt);
-    },
-    bottles: () => site.bottleList(),
-    debug: {
-      ready: () => !!world,
-      decks: () => world?.works.decks.length ?? 0,
-      card: () => card.view,
-      choose: (id: string) => card.choose(id),
-      /** Plays the Seal's moment (for a test's shots). */
-      seal: () => circuits.seal(),
-      lamp: (key: string) => circuits.debug.lamp(key),
-      sealing: () => circuits.debug.sealing(),
-      /** Every third tread's middle of each railed flight, and the way it climbs (tests push at its rails). */
-      railedTreads: () =>
-        (world?.works.flights ?? []).flatMap(({ a, e }) => {
-          const out: { x: number; y: number; z: number; heading: number }[] = [];
-          const up = e[2] > a[2];
-          const heading = up ? headingUv(e[0] - a[0], e[1] - a[1]) : headingUv(a[0] - e[0], a[1] - e[1]);
-          for (let t = 0.15; t < 0.9; t += 0.25) {
-            const p = toWorld(a[0] + (e[0] - a[0]) * t, a[1] + (e[1] - a[1]) * t);
-            out.push({ ...p, y: a[2] + (e[2] - a[2]) * t, heading });
-          }
-          return out;
+  return createFrameIslandContent<GuildcrestWorld>(host, {
+    id: 'guildcrest',
+    prefix: 'gc',
+    frame: FRAME_KIT,
+    center: GUILDCREST.center,
+    cast: GUILDCREST_NPCS,
+    extras: guildcrestExtras,
+    npcScript: guildcrestNpcScript,
+    chests: CHESTS,
+    bottles: BOTTLES,
+    inland: (x, z, ground, out) => naturalWaterAt(water, x, z, ground, out),
+    // The mills' sails turn slowly with reduced motion.
+    ready: (world) => world.setSailPace(host.reducedMotion() ? 0.25 : 1),
+    pieces(t) {
+      // The song chart (puzzles/song-chart.json): the players play from memory and drift apart; you
+      // hand out the chart, and they play the song the same way.
+      const lyra = GUILDCREST_ANCHORS.lyra;
+      t.cue('chart', () =>
+        playBandSong(t, {
+          puzzle: 'song-chart',
+          shot: SHOTS.chart,
+          at: { x: lyra.x, y: lyra.y + 1.2, z: lyra.z },
+          first: ['free', 'playFree'],
+          // Out of step: the second player comes in late.
+          async falter(strum) {
+            for (let i = 0; i < 3; i++) {
+              await strum(0.8, 230, 120);
+              await strum(0.55, 520);
+            }
+          },
+          wrong: 'apart',
+          fix: ['hand', 'handOut', 'quill'],
+          again: ['chart', 'playChart'],
+          right: 'together',
+          chord: 0.8,
         }),
-      /** Where each flight comes out at its top: where a climber arrives. */
-      stairHeads: () =>
-        (world?.works.flights ?? []).map(({ a, e }) => {
-          const top = e[2] > a[2] ? e : a;
-          return { ...toWorld(top[0], top[1]), y: top[2] };
-        }),
-      /** The island's lettered signs (their sign names, place and facing): tests look at each. */
-      signs: () =>
-        world?.works.signs.map((g) => ({ lines: g.lines, x: g.x, y: g.y, z: g.z, heading: g.heading })) ?? [],
-      /** Whether the world shows the book's page, Rory's banner or the Seal's banners. */
-      showing: (what: 'page' | 'rory' | 'sealed') => circuits.debug.showing(what),
-      stations: () => circuits.debug.spots(),
-      /** Every chest and bottle spot (tests walk to each). */
-      chestSpots: () => [
-        ...CHESTS.map((c) => ({ id: c.id, ...toWorld(c.u, c.v) })),
-        ...BOTTLES.map((b) => ({ id: b.id, ...toWorld(b.u, b.v) })),
-      ],
+      );
+      // The Charter Stone: the camera turns to it for its matching quiz (M4.1, the next step).
+      t.lookCue('charter', SHOTS.charter);
+      // The chained library: the camera turns to the tools on their chains.
+      t.lookCue('chains', SHOTS.chains);
+      // The two circuits (spec §5) and the Seal (§4.5).
+      return { circuits: createGuildcrestCircuits(host, t.circuitCard), kinds: ['book', 'belt'] };
     },
-    dispose() {
-      disposed = true;
-      teardown();
-      card.dispose();
-    },
-  };
+  });
 }

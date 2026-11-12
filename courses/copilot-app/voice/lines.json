@@ -3429,6 +3429,936 @@
       "id": "ss.yusuf.market.bye",
       "speaker": "Yusuf",
       "text": "Off to the bazaar? Your starfish and your jobs go with you. Come back any time."
+    },
+    {
+      "id": "iw.juno.arrive.01",
+      "speaker": "Juno",
+      "text": "Inkwell Bluffs, Captain. White walls, blue doors, and the mapmakers’ Dome up on the head. They chart every isle we’ve sailed."
+    },
+    {
+      "id": "wingman.iw.01",
+      "speaker": "Wingman",
+      "text": "Golden hour, Captain! Here the crew learns to keep the whole job on one board that you can both mark."
+    },
+    {
+      "id": "wingman.iw.nav",
+      "speaker": "Wingman",
+      "text": "Your tasks are in the top left, and the compass up top shows the way, up the stair and along the cliff to the Dome."
+    },
+    {
+      "id": "wingman.starfish.inkwell",
+      "speaker": "Wingman",
+      "text": "And five starfish are hidden around Inkwell Bluffs. Your count’s in the top right."
+    },
+    {
+      "id": "iw.lyra.01",
+      "speaker": "Lyra",
+      "text": "Captain! A band can plan a song in one long group chat. That’s where good decisions get buried."
+    },
+    {
+      "id": "iw.lyra.02",
+      "speaker": "Lyra",
+      "text": "Or we pin the arrangement on one board that everybody can see. Hear us try it the first way."
+    },
+    {
+      "id": "iw.lyra.03",
+      "speaker": "Lyra",
+      "text": "A canvas is the app’s arrangement board, for you and the agent. It keeps everything visible and organized."
+    },
+    {
+      "id": "iw.lyra.04",
+      "speaker": "Lyra",
+      "text": "Thea keeps the Gossip Stair, up the first flight. She knows all about long threads."
+    },
+    {
+      "id": "iw.lyra.done",
+      "speaker": "Lyra",
+      "text": "Thea’s on the Washing Square, Captain, up the first flight of the stair."
+    },
+    {
+      "id": "iw.thea.wait",
+      "speaker": "Thea",
+      "text": "Lyra’s playing at the taverna by the quay, Captain. Hear her first."
+    },
+    {
+      "id": "iw.thea.01",
+      "speaker": "Thea",
+      "text": "Welcome to the Gossip Stair, Captain. Every word anyone said hangs on these lines. Now try to find yesterday’s decision."
+    },
+    {
+      "id": "iw.thea.02",
+      "speaker": "Thea",
+      "text": "Chat works well for questions and talk. But once a session is doing real work, a long thread gets hard to scan."
+    },
+    {
+      "id": "iw.thea.03",
+      "speaker": "Thea",
+      "text": "A canvas is a shared board in the side panel. You and the agent can both see it, and both change it."
+    },
+    {
+      "id": "iw.thea.04",
+      "speaker": "Thea",
+      "text": "Say the agent adds plan steps. You uncheck one, or write pause before edits. It carries on from your update, not from a buried sentence."
+    },
+    {
+      "id": "iw.thea.05",
+      "speaker": "Thea",
+      "text": "So: chat for a quick answer to a short task. A canvas when there’s state to keep in view, steps that repeat, or controls you both use."
+    },
+    {
+      "id": "iw.thea.06",
+      "speaker": "Thea",
+      "text": "Nikos keeps the desks on the Plaza, up the stair. Mind the washing."
+    },
+    {
+      "id": "iw.thea.done",
+      "speaker": "Thea",
+      "text": "Up two more flights to the Plaza, Captain. Nikos is by the desks."
+    },
+    {
+      "id": "iw.nikos.wait",
+      "speaker": "Nikos",
+      "text": "See Thea on the Washing Square first, Captain."
+    },
+    {
+      "id": "iw.nikos.01",
+      "speaker": "Nikos",
+      "text": "Nikos, Captain. Before any chart goes on a table, look at the four desks at the Plaza’s corners."
+    },
+    {
+      "id": "iw.nikos.02",
+      "speaker": "Nikos",
+      "text": "Plan, Terminal, Browser and Changes. Those panels come with every session. You used them on the way here."
+    },
+    {
+      "id": "iw.nikos.03",
+      "speaker": "Nikos",
+      "text": "A canvas adds one more surface, one that you design for the task. It doesn’t replace the four."
+    },
+    {
+      "id": "iw.nikos.04",
+      "speaker": "Nikos",
+      "text": "Now make ready. Start a session in a new worktree from main, in Interactive mode, with the default agent."
+    },
+    {
+      "id": "iw.nikos.05",
+      "speaker": "Nikos",
+      "text": "In its Terminal tab, install, test and build the Book App. Note the test totals: your canvas will use them as its baseline."
+    },
+    {
+      "id": "iw.nikos.06",
+      "speaker": "Nikos",
+      "text": "The visiting guild has lent us a board. Envoy Calla’s in the Loggia, on the Plaza’s west side."
+    },
+    {
+      "id": "iw.nikos.done",
+      "speaker": "Nikos",
+      "text": "Calla’s in the Loggia, Captain, on the Plaza’s west side."
+    },
+    {
+      "id": "iw.calla.wait",
+      "speaker": "Calla",
+      "text": "Make ready with Nikos at the desks first, Captain."
+    },
+    {
+      "id": "iw.calla.01",
+      "speaker": "Calla",
+      "text": "Envoy Calla, of the visiting guild. Before you build a board of your own, try one that’s already made."
+    },
+    {
+      "id": "iw.calla.02",
+      "speaker": "Calla",
+      "text": "Awesome GitHub Copilot is a curated collection of agents, instructions, skills and canvas extensions. Ours is the Repository Issues Kanban."
+    },
+    {
+      "id": "iw.calla.03",
+      "speaker": "Calla",
+      "text": "It pulls your repository’s issues onto a board that you can triage and track inside a session. It comes in a plugin, as you learned on Sunspire."
+    },
+    {
+      "id": "iw.calla.board",
+      "speaker": "Calla",
+      "text": "Work round the Loggia, Captain. The guild’s notice first, by the door."
+    },
+    {
+      "id": "iw.calla.notice",
+      "speaker": "Calla",
+      "text": "Select Open in Copilot app, then Allow. And read the name before you select Install."
+    },
+    {
+      "id": "iw.calla.bell",
+      "speaker": "Calla",
+      "text": "Ring the bell: Restart canvas extensions. The app reloads them and picks up the new one."
+    },
+    {
+      "id": "iw.calla.frame",
+      "speaker": "Calla",
+      "text": "The crate says accessibility-kanban. The board’s own name is Repository Issues Kanban. Look for that one."
+    },
+    {
+      "id": "iw.calla.card",
+      "speaker": "Calla",
+      "text": "Each card you move to Plan starts a new agent run. So move one."
+    },
+    {
+      "id": "iw.calla.04",
+      "speaker": "Calla",
+      "text": "You moved a card, and the agent moved it again. Two hands on one board, and its state stayed in view."
+    },
+    {
+      "id": "iw.calla.05",
+      "speaker": "Calla",
+      "text": "Petra will show you how to make your own. She’s on the Draughting Terrace, north of the Plaza."
+    },
+    {
+      "id": "iw.calla.done",
+      "speaker": "Calla",
+      "text": "Petra’s on the Draughting Terrace, Captain, toward the cliff."
+    },
+    {
+      "id": "iw.petra.wait",
+      "speaker": "Petra",
+      "text": "Try the guild’s board with Calla first, Captain."
+    },
+    {
+      "id": "iw.petra.01",
+      "speaker": "Petra",
+      "text": "Petra, Captain. Now a board of your own. Start small: a shared checklist."
+    },
+    {
+      "id": "iw.petra.02",
+      "speaker": "Petra",
+      "text": "Type a slash, select create-canvas, and describe the board you want."
+    },
+    {
+      "id": "iw.petra.03",
+      "speaker": "Petra",
+      "text": "A proposal field, a checklist, and notes. You and the agent can both update them. It doesn’t run tests or edit the app."
+    },
+    {
+      "id": "iw.petra.slate",
+      "speaker": "Petra",
+      "text": "Work round the terrace, Captain. The easel first."
+    },
+    {
+      "id": "iw.petra.easel",
+      "speaker": "Petra",
+      "text": "Slash, then create-canvas. Then the description of the board."
+    },
+    {
+      "id": "iw.petra.order",
+      "speaker": "Petra",
+      "text": "Say what the board holds, and what must not happen while it’s being made."
+    },
+    {
+      "id": "iw.petra.mate",
+      "speaker": "Petra",
+      "text": "Now ask the mate to read it back. Does her answer match your marks?"
+    },
+    {
+      "id": "iw.petra.chest",
+      "speaker": "Petra",
+      "text": "Where’s the board kept? Open Changes and look."
+    },
+    {
+      "id": "iw.petra.04",
+      "speaker": "Petra",
+      "text": "Your hand, then the mate’s, on one slate. And not one file changed in the repository."
+    },
+    {
+      "id": "iw.petra.05",
+      "speaker": "Petra",
+      "text": "The Great Chart is the same idea with bell pulls. Follow the Kite Walk along the cliff to Doran."
+    },
+    {
+      "id": "iw.petra.done",
+      "speaker": "Petra",
+      "text": "Along the Kite Walk to the Chart Court, Captain. Doran’s by the Great Chart."
+    },
+    {
+      "id": "iw.doran.wait",
+      "speaker": "Doran",
+      "text": "Make your slate with Petra first, Captain."
+    },
+    {
+      "id": "iw.doran.01",
+      "speaker": "Doran",
+      "text": "Doran, chief cartographer. This is the Great Chart: a Feature Workbench for the local inner loop."
+    },
+    {
+      "id": "iw.doran.02",
+      "speaker": "Doran",
+      "text": "It keeps the proposal, the plan, the work and the evidence tied to one session."
+    },
+    {
+      "id": "iw.doran.03",
+      "speaker": "Doran",
+      "text": "Five stages on the rail: Propose, Plan, Baseline, Implement, Validate. There’s no Approve stage. Approval happens in the Plan tab."
+    },
+    {
+      "id": "iw.doran.04",
+      "speaker": "Doran",
+      "text": "Every button asks the agent to do real work, and records what came back. Building the board can take about ten minutes."
+    },
+    {
+      "id": "iw.doran.05",
+      "speaker": "Doran",
+      "text": "Generated results differ between runs. Check the structure, and repair only the part that’s wrong. Don’t regenerate the whole board."
+    },
+    {
+      "id": "iw.doran.06",
+      "speaker": "Doran",
+      "text": "Now run it. Talk to me again when you’re ready to walk the chart."
+    },
+    {
+      "id": "iw.doran.chart",
+      "speaker": "Doran",
+      "text": "Walk the Great Chart’s stations in order, Captain. The quill desk first."
+    },
+    {
+      "id": "iw.doran.quill",
+      "speaker": "Doran",
+      "text": "One field and one button. Paste the proposal, and select Generate plan."
+    },
+    {
+      "id": "iw.doran.plan",
+      "speaker": "Doran",
+      "text": "Review the plan in the Plan tab. Don’t let the agent start before you’ve recorded a baseline."
+    },
+    {
+      "id": "iw.doran.rail",
+      "speaker": "Doran",
+      "text": "Set the marker on the stage the work is at. A stage is marked only from recorded evidence."
+    },
+    {
+      "id": "iw.doran.bells",
+      "speaker": "Doran",
+      "text": "Each bell pull sends a surveyor. Send the first one."
+    },
+    {
+      "id": "iw.doran.rack",
+      "speaker": "Doran",
+      "text": "The surveyor’s back with a slate. Check it against the tool output before you trust it."
+    },
+    {
+      "id": "iw.doran.glass",
+      "speaker": "Doran",
+      "text": "Let the agent check the feature in the Browser tab. Then look for yourself."
+    },
+    {
+      "id": "iw.doran.07",
+      "speaker": "Doran",
+      "text": "All five stages green, and a slate behind every one. That’s a chart I’ll ink."
+    },
+    {
+      "id": "iw.doran.08",
+      "speaker": "Doran",
+      "text": "Warden Iris keeps the Dome. Take the stair from the court’s corner."
+    },
+    {
+      "id": "iw.doran.done",
+      "speaker": "Doran",
+      "text": "Up the Dome Stair, Captain. Iris is on the terrace."
+    },
+    {
+      "id": "iw.iris.wait",
+      "speaker": "Iris",
+      "text": "Finish at the Great Chart first, Captain. Then climb."
+    },
+    {
+      "id": "iw.iris.01",
+      "speaker": "Iris",
+      "text": "Warden Iris, Captain. From up here you can see every isle on Doran’s chart. Every mark on it has a measure behind it."
+    },
+    {
+      "id": "iw.iris.02",
+      "speaker": "Iris",
+      "text": "One trial, then the Seal. Take your time. Nothing here is a trick."
+    },
+    {
+      "id": "iw.iris.retry",
+      "speaker": "Iris",
+      "text": "Again, Captain? The light’s good for an hour yet."
+    },
+    {
+      "id": "iw.iris.03",
+      "speaker": "Iris",
+      "text": "The Seal of Inkwell is yours. Keep the work where you both can see it, and ink only what the evidence shows."
+    },
+    {
+      "id": "iw.iris.more",
+      "speaker": "Iris",
+      "text": "Tidewheel Caldera is next, where a tested routine runs by itself. And I’ve one more task, if you’d like it."
+    },
+    {
+      "id": "iw.iris.assign.01",
+      "speaker": "Iris",
+      "text": "The course’s assignment adds an Assess stage after Propose. It compares the proposal with what the app does now, before any planning."
+    },
+    {
+      "id": "iw.iris.assign.go",
+      "speaker": "Iris",
+      "text": "Ask for that one change. Then run the workbench through, and come and tell me what you saw."
+    },
+    {
+      "id": "iw.iris.assign.ask",
+      "speaker": "Iris",
+      "text": "Back, Captain? What did your workbench show?"
+    },
+    {
+      "id": "iw.iris.assign.back",
+      "speaker": "Iris",
+      "text": "Evidence at every stage, from this session. And you knew the next decision without rereading the chat."
+    },
+    {
+      "id": "iw.iris.done",
+      "speaker": "Iris",
+      "text": "The Dome’s lit, Captain. Sail on when you’re ready."
+    },
+    {
+      "id": "iw.kosta.market.hello",
+      "speaker": "Kosta",
+      "text": "Welcome, Captain! Kosta's Model Market. Hire a model that fits the job; bigger ones cost more starfish."
+    },
+    {
+      "id": "iw.kosta.market.open",
+      "speaker": "Kosta",
+      "text": "Pick a job off the board, then hire a model and set the effort dial."
+    },
+    {
+      "id": "iw.kosta.market.auto",
+      "speaker": "Kosta",
+      "text": "Copilot Fusion's on offer too. It isn't one model: it picks models and a workflow for each job. And it isn't Autopilot."
+    },
+    {
+      "id": "iw.kosta.market.right",
+      "speaker": "Kosta",
+      "text": "Right-sized! Here's some starfish back."
+    },
+    {
+      "id": "iw.kosta.market.fair",
+      "speaker": "Kosta",
+      "text": "Right-sized, and a fair price, Captain."
+    },
+    {
+      "id": "iw.kosta.market.keep",
+      "speaker": "Kosta",
+      "text": "Right-sized. A quick look's fine on the model you've got, at its default effort. Bigger ones just cost more."
+    },
+    {
+      "id": "iw.kosta.market.over.effort",
+      "speaker": "Kosta",
+      "text": "High effort for a quick look? The default effort would've done fine."
+    },
+    {
+      "id": "iw.kosta.market.over.auto",
+      "speaker": "Kosta",
+      "text": "A higher Fusion level for a quick look? Standard would've done fine."
+    },
+    {
+      "id": "iw.kosta.market.short",
+      "speaker": "Kosta",
+      "text": "That wasn't enough for this one. Try again with a stronger model or more effort."
+    },
+    {
+      "id": "iw.kosta.market.hard.auto",
+      "speaker": "Kosta",
+      "text": "Right-sized! A hard job wants a higher Fusion level: more capable models and deeper reasoning."
+    },
+    {
+      "id": "iw.kosta.market.broke",
+      "speaker": "Kosta",
+      "text": "Out of starfish? There are plenty hidden round the isles. Come back when you've found a few."
+    },
+    {
+      "id": "iw.kosta.market.done",
+      "speaker": "Kosta",
+      "text": "The whole board, right-sized! You know your models, Captain."
+    },
+    {
+      "id": "iw.kosta.market.early",
+      "speaker": "Kosta",
+      "text": "Not yet, Captain. Oren on Port Meridian teaches models first. Come back after his lesson."
+    },
+    {
+      "id": "iw.kosta.market.bye",
+      "speaker": "Kosta",
+      "text": "Off up the stair? Your starfish and your jobs go with you. Come back any time."
+    },
+    {
+      "id": "tw.juno.arrive.01",
+      "speaker": "Juno",
+      "text": "Tidewheel Caldera, Captain. In through the breach, under the wheel. That’s the Clockwork Lighthouse at the head of the bay."
+    },
+    {
+      "id": "wingman.tw.01",
+      "speaker": "Wingman",
+      "text": "Last light, Captain! Here the crew learns to save a job once and let it run, after you’ve tested it by hand."
+    },
+    {
+      "id": "wingman.tw.nav",
+      "speaker": "Wingman",
+      "text": "Your tasks are in the top left, and the compass up top shows the way, up the Lamp Stair and along the wall to the Lighthouse."
+    },
+    {
+      "id": "wingman.starfish.tidewheel",
+      "speaker": "Wingman",
+      "text": "And five starfish are hidden around Tidewheel Caldera. Your count’s in the top right."
+    },
+    {
+      "id": "tw.lyra.01",
+      "speaker": "Lyra",
+      "text": "Captain! A producer doesn’t replay the same drum pattern by hand every night."
+    },
+    {
+      "id": "tw.lyra.02",
+      "speaker": "Lyra",
+      "text": "They program it into a sequencer once, and let it run when it’s needed. Hear us play it by hand first."
+    },
+    {
+      "id": "tw.lyra.03",
+      "speaker": "Lyra",
+      "text": "The pattern is your saved prompt. Hitting play is the manual trigger. And the producer still checks the mix."
+    },
+    {
+      "id": "tw.lyra.04",
+      "speaker": "Lyra",
+      "text": "Keeper Agnes is up the first flight, on Gear Square. She’ll show you what’s inside the box."
+    },
+    {
+      "id": "tw.lyra.done",
+      "speaker": "Lyra",
+      "text": "Agnes is on Gear Square, Captain, up the first flight of the Lamp Stair."
+    },
+    {
+      "id": "tw.agnes.wait",
+      "speaker": "Agnes",
+      "text": "Lyra’s on the Bandstand by the quay, Captain. Hear her first."
+    },
+    {
+      "id": "tw.agnes.01",
+      "speaker": "Agnes",
+      "text": "Keeper Agnes, Captain. The tide turns the wheel, and the wheel winds the light. But nothing here runs itself until somebody has tested it by hand."
+    },
+    {
+      "id": "tw.agnes.02",
+      "speaker": "Agnes",
+      "text": "An automation is a saved agent run. Four gears: a trigger, a prompt, tools, and a review path."
+    },
+    {
+      "id": "tw.agnes.03",
+      "speaker": "Agnes",
+      "text": "Start manual, and keep it local. A manual automation runs only when you start it."
+    },
+    {
+      "id": "tw.agnes.04",
+      "speaker": "Agnes",
+      "text": "That way you test the prompt, read the output, and get no surprise runs. Add a schedule only when the results can be trusted."
+    },
+    {
+      "id": "tw.agnes.05",
+      "speaker": "Agnes",
+      "text": "For a first one, pick work you already do more than once. Not one that writes code, posts comments, or merges."
+    },
+    {
+      "id": "tw.agnes.06",
+      "speaker": "Agnes",
+      "text": "Tobin keeps the bounty board, up the second flight. A report needs something to report on."
+    },
+    {
+      "id": "tw.agnes.done",
+      "speaker": "Agnes",
+      "text": "Up the second flight to Bounty Corner, Captain. Tobin’s by the board."
+    },
+    {
+      "id": "tw.tobin.wait",
+      "speaker": "Tobin",
+      "text": "See the Keeper on Gear Square first, Captain."
+    },
+    {
+      "id": "tw.tobin.01",
+      "speaker": "Tobin",
+      "text": "Tobin Marsh, Captain. Before you build the report, look at the board. Are there work items on it?"
+    },
+    {
+      "id": "tw.tobin.02",
+      "speaker": "Tobin",
+      "text": "Open Pull requests, then Authored by me. You want at least three open ones. If it’s empty, run the setup script."
+    },
+    {
+      "id": "tw.tobin.03",
+      "speaker": "Tobin",
+      "text": "Three slips, and each in whatever state it’s in. That’ll do. Ansel’s in the Wheel Works, up the stair behind me."
+    },
+    {
+      "id": "tw.tobin.done",
+      "speaker": "Tobin",
+      "text": "Up the Works Stair, Captain. Ansel’s in the yard."
+    },
+    {
+      "id": "tw.ansel.wait",
+      "speaker": "Ansel",
+      "text": "Check the bounty board with Tobin first, Captain."
+    },
+    {
+      "id": "tw.ansel.01",
+      "speaker": "Ansel",
+      "text": "Ansel, wheelwright. We’ll build a review readiness report: which pull requests are ready to merge, and what’s blocking the rest."
+    },
+    {
+      "id": "tw.ansel.02",
+      "speaker": "Ansel",
+      "text": "The Pull requests view lists them. The report adds the reasons: the checks, the comments, and the next action for each."
+    },
+    {
+      "id": "tw.ansel.03",
+      "speaker": "Ansel",
+      "text": "It only reads. The prompt’s last line says so: don’t edit, comment, label, approve, or merge."
+    },
+    {
+      "id": "tw.ansel.lever",
+      "speaker": "Ansel",
+      "text": "Work round the yard, Captain. The drum first, on the west wall."
+    },
+    {
+      "id": "tw.ansel.drum",
+      "speaker": "Ansel",
+      "text": "Pin the pattern once. One bounded task, and what it must not do."
+    },
+    {
+      "id": "tw.ansel.gear",
+      "speaker": "Ansel",
+      "text": "The form starts on Daily. Change the trigger to Manual."
+    },
+    {
+      "id": "tw.ansel.switch",
+      "speaker": "Ansel",
+      "text": "Run in the cloud stays off. This one runs here, on your own machine."
+    },
+    {
+      "id": "tw.ansel.desk",
+      "speaker": "Ansel",
+      "text": "The prompt says this repository. So tell it which one, and where to work."
+    },
+    {
+      "id": "tw.ansel.pull",
+      "speaker": "Ansel",
+      "text": "Don’t just save it. The arrow next to Create, then Create and run."
+    },
+    {
+      "id": "tw.ansel.log",
+      "speaker": "Ansel",
+      "text": "Now read the log. Open the run and check what came back."
+    },
+    {
+      "id": "tw.ansel.04",
+      "speaker": "Ansel",
+      "text": "It ran when you pulled, and the log shows what it did. That’s a routine I’d trust on the clock."
+    },
+    {
+      "id": "tw.ansel.05",
+      "speaker": "Ansel",
+      "text": "Greta keeps the clock. Follow the walk along the wall to her court."
+    },
+    {
+      "id": "tw.ansel.done",
+      "speaker": "Ansel",
+      "text": "Along the Clock Walk, Captain. Greta’s in the court under the Lighthouse."
+    },
+    {
+      "id": "tw.greta.wait",
+      "speaker": "Greta",
+      "text": "Run it by hand with Ansel first, Captain. Then we’ll talk about clocks."
+    },
+    {
+      "id": "tw.greta.01",
+      "speaker": "Greta",
+      "text": "Greta Hale, bellmaster. Your report worked by hand. Now it can be waiting for you each morning."
+    },
+    {
+      "id": "tw.greta.02",
+      "speaker": "Greta",
+      "text": "Edit the automation, and change the trigger from Manual to Daily. Then choose the hour."
+    },
+    {
+      "id": "tw.greta.03",
+      "speaker": "Greta",
+      "text": "Mind this: it’s a local automation. It runs only if your computer is awake and the app is running."
+    },
+    {
+      "id": "tw.greta.clock",
+      "speaker": "Greta",
+      "text": "Work round the court, Captain. The desk first, on the east wall."
+    },
+    {
+      "id": "tw.greta.gear",
+      "speaker": "Greta",
+      "text": "The day gear. From Manual to Daily."
+    },
+    {
+      "id": "tw.greta.ring",
+      "speaker": "Greta",
+      "text": "Turn the ring to a time before your workday starts. The day watch here starts at nine."
+    },
+    {
+      "id": "tw.greta.pegs",
+      "speaker": "Greta",
+      "text": "The field takes more than one hour. Clear every hour but yours, and leave the minute at zero."
+    },
+    {
+      "id": "tw.greta.bell",
+      "speaker": "Greta",
+      "text": "Save it. Then check the card, and read when it runs next."
+    },
+    {
+      "id": "tw.greta.tide",
+      "speaker": "Greta",
+      "text": "Look at the gauge. What must be true at eight tomorrow?"
+    },
+    {
+      "id": "tw.greta.log",
+      "speaker": "Greta",
+      "text": "Morning. Nobody pulled the lever. Look in Recent runs."
+    },
+    {
+      "id": "tw.greta.04",
+      "speaker": "Greta",
+      "text": "By hand it tells you how things stand now. On the clock it tells you what changed since yesterday, and you needn’t remember to ask."
+    },
+    {
+      "id": "tw.greta.05",
+      "speaker": "Greta",
+      "text": "Old Silas keeps the lamp. Take the walk up to the Lighthouse. And if you’ve a minute, Nerys will show you the bells."
+    },
+    {
+      "id": "tw.greta.done",
+      "speaker": "Greta",
+      "text": "Up the Light Walk, Captain. Silas is on the terrace."
+    },
+    {
+      "id": "tw.nerys.wait",
+      "speaker": "Nerys",
+      "text": "Set the clock with Greta first, Captain. The bells come after."
+    },
+    {
+      "id": "tw.nerys.01",
+      "speaker": "Nerys",
+      "text": "Nerys, Captain. The clock isn’t the only thing that can start a run. Twelve bells, one for each kind of news."
+    },
+    {
+      "id": "tw.nerys.02",
+      "speaker": "Nerys",
+      "text": "An issue, a pull request, a workflow that finishes. Choose the bell that matches the event you want handled."
+    },
+    {
+      "id": "tw.nerys.03",
+      "speaker": "Nerys",
+      "text": "But a bell answers to whoever rings it. Start read-only, keep it to one repository, filter narrowly, and read its runs."
+    },
+    {
+      "id": "tw.nerys.04",
+      "speaker": "Nerys",
+      "text": "See the rock light past the breach? That’s the cloud. It runs when your own machine is asleep, on GitHub’s side, with rules of its own."
+    },
+    {
+      "id": "tw.nerys.05",
+      "speaker": "Nerys",
+      "text": "One more thing. A bottle washed up here with orders in it. Issue text can be written by anybody. Read it before you trust it."
+    },
+    {
+      "id": "tw.nerys.done",
+      "speaker": "Nerys",
+      "text": "Read-only first, Captain. Then one bell at a time."
+    },
+    {
+      "id": "tw.silas.wait",
+      "speaker": "Silas",
+      "text": "Set the clock with Greta first, Captain. The lamp will wait."
+    },
+    {
+      "id": "tw.silas.01",
+      "speaker": "Silas",
+      "text": "Silas Thorne, Captain. I’ve kept this lamp since before the wheel had a name. You’re the last ship I expected, and the one I hoped for."
+    },
+    {
+      "id": "tw.silas.02",
+      "speaker": "Silas",
+      "text": "One trial, then the last lever. Take your time."
+    },
+    {
+      "id": "tw.silas.retry",
+      "speaker": "Silas",
+      "text": "Again, Captain? The tide’s still coming in."
+    },
+    {
+      "id": "tw.silas.03",
+      "speaker": "Silas",
+      "text": "The Seal of Tidewheel is yours. Test it by hand, give it only what it needs, and read what it did."
+    },
+    {
+      "id": "tw.silas.more",
+      "speaker": "Silas",
+      "text": "That’s every Seal in the isles, Master Captain. I’ve one more task, if you’d like it."
+    },
+    {
+      "id": "tw.silas.assign.01",
+      "speaker": "Silas",
+      "text": "The course’s assignment: one manual automation for your own work. A clear name, a manual trigger, one bounded task, and read-only."
+    },
+    {
+      "id": "tw.silas.assign.go",
+      "speaker": "Silas",
+      "text": "Run it once, read its history, and revise the prompt. Then come and tell me."
+    },
+    {
+      "id": "tw.silas.assign.ask",
+      "speaker": "Silas",
+      "text": "Back, Captain? What did your automation do?"
+    },
+    {
+      "id": "tw.silas.assign.back",
+      "speaker": "Silas",
+      "text": "And you can say why it’s safe to run again. That’s the whole craft."
+    },
+    {
+      "id": "tw.silas.done",
+      "speaker": "Silas",
+      "text": "The light’s lit, Master Captain. The isles are yours to sail."
+    },
+    {
+      "id": "ll.juno.open",
+      "speaker": "Juno",
+      "text": "Night’s coming on, Captain. Look at the chart. Every isle we sealed has its light."
+    },
+    {
+      "id": "ll.juno.home",
+      "speaker": "Juno",
+      "text": "Anchorage Cay and Port Meridian: setup and orientation. You made the app ready, and learned your way round it."
+    },
+    {
+      "id": "ll.juno.bough",
+      "speaker": "Juno",
+      "text": "Thousand-Bough: scoped branches and isolated worktrees, and context used on purpose: prompts, files, issues, and instructions."
+    },
+    {
+      "id": "ll.juno.keel",
+      "speaker": "Juno",
+      "text": "Keelhaven: plan, change, and validate. Then issues, pull requests, review comments, and failing checks."
+    },
+    {
+      "id": "ll.juno.guild",
+      "speaker": "Juno",
+      "text": "Guildcrest: repository instructions, reusable skills, and read-only custom agents."
+    },
+    {
+      "id": "ll.juno.sun",
+      "speaker": "Juno",
+      "text": "Sunspire: MCP servers for documentation, and plugins that supply capabilities."
+    },
+    {
+      "id": "ll.juno.ink",
+      "speaker": "Juno",
+      "text": "Inkwell: canvases, for shared state that anyone can inspect."
+    },
+    {
+      "id": "ll.juno.tide",
+      "speaker": "Juno",
+      "text": "And Tidewheel: manual and scheduled automations, used safely."
+    },
+    {
+      "id": "ll.juno.kraken.01",
+      "speaker": "Juno",
+      "text": "Captain. Off the port bow. She’s followed us since the fog."
+    },
+    {
+      "id": "ll.juno.kraken.02",
+      "speaker": "Juno",
+      "text": "She took the ships that sailed on a guess. She never wanted the captain who checks."
+    },
+    {
+      "id": "ll.juno.habit",
+      "speaker": "Juno",
+      "text": "One habit stayed the same on every isle: you kept a human in control of quality and delivery."
+    },
+    {
+      "id": "ll.juno.last",
+      "speaker": "Juno",
+      "text": "Human judgment stays in the loop at every major control point: before implementation starts, before a pull request is opened, and before any merge automation is enabled."
+    },
+    {
+      "id": "ll.juno.bye",
+      "speaker": "Juno",
+      "text": "Fair winds, Master Captain. Practice on small, real issues first."
+    },
+    {
+      "id": "tw.dot.market.hello",
+      "speaker": "Dot",
+      "text": "Welcome, Captain! Dot's Model Market. Hire a model that fits the job; bigger ones cost more starfish."
+    },
+    {
+      "id": "tw.dot.market.open",
+      "speaker": "Dot",
+      "text": "Pick a job off the board, then hire a model and set the effort dial."
+    },
+    {
+      "id": "tw.dot.market.auto",
+      "speaker": "Dot",
+      "text": "Copilot Fusion's on offer too. It isn't one model: it picks models and a workflow for each job. And it isn't Autopilot."
+    },
+    {
+      "id": "tw.dot.market.right",
+      "speaker": "Dot",
+      "text": "Right-sized! Here's some starfish back."
+    },
+    {
+      "id": "tw.dot.market.fair",
+      "speaker": "Dot",
+      "text": "Right-sized, and a fair price, Captain."
+    },
+    {
+      "id": "tw.dot.market.keep",
+      "speaker": "Dot",
+      "text": "Right-sized. A quick look's fine on the model you've got, at its default effort. Bigger ones just cost more."
+    },
+    {
+      "id": "tw.dot.market.over.effort",
+      "speaker": "Dot",
+      "text": "High effort for a quick look? The default effort would've done fine."
+    },
+    {
+      "id": "tw.dot.market.over.auto",
+      "speaker": "Dot",
+      "text": "A higher Fusion level for a quick look? Standard would've done fine."
+    },
+    {
+      "id": "tw.dot.market.short",
+      "speaker": "Dot",
+      "text": "That wasn't enough for this one. Try again with a stronger model or more effort."
+    },
+    {
+      "id": "tw.dot.market.hard.auto",
+      "speaker": "Dot",
+      "text": "Right-sized! A hard job wants a higher Fusion level: more capable models and deeper reasoning."
+    },
+    {
+      "id": "tw.dot.market.broke",
+      "speaker": "Dot",
+      "text": "Out of starfish? There are plenty hidden round the isles. Come back when you've found a few."
+    },
+    {
+      "id": "tw.dot.market.done",
+      "speaker": "Dot",
+      "text": "The whole board, right-sized! You know your models, Captain."
+    },
+    {
+      "id": "tw.dot.market.early",
+      "speaker": "Dot",
+      "text": "Not yet, Captain. Oren on Port Meridian teaches models first. Come back after his lesson."
+    },
+    {
+      "id": "tw.dot.market.bye",
+      "speaker": "Dot",
+      "text": "Off up the Lamp Stair? Your starfish and your jobs go with you. Come back any time."
     }
   ]
 }

@@ -1,0 +1,87 @@
+{
+  "id": "ll.juno.kraken.02",
+  "speaker": "Juno",
+  "text": "She took the ships that sailed on a guess. She never wanted the captain who checks.",
+  "words": [
+    {
+      "word": "She",
+      "start": 0,
+      "end": 0.128
+    },
+    {
+      "word": "took",
+      "start": 0.128,
+      "end": 0.34
+    },
+    {
+      "word": "the",
+      "start": 0.34,
+      "end": 0.467
+    },
+    {
+      "word": "ships",
+      "start": 0.467,
+      "end": 0.832
+    },
+    {
+      "word": "that",
+      "start": 0.832,
+      "end": 1.006
+    },
+    {
+      "word": "sailed",
+      "start": 1.006,
+      "end": 1.307
+    },
+    {
+      "word": "on",
+      "start": 1.307,
+      "end": 1.4
+    },
+    {
+      "word": "a",
+      "start": 1.4,
+      "end": 1.507
+    },
+    {
+      "word": "guess",
+      "start": 1.507,
+      "end": 2.02
+    },
+    {
+      "word": "She",
+      "start": 2.02,
+      "end": 2.36
+    },
+    {
+      "word": "never",
+      "start": 2.36,
+      "end": 2.617
+    },
+    {
+      "word": "wanted",
+      "start": 2.617,
+      "end": 2.98
+    },
+    {
+      "word": "the",
+      "start": 2.98,
+      "end": 3.09
+    },
+    {
+      "word": "captain",
+      "start": 3.09,
+      "end": 3.48
+    },
+    {
+      "word": "who",
+      "start": 3.48,
+      "end": 3.68
+    },
+    {
+      "word": "checks",
+      "start": 3.68,
+      "end": 3.93
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "iw.iris.assign.ask",
+  "speaker": "Iris",
+  "text": "Back, Captain? What did your workbench show?",
+  "words": [
+    {
+      "word": "Back",
+      "start": 0.052625,
+      "end": 0.578958
+    },
+    {
+      "word": "Captain",
+      "start": 0.578958,
+      "end": 2.118416
+    },
+    {
+      "word": "What",
+      "start": 2.118416,
+      "end": 2.342125
+    },
+    {
+      "word": "did",
+      "start": 2.342125,
+      "end": 2.526333
+    },
+    {
+      "word": "your",
+      "start": 2.526333,
+      "end": 2.671041
+    },
+    {
+      "word": "workbench",
+      "start": 2.671041,
+      "end": 3.289458
+    },
+    {
+      "word": "show",
+      "start": 3.289458,
+      "end": 3.539458
+    }
+  ]
+}

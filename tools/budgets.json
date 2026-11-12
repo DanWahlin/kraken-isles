@@ -1,5 +1,5 @@
 {
-  "$comment": "PLAN §13.5 load budgets, enforced in CI on the production build (gzip -9 sizes). vendor-three = three/webgpu (WebGPURenderer + WebGL2 backend + node/TSL system), measured 234 KB gz at three 0.186; 251.2 KB after the ≤150-programs work (ce218a1) pulled in more of the node/shadow system, so the cap is 256 KB. A course pack loads in parts (docs/specs/COURSE-PACKS.md §2, src/course/split.ts, issue 304). course-<id> = its core chunk, loaded with the voyage and never by the title (check-budgets fails if the entry imports it statically): the shared data (labels, boards, market and its puzzle, models, learning, the lock's section titles: 13.0 KB for copilot-app) and each chapter's index, images, chests, glossary, Trials, quest list and puzzle cores (about 3.2 KB a chapter). Measured 22.6 KB (copilot-app, 3 chapters) and 4.1 KB (copilot-cli, 1 chapter) on 2026-10-24; the cap of 48 KB holds eight chapters (13 + 8 × 3.2 = 39 KB) with room for learning.json to grow with them. course-<id>-<chapter> = a chapter's part (a JSON file, loaded when its island streams in or something asks for it): its quizzes, pages, voiced and cited lines, and its island's targets, beats, scripts, barks and puzzles. Measured 13.7 (00), 17.0 (01), 15.1 (02) and 6.1 KB (copilot-cli 00) on 2026-10-24; the cap of 28 KB is the largest chapter today plus 65 %, for a chapter like 03 (expected at 15-25 KB). Every part needs its own row: check-budgets and content:check fail on a part without one.",
+  "$comment": "PLAN §13.5 load budgets, enforced in CI on the production build (gzip -9 sizes). vendor-three = three/webgpu (WebGPURenderer + WebGL2 backend + node/TSL system), measured 234 KB gz at three 0.186; 251.2 KB after the ≤150-programs work (ce218a1) pulled in more of the node/shadow system, so the cap is 256 KB. A course pack loads in parts (docs/specs/COURSE-PACKS.md §2, src/course/split.ts, issue 304). course-<id> = its core chunk, loaded with the voyage and never by the title (check-budgets fails if the entry imports it statically): the shared data (labels, boards, market and its puzzle, models, learning, the lock's section titles: 13.0 KB for copilot-app) and each chapter's index, images, chests, glossary, Trials, quest list and puzzle cores (about 3.2 KB a chapter). Measured 22.6 KB (copilot-app, 3 chapters) and 4.1 KB (copilot-cli, 1 chapter) on 2026-10-24; the cap of 48 KB holds eight chapters (13 + 8 × 3.2 = 39 KB) with room for learning.json to grow with them. course-<id>-<chapter> = a chapter's part (a JSON file, loaded when its island streams in or something asks for it): its quizzes, pages, voiced and cited lines, and its island's targets, beats, scripts, barks and puzzles. Measured 13.7 (00), 17.0 (01), 15.1 (02) and 6.1 KB (copilot-cli 00) on 2026-10-24; the cap of 28 KB is the largest chapter today plus 65 %, for a chapter like 03 (expected at 15-25 KB). Every part needs its own row: check-budgets and content:check fail on a part without one. 2026-11-11: copilot-app's core measured 53.8 KB with seven chapters. A chapter adds about 5.5 KB to it, not 3.2: its app-task cards and objectives in learning.json, its island's quest list and signs, its market keeper's lines and its puzzles' steps all load with the voyage. Its cap is 64 KB: eight chapters (about 59 KB) with room for edits.",
   "chunks": {
     "boot (entry)": {
       "entry": true,
@@ -15,7 +15,7 @@
     },
     "course-copilot-app": {
       "name": "course-copilot-app",
-      "maxGzipKB": 48
+      "maxGzipKB": 64
     },
     "course-copilot-app 00": {
       "asset": "course-copilot-app-00-setup",
@@ -39,6 +39,14 @@
     },
     "course-copilot-app 05": {
       "asset": "course-copilot-app-05-mcp-plugins",
+      "maxGzipKB": 28
+    },
+    "course-copilot-app 06": {
+      "asset": "course-copilot-app-06-canvases",
+      "maxGzipKB": 28
+    },
+    "course-copilot-app 07": {
+      "asset": "course-copilot-app-07-automations",
       "maxGzipKB": 28
     },
     "course-copilot-cli": {

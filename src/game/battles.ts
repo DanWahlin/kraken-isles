@@ -37,6 +37,9 @@ export const PASSAGE_BATTLES: readonly PassageBattle[] = [
   // Battle 5, "Guide, Not Lock": from Guildcrest toward Sunspire Sands with the Seal of Guildcrest
   // (recaps Chapter 04).
   { id: 'passage-guildcrest-sunspire', plan: 4, from: 'guildcrest', to: 'sunspire' },
+  // Battle 6, "Check the Beam": from Sunspire Sands toward Inkwell Bluffs with the Seal of Sunspire
+  // (recaps Chapter 05).
+  { id: 'passage-sunspire-inkwell', plan: 5, from: 'sunspire', to: 'inkwell' },
 ];
 
 /**

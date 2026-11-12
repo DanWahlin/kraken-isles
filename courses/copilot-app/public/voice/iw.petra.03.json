@@ -1,0 +1,122 @@
+{
+  "id": "iw.petra.03",
+  "speaker": "Petra",
+  "text": "A proposal field, a checklist, and notes. You and the agent can both update them. It doesn’t run tests or edit the app.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.049,
+      "end": 0.134791
+    },
+    {
+      "word": "proposal",
+      "start": 0.134791,
+      "end": 0.66175
+    },
+    {
+      "word": "field",
+      "start": 0.66175,
+      "end": 1.2255
+    },
+    {
+      "word": "a",
+      "start": 1.2255,
+      "end": 1.372541
+    },
+    {
+      "word": "checklist",
+      "start": 1.372541,
+      "end": 2.107833
+    },
+    {
+      "word": "and",
+      "start": 2.107833,
+      "end": 2.291666
+    },
+    {
+      "word": "notes",
+      "start": 2.291666,
+      "end": 3.73775
+    },
+    {
+      "word": "You",
+      "start": 3.73775,
+      "end": 3.970583
+    },
+    {
+      "word": "and",
+      "start": 3.970583,
+      "end": 4.080875
+    },
+    {
+      "word": "the",
+      "start": 4.080875,
+      "end": 4.240208
+    },
+    {
+      "word": "agent",
+      "start": 4.240208,
+      "end": 4.644625
+    },
+    {
+      "word": "can",
+      "start": 4.644625,
+      "end": 4.779416
+    },
+    {
+      "word": "both",
+      "start": 4.779416,
+      "end": 5.061291
+    },
+    {
+      "word": "update",
+      "start": 5.061291,
+      "end": 5.514708
+    },
+    {
+      "word": "them",
+      "start": 5.514708,
+      "end": 6.703416
+    },
+    {
+      "word": "It",
+      "start": 6.703416,
+      "end": 6.801458
+    },
+    {
+      "word": "doesn’t",
+      "start": 6.801458,
+      "end": 7.193625
+    },
+    {
+      "word": "run",
+      "start": 7.193625,
+      "end": 7.4755
+    },
+    {
+      "word": "tests",
+      "start": 7.4755,
+      "end": 8.039208
+    },
+    {
+      "word": "or",
+      "start": 8.039208,
+      "end": 8.308833
+    },
+    {
+      "word": "edit",
+      "start": 8.308833,
+      "end": 8.590666
+    },
+    {
+      "word": "the",
+      "start": 8.590666,
+      "end": 8.7745
+    },
+    {
+      "word": "app.",
+      "start": 8.7745,
+      "end": 9.0245
+    }
+  ]
+}

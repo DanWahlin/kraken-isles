@@ -1,0 +1,32 @@
+{
+  "id": "iw.kosta.market.right",
+  "speaker": "Kosta",
+  "text": "Right-sized! Here's some starfish back.",
+  "words": [
+    {
+      "word": "Right-sized",
+      "start": 0.118416,
+      "end": 1.960541
+    },
+    {
+      "word": "Here's",
+      "start": 1.960541,
+      "end": 2.223666
+    },
+    {
+      "word": "some",
+      "start": 2.223666,
+      "end": 2.421041
+    },
+    {
+      "word": "starfish",
+      "start": 2.421041,
+      "end": 2.934208
+    },
+    {
+      "word": "back",
+      "start": 2.934208,
+      "end": 3.184208
+    }
+  ]
+}

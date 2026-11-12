@@ -1,0 +1,77 @@
+{
+  "id": "tw.lyra.done",
+  "speaker": "Lyra",
+  "text": "Agnes is on Gear Square, Captain, up the first flight of the Lamp Stair.",
+  "words": [
+    {
+      "word": "Agnes",
+      "start": 0,
+      "end": 0.347
+    },
+    {
+      "word": "is",
+      "start": 0.347,
+      "end": 0.453
+    },
+    {
+      "word": "on",
+      "start": 0.453,
+      "end": 0.608
+    },
+    {
+      "word": "Gear",
+      "start": 0.608,
+      "end": 0.846
+    },
+    {
+      "word": "Square",
+      "start": 0.846,
+      "end": 1.24
+    },
+    {
+      "word": "Captain",
+      "start": 1.24,
+      "end": 1.813
+    },
+    {
+      "word": "up",
+      "start": 1.813,
+      "end": 1.94
+    },
+    {
+      "word": "the",
+      "start": 1.94,
+      "end": 2.053
+    },
+    {
+      "word": "first",
+      "start": 2.053,
+      "end": 2.354
+    },
+    {
+      "word": "flight",
+      "start": 2.354,
+      "end": 2.587
+    },
+    {
+      "word": "of",
+      "start": 2.587,
+      "end": 2.66
+    },
+    {
+      "word": "the",
+      "start": 2.66,
+      "end": 2.768
+    },
+    {
+      "word": "Lamp",
+      "start": 2.768,
+      "end": 3.013
+    },
+    {
+      "word": "Stair",
+      "start": 3.013,
+      "end": 3.263
+    }
+  ]
+}

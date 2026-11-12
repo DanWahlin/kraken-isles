@@ -1,0 +1,452 @@
+{
+  "$schema": "../../schemas/puzzle-circuit.schema.json",
+  "id": "P6.3",
+  "mechanic": "circuit",
+  "chapter": "06-canvases",
+  "quest": "Q6.7",
+  "circuit": "chart",
+  "$comment": "The Shared Chart in the Chart Court (docs/specs/ISLAND-06-inkwell-bluffs.md §5.3): the quill desk (the feature proposal and Generate plan), the Plan desk (review and approval in the Plan tab), the brass rail (the five stages: a dial the player slides to the stage the work is at), the bell pulls (Run baseline, then Implement), the slate rack (the evidence, then the final checks) and the glass (Browser validation). The places, lamps, the rail’s marker and the slates are the game’s; every word is this file’s.",
+  "places": {
+    "quill": {
+      "acts": "quill",
+      "name": "The quill desk",
+      "means": "The Feature proposal field and **Generate plan**",
+      "cite": "ex3"
+    },
+    "planDesk": {
+      "acts": "planDesk",
+      "name": "The Plan desk",
+      "means": "The **Plan** tab and the **Review plan** box",
+      "cite": "ex3"
+    },
+    "rail": {
+      "acts": "rail",
+      "name": "The brass rail",
+      "means": "The progress rail: Propose, Plan, Baseline, Implement, Validate",
+      "cite": "ex3"
+    },
+    "bells": {
+      "acts": "bells",
+      "name": "The first bell pull",
+      "means": "**Run baseline**",
+      "cite": "ex3"
+    },
+    "rack": {
+      "acts": "rack",
+      "name": "The slate rack",
+      "means": "The evidence area",
+      "cite": "ex3"
+    },
+    "build": {
+      "acts": "build",
+      "name": "The second bell pull",
+      "means": "**Implement**, then the **Changes** pill",
+      "cite": "ex3"
+    },
+    "glass": {
+      "acts": "glass",
+      "name": "The glass",
+      "means": "**Browser validation**, and your own look",
+      "cite": "ex3"
+    },
+    "soundings": {
+      "acts": "soundings",
+      "name": "The last soundings",
+      "means": "**Run final checks**",
+      "cite": "ex3"
+    }
+  },
+  "text": {
+    "lampDark": "○ waiting",
+    "lampRunning": "… running",
+    "lampReady": "✓ ready",
+    "lampNotReady": "✗ not ready",
+    "next": "Next station: {name}",
+    "back": "Back to {name}",
+    "skip": "Skip",
+    "leave": "Leave",
+    "hint": "Hint",
+    "sealIt": "Seal it",
+    "sendBack": "Send it back",
+    "darkLamp": "{name} is still dark.",
+    "sticks": "It sticks.",
+    "noStick": "It won’t stick.",
+    "turnBack": "◀ Slide it back",
+    "turnOn": "Slide it on ▶",
+    "set": "Set it here",
+    "title": "The Shared Chart",
+    "intro": "Propose, approve where approval lives, set the marker, send the surveyors, read their slates, look for yourself, and take the last soundings.",
+    "hoist": "Check the soundings"
+  },
+  "cites": {
+    "ex3": {
+      "anchor": "exercise-3-create-a-feature-workbench",
+      "hash": "74377c083aef"
+    },
+    "tsEvidence": {
+      "anchor": "the-board-does-not-match-the-evidence",
+      "hash": "db033d529ef1"
+    },
+    "tsDisabled": {
+      "anchor": "an-action-button-stays-disabled",
+      "hash": "37a83cd52004"
+    },
+    "tsWorking": {
+      "anchor": "the-plan-status-stays-at-working",
+      "hash": "7e3a113baed0"
+    },
+    "tsAutopilot": {
+      "anchor": "the-session-stays-in-autopilot-mode",
+      "hash": "9a0089acc3dd"
+    },
+    "take": {
+      "anchor": "key-takeaways",
+      "hash": "3047dd138e5a"
+    }
+  },
+  "laps": [
+    {
+      "id": "workbench",
+      "quest": "Q6.7",
+      "step": "chart",
+      "solved": "solved",
+      "close": "doran.chart.solved",
+      "title": "The Shared Chart: run the Feature Workbench",
+      "order": "Feature Workbench · Clear filters",
+      "stations": [
+        {
+          "id": "propose",
+          "at": "quill",
+          "kind": "choose",
+          "title": "Propose the feature",
+          "line": "iw.doran.quill",
+          "image": "ch06/app-feature-workbench-propose",
+          "caption": "The status shows **Working** while the session is in **Plan** mode.",
+          "prompt": "The proposal is a **Clear filters** control, shown only when a filter is active. How do you start?",
+          "options": [
+            {
+              "id": "generate",
+              "text": "Paste it in **Feature proposal**, then select **Generate plan**",
+              "right": true,
+              "result": "The session switches to **Plan** mode, and the status shows **Working**."
+            },
+            {
+              "id": "write",
+              "text": "Write the plan on the canvas myself",
+              "reason": "The agent inspects the code and writes the plan. The canvas does not hold the plan text.",
+              "backTo": "quill",
+              "cite": "ex3"
+            },
+            {
+              "id": "implement",
+              "text": "Select **Implement**: the proposal is clear enough",
+              "reason": "**Implement** builds from the approved plan. There is no plan yet.",
+              "backTo": "quill",
+              "cite": "ex3"
+            }
+          ],
+          "hints": [
+            "One field, one button.",
+            "The button is under the field.",
+            "Paste the proposal, then select **Generate plan**."
+          ],
+          "cite": "ex3"
+        },
+        {
+          "id": "approve",
+          "at": "planDesk",
+          "kind": "choose",
+          "title": "Approve where approval lives",
+          "line": "iw.doran.plan",
+          "prompt": "The plan is ready in the **Plan** tab, and you have recorded no baseline. How do you approve it?",
+          "options": [
+            {
+              "id": "exit",
+              "text": "In the **Review plan** box, select **Exit plan mode and I will prompt myself**, and confirm that the mode is **Interactive**",
+              "right": true,
+              "result": "The canvas still records your approval. The status shows **Approved**."
+            },
+            {
+              "id": "approve",
+              "text": "Select **Approve and implement this plan**",
+              "reason": "Do not select it: the agent would start to change the app before you record a baseline.",
+              "backTo": "planDesk",
+              "cite": "ex3"
+            },
+            {
+              "id": "canvas",
+              "text": "Look for an Approve stage on the canvas",
+              "reason": "There is no Approve stage. Approval happens in the **Plan** tab.",
+              "backTo": "planDesk",
+              "cite": "ex3"
+            },
+            {
+              "id": "wait",
+              "text": "Wait: the status will leave **Working** by itself",
+              "reason": "Answer the **Review plan** box at the bottom of the chat. Then select **Refresh evidence** on the canvas.",
+              "backTo": "planDesk",
+              "cite": "tsWorking"
+            }
+          ],
+          "hints": [
+            "Not on the canvas.",
+            "The box at the bottom of the chat.",
+            "Select **Exit plan mode and I will prompt myself**."
+          ],
+          "cite": "ex3"
+        },
+        {
+          "id": "stage",
+          "at": "rail",
+          "kind": "dial",
+          "title": "Set the marker",
+          "line": "iw.doran.rail",
+          "prompt": "Slide the brass marker along the rail. Which stage is the work at now?",
+          "action": "Hold it here",
+          "start": 0,
+          "positions": [
+            {
+              "id": "propose",
+              "text": "Propose",
+              "reason": "That stage is complete: the proposal went in, and the plan was generated from it.",
+              "cite": "ex3"
+            },
+            {
+              "id": "plan",
+              "text": "Plan",
+              "reason": "That stage is complete: the status shows **Approved**.",
+              "cite": "ex3"
+            },
+            {
+              "id": "baseline",
+              "text": "Baseline",
+              "right": true,
+              "result": "Two stages are complete, and Baseline is the current one. Nothing in the app has changed yet."
+            },
+            {
+              "id": "implement",
+              "text": "Implement",
+              "reason": "The ink washes off. The canvas enables each action only after the previous step has evidence, and there is no baseline yet.",
+              "cite": "tsDisabled"
+            },
+            {
+              "id": "validate",
+              "text": "Validate",
+              "reason": "The ink washes off. Only mark a stage from recorded evidence, never from chat inference.",
+              "cite": "take"
+            }
+          ],
+          "hints": [
+            "Which stages have something behind them?",
+            "Propose and Plan are complete.",
+            "Set the marker on Baseline."
+          ],
+          "cite": "ex3"
+        },
+        {
+          "id": "baseline",
+          "at": "bells",
+          "kind": "choose",
+          "title": "Send the first surveyor",
+          "line": "iw.doran.bells",
+          "prompt": "Four bell pulls: **Run baseline**, **Implement**, **Browser validation**, **Run final checks**. Which do you pull?",
+          "options": [
+            {
+              "id": "baseline",
+              "text": "**Run baseline**",
+              "right": true,
+              "result": "The bell rings. The action runs in **Autopilot** mode, and the session returns to **Interactive** mode when it ends."
+            },
+            {
+              "id": "implement",
+              "text": "**Implement**",
+              "reason": "Record the state of the app before any change. **Implement** runs after a passing baseline.",
+              "backTo": "bells",
+              "cite": "ex3"
+            },
+            {
+              "id": "final",
+              "text": "**Run final checks**",
+              "reason": "There is nothing to compare a final total with yet. **Run final checks** is available after **Implement**.",
+              "backTo": "bells",
+              "cite": "ex3"
+            }
+          ],
+          "hints": ["Which stage is the marker on?", "Before any change.", "Pull **Run baseline**."],
+          "cite": "ex3"
+        },
+        {
+          "id": "evidence",
+          "at": "rack",
+          "kind": "choose",
+          "title": "Read the slate",
+          "line": "iw.doran.rack",
+          "image": "ch06/app-feature-workbench-baseline",
+          "caption": "The tool call’s output beside the canvas’s Baseline evidence.",
+          "prompt": "The surveyor is back: the canvas shows a test total and a build result. What do you do with them?",
+          "options": [
+            {
+              "id": "compare",
+              "text": "Expand the tool calls for this action in the chat, and confirm that the total and the build result on the canvas match that output",
+              "right": true,
+              "result": "They match. The Baseline stage and its two checklist items show as complete."
+            },
+            {
+              "id": "trust",
+              "text": "Nothing: the stage went green",
+              "reason": "Confirm that the test total and build result on the canvas match the tool output.",
+              "backTo": "rack",
+              "cite": "ex3"
+            },
+            {
+              "id": "image",
+              "text": "Compare them with the numbers in the course’s image",
+              "reason": "Compare the board with the output from this session’s worktree, not with an example image or another session.",
+              "backTo": "rack",
+              "cite": "tsEvidence"
+            },
+            {
+              "id": "stuck",
+              "text": "The session is still in **Autopilot** mode, so I leave it",
+              "reason": "If the session does not return to **Interactive** mode after an action, change the mode in the prompt box.",
+              "backTo": "rack",
+              "cite": "tsAutopilot"
+            }
+          ],
+          "hints": [
+            "A slate, and the sounding it came from.",
+            "The tool calls are in the chat.",
+            "Expand the tool calls, and compare."
+          ],
+          "cite": "ex3"
+        },
+        {
+          "id": "implement",
+          "at": "build",
+          "kind": "choose",
+          "title": "Build from the plan",
+          "image": "ch06/app-feature-workbench-implement",
+          "caption": "The Implement stage complete, a Diff row in the evidence, and the **Changes** pill above the prompt box.",
+          "prompt": "You pull **Implement**, and the stage completes with a **Diff** row in the evidence. What next?",
+          "options": [
+            {
+              "id": "changes",
+              "text": "Select the **Changes** pill, and confirm that the changes are limited to the approved feature",
+              "right": true,
+              "result": "Changes in `samples/book-app-web`, and nothing outside the feature."
+            },
+            {
+              "id": "skip",
+              "text": "Go on: a green stage is proof enough",
+              "reason": "The stage records that the action ran. You confirm that the changes are limited to the approved feature.",
+              "backTo": "build",
+              "cite": "ex3"
+            },
+            {
+              "id": "more",
+              "text": "Ask it to tidy other files while it is there",
+              "reason": "The plan you approved is the scope. Expect changes limited to the approved feature.",
+              "backTo": "build",
+              "cite": "ex3"
+            }
+          ],
+          "hints": [
+            "Which built-in panel shows a diff?",
+            "Its pill is above the prompt box.",
+            "Select the **Changes** pill."
+          ],
+          "cite": "ex3"
+        },
+        {
+          "id": "browser",
+          "at": "glass",
+          "kind": "choose",
+          "title": "Look for yourself",
+          "line": "iw.doran.glass",
+          "image": "ch06/app-feature-workbench-browser-validation",
+          "caption": "Browser evidence recorded: the checks that passed, and the checks recorded as notes.",
+          "prompt": "You pull **Browser validation**, and the agent checks the feature in the **Browser** tab. One check it could not run is recorded as a note. What do you do?",
+          "options": [
+            {
+              "id": "look",
+              "text": "Check the states myself at `http://127.0.0.1:5173`, then stop the dev server",
+              "right": true,
+              "result": "**Clear filters** shows only when a filter is active, and it resets all three. The server is stopped."
+            },
+            {
+              "id": "fail",
+              "text": "Mark the stage failed, and stop",
+              "reason": "Browser checks that the Browser tab can’t run are notes, not failures. **Run final checks** is available after **Implement**.",
+              "backTo": "glass",
+              "cite": "ex3"
+            },
+            {
+              "id": "leave",
+              "text": "Go on, and leave the dev server running",
+              "reason": "When you finish the checks, stop the dev server.",
+              "backTo": "glass",
+              "cite": "ex3"
+            }
+          ],
+          "hints": [
+            "A note is not a failure.",
+            "Then look at the app yourself.",
+            "Check the states, then stop the dev server."
+          ],
+          "cite": "ex3"
+        },
+        {
+          "id": "final",
+          "at": "soundings",
+          "kind": "tiles",
+          "title": "The last soundings",
+          "prompt": "You pull **Run final checks**. Which of these must hold before the chart is inked?",
+          "tiles": [
+            {
+              "id": "pass",
+              "text": "The tests and the build pass",
+              "sticks": true
+            },
+            {
+              "id": "atleast",
+              "text": "The final test total is at least the baseline total",
+              "sticks": true
+            },
+            {
+              "id": "up",
+              "text": "The total can go up if the implementation added tests",
+              "sticks": true
+            },
+            {
+              "id": "stages",
+              "text": "All five stages are complete, each from recorded evidence",
+              "sticks": true
+            },
+            {
+              "id": "equal",
+              "text": "The final total must equal the baseline total",
+              "sticks": false,
+              "reason": "The total can go up if the implementation added tests.",
+              "cite": "ex3"
+            },
+            {
+              "id": "same",
+              "text": "The totals must match the course’s images",
+              "sticks": false,
+              "reason": "Your test totals and file list can differ from the images, because the agent writes its own tests.",
+              "cite": "ex3"
+            },
+            {
+              "id": "said",
+              "text": "The chat says it is done",
+              "sticks": false,
+              "reason": "Evidence on the board should come from actual terminal or browser output, not from chat inference.",
+              "cite": "take"
+            }
+          ],
+          "cite": "ex3"
+        }
+      ]
+    }
+  ]
+}

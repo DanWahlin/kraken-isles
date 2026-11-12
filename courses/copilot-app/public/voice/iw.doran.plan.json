@@ -1,0 +1,92 @@
+{
+  "id": "iw.doran.plan",
+  "speaker": "Doran",
+  "text": "Review the plan in the Plan tab. Don’t let the agent start before you’ve recorded a baseline.",
+  "words": [
+    {
+      "word": "Review",
+      "start": 0.052083,
+      "end": 0.507833
+    },
+    {
+      "word": "the",
+      "start": 0.507833,
+      "end": 0.612
+    },
+    {
+      "word": "plan",
+      "start": 0.612,
+      "end": 0.989583
+    },
+    {
+      "word": "in",
+      "start": 0.989583,
+      "end": 1.08075
+    },
+    {
+      "word": "the",
+      "start": 1.08075,
+      "end": 1.145833
+    },
+    {
+      "word": "Plan",
+      "start": 1.145833,
+      "end": 1.484375
+    },
+    {
+      "word": "tab",
+      "start": 1.484375,
+      "end": 2.825541
+    },
+    {
+      "word": "Don’t",
+      "start": 2.825541,
+      "end": 3.098958
+    },
+    {
+      "word": "let",
+      "start": 3.098958,
+      "end": 3.28125
+    },
+    {
+      "word": "the",
+      "start": 3.28125,
+      "end": 3.450541
+    },
+    {
+      "word": "agent",
+      "start": 3.450541,
+      "end": 3.763041
+    },
+    {
+      "word": "start",
+      "start": 3.763041,
+      "end": 4.179708
+    },
+    {
+      "word": "before",
+      "start": 4.179708,
+      "end": 4.53125
+    },
+    {
+      "word": "you’ve",
+      "start": 4.53125,
+      "end": 4.739583
+    },
+    {
+      "word": "recorded",
+      "start": 4.739583,
+      "end": 5.195333
+    },
+    {
+      "word": "a",
+      "start": 5.195333,
+      "end": 5.247416
+    },
+    {
+      "word": "baseline",
+      "start": 5.247416,
+      "end": 5.497416
+    }
+  ]
+}

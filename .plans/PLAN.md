@@ -41,7 +41,7 @@
 
 **One-liner:** Sail a sun-drenched archipelago, meet the islanders, solve puzzles, and earn a Captain's Seal on every island by learning to direct AI agents with the GitHub Copilot app.
 
-> **Status (2026-11-01):** Islands 00-04 are playable (Anchorage Cay, Port Meridian, Thousand-Bough Isle, Keelhaven and Guildcrest), with sea battles 1-4 on their passages. Islands 05-07 and the finale are Phase 3 (§10).
+> **Status (2026-11-11):** All eight islands are playable (Anchorage Cay, Port Meridian, Thousand-Bough Isle, Keelhaven, Guildcrest, Sunspire Sands, Inkwell Bluffs and Tidewheel Caldera), with sea battles 1-6 on their passages and the ending (the Long Light) after the last Seal. What is left of Phase 3 is in `docs/specs/PHASE-3-islands-05-07.md` §9 and each island's spec, §12.
 
 | Pillar | What it means |
 |---|---|

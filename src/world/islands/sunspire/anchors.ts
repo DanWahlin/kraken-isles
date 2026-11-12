@@ -1,5 +1,5 @@
 import type { VillageAnchor } from '../../village/kit';
-import { SIT } from '../../characters/seat-fit';
+import { anchorKit, PAVED } from '../anchor-kit';
 import { BOOTH_LAYOUT } from '../../market-stall/booth';
 import { stallToWorld } from '../../market-stall/layout';
 import { CIRCUIT_SPOTS } from './circuit';
@@ -8,15 +8,13 @@ import {
   CAMP,
   CARAVANSERAI,
   COURT,
-  headingBetween,
+  FRAME_KIT,
   SIGNAL_HOUSE,
   SPIRE,
   SQUARE,
   TERRACE,
-  toWorld,
   WELL,
   YARD,
-  type Uv,
 } from './layout';
 import { SUNSPIRE_BOOTH } from './market';
 import { SEAL_PLINTH } from './spire';
@@ -29,47 +27,10 @@ import { SERAI, SQUARE_PROPS } from './town';
  * radius. Plain data (no three.js): this file is the source of truth after the build.
  */
 
-/** An anchor at frame (u, v), `lift` m over the ground there (a paved deck's 3 cm), facing `look`. */
-function anchor(u: number, v: number, look?: Uv, lift = 0): VillageAnchor {
-  const p = toWorld(u, v);
-  return {
-    x: p.x,
-    y: sunspireHeight(p.x, p.z) + lift,
-    z: p.z,
-    heading: look ? headingBetween({ u, v }, look) : 0,
-  };
-}
-
-/** The paving's rise over its pad (the builders lay it 3 cm up). */
-const PAVED = 0.03;
+const { anchor, seated, camera, spotAnchor: at } = anchorKit(FRAME_KIT, sunspireHeight);
 
 /** A circuit's station as an anchor: where the player stands, facing what the station's camera looks at. */
-function spotAnchor(kind: 'signal' | 'crate', place: string): VillageAnchor {
-  const s = CIRCUIT_SPOTS[kind][place]!;
-  return anchor(s.u, s.v, { u: s.look.u, v: s.look.v }, PAVED);
-}
-
-/** An anchor raised to the top of a seat block on its floor (seat-fit.ts `SIT.height`). */
-function seated(a: VillageAnchor): VillageAnchor {
-  return { ...a, y: a.y + SIT.height };
-}
-
-/** A camera: where it stands (x, y, z, its heading toward the target) and what it looks at. */
-export interface CameraAnchor extends VillageAnchor {
-  readonly target: { readonly x: number; readonly y: number; readonly z: number };
-}
-
-function camera(u: number, v: number, y: number, tu: number, tv: number, ty: number): CameraAnchor {
-  const p = toWorld(u, v);
-  const t = toWorld(tu, tv);
-  return {
-    x: p.x,
-    y,
-    z: p.z,
-    heading: headingBetween({ u, v }, { u: tu, v: tv }),
-    target: { x: t.x, y: ty, z: t.z },
-  };
-}
+const spotAnchor = (kind: 'signal' | 'crate', place: string) => at(CIRCUIT_SPOTS[kind][place]!);
 
 /** The look targets the route uses (frame). */
 const LOOK = {
@@ -146,5 +107,4 @@ export const SUNSPIRE_ANCHORS = {
   extraFisher: anchor(-160, 15.2, { u: -160, v: 0 }, PAVED),
 } as const satisfies Record<string, VillageAnchor>;
 
-/** Every anchor's name (the contract with the course content). */
-export type SsAnchorName = keyof typeof SUNSPIRE_ANCHORS;
+export type { CameraAnchor } from '../anchor-kit';

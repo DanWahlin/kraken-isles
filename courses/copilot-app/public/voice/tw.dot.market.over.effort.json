@@ -1,0 +1,67 @@
+{
+  "id": "tw.dot.market.over.effort",
+  "speaker": "Dot",
+  "text": "High effort for a quick look? The default effort would've done fine.",
+  "words": [
+    {
+      "word": "High",
+      "start": 0.049,
+      "end": 0.343125
+    },
+    {
+      "word": "effort",
+      "start": 0.343125,
+      "end": 0.710791
+    },
+    {
+      "word": "for",
+      "start": 0.710791,
+      "end": 0.919125
+    },
+    {
+      "word": "a",
+      "start": 0.919125,
+      "end": 0.992666
+    },
+    {
+      "word": "quick",
+      "start": 0.992666,
+      "end": 1.311291
+    },
+    {
+      "word": "look",
+      "start": 1.311291,
+      "end": 2.622541
+    },
+    {
+      "word": "The",
+      "start": 2.622541,
+      "end": 2.732833
+    },
+    {
+      "word": "default",
+      "start": 2.732833,
+      "end": 3.247541
+    },
+    {
+      "word": "effort",
+      "start": 3.247541,
+      "end": 3.566166
+    },
+    {
+      "word": "would've",
+      "start": 3.566166,
+      "end": 3.933833
+    },
+    {
+      "word": "done",
+      "start": 3.933833,
+      "end": 4.227958
+    },
+    {
+      "word": "fine",
+      "start": 4.227958,
+      "end": 4.477958
+    }
+  ]
+}

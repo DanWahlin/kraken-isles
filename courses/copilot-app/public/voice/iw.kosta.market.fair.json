@@ -1,0 +1,37 @@
+{
+  "id": "iw.kosta.market.fair",
+  "speaker": "Kosta",
+  "text": "Right-sized, and a fair price, Captain.",
+  "words": [
+    {
+      "word": "Right-sized",
+      "start": 0.118416,
+      "end": 1.157875
+    },
+    {
+      "word": "and",
+      "start": 1.157875,
+      "end": 1.328958
+    },
+    {
+      "word": "a",
+      "start": 1.328958,
+      "end": 1.39475
+    },
+    {
+      "word": "fair",
+      "start": 1.39475,
+      "end": 1.697375
+    },
+    {
+      "word": "price",
+      "start": 1.697375,
+      "end": 2.486833
+    },
+    {
+      "word": "Captain",
+      "start": 2.486833,
+      "end": 2.736833
+    }
+  ]
+}

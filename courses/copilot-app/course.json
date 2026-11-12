@@ -163,23 +163,33 @@
       "chapter": "06-canvases",
       "label": "06 · Canvases",
       "minutes": 80,
+      "seal": "Seal of Inkwell",
       "topics": [
         "When a long chat thread gets in the way",
         "A session board with /create-canvas",
         "Keeping the plan and evidence visible"
-      ]
+      ],
+      "arrival": {
+        "eyebrow": "Chapter 06 · Canvases",
+        "line": "Keep the work where you both can see it"
+      }
     },
     {
       "island": "tidewheel",
       "chapter": "07-automations",
       "label": "07 · Automations",
       "minutes": 50,
+      "seal": "Seal of Tidewheel",
       "topics": [
         "When to automate recurring agent work",
         "On-demand local automations",
         "Schedules and run history",
         "Event triggers and cloud automations"
-      ]
+      ],
+      "arrival": {
+        "eyebrow": "Chapter 07 · Automations",
+        "line": "Test it by hand before the clock runs it"
+      }
     }
   ],
   "practice": {
@@ -328,6 +338,22 @@
           "nav": "wingman.ss.nav",
           "starfish": "wingman.starfish.sunspire"
         }
+      },
+      "inkwell": {
+        "landing": ["iw.juno.arrive.01"],
+        "welcome": ["wingman.iw.01", "@starfish"],
+        "tips": {
+          "nav": "wingman.iw.nav",
+          "starfish": "wingman.starfish.inkwell"
+        }
+      },
+      "tidewheel": {
+        "landing": ["tw.juno.arrive.01"],
+        "welcome": ["wingman.tw.01", "@starfish"],
+        "tips": {
+          "nav": "wingman.tw.nav",
+          "starfish": "wingman.starfish.tidewheel"
+        }
       }
     },
     "sail": {
@@ -441,6 +467,24 @@
           {
             "quiz": "N4.3",
             "raiders": ["Every Tool", "No Role"]
+          }
+        ]
+      },
+      "passage-sunspire-inkwell": {
+        "chapter": "05",
+        "won": "Three habits sank, and the beam held. Inkwell Bluffs lies ahead, Captain.",
+        "waves": [
+          {
+            "quiz": "N5.1",
+            "raiders": ["Toggle’s On", "Open Shutter"]
+          },
+          {
+            "quiz": "N5.2",
+            "raiders": ["Whole Chart", "Send It All"]
+          },
+          {
+            "quiz": "N5.3",
+            "raiders": ["Just Installed", "Every Crate"]
           }
         ]
       }

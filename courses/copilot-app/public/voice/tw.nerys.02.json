@@ -1,0 +1,102 @@
+{
+  "id": "tw.nerys.02",
+  "speaker": "Nerys",
+  "text": "An issue, a pull request, a workflow that finishes. Choose the bell that matches the event you want handled.",
+  "words": [
+    {
+      "word": "An",
+      "start": 0.05,
+      "end": 0.1875
+    },
+    {
+      "word": "issue",
+      "start": 0.1875,
+      "end": 0.7
+    },
+    {
+      "word": "a",
+      "start": 0.7,
+      "end": 0.7875
+    },
+    {
+      "word": "pull",
+      "start": 0.7875,
+      "end": 1.05
+    },
+    {
+      "word": "request",
+      "start": 1.05,
+      "end": 1.725
+    },
+    {
+      "word": "a",
+      "start": 1.725,
+      "end": 1.8
+    },
+    {
+      "word": "workflow",
+      "start": 1.8,
+      "end": 2.275
+    },
+    {
+      "word": "that",
+      "start": 2.275,
+      "end": 2.425
+    },
+    {
+      "word": "finishes",
+      "start": 2.425,
+      "end": 3.9875
+    },
+    {
+      "word": "Choose",
+      "start": 3.9875,
+      "end": 4.2875
+    },
+    {
+      "word": "the",
+      "start": 4.2875,
+      "end": 4.4
+    },
+    {
+      "word": "bell",
+      "start": 4.4,
+      "end": 4.7
+    },
+    {
+      "word": "that",
+      "start": 4.7,
+      "end": 4.8625
+    },
+    {
+      "word": "matches",
+      "start": 4.8625,
+      "end": 5.275
+    },
+    {
+      "word": "the",
+      "start": 5.275,
+      "end": 5.4125
+    },
+    {
+      "word": "event",
+      "start": 5.4125,
+      "end": 5.7
+    },
+    {
+      "word": "you",
+      "start": 5.7,
+      "end": 5.825
+    },
+    {
+      "word": "want",
+      "start": 5.825,
+      "end": 6.0625
+    },
+    {
+      "word": "handled",
+      "start": 6.0625,
+      "end": 6.3125
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "tw.greta.log",
+  "speaker": "Greta",
+  "text": "Morning. Nobody pulled the lever. Look in Recent runs.",
+  "words": [
+    {
+      "word": "Morning",
+      "start": 0.05,
+      "end": 1.575
+    },
+    {
+      "word": "Nobody",
+      "start": 1.575,
+      "end": 2.0875
+    },
+    {
+      "word": "pulled",
+      "start": 2.0875,
+      "end": 2.4125
+    },
+    {
+      "word": "the",
+      "start": 2.4125,
+      "end": 2.5
+    },
+    {
+      "word": "lever",
+      "start": 2.5,
+      "end": 3.8625
+    },
+    {
+      "word": "Look",
+      "start": 3.8625,
+      "end": 4.175
+    },
+    {
+      "word": "in",
+      "start": 4.175,
+      "end": 4.3625
+    },
+    {
+      "word": "Recent",
+      "start": 4.3625,
+      "end": 4.7875
+    },
+    {
+      "word": "runs",
+      "start": 4.7875,
+      "end": 5.0375
+    }
+  ]
+}

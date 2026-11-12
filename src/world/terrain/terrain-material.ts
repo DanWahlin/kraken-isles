@@ -692,6 +692,45 @@ export function createTerrainMaterial(options: TerrainMaterialOptions = {}): Mes
     .mul(float(1).sub(smoothstep(0.62, 0.8, faceNoise).mul(0.16)));
   // On the bake's own cliff and rock (not the drawn slope: a far level's faces are gentler).
   base = mix(base, redRockTone, R.redRock.mul(saturate(cliffMask.add(rockMask.mul(0.85)))));
+  // Inkwell's white chalk: pale stone with the triplanar grain, soft grey beds, and a darker, greener
+  // band where the sea wets its foot; on the bake's own cliff and rock, as the red rock is.
+  const chalkTone = mix(color(0xc0b392), color(0xf0e7d2), faceNoise.mul(0.55).add(faceGrain.mul(0.45)))
+    .mul(float(1).sub(cliffBeds.mul(0.22)))
+    .mul(float(1).sub(smoothstep(0.64, 0.82, faceNoise).mul(0.1)));
+  const chalkWet = smoothstep(3.2, 0.4, y.add(faceNoise.sub(0.5).mul(2.4)));
+  base = mix(
+    base,
+    mix(chalkTone, color(0x7f8672), chalkWet.mul(0.55)),
+    R.chalk.mul(saturate(cliffMask.add(rockMask.mul(0.85)))),
+  );
+  // Tidewheel's young volcanic rock: near-black stone with the triplanar grain and faint bedding,
+  // streaked with rust and (in patches, high on the faces) pale sulphur, wet and darker at the sea's
+  // foot; on the bake's own cliff and rock, as the red rock is.
+  const lavaTone = mix(color(0x161515), color(0x3d3a3a), faceNoise.mul(0.55).add(faceGrain.mul(0.45)))
+    .mul(float(1).sub(cliffBeds.mul(0.2)))
+    .mul(float(1).sub(smoothstep(4.0, 0.5, y.add(faceNoise.sub(0.5).mul(2.6))).mul(0.4)));
+  const lavaRust = smoothstep(0.66, 0.82, noiseMid.r.mul(0.55).add(faceNoise.mul(0.45)));
+  const lavaSulphur = smoothstep(0.7, 0.84, noiseLow.b.mul(0.6).add(noiseMid.a.mul(0.4))).mul(
+    smoothstep(18, 44, y),
+  );
+  base = mix(
+    base,
+    mix(mix(lavaTone, color(0x5e3a28), lavaRust.mul(0.3)), color(0xa8924e), lavaSulphur.mul(0.34)),
+    R.lavaRock.mul(saturate(cliffMask.add(rockMask.mul(0.85)))),
+  );
+  // Tidewheel's black sand and cinder ground: dark grey grains in broad drifts of tone with a faint
+  // sparkle of paler grit at your feet, on the bake's sand and (thinly, so a little green shows
+  // through) its turf; not on rock, cliff or the sea's floor.
+  const cinder = R.blackSand
+    .mul(float(1).sub(saturate(cliffMask.add(rockMask))))
+    .mul(float(1).sub(underwater))
+    .mul(float(1).sub(grassMask.mul(0.3)));
+  const cinderTone = mix(
+    mix(color(0x222120), color(0x3e3b39), saturate(broadNoise.mul(0.6).add(noiseLow.a.mul(0.4)))),
+    color(0x6a645c),
+    closeDetail.mul(smoothstep(0.62, 0.8, noiseFine.g)).mul(0.5),
+  );
+  base = mix(base, cinderTone, cinder.mul(0.92));
 
   // Fluted green walls (`paliWall`): a forest canopy over the whole region (walls up to near-sheer,
   // crests, valley floors), yellow-green on the open ribs and crests and dark wet green in the gullies

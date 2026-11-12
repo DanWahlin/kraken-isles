@@ -1,0 +1,285 @@
+{
+  "$schema": "../../schemas/puzzle-circuit.schema.json",
+  "id": "P6.1",
+  "mechanic": "circuit",
+  "chapter": "06-canvases",
+  "quest": "Q6.4",
+  "circuit": "board",
+  "$comment": "The Borrowed Board in the Loggia (docs/specs/ISLAND-06-inkwell-bluffs.md §5.1): the guild’s notice (Open in Copilot app, the install dialogs), the roll (Customize, Installed, Plugins), the bell (Restart canvas extensions), the board’s frame (Add tab, Canvas, Repository Issues Kanban), and its cards (one card to Plan; it comes back on Ready). The places, lamps and the card on the board are the game’s; every word is this file’s.",
+  "places": {
+    "notice": {
+      "acts": "notice",
+      "name": "The guild’s notice",
+      "means": "**Open in Copilot app**, and the two install dialogs",
+      "cite": "ex1"
+    },
+    "roll": {
+      "acts": "roll",
+      "name": "The roll",
+      "means": "**Customize** → **Installed** → **Plugins**",
+      "cite": "ex1"
+    },
+    "bell": {
+      "acts": "bell",
+      "name": "The Loggia’s bell",
+      "means": "The prompt `Restart canvas extensions`",
+      "cite": "ex1"
+    },
+    "frame": {
+      "acts": "frame",
+      "name": "The board’s frame",
+      "means": "**+** (**Add tab**) → **Canvas** → **Repository Issues Kanban**",
+      "cite": "ex1"
+    },
+    "card": {
+      "acts": "card",
+      "name": "The board’s cards",
+      "means": "Issues you drag between columns: **Plan**, then **Ready**",
+      "cite": "ex1"
+    }
+  },
+  "text": {
+    "lampDark": "○ waiting",
+    "lampRunning": "… running",
+    "lampReady": "✓ ready",
+    "lampNotReady": "✗ not ready",
+    "next": "Next station: {name}",
+    "back": "Back to {name}",
+    "skip": "Skip",
+    "leave": "Leave",
+    "hint": "Hint",
+    "sealIt": "Seal it",
+    "sendBack": "Send it back",
+    "darkLamp": "{name} is still dark.",
+    "sticks": "It sticks.",
+    "noStick": "It won’t stick.",
+    "turnBack": "◀ Slide it back",
+    "turnOn": "Slide it on ▶",
+    "set": "Set it here",
+    "title": "The Borrowed Board",
+    "intro": "Take the guild’s board in, find it on the roll, ring the bell, hang the board, and move one card."
+  },
+  "cites": {
+    "ex1": {
+      "anchor": "exercise-1-try-your-first-canvas",
+      "hash": "1fc9e1017bb6"
+    },
+    "tsListed": {
+      "anchor": "the-community-canvas-is-not-listed",
+      "hash": "a337f3b1e165"
+    },
+    "tsNone": {
+      "anchor": "no-canvas-opens",
+      "hash": "425aa8f81f45"
+    },
+    "pre": {
+      "anchor": "prerequisites",
+      "hash": "7b03cb754f34"
+    }
+  },
+  "laps": [
+    {
+      "id": "borrow",
+      "quest": "Q6.4",
+      "step": "board",
+      "solved": "solved",
+      "close": "calla.board.solved",
+      "title": "The Borrowed Board: try a community canvas",
+      "order": "accessibility-kanban · Repository Issues Kanban",
+      "stations": [
+        {
+          "id": "install",
+          "at": "notice",
+          "kind": "choose",
+          "title": "Install the plugin",
+          "line": "iw.calla.notice",
+          "prompt": "You selected **Open in Copilot app**, then **Allow**. The **Install plugin** dialog is open. What do you do?",
+          "options": [
+            {
+              "id": "confirm",
+              "text": "Confirm that the name is `accessibility-kanban@awesome-copilot`, then select **Install**",
+              "right": true,
+              "result": "The crate’s stencil matches the notice. It goes in."
+            },
+            {
+              "id": "blind",
+              "text": "Select **Install** at once: the page sent me here",
+              "reason": "Confirm that the name is `accessibility-kanban@awesome-copilot` first.",
+              "backTo": "notice",
+              "cite": "ex1"
+            },
+            {
+              "id": "policy",
+              "text": "It’s blocked here, so I change my organization’s settings",
+              "reason": "Enterprise-managed settings can restrict which plugins are available. If you cannot install the plugin, read Exercise 1 and continue to Exercise 2.",
+              "backTo": "notice",
+              "cite": "pre"
+            }
+          ],
+          "hints": [
+            "What did you learn about plugins on Sunspire?",
+            "Read the name in the dialog.",
+            "Confirm `accessibility-kanban@awesome-copilot`, then select **Install**."
+          ],
+          "cite": "ex1"
+        },
+        {
+          "id": "listed",
+          "at": "roll",
+          "kind": "choose",
+          "title": "Confirm that it’s installed",
+          "prompt": "Where do you confirm that the plugin is installed and on?",
+          "options": [
+            {
+              "id": "installed",
+              "text": "**Customize**, then the **Installed** tab: it appears under **Plugins**, with its toggle on",
+              "right": true,
+              "result": "It’s on the roll, with its toggle on."
+            },
+            {
+              "id": "panel",
+              "text": "In the review panel: the board is open already",
+              "reason": "Not yet. The session has not reloaded its canvas extensions.",
+              "backTo": "roll",
+              "cite": "ex1"
+            },
+            {
+              "id": "changes",
+              "text": "In the **Changes** tab",
+              "reason": "That lists changed files. A plugin is not a file in this repository.",
+              "backTo": "roll",
+              "cite": "ex1"
+            }
+          ],
+          "hints": [
+            "Which view holds plugins?",
+            "It has an **Installed** tab.",
+            "**Customize** → **Installed** → **Plugins**."
+          ],
+          "cite": "ex1"
+        },
+        {
+          "id": "restart",
+          "at": "bell",
+          "kind": "choose",
+          "title": "Reload the extensions",
+          "line": "iw.calla.bell",
+          "prompt": "Back in your session, the new canvas isn’t offered yet. What do you submit?",
+          "options": [
+            {
+              "id": "restart",
+              "text": "The prompt `Restart canvas extensions`",
+              "right": true,
+              "result": "The bell rings. The extensions reload, and the new one is picked up."
+            },
+            {
+              "id": "skills",
+              "text": "`/skills reload`",
+              "reason": "That reloads skills. For a canvas, submit the prompt `Restart canvas extensions`.",
+              "backTo": "bell",
+              "cite": "ex1"
+            },
+            {
+              "id": "again",
+              "text": "Nothing: install the plugin a second time",
+              "reason": "It is installed. This reloads the extensions and picks up the newly installed one.",
+              "backTo": "bell",
+              "cite": "ex1"
+            }
+          ],
+          "hints": [
+            "What does the bell’s plate say?",
+            "It restarts canvas extensions.",
+            "Submit `Restart canvas extensions`."
+          ],
+          "cite": "ex1"
+        },
+        {
+          "id": "open",
+          "at": "frame",
+          "kind": "choose",
+          "title": "Open the canvas",
+          "line": "iw.calla.frame",
+          "image": "ch06/app-open-repo-issues-canvas",
+          "caption": "The **+** menu, with **Canvas** open.",
+          "prompt": "In the review panel you select **+** (**Add tab**), then **Canvas**. Which entry do you select?",
+          "options": [
+            {
+              "id": "kanban",
+              "text": "**Repository Issues Kanban**",
+              "right": true,
+              "result": "The board hangs in its frame, and loads the issues from the current repository."
+            },
+            {
+              "id": "package",
+              "text": "I look for `accessibility-kanban`, and stop when it is not there",
+              "reason": "`accessibility-kanban` is the package name, not the name that the app shows.",
+              "backTo": "frame",
+              "cite": "tsListed"
+            },
+            {
+              "id": "hidden",
+              "text": "There’s no review panel, so I give up",
+              "reason": "If the review panel is hidden, select **View** > **Toggle Panel** first.",
+              "backTo": "frame",
+              "cite": "ex1"
+            }
+          ],
+          "hints": [
+            "Two names: one on the crate, one on the board.",
+            "The app shows the board’s own name.",
+            "Select **Repository Issues Kanban**."
+          ],
+          "cite": "ex1"
+        },
+        {
+          "id": "move",
+          "at": "card",
+          "kind": "choose",
+          "title": "Move a card",
+          "line": "iw.calla.card",
+          "prompt": "The board loads the issues and organizes them by status. How many cards do you drag to **Plan**?",
+          "options": [
+            {
+              "id": "one",
+              "text": "One",
+              "right": true,
+              "result": "One card on **Plan**, and a runner goes out with it."
+            },
+            {
+              "id": "all",
+              "text": "All of them, to get every plan at once",
+              "reason": "Each card that you move to **Plan** starts a new agent run, so move only one card there.",
+              "backTo": "card",
+              "cite": "ex1"
+            },
+            {
+              "id": "chat",
+              "text": "None: I ask for the plan in chat",
+              "reason": "Moving the card is how this board asks the agent. The canvas keeps state visible without scrolling through chat.",
+              "backTo": "card",
+              "cite": "ex1"
+            }
+          ],
+          "hints": [
+            "What does each card on **Plan** start?",
+            "A new agent run.",
+            "Move only one card to **Plan**."
+          ],
+          "cite": "ex1"
+        },
+        {
+          "id": "ready",
+          "at": "card",
+          "kind": "watch",
+          "title": "Watch it come back",
+          "prompt": "The canvas asks the agent to plan that issue in a background agent.",
+          "action": "Wait for the runner",
+          "text": "The agent reads the issue and the code, but does not edit files. When the plan is ready, the card moves to **Ready**. You moved it once, and the agent moved it again.",
+          "seconds": 6,
+          "cite": "ex1"
+        }
+      ]
+    }
+  ]
+}

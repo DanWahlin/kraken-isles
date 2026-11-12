@@ -1,5 +1,26 @@
 import { fbm2 } from '../../terrain/cove-height';
 import { clamp01, smoothstep } from '../../../util/math';
+import {
+  boxOut,
+  coastDistance as ovalCoastDistance,
+  coastProfile as cliffCoastProfile,
+  cornersOut,
+  coveCarver,
+  edgeApron,
+  heightNormal,
+  inBox,
+  lerp,
+  normalizeMasks,
+  onPaths,
+  onQuay,
+  pad,
+  pathPads,
+  quayPad,
+  smax,
+  smin,
+  table as tableProfile,
+  type PathPad,
+} from '../height-kit';
 import type { TerrainFreshWater } from '../../terrain/water-caps';
 import {
   BUTTE,
@@ -14,7 +35,6 @@ import {
   MESA_PATH,
   NEEDLE,
   OASIS_PATH,
-  QUAY,
   QUAY_LANE,
   SIGNAL_HOUSE,
   SIGNAL_STAIR,
@@ -27,7 +47,6 @@ import {
   WATER,
   WELL,
   YARD,
-  type Uvy,
 } from './layout';
 import { createSunspireWater, type SunspireWater } from './water';
 
@@ -50,86 +69,11 @@ import { createSunspireWater, type SunspireWater } from './water';
 
 const SEED = 0x5a_9d_05;
 
-function smin(a: number, b: number, k: number): number {
-  const h = clamp01(0.5 + (0.5 * (b - a)) / k);
-  return b + (a - b) * h - k * h * (1 - h);
-}
-
-function smax(a: number, b: number, k: number): number {
-  return -smin(-a, -b, k);
-}
-
-const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
-
-/** Distance from (u, v) to segment a-b, and how far along it (0-1), into `out`. */
-function segment(u: number, v: number, au: number, av: number, bu: number, bv: number, out: Seg): Seg {
-  const du = bu - au;
-  const dv = bv - av;
-  const len2 = du * du + dv * dv || 1;
-  const t = clamp01(((u - au) * du + (v - av) * dv) / len2);
-  out.d = Math.hypot(u - au - du * t, v - av - dv * t);
-  out.t = t;
-  return out;
-}
-interface Seg {
-  d: number;
-  t: number;
-}
-const seg: Seg = { d: 0, t: 0 };
-
-/** The nearest point of a polyline with heights: its distance and the height there, into `out`. */
-function polyline(u: number, v: number, pts: readonly Uvy[], out: Seg & { y: number }): Seg & { y: number } {
-  out.d = Infinity;
-  for (let i = 0; i + 1 < pts.length; i++) {
-    const a = pts[i]!;
-    const b = pts[i + 1]!;
-    segment(u, v, a.u, a.v, b.u, b.v, seg);
-    if (seg.d < out.d) {
-      out.d = seg.d;
-      out.t = seg.t;
-      out.y = lerp(a.y, b.y, seg.t);
-    }
-  }
-  return out;
-}
-const near = { d: 0, t: 0, y: 0 };
-
-/**
- * Holds the ground at `y` inside a pad (`out` = how far outside it, m), with cut and fill slopes
- * (rise per metre) outside: the ground returns to its own height where it's within reach.
- */
-function pad(h: number, out: number, y: number, cut = 1.1, fill = 0.75): number {
-  const lo = y - fill * out;
-  const hi = y + cut * out;
-  return smin(smax(h, lo, 0.6), hi, 0.6);
-}
-
-/** How far (m) outside a frame box round (cu, cv) with half-sizes (hu, hv). */
-function boxOut(u: number, v: number, cu: number, cv: number, hu: number, hv: number): number {
-  return Math.hypot(Math.max(0, Math.abs(u - cu) - hu), Math.max(0, Math.abs(v - cv) - hv));
-}
-
-/** How far outside a frame box given by its corners. */
-function cornersOut(u: number, v: number, b: { u0: number; u1: number; v0: number; v1: number }): number {
-  return boxOut(u, v, (b.u0 + b.u1) / 2, (b.v0 + b.v1) / 2, (b.u1 - b.u0) / 2, (b.v1 - b.v0) / 2);
-}
-
 // --- 1. The coast --------------------------------------------------------------------------------
 
-const C = S.coast;
-
 /** The signed distance (m) inland from the coast at frame (u, v), world (x, z) for its noise. */
-function coastDistance(u: number, v: number, x: number, z: number): number {
-  const du = u - C.centerU;
-  const dist = Math.hypot(du, v);
-  const r = (Math.abs(du / C.halfU) ** C.power + Math.abs(v / C.halfV) ** C.power) ** (1 / C.power);
-  const d = r > 1e-6 ? dist * (1 / r - 1) : C.halfV;
-  return (
-    d +
-    C.noise * fbm2(x / C.noiseScale, z / C.noiseScale, 3, SEED + 1) +
-    C.ragged * fbm2(x / 34, z / 34, 2, SEED + 2)
-  );
-}
+const coastDistance = (u: number, v: number, x: number, z: number) =>
+  ovalCoastDistance(S.coast, SEED, u, v, x, z);
 
 /** How much of the coast here is red sea cliff (the north-east and the south-east; 0 the gentle rest). */
 function cliffiness(u: number, v: number): number {
@@ -138,21 +82,10 @@ function cliffiness(u: number, v: number): number {
   return Math.max(northEast, southEast);
 }
 
-/** The land's rise from the coast (`d` inland), and the sea's floor off it (`d` < 0). */
-function coastProfile(d: number, cliff: number, x: number, z: number): number {
-  if (d < 0) {
-    const off = -d;
-    const gentle = off * 0.1 + off * off * 0.0014;
-    const steep = off * 0.6 + off * off * 0.002;
-    return -Math.min(S.deepDepth, lerp(gentle, steep, cliff) + 0.6);
-  }
-  // Past the shore's first 45 m the coast no longer holds the land down.
-  const free = Math.max(0, d - 45) ** 2 * 0.04;
-  const gentle = 0.7 + d * 0.12 + free;
-  const top = 20 + 9 * fbm2(x / 90, z / 90, 2, SEED + 3);
-  const steep = d < top / 3.4 ? d * 3.4 : top + (d - top / 3.4) * 0.2;
-  return lerp(gentle, steep + free, cliff);
-}
+/** The red sea cliffs: 20-29 m, then the land climbs slowly behind them. */
+const CLIFFS = { top: 20, topNoise: 9, rise: 3.4, back: 0.2, deepDepth: S.deepDepth, seed: SEED } as const;
+const coastProfile = (d: number, cliff: number, x: number, z: number) =>
+  cliffCoastProfile(d, cliff, x, z, CLIFFS);
 
 // --- 2. The desert floor -------------------------------------------------------------------------
 
@@ -178,27 +111,10 @@ function townWeight(u: number, v: number, x: number, z: number): number {
   return 1 - smoothstep(0.9, 1.4, e);
 }
 
-/** The distance (m) from the cove's waterline (0 in it), for its shores' rise. */
-function coveShoreDistance(u: number, v: number): number {
-  const head = COVE[COVE.length - 1]!;
-  const uc = Math.min(head.u, Math.max(COVE[0].u, u));
-  coveAt(uc, cove);
-  const across = Math.max(0, v - cove.vMax, cove.vMin - v);
-  return Math.hypot(Math.max(0, u - head.u), across);
-}
-
 // --- 3. The tables -------------------------------------------------------------------------------
 
-/**
- * A table's height `out` m outside its flat top: a sheer wall `wall` m high (about 73°), then a talus
- * skirt down to the desert floor.
- */
-function table(out: number, top: number, wall: number): number {
-  if (out <= 0) return top;
-  const run = wall / 3.3;
-  if (out < run) return top - out * 3.3;
-  return top - wall - (out - run) * 0.62;
-}
+/** A table over the desert: a sheer wall `wall` m high, then a talus skirt down to the floor. */
+const table = (out: number, top: number, wall: number) => tableProfile(out, top, wall, 0.62);
 
 /** The rim's wander (m): a table's edge is ragged, but not where something is built against it. */
 function rim(x: number, z: number): number {
@@ -276,7 +192,7 @@ function dunes(u: number, v: number, x: number, z: number, d: number): number {
 
 // --- 5. The pads and paths -----------------------------------------------------------------------
 
-const PATHS: readonly (readonly [readonly Uvy[], number])[] = [
+const PATHS: readonly PathPad[] = [
   [QUAY_LANE, 2.4],
   [OASIS_PATH, 2],
   [SIGNAL_STAIR, 2.2],
@@ -284,28 +200,8 @@ const PATHS: readonly (readonly [readonly Uvy[], number])[] = [
   [SUN_STAIR, 2],
 ];
 
-/** Each path's stretches as pads in turn. */
-function paths(h: number, u: number, v: number): number {
-  for (const [pts, w] of PATHS)
-    for (let i = 0; i + 1 < pts.length; i++) {
-      const a = pts[i]!;
-      const b = pts[i + 1]!;
-      segment(u, v, a.u, a.v, b.u, b.v, seg);
-      h = pad(h, Math.max(0, seg.d - w), lerp(a.y, b.y, seg.t), 1.3, 0.9);
-    }
-  return h;
-}
-
 function pads(h: number, u: number, v: number): number {
-  // The quay's deck (its face is the stone wall).
-  if (v >= QUAY.v - 0.6)
-    h = pad(
-      h,
-      boxOut(u, v, (QUAY.u0 + QUAY.u1) / 2, QUAY.v + 7, (QUAY.u1 - QUAY.u0) / 2, 7),
-      QUAY.top,
-      1.4,
-      1,
-    );
+  h = quayPad(h, u, v);
   h = pad(h, boxOut(u, v, SQUARE.u, SQUARE.v, SQUARE.halfU, SQUARE.halfV), SQUARE.y, 1.2, 0.9);
   h = pad(
     h,
@@ -335,73 +231,13 @@ function pads(h: number, u: number, v: number): number {
 
 // --- 6. The cove ---------------------------------------------------------------------------------
 
-/** The cove's shores (v), floor and the across-fraction, interpolated along u, into `out`. */
-function coveAt(u: number, out: { vMin: number; vMax: number; floor: number }): boolean {
-  if (u < COVE[0].u || u > COVE[COVE.length - 1]!.u + 20) return false;
-  let i = 0;
-  while (i + 2 < COVE.length && u > COVE[i + 1]!.u) i++;
-  const a = COVE[i]!;
-  const b = COVE[i + 1]!;
-  const t = clamp01((u - a.u) / (b.u - a.u));
-  out.vMin = lerp(a.vMin, b.vMin, t);
-  out.vMax = lerp(a.vMax, b.vMax, t);
-  out.floor = lerp(a.floor, b.floor, t);
-  // The shores wander (no ruled edge), less so along the quay.
-  const quay = u > QUAY.u0 - 20 && u < QUAY.u1 + 10 ? 0.15 : 1;
-  out.vMin += 9 * fbm2(u / 70, 3.1, 2, SEED + 21);
-  out.vMax += 5 * quay * fbm2(u / 50, 7.7, 2, SEED + 22);
-  // Past the head the cove closes in a rounded end.
-  if (u > b.u) {
-    const k = (u - b.u) / 20;
-    const mid = (out.vMin + out.vMax) / 2;
-    const half = ((out.vMax - out.vMin) / 2) * Math.sqrt(Math.max(0, 1 - k * k));
-    out.vMin = mid - half;
-    out.vMax = mid + half;
-    out.floor = lerp(out.floor, 0.5, k);
-  }
-  return true;
-}
-const cove = { vMin: 0, vMax: 0, floor: 0 };
-
-function carveCove(h: number, u: number, v: number): number {
-  // The quay's deck stands over the cove's edge (its face is a wall).
-  if (v >= QUAY.v - 0.6 && u >= QUAY.u0 && u <= QUAY.u1) return h;
-  if (!coveAt(u, cove)) return h;
-  const mid = (cove.vMin + cove.vMax) / 2;
-  const half = Math.max(1, (cove.vMax - cove.vMin) / 2);
-  const side = v < mid ? -1 : 1;
-  const t = Math.abs(v - mid) / half;
-  let bed: number;
-  // The south-west side shelves as a beach (a long shallow run); the town's side drops off sooner.
-  const shelf = side < 0 ? 0.62 : 0.86;
-  if (t < shelf) bed = cove.floor * (1 - 0.12 * t * t);
-  else if (t < 1)
-    bed = lerp(
-      cove.floor * (1 - 0.12 * shelf * shelf),
-      0.6,
-      ((t - shelf) / (1 - shelf)) ** (side < 0 ? 0.7 : 1),
-    );
-  else bed = 0.6 + (t - 1) * half * (side < 0 ? 0.1 : 0.45);
-  h = smin(h, bed, 2.5);
-  // The berth's dredged pocket along the quay's face.
-  const pocket = boxOut(u, v, (QUAY.u0 + QUAY.u1) / 2, QUAY.v - 9.5, (QUAY.u1 - QUAY.u0) / 2 + 6, 8.6);
-  if (pocket < 12 && v < QUAY.v - 0.6) h = Math.min(h, -6.5 + pocket * 0.9);
-  return h;
-}
-
-/** The sea floor eases down to the deep floor in the last 60 m inside the baked bounds. */
-function edgeApron(x: number, z: number, h: number): number {
-  const b = S.bounds;
-  const edge = Math.min(x - b.minX, b.maxX - x, z - b.minZ, b.maxZ - z);
-  if (edge >= 60 || h > -1) return h;
-  return h + (-S.deepDepth - h) * smoothstep(60, 4, edge) * smoothstep(-1, -8, h);
-}
+const cove = coveCarver(COVE, SEED);
 
 /** The land's height off the coast and the cove: the floor, the town, the tables and the dunes. */
 function inlandHeight(u: number, v: number, x: number, z: number, d: number): number {
   let h = floor(d, x, z);
   // The cove's shores rise gently to the floor.
-  const dl = coveShoreDistance(u, v);
+  const dl = cove.shoreDistance(u, v);
   h = smin(h, 0.8 + dl * 0.1 + Math.max(0, dl - 60) ** 2 * 0.004, 4);
   const tw = townWeight(u, v, x, z);
   if (tw > 0) h = lerp(h, townSlope(u, v, x, z), tw);
@@ -424,13 +260,13 @@ export function sunspireHeightDry(x: number, z: number): number {
   if (d < -40) h = coastal;
   else {
     h = smin(inlandHeight(u, v, x, z, d), coastal, 6);
-    h = paths(pads(h, u, v), u, v);
+    h = pathPads(pads(h, u, v), u, v, PATHS);
     // The pads mustn't lift ground out of the sea at the coast.
     if (d < 6) h = Math.min(h, coastal + Math.max(0, d) * 3);
   }
-  h = carveCove(h, u, v);
+  h = cove.carve(h, u, v);
   h = libraryRock(h, u, v, x, z);
-  return edgeApron(x, z, Math.max(h, -S.deepDepth));
+  return edgeApron(S.bounds, S.deepDepth, x, z, Math.max(h, -S.deepDepth));
 }
 
 let water: SunspireWater | null = null;
@@ -458,37 +294,16 @@ export function sunspireNormal(
   out: Float32Array | number[],
   heightAt: (x: number, z: number) => number = sunspireHeight,
 ): Float32Array | number[] {
-  const e = 1.5;
-  const nx = -(heightAt(x + e, z) - heightAt(x - e, z)) / (2 * e);
-  const nz = -(heightAt(x, z + e) - heightAt(x, z - e)) / (2 * e);
-  const len = Math.hypot(nx, 1, nz) || 1;
-  out[0] = nx / len;
-  out[1] = 1 / len;
-  out[2] = nz / len;
-  return out;
-}
-
-/** The signed distance (m) inland from the coast at world (x, z) (< 0 at sea, the cove not counted). */
-export function sunspireCoastDistance(x: number, z: number): number {
-  toFrame(x, z, frame);
-  return coastDistance(frame.u, frame.v, x, z);
+  return heightNormal(heightAt, x, z, out);
 }
 
 /** How much frame (u, v) is on a built pad or path (trodden ground), 0-1. */
 export function sunspireTrodden(u: number, v: number): number {
-  let t = 0;
-  for (const [pts, w] of PATHS) {
-    polyline(u, v, pts, near);
-    t = Math.max(t, 1 - smoothstep(w - 0.6, w + 1, near.d));
-  }
-  const box = (cu: number, cv: number, hu: number, hv: number, edge = 1.5) =>
-    1 - smoothstep(0, edge, boxOut(u, v, cu, cv, hu, hv));
-  t = Math.max(t, box(SQUARE.u, SQUARE.v, SQUARE.halfU, SQUARE.halfV));
-  t = Math.max(t, box((QUAY.u0 + QUAY.u1) / 2, QUAY.v + 7, (QUAY.u1 - QUAY.u0) / 2, 7));
-  t = Math.max(t, box(CARAVANSERAI.u, CARAVANSERAI.v, CARAVANSERAI.halfU, CARAVANSERAI.halfV));
-  t = Math.max(t, box(COURT.u, COURT.v, COURT.halfU, COURT.halfV));
-  t = Math.max(t, box(YARD.u, YARD.v, YARD.halfU, YARD.halfV));
-  t = Math.max(t, box(SIGNAL_HOUSE.u, SIGNAL_HOUSE.v, SIGNAL_HOUSE.halfU + 2, SIGNAL_HOUSE.halfV + 2));
+  const box = (c: { u: number; v: number; halfU: number; halfV: number }, grow = 0) =>
+    inBox(u, v, c.u, c.v, c.halfU + grow, c.halfV + grow);
+  let t = Math.max(onPaths(u, v, PATHS), onQuay(u, v));
+  for (const c of [SQUARE, CARAVANSERAI, COURT, YARD]) t = Math.max(t, box(c));
+  t = Math.max(t, box(SIGNAL_HOUSE, 2));
   t = Math.max(t, 1 - smoothstep(CAMP.r - 2, CAMP.r + 1, Math.hypot(u - CAMP.u, v - CAMP.v)));
   t = Math.max(t, 1 - smoothstep(TERRACE.r - 1, TERRACE.r + 1, Math.hypot(u - TERRACE.u, v - TERRACE.v)));
   return t;
@@ -553,7 +368,5 @@ export function sunspireMasks(
   rock = clamp01(rock * (1 - cliff));
   grass = clamp01(grass * (1 - cliff) * (1 - rock * 0.8));
   sand = clamp01(sand * (1 - cliff) * (1 - rock * 0.85) * (1 - grass * 0.9));
-  const total = sand + grass + rock + cliff;
-  if (total < 0.001) return { sand: 0.7, grass: 0, rock: 0.3, cliff: 0 };
-  return { sand: sand / total, grass: grass / total, rock: rock / total, cliff: cliff / total };
+  return normalizeMasks(sand, grass, rock, cliff);
 }

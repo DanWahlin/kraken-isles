@@ -1,0 +1,102 @@
+{
+  "id": "iw.kosta.market.keep",
+  "speaker": "Kosta",
+  "text": "Right-sized. A quick look's fine on the model you've got, at its default effort. Bigger ones just cost more.",
+  "words": [
+    {
+      "word": "Right-sized",
+      "start": 0.118416,
+      "end": 1.934208
+    },
+    {
+      "word": "A",
+      "start": 1.934208,
+      "end": 1.986833
+    },
+    {
+      "word": "quick",
+      "start": 1.986833,
+      "end": 2.302625
+    },
+    {
+      "word": "look's",
+      "start": 2.302625,
+      "end": 2.552625
+    },
+    {
+      "word": "fine",
+      "start": 2.552625,
+      "end": 2.85525
+    },
+    {
+      "word": "on",
+      "start": 2.85525,
+      "end": 2.960541
+    },
+    {
+      "word": "the",
+      "start": 2.960541,
+      "end": 3.039458
+    },
+    {
+      "word": "model",
+      "start": 3.039458,
+      "end": 3.342125
+    },
+    {
+      "word": "you've",
+      "start": 3.342125,
+      "end": 3.539458
+    },
+    {
+      "word": "got",
+      "start": 3.539458,
+      "end": 4.092125
+    },
+    {
+      "word": "at",
+      "start": 4.092125,
+      "end": 4.263166
+    },
+    {
+      "word": "its",
+      "start": 4.263166,
+      "end": 4.421041
+    },
+    {
+      "word": "default",
+      "start": 4.421041,
+      "end": 4.842125
+    },
+    {
+      "word": "effort",
+      "start": 4.842125,
+      "end": 6.236833
+    },
+    {
+      "word": "Bigger",
+      "start": 6.236833,
+      "end": 6.473666
+    },
+    {
+      "word": "ones",
+      "start": 6.473666,
+      "end": 6.776333
+    },
+    {
+      "word": "just",
+      "start": 6.776333,
+      "end": 7
+    },
+    {
+      "word": "cost",
+      "start": 7,
+      "end": 7.302625
+    },
+    {
+      "word": "more",
+      "start": 7.302625,
+      "end": 7.552625
+    }
+  ]
+}

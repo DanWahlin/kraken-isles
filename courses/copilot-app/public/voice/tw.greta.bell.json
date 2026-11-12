@@ -1,0 +1,67 @@
+{
+  "id": "tw.greta.bell",
+  "speaker": "Greta",
+  "text": "Save it. Then check the card, and read when it runs next.",
+  "words": [
+    {
+      "word": "Save",
+      "start": 0.05,
+      "end": 0.525
+    },
+    {
+      "word": "it",
+      "start": 0.525,
+      "end": 1.75
+    },
+    {
+      "word": "Then",
+      "start": 1.75,
+      "end": 1.975
+    },
+    {
+      "word": "check",
+      "start": 1.975,
+      "end": 2.25
+    },
+    {
+      "word": "the",
+      "start": 2.25,
+      "end": 2.3625
+    },
+    {
+      "word": "card",
+      "start": 2.3625,
+      "end": 3.1125
+    },
+    {
+      "word": "and",
+      "start": 3.1125,
+      "end": 3.3
+    },
+    {
+      "word": "read",
+      "start": 3.3,
+      "end": 3.575
+    },
+    {
+      "word": "when",
+      "start": 3.575,
+      "end": 3.7375
+    },
+    {
+      "word": "it",
+      "start": 3.7375,
+      "end": 3.875
+    },
+    {
+      "word": "runs",
+      "start": 3.875,
+      "end": 4.1875
+    },
+    {
+      "word": "next",
+      "start": 4.1875,
+      "end": 4.4375
+    }
+  ]
+}

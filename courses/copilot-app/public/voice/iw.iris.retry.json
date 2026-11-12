@@ -1,0 +1,52 @@
+{
+  "id": "iw.iris.retry",
+  "speaker": "Iris",
+  "text": "Again, Captain? The light’s good for an hour yet.",
+  "words": [
+    {
+      "word": "Again",
+      "start": 0.052625,
+      "end": 0.763166
+    },
+    {
+      "word": "Captain",
+      "start": 0.763166,
+      "end": 2.328958
+    },
+    {
+      "word": "The",
+      "start": 2.328958,
+      "end": 2.486833
+    },
+    {
+      "word": "light’s",
+      "start": 2.486833,
+      "end": 2.868416
+    },
+    {
+      "word": "good",
+      "start": 2.868416,
+      "end": 3.184208
+    },
+    {
+      "word": "for",
+      "start": 3.184208,
+      "end": 3.35525
+    },
+    {
+      "word": "an",
+      "start": 3.35525,
+      "end": 3.486833
+    },
+    {
+      "word": "hour",
+      "start": 3.486833,
+      "end": 3.64475
+    },
+    {
+      "word": "yet",
+      "start": 3.64475,
+      "end": 3.89475
+    }
+  ]
+}

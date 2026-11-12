@@ -177,14 +177,6 @@ export function* sunspirePlantsSliced(
   return out;
 }
 
-export function sunspirePlants(tier: Tier, field: HeightField = SUNSPIRE_HEIGHT_FIELD): PlantInstance[] {
-  const steps = sunspirePlantsSliced(tier, field);
-  for (;;) {
-    const r = steps.next();
-    if (r.done) return r.value;
-  }
-}
-
 const TINT = new Color();
 
 /**

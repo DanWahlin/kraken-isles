@@ -1,0 +1,67 @@
+{
+  "id": "iw.thea.wait",
+  "speaker": "Thea",
+  "text": "Lyra’s playing at the taverna by the quay, Captain. Hear her first.",
+  "words": [
+    {
+      "word": "Lyra’s",
+      "start": 0.0515409,
+      "end": 0.54125
+    },
+    {
+      "word": "playing",
+      "start": 0.54125,
+      "end": 0.902041
+    },
+    {
+      "word": "at",
+      "start": 0.902041,
+      "end": 1.005166
+    },
+    {
+      "word": "the",
+      "start": 1.005166,
+      "end": 1.10825
+    },
+    {
+      "word": "taverna",
+      "start": 1.10825,
+      "end": 1.6495
+    },
+    {
+      "word": "by",
+      "start": 1.6495,
+      "end": 1.829916
+    },
+    {
+      "word": "the",
+      "start": 1.829916,
+      "end": 1.933
+    },
+    {
+      "word": "quay",
+      "start": 1.933,
+      "end": 2.590208
+    },
+    {
+      "word": "Captain",
+      "start": 2.590208,
+      "end": 4.072166
+    },
+    {
+      "word": "Hear",
+      "start": 4.072166,
+      "end": 4.342791
+    },
+    {
+      "word": "her",
+      "start": 4.342791,
+      "end": 4.523208
+    },
+    {
+      "word": "first",
+      "start": 4.523208,
+      "end": 4.773208
+    }
+  ]
+}

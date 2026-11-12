@@ -64,6 +64,22 @@ export interface TerrainRegionMasks {
    * of pale beach sand, wherever the bake has neither grass, rock nor cliff.
    */
   desertSand?: AnyNode;
+  /**
+   * White chalk (Inkwell's sea cliffs, bluff walls and terrace risers): pale stone with soft grey
+   * beds, in place of the grey-brown rock and cliff colours, wherever the bake has cliff or rock.
+   */
+  chalk?: AnyNode;
+  /**
+   * Young volcanic rock (Tidewheel's ring wall, ledges and risers): near-black stone with rust and
+   * sulphur streaks, in place of the grey-brown rock and cliff colours, wherever the bake has cliff or
+   * rock.
+   */
+  lavaRock?: AnyNode;
+  /**
+   * Black volcanic sand and cinder ground (Tidewheel's beach and crater floor), in place of pale beach
+   * sand and most of the turf's green, wherever the bake has neither rock nor cliff.
+   */
+  blackSand?: AnyNode;
 }
 
 export type TerrainRegionKey = keyof TerrainRegionMasks;
@@ -87,6 +103,9 @@ const REGION_KEYS: readonly TerrainRegionKey[] = [
   'paliWall',
   'redRock',
   'desertSand',
+  'chalk',
+  'lavaRock',
+  'blackSand',
 ];
 
 /**

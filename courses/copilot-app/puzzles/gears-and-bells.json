@@ -1,0 +1,377 @@
+{
+  "$schema": "../../schemas/puzzle-circuit.schema.json",
+  "id": "P7.2",
+  "mechanic": "circuit",
+  "chapter": "07-automations",
+  "quest": "Q7.5",
+  "circuit": "clock",
+  "$comment": "Gears & Bells in the Clock Court (docs/specs/ISLAND-07-tidewheel-caldera.md §5): the clock desk (Edit), the day gear (Manual to Daily), the ring’s crank (Hours: 08:00; the dial), the peg board (clear the other hours; Minute :00), the save bell (Save automation; the card and Automation details), the tide gauge (a local run needs the computer awake) and the morning log (Recent runs; tighten a noisy prompt). The places, lamps and the Lighthouse’s clock ring are the game’s; every word is this file’s.",
+  "places": {
+    "desk": {
+      "acts": "desk",
+      "name": "The clock desk",
+      "means": "The automation, and **Edit**",
+      "cite": "ex2"
+    },
+    "gear": {
+      "acts": "gear",
+      "name": "The day gear",
+      "means": "The **Trigger**: from **Manual** to **Daily**",
+      "cite": "ex2"
+    },
+    "ring": {
+      "acts": "ring",
+      "name": "The clock ring",
+      "means": "**Hours**: the time it runs",
+      "cite": "ex2"
+    },
+    "pegs": {
+      "acts": "pegs",
+      "name": "The peg board",
+      "means": "The other selected hours, and **Minute**",
+      "cite": "ex2"
+    },
+    "bell": {
+      "acts": "bell",
+      "name": "The save bell",
+      "means": "**Save automation**, then **Automation details**",
+      "cite": "ex2"
+    },
+    "tide": {
+      "acts": "tide",
+      "name": "The tide gauge",
+      "means": "The computer awake, and the app running",
+      "cite": "ex2"
+    },
+    "log": {
+      "acts": "log",
+      "name": "The morning log",
+      "means": "**Recent runs**, the next morning",
+      "cite": "ex2"
+    }
+  },
+  "text": {
+    "lampDark": "○ waiting",
+    "lampRunning": "… running",
+    "lampReady": "✓ ready",
+    "lampNotReady": "✗ not ready",
+    "next": "Next station: {name}",
+    "back": "Back to {name}",
+    "skip": "Skip",
+    "leave": "Leave",
+    "hint": "Hint",
+    "sealIt": "Seal it",
+    "sendBack": "Send it back",
+    "darkLamp": "{name} is still dark.",
+    "sticks": "It sticks.",
+    "noStick": "It won’t stick.",
+    "turnBack": "◀ Turn it back",
+    "turnOn": "Turn it on ▶",
+    "set": "Set it here",
+    "title": "Gears & Bells",
+    "intro": "Open the automation, seat the day gear, set the ring, clear the pegs, save it, read the tide, and check the morning log."
+  },
+  "cites": {
+    "ex2": {
+      "anchor": "exercise-schedule-the-review-readiness-report",
+      "hash": "3fc0f26b2de5"
+    },
+    "why": {
+      "anchor": "why-schedule-instead-of-running-manually",
+      "hash": "429046dfee8c"
+    },
+    "tsRun": {
+      "anchor": "a-local-automation-does-not-run",
+      "hash": "9cc84322a688"
+    },
+    "tsNoisy": {
+      "anchor": "a-scheduled-run-is-noisy",
+      "hash": "f216e903d1b5"
+    },
+    "manual": {
+      "anchor": "start-manual-and-local",
+      "hash": "d258fd3120f6"
+    }
+  },
+  "laps": [
+    {
+      "id": "schedule",
+      "quest": "Q7.5",
+      "step": "clock",
+      "solved": "solved",
+      "close": "greta.clock.solved",
+      "title": "Gears & Bells: schedule the report",
+      "order": "PR review readiness report · Daily at 08:00",
+      "stations": [
+        {
+          "id": "edit",
+          "at": "desk",
+          "kind": "choose",
+          "title": "Open the automation",
+          "prompt": "The manual report worked. How do you start to put it on the clock?",
+          "options": [
+            {
+              "id": "edit",
+              "text": "Open **Automations**, select your `PR review readiness report`, then select **Edit**",
+              "right": true,
+              "result": "The ledger opens at the report’s page."
+            },
+            {
+              "id": "new",
+              "text": "Select **New automation**, and build a second report",
+              "reason": "Schedule the automation you tested. Select it, then select **Edit**.",
+              "backTo": "desk",
+              "cite": "ex2"
+            },
+            {
+              "id": "run",
+              "text": "Select **Run** every morning myself",
+              "reason": "A scheduled run appears without you selecting **Run**.",
+              "backTo": "desk",
+              "cite": "ex2"
+            }
+          ],
+          "hints": [
+            "The same automation.",
+            "Find it, then change it.",
+            "**Automations** → the report → **Edit**."
+          ],
+          "cite": "ex2"
+        },
+        {
+          "id": "daily",
+          "at": "gear",
+          "kind": "choose",
+          "title": "Seat the day gear",
+          "line": "tw.greta.gear",
+          "prompt": "The **Trigger** shows **Manual**. What do you change it to, so the summary is waiting each morning?",
+          "options": [
+            {
+              "id": "daily",
+              "text": "**Daily**",
+              "right": true,
+              "result": "The day gear meshes with the clock train."
+            },
+            {
+              "id": "hourly",
+              "text": "**Hourly**, to be sure it is fresh",
+              "reason": "The course schedules it daily, before the workday starts. If a scheduled run is noisy, you run the schedule less often, not more.",
+              "backTo": "gear",
+              "cite": "tsNoisy"
+            },
+            {
+              "id": "manual",
+              "text": "Leave it on **Manual**",
+              "reason": "Then it still runs only when you start it. Change the **Trigger** from **Manual** to **Daily**.",
+              "backTo": "gear",
+              "cite": "ex2"
+            }
+          ],
+          "hints": [
+            "Once each morning.",
+            "A schedule, not an event.",
+            "Change the **Trigger** from **Manual** to **Daily**."
+          ],
+          "cite": "ex2"
+        },
+        {
+          "id": "hour",
+          "at": "ring",
+          "kind": "dial",
+          "title": "Set the ring",
+          "line": "tw.greta.ring",
+          "prompt": "Turn the crank, and watch the ring on the Lighthouse’s clock. Which hour does the report run at?",
+          "action": "Hold it here",
+          "start": 1,
+          "positions": [
+            {
+              "id": "eight",
+              "text": "08:00",
+              "right": true,
+              "result": "The marker stands on eight: a time before the workday starts."
+            },
+            {
+              "id": "nine",
+              "text": "09:00",
+              "reason": "That’s the default hour, and the day watch has started by then. Select a time before your workday starts.",
+              "cite": "ex2"
+            },
+            {
+              "id": "ten",
+              "text": "10:00",
+              "reason": "The workday has started. The summary should be waiting when you start your day.",
+              "cite": "ex2"
+            },
+            {
+              "id": "eleven",
+              "text": "11:00",
+              "reason": "The workday has started. Select a time before your workday starts.",
+              "cite": "ex2"
+            },
+            {
+              "id": "noon",
+              "text": "12:00",
+              "reason": "Half the day is gone. Select a time before your workday starts, for example **08:00**.",
+              "cite": "ex2"
+            }
+          ],
+          "hints": ["When does the day watch start?", "Before that.", "Turn the ring to **08:00**."],
+          "cite": "ex2"
+        },
+        {
+          "id": "clear",
+          "at": "pegs",
+          "kind": "choose",
+          "title": "Clear the pegs",
+          "line": "tw.greta.pegs",
+          "prompt": "**08:00** is selected in **Hours**. The default **09:00** is selected too. What do you do?",
+          "options": [
+            {
+              "id": "clear",
+              "text": "Clear **09:00**, so that only **08:00** remains selected, and keep **Minute** at **:00**",
+              "right": true,
+              "result": "The nine peg comes out. One peg in the ring."
+            },
+            {
+              "id": "both",
+              "text": "Leave both: the first one wins",
+              "reason": "This field allows more than one hour. Clear any other selected hours, so that only your chosen hour remains selected.",
+              "backTo": "pegs",
+              "cite": "ex2"
+            },
+            {
+              "id": "minute",
+              "text": "Set **Minute** to **:30** to split the difference",
+              "reason": "Keep **Minute** at **:00**. Clear the other hour.",
+              "backTo": "pegs",
+              "cite": "ex2"
+            }
+          ],
+          "hints": [
+            "Count the pegs.",
+            "Only your chosen hour stays.",
+            "Clear **09:00**, and keep **Minute** at **:00**."
+          ],
+          "cite": "ex2"
+        },
+        {
+          "id": "save",
+          "at": "bell",
+          "kind": "choose",
+          "title": "Save it, and check",
+          "line": "tw.greta.bell",
+          "image": "ch07/app-automation-schedule",
+          "caption": "**Automation details**, after the schedule is saved.",
+          "prompt": "You select **Save automation**. How do you confirm the schedule?",
+          "options": [
+            {
+              "id": "details",
+              "text": "The card shows the **Daily** trigger. Open the automation and select its name: **Automation details** shows the **Schedule** and the **Next run** time",
+              "right": true,
+              "result": "The striking figures ring once. Daily at 8:00 AM, and a next run."
+            },
+            {
+              "id": "trust",
+              "text": "No need to check: saving is enough",
+              "reason": "After saving, check the automation card and **Automation details**.",
+              "backTo": "bell",
+              "cite": "ex2"
+            },
+            {
+              "id": "runnow",
+              "text": "Select **Run automation** to see if the schedule works",
+              "reason": "That starts a manual run now. The schedule is shown in **Automation details**, with the **Next run** time.",
+              "backTo": "bell",
+              "cite": "ex2"
+            }
+          ],
+          "hints": [
+            "Two places to look.",
+            "The card, then the details.",
+            "The card shows **Daily**. **Automation details** shows the **Schedule** and **Next run**."
+          ],
+          "cite": "ex2"
+        },
+        {
+          "id": "awake",
+          "at": "tide",
+          "kind": "choose",
+          "title": "Read the tide",
+          "line": "tw.greta.tide",
+          "prompt": "This automation is local. What must be true at 08:00 tomorrow for the run to happen?",
+          "options": [
+            {
+              "id": "awake",
+              "text": "My computer is awake, and the GitHub Copilot app is running",
+              "right": true,
+              "result": "The float rises. Tide in, and the wheel turns."
+            },
+            {
+              "id": "asleep",
+              "text": "Nothing: a schedule runs whatever my computer is doing",
+              "reason": "If your computer is asleep at the scheduled time, the run does not happen.",
+              "backTo": "tide",
+              "cite": "ex2"
+            },
+            {
+              "id": "catchup",
+              "text": "Nothing: a missed run starts when I open the app later",
+              "reason": "A scheduled local run happens only when your computer is awake and the GitHub Copilot app is running.",
+              "backTo": "tide",
+              "cite": "tsRun"
+            }
+          ],
+          "hints": ["What turns the wheel?", "No tide, no turn.", "The computer awake, and the app running."],
+          "cite": "ex2"
+        },
+        {
+          "id": "morning",
+          "at": "log",
+          "kind": "watch",
+          "title": "The next morning",
+          "line": "tw.greta.log",
+          "prompt": "Night passes over the caldera.",
+          "action": "Wait for morning",
+          "text": "The next morning, check **Recent runs** and confirm a new run completed. If the app was running at the scheduled time, the new run appears under **Recent runs** without you selecting **Run**.",
+          "seconds": 6,
+          "cite": "ex2"
+        },
+        {
+          "id": "noisy",
+          "at": "log",
+          "kind": "choose",
+          "title": "Keep it useful",
+          "prompt": "After a few runs, the summary is too long and noisy. What do you do?",
+          "options": [
+            {
+              "id": "tighten",
+              "text": "Tighten the prompt: for example, limit it to pull requests with failing checks, then save again",
+              "right": true,
+              "result": "A shorter page in the log, and every line worth reading."
+            },
+            {
+              "id": "stop",
+              "text": "Stop reading it",
+              "reason": "A human reviews the result. If the result is noisy, you know where to narrow the prompt.",
+              "backTo": "log",
+              "cite": "ex2"
+            },
+            {
+              "id": "more",
+              "text": "Run it more often, so each run is shorter",
+              "reason": "Narrow the prompt, run the schedule less often, or add a label or branch filter to reduce the output.",
+              "backTo": "log",
+              "cite": "tsNoisy"
+            }
+          ],
+          "hints": [
+            "Where do you narrow it?",
+            "In the prompt.",
+            "Limit it, for example to pull requests with failing checks, then save again."
+          ],
+          "cite": "ex2"
+        }
+      ]
+    }
+  ]
+}

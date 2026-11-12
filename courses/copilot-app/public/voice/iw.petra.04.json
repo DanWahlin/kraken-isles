@@ -1,0 +1,87 @@
+{
+  "id": "iw.petra.04",
+  "speaker": "Petra",
+  "text": "Your hand, then the mate’s, on one slate. And not one file changed in the repository.",
+  "words": [
+    {
+      "word": "Your",
+      "start": 0.049,
+      "end": 0.220583
+    },
+    {
+      "word": "hand",
+      "start": 0.220583,
+      "end": 0.833333
+    },
+    {
+      "word": "then",
+      "start": 0.833333,
+      "end": 1.029416
+    },
+    {
+      "word": "the",
+      "start": 1.029416,
+      "end": 1.139708
+    },
+    {
+      "word": "mate’s",
+      "start": 1.139708,
+      "end": 1.678916
+    },
+    {
+      "word": "on",
+      "start": 1.678916,
+      "end": 1.924
+    },
+    {
+      "word": "one",
+      "start": 1.924,
+      "end": 2.230375
+    },
+    {
+      "word": "slate",
+      "start": 2.230375,
+      "end": 3.590666
+    },
+    {
+      "word": "And",
+      "start": 3.590666,
+      "end": 3.71325
+    },
+    {
+      "word": "not",
+      "start": 3.71325,
+      "end": 3.982833
+    },
+    {
+      "word": "one",
+      "start": 3.982833,
+      "end": 4.289208
+    },
+    {
+      "word": "file",
+      "start": 4.289208,
+      "end": 4.644625
+    },
+    {
+      "word": "changed",
+      "start": 4.644625,
+      "end": 5.147041
+    },
+    {
+      "word": "in",
+      "start": 5.147041,
+      "end": 5.294125
+    },
+    {
+      "word": "the",
+      "start": 5.294125,
+      "end": 5.379916
+    },
+    {
+      "word": "repository",
+      "start": 5.379916,
+      "end": 5.629916
+    }
+  ]
+}

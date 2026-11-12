@@ -1,0 +1,57 @@
+{
+  "id": "iw.nikos.done",
+  "speaker": "Nikos",
+  "text": "Calla’s in the Loggia, Captain, on the Plaza’s west side.",
+  "words": [
+    {
+      "word": "Calla’s",
+      "start": 0.05,
+      "end": 0.445416
+    },
+    {
+      "word": "in",
+      "start": 0.445416,
+      "end": 0.534708
+    },
+    {
+      "word": "the",
+      "start": 0.534708,
+      "end": 0.585708
+    },
+    {
+      "word": "Loggia",
+      "start": 0.585708,
+      "end": 1.402041
+    },
+    {
+      "word": "Captain",
+      "start": 1.402041,
+      "end": 2.167333
+    },
+    {
+      "word": "on",
+      "start": 2.167333,
+      "end": 2.294916
+    },
+    {
+      "word": "the",
+      "start": 2.294916,
+      "end": 2.371416
+    },
+    {
+      "word": "Plaza’s",
+      "start": 2.371416,
+      "end": 2.856125
+    },
+    {
+      "word": "west",
+      "start": 2.856125,
+      "end": 3.072958
+    },
+    {
+      "word": "side",
+      "start": 3.072958,
+      "end": 3.322958
+    }
+  ]
+}

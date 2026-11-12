@@ -1,0 +1,97 @@
+{
+  "id": "tw.agnes.02",
+  "speaker": "Agnes",
+  "text": "An automation is a saved agent run. Four gears: a trigger, a prompt, tools, and a review path.",
+  "words": [
+    {
+      "word": "An",
+      "start": 0.0515409,
+      "end": 0.219083
+    },
+    {
+      "word": "automation",
+      "start": 0.219083,
+      "end": 1.056708
+    },
+    {
+      "word": "is",
+      "start": 1.056708,
+      "end": 1.198458
+    },
+    {
+      "word": "a",
+      "start": 1.198458,
+      "end": 1.25
+    },
+    {
+      "word": "saved",
+      "start": 1.25,
+      "end": 1.739708
+    },
+    {
+      "word": "agent",
+      "start": 1.739708,
+      "end": 2.152041
+    },
+    {
+      "word": "run",
+      "start": 2.152041,
+      "end": 3.440708
+    },
+    {
+      "word": "Four",
+      "start": 3.440708,
+      "end": 3.621125
+    },
+    {
+      "word": "gears",
+      "start": 3.621125,
+      "end": 4.484541
+    },
+    {
+      "word": "a",
+      "start": 4.484541,
+      "end": 4.57475
+    },
+    {
+      "word": "trigger",
+      "start": 4.57475,
+      "end": 5.270625
+    },
+    {
+      "word": "a",
+      "start": 5.270625,
+      "end": 5.347958
+    },
+    {
+      "word": "prompt",
+      "start": 5.347958,
+      "end": 6.10825
+    },
+    {
+      "word": "tools",
+      "start": 6.10825,
+      "end": 6.855666
+    },
+    {
+      "word": "and",
+      "start": 6.855666,
+      "end": 6.971666
+    },
+    {
+      "word": "a",
+      "start": 6.971666,
+      "end": 7.048958
+    },
+    {
+      "word": "review",
+      "start": 7.048958,
+      "end": 7.35825
+    },
+    {
+      "word": "path",
+      "start": 7.35825,
+      "end": 7.60825
+    }
+  ]
+}

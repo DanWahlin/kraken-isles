@@ -1,8 +1,9 @@
 import { smoothstep } from '../../../util/math';
 import type { FloraRules } from '../../flora/types';
+import { frameBounds } from '../frame';
 import { SUNSPIRE_FLORA_PALETTE } from './flora-palette';
 import { sunspireOasis, sunspireTrodden, sunspireWater } from './height';
-import { DUNES, toFrame, toWorld, WATER } from './layout';
+import { FRAME_KIT, DUNES, toFrame, WATER, toWorld } from './layout';
 import { inBuilt } from './town';
 
 const FRAME = { u: 0, v: 0 };
@@ -20,7 +21,7 @@ const fallFoot = toWorld(WATER.pool.u + 6, WATER.pool.v + 3);
  */
 export const SUNSPIRE_FLORA: FloraRules = {
   palette: SUNSPIRE_FLORA_PALETTE,
-  bounds: { ...boundsOf(-260, 260, -220, 180) },
+  bounds: frameBounds(FRAME_KIT, -260, 260, -220, 180),
   flowersPerCell: 40,
   bladeDensity: 0.35,
   habitatFill: { meadow: 0.14, forest: 0.3, bank: 0.55, spray: 0.7, dune: 0.22, village: 0.12 },
@@ -62,14 +63,3 @@ export const SUNSPIRE_FLORA: FloraRules = {
     return out;
   },
 };
-
-/** The world box of a frame box (the flora's cells are world-aligned). */
-function boundsOf(u0: number, u1: number, v0: number, v1: number) {
-  const pts = [toWorld(u0, v0), toWorld(u1, v0), toWorld(u0, v1), toWorld(u1, v1)];
-  return {
-    minX: Math.min(...pts.map((p) => p.x)),
-    maxX: Math.max(...pts.map((p) => p.x)),
-    minZ: Math.min(...pts.map((p) => p.z)),
-    maxZ: Math.max(...pts.map((p) => p.z)),
-  };
-}

@@ -1,0 +1,72 @@
+{
+  "id": "tw.lyra.01",
+  "speaker": "Lyra",
+  "text": "Captain! A producer doesn’t replay the same drum pattern by hand every night.",
+  "words": [
+    {
+      "word": "Captain",
+      "start": 0,
+      "end": 0.72
+    },
+    {
+      "word": "A",
+      "start": 0.72,
+      "end": 1.004
+    },
+    {
+      "word": "producer",
+      "start": 1.004,
+      "end": 1.387
+    },
+    {
+      "word": "doesn’t",
+      "start": 1.387,
+      "end": 1.657
+    },
+    {
+      "word": "replay",
+      "start": 1.657,
+      "end": 2.02
+    },
+    {
+      "word": "the",
+      "start": 2.02,
+      "end": 2.144
+    },
+    {
+      "word": "same",
+      "start": 2.144,
+      "end": 2.464
+    },
+    {
+      "word": "drum",
+      "start": 2.464,
+      "end": 2.76
+    },
+    {
+      "word": "pattern",
+      "start": 2.76,
+      "end": 3.093
+    },
+    {
+      "word": "by",
+      "start": 3.093,
+      "end": 3.28
+    },
+    {
+      "word": "hand",
+      "start": 3.28,
+      "end": 3.667
+    },
+    {
+      "word": "every",
+      "start": 3.667,
+      "end": 4.067
+    },
+    {
+      "word": "night",
+      "start": 4.067,
+      "end": 4.317
+    }
+  ]
+}

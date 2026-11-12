@@ -13,58 +13,24 @@
  * town's side). Its origin is the island's centre.
  */
 
-/** A point in the island frame. */
-export interface Uv {
-  readonly u: number;
-  readonly v: number;
-}
+import {
+  COVE_BERTH,
+  COVE_DEPARTURE,
+  COVE_LANDING,
+  COVE_LANE,
+  COVE_QUAY,
+  COVE_STATIONS,
+} from '../cove-harbour';
+import { islandFrame } from '../frame';
 
-/** A point of a path in the island frame, with its height. */
-export interface Uvy extends Uv {
-  readonly y: number;
-}
-
-const DEG = Math.PI / 180;
-const AXIS_BEARING = 143;
+export type { Uv, Uvy } from '../frame';
 
 /** The island's middle (world). */
 const CENTER = { x: 6565, z: 3380 } as const;
 
-/** The island frame: its origin (the centre) and its two axes (unit vectors in x, z). */
-export const FRAME = {
-  origin: CENTER,
-  axis: { x: Math.sin(AXIS_BEARING * DEG), z: -Math.cos(AXIS_BEARING * DEG) },
-  across: { x: Math.sin((AXIS_BEARING - 90) * DEG), z: -Math.cos((AXIS_BEARING - 90) * DEG) },
-} as const;
-
-/** World (x, z) to the island frame (u, v), written into `out`. */
-export function toFrame(x: number, z: number, out: { u: number; v: number }): { u: number; v: number } {
-  const dx = x - FRAME.origin.x;
-  const dz = z - FRAME.origin.z;
-  out.u = dx * FRAME.axis.x + dz * FRAME.axis.z;
-  out.v = dx * FRAME.across.x + dz * FRAME.across.z;
-  return out;
-}
-
-/** The island frame (u, v) to world (x, z). */
-export function toWorld(u: number, v: number): { x: number; z: number } {
-  return {
-    x: FRAME.origin.x + u * FRAME.axis.x + v * FRAME.across.x,
-    z: FRAME.origin.z + u * FRAME.axis.z + v * FRAME.across.z,
-  };
-}
-
-/** The heading of frame direction (du, dv) (a heading h faces (sin h, cos h)). */
-export function headingUv(du: number, dv: number): number {
-  const x = du * FRAME.axis.x + dv * FRAME.across.x;
-  const z = du * FRAME.axis.z + dv * FRAME.across.z;
-  return Math.atan2(x, z);
-}
-
-/** The heading from frame point `a` toward frame point `b`. */
-export function headingBetween(a: Uv, b: Uv): number {
-  return headingUv(b.u - a.u, b.v - a.v);
-}
+/** The island frame: `u` along bearing 143°, `v` along bearing 53°, round the island's middle. */
+export const FRAME_KIT = islandFrame(CENTER, 143);
+export const { FRAME, toFrame, toWorld, headingUv, headingBetween } = FRAME_KIT;
 
 export const SUNSPIRE = {
   /** The island's middle (for distances and the chart). */
@@ -108,36 +74,13 @@ export const SUNSPIRE = {
   chart: { minX: 6070, maxX: 7040, minZ: 2880, maxZ: 3880, cell: 12, scale: 1 / 10000 },
 } as const;
 
-/** The quay on the cove's north-east shore: its face along `v`, from `u0` to `u1`, its deck at `top`. */
-export const QUAY = { v: 12.5, u0: -235, u1: -150, top: 2.2 } as const;
-
-/** The berth alongside the quay: port side to its face, bow toward the cove's head. */
-export const BERTH = { u: -196, v: 8 } as const;
-export const DEPARTURE = { u: -212, v: 2 } as const;
-export const LANDING = { u: -190, v: 16 } as const;
-
-/** The lane in from the open sea: lane start, the mouth, the turning room. */
-export const LANE = {
-  start: { u: -560, v: -30 },
-  mouth: { u: -430, v: -30 },
-  turning: { u: -300, v: -33, r: 40, depth: 4.5 },
-  halfWidth: 30,
-  floor: -6,
-} as const;
-
-/**
- * The cove, cut in from the north-west: stations along u, each with its two shores (v) at the
- * waterline and its floor in the middle. Its south-west shore is a wide crescent beach.
- */
-export const COVE = [
-  { u: -560, vMin: -170, vMax: 40, floor: -18 },
-  { u: -460, vMin: -160, vMax: 26, floor: -14 },
-  { u: -330, vMin: -150, vMax: 24, floor: -11 },
-  { u: -255, vMin: -128, vMax: 15, floor: -9 },
-  { u: -175, vMin: -92, vMax: 12.5, floor: -7.5 },
-  { u: -140, vMin: -58, vMax: 10, floor: -4 },
-  { u: -122, vMin: -30, vMax: 4, floor: -1.5 },
-] as const;
+/** The harbour is the shared cove (`cove-harbour.ts`): the quay, the berth, the lane and the cove itself. */
+export const QUAY = COVE_QUAY;
+export const BERTH = COVE_BERTH;
+export const DEPARTURE = COVE_DEPARTURE;
+export const LANDING = COVE_LANDING;
+export const LANE = COVE_LANE;
+export const COVE = COVE_STATIONS;
 
 /** The harbour town (adobe houses on terraced pads between the quay and the square). */
 export const TOWN = { u0: -205, u1: -70, v0: 20, v1: 100 } as const;

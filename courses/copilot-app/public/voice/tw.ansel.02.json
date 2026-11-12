@@ -1,0 +1,112 @@
+{
+  "id": "tw.ansel.02",
+  "speaker": "Ansel",
+  "text": "The Pull requests view lists them. The report adds the reasons: the checks, the comments, and the next action for each.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.0515409,
+      "end": 0.206166
+    },
+    {
+      "word": "Pull",
+      "start": 0.206166,
+      "end": 0.451041
+    },
+    {
+      "word": "requests",
+      "start": 0.451041,
+      "end": 0.9665
+    },
+    {
+      "word": "view",
+      "start": 0.9665,
+      "end": 1.185583
+    },
+    {
+      "word": "lists",
+      "start": 1.185583,
+      "end": 1.520625
+    },
+    {
+      "word": "them",
+      "start": 1.520625,
+      "end": 2.719083
+    },
+    {
+      "word": "The",
+      "start": 2.719083,
+      "end": 2.873708
+    },
+    {
+      "word": "report",
+      "start": 2.873708,
+      "end": 3.273208
+    },
+    {
+      "word": "adds",
+      "start": 3.273208,
+      "end": 3.530916
+    },
+    {
+      "word": "the",
+      "start": 3.530916,
+      "end": 3.621125
+    },
+    {
+      "word": "reasons",
+      "start": 3.621125,
+      "end": 4.329916
+    },
+    {
+      "word": "the",
+      "start": 4.329916,
+      "end": 4.420083
+    },
+    {
+      "word": "checks",
+      "start": 4.420083,
+      "end": 5
+    },
+    {
+      "word": "the",
+      "start": 5,
+      "end": 5.128875
+    },
+    {
+      "word": "comments",
+      "start": 5.128875,
+      "end": 5.786083
+    },
+    {
+      "word": "and",
+      "start": 5.786083,
+      "end": 5.927833
+    },
+    {
+      "word": "the",
+      "start": 5.927833,
+      "end": 5.99225
+    },
+    {
+      "word": "next",
+      "start": 5.99225,
+      "end": 6.327333
+    },
+    {
+      "word": "action",
+      "start": 6.327333,
+      "end": 6.713916
+    },
+    {
+      "word": "for",
+      "start": 6.713916,
+      "end": 6.920083
+    },
+    {
+      "word": "each",
+      "start": 6.920083,
+      "end": 7.170083
+    }
+  ]
+}

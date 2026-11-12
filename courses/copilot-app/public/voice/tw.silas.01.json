@@ -1,0 +1,137 @@
+{
+  "id": "tw.silas.01",
+  "speaker": "Silas",
+  "text": "Silas Thorne, Captain. I’ve kept this lamp since before the wheel had a name. You’re the last ship I expected, and the one I hoped for.",
+  "words": [
+    {
+      "word": "Silas",
+      "start": 0.053208,
+      "end": 0.638291
+    },
+    {
+      "word": "Thorne",
+      "start": 0.638291,
+      "end": 1.303208
+    },
+    {
+      "word": "Captain",
+      "start": 1.303208,
+      "end": 2.898916
+    },
+    {
+      "word": "I’ve",
+      "start": 2.898916,
+      "end": 3.231375
+    },
+    {
+      "word": "kept",
+      "start": 3.231375,
+      "end": 3.53725
+    },
+    {
+      "word": "this",
+      "start": 3.53725,
+      "end": 3.75
+    },
+    {
+      "word": "lamp",
+      "start": 3.75,
+      "end": 4.082458
+    },
+    {
+      "word": "since",
+      "start": 4.082458,
+      "end": 4.348416
+    },
+    {
+      "word": "before",
+      "start": 4.348416,
+      "end": 4.734041
+    },
+    {
+      "word": "the",
+      "start": 4.734041,
+      "end": 4.853708
+    },
+    {
+      "word": "wheel",
+      "start": 4.853708,
+      "end": 5.146291
+    },
+    {
+      "word": "had",
+      "start": 5.146291,
+      "end": 5.372333
+    },
+    {
+      "word": "a",
+      "start": 5.372333,
+      "end": 5.425541
+    },
+    {
+      "word": "name",
+      "start": 5.425541,
+      "end": 6.875
+    },
+    {
+      "word": "You’re",
+      "start": 6.875,
+      "end": 7.15425
+    },
+    {
+      "word": "the",
+      "start": 7.15425,
+      "end": 7.260625
+    },
+    {
+      "word": "last",
+      "start": 7.260625,
+      "end": 7.672875
+    },
+    {
+      "word": "ship",
+      "start": 7.672875,
+      "end": 7.965416
+    },
+    {
+      "word": "I",
+      "start": 7.965416,
+      "end": 8.085125
+    },
+    {
+      "word": "expected",
+      "start": 8.085125,
+      "end": 8.936166
+    },
+    {
+      "word": "and",
+      "start": 8.936166,
+      "end": 9.109041
+    },
+    {
+      "word": "the",
+      "start": 9.109041,
+      "end": 9.202125
+    },
+    {
+      "word": "one",
+      "start": 9.202125,
+      "end": 9.521291
+    },
+    {
+      "word": "I",
+      "start": 9.521291,
+      "end": 9.627666
+    },
+    {
+      "word": "hoped",
+      "start": 9.627666,
+      "end": 9.946791
+    },
+    {
+      "word": "for",
+      "start": 9.946791,
+      "end": 10.196791
+    }
+  ]
+}

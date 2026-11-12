@@ -1,5 +1,6 @@
 // Shared plumbing for the Node tools: flag parsing, launching Chrome on the real GPU, and collecting a
 // page's console errors so each script can report them in its JSON output.
+import { createServer } from 'node:http';
 import { chromium } from '@playwright/test';
 
 /**
@@ -57,4 +58,49 @@ export async function waitForTitle(page, timeout = 120_000) {
   const reachedAt = Date.now();
   await page.waitForFunction(() => !document.getElementById('loading'), null, { timeout: 15_000 });
   return reachedAt;
+}
+
+/**
+ * Shows the page live in a web page: open `http://localhost:<port>` to watch a script play the game
+ * (the page's frames by CDP screencast, sent as motion JPEG; no sound). Returns the stop function.
+ */
+export async function watchPage(page, port = 5390) {
+  const cdp = await page.context().newCDPSession(page);
+  const viewers = new Set();
+  let last = null;
+  const send = (res, jpeg) =>
+    res.write(`--frame\r\nContent-Type: image/jpeg\r\nContent-Length: ${jpeg.length}\r\n\r\n`) &&
+    res.write(jpeg) &&
+    res.write('\r\n');
+  cdp.on('Page.screencastFrame', ({ data, sessionId }) => {
+    void cdp.send('Page.screencastFrameAck', { sessionId }).catch(() => {});
+    last = Buffer.from(data, 'base64');
+    for (const res of viewers) send(res, last);
+  });
+  await cdp.send('Page.startScreencast', { format: 'jpeg', quality: 72, maxWidth: 1280, maxHeight: 720 });
+  const server = createServer((req, res) => {
+    if (req.url !== '/stream') {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.end(
+        '<!doctype html><title>Kraken Isles · live play-through</title>' +
+          '<body style="margin:0;background:#06121b;display:grid;place-items:center;height:100vh">' +
+          '<img src="/stream" alt="The game, as the script plays it" style="max-width:100vw;max-height:100vh">',
+      );
+      return;
+    }
+    res.writeHead(200, {
+      'Content-Type': 'multipart/x-mixed-replace; boundary=frame',
+      'Cache-Control': 'no-store',
+    });
+    viewers.add(res);
+    if (last) send(res, last);
+    req.on('close', () => viewers.delete(res));
+  });
+  await new Promise((done) => server.listen(port, '127.0.0.1', done));
+  return () => {
+    for (const res of viewers) res.end();
+    server.close();
+    server.closeAllConnections();
+    void cdp.send('Page.stopScreencast').catch(() => {});
+  };
 }

@@ -1,0 +1,67 @@
+{
+  "id": "iw.doran.quill",
+  "speaker": "Doran",
+  "text": "One field and one button. Paste the proposal, and select Generate plan.",
+  "words": [
+    {
+      "word": "One",
+      "start": 0.052083,
+      "end": 0.403666
+    },
+    {
+      "word": "field",
+      "start": 0.403666,
+      "end": 0.833333
+    },
+    {
+      "word": "and",
+      "start": 0.833333,
+      "end": 1.028666
+    },
+    {
+      "word": "one",
+      "start": 1.028666,
+      "end": 1.276041
+    },
+    {
+      "word": "button",
+      "start": 1.276041,
+      "end": 2.682291
+    },
+    {
+      "word": "Paste",
+      "start": 2.682291,
+      "end": 3.007833
+    },
+    {
+      "word": "the",
+      "start": 3.007833,
+      "end": 3.085958
+    },
+    {
+      "word": "proposal",
+      "start": 3.085958,
+      "end": 3.919291
+    },
+    {
+      "word": "and",
+      "start": 3.919291,
+      "end": 4.075541
+    },
+    {
+      "word": "select",
+      "start": 4.075541,
+      "end": 4.492208
+    },
+    {
+      "word": "Generate",
+      "start": 4.492208,
+      "end": 4.947916
+    },
+    {
+      "word": "plan",
+      "start": 4.947916,
+      "end": 5.197916
+    }
+  ]
+}

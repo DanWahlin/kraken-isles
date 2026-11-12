@@ -1,3 +1,4 @@
+import type { IslandFrame } from './frame';
 import type { BufferGeometry } from 'three/webgpu';
 import type { BoxCollider } from '../../game/collision';
 import type { CircleObstacle } from '../contracts';
@@ -13,16 +14,10 @@ import { lineDeck, type WalkDeck } from '../village/walk-decks';
  * boxes and points in the frame, railed stairs, low walls, lamp posts, doors and windows, and what the
  * builders hand the game (`IslandOut`). Every piece goes into the village kit's material buckets (no
  * new shader). An island makes its set once with `frameBuilder` (its frame, its height, its paints)
- * and its town, towers and yards share it. Guildcrest's `build.ts` is the older, island-bound copy
- * these came from.
+ * and its town, towers and yards share it.
  */
 
-/** An island's frame: its origin (world) and its two axes (unit vectors in x, z). */
-export interface IslandFrame {
-  readonly origin: { readonly x: number; readonly z: number };
-  readonly axis: { readonly x: number; readonly z: number };
-  readonly across: { readonly x: number; readonly z: number };
-}
+export type { IslandFrame } from './frame';
 
 /** What the builders hand gameplay: colliders, camera boxes, ship obstacles, walk decks and lamps. */
 export interface IslandOut<S extends string = string> {

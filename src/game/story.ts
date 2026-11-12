@@ -71,6 +71,8 @@ export const STORY_CONDITIONS = {
   keelhaven: ['firstVisit', 'dockKitted', 'searchHullDown', 'prHullsDown', 'sealed'],
   guildcrest: ['firstVisit', 'bookCopied', 'journeymanHired', 'sealed'],
   sunspire: ['firstVisit', 'beamLanded', 'crateOpened', 'sealed'],
+  inkwell: ['firstVisit', 'boardBorrowed', 'slateShared', 'chartInked', 'sealed'],
+  tidewheel: ['firstVisit', 'reportRan', 'reportScheduled', 'sealed'],
 } as const;
 
 /**
@@ -85,6 +87,8 @@ export const STORY_EVENTS = {
   keelhaven: [],
   guildcrest: [],
   sunspire: [],
+  inkwell: [],
+  tidewheel: [],
 } as const satisfies Readonly<Record<StoryIsland, readonly string[]>>;
 
 export type StoryIsland = keyof typeof STORY_CONDITIONS;

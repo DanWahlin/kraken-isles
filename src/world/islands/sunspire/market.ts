@@ -1,14 +1,8 @@
-import {
-  addMarketBooth,
-  BOOTH_EXTENT,
-  BOOTH_TOP,
-  type BoothColliders,
-  type BoothStyle,
-} from '../../market-stall/booth';
-import type { StallPlace } from '../../market-stall/layout';
-import { box, type Buckets } from '../../village/pieces';
+import type { BoothStyle } from '../../market-stall/booth';
+import type { Buckets } from '../../village/pieces';
+import { addQuayBooth, quayBooth, reedRoof, type QuayBooth } from '../quay-booth';
 import { SS_PAINT, type SsOut } from './build';
-import { headingBetween, LANDING, QUAY, toWorld } from './layout';
+import { FRAME_KIT } from './layout';
 import { BOOTH_UV } from './town';
 
 /**
@@ -16,13 +10,7 @@ import { BOOTH_UV } from './town';
  * landing, its front to the landing. The town's adobe and red stone, a saffron-and-cream awning, a
  * flat reed roof, spice and cloth in its shelf tints.
  */
-const booth = toWorld(BOOTH_UV.u, BOOTH_UV.v);
-export const SUNSPIRE_BOOTH: StallPlace & { y: number } = {
-  x: booth.x,
-  z: booth.z,
-  y: QUAY.top + 0.03,
-  heading: headingBetween(BOOTH_UV, LANDING),
-};
+export const SUNSPIRE_BOOTH: QuayBooth = quayBooth(FRAME_KIT, BOOTH_UV);
 
 const STYLE: BoothStyle = {
   frame: 0x6b4a30,
@@ -44,46 +32,5 @@ const STYLE: BoothStyle = {
 
 /** Builds Yusuf's booth into the town's buckets (world space), with its colliders and camera boxes. */
 export function addSunspireMarket(buckets: Buckets, out: SsOut, lite: boolean): void {
-  const PLACE = SUNSPIRE_BOOTH;
-  const c: BoothColliders = { boxes: [], camera: [] };
-  addMarketBooth(buckets, c, PLACE, PLACE.y, STYLE, lite, {
-    roof(l) {
-      // A flat reed roof over the booth, in its own frame.
-      const e = BOOTH_EXTENT;
-      box(
-        l as unknown as Buckets,
-        'thatch',
-        (e.x0 + e.x1) / 2,
-        BOOTH_TOP + 0.06,
-        (e.z0 + e.z1) / 2,
-        e.x1 - e.x0 + 1,
-        0.16,
-        e.z1 - e.z0 + 1,
-        0,
-        SS_PAINT.reed,
-      );
-    },
-  });
-  for (const b of c.boxes)
-    out.colliders.push({
-      x: b.x,
-      z: b.z,
-      hx: b.hx,
-      hz: b.hz,
-      rot: b.rot ?? 0,
-      y0: PLACE.y - 0.5,
-      y1: PLACE.y + (b.height ?? 2),
-      height: b.height,
-    });
-  out.cameraBoxes.push(
-    ...c.camera.map((b) => ({
-      x: b.x,
-      z: b.z,
-      hx: b.hx,
-      hz: b.hz,
-      rot: b.rot ?? 0,
-      y0: b.y0 ?? PLACE.y,
-      y1: b.y1 ?? PLACE.y + 4,
-    })),
-  );
+  addQuayBooth(buckets, out, SUNSPIRE_BOOTH, STYLE, lite, reedRoof(SS_PAINT.reed));
 }

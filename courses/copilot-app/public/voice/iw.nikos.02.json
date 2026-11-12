@@ -1,0 +1,97 @@
+{
+  "id": "iw.nikos.02",
+  "speaker": "Nikos",
+  "text": "Plan, Terminal, Browser and Changes. Those panels come with every session. You used them on the way here.",
+  "words": [
+    {
+      "word": "Plan",
+      "start": 0.05,
+      "end": 0.942875
+    },
+    {
+      "word": "Terminal",
+      "start": 0.942875,
+      "end": 1.720916
+    },
+    {
+      "word": "Browser",
+      "start": 1.720916,
+      "end": 2.345916
+    },
+    {
+      "word": "and",
+      "start": 2.345916,
+      "end": 2.499
+    },
+    {
+      "word": "Changes",
+      "start": 2.499,
+      "end": 3.519375
+    },
+    {
+      "word": "Those",
+      "start": 3.519375,
+      "end": 3.914791
+    },
+    {
+      "word": "panels",
+      "start": 3.914791,
+      "end": 4.361208
+    },
+    {
+      "word": "come",
+      "start": 4.361208,
+      "end": 4.616333
+    },
+    {
+      "word": "with",
+      "start": 4.616333,
+      "end": 4.871416
+    },
+    {
+      "word": "every",
+      "start": 4.871416,
+      "end": 5.164791
+    },
+    {
+      "word": "session",
+      "start": 5.164791,
+      "end": 6.070416
+    },
+    {
+      "word": "You",
+      "start": 6.070416,
+      "end": 6.33825
+    },
+    {
+      "word": "used",
+      "start": 6.33825,
+      "end": 6.708166
+    },
+    {
+      "word": "them",
+      "start": 6.708166,
+      "end": 6.91225
+    },
+    {
+      "word": "on",
+      "start": 6.91225,
+      "end": 7.078041
+    },
+    {
+      "word": "the",
+      "start": 7.078041,
+      "end": 7.141833
+    },
+    {
+      "word": "way",
+      "start": 7.141833,
+      "end": 7.358666
+    },
+    {
+      "word": "here",
+      "start": 7.358666,
+      "end": 7.608666
+    }
+  ]
+}

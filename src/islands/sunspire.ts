@@ -82,9 +82,9 @@ export const SUNSPIRE_ISLAND: IslandEntry = {
     pack: 'sunspire/chart',
     terrain: () => import('../world/islands/sunspire/chart').then((m) => m.SUNSPIRE_CHART_TERRAIN),
   },
-  // Until Dan's Suno track for the island arrives (docs/specs/PHASE-3-islands-05-07.md §8), the open
-  // sea's theme plays ashore.
-  theme: { file: 'music_bards_tale', lufs: -13.7 },
+  // "Sunspire Crossing", made for Sunspire Sands by Dan with Suno: desert caravan folk in D Phrygian
+  // dominant (docs/specs/PHASE-3-islands-05-07.md §8).
+  theme: { file: 'music_sunspire_crossing', lufs: -15.5 },
   terrainRegions: sunspireTerrainRegions,
   floraPalette: SUNSPIRE_FLORA_PALETTE,
   puzzles: { 'mirror-beams': 'circuit', 'sealed-crate': 'circuit', 'gear-song': 'ceremony' },

@@ -38,15 +38,62 @@ Build the world package from the shared builders, so a new island adds data and 
 | Mist | `src/world/mist/mist-cards.ts` | Valley mist and fall spray: one look for every island. |
 | Plants | `addIslandPlants(…, look)` (`src/world/island-parts.ts`), `PlantPatchLook` | The island's plants as a patch of the world's vegetation, with an optional look (bark simplify, impostor handoff, tints). |
 | Rocks | `rockAssets()` (`src/world/terrain/rock-assets.ts`, the rock pack) with `createRockMaterial`, instanced | Boulders and stream stones (Thousand-Bough's and Keelhaven's `rocks.ts`). |
-| Frame builders | `frameBuilder(FRAME, heightAt, paint)` (`src/world/islands/frame-build.ts`) | Everything a town is laid out with in the island's own frame (u, v): boxes, spans, solids, rails, low walls, flights of steps, lamp posts, hung lanterns, doors, windows, signs. `paint.post` gives timber lamp posts. Sunspire's `build.ts` shows its use. |
-| Lettering | `addIslandLettering(island, signs, list)` (`src/world/islands/lettering.ts`) | The island's painted signs from the pack's words. A sign with `show` stays hidden until the story shows it, and a `hang` one unrolls. |
+| Frame builders | `frameBuilder(FRAME, heightAt, paint)` (`src/world/islands/frame-build.ts`) | Everything a town is laid out with in the island's own frame (u, v): boxes, spans, solids, rails, low walls, flights of steps, lamp posts, hung lanterns, doors, windows, signs. `paint.post` gives timber lamp posts. Every island from Guildcrest on makes its set once in its `build.ts`. |
+| Lettering | `addIslandLettering(island, signs, list)` (`src/world/islands/lettering.ts`) | The island's painted signs from the pack's words. A sign with `show` stays hidden until the story shows it, and a `hang` one unrolls. `raiseIslandWorks` calls it for you. |
 | Quests | `createIslandQuests(island, name)` (`src/game/island-quests.ts`) | The island's quest helpers (welcome, tracker, targets, scripts) from the pack, with no code of its own. |
 | Coast for the sea chart | `npx tsx tools/islands/trace-coast.ts <id>` | Prints the island's coast polygons and footprint from its height function, for `waypoints.ts`. |
+
+### A cove island from the shared modules
+
+Guildcrest, Sunspire Sands, Inkwell Bluffs and Tidewheel Caldera stand on one set of modules. A new
+island on the shared cove harbour writes its own layout, art and words, and none of this again:
+
+| Module | What it gives |
+| --- | --- |
+| `src/world/islands/frame.ts` | `islandFrame(origin, bearing)`: the island's frame (`toWorld`, `toFrame`, headings) and `frameBounds`. |
+| `cove-harbour.ts` | The cove harbour's fixed numbers (quay, berth, landing, lane, turning room) and `coveHarbor(frame, look)` for the registry entry. An island may give its own cove stations (Tidewheel's breach and bay). |
+| `height-kit.ts` | The pieces of a height function: `coastDistance`, `coastProfile`, `table`, `pad`, `pathPads`, `coveCarver` (its `hold` lets high ground stand at the water), `quayPad`, `edgeApron`, `heightNormal`, `normalizeMasks`. |
+| `anchor-kit.ts` | `anchorKit(frame, heightAt)` (`anchor`, `seated`, `camera`, `spotAnchor`) and `stationSpot` for a circuit's stations. |
+| `frame-props.ts` | `frameProps(B, paints, cloths)`: awnings, pennants, jars, baskets, barrels, crates, a hand cart, `pave` (a paved place with its walk deck) and `stationLamps` (a lamp post at every station). |
+| `block-house.ts` | `blockHouseBuilder(B, awning, style)`: the flat-roofed house, with the island's style (paints, parapet, windows, and hooks for roof beams, a dome, a lantern). |
+| `cove-quay.ts`, `quay-booth.ts` | `buildCoveQuay` (the stone quay with fenders, rail, lamp and water steps) and the Model Market's booth on it (`quayBooth`, `addQuayBooth`, `reedRoof`). |
+| `terrace-town.ts` | `paveTerraces` (a town's terraces with stair wells) and `stairFlights` (railed steps along a path). |
+| `island-works.ts` | `raiseIslandWorks`: the course board, the lettering, the town's chunks and LODs, the lamp set, `show`/`showing`/`update`/`frame`/`dispose`. Also `runSliced`, `flatPaint`, `repaint` and `moveBright`. |
+| `src/game/frame-island-content.ts` | `createFrameIslandContent(host, plan)`: the cast, chests, bottles, walk surfaces, the choice card and the test hooks. `playBandSong` is Lyra's ceremony; `lookCue` is a camera cue. |
+| `src/game/island-circuits.ts` | `createIslandCircuits(host, card, set)`: the stations' spots and shots, the puzzles' hosting, the cue, what the save shows, and the Seal's bookkeeping. The island gives `station`, `dial`, `shows` and `playSeal`. |
+| `tools/bake/bake-frame-island.ts` | One row bakes the island's terrain and chart packs. |
+| `src/dev/frame-islands.ts` | One row puts the island in the terrain viewer (`devpages/terrain.html?pack=<id>`), with its views and what the URL can set. |
+| `plate-geometry.ts` | `plateGeometry(outline, thick)` and `flatTriangles()`: a kite, a feather, a gear cut from plate. Use these, not three's `ExtrudeGeometry`: its shape triangulation adds 6 KB to the engine's chunk, which has a budget (`tools/budgets.json`). |
+| `tools/lib/island-play.mjs` | `islandPlay(cfg)`: the play-through engine. An island's test is its facts and its stops (`arrive`, `stop`, `lap`, `trialAndSeal`, `assignment`, `collect`, `finish`). `--watch` shows the run live at `http://localhost:5390`. |
+
+Prove a refactor of these with data, not by eye: the terrain packs' hashes must not change
+(`npx tsx tools/bake/bake-frame-island.ts`), and each island's built geometry must hash the same
+before and after (bucket by bucket: positions, colours and uvs).
 
 Give every story state something to see. Sunspire's first play-through found that its three `show`
 states had no sign or mesh at all. A sign with `show`, or a mesh the world moves in `show()`, makes
 the state real; mark any mesh that starts hidden `userData.prewarm = true`, or its first showing
 builds a shader in play.
+
+Two things Tidewheel's build found (2026-11-11):
+
+- **The kit's metal reads brown under a low sun.** Brass, bronze and green copper are painted metal
+  there: `moveBright(buckets.metal, buckets.cloth, 0.15)` moves the bright pieces to the cloth bucket,
+  whose paint shows as it is. Iron stays metal.
+- **A pad or a path far above the ground needs a wall's bank.** `pad(…, fill)` and `pathPads(…, fill)`
+  default to a gentle bank, which under a ledge 30 m up is a 30 m mound. Tidewheel's ledges use 3.3.
+
+Three things Inkwell's build found (2026-11-11):
+
+- **The kit's plaster is tan and its paving brown.** A piece painted white comes out sand colour. Inkwell
+  multiplies its plaster, paving and stone paint once, before the meshes are made (`repaint` in
+  `inkwell/index.ts`: the plaster's gain is one over its texture's mean colour, as `tintFor` does).
+- **An island with many lettered boards overflows the sign atlas** (8 192 px). Give each sign a
+  `pixels` width (Inkwell: 300 px a metre, 288 to 640) before `addIslandLettering`.
+- **A course image is pinned only by a sync.** After you write a chapter file that shows an image, run
+  the sync again at the lock's own commit so the lock marks it `pinned` (offline:
+  `git archive <sha> | tar -x -C <dir>` in a clone of the course, then
+  `node tools/course/sync.mjs --ref=<sha> --from=<dir>`). `refs.test.ts` fails until then.
 
 Keelhaven's world (`src/world/islands/keelhaven/index.ts`, `createKeelhavenWorldAsync`) is built but
 not yet in the game: it's in `ISLANDS_IN_BUILD` only, and the terrain dev page shows it
@@ -198,8 +245,9 @@ add the registry line.
   `flickertest`, `starfishtest` and `audiotest`.
 - Give the island four `flicker` views from the air at its tour's distance, one from each side
   (Sunspire's `ss-fly-n/e/s/w`): the far shore and the far terrain are where a fly-by flickers.
-- Write its play-through (`tools/<id>test.mjs`, from `tools/sunspiretest.mjs`): every stop by real
-  input, a wrong pick first at each choice, the Trial failed once, every chest, bottle and starfish.
+- Write its play-through (`tools/<id>test.mjs`, on `tools/lib/island-play.mjs`, as
+  `tools/inkwelltest.mjs` does): every stop by real input, a wrong pick first at each choice, the Trial
+  failed once, every chest, bottle and starfish.
 - Run `node tools/casttest.mjs --island=<id>` and look at both contact sheets: every figure, and every
   pair of feet or seat. A market keeper stands on the booth's boards (`--raised=<npc>:0.33`).
 - Run `node tools/wayfindtest.mjs --only=legs,reach --islands=<id> --reach=<id>` before anything else
@@ -207,6 +255,10 @@ add the registry line.
   chest behind a wall and a bottle on the sea floor.
 - Scripted routes (the audio route, the wayfinding story path) name the islands in voyage order. Add
   the new leg.
+- The content check holds a registered island's voice lines to their audio: drop `"pending"`, give each
+  new speaker a `voice/cast.json` entry, and run `tools/voice/generate.ts --only=<ids>` before the
+  check can pass. Each chapter adds about 5.5 KB to the pack's core part (`tools/budgets.json`), and its
+  own part needs a budget row.
 
 ## 8. Check your work
 

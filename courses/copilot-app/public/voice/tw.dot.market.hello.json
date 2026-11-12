@@ -1,0 +1,92 @@
+{
+  "id": "tw.dot.market.hello",
+  "speaker": "Dot",
+  "text": "Welcome, Captain! Dot's Model Market. Hire a model that fits the job; bigger ones cost more starfish.",
+  "words": [
+    {
+      "word": "Welcome",
+      "start": 0.049,
+      "end": 0.919125
+    },
+    {
+      "word": "Captain",
+      "start": 0.919125,
+      "end": 2.365208
+    },
+    {
+      "word": "Dot's",
+      "start": 2.365208,
+      "end": 2.671583
+    },
+    {
+      "word": "Model",
+      "start": 2.671583,
+      "end": 2.990208
+    },
+    {
+      "word": "Market",
+      "start": 2.990208,
+      "end": 4.497541
+    },
+    {
+      "word": "Hire",
+      "start": 4.497541,
+      "end": 4.816166
+    },
+    {
+      "word": "a",
+      "start": 4.816166,
+      "end": 4.877458
+    },
+    {
+      "word": "model",
+      "start": 4.877458,
+      "end": 5.232833
+    },
+    {
+      "word": "that",
+      "start": 5.232833,
+      "end": 5.404416
+    },
+    {
+      "word": "fits",
+      "start": 5.404416,
+      "end": 5.735291
+    },
+    {
+      "word": "the",
+      "start": 5.735291,
+      "end": 5.857833
+    },
+    {
+      "word": "job",
+      "start": 5.857833,
+      "end": 6.593125
+    },
+    {
+      "word": "bigger",
+      "start": 6.593125,
+      "end": 6.83825
+    },
+    {
+      "word": "ones",
+      "start": 6.83825,
+      "end": 7.156875
+    },
+    {
+      "word": "cost",
+      "start": 7.156875,
+      "end": 7.4755
+    },
+    {
+      "word": "more",
+      "start": 7.4755,
+      "end": 7.683833
+    },
+    {
+      "word": "starfish",
+      "start": 7.683833,
+      "end": 7.933833
+    }
+  ]
+}

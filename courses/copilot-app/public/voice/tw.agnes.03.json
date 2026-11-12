@@ -1,0 +1,82 @@
+{
+  "id": "tw.agnes.03",
+  "speaker": "Agnes",
+  "text": "Start manual, and keep it local. A manual automation runs only when you start it.",
+  "words": [
+    {
+      "word": "Start",
+      "start": 0.0515409,
+      "end": 0.489708
+    },
+    {
+      "word": "manual",
+      "start": 0.489708,
+      "end": 1.25
+    },
+    {
+      "word": "and",
+      "start": 1.25,
+      "end": 1.39175
+    },
+    {
+      "word": "keep",
+      "start": 1.39175,
+      "end": 1.67525
+    },
+    {
+      "word": "it",
+      "start": 1.67525,
+      "end": 1.79125
+    },
+    {
+      "word": "local",
+      "start": 1.79125,
+      "end": 3.195875
+    },
+    {
+      "word": "A",
+      "start": 3.195875,
+      "end": 3.286083
+    },
+    {
+      "word": "manual",
+      "start": 3.286083,
+      "end": 3.698458
+    },
+    {
+      "word": "automation",
+      "start": 3.698458,
+      "end": 4.407208
+    },
+    {
+      "word": "runs",
+      "start": 4.407208,
+      "end": 4.755166
+    },
+    {
+      "word": "only",
+      "start": 4.755166,
+      "end": 5.025791
+    },
+    {
+      "word": "when",
+      "start": 5.025791,
+      "end": 5.193291
+    },
+    {
+      "word": "you",
+      "start": 5.193291,
+      "end": 5.2835
+    },
+    {
+      "word": "start",
+      "start": 5.2835,
+      "end": 5.683
+    },
+    {
+      "word": "it",
+      "start": 5.683,
+      "end": 5.933
+    }
+  ]
+}

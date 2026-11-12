@@ -1,0 +1,62 @@
+{
+  "id": "tw.greta.tide",
+  "speaker": "Greta",
+  "text": "Look at the gauge. What must be true at eight tomorrow?",
+  "words": [
+    {
+      "word": "Look",
+      "start": 0.05,
+      "end": 0.3375
+    },
+    {
+      "word": "at",
+      "start": 0.3375,
+      "end": 0.4625
+    },
+    {
+      "word": "the",
+      "start": 0.4625,
+      "end": 0.5625
+    },
+    {
+      "word": "gauge",
+      "start": 0.5625,
+      "end": 2.025
+    },
+    {
+      "word": "What",
+      "start": 2.025,
+      "end": 2.3
+    },
+    {
+      "word": "must",
+      "start": 2.3,
+      "end": 2.575
+    },
+    {
+      "word": "be",
+      "start": 2.575,
+      "end": 2.7125
+    },
+    {
+      "word": "true",
+      "start": 2.7125,
+      "end": 3.0375
+    },
+    {
+      "word": "at",
+      "start": 3.0375,
+      "end": 3.2
+    },
+    {
+      "word": "eight",
+      "start": 3.2,
+      "end": 3.3875
+    },
+    {
+      "word": "tomorrow",
+      "start": 3.3875,
+      "end": 3.6375
+    }
+  ]
+}

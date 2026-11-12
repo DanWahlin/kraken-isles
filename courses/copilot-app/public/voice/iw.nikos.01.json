@@ -1,0 +1,97 @@
+{
+  "id": "iw.nikos.01",
+  "speaker": "Nikos",
+  "text": "Nikos, Captain. Before any chart goes on a table, look at the four desks at the Plaza’s corners.",
+  "words": [
+    {
+      "word": "Nikos",
+      "start": 0.05,
+      "end": 1.019375
+    },
+    {
+      "word": "Captain",
+      "start": 1.019375,
+      "end": 1.9505
+    },
+    {
+      "word": "Before",
+      "start": 1.9505,
+      "end": 2.460708
+    },
+    {
+      "word": "any",
+      "start": 2.460708,
+      "end": 2.703041
+    },
+    {
+      "word": "chart",
+      "start": 2.703041,
+      "end": 3.034708
+    },
+    {
+      "word": "goes",
+      "start": 3.034708,
+      "end": 3.302541
+    },
+    {
+      "word": "on",
+      "start": 3.302541,
+      "end": 3.391833
+    },
+    {
+      "word": "a",
+      "start": 3.391833,
+      "end": 3.442875
+    },
+    {
+      "word": "table",
+      "start": 3.442875,
+      "end": 4.220916
+    },
+    {
+      "word": "look",
+      "start": 4.220916,
+      "end": 4.43775
+    },
+    {
+      "word": "at",
+      "start": 4.43775,
+      "end": 4.514291
+    },
+    {
+      "word": "the",
+      "start": 4.514291,
+      "end": 4.590833
+    },
+    {
+      "word": "four",
+      "start": 4.590833,
+      "end": 4.833166
+    },
+    {
+      "word": "desks",
+      "start": 4.833166,
+      "end": 5.292333
+    },
+    {
+      "word": "at",
+      "start": 5.292333,
+      "end": 5.381625
+    },
+    {
+      "word": "the",
+      "start": 5.381625,
+      "end": 5.458166
+    },
+    {
+      "word": "Plaza’s",
+      "start": 5.458166,
+      "end": 5.853583
+    },
+    {
+      "word": "corners",
+      "start": 5.853583,
+      "end": 6.103583
+    }
+  ]
+}

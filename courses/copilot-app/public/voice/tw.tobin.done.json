@@ -1,0 +1,52 @@
+{
+  "id": "tw.tobin.done",
+  "speaker": "Tobin",
+  "text": "Up the Works Stair, Captain. Ansel’s in the yard.",
+  "words": [
+    {
+      "word": "Up",
+      "start": 0.05,
+      "end": 0.275
+    },
+    {
+      "word": "the",
+      "start": 0.275,
+      "end": 0.3875
+    },
+    {
+      "word": "Works",
+      "start": 0.3875,
+      "end": 0.7125
+    },
+    {
+      "word": "Stair",
+      "start": 0.7125,
+      "end": 1.25
+    },
+    {
+      "word": "Captain",
+      "start": 1.25,
+      "end": 2.7375
+    },
+    {
+      "word": "Ansel’s",
+      "start": 2.7375,
+      "end": 3.275
+    },
+    {
+      "word": "in",
+      "start": 3.275,
+      "end": 3.3875
+    },
+    {
+      "word": "the",
+      "start": 3.3875,
+      "end": 3.4625
+    },
+    {
+      "word": "yard",
+      "start": 3.4625,
+      "end": 3.7125
+    }
+  ]
+}

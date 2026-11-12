@@ -1350,7 +1350,7 @@ Each stage writes what moved from this spec, and why.
 - **Sea chart:** `GUILDCREST_WAYS.sea` traced from the height (under 3.1 m, 18 m wider, 8 m
   tolerance; the loch's inner reach not widened), 48 points; a test keeps the berth, the departure,
   the turning room and the lane outside it.
-- **Bake:** `tools/bake/bake-guildcrest.ts` (pack 3.95 MiB, **0.82 MiB gz**; chart pack 0.03 MiB gz);
+- **Bake:** `tools/bake/bake-frame-island.ts` (pack 3.95 MiB, **0.82 MiB gz**; chart pack 0.03 MiB gz);
   Anchorage `1aac2f2a`, Meridian `8d32083a`, Thousand-Bough `90dc42b3`, Keelhaven `dd928b70` and its
   chart `d3d7d814` unchanged.
 - **Terrain regions** (existing keys): `villageGround` (town, square, knoll, yard), `paths`,

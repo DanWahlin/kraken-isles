@@ -1,0 +1,107 @@
+{
+  "id": "tw.juno.arrive.01",
+  "speaker": "Juno",
+  "text": "Tidewheel Caldera, Captain. In through the breach, under the wheel. That’s the Clockwork Lighthouse at the head of the bay.",
+  "words": [
+    {
+      "word": "Tidewheel",
+      "start": 0,
+      "end": 0.537
+    },
+    {
+      "word": "Caldera",
+      "start": 0.537,
+      "end": 1.23
+    },
+    {
+      "word": "Captain",
+      "start": 1.23,
+      "end": 1.733
+    },
+    {
+      "word": "In",
+      "start": 1.733,
+      "end": 2.19
+    },
+    {
+      "word": "through",
+      "start": 2.19,
+      "end": 2.42
+    },
+    {
+      "word": "the",
+      "start": 2.42,
+      "end": 2.537
+    },
+    {
+      "word": "breach",
+      "start": 2.537,
+      "end": 3.08
+    },
+    {
+      "word": "under",
+      "start": 3.08,
+      "end": 3.3
+    },
+    {
+      "word": "the",
+      "start": 3.3,
+      "end": 3.413
+    },
+    {
+      "word": "wheel",
+      "start": 3.413,
+      "end": 4.112
+    },
+    {
+      "word": "That’s",
+      "start": 4.112,
+      "end": 4.26
+    },
+    {
+      "word": "the",
+      "start": 4.26,
+      "end": 4.373
+    },
+    {
+      "word": "Clockwork",
+      "start": 4.373,
+      "end": 4.84
+    },
+    {
+      "word": "Lighthouse",
+      "start": 4.84,
+      "end": 5.387
+    },
+    {
+      "word": "at",
+      "start": 5.387,
+      "end": 5.46
+    },
+    {
+      "word": "the",
+      "start": 5.46,
+      "end": 5.552
+    },
+    {
+      "word": "head",
+      "start": 5.552,
+      "end": 5.707
+    },
+    {
+      "word": "of",
+      "start": 5.707,
+      "end": 5.78
+    },
+    {
+      "word": "the",
+      "start": 5.78,
+      "end": 5.9
+    },
+    {
+      "word": "bay",
+      "start": 5.9,
+      "end": 6.15
+    }
+  ]
+}

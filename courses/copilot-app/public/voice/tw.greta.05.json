@@ -1,0 +1,122 @@
+{
+  "id": "tw.greta.05",
+  "speaker": "Greta",
+  "text": "Old Silas keeps the lamp. Take the walk up to the Lighthouse. And if you’ve a minute, Nerys will show you the bells.",
+  "words": [
+    {
+      "word": "Old",
+      "start": 0.05,
+      "end": 0.325
+    },
+    {
+      "word": "Silas",
+      "start": 0.325,
+      "end": 0.8375
+    },
+    {
+      "word": "keeps",
+      "start": 0.8375,
+      "end": 1.2
+    },
+    {
+      "word": "the",
+      "start": 1.2,
+      "end": 1.3
+    },
+    {
+      "word": "lamp",
+      "start": 1.3,
+      "end": 2.6875
+    },
+    {
+      "word": "Take",
+      "start": 2.6875,
+      "end": 2.95
+    },
+    {
+      "word": "the",
+      "start": 2.95,
+      "end": 3.0625
+    },
+    {
+      "word": "walk",
+      "start": 3.0625,
+      "end": 3.3625
+    },
+    {
+      "word": "up",
+      "start": 3.3625,
+      "end": 3.525
+    },
+    {
+      "word": "to",
+      "start": 3.525,
+      "end": 3.6375
+    },
+    {
+      "word": "the",
+      "start": 3.6375,
+      "end": 3.7375
+    },
+    {
+      "word": "Lighthouse",
+      "start": 3.7375,
+      "end": 5.3875
+    },
+    {
+      "word": "And",
+      "start": 5.3875,
+      "end": 5.5375
+    },
+    {
+      "word": "if",
+      "start": 5.5375,
+      "end": 5.7
+    },
+    {
+      "word": "you’ve",
+      "start": 5.7,
+      "end": 5.8875
+    },
+    {
+      "word": "a",
+      "start": 5.8875,
+      "end": 5.9375
+    },
+    {
+      "word": "minute",
+      "start": 5.9375,
+      "end": 6.7
+    },
+    {
+      "word": "Nerys",
+      "start": 6.7,
+      "end": 7.0875
+    },
+    {
+      "word": "will",
+      "start": 7.0875,
+      "end": 7.2
+    },
+    {
+      "word": "show",
+      "start": 7.2,
+      "end": 7.4625
+    },
+    {
+      "word": "you",
+      "start": 7.4625,
+      "end": 7.625
+    },
+    {
+      "word": "the",
+      "start": 7.625,
+      "end": 7.7375
+    },
+    {
+      "word": "bells",
+      "start": 7.7375,
+      "end": 7.9875
+    }
+  ]
+}

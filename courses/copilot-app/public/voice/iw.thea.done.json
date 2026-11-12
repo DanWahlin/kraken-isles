@@ -1,0 +1,72 @@
+{
+  "id": "iw.thea.done",
+  "speaker": "Thea",
+  "text": "Up two more flights to the Plaza, Captain. Nikos is by the desks.",
+  "words": [
+    {
+      "word": "Up",
+      "start": 0.0515409,
+      "end": 0.25775
+    },
+    {
+      "word": "two",
+      "start": 0.25775,
+      "end": 0.476791
+    },
+    {
+      "word": "more",
+      "start": 0.476791,
+      "end": 0.695875
+    },
+    {
+      "word": "flights",
+      "start": 0.695875,
+      "end": 1.121125
+    },
+    {
+      "word": "to",
+      "start": 1.121125,
+      "end": 1.237125
+    },
+    {
+      "word": "the",
+      "start": 1.237125,
+      "end": 1.327333
+    },
+    {
+      "word": "Plaza",
+      "start": 1.327333,
+      "end": 2.126291
+    },
+    {
+      "word": "Captain",
+      "start": 2.126291,
+      "end": 3.621125
+    },
+    {
+      "word": "Nikos",
+      "start": 3.621125,
+      "end": 4.162375
+    },
+    {
+      "word": "is",
+      "start": 4.162375,
+      "end": 4.317
+    },
+    {
+      "word": "by",
+      "start": 4.317,
+      "end": 4.523208
+    },
+    {
+      "word": "the",
+      "start": 4.523208,
+      "end": 4.626291
+    },
+    {
+      "word": "desks",
+      "start": 4.626291,
+      "end": 4.876291
+    }
+  ]
+}

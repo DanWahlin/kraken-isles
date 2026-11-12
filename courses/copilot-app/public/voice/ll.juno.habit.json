@@ -1,0 +1,97 @@
+{
+  "id": "ll.juno.habit",
+  "speaker": "Juno",
+  "text": "One habit stayed the same on every isle: you kept a human in control of quality and delivery.",
+  "words": [
+    {
+      "word": "One",
+      "start": 0,
+      "end": 0.24
+    },
+    {
+      "word": "habit",
+      "start": 0.24,
+      "end": 0.674
+    },
+    {
+      "word": "stayed",
+      "start": 0.674,
+      "end": 0.9
+    },
+    {
+      "word": "the",
+      "start": 0.9,
+      "end": 1.04
+    },
+    {
+      "word": "same",
+      "start": 1.04,
+      "end": 1.413
+    },
+    {
+      "word": "on",
+      "start": 1.413,
+      "end": 1.613
+    },
+    {
+      "word": "every",
+      "start": 1.613,
+      "end": 2.16
+    },
+    {
+      "word": "isle",
+      "start": 2.16,
+      "end": 3.16
+    },
+    {
+      "word": "you",
+      "start": 3.16,
+      "end": 3.312
+    },
+    {
+      "word": "kept",
+      "start": 3.312,
+      "end": 3.48
+    },
+    {
+      "word": "a",
+      "start": 3.48,
+      "end": 3.587
+    },
+    {
+      "word": "human",
+      "start": 3.587,
+      "end": 4
+    },
+    {
+      "word": "in",
+      "start": 4,
+      "end": 4.22
+    },
+    {
+      "word": "control",
+      "start": 4.22,
+      "end": 4.72
+    },
+    {
+      "word": "of",
+      "start": 4.72,
+      "end": 4.95
+    },
+    {
+      "word": "quality",
+      "start": 4.95,
+      "end": 5.54
+    },
+    {
+      "word": "and",
+      "start": 5.54,
+      "end": 5.902
+    },
+    {
+      "word": "delivery",
+      "start": 5.902,
+      "end": 6.152
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "ll.juno.sun",
+  "speaker": "Juno",
+  "text": "Sunspire: MCP servers for documentation, and plugins that supply capabilities.",
+  "words": [
+    {
+      "word": "Sunspire",
+      "start": 0,
+      "end": 0.96
+    },
+    {
+      "word": "MCP",
+      "start": 0.96,
+      "end": 1.5
+    },
+    {
+      "word": "servers",
+      "start": 1.5,
+      "end": 1.96
+    },
+    {
+      "word": "for",
+      "start": 1.96,
+      "end": 2.143
+    },
+    {
+      "word": "documentation",
+      "start": 2.143,
+      "end": 3.38
+    },
+    {
+      "word": "and",
+      "start": 3.38,
+      "end": 3.51
+    },
+    {
+      "word": "plugins",
+      "start": 3.51,
+      "end": 4.032
+    },
+    {
+      "word": "that",
+      "start": 4.032,
+      "end": 4.217
+    },
+    {
+      "word": "supply",
+      "start": 4.217,
+      "end": 4.634
+    },
+    {
+      "word": "capabilities",
+      "start": 4.634,
+      "end": 4.884
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "tw.dot.market.broke",
+  "speaker": "Dot",
+  "text": "Out of starfish? There are plenty hidden round the isles. Come back when you've found a few.",
+  "words": [
+    {
+      "word": "Out",
+      "start": 0.049,
+      "end": 0.269625
+    },
+    {
+      "word": "of",
+      "start": 0.269625,
+      "end": 0.379916
+    },
+    {
+      "word": "starfish",
+      "start": 0.379916,
+      "end": 2.083333
+    },
+    {
+      "word": "There",
+      "start": 2.083333,
+      "end": 2.291666
+    },
+    {
+      "word": "are",
+      "start": 2.291666,
+      "end": 2.352958
+    },
+    {
+      "word": "plenty",
+      "start": 2.352958,
+      "end": 2.806375
+    },
+    {
+      "word": "hidden",
+      "start": 2.806375,
+      "end": 3.174
+    },
+    {
+      "word": "round",
+      "start": 3.174,
+      "end": 3.468125
+    },
+    {
+      "word": "the",
+      "start": 3.468125,
+      "end": 3.615208
+    },
+    {
+      "word": "isles.",
+      "start": 3.615208,
+      "end": 5.085791
+    },
+    {
+      "word": "Come",
+      "start": 5.085791,
+      "end": 5.367666
+    },
+    {
+      "word": "back",
+      "start": 5.367666,
+      "end": 5.710791
+    },
+    {
+      "word": "when",
+      "start": 5.710791,
+      "end": 5.906875
+    },
+    {
+      "word": "you've",
+      "start": 5.906875,
+      "end": 6.115208
+    },
+    {
+      "word": "found",
+      "start": 6.115208,
+      "end": 6.482833
+    },
+    {
+      "word": "a",
+      "start": 6.482833,
+      "end": 6.531875
+    },
+    {
+      "word": "few",
+      "start": 6.531875,
+      "end": 6.781875
+    }
+  ]
+}

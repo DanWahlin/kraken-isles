@@ -1,0 +1,82 @@
+{
+  "id": "iw.kosta.market.early",
+  "speaker": "Kosta",
+  "text": "Not yet, Captain. Oren on Port Meridian teaches models first. Come back after his lesson.",
+  "words": [
+    {
+      "word": "Not",
+      "start": 0.118416,
+      "end": 0.381583
+    },
+    {
+      "word": "yet",
+      "start": 0.381583,
+      "end": 0.986833
+    },
+    {
+      "word": "Captain",
+      "start": 0.986833,
+      "end": 2.539458
+    },
+    {
+      "word": "Oren",
+      "start": 2.539458,
+      "end": 2.842125
+    },
+    {
+      "word": "on",
+      "start": 2.842125,
+      "end": 3
+    },
+    {
+      "word": "Port",
+      "start": 3,
+      "end": 3.302625
+    },
+    {
+      "word": "Meridian",
+      "start": 3.302625,
+      "end": 3.776333
+    },
+    {
+      "word": "teaches",
+      "start": 3.776333,
+      "end": 4.210541
+    },
+    {
+      "word": "models",
+      "start": 4.210541,
+      "end": 4.578958
+    },
+    {
+      "word": "first",
+      "start": 4.578958,
+      "end": 6.131583
+    },
+    {
+      "word": "Come",
+      "start": 6.131583,
+      "end": 6.328958
+    },
+    {
+      "word": "back",
+      "start": 6.328958,
+      "end": 6.578958
+    },
+    {
+      "word": "after",
+      "start": 6.578958,
+      "end": 6.881583
+    },
+    {
+      "word": "his",
+      "start": 6.881583,
+      "end": 7.065791
+    },
+    {
+      "word": "lesson",
+      "start": 7.065791,
+      "end": 7.315791
+    }
+  ]
+}

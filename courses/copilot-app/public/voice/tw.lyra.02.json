@@ -1,0 +1,112 @@
+{
+  "id": "tw.lyra.02",
+  "speaker": "Lyra",
+  "text": "They program it into a sequencer once, and let it run when it’s needed. Hear us play it by hand first.",
+  "words": [
+    {
+      "word": "They",
+      "start": 0,
+      "end": 0.21
+    },
+    {
+      "word": "program",
+      "start": 0.21,
+      "end": 0.613
+    },
+    {
+      "word": "it",
+      "start": 0.613,
+      "end": 0.768
+    },
+    {
+      "word": "into",
+      "start": 0.768,
+      "end": 1
+    },
+    {
+      "word": "a",
+      "start": 1,
+      "end": 1.088
+    },
+    {
+      "word": "sequencer",
+      "start": 1.088,
+      "end": 1.664
+    },
+    {
+      "word": "once",
+      "start": 1.664,
+      "end": 2.17
+    },
+    {
+      "word": "and",
+      "start": 2.17,
+      "end": 2.36
+    },
+    {
+      "word": "let",
+      "start": 2.36,
+      "end": 2.533
+    },
+    {
+      "word": "it",
+      "start": 2.533,
+      "end": 2.7
+    },
+    {
+      "word": "run",
+      "start": 2.7,
+      "end": 2.896
+    },
+    {
+      "word": "when",
+      "start": 2.896,
+      "end": 3.013
+    },
+    {
+      "word": "it’s",
+      "start": 3.013,
+      "end": 3.349
+    },
+    {
+      "word": "needed",
+      "start": 3.349,
+      "end": 3.808
+    },
+    {
+      "word": "Hear",
+      "start": 3.808,
+      "end": 4.693
+    },
+    {
+      "word": "us",
+      "start": 4.693,
+      "end": 4.848
+    },
+    {
+      "word": "play",
+      "start": 4.848,
+      "end": 5.067
+    },
+    {
+      "word": "it",
+      "start": 5.067,
+      "end": 5.173
+    },
+    {
+      "word": "by",
+      "start": 5.173,
+      "end": 5.36
+    },
+    {
+      "word": "hand",
+      "start": 5.36,
+      "end": 5.76
+    },
+    {
+      "word": "first",
+      "start": 5.76,
+      "end": 6.01
+    }
+  ]
+}

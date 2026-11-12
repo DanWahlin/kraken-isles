@@ -1,0 +1,107 @@
+{
+  "id": "iw.iris.more",
+  "speaker": "Iris",
+  "text": "Tidewheel Caldera is next, where a tested routine runs by itself. And I’ve one more task, if you’d like it.",
+  "words": [
+    {
+      "word": "Tidewheel",
+      "start": 0.052625,
+      "end": 0.657875
+    },
+    {
+      "word": "Caldera",
+      "start": 0.657875,
+      "end": 1.276333
+    },
+    {
+      "word": "is",
+      "start": 1.276333,
+      "end": 1.447375
+    },
+    {
+      "word": "next",
+      "start": 1.447375,
+      "end": 2.197375
+    },
+    {
+      "word": "where",
+      "start": 2.197375,
+      "end": 2.35525
+    },
+    {
+      "word": "a",
+      "start": 2.35525,
+      "end": 2.460541
+    },
+    {
+      "word": "tested",
+      "start": 2.460541,
+      "end": 2.947375
+    },
+    {
+      "word": "routine",
+      "start": 2.947375,
+      "end": 3.447375
+    },
+    {
+      "word": "runs",
+      "start": 3.447375,
+      "end": 3.842125
+    },
+    {
+      "word": "by",
+      "start": 3.842125,
+      "end": 4.013166
+    },
+    {
+      "word": "itself",
+      "start": 4.013166,
+      "end": 5.565791
+    },
+    {
+      "word": "And",
+      "start": 5.565791,
+      "end": 5.763166
+    },
+    {
+      "word": "I’ve",
+      "start": 5.763166,
+      "end": 5.934208
+    },
+    {
+      "word": "one",
+      "start": 5.934208,
+      "end": 6.184208
+    },
+    {
+      "word": "more",
+      "start": 6.184208,
+      "end": 6.35525
+    },
+    {
+      "word": "task",
+      "start": 6.35525,
+      "end": 7.131583
+    },
+    {
+      "word": "if",
+      "start": 7.131583,
+      "end": 7.263166
+    },
+    {
+      "word": "you’d",
+      "start": 7.263166,
+      "end": 7.473666
+    },
+    {
+      "word": "like",
+      "start": 7.473666,
+      "end": 7.75
+    },
+    {
+      "word": "it",
+      "start": 7.75,
+      "end": 8
+    }
+  ]
+}

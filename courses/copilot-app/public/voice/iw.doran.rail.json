@@ -1,0 +1,97 @@
+{
+  "id": "iw.doran.rail",
+  "speaker": "Doran",
+  "text": "Set the marker on the stage the work is at. A stage is marked only from recorded evidence.",
+  "words": [
+    {
+      "word": "Set",
+      "start": 0.052083,
+      "end": 0.338541
+    },
+    {
+      "word": "the",
+      "start": 0.338541,
+      "end": 0.416666
+    },
+    {
+      "word": "marker",
+      "start": 0.416666,
+      "end": 0.820333
+    },
+    {
+      "word": "on",
+      "start": 0.820333,
+      "end": 0.9245
+    },
+    {
+      "word": "the",
+      "start": 0.9245,
+      "end": 0.989583
+    },
+    {
+      "word": "stage",
+      "start": 0.989583,
+      "end": 1.419291
+    },
+    {
+      "word": "the",
+      "start": 1.419291,
+      "end": 1.523458
+    },
+    {
+      "word": "work",
+      "start": 1.523458,
+      "end": 1.809916
+    },
+    {
+      "word": "is",
+      "start": 1.809916,
+      "end": 1.953125
+    },
+    {
+      "word": "at",
+      "start": 1.953125,
+      "end": 3.216166
+    },
+    {
+      "word": "A",
+      "start": 3.216166,
+      "end": 3.359375
+    },
+    {
+      "word": "stage",
+      "start": 3.359375,
+      "end": 3.828125
+    },
+    {
+      "word": "is",
+      "start": 3.828125,
+      "end": 3.971375
+    },
+    {
+      "word": "marked",
+      "start": 3.971375,
+      "end": 4.270833
+    },
+    {
+      "word": "only",
+      "start": 4.270833,
+      "end": 4.53125
+    },
+    {
+      "word": "from",
+      "start": 4.53125,
+      "end": 4.739583
+    },
+    {
+      "word": "recorded",
+      "start": 4.739583,
+      "end": 5.234375
+    },
+    {
+      "word": "evidence",
+      "start": 5.234375,
+      "end": 5.484375
+    }
+  ]
+}

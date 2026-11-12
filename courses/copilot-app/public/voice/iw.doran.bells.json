@@ -1,0 +1,57 @@
+{
+  "id": "iw.doran.bells",
+  "speaker": "Doran",
+  "text": "Each bell pull sends a surveyor. Send the first one.",
+  "words": [
+    {
+      "word": "Each",
+      "start": 0.052083,
+      "end": 0.364583
+    },
+    {
+      "word": "bell",
+      "start": 0.364583,
+      "end": 0.625
+    },
+    {
+      "word": "pull",
+      "start": 0.625,
+      "end": 0.872416
+    },
+    {
+      "word": "sends",
+      "start": 0.872416,
+      "end": 1.197916
+    },
+    {
+      "word": "a",
+      "start": 1.197916,
+      "end": 1.25
+    },
+    {
+      "word": "surveyor",
+      "start": 1.25,
+      "end": 2.7995
+    },
+    {
+      "word": "Send",
+      "start": 2.7995,
+      "end": 3.190125
+    },
+    {
+      "word": "the",
+      "start": 3.190125,
+      "end": 3.28125
+    },
+    {
+      "word": "first",
+      "start": 3.28125,
+      "end": 3.658875
+    },
+    {
+      "word": "one",
+      "start": 3.658875,
+      "end": 3.908875
+    }
+  ]
+}

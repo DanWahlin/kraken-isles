@@ -1,0 +1,112 @@
+{
+  "id": "iw.calla.04",
+  "speaker": "Calla",
+  "text": "You moved a card, and the agent moved it again. Two hands on one board, and its state stayed in view.",
+  "words": [
+    {
+      "word": "You",
+      "start": 0.052625,
+      "end": 0.223666
+    },
+    {
+      "word": "moved",
+      "start": 0.223666,
+      "end": 0.526333
+    },
+    {
+      "word": "a",
+      "start": 0.526333,
+      "end": 0.592125
+    },
+    {
+      "word": "card",
+      "start": 0.592125,
+      "end": 1.157875
+    },
+    {
+      "word": "and",
+      "start": 1.157875,
+      "end": 1.460541
+    },
+    {
+      "word": "the",
+      "start": 1.460541,
+      "end": 1.64475
+    },
+    {
+      "word": "agent",
+      "start": 1.64475,
+      "end": 2.039458
+    },
+    {
+      "word": "moved",
+      "start": 2.039458,
+      "end": 2.368416
+    },
+    {
+      "word": "it",
+      "start": 2.368416,
+      "end": 2.447375
+    },
+    {
+      "word": "again",
+      "start": 2.447375,
+      "end": 3.868416
+    },
+    {
+      "word": "Two",
+      "start": 3.868416,
+      "end": 4.10525
+    },
+    {
+      "word": "hands",
+      "start": 4.10525,
+      "end": 4.486833
+    },
+    {
+      "word": "on",
+      "start": 4.486833,
+      "end": 4.657875
+    },
+    {
+      "word": "one",
+      "start": 4.657875,
+      "end": 4.947375
+    },
+    {
+      "word": "board",
+      "start": 4.947375,
+      "end": 5.526333
+    },
+    {
+      "word": "and",
+      "start": 5.526333,
+      "end": 5.907875
+    },
+    {
+      "word": "its",
+      "start": 5.907875,
+      "end": 6.052625
+    },
+    {
+      "word": "state",
+      "start": 6.052625,
+      "end": 6.447375
+    },
+    {
+      "word": "stayed",
+      "start": 6.447375,
+      "end": 6.789458
+    },
+    {
+      "word": "in",
+      "start": 6.789458,
+      "end": 6.921041
+    },
+    {
+      "word": "view",
+      "start": 6.921041,
+      "end": 7.171041
+    }
+  ]
+}

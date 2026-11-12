@@ -1,0 +1,77 @@
+{
+  "id": "tw.ansel.desk",
+  "speaker": "Ansel",
+  "text": "The prompt says this repository. So tell it which one, and where to work.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.0515409,
+      "end": 0.206166
+    },
+    {
+      "word": "prompt",
+      "start": 0.206166,
+      "end": 0.54125
+    },
+    {
+      "word": "says",
+      "start": 0.54125,
+      "end": 0.798958
+    },
+    {
+      "word": "this",
+      "start": 0.798958,
+      "end": 1.005166
+    },
+    {
+      "word": "repository",
+      "start": 1.005166,
+      "end": 2.667541
+    },
+    {
+      "word": "So",
+      "start": 2.667541,
+      "end": 2.912375
+    },
+    {
+      "word": "tell",
+      "start": 2.912375,
+      "end": 3.170083
+    },
+    {
+      "word": "it",
+      "start": 3.170083,
+      "end": 3.247416
+    },
+    {
+      "word": "which",
+      "start": 3.247416,
+      "end": 3.440708
+    },
+    {
+      "word": "one",
+      "start": 3.440708,
+      "end": 3.904625
+    },
+    {
+      "word": "and",
+      "start": 3.904625,
+      "end": 4.072166
+    },
+    {
+      "word": "where",
+      "start": 4.072166,
+      "end": 4.252583
+    },
+    {
+      "word": "to",
+      "start": 4.252583,
+      "end": 4.355666
+    },
+    {
+      "word": "work",
+      "start": 4.355666,
+      "end": 4.605666
+    }
+  ]
+}

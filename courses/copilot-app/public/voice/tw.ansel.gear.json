@@ -1,0 +1,57 @@
+{
+  "id": "tw.ansel.gear",
+  "speaker": "Ansel",
+  "text": "The form starts on Daily. Change the trigger to Manual.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.0515409,
+      "end": 0.206166
+    },
+    {
+      "word": "form",
+      "start": 0.206166,
+      "end": 0.54125
+    },
+    {
+      "word": "starts",
+      "start": 0.54125,
+      "end": 0.953625
+    },
+    {
+      "word": "on",
+      "start": 0.953625,
+      "end": 1.082458
+    },
+    {
+      "word": "Daily",
+      "start": 1.082458,
+      "end": 2.474208
+    },
+    {
+      "word": "Change",
+      "start": 2.474208,
+      "end": 2.860833
+    },
+    {
+      "word": "the",
+      "start": 2.860833,
+      "end": 2.963916
+    },
+    {
+      "word": "trigger",
+      "start": 2.963916,
+      "end": 3.376291
+    },
+    {
+      "word": "to",
+      "start": 3.376291,
+      "end": 3.49225
+    },
+    {
+      "word": "Manual",
+      "start": 3.49225,
+      "end": 3.74225
+    }
+  ]
+}

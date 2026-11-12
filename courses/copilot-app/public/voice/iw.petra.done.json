@@ -1,0 +1,72 @@
+{
+  "id": "iw.petra.done",
+  "speaker": "Petra",
+  "text": "Along the Kite Walk to the Chart Court, Captain. Doran’s by the Great Chart.",
+  "words": [
+    {
+      "word": "Along",
+      "start": 0.049,
+      "end": 0.379916
+    },
+    {
+      "word": "the",
+      "start": 0.379916,
+      "end": 0.477958
+    },
+    {
+      "word": "Kite",
+      "start": 0.477958,
+      "end": 0.808833
+    },
+    {
+      "word": "Walk",
+      "start": 0.808833,
+      "end": 1.115208
+    },
+    {
+      "word": "to",
+      "start": 1.115208,
+      "end": 1.21325
+    },
+    {
+      "word": "the",
+      "start": 1.21325,
+      "end": 1.311291
+    },
+    {
+      "word": "Chart Court",
+      "start": 1.311291,
+      "end": 2.218125
+    },
+    {
+      "word": "Captain",
+      "start": 2.218125,
+      "end": 3.688708
+    },
+    {
+      "word": "Doran’s",
+      "start": 3.688708,
+      "end": 4.178916
+    },
+    {
+      "word": "by",
+      "start": 4.178916,
+      "end": 4.3995
+    },
+    {
+      "word": "the",
+      "start": 4.3995,
+      "end": 4.485291
+    },
+    {
+      "word": "Great",
+      "start": 4.485291,
+      "end": 4.779416
+    },
+    {
+      "word": "Chart",
+      "start": 4.779416,
+      "end": 5.029416
+    }
+  ]
+}

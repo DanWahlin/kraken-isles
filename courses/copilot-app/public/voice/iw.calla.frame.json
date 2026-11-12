@@ -1,0 +1,87 @@
+{
+  "id": "iw.calla.frame",
+  "speaker": "Calla",
+  "text": "The crate says accessibility-kanban. The board’s own name is Repository Issues Kanban. Look for that one.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.052625,
+      "end": 0.157875
+    },
+    {
+      "word": "crate",
+      "start": 0.157875,
+      "end": 0.552625
+    },
+    {
+      "word": "says",
+      "start": 0.552625,
+      "end": 0.776333
+    },
+    {
+      "word": "accessibility-kanban",
+      "start": 0.776333,
+      "end": 3.276333
+    },
+    {
+      "word": "The",
+      "start": 3.276333,
+      "end": 3.381583
+    },
+    {
+      "word": "board’s",
+      "start": 3.381583,
+      "end": 3.763166
+    },
+    {
+      "word": "own",
+      "start": 3.763166,
+      "end": 4.065791
+    },
+    {
+      "word": "name",
+      "start": 4.065791,
+      "end": 4.460541
+    },
+    {
+      "word": "is",
+      "start": 4.460541,
+      "end": 4.64475
+    },
+    {
+      "word": "Repository",
+      "start": 4.64475,
+      "end": 5.39475
+    },
+    {
+      "word": "Issues",
+      "start": 5.39475,
+      "end": 5.828958
+    },
+    {
+      "word": "Kanban",
+      "start": 5.828958,
+      "end": 7.486833
+    },
+    {
+      "word": "Look",
+      "start": 7.486833,
+      "end": 7.736833
+    },
+    {
+      "word": "for",
+      "start": 7.736833,
+      "end": 7.868416
+    },
+    {
+      "word": "that",
+      "start": 7.868416,
+      "end": 8.10525
+    },
+    {
+      "word": "one",
+      "start": 8.10525,
+      "end": 8.35525
+    }
+  ]
+}

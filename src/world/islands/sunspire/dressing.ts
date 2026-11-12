@@ -1,5 +1,17 @@
 import { box, rod, type Buckets } from '../../village/pieces';
-import { at, ground, groundSpan, SS_PAINT, yawAlong, type SsOut } from './build';
+import {
+  at,
+  ground,
+  groundSpan,
+  SS_PAINT,
+  yawAlong,
+  type SsOut,
+  barrel,
+  basket,
+  cart,
+  crate,
+  jar,
+} from './build';
 import { HOUSES } from './town';
 
 /**
@@ -13,47 +25,6 @@ import { HOUSES } from './town';
 const TERRACOTTA = 0xb86a44;
 const GLAZES = [TERRACOTTA, 0xc98352, SS_PAINT.cobalt, SS_PAINT.whitewash, 0x8a5a3a] as const;
 const SACK = 0xcdb894;
-
-/** A clay jar on the ground at frame (u, v): foot, belly, shoulder, neck and lip, `h` tall. */
-export function jar(b: Buckets, out: SsOut, u: number, v: number, h: number, colour: number): void {
-  const p = at(u, 0, v);
-  const y = ground(u, v) - 0.04;
-  const R = h * 0.36;
-  const ring = (t0: number, t1: number, r0: number, r1: number) =>
-    rod(
-      b,
-      'plaster',
-      { x: p.x, y: y + h * t0, z: p.z },
-      { x: p.x, y: y + h * t1, z: p.z },
-      R * r0,
-      9,
-      colour,
-      R * r1,
-    );
-  ring(0, 0.36, 0.56, 1);
-  ring(0.36, 0.76, 1, 0.74);
-  ring(0.76, 0.92, 0.74, 0.4);
-  ring(0.92, 1, 0.4, 0.52);
-  out.circles.push({ x: p.x, z: p.z, r: R + 0.06, y0: y - 0.3, y1: y + h, height: h });
-}
-
-/** A lidded basket of goods at frame (u, v). */
-function basket(b: Buckets, out: SsOut, u: number, v: number, r: number, goods: number): void {
-  const p = at(u, 0, v);
-  const y = ground(u, v) - 0.03;
-  rod(b, 'thatch', { x: p.x, y, z: p.z }, { x: p.x, y: y + 0.42, z: p.z }, r * 0.8, 9, SS_PAINT.reed, r);
-  rod(
-    b,
-    'cloth',
-    { x: p.x, y: y + 0.42, z: p.z },
-    { x: p.x, y: y + 0.52, z: p.z },
-    r * 0.94,
-    9,
-    goods,
-    r * 0.5,
-  );
-  out.circles.push({ x: p.x, z: p.z, r: r + 0.05, y0: y - 0.3, y1: y + 0.55, height: 0.55 });
-}
 
 /** A pile of sacks at frame (u, v), `n` of them, their long side along `yaw`. */
 function sacks(b: Buckets, out: SsOut, u: number, v: number, n: number, yaw: number): void {
@@ -76,87 +47,6 @@ function sacks(b: Buckets, out: SsOut, u: number, v: number, n: number, yaw: num
     );
   }
   out.circles.push({ x: p.x, z: p.z, r: 0.62, y0: y - 0.3, y1: y + 0.6, height: 0.6 });
-}
-
-/** A barrel standing at frame (u, v), with two bands. */
-function barrel(b: Buckets, out: SsOut, u: number, v: number): void {
-  const p = at(u, 0, v);
-  const y = ground(u, v);
-  rod(b, 'wood', { x: p.x, y, z: p.z }, { x: p.x, y: y + 0.45, z: p.z }, 0.3, 10, SS_PAINT.timber, 0.36);
-  rod(
-    b,
-    'wood',
-    { x: p.x, y: y + 0.45, z: p.z },
-    { x: p.x, y: y + 0.9, z: p.z },
-    0.36,
-    10,
-    SS_PAINT.timber,
-    0.3,
-  );
-  for (const t of [0.2, 0.7])
-    rod(
-      b,
-      'metal',
-      { x: p.x, y: y + t, z: p.z },
-      { x: p.x, y: y + t + 0.05, z: p.z },
-      0.365,
-      10,
-      SS_PAINT.iron,
-    );
-  out.circles.push({ x: p.x, z: p.z, r: 0.4, y0: y - 0.3, y1: y + 0.9, height: 0.9 });
-}
-
-/** A crate at frame (u, v), `s` on a side, turned `turn`. */
-function crate(b: Buckets, out: SsOut, u: number, v: number, s: number, turn: number, lift = 0): void {
-  const p = at(u, 0, v);
-  const y = ground(u, v) + lift;
-  const yaw = yawAlong(1, 0) + turn;
-  box(b, 'wood', p.x, y + s / 2, p.z, s, s, s, yaw, 0x8a6a48);
-  box(b, 'wood', p.x, y + s - 0.04, p.z, s + 0.04, 0.06, s + 0.04, yaw, SS_PAINT.timber);
-  box(b, 'wood', p.x, y + 0.04, p.z, s + 0.04, 0.06, s + 0.04, yaw, SS_PAINT.timber);
-  if (!lift) out.circles.push({ x: p.x, z: p.z, r: s * 0.72, y0: y - 0.3, y1: y + s, height: s });
-}
-
-/** A two-wheeled hand cart at frame (u, v), its handles toward frame direction (du, dv). */
-function cart(b: Buckets, out: SsOut, u: number, v: number, du: number, dv: number): void {
-  const p = at(u, 0, v);
-  const y = ground(u, v);
-  const yaw = yawAlong(du, dv);
-  const fx = Math.cos(yaw);
-  const fz = -Math.sin(yaw);
-  const sx = Math.sin(yaw);
-  const sz = Math.cos(yaw);
-  box(b, 'wood', p.x, y + 0.66, p.z, 1.7, 0.08, 0.96, yaw, SS_PAINT.timber);
-  for (const s of [-1, 1]) {
-    box(b, 'wood', p.x + sx * s * 0.47, y + 0.82, p.z + sz * s * 0.47, 1.7, 0.26, 0.05, yaw, 0x8a6a48);
-    // A wheel: a short fat cylinder on the axle, a hub in a darker timber.
-    const a = { x: p.x + sx * s * 0.54, y: y + 0.44, z: p.z + sz * s * 0.54 };
-    const e = { x: p.x + sx * s * 0.62, y: y + 0.44, z: p.z + sz * s * 0.62 };
-    rod(b, 'wood', a, e, 0.44, 14, 0x8a6a48);
-    rod(
-      b,
-      'wood',
-      e,
-      { x: e.x + sx * s * 0.05, y: e.y, z: e.z + sz * s * 0.05 },
-      0.1,
-      8,
-      SS_PAINT.darkTimber,
-    );
-    // Its handle, from the bed down to a rest on the ground.
-    rod(
-      b,
-      'wood',
-      { x: p.x + fx * 0.8 + sx * s * 0.4, y: y + 0.66, z: p.z + fz * 0.8 + sz * s * 0.4 },
-      { x: p.x + fx * 1.9 + sx * s * 0.4, y: y + 0.06, z: p.z + fz * 1.9 + sz * s * 0.4 },
-      0.035,
-      5,
-      SS_PAINT.darkTimber,
-    );
-  }
-  // Its load: two sacks and a jar's worth of melons.
-  box(b, 'cloth', p.x - fx * 0.3, y + 0.84, p.z - fz * 0.3, 0.7, 0.28, 0.5, yaw + 0.2, SACK);
-  box(b, 'cloth', p.x + fx * 0.35, y + 0.84, p.z + fz * 0.35, 0.6, 0.26, 0.5, yaw - 0.15, 0xbfa67c);
-  out.circles.push({ x: p.x, z: p.z, r: 0.95, y0: y - 0.3, y1: y + 1.0, height: 1.0 });
 }
 
 /** A beehive oven (horno) at frame (u, v), its mouth toward (du, dv), on a low adobe step. */

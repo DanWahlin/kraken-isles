@@ -9,12 +9,8 @@ import { GUILDCREST_FLORA } from '../world/islands/guildcrest/flora';
 import { GUILDCREST_PLANT_LOOK } from '../world/islands/guildcrest/vegetation';
 import { createGuildcrestWorldAsync } from '../world/islands/guildcrest';
 import { auditCoplanar, type CoplanarAuditOptions } from './coplanar-audit';
+import { FRAME_ISLAND_VIEWS } from './frame-islands';
 import { GUILDCREST, toWorld as gcWorld } from '../world/islands/guildcrest/layout';
-import { createSunspireWorldAsync } from '../world/islands/sunspire';
-import { SUNSPIRE_FLORA } from '../world/islands/sunspire/flora';
-import { sunspireTerrainWater } from '../world/islands/sunspire/height';
-import { SUNSPIRE_PLANT_LOOK } from '../world/islands/sunspire/vegetation';
-import { SUNSPIRE, toWorld as ssWorld } from '../world/islands/sunspire/layout';
 import { KEELHAVEN_FLORA } from '../world/islands/keelhaven/flora';
 import { keelhavenTerrainWater } from '../world/islands/keelhaven/height';
 import { loadVillageKit } from '../world/village/kit';
@@ -364,61 +360,31 @@ PACKS.guildcrest = {
   },
 };
 
-/** A camera pose in Sunspire's frame: eye at (u, v, y), looking at (u, v, y). */
-function sunspirePose(eye: readonly number[], target: readonly number[]): CamPose {
-  const e = ssWorld(eye[0]!, eye[1]!);
-  const t = ssWorld(target[0]!, target[1]!);
-  return [
-    [e.x, eye[2]!, e.z],
-    [t.x, target[2]!, t.z],
-  ];
+// The cove islands (./frame-islands.ts): each one's views are in its own frame.
+for (const [id, f] of Object.entries(FRAME_ISLAND_VIEWS)) {
+  const at = (u: number, v: number, y: number) => {
+    const p = f.toWorld(u, v);
+    return [p.x, y, p.z];
+  };
+  PACKS[id] = {
+    sky: f.layout.sky,
+    mood: f.layout.mood,
+    views: Object.fromEntries(
+      Object.entries(f.views).map(([name, [eye, target]]) => [name, [at(...eye), at(...target)] as CamPose]),
+    ),
+    groundViews: (groundAt) =>
+      Object.fromEntries(
+        Object.entries(f.groundViews).map(([name, [eye, target]]) => {
+          const p = f.toWorld(eye[0], eye[1]);
+          return [name, [[p.x, groundAt(p.x, p.z) + eye[2], p.z], at(...target)] as CamPose];
+        }),
+      ),
+  };
 }
 
-PACKS.sunspire = {
-  sky: SUNSPIRE.sky,
-  mood: SUNSPIRE.mood,
-  views: {
-    // The hero shots (spec §2.1) and the progress set.
-    approach: sunspirePose([-760, -40, 24], [60, 40, 50]),
-    harbour: sunspirePose([-232, 8, 30], [-120, 46, 8]),
-    bazaar: sunspirePose([-136, 30, 16], [-96, 52, 10]),
-    oasis: sunspirePose([-52, -2, 16], [16, -24, 14]),
-    court: sunspirePose([62, 78, 34], [130, 70, 50]),
-    spire: sunspirePose([168, 66, 50], [206, 84, 74]),
-    aerial: sunspirePose([-620, -260, 420], [40, 20, 20]),
-    top: sunspirePose([4, 4, 1150], [0, 0, 0]),
-    'from-south': sunspirePose([120, -760, 30], [80, 0, 50]),
-    'from-east': sunspirePose([820, 40, 40], [200, 40, 60]),
-    horizon: sunspirePose([-1250, -60, 30], [40, 40, 60]),
-    rock: sunspirePose([-220, 380, 20], [-120, 520, 24]),
-  },
-  groundViews: (groundAt) => {
-    const onGround = (u: number, v: number, above: number) => {
-      const p = ssWorld(u, v);
-      return [p.x, groundAt(p.x, p.z) + above, p.z];
-    };
-    const at = (u: number, v: number, y: number) => {
-      const p = ssWorld(u, v);
-      return [p.x, y, p.z];
-    };
-    return {
-      landing: [onGround(-192, 15, 1.7), at(60, 70, 40)],
-      'quay-lane': [onGround(-170, 30, 1.7), at(-100, 50, 11)],
-      square: [onGround(-116, 44, 1.7), at(206, 84, 70)],
-      camp: [onGround(-44, 2, 1.7), at(22, -30, 20)],
-      stair: [onGround(-76, 62, 1.7), at(30, 92, 30)],
-      'mesa-top': [onGround(40, 90, 1.7), at(206, 84, 70)],
-      'sun-stair': [onGround(138, 36, 1.7), at(206, 84, 76)],
-      terrace: [onGround(184, 78, 1.7), at(206, 84, 80)],
-      dunes: [onGround(-60, -150, 1.7), at(120, -260, 12)],
-      beach: [onGround(-250, -140, 1.7), at(-60, -200, 10)],
-    };
-  },
-};
-
 /** The islands that lend the ocean a floor tile of their own, and those with surf on an open coast. */
-const OWN_FLOOR = new Set(['thousand-bough', 'keelhaven', 'guildcrest', 'sunspire']);
-const OPEN_COAST = new Set(['keelhaven', 'guildcrest', 'sunspire']);
+const OWN_FLOOR = new Set(['thousand-bough', 'keelhaven', 'guildcrest', ...Object.keys(FRAME_ISLAND_VIEWS)]);
+const OPEN_COAST = new Set(['keelhaven', 'guildcrest', ...Object.keys(FRAME_ISLAND_VIEWS)]);
 
 const h = await createDevHarness();
 const { q, backend, tier, canvas, renderer, engine } = h;
@@ -437,6 +403,7 @@ if (preset.mood) {
 const ocean = createOcean({ tier, env: sky.env, terrainDepth: true });
 scene.add(ocean.mesh);
 
+const frameIsland = FRAME_ISLAND_VIEWS[packName];
 const data = await loadTerrainPack(`/packs/${packName}/terrain`);
 const terrain = createTerrain({
   tier,
@@ -459,13 +426,12 @@ const terrain = createTerrain({
           seabed: GUILDCREST.terrain.seabed,
           freshWater: q.has('noart') ? null : guildcrestTerrainWater(),
         }
-      : packName === 'sunspire'
+      : frameIsland
         ? {
-            prefilter: SUNSPIRE.terrain.prefilter,
-            maxMergedTriangles: SUNSPIRE.terrain.maxMergedTriangles,
-            morphFrames: SUNSPIRE.terrain.morphFrames,
-            seabed: SUNSPIRE.terrain.seabed,
-            freshWater: q.has('noart') ? null : sunspireTerrainWater(),
+            ...frameIsland.layout.terrain,
+            ...(frameIsland.freshWater
+              ? { freshWater: q.has('noart') ? null : frameIsland.freshWater() }
+              : {}),
           }
         : {}),
 });
@@ -568,22 +534,19 @@ if (packName === 'guildcrest' && !q.has('noart')) {
   }
 }
 
-// Sunspire's world art, as Guildcrest's: its plants a patch, its gulls and raptors. `?aim=<n>` turns
-// the court's mirror to a bearing with its beam on.
-if (packName === 'sunspire' && !q.has('noart')) {
+// A cove island's world art, as Guildcrest's: its plants a patch, its birds, and whatever the URL sets
+// on it (./frame-islands.ts). Its world is at `window.__island`.
+if (frameIsland && !q.has('noart')) {
   const breathe = () => Promise.resolve();
   const kit = await loadVillageKit();
-  const ssWorld = await createSunspireWorldAsync({ tier, heightField: terrain.heightField, kit }, breathe);
-  scene.add(ssWorld.group);
-  khFrame = (c) => ssWorld.frame(c);
-  gcUpdate = (dt, t) => ssWorld.update(dt, t);
-  if (q.has('aim')) {
-    ssWorld.aim(Number(q.get('aim')), true);
-    ssWorld.beam(true);
-  }
-  (window as unknown as { __sunspire: unknown }).__sunspire = ssWorld;
+  const art = await frameIsland.create({ tier, heightField: terrain.heightField, kit }, breathe);
+  scene.add(art.group);
+  khFrame = (c) => art.frame(c);
+  gcUpdate = (dt, t) => art.update(dt, t);
+  frameIsland.apply?.(art, q);
+  (window as unknown as { __island: unknown }).__island = art;
   if (tier.birds > 0)
-    for (const f of ssWorld.birds) {
+    for (const f of art.birds) {
       if (f.kind?.count === 0) continue;
       const b = createBirds({
         tier,
@@ -608,11 +571,11 @@ if (packName === 'sunspire' && !q.has('noart')) {
     const patch = await addIslandPlants(
       { skipShadows: false },
       vegetation,
-      await ssWorld.plants(breathe),
-      'sunspire-plants',
-      SUNSPIRE_FLORA,
+      await art.plants(breathe),
+      `${packName}-plants`,
+      frameIsland.flora,
       terrain,
-      q.has('nolook') ? undefined : SUNSPIRE_PLANT_LOOK,
+      q.has('nolook') ? undefined : frameIsland.plantLook,
     );
     patch.group.visible = true;
   }

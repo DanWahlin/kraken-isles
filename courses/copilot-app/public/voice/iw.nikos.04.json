@@ -1,0 +1,102 @@
+{
+  "id": "iw.nikos.04",
+  "speaker": "Nikos",
+  "text": "Now make ready. Start a session in a new worktree from main, in Interactive mode, with the default agent.",
+  "words": [
+    {
+      "word": "Now",
+      "start": 0.05,
+      "end": 0.394375
+    },
+    {
+      "word": "make",
+      "start": 0.394375,
+      "end": 0.675
+    },
+    {
+      "word": "ready",
+      "start": 0.675,
+      "end": 1.453041
+    },
+    {
+      "word": "Start",
+      "start": 1.453041,
+      "end": 1.874
+    },
+    {
+      "word": "a",
+      "start": 1.874,
+      "end": 1.91225
+    },
+    {
+      "word": "session",
+      "start": 1.91225,
+      "end": 2.396958
+    },
+    {
+      "word": "in",
+      "start": 2.396958,
+      "end": 2.5245
+    },
+    {
+      "word": "a",
+      "start": 2.5245,
+      "end": 2.56275
+    },
+    {
+      "word": "new",
+      "start": 2.56275,
+      "end": 2.792333
+    },
+    {
+      "word": "worktree",
+      "start": 2.792333,
+      "end": 3.264291
+    },
+    {
+      "word": "from",
+      "start": 3.264291,
+      "end": 3.442875
+    },
+    {
+      "word": "main",
+      "start": 3.442875,
+      "end": 4.182666
+    },
+    {
+      "word": "in",
+      "start": 4.182666,
+      "end": 4.335708
+    },
+    {
+      "word": "Interactive",
+      "start": 4.335708,
+      "end": 4.947958
+    },
+    {
+      "word": "mode",
+      "start": 4.947958,
+      "end": 5.63675
+    },
+    {
+      "word": "with",
+      "start": 5.63675,
+      "end": 5.802541
+    },
+    {
+      "word": "the",
+      "start": 5.802541,
+      "end": 5.879083
+    },
+    {
+      "word": "default",
+      "start": 5.879083,
+      "end": 6.31275
+    },
+    {
+      "word": "agent",
+      "start": 6.31275,
+      "end": 6.56275
+    }
+  ]
+}

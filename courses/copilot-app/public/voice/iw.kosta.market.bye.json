@@ -1,0 +1,87 @@
+{
+  "id": "iw.kosta.market.bye",
+  "speaker": "Kosta",
+  "text": "Off up the stair? Your starfish and your jobs go with you. Come back any time.",
+  "words": [
+    {
+      "word": "Off",
+      "start": 0.10525,
+      "end": 0.276333
+    },
+    {
+      "word": "up",
+      "start": 0.276333,
+      "end": 0.434208
+    },
+    {
+      "word": "the",
+      "start": 0.434208,
+      "end": 0.539458
+    },
+    {
+      "word": "stair",
+      "start": 0.539458,
+      "end": 2.013166
+    },
+    {
+      "word": "Your",
+      "start": 2.013166,
+      "end": 2.131583
+    },
+    {
+      "word": "starfish",
+      "start": 2.131583,
+      "end": 2.763166
+    },
+    {
+      "word": "and",
+      "start": 2.763166,
+      "end": 2.868416
+    },
+    {
+      "word": "your",
+      "start": 2.868416,
+      "end": 2.973666
+    },
+    {
+      "word": "jobs",
+      "start": 2.973666,
+      "end": 3.342125
+    },
+    {
+      "word": "go",
+      "start": 3.342125,
+      "end": 3.5
+    },
+    {
+      "word": "with",
+      "start": 3.5,
+      "end": 3.684208
+    },
+    {
+      "word": "you",
+      "start": 3.684208,
+      "end": 4.960541
+    },
+    {
+      "word": "Come",
+      "start": 4.960541,
+      "end": 5.157875
+    },
+    {
+      "word": "back",
+      "start": 5.157875,
+      "end": 5.39475
+    },
+    {
+      "word": "any",
+      "start": 5.39475,
+      "end": 5.552625
+    },
+    {
+      "word": "time",
+      "start": 5.552625,
+      "end": 5.802625
+    }
+  ]
+}

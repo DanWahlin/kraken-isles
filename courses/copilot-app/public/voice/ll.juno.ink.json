@@ -1,0 +1,52 @@
+{
+  "id": "ll.juno.ink",
+  "speaker": "Juno",
+  "text": "Inkwell: canvases, for shared state that anyone can inspect.",
+  "words": [
+    {
+      "word": "Inkwell",
+      "start": 0,
+      "end": 0.992
+    },
+    {
+      "word": "canvases",
+      "start": 0.992,
+      "end": 2.03
+    },
+    {
+      "word": "for",
+      "start": 2.03,
+      "end": 2.286
+    },
+    {
+      "word": "shared",
+      "start": 2.286,
+      "end": 2.64
+    },
+    {
+      "word": "state",
+      "start": 2.64,
+      "end": 3.088
+    },
+    {
+      "word": "that",
+      "start": 3.088,
+      "end": 3.349
+    },
+    {
+      "word": "anyone",
+      "start": 3.349,
+      "end": 3.84
+    },
+    {
+      "word": "can",
+      "start": 3.84,
+      "end": 4.15
+    },
+    {
+      "word": "inspect",
+      "start": 4.15,
+      "end": 4.4
+    }
+  ]
+}

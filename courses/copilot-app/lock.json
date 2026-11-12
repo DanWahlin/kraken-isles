@@ -2652,121 +2652,145 @@
     "course/ch06/app-create-canvas-command.webp": {
       "upstream": "06-canvases/assets/app-create-canvas-command.webp",
       "sha256": "f2b324671689b7e976129e4976f76645493760ab9dd053a722ae5a1cb09fe5fb",
+      "pinned": true,
       "bytes": 12162
     },
     "course/ch06/app-create-canvas-screenshot.webp": {
       "upstream": "06-canvases/assets/app-create-canvas-screenshot.webp",
       "sha256": "25a0eb4f5a24bbd5280a8b2435c783c40e1375ebaf22f095460b18a3818b66c7",
+      "pinned": true,
       "bytes": 190566
     },
     "course/ch06/app-feature-workbench-baseline.webp": {
       "upstream": "06-canvases/assets/app-feature-workbench-baseline.webp",
       "sha256": "7b0c1bf9798ae630c2d0b1715612b86a1a196a3c2cd5f1341d3ba36004e0ef54",
+      "pinned": true,
       "bytes": 186984
     },
     "course/ch06/app-feature-workbench-browser-validation.webp": {
       "upstream": "06-canvases/assets/app-feature-workbench-browser-validation.webp",
       "sha256": "5b1424c09571b4f0c948c7a9f0d8629d18b14ee8e3abef273eece0fde861a07a",
+      "pinned": true,
       "bytes": 218568
     },
     "course/ch06/app-feature-workbench-implement.webp": {
       "upstream": "06-canvases/assets/app-feature-workbench-implement.webp",
       "sha256": "6c0f5e7f68f2ad2e343cd643699e254014905dbccfda5eaf48f787a37d743612",
+      "pinned": true,
       "bytes": 187904
     },
     "course/ch06/app-feature-workbench-plan.webp": {
       "upstream": "06-canvases/assets/app-feature-workbench-plan.webp",
       "sha256": "ec5acda3036ed085b0907bf01b8956795d9cddaa51f822b61410b1ee8ae7b7d4",
+      "pinned": true,
       "bytes": 172148
     },
     "course/ch06/app-feature-workbench-propose.webp": {
       "upstream": "06-canvases/assets/app-feature-workbench-propose.webp",
       "sha256": "c25be18d9dac438cd9eb7abda9dd1bc1ac551db7f0580c526b3151484b742b95",
+      "pinned": true,
       "bytes": 155988
     },
     "course/ch06/app-feature-workbench-validate.webp": {
       "upstream": "06-canvases/assets/app-feature-workbench-validate.webp",
       "sha256": "7a95db7534275fea7f2033cc446152d64c078fbd23869e49a078e13b04e9963f",
+      "pinned": true,
       "bytes": 206648
     },
     "course/ch06/app-open-repo-issues-canvas.webp": {
       "upstream": "06-canvases/assets/app-open-repo-issues-canvas.webp",
       "sha256": "a5aa647178d01dff1b1d7a4dbcd3fa8f561f93bced29ba328c158c284d307bcd",
+      "pinned": true,
       "bytes": 29194
     },
     "course/ch06/app-repo-issues-kanban.webp": {
       "upstream": "06-canvases/assets/app-repo-issues-kanban.webp",
       "sha256": "80b239e48ef97be6cf61adb233abcc20795fb2124f7600c2ec612d8441ffc0b5",
+      "pinned": true,
       "bytes": 219566
     },
     "course/ch06/arrangement-board-canvas.webp": {
       "upstream": "06-canvases/assets/arrangement-board-canvas.webp",
       "sha256": "cd962be24c8cc23672ef554a28ca6ff3706ad0efe9ff665a53e22f767461a2c7",
+      "pinned": true,
       "bytes": 152646
     },
     "course/ch06/chat-vs-canvas.webp": {
       "upstream": "06-canvases/assets/chat-vs-canvas.webp",
       "sha256": "7c4a13adf2269a4014c00e87893ac58b219babf84ec849fbf7e9d7d1692790b4",
+      "pinned": true,
       "bytes": 47820
     },
     "course/ch06/human-agent-shared-surface.webp": {
       "upstream": "06-canvases/assets/human-agent-shared-surface.webp",
       "sha256": "8c6f8b8e9134c4184d14d14f7542fb4d2a0ab83497a3cd22590c3f3bd264c5ef",
+      "pinned": true,
       "bytes": 69718
     },
     "course/ch06/session-board-collaboration.webp": {
       "upstream": "06-canvases/assets/session-board-collaboration.webp",
       "sha256": "dda9ec5e95bb0a9c54c34198f2d752444705b57f092086f199ec483caa08ee90",
+      "pinned": true,
       "bytes": 102926
     },
     "course/ch06/session-plan-validation-board.webp": {
       "upstream": "06-canvases/assets/session-plan-validation-board.webp",
       "sha256": "8ffe6bdd6e0edb451aa75ef0036eddbd707b6ad13dde35c717e1a5f0f2412ea7",
+      "pinned": true,
       "bytes": 57992
     },
     "course/ch07/app-automation-cloud-tools.webp": {
       "upstream": "07-automations/assets/app-automation-cloud-tools.webp",
       "sha256": "52511d91fad90584293787ee95904b808c7b2b7e380585dce27feb2f95a68dfb",
+      "pinned": true,
       "bytes": 189370
     },
     "course/ch07/app-automation-new-triggers-scrolled.webp": {
       "upstream": "07-automations/assets/app-automation-new-triggers-scrolled.webp",
       "sha256": "0e8a9bbfd3b815017306e96a3777779451cda4bc6795a61681d2f9aa1b62287e",
+      "pinned": true,
       "bytes": 151514
     },
     "course/ch07/app-automation-new-triggers.webp": {
       "upstream": "07-automations/assets/app-automation-new-triggers.webp",
       "sha256": "135ca18ddbb8a889c0099afcaced7509d6c0224759148440a2678244953fe93d",
+      "pinned": true,
       "bytes": 143806
     },
     "course/ch07/app-automation-schedule.webp": {
       "upstream": "07-automations/assets/app-automation-schedule.webp",
       "sha256": "b53090f477a9dfc8928cb681ab51346c5ffa7b789068c37637438c61441d7c75",
+      "pinned": true,
       "bytes": 79670
     },
     "course/ch07/app-new-automation.webp": {
       "upstream": "07-automations/assets/app-new-automation.webp",
       "sha256": "069b603c030c6e663b43707b1d5ec85d0963c858727deac527e4bc0c8c07b8b9",
+      "pinned": true,
       "bytes": 198914
     },
     "course/ch07/automation-trigger-to-run.webp": {
       "upstream": "07-automations/assets/automation-trigger-to-run.webp",
       "sha256": "aabc62d20012f9f70022c9f484bb6a0eaa4f1fef155c02ed7ace1cbc07d9f7f6",
+      "pinned": true,
       "bytes": 42168
     },
     "course/ch07/local-vs-cloud-automations.webp": {
       "upstream": "07-automations/assets/local-vs-cloud-automations.webp",
       "sha256": "132d8c8f23826150f94fc305933d049f3bf9145457ba6c999bb7ef171b292147",
+      "pinned": true,
       "bytes": 29702
     },
     "course/ch07/manual-first-path.webp": {
       "upstream": "07-automations/assets/manual-first-path.webp",
       "sha256": "5bc8e2a016a28e77113e35c624ab9aa8c73a46301225916f0e85d20f2b0ff83c",
+      "pinned": true,
       "bytes": 52208
     },
     "course/ch07/sequencer-automation.webp": {
       "upstream": "07-automations/assets/sequencer-automation.webp",
       "sha256": "8a0128a8d6bbf784e04d048085e1963d2b0e12bfe54546788c07d6d6fe75e6e1",
+      "pinned": true,
       "bytes": 112996
     },
     "course/shared/app-github-copilot-app.webp": {

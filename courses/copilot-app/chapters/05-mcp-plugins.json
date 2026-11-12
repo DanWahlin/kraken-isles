@@ -515,6 +515,132 @@
       }
     },
     {
+      "id": "N5.1",
+      "type": "scenario",
+      "situation": "A raider calls itself *Toggle’s On*. Context7’s toggle is enabled, and its tools fail.",
+      "prompt": "What do you check?",
+      "options": [
+        {
+          "id": "toggle",
+          "text": "Nothing: the toggle’s on",
+          "feedback": "An enabled toggle alone doesn’t prove that a server is connected."
+        },
+        {
+          "id": "status",
+          "text": "The connection status, the URL, authentication, network access, and organization policy"
+        },
+        {
+          "id": "second",
+          "text": "Add a second connection to the same service",
+          "feedback": "Use one connection per service."
+        },
+        {
+          "id": "paste",
+          "text": "Paste a credential into the prompt",
+          "feedback": "Don’t put credentials in prompts or repository files."
+        }
+      ],
+      "answer": "status",
+      "explain": {
+        "correct": "Right. An enabled toggle alone doesn’t prove that a server is connected. Check the connection, not the switch.",
+        "wrong": "What does an open shutter not prove?"
+      },
+      "hints": [
+        "Enabled, or connected?",
+        "Check the connection.",
+        "The connection status, the URL, authentication, network access, and organization policy."
+      ],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "an-mcp-server-is-enabled-but-its-tools-fail",
+        "hash": "6bcecf0c4f5d"
+      }
+    },
+    {
+      "id": "N5.2",
+      "type": "scenario",
+      "situation": "A raider calls itself *Whole Chart*. You want React guidance on input labels from Context7.",
+      "prompt": "What do you send to the service?",
+      "options": [
+        {
+          "id": "general",
+          "text": "Only the general question. I compare the answer with my file locally"
+        },
+        {
+          "id": "file",
+          "text": "`BookFilters.tsx`, so it can check the labels itself",
+          "feedback": "Don’t send repository code or paths to Context7."
+        },
+        {
+          "id": "path",
+          "text": "The file’s path in the repository",
+          "feedback": "Paths stay home too. General documentation questions don’t need repository code."
+        },
+        {
+          "id": "tree",
+          "text": "The whole worktree, for context",
+          "feedback": "General documentation questions don’t need repository code."
+        }
+      ],
+      "answer": "general",
+      "explain": {
+        "correct": "Right. Keeping the external question general lets you use the documentation without sending repository content to the service.",
+        "wrong": "What stays in the tent?"
+      },
+      "hints": [
+        "The question travels.",
+        "The code stays.",
+        "Send only the general question, and compare locally."
+      ],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "exercise-check-the-book-apps-input-labels-with-context7",
+        "hash": "531f67f51964"
+      }
+    },
+    {
+      "id": "N5.3",
+      "type": "scenario",
+      "situation": "A raider calls itself *Just Installed*. You installed a plugin that supplies a skill.",
+      "prompt": "What does that prove?",
+      "options": [
+        {
+          "id": "ran",
+          "text": "That its skill ran",
+          "feedback": "Installing a plugin is different from invoking one of the skills or agents inside it."
+        },
+        {
+          "id": "safe",
+          "text": "That it’s safe, because a marketplace listed it",
+          "feedback": "Read its contents, not only the marketplace description."
+        },
+        {
+          "id": "installed",
+          "text": "Only that it’s installed. You still invoke the skill and inspect its activity"
+        },
+        {
+          "id": "always",
+          "text": "That every session uses it for every task",
+          "feedback": "Nothing in it runs until it’s called for."
+        }
+      ],
+      "answer": "installed",
+      "explain": {
+        "correct": "Right. Installing a plugin is different from invoking one of the skills or agents inside it.",
+        "wrong": "What’s the difference between a crate on the bench and a tool in your hand?"
+      },
+      "hints": [
+        "Installed, or invoked?",
+        "Nothing inside has run yet.",
+        "It’s installed. You still invoke the skill and inspect its activity."
+      ],
+      "source": {
+        "chapter": "05-mcp-plugins",
+        "anchor": "plugins-use-a-packaged-capability",
+        "hash": "78b16e5f879c"
+      }
+    },
+    {
       "id": "T5.1",
       "type": "scenario",
       "situation": "You want a packaged skill that searches web-platform guides. You don’t need a connection to a service of your own.",

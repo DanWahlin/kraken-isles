@@ -5,7 +5,8 @@
   "tracker": {
     "chapter": "Chapter 05 · MCP Servers & Plugins",
     "goal": "Connect a server, open a plugin, and earn the Seal of Sunspire",
-    "next": "Inkwell Bluffs is next, and she’s still being charted. Until then these waters are yours."
+    "next": "Inkwell Bluffs is next, and she’s still being charted. Until then these waters are yours.",
+    "nextSail": "Inkwell Bluffs is next. Board your ship and follow the compass south."
   },
   "quests": [
     {

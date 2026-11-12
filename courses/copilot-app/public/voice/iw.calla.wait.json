@@ -1,0 +1,52 @@
+{
+  "id": "iw.calla.wait",
+  "speaker": "Calla",
+  "text": "Make ready with Nikos at the desks first, Captain.",
+  "words": [
+    {
+      "word": "Make",
+      "start": 0.052625,
+      "end": 0.35525
+    },
+    {
+      "word": "ready",
+      "start": 0.35525,
+      "end": 0.671041
+    },
+    {
+      "word": "with",
+      "start": 0.671041,
+      "end": 0.815791
+    },
+    {
+      "word": "Nikos",
+      "start": 0.815791,
+      "end": 1.25
+    },
+    {
+      "word": "at",
+      "start": 1.25,
+      "end": 1.407875
+    },
+    {
+      "word": "the",
+      "start": 1.407875,
+      "end": 1.513166
+    },
+    {
+      "word": "desks",
+      "start": 1.513166,
+      "end": 1.960541
+    },
+    {
+      "word": "first",
+      "start": 1.960541,
+      "end": 2.565791
+    },
+    {
+      "word": "Captain",
+      "start": 2.565791,
+      "end": 2.815791
+    }
+  ]
+}

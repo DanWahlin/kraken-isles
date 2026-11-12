@@ -1,0 +1,77 @@
+{
+  "id": "tw.ansel.switch",
+  "speaker": "Ansel",
+  "text": "Run in the cloud stays off. This one runs here, on your own machine.",
+  "words": [
+    {
+      "word": "Run",
+      "start": 0.0515409,
+      "end": 0.3995
+    },
+    {
+      "word": "in",
+      "start": 0.3995,
+      "end": 0.515458
+    },
+    {
+      "word": "the",
+      "start": 0.515458,
+      "end": 0.592791
+    },
+    {
+      "word": "cloud",
+      "start": 0.592791,
+      "end": 1.005166
+    },
+    {
+      "word": "stays",
+      "start": 1.005166,
+      "end": 1.366
+    },
+    {
+      "word": "off",
+      "start": 1.366,
+      "end": 2.667541
+    },
+    {
+      "word": "This",
+      "start": 2.667541,
+      "end": 2.938125
+    },
+    {
+      "word": "one",
+      "start": 2.938125,
+      "end": 3.118541
+    },
+    {
+      "word": "runs",
+      "start": 3.118541,
+      "end": 3.389166
+    },
+    {
+      "word": "here",
+      "start": 3.389166,
+      "end": 3.840208
+    },
+    {
+      "word": "on",
+      "start": 3.840208,
+      "end": 4.00775
+    },
+    {
+      "word": "your",
+      "start": 4.00775,
+      "end": 4.201041
+    },
+    {
+      "word": "own",
+      "start": 4.201041,
+      "end": 4.342791
+    },
+    {
+      "word": "machine",
+      "start": 4.342791,
+      "end": 4.592791
+    }
+  ]
+}

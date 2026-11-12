@@ -1,0 +1,92 @@
+{
+  "id": "tw.lyra.04",
+  "speaker": "Lyra",
+  "text": "Keeper Agnes is up the first flight, on Gear Square. She’ll show you what’s inside the box.",
+  "words": [
+    {
+      "word": "Keeper",
+      "start": 0,
+      "end": 0.293
+    },
+    {
+      "word": "Agnes",
+      "start": 0.293,
+      "end": 0.667
+    },
+    {
+      "word": "is",
+      "start": 0.667,
+      "end": 0.773
+    },
+    {
+      "word": "up",
+      "start": 0.773,
+      "end": 0.9
+    },
+    {
+      "word": "the",
+      "start": 0.9,
+      "end": 1.013
+    },
+    {
+      "word": "first",
+      "start": 1.013,
+      "end": 1.326
+    },
+    {
+      "word": "flight",
+      "start": 1.326,
+      "end": 1.813
+    },
+    {
+      "word": "on",
+      "start": 1.813,
+      "end": 1.984
+    },
+    {
+      "word": "Gear",
+      "start": 1.984,
+      "end": 2.309
+    },
+    {
+      "word": "Square",
+      "start": 2.309,
+      "end": 3.08
+    },
+    {
+      "word": "She’ll",
+      "start": 3.08,
+      "end": 3.792
+    },
+    {
+      "word": "show",
+      "start": 3.792,
+      "end": 3.96
+    },
+    {
+      "word": "you",
+      "start": 3.96,
+      "end": 4.112
+    },
+    {
+      "word": "what’s",
+      "start": 4.112,
+      "end": 4.469
+    },
+    {
+      "word": "inside",
+      "start": 4.469,
+      "end": 4.66
+    },
+    {
+      "word": "the",
+      "start": 4.66,
+      "end": 4.82
+    },
+    {
+      "word": "box",
+      "start": 4.82,
+      "end": 5.07
+    }
+  ]
+}

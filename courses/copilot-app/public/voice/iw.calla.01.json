@@ -1,0 +1,102 @@
+{
+  "id": "iw.calla.01",
+  "speaker": "Calla",
+  "text": "Envoy Calla, of the visiting guild. Before you build a board of your own, try one that’s already made.",
+  "words": [
+    {
+      "word": "Envoy",
+      "start": 0.052625,
+      "end": 0.473666
+    },
+    {
+      "word": "Calla",
+      "start": 0.473666,
+      "end": 1.10525
+    },
+    {
+      "word": "of",
+      "start": 1.10525,
+      "end": 1.368416
+    },
+    {
+      "word": "the",
+      "start": 1.368416,
+      "end": 1.486833
+    },
+    {
+      "word": "visiting",
+      "start": 1.486833,
+      "end": 1.907875
+    },
+    {
+      "word": "guild",
+      "start": 1.907875,
+      "end": 3.302625
+    },
+    {
+      "word": "Before",
+      "start": 3.302625,
+      "end": 3.697375
+    },
+    {
+      "word": "you",
+      "start": 3.697375,
+      "end": 3.842125
+    },
+    {
+      "word": "build",
+      "start": 3.842125,
+      "end": 4.078958
+    },
+    {
+      "word": "a",
+      "start": 4.078958,
+      "end": 4.171041
+    },
+    {
+      "word": "board",
+      "start": 4.171041,
+      "end": 4.460541
+    },
+    {
+      "word": "of",
+      "start": 4.460541,
+      "end": 4.552625
+    },
+    {
+      "word": "your",
+      "start": 4.552625,
+      "end": 4.736833
+    },
+    {
+      "word": "own",
+      "start": 4.736833,
+      "end": 5.328958
+    },
+    {
+      "word": "try",
+      "start": 5.328958,
+      "end": 5.868416
+    },
+    {
+      "word": "one",
+      "start": 5.868416,
+      "end": 6.14475
+    },
+    {
+      "word": "that’s",
+      "start": 6.14475,
+      "end": 6.421041
+    },
+    {
+      "word": "already",
+      "start": 6.421041,
+      "end": 6.921041
+    },
+    {
+      "word": "made",
+      "start": 6.921041,
+      "end": 7.171041
+    }
+  ]
+}

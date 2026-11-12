@@ -798,6 +798,150 @@ body.ci-battle .hud-prompt {
   visibility: visible;
 }
 
+/* The ending's night chart (src/game/tidewheel-ending.ts): the isles and their lights, over the night sky. */
+.hud-ending {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1200ms ease;
+  background: radial-gradient(ellipse at 50% 55%, rgba(13, 24, 50, 0.93) 0%, rgba(5, 10, 24, 0.98) 72%);
+}
+.hud-ending.show {
+  opacity: 1;
+}
+.hud-ending-title {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--ci-display, Fraunces, Georgia, 'Times New Roman', serif);
+  font-style: italic;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  letter-spacing: 0.1em;
+  color: #fbe9d6;
+  text-shadow: 0 1px 10px rgba(255, 190, 110, 0.35);
+}
+.hud-ending-chart {
+  width: min(92vw, 150vh);
+  max-height: 78vh;
+  overflow: visible;
+}
+.hud-ending-leg {
+  stroke: rgba(170, 186, 214, 0.26);
+  stroke-width: 2;
+  stroke-dasharray: 3 9;
+  stroke-linecap: round;
+  transition: stroke 1600ms ease;
+}
+.hud-ending-leg.lit {
+  stroke: rgba(255, 207, 122, 0.78);
+}
+.hud-ending-isle .land {
+  fill: #14223a;
+  stroke: rgba(160, 184, 214, 0.2);
+  stroke-width: 1;
+  transition:
+    fill 1400ms ease,
+    stroke 1400ms ease;
+}
+.hud-ending-isle .tower {
+  fill: #2c3d57;
+  transition: fill 900ms ease;
+}
+.hud-ending-isle .lamp {
+  fill: #2c3d57;
+  transition:
+    fill 500ms ease,
+    r 900ms ease;
+}
+.hud-ending-isle .glow,
+.hud-ending-isle .rays {
+  opacity: 0;
+  transform: scale(0.2);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition:
+    opacity 1400ms ease,
+    transform 1400ms ease;
+}
+.hud-ending-isle .rays {
+  fill: none;
+  stroke: #fff1c4;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+.hud-ending-isle .name {
+  font-family: var(--ci-display, Fraunces, Georgia, 'Times New Roman', serif);
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  fill: rgba(203, 214, 232, 0.36);
+  transition: fill 1200ms ease;
+}
+.hud-ending-isle.lit .land {
+  fill: #3a4460;
+  stroke: rgba(255, 214, 150, 0.5);
+}
+.hud-ending-isle.lit .tower {
+  fill: #f1e3c8;
+}
+.hud-ending-isle.lit .lamp {
+  fill: #fff6d8;
+  r: 6px;
+}
+.hud-ending-isle.lit .glow {
+  opacity: 1;
+  transform: scale(1);
+  animation: hud-ending-breathe 4.2s ease-in-out 1.4s infinite alternate;
+}
+.hud-ending-isle.lit .rays {
+  opacity: 0.85;
+  transform: scale(1);
+  animation: hud-ending-twinkle 2.6s ease-in-out 1.4s infinite alternate;
+}
+.hud-ending-isle.lit .name {
+  fill: #fbe9d6;
+}
+@keyframes hud-ending-breathe {
+  to {
+    opacity: 0.72;
+    transform: scale(0.9);
+  }
+}
+@keyframes hud-ending-twinkle {
+  to {
+    opacity: 0.35;
+    transform: scale(0.8);
+  }
+}
+.hud-ending-skip {
+  position: absolute;
+  right: max(18px, env(safe-area-inset-right));
+  top: max(16px, env(safe-area-inset-top));
+  pointer-events: auto;
+  padding: 8px 16px;
+  border: 1px solid rgba(251, 233, 214, 0.4);
+  border-radius: 999px;
+  background: rgba(10, 18, 36, 0.6);
+  color: #fbe9d6;
+  font: inherit;
+  cursor: pointer;
+}
+.hud-ending-skip:hover,
+.hud-ending-skip:focus-visible {
+  background: rgba(251, 233, 214, 0.16);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hud-ending,
+  .hud-ending-leg,
+  .hud-ending-isle * {
+    transition-duration: 1ms;
+    animation: none !important;
+  }
+}
+
 .hud-fade {
   position: absolute;
   inset: 0;

@@ -1294,6 +1294,456 @@
         "answer": "clean",
         "explain": "The course expects completed work kept apart from proposed browser checks, real source evidence, and no changed Book App files. Correcting an unsupported claim is the exercise working. Changed files mean a prompt went past its limits: review them before you go on."
       }
+    },
+    {
+      "id": "A6.1",
+      "chapter": "06-canvases",
+      "quest": "Q6.3",
+      "title": "Prepare the session and note the baseline",
+      "steps": [
+        "Use **Create from** > **Branches** > `main` to start a new worktree session for the course repository.",
+        "Select **Interactive** mode. If an agent picker appears below the prompt box, select **Default agent**.",
+        "In the review panel’s **Terminal** tab, from the worktree’s repository root, run `cd samples/book-app-web`, `npm install`, `npm test -- --run`, and `npm run build`.",
+        "Note the test totals."
+      ],
+      "why": "All three commands should finish without errors. Your canvas will use the test totals as its baseline.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "prerequisites",
+        "hash": "7b03cb754f34"
+      },
+      "link": {
+        "label": "The course’s exact prompts",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/06-canvases/README.md#prerequisites"
+      },
+      "seen": {
+        "prompt": "What did the three commands show?",
+        "options": [
+          {
+            "id": "clean",
+            "text": "All three finished without errors, and I noted the test totals"
+          },
+          {
+            "id": "fail",
+            "text": "A test or the build failed"
+          },
+          {
+            "id": "where",
+            "text": "The commands ran in the wrong folder"
+          }
+        ],
+        "answer": "clean",
+        "explain": "The course expects all three commands to finish without errors. If one fails, fix that before you build a canvas on it. If they ran in the wrong folder, run them again from `samples/book-app-web` in this session’s worktree."
+      }
+    },
+    {
+      "id": "A6.2",
+      "chapter": "06-canvases",
+      "quest": "Q6.4",
+      "title": "Try the Repository Issues Kanban",
+      "steps": [
+        "On the Repository Issues Kanban page of the Awesome Copilot website, select **Open in Copilot app**, then **Allow**. In the **Install plugin** dialog, confirm that the name is `accessibility-kanban@awesome-copilot`, then select **Install**.",
+        "Select **Customize**, then the **Installed** tab. Confirm that the plugin appears under **Plugins**, with its toggle on.",
+        "Return to your worktree session and submit the prompt `Restart canvas extensions`. In the review panel, select **+** (**Add tab**), then **Canvas**, then **Repository Issues Kanban**.",
+        "Drag one issue to **Plan**, and watch it move to **Ready** when the plan is ready."
+      ],
+      "why": "Enterprise-managed settings can restrict which plugins and marketplaces are available. If you cannot install the plugin, read Exercise 1 and continue to Exercise 2.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-1-try-your-first-canvas",
+        "hash": "1fc9e1017bb6"
+      },
+      "link": {
+        "label": "The course’s exact prompts",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/06-canvases/README.md#exercise-1-try-your-first-canvas"
+      },
+      "seen": {
+        "prompt": "What happened to the card you moved to **Plan**?",
+        "options": [
+          {
+            "id": "ready",
+            "text": "A background agent planned it, and the card moved to **Ready**"
+          },
+          {
+            "id": "edited",
+            "text": "The agent edited files for it"
+          },
+          {
+            "id": "blocked",
+            "text": "I couldn’t install the plugin"
+          }
+        ],
+        "answer": "ready",
+        "explain": "The course expects the agent to read the issue and the code without editing files, and the card to move to **Ready**. Each card on **Plan** starts a new agent run, so move only one. If the plugin is blocked, read the exercise and go on to the Session Board."
+      }
+    },
+    {
+      "id": "A6.3",
+      "chapter": "06-canvases",
+      "quest": "Q6.5",
+      "title": "Create a Session Board",
+      "steps": [
+        "In the current session, type `/` in the prompt box and select `/create-canvas`, then paste the course’s Session Board prompt.",
+        "When the canvas opens, confirm that it has the proposal, checklist, and notes sections. Enter a short feature proposal, mark **Plan** complete, and add a next decision.",
+        "Submit the prompt `Summarize the current Session Board state.` Confirm that the agent’s answer matches your updates.",
+        "Open the **Changes** tab and confirm that it lists no changed files."
+      ],
+      "why": "The board does not run tests or edit the app. Creating a user-scoped canvas does not change repository files.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-2-create-a-session-board",
+        "hash": "21b5e247f33c"
+      },
+      "link": {
+        "label": "The course’s exact prompts",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/06-canvases/README.md#exercise-2-create-a-session-board"
+      },
+      "seen": {
+        "prompt": "Did the agent’s summary match your marks?",
+        "options": [
+          {
+            "id": "match",
+            "text": "Yes, and **Changes** lists no changed files"
+          },
+          {
+            "id": "differ",
+            "text": "Its summary missed one of my updates"
+          },
+          {
+            "id": "none",
+            "text": "No canvas opened"
+          }
+        ],
+        "answer": "match",
+        "explain": "The course expects the summary to match your updates, and no changed files. If it missed one, ask again after the board has saved. If no canvas opened, confirm that you typed `/create-canvas`, and submit `Restart canvas extensions` once."
+      }
+    },
+    {
+      "id": "A6.4",
+      "chapter": "06-canvases",
+      "quest": "Q6.6",
+      "title": "Create the Feature Workbench",
+      "steps": [
+        "Type `/` in the prompt box and select `/create-canvas`, then paste the course’s Feature Workbench prompt. Use the most capable model available to you.",
+        "Wait for the canvas to open. This can take about 10 minutes. Do not submit other prompts in this session until it opens.",
+        "Confirm five stages (**Propose**, **Plan**, **Baseline**, **Implement**, **Validate**), one feature proposal field and one **Generate plan** button, eight checklist items, five actions, and an empty evidence area.",
+        "If one part is wrong, use the matching repair prompt."
+      ],
+      "why": "Generated results can differ between runs. Do not repeatedly regenerate the full canvas. After two focused repairs, use the Markdown fallback.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-3-create-a-feature-workbench",
+        "hash": "74377c083aef"
+      },
+      "link": {
+        "label": "The course’s exact prompts",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/06-canvases/README.md#exercise-3-create-a-feature-workbench"
+      },
+      "seen": {
+        "prompt": "Does your canvas have the expected structure?",
+        "options": [
+          {
+            "id": "yes",
+            "text": "Yes: five stages, one button, eight items, five actions, empty evidence"
+          },
+          {
+            "id": "repair",
+            "text": "After one focused repair, yes"
+          },
+          {
+            "id": "fallback",
+            "text": "No: I used the Markdown fallback"
+          }
+        ],
+        "answer": "yes",
+        "explain": "The course expects that structure before you continue. One focused repair is the process working. If it still does not match after two, the Markdown fallback keeps the same plan and validation record visible, without action buttons."
+      }
+    },
+    {
+      "id": "A6.5",
+      "chapter": "06-canvases",
+      "quest": "Q6.7",
+      "title": "Run the Feature Workbench",
+      "steps": [
+        "In **Feature proposal**, paste the course’s Clear filters proposal, then select **Generate plan**. Review the plan in the **Plan** tab. In the **Review plan** box, select **Exit plan mode and I will prompt myself**, and confirm that the mode is **Interactive**.",
+        "Select **Run baseline**. Expand its tool calls and confirm that the totals on the canvas match the output.",
+        "Select **Implement**, then the **Changes** pill: the changes are limited to the approved feature. Select **Browser validation**, check the states yourself at `http://127.0.0.1:5173`, then stop the dev server.",
+        "Select **Run final checks**. The tests and the build pass, and the final test total is at least the baseline total."
+      ],
+      "why": "Do not select **Approve and implement this plan**: the agent would start to change the app before you record a baseline.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-3-create-a-feature-workbench",
+        "hash": "74377c083aef"
+      },
+      "link": {
+        "label": "The course’s exact prompts",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/06-canvases/README.md#exercise-3-create-a-feature-workbench"
+      },
+      "seen": {
+        "prompt": "What does the evidence show at the end?",
+        "options": [
+          {
+            "id": "green",
+            "text": "All five stages complete, and a final total at least the baseline"
+          },
+          {
+            "id": "lower",
+            "text": "A final total below the baseline"
+          },
+          {
+            "id": "stuck",
+            "text": "**Implement** or **Run final checks** stayed disabled"
+          }
+        ],
+        "answer": "green",
+        "explain": "The course expects all five stages complete, with passing baseline and final checks, the browser result, and the changed files. A lower total means tests were lost: look at the diff. A disabled action needs the evidence of the step before it, or the **An action stays disabled** repair prompt."
+      }
+    },
+    {
+      "id": "A6.6",
+      "chapter": "06-canvases",
+      "quest": "Q6.A",
+      "title": "Add an Assess stage",
+      "steps": [
+        "Type `/`, select `/create-canvas`, and submit a focused change request: keep the current Feature Workbench canvas, and add an **Assess** stage between **Propose** and **Plan**.",
+        "Pick one small, beginner-safe improvement in `samples/book-app-web` that you have not already shipped in an earlier chapter.",
+        "Run the workbench through assess, plan, baseline, implement, and validate.",
+        "Confirm that each completed stage has evidence from the current session."
+      ],
+      "why": "Assess asks the agent to compare the feature proposal with the app’s current behavior, and records the result as evidence.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "core-assignment",
+        "hash": "d846f46c0106"
+      },
+      "link": {
+        "label": "The course’s exact prompts",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/06-canvases/README.md#core-assignment"
+      },
+      "seen": {
+        "prompt": "What did your workbench show?",
+        "options": [
+          {
+            "id": "evidence",
+            "text": "Evidence at every stage, from assessment through local validation"
+          },
+          {
+            "id": "gap",
+            "text": "A completed stage with no evidence behind it"
+          },
+          {
+            "id": "redo",
+            "text": "The request redesigned parts that already worked"
+          }
+        ],
+        "answer": "evidence",
+        "explain": "The course expects evidence-backed progress from assessment through local validation, so you can identify the next decision without rereading the whole chat. A stage with no evidence: uncheck it and run its check again. A redesign: ask again, and say to keep the current canvas."
+      }
+    },
+    {
+      "id": "A7.1",
+      "chapter": "07-automations",
+      "quest": "Q7.3",
+      "title": "Confirm work items exist",
+      "steps": [
+        "Select **Pull requests** in the sidebar, then select **Authored by me**.",
+        "Add your fork’s `repo:` term to that tab’s query.",
+        "Confirm that you see at least three open pull requests from the Chapter 00 setup script."
+      ],
+      "why": "The review readiness report needs open pull requests to inspect. The report shows whatever state your pull requests are in now.",
+      "source": {
+        "chapter": "07-automations",
+        "anchor": "confirm-work-items-exist",
+        "hash": "bd4ff9a68d41"
+      },
+      "link": {
+        "label": "The course’s exact steps",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/07-automations/README.md#confirm-work-items-exist"
+      },
+      "seen": {
+        "prompt": "What does **Authored by me** show?",
+        "options": [
+          {
+            "id": "three",
+            "text": "At least three open pull requests"
+          },
+          {
+            "id": "more",
+            "text": "More than three: my Chapter 03 pull request is there too"
+          },
+          {
+            "id": "empty",
+            "text": "The list is empty"
+          }
+        ],
+        "answer": "three",
+        "explain": "The course expects at least three open pull requests. If you completed Chapter 03, your search-fix pull request also appears: that is expected. If the list is empty, run the Chapter 00 setup script before continuing."
+      }
+    },
+    {
+      "id": "A7.2",
+      "chapter": "07-automations",
+      "quest": "Q7.4",
+      "title": "Create a manual review readiness report",
+      "steps": [
+        "Open **Automations** and select **New automation**. Name it `PR review readiness report`.",
+        "Change the **Trigger** from **Daily** to **Manual**, and make sure **Run in the cloud** is off.",
+        "Paste the course’s prompt. Use **Select repository** to choose your fork, and select **Current checkout** in the **Workspace** picker.",
+        "Select the arrow next to **Create**, then select **Create and run**."
+      ],
+      "why": "Because the prompt is read-only, the risk stays low while you learn the review loop.",
+      "source": {
+        "chapter": "07-automations",
+        "anchor": "exercise-create-a-manual-review-readiness-report",
+        "hash": "c77f03fd8c5f"
+      },
+      "link": {
+        "label": "The course’s exact steps",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/07-automations/README.md#exercise-create-a-manual-review-readiness-report"
+      },
+      "seen": {
+        "prompt": "What happened when you selected **Create and run**?",
+        "options": [
+          {
+            "id": "ran",
+            "text": "It appeared under **Your automations**, and a run started under **Recent runs**"
+          },
+          {
+            "id": "saved",
+            "text": "It was saved, but nothing ran"
+          },
+          {
+            "id": "daily",
+            "text": "The card shows **Daily**"
+          }
+        ],
+        "answer": "ran",
+        "explain": "The course expects the automation under **Your automations** with the **Manual** trigger, and a run under **Recent runs**. If nothing ran, you selected **Create**: start a run from the automation. If the card shows **Daily**, edit it and change the trigger to **Manual**."
+      }
+    },
+    {
+      "id": "A7.3",
+      "chapter": "07-automations",
+      "quest": "Q7.4",
+      "title": "Read the run",
+      "steps": [
+        "Wait for the run to complete. The status should change to a success indicator.",
+        "Open the run detail, and confirm that the prompt matches what you pasted.",
+        "Confirm that no error text appears.",
+        "Confirm that the result includes a table of open pull requests with CI status, comment status, and the next action for each."
+      ],
+      "why": "Unlike the **Pull requests** view, which lists open items, this report explains why a PR is blocked, not only that it exists.",
+      "source": {
+        "chapter": "07-automations",
+        "anchor": "exercise-create-a-manual-review-readiness-report",
+        "hash": "c77f03fd8c5f"
+      },
+      "link": {
+        "label": "The course’s exact steps",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/07-automations/README.md#exercise-create-a-manual-review-readiness-report"
+      },
+      "seen": {
+        "prompt": "What did the run detail show?",
+        "options": [
+          {
+            "id": "table",
+            "text": "A table with CI status, comment status, and a next action for each pull request"
+          },
+          {
+            "id": "empty",
+            "text": "An empty result"
+          },
+          {
+            "id": "error",
+            "text": "Error text"
+          }
+        ],
+        "answer": "table",
+        "explain": "The course expects that table. Your PR numbers, titles, and statuses may differ. If the table is empty, confirm that the Chapter 00 setup script created practice pull requests, then check repository permissions."
+      }
+    },
+    {
+      "id": "A7.4",
+      "chapter": "07-automations",
+      "quest": "Q7.5",
+      "title": "Schedule the report",
+      "steps": [
+        "Open **Automations**, select your `PR review readiness report`, then select **Edit**. Change the **Trigger** from **Manual** to **Daily**.",
+        "In **Hours**, select **08:00** and clear any other selected hours, including the default **09:00**. Keep **Minute** at **:00**.",
+        "Confirm that the repository picker still shows your fork, then select **Save automation**.",
+        "Open the automation and select its name at the top: **Automation details** shows the **Schedule** and the **Next run** time."
+      ],
+      "why": "A scheduled local run happens only when your computer is awake and the GitHub Copilot app is running.",
+      "source": {
+        "chapter": "07-automations",
+        "anchor": "exercise-schedule-the-review-readiness-report",
+        "hash": "3fc0f26b2de5"
+      },
+      "link": {
+        "label": "The course’s exact steps",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/07-automations/README.md#exercise-schedule-the-review-readiness-report"
+      },
+      "seen": {
+        "prompt": "What does **Automation details** show?",
+        "options": [
+          {
+            "id": "daily",
+            "text": "The **Daily** schedule at 8:00 AM, and a **Next run** time"
+          },
+          {
+            "id": "two",
+            "text": "Two hours in the schedule"
+          },
+          {
+            "id": "manual",
+            "text": "The card still shows **Manual**"
+          }
+        ],
+        "answer": "daily",
+        "explain": "The course expects the **Daily** trigger on the card, and the **Schedule** and **Next run** in **Automation details**. Two hours: edit it and clear the one you did not choose. Still **Manual**: change the trigger, then select **Save automation**. The next morning, check **Recent runs**."
+      }
+    },
+    {
+      "id": "A7.5",
+      "chapter": "07-automations",
+      "quest": "Q7.A",
+      "title": "Create one manual automation of your own",
+      "steps": [
+        "Create one manual automation for your own workflow. Name it clearly, and use a manual trigger.",
+        "Write a prompt with one bounded task. Keep it read-only: tell it not to edit files, post comments, or change GitHub items.",
+        "Run it once.",
+        "Inspect the run history and revise the prompt."
+      ],
+      "why": "Local automations have no tool list. If you later move the automation to the cloud, select only read-only tools in its **Tools** list.",
+      "source": {
+        "chapter": "07-automations",
+        "anchor": "assignment",
+        "hash": "9ecad7eb59d7"
+      },
+      "link": {
+        "label": "The course’s exact steps",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/07-automations/README.md#assignment"
+      },
+      "seen": {
+        "prompt": "What can you say about your automation?",
+        "options": [
+          {
+            "id": "safe",
+            "text": "Why it is safe to run again"
+          },
+          {
+            "id": "wrote",
+            "text": "It changed something I did not expect"
+          },
+          {
+            "id": "vague",
+            "text": "Its result was vague"
+          }
+        ],
+        "answer": "safe",
+        "explain": "The course’s success criterion: you’re able to explain why the automation is safe to run again. If it changed something, make the prompt read-only and list what it must not do. If the result was vague, give it one bounded task."
+      }
     }
   ],
   "objectives": [
@@ -1799,6 +2249,143 @@
         "quizzes": ["T5.5", "T5.9", "K5.9"],
         "appTasks": ["A5.6"]
       }
+    },
+    {
+      "id": "O6.1",
+      "chapter": "06-canvases",
+      "text": "Explain when a canvas works better than a long chat thread",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "learning-objectives",
+        "hash": "cc985e12e4bb"
+      },
+      "covers": {
+        "quests": ["Q6.1", "Q6.2", "Q6.3"],
+        "quizzes": ["K6.1", "M6.1", "K6.2", "K6.3", "T6.1", "T6.2", "T6.3"]
+      }
+    },
+    {
+      "id": "O6.2",
+      "chapter": "06-canvases",
+      "text": "Install and try a community canvas from a plugin",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "learning-objectives",
+        "hash": "cc985e12e4bb"
+      },
+      "covers": {
+        "quests": ["Q6.4"],
+        "puzzles": ["borrowed-board"],
+        "quizzes": ["H6.1", "T6.4", "T6.5"],
+        "appTasks": ["A6.2"]
+      }
+    },
+    {
+      "id": "O6.3",
+      "chapter": "06-canvases",
+      "text": "Create your own canvases with `/create-canvas`",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "learning-objectives",
+        "hash": "cc985e12e4bb"
+      },
+      "covers": {
+        "quests": ["Q6.5", "Q6.6"],
+        "puzzles": ["two-hands"],
+        "quizzes": ["K6.5", "H6.2", "K6.6"],
+        "appTasks": ["A6.3", "A6.4"]
+      }
+    },
+    {
+      "id": "O6.4",
+      "chapter": "06-canvases",
+      "text": "Keep plan state and validation evidence visible on a canvas",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "learning-objectives",
+        "hash": "cc985e12e4bb"
+      },
+      "covers": {
+        "quests": ["Q6.7", "Q6.A"],
+        "puzzles": ["shared-chart"],
+        "quizzes": ["H6.3", "T6.6", "T6.7", "T6.8", "K6.9"],
+        "appTasks": ["A6.1", "A6.5", "A6.6"]
+      }
+    },
+    {
+      "id": "O7.1",
+      "chapter": "07-automations",
+      "text": "Explain when to automate recurring agent work instead of starting a manual session",
+      "source": {
+        "chapter": "07-automations",
+        "anchor": "learning-objectives",
+        "hash": "6c54d11474f4"
+      },
+      "covers": {
+        "quests": ["Q7.1", "Q7.2", "Q7.3"],
+        "quizzes": ["K7.1", "M7.1", "K7.2", "K7.3", "K7.4", "T7.1", "T7.3"],
+        "appTasks": ["A7.1"]
+      }
+    },
+    {
+      "id": "O7.2",
+      "chapter": "07-automations",
+      "text": "Create and test an on-demand local automation",
+      "source": {
+        "chapter": "07-automations",
+        "anchor": "learning-objectives",
+        "hash": "6c54d11474f4"
+      },
+      "covers": {
+        "quests": ["Q7.4", "Q7.A"],
+        "puzzles": ["the-lever"],
+        "quizzes": ["H7.1", "T7.2", "K7.9"],
+        "appTasks": ["A7.2", "A7.3", "A7.5"]
+      }
+    },
+    {
+      "id": "O7.3",
+      "chapter": "07-automations",
+      "text": "Schedule an automation and review its run history",
+      "source": {
+        "chapter": "07-automations",
+        "anchor": "learning-objectives",
+        "hash": "6c54d11474f4"
+      },
+      "covers": {
+        "quests": ["Q7.5"],
+        "puzzles": ["gears-and-bells"],
+        "quizzes": ["H7.2", "K7.5", "T7.4", "T7.5", "T7.8"],
+        "appTasks": ["A7.4"]
+      }
+    },
+    {
+      "id": "O7.4",
+      "chapter": "07-automations",
+      "text": "Optionally recognize event triggers, such as **Issue** and **Pull request**, and when they are appropriate",
+      "source": {
+        "chapter": "07-automations",
+        "anchor": "learning-objectives",
+        "hash": "6c54d11474f4"
+      },
+      "covers": {
+        "quests": ["Q7.O"],
+        "quizzes": ["K7.6", "K7.7", "T7.6"]
+      }
+    },
+    {
+      "id": "O7.5",
+      "chapter": "07-automations",
+      "text": "Optionally explain what cloud automations need and how to limit their tools",
+      "source": {
+        "chapter": "07-automations",
+        "anchor": "learning-objectives",
+        "hash": "6c54d11474f4"
+      },
+      "covers": {
+        "quests": ["Q7.O", "Q7.6"],
+        "quizzes": ["K7.8", "H7.3", "T7.7"]
+      }
     }
   ],
   "reflections": [
@@ -1981,6 +2568,60 @@
         {
           "id": "least",
           "text": "Adding only the capabilities a task needs"
+        }
+      ]
+    },
+    {
+      "chapter": "06-canvases",
+      "prompt": "Before your Seal: which of these will you use first?",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "key-takeaways",
+        "hash": "3047dd138e5a"
+      },
+      "choices": [
+        {
+          "id": "board",
+          "text": "A canvas, when a thread gets too long to scan"
+        },
+        {
+          "id": "community",
+          "text": "A community canvas, to try before I build my own"
+        },
+        {
+          "id": "create",
+          "text": "`/create-canvas`, with a short description"
+        },
+        {
+          "id": "evidence",
+          "text": "Marking progress only from terminal or browser output"
+        }
+      ]
+    },
+    {
+      "chapter": "07-automations",
+      "prompt": "Before your Seal: which of these will you use first?",
+      "source": {
+        "chapter": "07-automations",
+        "anchor": "key-takeaways",
+        "hash": "6560b58c0983"
+      },
+      "choices": [
+        {
+          "id": "manual",
+          "text": "A manual automation, to test a prompt safely"
+        },
+        {
+          "id": "report",
+          "text": "A read-only report on my open pull requests"
+        },
+        {
+          "id": "schedule",
+          "text": "A daily schedule, once the manual run can be trusted"
+        },
+        {
+          "id": "least",
+          "text": "Giving an automation only the tools it needs"
         }
       ]
     }

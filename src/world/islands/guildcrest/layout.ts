@@ -13,53 +13,16 @@
  * town's side). Its origin is the island's centre.
  */
 
-/** A point in the island frame. */
-export interface Uv {
-  readonly u: number;
-  readonly v: number;
-}
+import { islandFrame } from '../frame';
 
-const DEG = Math.PI / 180;
-const AXIS_BEARING = 143;
+export type { Uv } from '../frame';
 
 /** The island's middle (world). */
 const CENTER = { x: 5900, z: 250 } as const;
 
-/** The island frame: its origin (the centre) and its two axes (unit vectors in x, z). */
-export const FRAME = {
-  origin: CENTER,
-  axis: { x: Math.sin(AXIS_BEARING * DEG), z: -Math.cos(AXIS_BEARING * DEG) },
-  across: { x: Math.sin((AXIS_BEARING - 90) * DEG), z: -Math.cos((AXIS_BEARING - 90) * DEG) },
-} as const;
-
-/** World (x, z) to the island frame (u, v), written into `out`. */
-export function toFrame(x: number, z: number, out: { u: number; v: number }): { u: number; v: number } {
-  const dx = x - FRAME.origin.x;
-  const dz = z - FRAME.origin.z;
-  out.u = dx * FRAME.axis.x + dz * FRAME.axis.z;
-  out.v = dx * FRAME.across.x + dz * FRAME.across.z;
-  return out;
-}
-
-/** The island frame (u, v) to world (x, z). */
-export function toWorld(u: number, v: number): { x: number; z: number } {
-  return {
-    x: FRAME.origin.x + u * FRAME.axis.x + v * FRAME.across.x,
-    z: FRAME.origin.z + u * FRAME.axis.z + v * FRAME.across.z,
-  };
-}
-
-/** The heading of frame direction (du, dv) (a heading h faces (sin h, cos h)). */
-export function headingUv(du: number, dv: number): number {
-  const x = du * FRAME.axis.x + dv * FRAME.across.x;
-  const z = du * FRAME.axis.z + dv * FRAME.across.z;
-  return Math.atan2(x, z);
-}
-
-/** The heading from frame point `a` toward frame point `b`. */
-export function headingBetween(a: Uv, b: Uv): number {
-  return headingUv(b.u - a.u, b.v - a.v);
-}
+/** The island frame: `u` along bearing 143°, `v` along bearing 53°, round the island's middle. */
+export const FRAME_KIT = islandFrame(CENTER, 143);
+export const { FRAME, toFrame, toWorld, headingUv, headingBetween } = FRAME_KIT;
 
 export const GUILDCREST = {
   /** The island's middle (for distances and the chart). */

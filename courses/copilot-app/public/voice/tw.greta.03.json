@@ -1,0 +1,102 @@
+{
+  "id": "tw.greta.03",
+  "speaker": "Greta",
+  "text": "Mind this: it’s a local automation. It runs only if your computer is awake and the app is running.",
+  "words": [
+    {
+      "word": "Mind",
+      "start": 0.05,
+      "end": 0.4875
+    },
+    {
+      "word": "this",
+      "start": 0.4875,
+      "end": 1.2
+    },
+    {
+      "word": "it’s",
+      "start": 1.2,
+      "end": 1.3625
+    },
+    {
+      "word": "a",
+      "start": 1.3625,
+      "end": 1.4125
+    },
+    {
+      "word": "local",
+      "start": 1.4125,
+      "end": 1.8
+    },
+    {
+      "word": "automation",
+      "start": 1.8,
+      "end": 3.4625
+    },
+    {
+      "word": "It",
+      "start": 3.4625,
+      "end": 3.625
+    },
+    {
+      "word": "runs",
+      "start": 3.625,
+      "end": 3.95
+    },
+    {
+      "word": "only",
+      "start": 3.95,
+      "end": 4.2375
+    },
+    {
+      "word": "if",
+      "start": 4.2375,
+      "end": 4.35
+    },
+    {
+      "word": "your",
+      "start": 4.35,
+      "end": 4.45
+    },
+    {
+      "word": "computer",
+      "start": 4.45,
+      "end": 4.9875
+    },
+    {
+      "word": "is",
+      "start": 4.9875,
+      "end": 5.1
+    },
+    {
+      "word": "awake",
+      "start": 5.1,
+      "end": 5.4625
+    },
+    {
+      "word": "and",
+      "start": 5.4625,
+      "end": 5.575
+    },
+    {
+      "word": "the",
+      "start": 5.575,
+      "end": 5.725
+    },
+    {
+      "word": "app",
+      "start": 5.725,
+      "end": 5.95
+    },
+    {
+      "word": "is",
+      "start": 5.95,
+      "end": 6.075
+    },
+    {
+      "word": "running",
+      "start": 6.075,
+      "end": 6.325
+    }
+  ]
+}

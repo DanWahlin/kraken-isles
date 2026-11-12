@@ -1,0 +1,72 @@
+{
+  "id": "tw.ansel.05",
+  "speaker": "Ansel",
+  "text": "Greta keeps the clock. Follow the walk along the wall to her court.",
+  "words": [
+    {
+      "word": "Greta",
+      "start": 0.0515409,
+      "end": 0.360833
+    },
+    {
+      "word": "keeps",
+      "start": 0.360833,
+      "end": 0.695875
+    },
+    {
+      "word": "the",
+      "start": 0.695875,
+      "end": 0.798958
+    },
+    {
+      "word": "clock",
+      "start": 0.798958,
+      "end": 2.164958
+    },
+    {
+      "word": "Follow",
+      "start": 2.164958,
+      "end": 2.538666
+    },
+    {
+      "word": "the",
+      "start": 2.538666,
+      "end": 2.654625
+    },
+    {
+      "word": "walk",
+      "start": 2.654625,
+      "end": 2.951041
+    },
+    {
+      "word": "along",
+      "start": 2.951041,
+      "end": 3.234541
+    },
+    {
+      "word": "the",
+      "start": 3.234541,
+      "end": 3.337625
+    },
+    {
+      "word": "wall",
+      "start": 3.337625,
+      "end": 3.595375
+    },
+    {
+      "word": "to",
+      "start": 3.595375,
+      "end": 3.711333
+    },
+    {
+      "word": "her",
+      "start": 3.711333,
+      "end": 3.840208
+    },
+    {
+      "word": "court",
+      "start": 3.840208,
+      "end": 4.0902080000000005
+    }
+  ]
+}

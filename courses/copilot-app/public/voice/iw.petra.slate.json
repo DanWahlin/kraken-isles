@@ -1,0 +1,47 @@
+{
+  "id": "iw.petra.slate",
+  "speaker": "Petra",
+  "text": "Work round the terrace, Captain. The easel first.",
+  "words": [
+    {
+      "word": "Work",
+      "start": 0.049,
+      "end": 0.392166
+    },
+    {
+      "word": "round",
+      "start": 0.392166,
+      "end": 0.723041
+    },
+    {
+      "word": "the",
+      "start": 0.723041,
+      "end": 0.821083
+    },
+    {
+      "word": "terrace",
+      "start": 0.821083,
+      "end": 1.384791
+    },
+    {
+      "word": "Captain",
+      "start": 1.384791,
+      "end": 2.843125
+    },
+    {
+      "word": "The",
+      "start": 2.843125,
+      "end": 3.002458
+    },
+    {
+      "word": "easel",
+      "start": 3.002458,
+      "end": 3.357833
+    },
+    {
+      "word": "first",
+      "start": 3.357833,
+      "end": 3.607833
+    }
+  ]
+}

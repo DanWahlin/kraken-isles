@@ -34,7 +34,19 @@
     },
     "circuit": {
       "description": "Which of the game's circuits it runs: the Drydock Ring, the Lock Flight, the Pattern Book or the Journeyman's Toolbelt.",
-      "enum": ["ring", "flight", "book", "belt", "signal", "crate"]
+      "enum": [
+        "ring",
+        "flight",
+        "book",
+        "belt",
+        "signal",
+        "crate",
+        "board",
+        "slate",
+        "chart",
+        "lever",
+        "clock"
+      ]
     },
     "places": {
       "description": "The course's place id → the game's place it is (`acts`, each bound once), its name on signs and in the HUD, and what it stands for in the course.",

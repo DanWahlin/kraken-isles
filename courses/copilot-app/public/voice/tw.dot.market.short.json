@@ -1,0 +1,82 @@
+{
+  "id": "tw.dot.market.short",
+  "speaker": "Dot",
+  "text": "That wasn't enough for this one. Try again with a stronger model or more effort.",
+  "words": [
+    {
+      "word": "That",
+      "start": 0.049,
+      "end": 0.294125
+    },
+    {
+      "word": "wasn't",
+      "start": 0.294125,
+      "end": 0.698541
+    },
+    {
+      "word": "enough",
+      "start": 0.698541,
+      "end": 1.017166
+    },
+    {
+      "word": "for",
+      "start": 1.017166,
+      "end": 1.151958
+    },
+    {
+      "word": "this",
+      "start": 1.151958,
+      "end": 1.384791
+    },
+    {
+      "word": "one",
+      "start": 1.384791,
+      "end": 2.683833
+    },
+    {
+      "word": "Try",
+      "start": 2.683833,
+      "end": 3.026958
+    },
+    {
+      "word": "again",
+      "start": 3.026958,
+      "end": 3.431375
+    },
+    {
+      "word": "with",
+      "start": 3.431375,
+      "end": 3.590666
+    },
+    {
+      "word": "a",
+      "start": 3.590666,
+      "end": 3.639708
+    },
+    {
+      "word": "stronger",
+      "start": 3.639708,
+      "end": 4.142166
+    },
+    {
+      "word": "model",
+      "start": 4.142166,
+      "end": 4.656875
+    },
+    {
+      "word": "or",
+      "start": 4.656875,
+      "end": 4.816166
+    },
+    {
+      "word": "more",
+      "start": 4.816166,
+      "end": 5.073541
+    },
+    {
+      "word": "effort",
+      "start": 5.073541,
+      "end": 5.323541
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "tw.greta.clock",
+  "speaker": "Greta",
+  "text": "Work round the court, Captain. The desk first, on the east wall.",
+  "words": [
+    {
+      "word": "Work",
+      "start": 0.05,
+      "end": 0.4375
+    },
+    {
+      "word": "round",
+      "start": 0.4375,
+      "end": 0.7375
+    },
+    {
+      "word": "the",
+      "start": 0.7375,
+      "end": 0.825
+    },
+    {
+      "word": "court",
+      "start": 0.825,
+      "end": 1.5625
+    },
+    {
+      "word": "Captain",
+      "start": 1.5625,
+      "end": 2.95
+    },
+    {
+      "word": "The",
+      "start": 2.95,
+      "end": 3.075
+    },
+    {
+      "word": "desk",
+      "start": 3.075,
+      "end": 3.45
+    },
+    {
+      "word": "first",
+      "start": 3.45,
+      "end": 4.3125
+    },
+    {
+      "word": "on",
+      "start": 4.3125,
+      "end": 4.475
+    },
+    {
+      "word": "the",
+      "start": 4.475,
+      "end": 4.6375
+    },
+    {
+      "word": "east",
+      "start": 4.6375,
+      "end": 4.9125
+    },
+    {
+      "word": "wall",
+      "start": 4.9125,
+      "end": 5.1625
+    }
+  ]
+}

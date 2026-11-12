@@ -1,0 +1,62 @@
+{
+  "id": "tw.silas.done",
+  "speaker": "Silas",
+  "text": "The light’s lit, Master Captain. The isles are yours to sail.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.053208,
+      "end": 0.21275
+    },
+    {
+      "word": "light’s",
+      "start": 0.21275,
+      "end": 0.598416
+    },
+    {
+      "word": "lit",
+      "start": 0.598416,
+      "end": 1.050541
+    },
+    {
+      "word": "Master",
+      "start": 1.050541,
+      "end": 1.542541
+    },
+    {
+      "word": "Captain",
+      "start": 1.542541,
+      "end": 3.138291
+    },
+    {
+      "word": "The",
+      "start": 3.138291,
+      "end": 3.40425
+    },
+    {
+      "word": "isles",
+      "start": 3.40425,
+      "end": 3.8165
+    },
+    {
+      "word": "are",
+      "start": 3.8165,
+      "end": 3.869666
+    },
+    {
+      "word": "yours",
+      "start": 3.869666,
+      "end": 4.281916
+    },
+    {
+      "word": "to",
+      "start": 4.281916,
+      "end": 4.414875
+    },
+    {
+      "word": "sail",
+      "start": 4.414875,
+      "end": 4.664875
+    }
+  ]
+}

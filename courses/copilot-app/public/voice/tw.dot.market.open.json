@@ -1,0 +1,82 @@
+{
+  "id": "tw.dot.market.open",
+  "speaker": "Dot",
+  "text": "Pick a job off the board, then hire a model and set the effort dial.",
+  "words": [
+    {
+      "word": "Pick",
+      "start": 0.049,
+      "end": 0.257333
+    },
+    {
+      "word": "a",
+      "start": 0.257333,
+      "end": 0.330875
+    },
+    {
+      "word": "job",
+      "start": 0.330875,
+      "end": 0.625
+    },
+    {
+      "word": "off",
+      "start": 0.625,
+      "end": 0.796583
+    },
+    {
+      "word": "the",
+      "start": 0.796583,
+      "end": 0.919125
+    },
+    {
+      "word": "board",
+      "start": 0.919125,
+      "end": 1.642166
+    },
+    {
+      "word": "then",
+      "start": 1.642166,
+      "end": 1.826
+    },
+    {
+      "word": "hire",
+      "start": 1.826,
+      "end": 2.193625
+    },
+    {
+      "word": "a",
+      "start": 2.193625,
+      "end": 2.254916
+    },
+    {
+      "word": "model",
+      "start": 2.254916,
+      "end": 2.622541
+    },
+    {
+      "word": "and",
+      "start": 2.622541,
+      "end": 2.745083
+    },
+    {
+      "word": "set",
+      "start": 2.745083,
+      "end": 3.014708
+    },
+    {
+      "word": "the",
+      "start": 3.014708,
+      "end": 3.174
+    },
+    {
+      "word": "effort",
+      "start": 3.174,
+      "end": 3.468125
+    },
+    {
+      "word": "dial",
+      "start": 3.468125,
+      "end": 3.718125
+    }
+  ]
+}

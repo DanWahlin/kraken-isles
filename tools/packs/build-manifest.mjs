@@ -90,6 +90,34 @@ const PACK_DEFS = [
     id: 'sunspire/chart',
     include: ['packs/sunspire/chart.bin', 'packs/sunspire/chart.json'],
   },
+  {
+    id: 'inkwell/critical',
+    include: [
+      'packs/inkwell/terrain.bin',
+      'packs/inkwell/terrain.json',
+      'packs/testcove/terrain-textures/**',
+      'packs/testcove/rocks/**',
+    ],
+  },
+  {
+    // The opening's 3D chart reads only this coarse copy of Inkwell's terrain.
+    id: 'inkwell/chart',
+    include: ['packs/inkwell/chart.bin', 'packs/inkwell/chart.json'],
+  },
+  {
+    id: 'tidewheel/critical',
+    include: [
+      'packs/tidewheel/terrain.bin',
+      'packs/tidewheel/terrain.json',
+      'packs/testcove/terrain-textures/**',
+      'packs/testcove/rocks/**',
+    ],
+  },
+  {
+    // The opening's 3D chart reads only this coarse copy of Tidewheel's terrain.
+    id: 'tidewheel/chart',
+    include: ['packs/tidewheel/chart.bin', 'packs/tidewheel/chart.json'],
+  },
 ];
 
 function toPosix(path) {

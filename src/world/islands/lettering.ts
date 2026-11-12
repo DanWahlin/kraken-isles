@@ -7,7 +7,7 @@ import type { IslandSign } from './frame-build';
  * words are the pack's, painted now and again whenever a course activates (an `onCourse` hook,
  * released with the world). A sign with no words is hidden; a `show` sign stays hidden until the
  * story shows it, and a hanging one unrolls from its rail. Shared by the islands built on
- * `frame-build.ts` (Guildcrest's `index.ts` holds the older copy this came from).
+ * `frame-build.ts` (through `island-works.ts`).
  */
 
 /** How long a hanging cloth takes to unroll (s). */

@@ -1,0 +1,47 @@
+{
+  "id": "iw.petra.wait",
+  "speaker": "Petra",
+  "text": "Try the guild’s board with Calla first, Captain.",
+  "words": [
+    {
+      "word": "Try",
+      "start": 0.049,
+      "end": 0.318625
+    },
+    {
+      "word": "the",
+      "start": 0.318625,
+      "end": 0.392166
+    },
+    {
+      "word": "guild’s",
+      "start": 0.392166,
+      "end": 0.747541
+    },
+    {
+      "word": "board",
+      "start": 0.747541,
+      "end": 1.066166
+    },
+    {
+      "word": "with",
+      "start": 1.066166,
+      "end": 1.2255
+    },
+    {
+      "word": "Calla",
+      "start": 1.2255,
+      "end": 1.544125
+    },
+    {
+      "word": "first",
+      "start": 1.544125,
+      "end": 2.120083
+    },
+    {
+      "word": "Captain",
+      "start": 2.120083,
+      "end": 2.370083
+    }
+  ]
+}

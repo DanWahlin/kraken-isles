@@ -697,6 +697,15 @@ export async function createSession(o: SessionOptions): Promise<GameSession> {
       openChest: treasure.open,
       cues,
       puzzles,
+      sky: {
+        hours: () => engine.clock.hours,
+        set(hours) {
+          engine.clock.set(hours, engine.clock.azimuth);
+          o.cove.sky.invalidate();
+        },
+        home: () => applySky(berth.sky),
+      },
+      overlay: hud.root,
       stream,
       cove,
       ship,

@@ -1,0 +1,117 @@
+{
+  "id": "wingman.tw.01",
+  "speaker": "Wingman",
+  "text": "Last light, Captain! Here the crew learns to save a job once and let it run, after you’ve tested it by hand.",
+  "words": [
+    {
+      "word": "Last",
+      "start": 0,
+      "end": 0.293
+    },
+    {
+      "word": "light",
+      "start": 0.293,
+      "end": 0.83
+    },
+    {
+      "word": "Captain",
+      "start": 0.83,
+      "end": 1.36
+    },
+    {
+      "word": "Here",
+      "start": 1.36,
+      "end": 2.36
+    },
+    {
+      "word": "the",
+      "start": 2.36,
+      "end": 2.544
+    },
+    {
+      "word": "crew",
+      "start": 2.544,
+      "end": 2.857
+    },
+    {
+      "word": "learns",
+      "start": 2.857,
+      "end": 3.253
+    },
+    {
+      "word": "to",
+      "start": 3.253,
+      "end": 3.424
+    },
+    {
+      "word": "save",
+      "start": 3.424,
+      "end": 3.72
+    },
+    {
+      "word": "a",
+      "start": 3.72,
+      "end": 3.82
+    },
+    {
+      "word": "job",
+      "start": 3.82,
+      "end": 4.112
+    },
+    {
+      "word": "once",
+      "start": 4.112,
+      "end": 4.6
+    },
+    {
+      "word": "and",
+      "start": 4.6,
+      "end": 4.76
+    },
+    {
+      "word": "let",
+      "start": 4.76,
+      "end": 4.933
+    },
+    {
+      "word": "it",
+      "start": 4.933,
+      "end": 5.14
+    },
+    {
+      "word": "run",
+      "start": 5.14,
+      "end": 5.813
+    },
+    {
+      "word": "after",
+      "start": 5.813,
+      "end": 6.1
+    },
+    {
+      "word": "you’ve",
+      "start": 6.1,
+      "end": 6.297
+    },
+    {
+      "word": "tested",
+      "start": 6.297,
+      "end": 6.72
+    },
+    {
+      "word": "it",
+      "start": 6.72,
+      "end": 6.933
+    },
+    {
+      "word": "by",
+      "start": 6.933,
+      "end": 7.136
+    },
+    {
+      "word": "hand",
+      "start": 7.136,
+      "end": 7.386
+    }
+  ]
+}

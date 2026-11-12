@@ -1,0 +1,97 @@
+{
+  "id": "iw.iris.assign.go",
+  "speaker": "Iris",
+  "text": "Ask for that one change. Then run the workbench through, and come and tell me what you saw.",
+  "words": [
+    {
+      "word": "Ask",
+      "start": 0.052625,
+      "end": 0.447375
+    },
+    {
+      "word": "for",
+      "start": 0.447375,
+      "end": 0.578958
+    },
+    {
+      "word": "that",
+      "start": 0.578958,
+      "end": 0.842125
+    },
+    {
+      "word": "one",
+      "start": 0.842125,
+      "end": 1.14475
+    },
+    {
+      "word": "change",
+      "start": 1.14475,
+      "end": 2.64475
+    },
+    {
+      "word": "Then",
+      "start": 2.64475,
+      "end": 2.881583
+    },
+    {
+      "word": "run",
+      "start": 2.881583,
+      "end": 3.118416
+    },
+    {
+      "word": "the",
+      "start": 3.118416,
+      "end": 3.223666
+    },
+    {
+      "word": "workbench",
+      "start": 3.223666,
+      "end": 3.85525
+    },
+    {
+      "word": "through",
+      "start": 3.85525,
+      "end": 4.592125
+    },
+    {
+      "word": "and",
+      "start": 4.592125,
+      "end": 4.763166
+    },
+    {
+      "word": "come",
+      "start": 4.763166,
+      "end": 5.013166
+    },
+    {
+      "word": "and",
+      "start": 5.013166,
+      "end": 5.118416
+    },
+    {
+      "word": "tell",
+      "start": 5.118416,
+      "end": 5.434208
+    },
+    {
+      "word": "me",
+      "start": 5.434208,
+      "end": 5.60525
+    },
+    {
+      "word": "what",
+      "start": 5.60525,
+      "end": 5.842125
+    },
+    {
+      "word": "you",
+      "start": 5.842125,
+      "end": 5.960541
+    },
+    {
+      "word": "saw",
+      "start": 5.960541,
+      "end": 6.210541
+    }
+  ]
+}

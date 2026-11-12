@@ -1,0 +1,1410 @@
+{
+  "$schema": "../../schemas/chapter.schema.json",
+  "$comment": "Chapter 06 (Canvases) on Inkwell Bluffs (docs/specs/ISLAND-06-inkwell-bluffs.md §6).",
+  "chapter": "06-canvases",
+  "images": [
+    {
+      "id": "ch06/arrangement-board-canvas",
+      "src": "course/ch06/arrangement-board-canvas.webp",
+      "hash": "cd962be24c8c",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Arrangement board analogy for canvases"
+    },
+    {
+      "id": "ch06/human-agent-shared-surface",
+      "src": "course/ch06/human-agent-shared-surface.webp",
+      "hash": "8c6f8b8e9134",
+      "width": 1536,
+      "height": 1024,
+      "alt": "You and the agent share one canvas. You use UI controls, the agent uses actions such as get, add, and move, and both sides can change the same board."
+    },
+    {
+      "id": "ch06/chat-vs-canvas",
+      "src": "course/ch06/chat-vs-canvas.webp",
+      "hash": "7c4a13adf226",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Chat versus canvas work surfaces"
+    },
+    {
+      "id": "ch06/app-repo-issues-kanban",
+      "src": "course/ch06/app-repo-issues-kanban.webp",
+      "hash": "80b239e48ef9",
+      "width": 2846,
+      "height": 1774,
+      "alt": "Repository Issues Kanban preview"
+    },
+    {
+      "id": "ch06/app-open-repo-issues-canvas",
+      "src": "course/ch06/app-open-repo-issues-canvas.webp",
+      "hash": "a5aa647178d0",
+      "width": 1568,
+      "height": 700,
+      "alt": "Review panel + menu with Canvas open and Repository Issues Kanban highlighted"
+    },
+    {
+      "id": "ch06/session-board-collaboration",
+      "src": "course/ch06/session-board-collaboration.webp",
+      "hash": "dda9ec5e95bb",
+      "width": 1536,
+      "height": 1024,
+      "alt": "You and the agent update the same Session Board"
+    },
+    {
+      "id": "ch06/session-plan-validation-board",
+      "src": "course/ch06/session-plan-validation-board.webp",
+      "hash": "8ffe6bdd6e0e",
+      "width": 1536,
+      "height": 1024,
+      "alt": "Session plan and validation board"
+    },
+    {
+      "id": "ch06/app-create-canvas-command",
+      "src": "course/ch06/app-create-canvas-command.webp",
+      "hash": "f2b324671689",
+      "width": 978,
+      "height": 204,
+      "alt": "The /create-canvas skill selected in the prompt box typeahead"
+    },
+    {
+      "id": "ch06/app-create-canvas-screenshot",
+      "src": "course/ch06/app-create-canvas-screenshot.webp",
+      "hash": "25a0eb4f5a24",
+      "width": 1528,
+      "height": 1080,
+      "alt": "Feature Workbench canvas in the side panel with five stages, a feature proposal field, actions, a checklist, and an empty evidence area"
+    },
+    {
+      "id": "ch06/app-feature-workbench-propose",
+      "src": "course/ch06/app-feature-workbench-propose.webp",
+      "hash": "c25be18d9dac",
+      "width": 1528,
+      "height": 1080,
+      "alt": "Feature Workbench with the Plan stage current and the status Working while the session is in Plan mode"
+    },
+    {
+      "id": "ch06/app-feature-workbench-plan",
+      "src": "course/ch06/app-feature-workbench-plan.webp",
+      "hash": "ec5acda3036e",
+      "width": 1528,
+      "height": 1080,
+      "alt": "Feature Workbench with the Propose and Plan stages complete and the status Approved"
+    },
+    {
+      "id": "ch06/app-feature-workbench-baseline",
+      "src": "course/ch06/app-feature-workbench-baseline.webp",
+      "hash": "7b0c1bf9798a",
+      "width": 1528,
+      "height": 1080,
+      "alt": "Expanded check tool output with 4 total and 4 passed tests, next to the Feature Workbench Baseline evidence of 4/4 tests and a passing build"
+    },
+    {
+      "id": "ch06/app-feature-workbench-implement",
+      "src": "course/ch06/app-feature-workbench-implement.webp",
+      "hash": "6c0f5e7f68f2",
+      "width": 1528,
+      "height": 1080,
+      "alt": "Feature Workbench with the Implement stage complete and a Diff row in the evidence, next to the Changes pill above the prompt box"
+    },
+    {
+      "id": "ch06/app-feature-workbench-browser-validation",
+      "src": "course/ch06/app-feature-workbench-browser-validation.webp",
+      "hash": "5b1424c09571",
+      "width": 1528,
+      "height": 1080,
+      "alt": "Feature Workbench with Browser evidence recorded and Browser validation done, next to Copilot's report of the checks that passed and the checks recorded as notes"
+    },
+    {
+      "id": "ch06/app-feature-workbench-validate",
+      "src": "course/ch06/app-feature-workbench-validate.webp",
+      "hash": "7a95db753427",
+      "width": 1528,
+      "height": 1080,
+      "alt": "Feature Workbench with all five stages complete, and evidence that shows 4 baseline tests and 14 final tests"
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "K6.1",
+      "type": "mc",
+      "prompt": "In Lyra’s studio, what is a canvas?",
+      "options": [
+        {
+          "id": "chat",
+          "text": "A longer group chat",
+          "feedback": "In a long group chat, decisions get buried."
+        },
+        {
+          "id": "board",
+          "text": "The app’s arrangement board for human-agent work: one shared board that keeps everything visible"
+        },
+        {
+          "id": "solo",
+          "text": "A notebook that only the agent writes in",
+          "feedback": "A canvas is shared: you and the agent can both see it and update it."
+        },
+        {
+          "id": "song",
+          "text": "The finished song",
+          "feedback": "It’s the board the band plans on, not the result."
+        }
+      ],
+      "answer": "board",
+      "explain": {
+        "correct": "Right. A band can argue its options in a long group chat, where decisions get buried, or it can use a shared arrangement board. A canvas is that board.",
+        "wrong": "Where did the band keep its decisions the second time?"
+      },
+      "hints": [
+        "Where did the decisions get buried?",
+        "Everybody can see it.",
+        "It’s the app’s arrangement board for human-agent work."
+      ],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "from-the-studio-the-bands-arrangement-board",
+        "hash": "4ea6ed135528"
+      }
+    },
+    {
+      "id": "M6.1",
+      "type": "matching",
+      "prompt": "Match each of the chapter’s terms to what it means.",
+      "pairs": [
+        {
+          "left": {
+            "id": "action",
+            "text": "Agent-callable action"
+          },
+          "right": {
+            "id": "gives",
+            "text": "An action that the canvas gives the agent, such as updating a checklist item"
+          }
+        },
+        {
+          "left": {
+            "id": "scope",
+            "text": "User scope"
+          },
+          "right": {
+            "id": "mine",
+            "text": "Available to you across projects, and not committed to this repository"
+          }
+        },
+        {
+          "left": {
+            "id": "local",
+            "text": "Local-only UI"
+          },
+          "right": {
+            "id": "see",
+            "text": "A control that changes only what you see and does not tell the agent"
+          }
+        },
+        {
+          "left": {
+            "id": "event",
+            "text": "Event"
+          },
+          "right": {
+            "id": "state",
+            "text": "A recorded state change, such as a plan being approved"
+          }
+        }
+      ],
+      "explain": {
+        "correct": "That’s the course’s table. You don’t need to write extension code in this chapter: the terms help you read the detailed prompt later, and diagnose a generated canvas.",
+        "wrong": "Which one does the agent call? Which one only changes your own view?"
+      },
+      "hints": [
+        "Start with the one the agent calls.",
+        "User scope is about where the canvas is kept.",
+        "Action → the agent calls it · user scope → yours, not committed · local-only UI → only what you see · event → a recorded state change."
+      ],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "a-canvas-is-a-shared-control-panel",
+        "hash": "258a840d9be4"
+      }
+    },
+    {
+      "id": "K6.2",
+      "type": "mc",
+      "prompt": "Which work calls for a canvas?",
+      "options": [
+        {
+          "id": "quick",
+          "text": "A quick answer to a short task",
+          "feedback": "Use chat for a quick answer to a short task."
+        },
+        {
+          "id": "always",
+          "text": "Every prompt: a canvas is always the better surface",
+          "feedback": "Chat works well for questions and discussion."
+        },
+        {
+          "id": "state",
+          "text": "Work with state to keep visible, steps that repeat, or controls that you and the agent both use"
+        },
+        {
+          "id": "hide",
+          "text": "Notes the agent shouldn’t see",
+          "feedback": "A canvas is a shared board that you and the agent can both see and update."
+        }
+      ],
+      "answer": "state",
+      "explain": {
+        "correct": "Right. Use chat for a quick answer to a short task. Use a canvas when the work has state to keep visible, steps that repeat, or controls that you and the agent both use.",
+        "wrong": "What gets hard to scan once a session is doing real work?"
+      },
+      "hints": [
+        "Think of Thea’s lines of notes.",
+        "State, repeated steps, shared controls.",
+        "A canvas, when the work has state to keep visible."
+      ],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "when-to-use-a-canvas",
+        "hash": "83a511b5a288"
+      }
+    },
+    {
+      "id": "K6.3",
+      "type": "mc",
+      "prompt": "Which work surfaces does every session have before you add a canvas?",
+      "options": [
+        {
+          "id": "four",
+          "text": "The **Plan**, **Terminal**, **Browser**, and **Changes** panels"
+        },
+        {
+          "id": "canvas",
+          "text": "A canvas for each task",
+          "feedback": "A canvas adds one more surface that you design for the task. The four panels come with every session."
+        },
+        {
+          "id": "chat",
+          "text": "Only the chat",
+          "feedback": "The panels that you used in earlier chapters come with every session."
+        },
+        {
+          "id": "plugins",
+          "text": "Whatever plugins you’ve installed",
+          "feedback": "A plugin can add a canvas. The built-in panels are there without one."
+        }
+      ],
+      "answer": "four",
+      "explain": {
+        "correct": "Right. The **Plan**, **Terminal**, **Browser**, and **Changes** panels come with every session. A canvas adds one more surface that you design for the task.",
+        "wrong": "What stands at the Plaza’s four corners?"
+      },
+      "hints": [
+        "Count the desks.",
+        "You used them in earlier chapters.",
+        "**Plan**, **Terminal**, **Browser**, and **Changes**."
+      ],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "built-in-work-surfaces-come-first",
+        "hash": "03abe31013c8"
+      }
+    },
+    {
+      "id": "K6.5",
+      "type": "mc",
+      "prompt": "You created a user-scoped Session Board. What does the **Changes** tab list?",
+      "options": [
+        {
+          "id": "ext",
+          "text": "The canvas’s own files, ready to commit",
+          "feedback": "User scope: the canvas is available to you across projects and is not committed to this repository."
+        },
+        {
+          "id": "app",
+          "text": "The Book App’s source, edited by the board",
+          "feedback": "The board does not run tests or edit the app."
+        },
+        {
+          "id": "read",
+          "text": "Every file the agent read",
+          "feedback": "**Changes** lists changed files. Creating the canvas changed none in the repository."
+        },
+        {
+          "id": "none",
+          "text": "No changed files: creating a user-scoped canvas doesn’t change repository files"
+        }
+      ],
+      "answer": "none",
+      "explain": {
+        "correct": "Right. The feature proposal, checklist, and notes stay visible on the board, and you and the agent can both read and update them. The repository is untouched.",
+        "wrong": "Where did Petra’s slate go when the day ended?"
+      },
+      "hints": ["Whose sea chest is it in?", "User scope.", "**Changes** lists no changed files."],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-2-create-a-session-board",
+        "hash": "21b5e247f33c"
+      }
+    },
+    {
+      "id": "K6.6",
+      "type": "mc",
+      "prompt": "The generated Feature Workbench is missing one checklist item. What do you do?",
+      "options": [
+        {
+          "id": "regen",
+          "text": "Regenerate the full canvas until it’s right",
+          "feedback": "Generated results can differ between runs. Do not repeatedly regenerate the full canvas."
+        },
+        {
+          "id": "repair",
+          "text": "Use the one repair prompt that matches the missing part"
+        },
+        {
+          "id": "skip",
+          "text": "Carry on: the rest will fill itself in",
+          "feedback": "Check the expected structure before you continue."
+        },
+        {
+          "id": "fallback",
+          "text": "Go straight to the Markdown fallback",
+          "feedback": "Use the Markdown fallback if the canvas still does not match after two focused repairs."
+        }
+      ],
+      "answer": "repair",
+      "explain": {
+        "correct": "Right. Keep the current canvas, add what’s missing from your original request, and don’t redesign parts that already work.",
+        "wrong": "One part is wrong. How much of the board do you change?"
+      },
+      "hints": [
+        "Compare it with the expected structure.",
+        "One fault, one focused repair.",
+        "Use the matching repair prompt. Two repairs, then the fallback."
+      ],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-3-create-a-feature-workbench",
+        "hash": "74377c083aef"
+      }
+    },
+    {
+      "id": "K6.9",
+      "type": "mc",
+      "prompt": "Your assignment adds an **Assess** stage. Where does it go, and what does it record?",
+      "options": [
+        {
+          "id": "end",
+          "text": "After **Validate**, as a last sign-off",
+          "feedback": "The stage must compare a feature proposal with the app’s current behavior before planning starts."
+        },
+        {
+          "id": "approve",
+          "text": "In place of **Plan**, as an approval stage",
+          "feedback": "Approval happens in the **Plan** tab. Assess goes between Propose and Plan."
+        },
+        {
+          "id": "before",
+          "text": "After **Propose**: it compares the feature proposal with the app’s current behavior, and records the result as evidence"
+        },
+        {
+          "id": "redo",
+          "text": "Anywhere, once you regenerate the whole workbench",
+          "feedback": "Submit a focused change request. Do not redesign parts that already work."
+        }
+      ],
+      "answer": "before",
+      "explain": {
+        "correct": "Right. Then run the workbench through, and confirm that each completed stage has evidence from the current session.",
+        "wrong": "What should you know before anyone plans the work?"
+      },
+      "hints": [
+        "Before planning starts.",
+        "Between Propose and Plan.",
+        "After **Propose**: compare the proposal with the app’s current behavior."
+      ],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "core-assignment",
+        "hash": "d846f46c0106"
+      }
+    },
+    {
+      "id": "H6.1",
+      "type": "hotspot",
+      "image": "ch06/app-open-repo-issues-canvas",
+      "mask": [[0.595663, 0.377143, 0.170918, 0.068571]],
+      "prompt": "You selected **+** (**Add tab**) in the review panel. Which entry holds the community canvas you installed?",
+      "targets": [
+        {
+          "id": "canvas",
+          "rect": [0.461735, 0.382857, 0.127551, 0.045714],
+          "label": "Canvas",
+          "correct": true
+        },
+        {
+          "id": "changes",
+          "rect": [0.461735, 0.082857, 0.127551, 0.045714],
+          "label": "Changes",
+          "feedback": "That’s a built-in panel. It lists changed files."
+        },
+        {
+          "id": "terminal",
+          "rect": [0.461735, 0.132857, 0.127551, 0.045714],
+          "label": "Terminal",
+          "feedback": "That’s a built-in panel. A canvas is one more surface, in its own entry."
+        },
+        {
+          "id": "browser",
+          "rect": [0.461735, 0.182857, 0.127551, 0.045714],
+          "label": "Browser",
+          "feedback": "That’s a built-in panel. The canvas has its own entry lower down."
+        }
+      ],
+      "explain": {
+        "correct": "Right. Select **+** (**Add tab**), then **Canvas**, then **Repository Issues Kanban**. The package is named `accessibility-kanban`, but **Repository Issues Kanban** is the name shown in the app.",
+        "wrong": "Three of these are panels that come with every session. One opens a list of canvases."
+      },
+      "hints": [
+        "The built-in panels are at the top of the menu.",
+        "Look for the entry with an arrow.",
+        "Select **Canvas**."
+      ],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-1-try-your-first-canvas",
+        "hash": "1fc9e1017bb6",
+        "image": {
+          "src": "course/ch06/app-open-repo-issues-canvas.webp",
+          "hash": "a5aa647178d0"
+        }
+      }
+    },
+    {
+      "id": "H6.2",
+      "type": "hotspot",
+      "image": "ch06/app-create-canvas-screenshot",
+      "mask": [],
+      "prompt": "The Feature Workbench is built, and its evidence area is empty. Which control starts the work?",
+      "targets": [
+        {
+          "id": "generate",
+          "rect": [0.473168, 0.277778, 0.08966, 0.039815],
+          "label": "Generate plan",
+          "correct": true
+        },
+        {
+          "id": "baseline",
+          "rect": [0.473168, 0.600926, 0.132199, 0.038889],
+          "label": "Run baseline",
+          "feedback": "That records the state of the app before any change. It comes after the plan is approved."
+        },
+        {
+          "id": "implement",
+          "rect": [0.473168, 0.648148, 0.132199, 0.038889],
+          "label": "Implement",
+          "feedback": "That builds the feature from the approved plan. There is no plan yet."
+        },
+        {
+          "id": "stage",
+          "rect": [0.568717, 0.125, 0.10144, 0.034259],
+          "label": "Plan, on the progress rail",
+          "feedback": "That’s a stage on the progress rail. It shows state; it isn’t a button."
+        }
+      ],
+      "explain": {
+        "correct": "Right. One feature proposal field and one **Generate plan** button. It switches the session to **Plan** mode, and the status shows **Working** until the plan is ready for review.",
+        "wrong": "The work starts from the feature proposal. Look beside it."
+      },
+      "hints": [
+        "Start at the top of the board.",
+        "It’s under the Feature proposal field.",
+        "Select **Generate plan**."
+      ],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-3-create-a-feature-workbench",
+        "hash": "74377c083aef",
+        "image": {
+          "src": "course/ch06/app-create-canvas-screenshot.webp",
+          "hash": "25a0eb4f5a24"
+        }
+      }
+    },
+    {
+      "id": "H6.3",
+      "type": "hotspot",
+      "image": "ch06/app-feature-workbench-plan",
+      "mask": [],
+      "prompt": "The status shows **Approved**, and nothing in the app has changed yet. Which action do you select first?",
+      "targets": [
+        {
+          "id": "baseline",
+          "rect": [0.473168, 0.600926, 0.132199, 0.038889],
+          "label": "Run baseline",
+          "correct": true
+        },
+        {
+          "id": "implement",
+          "rect": [0.473168, 0.648148, 0.132199, 0.038889],
+          "label": "Implement",
+          "feedback": "The canvas enables each action only after the previous step has evidence. Record a baseline first."
+        },
+        {
+          "id": "generate",
+          "rect": [0.473168, 0.277778, 0.08966, 0.039815],
+          "label": "Generate plan",
+          "feedback": "The plan is written and approved. The next stage is Baseline."
+        },
+        {
+          "id": "pill",
+          "rect": [0.568063, 0.285185, 0.061518, 0.025926],
+          "label": "Approved",
+          "feedback": "That’s the status. It shows that the canvas recorded your approval; it isn’t a button."
+        }
+      ],
+      "explain": {
+        "correct": "Right. Select **Run baseline** to record the state of the app before any change. It runs in **Autopilot** mode, and the session returns to **Interactive** mode when it ends.",
+        "wrong": "Which stage on the rail is the current one?"
+      },
+      "hints": [
+        "Look at the rail: two stages are done.",
+        "The next stage is Baseline.",
+        "Select **Run baseline**."
+      ],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-3-create-a-feature-workbench",
+        "hash": "74377c083aef",
+        "image": {
+          "src": "course/ch06/app-feature-workbench-plan.webp",
+          "hash": "ec5acda3036e"
+        }
+      }
+    },
+    {
+      "id": "T6.1",
+      "type": "scenario",
+      "situation": "A session is doing real work. The thread is long, and you keep scrolling to find where the plan stands.",
+      "prompt": "What helps?",
+      "options": [
+        {
+          "id": "longer",
+          "text": "A longer, more careful prompt",
+          "feedback": "A prompt adds to the thread. It doesn’t keep the plan’s state in view."
+        },
+        {
+          "id": "canvas",
+          "text": "A canvas: a shared board in the side panel that keeps the state visible"
+        },
+        {
+          "id": "new",
+          "text": "A new session for every step",
+          "feedback": "That splits the work up. It doesn’t show its state."
+        },
+        {
+          "id": "scroll",
+          "text": "Nothing: scrolling is how chat works",
+          "feedback": "Once a session is doing real work, a long chat thread gets hard to scan."
+        }
+      ],
+      "answer": "canvas",
+      "explain": {
+        "correct": "Right. Use a canvas when the work has state to keep visible, steps that repeat, or controls that you and the agent both use.",
+        "wrong": "Where could the plan stay in view?"
+      },
+      "hints": ["Think of the Gossip Stair.", "A shared board in the side panel.", ""],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "when-to-use-a-canvas",
+        "hash": "83a511b5a288"
+      }
+    },
+    {
+      "id": "T6.2",
+      "type": "scenario",
+      "situation": "GitHub Copilot added plan steps to the board. You write \"pause before edits\" in its notes.",
+      "prompt": "What does Copilot continue from?",
+      "options": [
+        {
+          "id": "update",
+          "text": "Your update on the board"
+        },
+        {
+          "id": "chat",
+          "text": "A sentence buried in the chat",
+          "feedback": "It continues from your update, not from a buried chat sentence."
+        },
+        {
+          "id": "own",
+          "text": "Its own first plan, as if nothing changed",
+          "feedback": "A canvas is bidirectional: you and the agent can both change the same board."
+        },
+        {
+          "id": "ask",
+          "text": "Nothing, until you say it again in chat",
+          "feedback": "You don’t need to repeat it. The board is shared."
+        }
+      ],
+      "answer": "update",
+      "explain": {
+        "correct": "Right. A canvas is bidirectional: you and the agent can both change the same board.",
+        "wrong": "Who can change the board?"
+      },
+      "hints": ["Two hands, one chart.", "It reads the board.", ""],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "a-canvas-is-a-shared-control-panel",
+        "hash": "258a840d9be4"
+      }
+    },
+    {
+      "id": "T6.3",
+      "type": "scenario",
+      "situation": "The agent changed three files. You want to see what changed.",
+      "prompt": "Where do you look first?",
+      "options": [
+        {
+          "id": "build",
+          "text": "A new canvas, built to show the diff",
+          "feedback": "The built-in panels come first. A canvas adds one more surface for the task."
+        },
+        {
+          "id": "chat",
+          "text": "The agent’s summary in chat",
+          "feedback": "A summary isn’t the diff. The **Changes** panel lists the changed files."
+        },
+        {
+          "id": "changes",
+          "text": "The **Changes** panel that comes with every session"
+        },
+        {
+          "id": "kanban",
+          "text": "The Repository Issues Kanban",
+          "feedback": "That board holds repository issues, not changed files."
+        }
+      ],
+      "answer": "changes",
+      "explain": {
+        "correct": "Right. The **Plan**, **Terminal**, **Browser**, and **Changes** panels come with every session.",
+        "wrong": "Which desk on the Plaza holds two stacks of sheets?"
+      },
+      "hints": ["A built-in panel.", "It lists changed files.", ""],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "built-in-work-surfaces-come-first",
+        "hash": "03abe31013c8"
+      }
+    },
+    {
+      "id": "T6.4",
+      "type": "scenario",
+      "situation": "You installed `accessibility-kanban@awesome-copilot`. The canvas list has no entry with that name.",
+      "prompt": "What’s wrong?",
+      "options": [
+        {
+          "id": "again",
+          "text": "The install failed. Install it again",
+          "feedback": "Check the name first. The package is named `accessibility-kanban`, but the app shows another name."
+        },
+        {
+          "id": "other",
+          "text": "Install a different canvas that sounds close",
+          "feedback": "The one you installed is there, under the name the app shows."
+        },
+        {
+          "id": "skills",
+          "text": "Run `/skills reload`",
+          "feedback": "That reloads skills. For a canvas, submit the prompt `Restart canvas extensions`."
+        },
+        {
+          "id": "name",
+          "text": "Nothing. Look for **Repository Issues Kanban**: `accessibility-kanban` is the package name"
+        }
+      ],
+      "answer": "name",
+      "explain": {
+        "correct": "Right. **Repository Issues Kanban** is the name shown in the app.",
+        "wrong": "What does the crate’s stencil say, and what does the board’s own sign say?"
+      },
+      "hints": ["Two names.", "One is the package. One is shown in the app.", ""],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "the-community-canvas-is-not-listed",
+        "hash": "a337f3b1e165"
+      }
+    },
+    {
+      "id": "T6.5",
+      "type": "scenario",
+      "situation": "On the Repository Issues Kanban you want a plan for each of five issues.",
+      "prompt": "How many cards do you move to **Plan** now?",
+      "options": [
+        {
+          "id": "one",
+          "text": "One. Each card that you move to **Plan** starts a new agent run"
+        },
+        {
+          "id": "five",
+          "text": "All five at once",
+          "feedback": "Each card that you move to **Plan** starts a new agent run, so move only one card there."
+        },
+        {
+          "id": "none",
+          "text": "None: ask for the plans in chat",
+          "feedback": "Moving a card is how this board asks the agent. That’s the interaction model."
+        },
+        {
+          "id": "ready",
+          "text": "Move them straight to **Ready**",
+          "feedback": "A card moves to **Ready** when its plan is ready."
+        }
+      ],
+      "answer": "one",
+      "explain": {
+        "correct": "Right. The canvas asks the agent to plan that issue in a background agent. It reads the issue and the code, but does not edit files.",
+        "wrong": "What does each card on Plan start?"
+      },
+      "hints": ["One runner per card.", "A new agent run.", ""],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-1-try-your-first-canvas",
+        "hash": "1fc9e1017bb6"
+      }
+    },
+    {
+      "id": "T6.6",
+      "type": "scenario",
+      "situation": "The Feature Workbench shows **Working**, and the plan is ready in the **Plan** tab. You have not recorded a baseline.",
+      "prompt": "How do you approve it?",
+      "options": [
+        {
+          "id": "approve",
+          "text": "Select **Approve and implement this plan**",
+          "feedback": "Do not select that: the agent would start to change the app before you record a baseline."
+        },
+        {
+          "id": "exit",
+          "text": "In the **Review plan** box, select **Exit plan mode and I will prompt myself**"
+        },
+        {
+          "id": "stage",
+          "text": "Select the Approve stage on the canvas",
+          "feedback": "There is no Approve stage. Approval happens in the **Plan** tab."
+        },
+        {
+          "id": "chat",
+          "text": "Type \"approved\" in the chat",
+          "feedback": "Answer the **Review plan** box at the bottom of the chat."
+        }
+      ],
+      "answer": "exit",
+      "explain": {
+        "correct": "Right. The canvas still records your approval, and the status shows **Approved**. Confirm that the mode is **Interactive**.",
+        "wrong": "Where does approval happen?"
+      },
+      "hints": ["Not on the canvas.", "The **Review plan** box.", ""],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-3-create-a-feature-workbench",
+        "hash": "74377c083aef"
+      }
+    },
+    {
+      "id": "T6.7",
+      "type": "scenario",
+      "situation": "An item on the board is checked, and you can’t find any output that supports it.",
+      "prompt": "What do you do?",
+      "options": [
+        {
+          "id": "trust",
+          "text": "Leave it: the chat said it passed",
+          "feedback": "Evidence on the board should come from actual terminal or browser output, not from chat inference."
+        },
+        {
+          "id": "image",
+          "text": "Compare it with the course’s example image",
+          "feedback": "Compare the board with the output from this session, not with an example image or another session."
+        },
+        {
+          "id": "uncheck",
+          "text": "Uncheck it, then run the check again"
+        },
+        {
+          "id": "all",
+          "text": "Check the rest of the items to match",
+          "feedback": "That adds more marks with nothing behind them."
+        }
+      ],
+      "answer": "uncheck",
+      "explain": {
+        "correct": "Right. Compare the board with the terminal and browser output from this session’s worktree, and confirm that the commands ran in `samples/book-app-web`.",
+        "wrong": "What makes a mark on the Great Chart hold?"
+      },
+      "hints": ["A slate behind every mark.", "No output, no check.", ""],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "the-board-does-not-match-the-evidence",
+        "hash": "db033d529ef1"
+      }
+    },
+    {
+      "id": "T6.8",
+      "type": "scenario",
+      "situation": "Baseline: 4 tests. After **Run final checks**: 14 tests, all passing, and the build passes.",
+      "prompt": "Is that a problem?",
+      "options": [
+        {
+          "id": "equal",
+          "text": "Yes: the totals must be equal",
+          "feedback": "The total can go up. The agent writes its own tests."
+        },
+        {
+          "id": "images",
+          "text": "Yes: the course’s image shows other numbers",
+          "feedback": "Your test totals and file list can differ from the images."
+        },
+        {
+          "id": "rerun",
+          "text": "Yes: run the baseline again until it shows 14",
+          "feedback": "The baseline records the state before any change. It stays as it was."
+        },
+        {
+          "id": "fine",
+          "text": "No. The final total must be at least the baseline, and it can go up if the implementation added tests"
+        }
+      ],
+      "answer": "fine",
+      "explain": {
+        "correct": "Right. Confirm that the tests and the build pass, and that the final test total is at least the baseline total.",
+        "wrong": "Which way may the total move?"
+      },
+      "hints": ["The last sounding is not shallower than the first.", "At least the baseline.", ""],
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-3-create-a-feature-workbench",
+        "hash": "74377c083aef"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "id": "pg6.studio",
+      "title": "The band’s arrangement board",
+      "image": "ch06/arrangement-board-canvas",
+      "caption": "Imagine a band planning a song. They could argue their options in a long group chat, where decisions get buried, or they could use a shared arrangement board to keep everything visible and organized. A canvas is the app’s arrangement board for human-agent work.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "from-the-studio-the-bands-arrangement-board",
+        "hash": "4ea6ed135528"
+      }
+    },
+    {
+      "id": "pg6.shared",
+      "title": "A shared control panel",
+      "image": "ch06/human-agent-shared-surface",
+      "caption": "A canvas is bidirectional: you and the agent can both change the same board. GitHub Copilot adds plan steps to the board. You uncheck a step, or write \"pause before edits\" in the notes. GitHub Copilot continues from your update, not from a buried chat sentence.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "a-canvas-is-a-shared-control-panel",
+        "hash": "258a840d9be4"
+      }
+    },
+    {
+      "id": "pg6.terms",
+      "title": "The exercises’ terms",
+      "caption": "An agent-callable action is an action that the canvas gives the agent, such as updating a checklist item. User scope means the canvas is available to you across projects and is not committed to this repository. Local-only UI is a control that changes only what you see. An event is a recorded state change. Polling checks at intervals for a state change. A timeout is the longest an action can run before it stops.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "a-canvas-is-a-shared-control-panel",
+        "hash": "258a840d9be4"
+      }
+    },
+    {
+      "id": "pg6.surfaces",
+      "title": "Built-in surfaces come first",
+      "caption": "The **Plan**, **Terminal**, **Browser**, and **Changes** panels that you used in earlier chapters come with every session. A canvas adds one more surface that you design for the task.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "built-in-work-surfaces-come-first",
+        "hash": "03abe31013c8"
+      }
+    },
+    {
+      "id": "pg6.when",
+      "title": "Chat, or a canvas?",
+      "image": "ch06/chat-vs-canvas",
+      "caption": "Use chat for a quick answer to a short task. Use a canvas when the work has state to keep visible, steps that repeat, or controls that you and the agent both use.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "when-to-use-a-canvas",
+        "hash": "83a511b5a288"
+      }
+    },
+    {
+      "id": "pg6.ready",
+      "title": "Make ready",
+      "caption": "Use **Create from** > **Branches** > `main` to start a new worktree session for the course repository. Select **Interactive** mode and, if an agent picker appears, **Default agent**. In the review panel’s **Terminal** tab, from `samples/book-app-web`, run `npm install`, `npm test -- --run`, and `npm run build`. All three should finish without errors. Note the test totals: your canvas will use them as its baseline.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "prerequisites",
+        "hash": "7b03cb754f34"
+      }
+    },
+    {
+      "id": "pg6.community",
+      "title": "Try a community canvas",
+      "image": "ch06/app-repo-issues-kanban",
+      "caption": "Awesome GitHub Copilot is a curated collection of agents, instructions, skills, and canvas extensions. Its Repository Issues Kanban pulls repository issues into a board that you can triage and track inside a session. Select **Open in Copilot app**, confirm the name `accessibility-kanban@awesome-copilot`, and select **Install**. Submit the prompt `Restart canvas extensions`, then select **+** (**Add tab**), **Canvas**, and **Repository Issues Kanban**. Move only one card to **Plan**: each one starts a new agent run.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-1-try-your-first-canvas",
+        "hash": "1fc9e1017bb6"
+      }
+    },
+    {
+      "id": "pg6.session",
+      "title": "A Session Board",
+      "image": "ch06/session-board-collaboration",
+      "caption": "Type `/` in the prompt box and select `/create-canvas`, then describe the board: a Feature proposal text field, a checklist with Plan, Implement, and Validate, and a Notes section with Next decision and Blocker fields. You and the agent can both read and update them. The board does not run tests or edit the app, and **Changes** lists no changed files.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-2-create-a-session-board",
+        "hash": "21b5e247f33c"
+      }
+    },
+    {
+      "id": "pg6.workbench",
+      "title": "The Feature Workbench",
+      "image": "ch06/session-plan-validation-board",
+      "caption": "A reusable canvas that manages the local development inner loop for a new book-app feature. It keeps the feature proposal, plan, implementation, and evidence linked to the same session. Five stages: **Propose**, **Plan**, **Baseline**, **Implement**, and **Validate**. One feature proposal field and one **Generate plan** button. Eight checklist items. Actions for baseline, implementation, browser validation, final checks, and evidence refresh. An empty evidence area before any action runs.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-3-create-a-feature-workbench",
+        "hash": "74377c083aef"
+      }
+    },
+    {
+      "id": "pg6.prompt",
+      "title": "What the prompt asks for",
+      "image": "ch06/app-create-canvas-command",
+      "caption": "\"Every button = agent-callable action\": each button asks the agent to do real work, not just change your screen. Plan approval happens only in the session’s **Plan** tab, not through a canvas popup. The canvas checks the plan’s approval status periodically. Test, build, and browser actions get a multi-minute timeout. \"Never block on tooling\": if the agent cannot save a screenshot or run a browser check, it records a note and the workflow continues. \"User scope\": the canvas is saved to your machine across projects.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-3-create-a-feature-workbench",
+        "hash": "74377c083aef"
+      }
+    },
+    {
+      "id": "pg6.repair",
+      "title": "Repair, don’t regenerate",
+      "caption": "Generated results can differ between runs. Check the expected structure before you continue, and do not repeatedly regenerate the full canvas. If one part is wrong, use the repair prompt that matches: parts are missing; items show as complete without evidence; actions stop before the work finishes; an action stays disabled; an action shows an error after its work is done. If the canvas still does not match after two focused repairs, use the Markdown fallback.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-3-create-a-feature-workbench",
+        "hash": "74377c083aef"
+      }
+    },
+    {
+      "id": "pg6.run",
+      "title": "Run the workbench",
+      "image": "ch06/app-feature-workbench-validate",
+      "caption": "Paste the proposal and select **Generate plan**. Review the plan in the **Plan** tab, then select **Exit plan mode and I will prompt myself**, not **Approve and implement this plan**. Select **Run baseline** and compare its totals with the tool output. Select **Implement**, then check the **Changes** pill. Select **Browser validation**, then check the states yourself and stop the dev server. Select **Run final checks**: the tests and the build pass, and the final test total is at least the baseline total.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-3-create-a-feature-workbench",
+        "hash": "74377c083aef"
+      }
+    },
+    {
+      "id": "pg6.takeaways",
+      "title": "What Inkwell’s mapmakers know",
+      "caption": "A canvas gives the session a visible, shared board in the side panel. Create that board with `/create-canvas` and a short description. Community canvases from Awesome GitHub Copilot let you install and try the interaction model before building your own. Evidence on the board should come from actual terminal or browser output, not from chat inference.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "key-takeaways",
+        "hash": "3047dd138e5a"
+      }
+    },
+    {
+      "id": "pg6.assignment",
+      "title": "Your turn: an Assess stage",
+      "caption": "Extend the Feature Workbench with an **Assess** stage after **Propose**. It compares a feature proposal with the app’s current behavior before planning starts. Type `/`, select `/create-canvas`, and submit a focused change request that keeps the current canvas. Pick one small, beginner-safe improvement in `samples/book-app-web`, run the workbench through assess, plan, baseline, implement, and validate, and confirm that each completed stage has evidence from the current session.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "core-assignment",
+        "hash": "d846f46c0106"
+      }
+    },
+    {
+      "id": "pg6.next",
+      "title": "What’s next",
+      "caption": "In Chapter 07, you’ll turn repeatable prompts into automations. You’ll create a manual pull request readiness report and then schedule it. You don’t need to merge this chapter’s feature or keep its canvas open to continue.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "whats-next",
+        "hash": "cc93b5496737"
+      }
+    },
+    {
+      "id": "pg6.awesome",
+      "title": "Awesome GitHub Copilot",
+      "caption": "A curated collection of agents, instructions, skills, and canvas extensions that you can install into the GitHub Copilot app. Enterprise-managed settings can restrict which plugins and marketplaces are available. If you cannot install the plugin, read Exercise 1 and continue to Exercise 2.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-1-try-your-first-canvas",
+        "hash": "1fc9e1017bb6"
+      }
+    },
+    {
+      "id": "pg6.files",
+      "title": "Where canvas files live",
+      "caption": "`~/.copilot/extensions` is user scope: personal experiments, and the course’s choice, so nothing is committed. `.github/extensions` is project or team scope, for shared workflows. A canvas includes an entry file such as `extension.mjs`. Pause before accepting extra generated code: inspect capability names, stored state, UI controls, and whether any private data is included.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "exercise-3-create-a-feature-workbench",
+        "hash": "74377c083aef"
+      }
+    },
+    {
+      "id": "pg6.fallback",
+      "title": "The Markdown fallback",
+      "caption": "If `/create-canvas` is unavailable, or the generated canvas still does not work after two focused repairs, keep the same workflow in a Markdown artifact named `feature-workbench.md`, not added to the repository. Open it from the session’s **Files** tab. It has no action buttons, but it keeps the same plan and validation record visible. Update an item only after the session produces matching terminal, diff, or browser evidence.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "markdown-fallback",
+        "hash": "69f72d14a345"
+      }
+    },
+    {
+      "id": "B6.1",
+      "title": "No canvas opens?",
+      "caption": "Confirm that you typed `/create-canvas`. Submit the prompt `Restart canvas extensions` once. If the command or the panel is still missing, use the Markdown fallback.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "no-canvas-opens",
+        "hash": "425aa8f81f45"
+      }
+    },
+    {
+      "id": "B6.2",
+      "title": "The plan status stays at Working?",
+      "caption": "Answer the **Review plan** box at the bottom of the chat. Then select **Refresh evidence** on the canvas.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "the-plan-status-stays-at-working",
+        "hash": "7e3a113baed0"
+      }
+    },
+    {
+      "id": "B6.3",
+      "title": "An action button stays disabled?",
+      "caption": "The canvas enables each action only after the previous step has evidence. If **Implement** or **Run final checks** stays disabled because a screenshot or browser check could not run, use the **An action stays disabled** repair prompt in Exercise 3.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "an-action-button-stays-disabled",
+        "hash": "37a83cd52004"
+      }
+    },
+    {
+      "id": "B6.4",
+      "title": "The board does not match the evidence?",
+      "caption": "Compare the board with the terminal and browser output from this session’s worktree, not with an example image or another session. Confirm that commands ran in `samples/book-app-web`. Uncheck any item that has no output to support it, then run the check again.",
+      "source": {
+        "chapter": "06-canvases",
+        "anchor": "the-board-does-not-match-the-evidence",
+        "hash": "db033d529ef1"
+      }
+    }
+  ],
+  "chests": [
+    {
+      "id": "C6.1",
+      "page": "pg6.awesome",
+      "doubloons": 10
+    },
+    {
+      "id": "C6.2",
+      "page": "pg6.files",
+      "doubloons": 10
+    },
+    {
+      "id": "C6.3",
+      "page": "pg6.fallback",
+      "doubloons": 10
+    },
+    {
+      "id": "B6.1",
+      "page": "B6.1",
+      "doubloons": 5,
+      "kind": "bottle"
+    },
+    {
+      "id": "B6.2",
+      "page": "B6.2",
+      "doubloons": 5,
+      "kind": "bottle"
+    },
+    {
+      "id": "B6.3",
+      "page": "B6.3",
+      "doubloons": 5,
+      "kind": "bottle"
+    },
+    {
+      "id": "B6.4",
+      "page": "B6.4",
+      "doubloons": 5,
+      "kind": "bottle"
+    }
+  ],
+  "glossary": [
+    {
+      "id": "canvas",
+      "term": "Canvas",
+      "definition": "A shared board in the side panel that you and the agent can both see and update. Create one with `/create-canvas` and a description of the board you want, or install one through a plugin."
+    },
+    {
+      "id": "agent-callable-action",
+      "term": "Agent-callable action",
+      "definition": "An action that the canvas gives the agent, such as updating a checklist item. On the Feature Workbench, each canvas button also asks the agent to do work, such as running tests."
+    },
+    {
+      "id": "user-scope",
+      "term": "User scope",
+      "definition": "The canvas is available to you across projects and is not committed to this repository."
+    },
+    {
+      "id": "baseline",
+      "term": "Baseline",
+      "definition": "The app’s test totals and build result before any change. The Feature Workbench records them first, and compares the final totals with them."
+    }
+  ],
+  "trials": [
+    {
+      "id": "T6",
+      "title": "The Trial of the Dome",
+      "items": ["T6.1", "T6.2", "T6.3", "T6.4", "T6.5", "T6.6", "T6.7", "T6.8"],
+      "reward": {
+        "seal": "Seal of Inkwell",
+        "doubloons": 70
+      }
+    }
+  ],
+  "voiced": {
+    "wingman.iw.01": {
+      "chapter": "06-canvases",
+      "anchor": "learning-objectives",
+      "hash": "cc985e12e4bb"
+    },
+    "iw.lyra.01": {
+      "chapter": "06-canvases",
+      "anchor": "from-the-studio-the-bands-arrangement-board",
+      "hash": "4ea6ed135528"
+    },
+    "iw.lyra.02": {
+      "chapter": "06-canvases",
+      "anchor": "from-the-studio-the-bands-arrangement-board",
+      "hash": "4ea6ed135528"
+    },
+    "iw.lyra.03": {
+      "chapter": "06-canvases",
+      "anchor": "from-the-studio-the-bands-arrangement-board",
+      "hash": "4ea6ed135528"
+    },
+    "iw.thea.02": {
+      "chapter": "06-canvases",
+      "anchor": "when-to-use-a-canvas",
+      "hash": "83a511b5a288"
+    },
+    "iw.thea.03": {
+      "chapter": "06-canvases",
+      "anchor": "a-canvas-is-a-shared-control-panel",
+      "hash": "258a840d9be4"
+    },
+    "iw.thea.04": {
+      "chapter": "06-canvases",
+      "anchor": "a-canvas-is-a-shared-control-panel",
+      "hash": "258a840d9be4"
+    },
+    "iw.thea.05": {
+      "chapter": "06-canvases",
+      "anchor": "when-to-use-a-canvas",
+      "hash": "83a511b5a288"
+    },
+    "iw.nikos.02": {
+      "chapter": "06-canvases",
+      "anchor": "built-in-work-surfaces-come-first",
+      "hash": "03abe31013c8"
+    },
+    "iw.nikos.03": {
+      "chapter": "06-canvases",
+      "anchor": "built-in-work-surfaces-come-first",
+      "hash": "03abe31013c8"
+    },
+    "iw.nikos.04": {
+      "chapter": "06-canvases",
+      "anchor": "prerequisites",
+      "hash": "7b03cb754f34"
+    },
+    "iw.nikos.05": {
+      "chapter": "06-canvases",
+      "anchor": "prerequisites",
+      "hash": "7b03cb754f34"
+    },
+    "iw.calla.01": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-1-try-your-first-canvas",
+      "hash": "1fc9e1017bb6"
+    },
+    "iw.calla.02": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-1-try-your-first-canvas",
+      "hash": "1fc9e1017bb6"
+    },
+    "iw.calla.03": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-1-try-your-first-canvas",
+      "hash": "1fc9e1017bb6"
+    },
+    "iw.calla.notice": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-1-try-your-first-canvas",
+      "hash": "1fc9e1017bb6"
+    },
+    "iw.calla.bell": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-1-try-your-first-canvas",
+      "hash": "1fc9e1017bb6"
+    },
+    "iw.calla.frame": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-1-try-your-first-canvas",
+      "hash": "1fc9e1017bb6"
+    },
+    "iw.calla.card": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-1-try-your-first-canvas",
+      "hash": "1fc9e1017bb6"
+    },
+    "iw.calla.04": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-1-try-your-first-canvas",
+      "hash": "1fc9e1017bb6"
+    },
+    "iw.petra.01": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-2-create-a-session-board",
+      "hash": "21b5e247f33c"
+    },
+    "iw.petra.02": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-2-create-a-session-board",
+      "hash": "21b5e247f33c"
+    },
+    "iw.petra.03": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-2-create-a-session-board",
+      "hash": "21b5e247f33c"
+    },
+    "iw.petra.easel": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-2-create-a-session-board",
+      "hash": "21b5e247f33c"
+    },
+    "iw.petra.order": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-2-create-a-session-board",
+      "hash": "21b5e247f33c"
+    },
+    "iw.petra.mate": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-2-create-a-session-board",
+      "hash": "21b5e247f33c"
+    },
+    "iw.petra.chest": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-2-create-a-session-board",
+      "hash": "21b5e247f33c"
+    },
+    "iw.petra.04": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-2-create-a-session-board",
+      "hash": "21b5e247f33c"
+    },
+    "iw.doran.01": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-3-create-a-feature-workbench",
+      "hash": "74377c083aef"
+    },
+    "iw.doran.02": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-3-create-a-feature-workbench",
+      "hash": "74377c083aef"
+    },
+    "iw.doran.03": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-3-create-a-feature-workbench",
+      "hash": "74377c083aef"
+    },
+    "iw.doran.04": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-3-create-a-feature-workbench",
+      "hash": "74377c083aef"
+    },
+    "iw.doran.05": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-3-create-a-feature-workbench",
+      "hash": "74377c083aef"
+    },
+    "iw.doran.quill": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-3-create-a-feature-workbench",
+      "hash": "74377c083aef"
+    },
+    "iw.doran.plan": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-3-create-a-feature-workbench",
+      "hash": "74377c083aef"
+    },
+    "iw.doran.rail": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-3-create-a-feature-workbench",
+      "hash": "74377c083aef"
+    },
+    "iw.doran.bells": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-3-create-a-feature-workbench",
+      "hash": "74377c083aef"
+    },
+    "iw.doran.rack": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-3-create-a-feature-workbench",
+      "hash": "74377c083aef"
+    },
+    "iw.doran.glass": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-3-create-a-feature-workbench",
+      "hash": "74377c083aef"
+    },
+    "iw.doran.07": {
+      "chapter": "06-canvases",
+      "anchor": "exercise-3-create-a-feature-workbench",
+      "hash": "74377c083aef"
+    },
+    "iw.iris.03": {
+      "chapter": "06-canvases",
+      "anchor": "key-takeaways",
+      "hash": "3047dd138e5a"
+    },
+    "iw.iris.assign.01": {
+      "chapter": "06-canvases",
+      "anchor": "core-assignment",
+      "hash": "d846f46c0106"
+    },
+    "iw.iris.assign.back": {
+      "chapter": "06-canvases",
+      "anchor": "core-assignment",
+      "hash": "d846f46c0106"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "iw.calla.card",
+  "speaker": "Calla",
+  "text": "Each card you move to Plan starts a new agent run. So move one.",
+  "words": [
+    {
+      "word": "Each",
+      "start": 0.052625,
+      "end": 0.328958
+    },
+    {
+      "word": "card",
+      "start": 0.328958,
+      "end": 0.710541
+    },
+    {
+      "word": "you",
+      "start": 0.710541,
+      "end": 0.85525
+    },
+    {
+      "word": "move",
+      "start": 0.85525,
+      "end": 1.118416
+    },
+    {
+      "word": "to",
+      "start": 1.118416,
+      "end": 1.25
+    },
+    {
+      "word": "Plan",
+      "start": 1.25,
+      "end": 1.671041
+    },
+    {
+      "word": "starts",
+      "start": 1.671041,
+      "end": 2.14475
+    },
+    {
+      "word": "a",
+      "start": 2.14475,
+      "end": 2.289458
+    },
+    {
+      "word": "new",
+      "start": 2.289458,
+      "end": 2.565791
+    },
+    {
+      "word": "agent",
+      "start": 2.565791,
+      "end": 2.947375
+    },
+    {
+      "word": "run",
+      "start": 2.947375,
+      "end": 4.381583
+    },
+    {
+      "word": "So",
+      "start": 4.381583,
+      "end": 4.671041
+    },
+    {
+      "word": "move",
+      "start": 4.671041,
+      "end": 4.986833
+    },
+    {
+      "word": "one",
+      "start": 4.986833,
+      "end": 5.236833
+    }
+  ]
+}

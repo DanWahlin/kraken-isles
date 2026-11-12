@@ -1,0 +1,117 @@
+{
+  "id": "iw.thea.03",
+  "speaker": "Thea",
+  "text": "A canvas is a shared board in the side panel. You and the agent can both see it, and both change it.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.0515409,
+      "end": 0.154625
+    },
+    {
+      "word": "canvas",
+      "start": 0.154625,
+      "end": 0.70875
+    },
+    {
+      "word": "is",
+      "start": 0.70875,
+      "end": 0.837625
+    },
+    {
+      "word": "a",
+      "start": 0.837625,
+      "end": 0.889166
+    },
+    {
+      "word": "shared",
+      "start": 0.889166,
+      "end": 1.275791
+    },
+    {
+      "word": "board",
+      "start": 1.275791,
+      "end": 1.610833
+    },
+    {
+      "word": "in",
+      "start": 1.610833,
+      "end": 1.726791
+    },
+    {
+      "word": "the",
+      "start": 1.726791,
+      "end": 1.804125
+    },
+    {
+      "word": "side",
+      "start": 1.804125,
+      "end": 2.139166
+    },
+    {
+      "word": "panel",
+      "start": 2.139166,
+      "end": 3.479375
+    },
+    {
+      "word": "You",
+      "start": 3.479375,
+      "end": 3.698458
+    },
+    {
+      "word": "and",
+      "start": 3.698458,
+      "end": 3.801541
+    },
+    {
+      "word": "the",
+      "start": 3.801541,
+      "end": 3.969083
+    },
+    {
+      "word": "agent",
+      "start": 3.969083,
+      "end": 4.381458
+    },
+    {
+      "word": "can",
+      "start": 4.381458,
+      "end": 4.587625
+    },
+    {
+      "word": "both",
+      "start": 4.587625,
+      "end": 4.85825
+    },
+    {
+      "word": "see",
+      "start": 4.85825,
+      "end": 5.167541
+    },
+    {
+      "word": "it",
+      "start": 5.167541,
+      "end": 5.657208
+    },
+    {
+      "word": "and",
+      "start": 5.657208,
+      "end": 5.811875
+    },
+    {
+      "word": "both",
+      "start": 5.811875,
+      "end": 6.095375
+    },
+    {
+      "word": "change",
+      "start": 6.095375,
+      "end": 6.520625
+    },
+    {
+      "word": "it",
+      "start": 6.520625,
+      "end": 6.770625
+    }
+  ]
+}

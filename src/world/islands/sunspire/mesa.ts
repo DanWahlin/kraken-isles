@@ -1,11 +1,10 @@
+import { stairFlights } from '../terrace-town';
 import { CylinderGeometry, type BufferGeometry } from 'three/webgpu';
 import { box, rod, rope, type Buckets } from '../../village/pieces';
 import { uvDeck } from '../../village/walk-decks';
 import {
   adobeHouse,
   at,
-  flight,
-  lampPost,
   lowWall,
   pennants,
   rail,
@@ -15,12 +14,13 @@ import {
   SS_PAINT,
   ubox,
   uvSpan,
-  yawAlong,
   YAW_U,
   type SsOut,
+  B,
+  stationLamps,
 } from './build';
 import { CIRCUIT_SPOTS, MIRROR } from './circuit';
-import { COURT, HIGH_MESA, LOW_MESA, SIGNAL_HOUSE, SIGNAL_STAIR, SUN_STAIR, YARD, type Uvy } from './layout';
+import { COURT, HIGH_MESA, LOW_MESA, SIGNAL_HOUSE, SIGNAL_STAIR, SUN_STAIR, YARD } from './layout';
 
 /** The stations whose lamp stands on their left (the rest have it on their right). */
 const LAMP_ON_LEFT = new Set(['shutter', 'mirror', 'scale', 'bell']);
@@ -33,7 +33,7 @@ const LAMP_ON_LEFT = new Set(['shutter', 'mirror', 'scale', 'bell']);
  * Each station has its lamp (`signal:<place>`, `crate:<place>`). Into the kit's buckets, a part a step.
  */
 export function* buildMesa(b: Buckets, out: SsOut, lite: boolean): Generator<void, void, void> {
-  stair(b, out, SIGNAL_STAIR, [0.25, 0.75]);
+  stairFlights(B, b, out, SIGNAL_STAIR, 2.4, [0.25, 0.75]);
   // Rails along the mesa's west rim either side of the stair's head.
   const y = LOW_MESA.y + 0.02;
   rail(b, out, [LOW_MESA.u0 + 1.2, 74, y], [LOW_MESA.u0 + 1.2, 88.6, y]);
@@ -45,38 +45,14 @@ export function* buildMesa(b: Buckets, out: SsOut, lite: boolean): Generator<voi
   yield;
   yard(b, out, lite);
   yield;
-  stair(b, out, SUN_STAIR.slice(0, 5), [0, 1]);
+  stairFlights(B, b, out, SUN_STAIR.slice(0, 5), 2.4, [0, 1]);
   // Rails along the High Mesa's west rim either side of the stair's head.
   const hy = HIGH_MESA.y + 0.02;
   rail(b, out, [HIGH_MESA.u0 + 1.4, 96, hy], [HIGH_MESA.u0 + 1.4, 106.6, hy]);
   rail(b, out, [HIGH_MESA.u0 + 1.4, 113.4, hy], [HIGH_MESA.u0 + 1.4, 124, hy]);
-  // The stations' lamps: a post at each, its arm toward the place the station looks at.
-  for (const [kind, spots] of Object.entries(CIRCUIT_SPOTS))
-    for (const [place, s] of Object.entries(spots)) {
-      // Well to one side of the station and a little past it: clear of where the player stands and of
-      // what it looks at. The camera's behind you to your right, so a lamp on the right sits at the
-      // shot's edge (under the card); the stations in the court's middle keep theirs on the left,
-      // where the right would stand in the next station.
-      const du = s.look.u - s.u;
-      const dv = s.look.v - s.v;
-      const len = Math.hypot(du, dv) || 1;
-      const side = LAMP_ON_LEFT.has(place) ? 2.5 : -2.5;
-      const lu = s.u + (du / len) * 1.9 - (dv / len) * side;
-      const lv = s.v + (dv / len) * 1.9 + (du / len) * side;
-      lampPost(b, out, lu, lv, yawAlong(dv / len, -du / len), { lamp: `${kind}:${place}`, look: 'dark' });
-    }
-}
-
-/** Stone steps with rails on the middle `span` (fractions) of each sloping leg of a path. */
-function stair(b: Buckets, out: SsOut, pts: readonly Uvy[], span: readonly [number, number]): void {
-  for (let i = 0; i + 1 < pts.length; i++) {
-    const a = pts[i]!;
-    const e = pts[i + 1]!;
-    if (Math.abs(e.y - a.y) < 0.5) continue;
-    const p = (t: number) =>
-      [a.u + (e.u - a.u) * t, a.v + (e.v - a.v) * t, a.y + (e.y - a.y) * t + 0.03] as const;
-    flight(b, out, p(span[0]), p(span[1]), 2.4);
-  }
+  // (The stations in the court's middle keep their lamp on the left, where the right would stand in
+  // the next station.)
+  stationLamps(b, out, CIRCUIT_SPOTS, LAMP_ON_LEFT, 2.5, 1.9);
 }
 
 /** The Signal House: a whitewashed two-storey adobe hall, a signal mast on its roof, the roll on its wall. */

@@ -1,3 +1,4 @@
+import { stationSpot, type StationSpot } from '../anchor-kit';
 import { BUTTE, COURT, LOW_MESA, SIGNAL_HOUSE, SPIRE, YARD } from './layout';
 
 /**
@@ -9,23 +10,18 @@ import { BUTTE, COURT, LOW_MESA, SIGNAL_HOUSE, SPIRE, YARD } from './layout';
  * data (no three.js).
  */
 
-export interface StationSpot {
-  /** Where the player stands to use it (island frame) and the walk's height there. */
-  u: number;
-  v: number;
-  y: number;
-  /** The lamp that answers for it, in the island's lamp set. */
-  lamp: string;
-  /** What the camera looks at while it's open (island frame, y). */
-  look: { u: number; y: number; v: number };
-}
-
 const mesa = LOW_MESA.y;
 
-/** A station at (u, v) whose look is (lu, lv) at `dy` over its walk. */
-function spot(kind: 'signal' | 'crate', place: string, u: number, v: number, lu: number, lv: number, dy = 1) {
-  return { u, v, y: mesa, lamp: `${kind}:${place}`, look: { u: lu, y: mesa + dy, v: lv } };
-}
+/** A station on the Low Mesa at (u, v) whose look is (lu, lv) at `dy` over its walk. */
+const spot = (
+  kind: 'signal' | 'crate',
+  place: string,
+  u: number,
+  v: number,
+  lu: number,
+  lv: number,
+  dy = 1,
+) => stationSpot(kind, place, mesa, u, v, lu, lv, dy);
 
 /** The court's great mirror stand (the dial turns its head): its foot and its head's height. */
 export const MIRROR = { u: COURT.u + 14, v: COURT.v, y: mesa, head: mesa + 2.3 } as const;
@@ -76,3 +72,5 @@ export const CIRCUIT_SPOTS: {
     bench: spot('crate', 'bench', YARD.u - 4, YARD.v + 8, YARD.u - 4, YARD.v + 10.6, 0.95),
   },
 };
+
+export type { StationSpot } from '../anchor-kit';

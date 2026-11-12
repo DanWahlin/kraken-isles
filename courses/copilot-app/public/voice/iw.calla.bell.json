@@ -1,0 +1,87 @@
+{
+  "id": "iw.calla.bell",
+  "speaker": "Calla",
+  "text": "Ring the bell: Restart canvas extensions. The app reloads them and picks up the new one.",
+  "words": [
+    {
+      "word": "Ring",
+      "start": 0.052625,
+      "end": 0.289458
+    },
+    {
+      "word": "the",
+      "start": 0.289458,
+      "end": 0.39475
+    },
+    {
+      "word": "bell",
+      "start": 0.39475,
+      "end": 0.960541
+    },
+    {
+      "word": "Restart",
+      "start": 0.960541,
+      "end": 1.723666
+    },
+    {
+      "word": "canvas",
+      "start": 1.723666,
+      "end": 2.118416
+    },
+    {
+      "word": "extensions",
+      "start": 2.118416,
+      "end": 4.026333
+    },
+    {
+      "word": "The",
+      "start": 4.026333,
+      "end": 4.223666
+    },
+    {
+      "word": "app",
+      "start": 4.223666,
+      "end": 4.460541
+    },
+    {
+      "word": "reloads",
+      "start": 4.460541,
+      "end": 5.013166
+    },
+    {
+      "word": "them",
+      "start": 5.013166,
+      "end": 5.236833
+    },
+    {
+      "word": "and",
+      "start": 5.236833,
+      "end": 5.421041
+    },
+    {
+      "word": "picks",
+      "start": 5.421041,
+      "end": 5.710541
+    },
+    {
+      "word": "up",
+      "start": 5.710541,
+      "end": 5.921041
+    },
+    {
+      "word": "the",
+      "start": 5.921041,
+      "end": 6.039458
+    },
+    {
+      "word": "new",
+      "start": 6.039458,
+      "end": 6.276333
+    },
+    {
+      "word": "one",
+      "start": 6.276333,
+      "end": 6.526333
+    }
+  ]
+}

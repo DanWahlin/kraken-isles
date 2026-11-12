@@ -33,7 +33,7 @@
 | S14 | **Birds:** gulls over the cove; **raptors** on thermals over the mesas (`kind`: scale 1.5, altitude 60–140, speed 0.6, count by tier) | PLAN §6 |
 | S15 | **Lyra** plays in the caravanserai's courtyard and retells "Connecting the Gear". **Yusuf** keeps the Model Market stall on the quay | PLAN §3; MODEL-MARKET §2 |
 | S16 | **Voices** as ISLAND-04 G22. Lines stay `"pending": true` until their audio exists | PHASE-3 §9 |
-| S17 | **Music:** `music_sunspire_crossing` when Dan's Suno track arrives (PHASE-3 §8). Until then `theme` is `music_bards_tale` | PHASE-3 E10 |
+| S17 | **Music:** "Sunspire Crossing" (`music_sunspire_crossing`, 132 s, −15.5 LUFS), made by Dan with Suno from the brief in PHASE-3 §8. In the game since 2026-11-11 | PHASE-3 E10 |
 | S18 | **Battle 5** on the Guildcrest → Sunspire passage: battle 4's form, questions N4.1–N4.3 (Chapter 04) | PHASE-3 §6.3 |
 | S19 | **Arrival card:** eyebrow `Chapter 05 · MCP Servers & Plugins`, title `Sunspire Sands`, line `Reach farther, and carry only what you need` | Both halves of the chapter and the desert's rule |
 
@@ -329,7 +329,7 @@ answer came back?
 
 Files: `src/world/islands/sunspire/` (`layout.ts`, `height.ts` + test, `water.ts`, `water-mesh.ts`,
 `harbor.ts`, `chart.ts`, `terrain-regions.ts`), `src/islands/sunspire.ts` (`SUNSPIRE_IN_BUILD`, in
-`ISLANDS_IN_BUILD`), `tools/bake/bake-sunspire.ts` (in `bake-terrain.ts`), the pack manifest's
+`ISLANDS_IN_BUILD`), its row in `tools/bake/bake-frame-island.ts` (run by `bake-terrain.ts`), the pack manifest's
 `sunspire/critical` and `sunspire/chart`, and the terrain dev page
 (`devpages/terrain.html?pack=sunspire&view=<name>`; views in `PACKS.sunspire`).
 
@@ -478,11 +478,11 @@ written (battle 4's are still pending too).
 
 | # | What | Note |
 |---|---|---|
-| 1 | **Lip-sync cues** for the new lines | `npm run voice:lipsync` needs Rhubarb, which `npm run toolchain` downloads. Not installed on this machine; needs Dan's go-ahead |
+| 1 | ~~Lip-sync cues for the new lines~~ | **Done 2026-11-11**: Rhubarb 1.14.0 installed with Dan's go-ahead; `npm run voice:lipsync` made cues for all 73 of Sunspire's islander lines (and Inkwell's and Tidewheel's in the same run) |
 | 2 | **Art, still open** | Boulders in the red-rock look; the fall's spray; the well's wheel should turn; the lading desk, the bell and the tent are still plain |
 | 3 | **Battle 5's crew lines** | Written and voiced with battle 4's |
 | 4 | **Gates still to run** | Memory, perf, and the program census with battle 5 at its cap |
 | 5 | **A reload and an away-and-back** in the play-through | The tool does not do either yet |
 | 6 | **Records** | PLAN, `docs/voices.md`, ASSETS, ART_PROVENANCE, the skill's island table, `docs/adding-an-island.md` (the shared helpers above) |
-| 7 | **Music** | `theme` is `music_bards_tale` until the Suno track arrives (PHASE-3 §8) |
+| 7 | **Music** | **Done** (2026-11-11): "Sunspire Crossing" is the island's theme |
 
