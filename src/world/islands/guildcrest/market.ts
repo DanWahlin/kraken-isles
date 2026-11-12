@@ -1,14 +1,8 @@
-import {
-  addMarketBooth,
-  BOOTH_EXTENT,
-  BOOTH_TOP,
-  type BoothColliders,
-  type BoothStyle,
-} from '../../market-stall/booth';
-import type { StallPlace } from '../../market-stall/layout';
+import { BOOTH_EXTENT, BOOTH_TOP, type BoothStyle } from '../../market-stall/booth';
 import { cone, type Buckets } from '../../village/pieces';
+import { addQuayBooth, quayBooth, type BoothRoof, type QuayBooth } from '../quay-booth';
 import { GC_PAINT, type GcOut } from './build';
-import { headingBetween, LANDING, QUAY, toWorld } from './layout';
+import { FRAME_KIT } from './layout';
 import { BOOTH_UV } from './town';
 
 /**
@@ -16,13 +10,7 @@ import { BOOTH_UV } from './town';
  * landing, its front to the landing (spec §3.5). The town's stone and slate, a blue-and-cream awning,
  * wool bales and a peat stack in its shelf tints.
  */
-const booth = toWorld(BOOTH_UV.u, BOOTH_UV.v);
-export const GUILDCREST_BOOTH: StallPlace & { y: number } = {
-  x: booth.x,
-  z: booth.z,
-  y: QUAY.top + 0.03,
-  heading: headingBetween(BOOTH_UV, LANDING),
-};
+export const GUILDCREST_BOOTH: QuayBooth = quayBooth(FRAME_KIT, BOOTH_UV);
 
 const STYLE: BoothStyle = {
   frame: 0x5a4636,
@@ -42,51 +30,28 @@ const STYLE: BoothStyle = {
   shelfTints: [0xe9e3d3, 0x8a6a4a, 0x7a4a7e, 0x9cb8c8, 0x5a4636, 0xd8b97a],
 };
 
+/** A low hipped slate roof over the booth, in its own frame. */
+const SLATE_ROOF: BoothRoof = (l) => {
+  const e = BOOTH_EXTENT;
+  cone(
+    l as unknown as Buckets,
+    'paving',
+    (e.x0 + e.x1) / 2,
+    BOOTH_TOP - 0.05,
+    (e.z0 + e.z1) / 2,
+    5.4,
+    1.5,
+    4,
+    GC_PAINT.slate,
+    0,
+    (g) => {
+      g.rotateY(Math.PI / 4);
+      g.scale(1, 1, (e.z1 - e.z0 + 1.2) / (e.x1 - e.x0 + 1.2));
+    },
+  );
+};
+
 /** Builds Moira's booth into the town's buckets (world space), with its colliders and camera boxes. */
 export function addGuildcrestMarket(buckets: Buckets, out: GcOut, lite: boolean): void {
-  const PLACE = GUILDCREST_BOOTH;
-  const c: BoothColliders = { boxes: [], camera: [] };
-  addMarketBooth(buckets, c, PLACE, PLACE.y, STYLE, lite, {
-    roof(l) {
-      const e = BOOTH_EXTENT;
-      cone(
-        l as unknown as Buckets,
-        'paving',
-        (e.x0 + e.x1) / 2,
-        BOOTH_TOP - 0.05,
-        (e.z0 + e.z1) / 2,
-        5.4,
-        1.5,
-        4,
-        GC_PAINT.slate,
-        0,
-        (g) => {
-          g.rotateY(Math.PI / 4);
-          g.scale(1, 1, (e.z1 - e.z0 + 1.2) / (e.x1 - e.x0 + 1.2));
-        },
-      );
-    },
-  });
-  for (const b of c.boxes)
-    out.colliders.push({
-      x: b.x,
-      z: b.z,
-      hx: b.hx,
-      hz: b.hz,
-      rot: b.rot ?? 0,
-      y0: PLACE.y - 0.5,
-      y1: PLACE.y + (b.height ?? 2),
-      height: b.height,
-    });
-  out.cameraBoxes.push(
-    ...c.camera.map((b) => ({
-      x: b.x,
-      z: b.z,
-      hx: b.hx,
-      hz: b.hz,
-      rot: b.rot ?? 0,
-      y0: b.y0 ?? PLACE.y,
-      y1: b.y1 ?? PLACE.y + 4,
-    })),
-  );
+  addQuayBooth(buckets, out, GUILDCREST_BOOTH, STYLE, lite, SLATE_ROOF);
 }

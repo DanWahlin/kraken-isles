@@ -1,0 +1,127 @@
+{
+  "id": "ss.samir.05",
+  "speaker": "Samir",
+  "text": "It came in a package, and you still called for it, watched it work, and checked its answer. Installed isn't the same as run.",
+  "words": [
+    {
+      "word": "It",
+      "start": 0.0515409,
+      "end": 0.244833
+    },
+    {
+      "word": "came",
+      "start": 0.244833,
+      "end": 0.42525
+    },
+    {
+      "word": "in",
+      "start": 0.42525,
+      "end": 0.528333
+    },
+    {
+      "word": "a",
+      "start": 0.528333,
+      "end": 0.657208
+    },
+    {
+      "word": "package",
+      "start": 0.657208,
+      "end": 1.10825
+    },
+    {
+      "word": "and",
+      "start": 1.10825,
+      "end": 1.224208
+    },
+    {
+      "word": "you",
+      "start": 1.224208,
+      "end": 1.314416
+    },
+    {
+      "word": "still",
+      "start": 1.314416,
+      "end": 1.623708
+    },
+    {
+      "word": "called",
+      "start": 1.623708,
+      "end": 1.817
+    },
+    {
+      "word": "for",
+      "start": 1.817,
+      "end": 2.010291
+    },
+    {
+      "word": "it",
+      "start": 2.010291,
+      "end": 2.35825
+    },
+    {
+      "word": "watched",
+      "start": 2.35825,
+      "end": 2.628875
+    },
+    {
+      "word": "it",
+      "start": 2.628875,
+      "end": 2.744833
+    },
+    {
+      "word": "work",
+      "start": 2.744833,
+      "end": 3.157208
+    },
+    {
+      "word": "and",
+      "start": 3.157208,
+      "end": 3.337625
+    },
+    {
+      "word": "checked",
+      "start": 3.337625,
+      "end": 3.582458
+    },
+    {
+      "word": "its",
+      "start": 3.582458,
+      "end": 3.775791
+    },
+    {
+      "word": "answer",
+      "start": 3.775791,
+      "end": 5.025791
+    },
+    {
+      "word": "Installed",
+      "start": 5.025791,
+      "end": 5.567
+    },
+    {
+      "word": "isn't",
+      "start": 5.567,
+      "end": 5.82475
+    },
+    {
+      "word": "the",
+      "start": 5.82475,
+      "end": 5.940708
+    },
+    {
+      "word": "same",
+      "start": 5.940708,
+      "end": 6.185583
+    },
+    {
+      "word": "as",
+      "start": 6.185583,
+      "end": 6.340208
+    },
+    {
+      "word": "run",
+      "start": 6.340208,
+      "end": 6.590208
+    }
+  ]
+}

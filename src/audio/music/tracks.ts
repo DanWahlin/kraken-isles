@@ -27,8 +27,8 @@ export const MUSIC_TRACKS: Readonly<Record<IslandMusic, MusicTrack>> = {
   opening: { file: 'music_island_reveal', lufs: -16.0, once: true, handoff: 27.6 },
 };
 
-/** What the music player can play: an island's track, or the sea-battle track. */
-export type MusicCue = IslandMusic | 'battle';
+/** What the music player can play: an island's track, the sea-battle track, or the ending's. */
+export type MusicCue = IslandMusic | 'battle' | 'ending';
 
 /**
  * "Brass of the Storm", made for the game by Dan with Suno: the sea-battle track (docs/specs/BATTLES.md).
@@ -36,9 +36,15 @@ export type MusicCue = IslandMusic | 'battle';
  */
 export const BATTLE_TRACK: MusicTrack = { file: 'music_brass_of_the_storm', lufs: -15.8 };
 
+/**
+ * "The Long Light", made for the ending by Dan with Suno: a music box that grows to full orchestra and
+ * comes back to the box (docs/specs/PHASE-3-islands-05-07.md §8). It plays once.
+ */
+export const ENDING_TRACK: MusicTrack = { file: 'music_the_long_light', lufs: -15.4, once: true };
+
 /** The track for a cue. */
 export function trackFor(cue: MusicCue): MusicTrack {
-  return cue === 'battle' ? BATTLE_TRACK : MUSIC_TRACKS[cue];
+  return cue === 'battle' ? BATTLE_TRACK : cue === 'ending' ? ENDING_TRACK : MUSIC_TRACKS[cue];
 }
 
 /** Tracks Dan's keeping for islands still to come: not played yet, so not on the Credits screen. */

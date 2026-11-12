@@ -1,0 +1,117 @@
+{
+  "id": "iw.kosta.market.auto",
+  "speaker": "Kosta",
+  "text": "Copilot Fusion's on offer too. It isn't one model: it picks models and a workflow for each job. And it isn't Autopilot.",
+  "words": [
+    {
+      "word": "Copilot",
+      "start": 0.118416,
+      "end": 0.631583
+    },
+    {
+      "word": "Fusion's",
+      "start": 0.631583,
+      "end": 1.092125
+    },
+    {
+      "word": "on",
+      "start": 1.092125,
+      "end": 1.210541
+    },
+    {
+      "word": "offer",
+      "start": 1.210541,
+      "end": 1.447375
+    },
+    {
+      "word": "too",
+      "start": 1.447375,
+      "end": 2.815791
+    },
+    {
+      "word": "It",
+      "start": 2.815791,
+      "end": 2.921041
+    },
+    {
+      "word": "isn't",
+      "start": 2.921041,
+      "end": 3.184208
+    },
+    {
+      "word": "one",
+      "start": 3.184208,
+      "end": 3.368416
+    },
+    {
+      "word": "model",
+      "start": 3.368416,
+      "end": 4.131583
+    },
+    {
+      "word": "it",
+      "start": 4.131583,
+      "end": 4.289458
+    },
+    {
+      "word": "picks",
+      "start": 4.289458,
+      "end": 4.565791
+    },
+    {
+      "word": "models",
+      "start": 4.565791,
+      "end": 4.986833
+    },
+    {
+      "word": "and",
+      "start": 4.986833,
+      "end": 5.118416
+    },
+    {
+      "word": "a",
+      "start": 5.118416,
+      "end": 5.184208
+    },
+    {
+      "word": "workflow",
+      "start": 5.184208,
+      "end": 5.697375
+    },
+    {
+      "word": "for",
+      "start": 5.697375,
+      "end": 5.89475
+    },
+    {
+      "word": "each",
+      "start": 5.89475,
+      "end": 6.118416
+    },
+    {
+      "word": "job",
+      "start": 6.118416,
+      "end": 7.486833
+    },
+    {
+      "word": "And",
+      "start": 7.486833,
+      "end": 7.618416
+    },
+    {
+      "word": "it",
+      "start": 7.618416,
+      "end": 7.736833
+    },
+    {
+      "word": "isn't",
+      "start": 7.736833,
+      "end": 8.052625
+    },
+    {
+      "word": "Autopilot",
+      "start": 8.052625,
+      "end": 8.302625
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "id": "tw.lyra.03",
+  "speaker": "Lyra",
+  "text": "The pattern is your saved prompt. Hitting play is the manual trigger. And the producer still checks the mix.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0,
+      "end": 0.13
+    },
+    {
+      "word": "pattern",
+      "start": 0.13,
+      "end": 0.533
+    },
+    {
+      "word": "is",
+      "start": 0.533,
+      "end": 0.656
+    },
+    {
+      "word": "your",
+      "start": 0.656,
+      "end": 0.787
+    },
+    {
+      "word": "saved",
+      "start": 0.787,
+      "end": 1.189
+    },
+    {
+      "word": "prompt",
+      "start": 1.189,
+      "end": 2.32
+    },
+    {
+      "word": "Hitting",
+      "start": 2.32,
+      "end": 2.912
+    },
+    {
+      "word": "play",
+      "start": 2.912,
+      "end": 3.413
+    },
+    {
+      "word": "is",
+      "start": 3.413,
+      "end": 3.54
+    },
+    {
+      "word": "the",
+      "start": 3.54,
+      "end": 3.657
+    },
+    {
+      "word": "manual",
+      "start": 3.657,
+      "end": 4.05
+    },
+    {
+      "word": "trigger",
+      "start": 4.05,
+      "end": 4.86
+    },
+    {
+      "word": "And",
+      "start": 4.86,
+      "end": 5.54
+    },
+    {
+      "word": "the",
+      "start": 5.54,
+      "end": 5.653
+    },
+    {
+      "word": "producer",
+      "start": 5.653,
+      "end": 6.133
+    },
+    {
+      "word": "still",
+      "start": 6.133,
+      "end": 6.446
+    },
+    {
+      "word": "checks",
+      "start": 6.446,
+      "end": 6.74
+    },
+    {
+      "word": "the",
+      "start": 6.74,
+      "end": 6.9
+    },
+    {
+      "word": "mix",
+      "start": 6.9,
+      "end": 7.15
+    }
+  ]
+}

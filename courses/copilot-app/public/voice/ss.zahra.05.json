@@ -1,0 +1,67 @@
+{
+  "id": "ss.zahra.05",
+  "speaker": "Zahra",
+  "text": "Idris keeps the camp at the oasis. Go and pitch your tent.",
+  "words": [
+    {
+      "word": "Idris",
+      "start": 0.049,
+      "end": 0.441166
+    },
+    {
+      "word": "keeps",
+      "start": 0.441166,
+      "end": 0.735291
+    },
+    {
+      "word": "the",
+      "start": 0.735291,
+      "end": 0.845583
+    },
+    {
+      "word": "camp",
+      "start": 0.845583,
+      "end": 1.176458
+    },
+    {
+      "word": "at",
+      "start": 1.176458,
+      "end": 1.2745
+    },
+    {
+      "word": "the",
+      "start": 1.2745,
+      "end": 1.397041
+    },
+    {
+      "word": "oasis",
+      "start": 1.397041,
+      "end": 2.941166
+    },
+    {
+      "word": "Go",
+      "start": 2.941166,
+      "end": 3.174
+    },
+    {
+      "word": "and",
+      "start": 3.174,
+      "end": 3.333333
+    },
+    {
+      "word": "pitch",
+      "start": 3.333333,
+      "end": 3.615208
+    },
+    {
+      "word": "your",
+      "start": 3.615208,
+      "end": 3.73775
+    },
+    {
+      "word": "tent",
+      "start": 3.73775,
+      "end": 3.98775
+    }
+  ]
+}

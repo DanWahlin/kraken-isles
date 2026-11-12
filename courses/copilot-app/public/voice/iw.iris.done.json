@@ -1,0 +1,52 @@
+{
+  "id": "iw.iris.done",
+  "speaker": "Iris",
+  "text": "The Dome’s lit, Captain. Sail on when you’re ready.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.052625,
+      "end": 0.210541
+    },
+    {
+      "word": "Dome’s",
+      "start": 0.210541,
+      "end": 0.631583
+    },
+    {
+      "word": "lit",
+      "start": 0.631583,
+      "end": 1.289458
+    },
+    {
+      "word": "Captain",
+      "start": 1.289458,
+      "end": 2.85525
+    },
+    {
+      "word": "Sail",
+      "start": 2.85525,
+      "end": 3.25
+    },
+    {
+      "word": "on",
+      "start": 3.25,
+      "end": 3.421041
+    },
+    {
+      "word": "when",
+      "start": 3.421041,
+      "end": 3.60525
+    },
+    {
+      "word": "you’re",
+      "start": 3.60525,
+      "end": 3.75
+    },
+    {
+      "word": "ready",
+      "start": 3.75,
+      "end": 4
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "ss.noor.tent",
+  "speaker": "Noor",
+  "text": "Now compare the answer with your own file, here at home. No more flashes.",
+  "words": [
+    {
+      "word": "Now",
+      "start": 0.052083,
+      "end": 0.351583
+    },
+    {
+      "word": "compare",
+      "start": 0.351583,
+      "end": 0.833333
+    },
+    {
+      "word": "the",
+      "start": 0.833333,
+      "end": 0.989583
+    },
+    {
+      "word": "answer",
+      "start": 0.989583,
+      "end": 1.40625
+    },
+    {
+      "word": "with",
+      "start": 1.40625,
+      "end": 1.5625
+    },
+    {
+      "word": "your",
+      "start": 1.5625,
+      "end": 1.71875
+    },
+    {
+      "word": "own",
+      "start": 1.71875,
+      "end": 1.992208
+    },
+    {
+      "word": "file",
+      "start": 1.992208,
+      "end": 2.64325
+    },
+    {
+      "word": "here",
+      "start": 2.64325,
+      "end": 3.033875
+    },
+    {
+      "word": "at",
+      "start": 3.033875,
+      "end": 3.151041
+    },
+    {
+      "word": "home",
+      "start": 3.151041,
+      "end": 4.492208
+    },
+    {
+      "word": "No",
+      "start": 4.492208,
+      "end": 4.804708
+    },
+    {
+      "word": "more",
+      "start": 4.804708,
+      "end": 5.052083
+    },
+    {
+      "word": "flashes",
+      "start": 5.052083,
+      "end": 5.302083
+    }
+  ]
+}

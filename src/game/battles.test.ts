@@ -143,6 +143,58 @@ describe('passage battles', () => {
     expect(starts).toBeGreaterThan(0);
   });
 
+  it('starts battle 5 on the passage out of Guildcrest toward Sunspire Sands, with its Seal', () => {
+    const seal3 = { ...SEAL_1, 'Q2.9': 'done', 'Q3.10': 'done' };
+    const seal4 = { ...seal3, 'Q4.8': 'done' };
+    expect(pendingBattle('guildcrest', seal3, new Set(), ISLANDS)).toBeNull();
+    const b = pendingBattle('guildcrest', seal4, new Set(), ISLANDS);
+    expect(b?.id).toBe('passage-guildcrest-sunspire');
+    const plan = BATTLE_PLANS[b!.plan]!;
+    expect(plan.id).toBe(b!.id);
+    expect(plan.waves.length).toBe(3);
+    expect(plan.events).toEqual([]);
+    expect(pendingBattle('guildcrest', seal4, new Set([b!.id]), ISLANDS)).toBeNull();
+    const from = ISLANDS.guildcrest.mooring;
+    const to = ISLANDS.sunspire.mooring;
+    expect(battleStarts(b, from.x, from.z, ISLANDS)).toBe(false);
+    expect(battleStarts(b, to.x, to.z, ISLANDS)).toBe(false);
+    let starts = 0;
+    for (let k = 0; k <= 100; k++) {
+      const x = from.x + ((to.x - from.x) * k) / 100;
+      const z = from.z + ((to.z - from.z) * k) / 100;
+      if (!battleStarts(b, x, z, ISLANDS)) continue;
+      starts++;
+      expect(openWater(x, z, ISLANDS)).toBe(true);
+    }
+    expect(starts).toBeGreaterThan(0);
+  });
+
+  it('starts battle 6 on the passage out of Sunspire Sands toward Inkwell Bluffs, with its Seal', () => {
+    const seal4 = { ...SEAL_1, 'Q2.9': 'done', 'Q3.10': 'done', 'Q4.8': 'done' };
+    const seal5 = { ...seal4, 'Q5.8': 'done' };
+    expect(pendingBattle('sunspire', seal4, new Set(), ISLANDS)).toBeNull();
+    const b = pendingBattle('sunspire', seal5, new Set(), ISLANDS);
+    expect(b?.id).toBe('passage-sunspire-inkwell');
+    const plan = BATTLE_PLANS[b!.plan]!;
+    expect(plan.id).toBe(b!.id);
+    expect(plan.waves.length).toBe(3);
+    expect(plan.events).toEqual([]);
+    expect(pendingBattle('sunspire', seal5, new Set([b!.id]), ISLANDS)).toBeNull();
+    const from = ISLANDS.sunspire.mooring;
+    const to = ISLANDS.inkwell.mooring;
+    expect(battleStarts(b, from.x, from.z, ISLANDS)).toBe(false);
+    expect(battleStarts(b, to.x, to.z, ISLANDS)).toBe(false);
+    let starts = 0;
+    for (let k = 0; k <= 100; k++) {
+      const x = from.x + ((to.x - from.x) * k) / 100;
+      const z = from.z + ((to.z - from.z) * k) / 100;
+      if (!battleStarts(b, x, z, ISLANDS)) continue;
+      starts++;
+      expect(openWater(x, z, ISLANDS)).toBe(true);
+    }
+    expect(starts).toBeGreaterThan(0);
+  });
+
   it('keeps the raiders out of every harbour', () => {
     for (const i of Object.values(ISLANDS)) expect(nearHarbour(i.mooring.x, i.mooring.z, ISLANDS)).toBe(true);
     // Where battle 1 starts is well clear of both harbours.

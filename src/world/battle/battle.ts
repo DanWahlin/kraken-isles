@@ -157,18 +157,53 @@ const guildcrestPassage = (c: CourseMeta) =>
   ]);
 export let GUILDCREST_BATTLE: BattlePlan = guildcrestPassage(COURSE);
 
+/**
+ * Battle 5, "Guide, Not Lock": battle 4's form on the passage from Guildcrest to Sunspire Sands
+ * (three waves of two, no kraken; it recaps Chapter 04, docs/specs/ISLAND-05-sunspire-sands.md §7).
+ */
+const sunspirePassage = (c: CourseMeta) =>
+  plan(c, 'passage-guildcrest-sunspire', 'Guildcrest → Sunspire Sands', [
+    ['cutter', 'cutter'],
+    ['brigantine', 'cutter'],
+    ['brigantine', 'cutter'],
+  ]);
+export let SUNSPIRE_BATTLE: BattlePlan = sunspirePassage(COURSE);
+
+/**
+ * Battle 6, "Check the Beam": battle 5's form on the passage from Sunspire Sands to Inkwell Bluffs
+ * (three waves of two, no kraken; it recaps Chapter 05, docs/specs/ISLAND-06-inkwell-bluffs.md §7).
+ */
+const inkwellPassage = (c: CourseMeta) =>
+  plan(c, 'passage-sunspire-inkwell', 'Sunspire Sands → Inkwell Bluffs', [
+    ['cutter', 'cutter'],
+    ['brigantine', 'cutter'],
+    ['brigantine', 'cutter'],
+  ]);
+export let INKWELL_BATTLE: BattlePlan = inkwellPassage(COURSE);
+
 export let BATTLE_PLANS: readonly BattlePlan[] = [
   PASSAGE_BATTLE,
   MERIDIAN_BATTLE,
   KEELHAVEN_BATTLE,
   GUILDCREST_BATTLE,
+  SUNSPIRE_BATTLE,
+  INKWELL_BATTLE,
 ];
 onCourseSelected((c) => {
   PASSAGE_BATTLE = passage(c);
   MERIDIAN_BATTLE = meridianPassage(c);
   KEELHAVEN_BATTLE = keelhavenPassage(c);
   GUILDCREST_BATTLE = guildcrestPassage(c);
-  BATTLE_PLANS = [PASSAGE_BATTLE, MERIDIAN_BATTLE, KEELHAVEN_BATTLE, GUILDCREST_BATTLE];
+  SUNSPIRE_BATTLE = sunspirePassage(c);
+  INKWELL_BATTLE = inkwellPassage(c);
+  BATTLE_PLANS = [
+    PASSAGE_BATTLE,
+    MERIDIAN_BATTLE,
+    KEELHAVEN_BATTLE,
+    GUILDCREST_BATTLE,
+    SUNSPIRE_BATTLE,
+    INKWELL_BATTLE,
+  ];
 });
 
 /** The plan's events after wave `wave` (1-based). */

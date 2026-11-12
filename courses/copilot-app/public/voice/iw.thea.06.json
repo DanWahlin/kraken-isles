@@ -1,0 +1,72 @@
+{
+  "id": "iw.thea.06",
+  "speaker": "Thea",
+  "text": "Nikos keeps the desks on the Plaza, up the stair. Mind the washing.",
+  "words": [
+    {
+      "word": "Nikos",
+      "start": 0.0515409,
+      "end": 0.54125
+    },
+    {
+      "word": "keeps",
+      "start": 0.54125,
+      "end": 0.876291
+    },
+    {
+      "word": "the",
+      "start": 0.876291,
+      "end": 0.979375
+    },
+    {
+      "word": "desks",
+      "start": 0.979375,
+      "end": 1.417541
+    },
+    {
+      "word": "on",
+      "start": 1.417541,
+      "end": 1.5335
+    },
+    {
+      "word": "the",
+      "start": 1.5335,
+      "end": 1.610833
+    },
+    {
+      "word": "Plaza",
+      "start": 1.610833,
+      "end": 2.448458
+    },
+    {
+      "word": "up",
+      "start": 2.448458,
+      "end": 2.615958
+    },
+    {
+      "word": "the",
+      "start": 2.615958,
+      "end": 2.706166
+    },
+    {
+      "word": "stair",
+      "start": 2.706166,
+      "end": 4.123708
+    },
+    {
+      "word": "Mind",
+      "start": 4.123708,
+      "end": 4.613416
+    },
+    {
+      "word": "the",
+      "start": 4.613416,
+      "end": 4.729375
+    },
+    {
+      "word": "washing",
+      "start": 4.729375,
+      "end": 4.979375
+    }
+  ]
+}

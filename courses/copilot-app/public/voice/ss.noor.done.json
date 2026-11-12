@@ -1,0 +1,72 @@
+{
+  "id": "ss.noor.done",
+  "speaker": "Noor",
+  "text": "Samir's crates are in the yard, Captain, out by the court's east side.",
+  "words": [
+    {
+      "word": "Samir's",
+      "start": 0.052083,
+      "end": 0.612
+    },
+    {
+      "word": "crates",
+      "start": 0.612,
+      "end": 1.028666
+    },
+    {
+      "word": "are",
+      "start": 1.028666,
+      "end": 1.223958
+    },
+    {
+      "word": "in",
+      "start": 1.223958,
+      "end": 1.289083
+    },
+    {
+      "word": "the",
+      "start": 1.289083,
+      "end": 1.419291
+    },
+    {
+      "word": "yard",
+      "start": 1.419291,
+      "end": 2.239583
+    },
+    {
+      "word": "Captain",
+      "start": 2.239583,
+      "end": 3.033875
+    },
+    {
+      "word": "out",
+      "start": 3.033875,
+      "end": 3.385416
+    },
+    {
+      "word": "by",
+      "start": 3.385416,
+      "end": 3.554708
+    },
+    {
+      "word": "the",
+      "start": 3.554708,
+      "end": 3.632833
+    },
+    {
+      "word": "court's",
+      "start": 3.632833,
+      "end": 4.0625
+    },
+    {
+      "word": "east",
+      "start": 4.0625,
+      "end": 4.375
+    },
+    {
+      "word": "side",
+      "start": 4.375,
+      "end": 4.625
+    }
+  ]
+}

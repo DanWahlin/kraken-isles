@@ -31,6 +31,18 @@ export interface CircuitTile {
   cite?: string;
 }
 
+/** One position of a `dial` station's control (a bearing, an hour, a slot). */
+export interface CircuitPosition {
+  id: string;
+  /** What the control reads at this position. */
+  text: string;
+  right?: boolean;
+  result?: string;
+  reason?: string;
+  cite?: string;
+  line?: string;
+}
+
 export interface CircuitStation {
   id: string;
   /** The place (the pack's key) it's at. */
@@ -43,9 +55,16 @@ export interface CircuitStation {
   options?: readonly CircuitOption[];
   tiles?: readonly CircuitTile[];
   lamps?: readonly { id: string; text: string }[];
+  /** A `dial` station's positions, in the order the control turns through them (it wraps). */
+  positions?: readonly CircuitPosition[];
+  /** The position (index) a `dial` starts at. */
+  start?: number;
   planks?: number;
   seconds?: number;
-  /** A `watch` station's one thing to do (its button), shown with `prompt`; then its demo plays. */
+  /**
+   * A `watch` station's one thing to do (its button), shown with `prompt`; then its demo plays. A
+   * `dial` station's button that sets the control where it is.
+   */
   action?: string;
   again?: string;
   image?: string;
@@ -81,6 +100,12 @@ export interface PickResult {
   back: number | null;
 }
 
+/** What setting a dial did: the position it was set at, and whether it was the right one. */
+export interface SetResult {
+  position: CircuitPosition | null;
+  right: boolean;
+}
+
 /** One lap under way: the station that waits for the player and each place's lamp. */
 export class LapRun {
   /** The station that waits for the player (`stations.length` once the lap's done). */
@@ -88,6 +113,7 @@ export class LapRun {
   /** Each place's lamp, by the pack's place key. */
   readonly lamps = new Map<string, Lamp>();
   private readonly result: PickResult = { option: null, right: false, back: null };
+  private readonly setResult: SetResult = { position: null, right: false };
 
   constructor(
     readonly lap: CircuitLap,
@@ -143,11 +169,40 @@ export class LapRun {
     return r;
   }
 
+  /**
+   * Sets a `dial` station's control at position `index`. Right: the station passes. Wrong: its lamp
+   * is not ready and the control stays in the player's hands (no way back: the fix is another turn).
+   * The result is reused: read it before the next set.
+   */
+  set(index: number): SetResult {
+    const r = this.setResult;
+    const s = this.station;
+    const position = s?.positions?.[index] ?? null;
+    r.position = position;
+    r.right = !!position?.right;
+    if (!s || !position) return r;
+    if (position.right) this.pass();
+    else this.lamps.set(s.at, 'notReady');
+    return r;
+  }
+
   /** The latest station at or before the current one that's at `place`, else the current one. */
   backTo(place: string): number {
     for (let i = this.index; i >= 0; i--) if (this.lap.stations[i]?.at === place) return i;
     return this.index;
   }
+}
+
+/** A dial of `count` positions turned `step` places from `index` (it wraps both ways). */
+export function dialTurn(index: number, step: number, count: number): number {
+  if (count <= 0) return 0;
+  return (((index + step) % count) + count) % count;
+}
+
+/** Where a `dial` station's control starts (its `start`, kept inside its positions). */
+export function dialStart(s: CircuitStation): number {
+  const count = s.positions?.length ?? 0;
+  return count ? dialTurn(s.start ?? 0, 0, count) : 0;
 }
 
 /** Whether a claim tile sticks on the petition (the station's tiles, by id). */

@@ -1,0 +1,82 @@
+{
+  "id": "iw.calla.notice",
+  "speaker": "Calla",
+  "text": "Select Open in Copilot app, then Allow. And read the name before you select Install.",
+  "words": [
+    {
+      "word": "Select",
+      "start": 0.052625,
+      "end": 0.526333
+    },
+    {
+      "word": "Open",
+      "start": 0.526333,
+      "end": 0.868416
+    },
+    {
+      "word": "in",
+      "start": 0.868416,
+      "end": 1.013166
+    },
+    {
+      "word": "Copilot",
+      "start": 1.013166,
+      "end": 1.684208
+    },
+    {
+      "word": "app",
+      "start": 1.684208,
+      "end": 2.236833
+    },
+    {
+      "word": "then",
+      "start": 2.236833,
+      "end": 2.447375
+    },
+    {
+      "word": "Allow",
+      "start": 2.447375,
+      "end": 3.842125
+    },
+    {
+      "word": "And",
+      "start": 3.842125,
+      "end": 4
+    },
+    {
+      "word": "read",
+      "start": 4,
+      "end": 4.263166
+    },
+    {
+      "word": "the",
+      "start": 4.263166,
+      "end": 4.381583
+    },
+    {
+      "word": "name",
+      "start": 4.381583,
+      "end": 4.763166
+    },
+    {
+      "word": "before",
+      "start": 4.763166,
+      "end": 5.197375
+    },
+    {
+      "word": "you",
+      "start": 5.197375,
+      "end": 5.35525
+    },
+    {
+      "word": "select",
+      "start": 5.35525,
+      "end": 5.75
+    },
+    {
+      "word": "Install",
+      "start": 5.75,
+      "end": 6
+    }
+  ]
+}

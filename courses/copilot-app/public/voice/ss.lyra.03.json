@@ -1,0 +1,132 @@
+{
+  "id": "ss.lyra.03",
+  "speaker": "Lyra",
+  "text": "An MCP server is a connection to gear like that: it gives the crew tools. A plugin is a packaged set of additions you install.",
+  "words": [
+    {
+      "word": "An",
+      "start": 0,
+      "end": 0.2
+    },
+    {
+      "word": "MCP",
+      "start": 0.2,
+      "end": 0.789
+    },
+    {
+      "word": "server",
+      "start": 0.789,
+      "end": 1.227
+    },
+    {
+      "word": "is",
+      "start": 1.227,
+      "end": 1.32
+    },
+    {
+      "word": "a",
+      "start": 1.32,
+      "end": 1.411
+    },
+    {
+      "word": "connection",
+      "start": 1.411,
+      "end": 1.947
+    },
+    {
+      "word": "to",
+      "start": 1.947,
+      "end": 2.048
+    },
+    {
+      "word": "gear",
+      "start": 2.048,
+      "end": 2.288
+    },
+    {
+      "word": "like",
+      "start": 2.288,
+      "end": 2.528
+    },
+    {
+      "word": "that",
+      "start": 2.528,
+      "end": 3.307
+    },
+    {
+      "word": "it",
+      "start": 3.307,
+      "end": 3.4
+    },
+    {
+      "word": "gives",
+      "start": 3.4,
+      "end": 3.62
+    },
+    {
+      "word": "the",
+      "start": 3.62,
+      "end": 3.744
+    },
+    {
+      "word": "crew",
+      "start": 3.744,
+      "end": 4.107
+    },
+    {
+      "word": "tools",
+      "start": 4.107,
+      "end": 5.28
+    },
+    {
+      "word": "A",
+      "start": 5.28,
+      "end": 5.829
+    },
+    {
+      "word": "plugin",
+      "start": 5.829,
+      "end": 6.32
+    },
+    {
+      "word": "is",
+      "start": 6.32,
+      "end": 6.56
+    },
+    {
+      "word": "a",
+      "start": 6.56,
+      "end": 6.684
+    },
+    {
+      "word": "packaged",
+      "start": 6.684,
+      "end": 7.12
+    },
+    {
+      "word": "set",
+      "start": 7.12,
+      "end": 7.387
+    },
+    {
+      "word": "of",
+      "start": 7.387,
+      "end": 7.488
+    },
+    {
+      "word": "additions",
+      "start": 7.488,
+      "end": 7.96
+    },
+    {
+      "word": "you",
+      "start": 7.96,
+      "end": 8.15
+    },
+    {
+      "word": "install",
+      "start": 8.15,
+      "end": 8.4
+    }
+  ]
+}

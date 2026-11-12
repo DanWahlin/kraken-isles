@@ -1,0 +1,279 @@
+{
+  "$schema": "../../schemas/puzzle-circuit.schema.json",
+  "id": "P6.2",
+  "mechanic": "circuit",
+  "chapter": "06-canvases",
+  "quest": "Q6.5",
+  "circuit": "slate",
+  "$comment": "Two Hands, One Chart on the Draughting Terrace (docs/specs/ISLAND-06-inkwell-bluffs.md §5.2): the easel (/create-canvas), the order desk (the Session Board’s description), the slate (your marks), the mate’s stand (the agent’s summary) and the sea chest (user scope, the Changes tab). The places, lamps and the slate’s marks are the game’s; every word is this file’s.",
+  "places": {
+    "easel": {
+      "acts": "easel",
+      "name": "The easel",
+      "means": "`/create-canvas` in the prompt box",
+      "cite": "ex2"
+    },
+    "order": {
+      "acts": "order",
+      "name": "The order desk",
+      "means": "The description of the board you want",
+      "cite": "ex2"
+    },
+    "slate": {
+      "acts": "slate",
+      "name": "The slate",
+      "means": "The Session Board: proposal, checklist and notes",
+      "cite": "ex2"
+    },
+    "mate": {
+      "acts": "mate",
+      "name": "The mate’s stand",
+      "means": "The agent’s summary of the board",
+      "cite": "ex2"
+    },
+    "chest": {
+      "acts": "chest",
+      "name": "The sea chest",
+      "means": "User scope, and the **Changes** tab",
+      "cite": "ex2"
+    }
+  },
+  "text": {
+    "lampDark": "○ waiting",
+    "lampRunning": "… running",
+    "lampReady": "✓ ready",
+    "lampNotReady": "✗ not ready",
+    "next": "Next station: {name}",
+    "back": "Back to {name}",
+    "skip": "Skip",
+    "leave": "Leave",
+    "hint": "Hint",
+    "sealIt": "Seal it",
+    "sendBack": "Send it back",
+    "darkLamp": "{name} is still dark.",
+    "sticks": "It sticks.",
+    "noStick": "It won’t stick.",
+    "turnBack": "◀ Slide it back",
+    "turnOn": "Slide it on ▶",
+    "set": "Set it here",
+    "title": "Two Hands, One Chart",
+    "intro": "Call for a board, word its order, mark it, hear the mate read it back, and see where it’s kept.",
+    "hoist": "Send the order"
+  },
+  "cites": {
+    "ex2": {
+      "anchor": "exercise-2-create-a-session-board",
+      "hash": "21b5e247f33c"
+    },
+    "shared": {
+      "anchor": "a-canvas-is-a-shared-control-panel",
+      "hash": "258a840d9be4"
+    },
+    "tsNone": {
+      "anchor": "no-canvas-opens",
+      "hash": "425aa8f81f45"
+    }
+  },
+  "laps": [
+    {
+      "id": "session",
+      "quest": "Q6.5",
+      "step": "slate",
+      "solved": "solved",
+      "close": "petra.slate.solved",
+      "title": "Two Hands, One Chart: a Session Board",
+      "order": "Session Board · user scope",
+      "stations": [
+        {
+          "id": "command",
+          "at": "easel",
+          "kind": "choose",
+          "title": "Call for a canvas",
+          "line": "iw.petra.easel",
+          "prompt": "You want a board of your own in this session. How do you ask for it?",
+          "options": [
+            {
+              "id": "create",
+              "text": "Type `/` in the prompt box, select `/create-canvas`, then paste the description",
+              "right": true,
+              "result": "A blank slate goes up on the easel."
+            },
+            {
+              "id": "plain",
+              "text": "Ask in chat for \"a board\", with no command",
+              "reason": "Confirm that you typed `/create-canvas`.",
+              "backTo": "easel",
+              "cite": "tsNone"
+            },
+            {
+              "id": "restart",
+              "text": "Submit `Restart canvas extensions`",
+              "reason": "That reloads canvases that exist. This one has not been made yet.",
+              "backTo": "easel",
+              "cite": "ex2"
+            }
+          ],
+          "hints": [
+            "What’s on the easel’s plate?",
+            "A slash command.",
+            "Type `/`, select `/create-canvas`, then paste the description."
+          ],
+          "cite": "ex2"
+        },
+        {
+          "id": "describe",
+          "at": "order",
+          "kind": "tiles",
+          "title": "Word the order",
+          "line": "iw.petra.order",
+          "prompt": "Petra chalks the order for a simple, user-scoped Session Board. Which lines belong in it?",
+          "tiles": [
+            {
+              "id": "proposal",
+              "text": "A Feature proposal text field",
+              "sticks": true
+            },
+            {
+              "id": "checklist",
+              "text": "A checklist with Plan, Implement, and Validate",
+              "sticks": true
+            },
+            {
+              "id": "notes",
+              "text": "A Notes section with Next decision and Blocker fields",
+              "sticks": true
+            },
+            {
+              "id": "both",
+              "text": "Let both the user and the agent update the checklist and notes",
+              "sticks": true
+            },
+            {
+              "id": "safe",
+              "text": "Do not edit repository files, run commands, or write to GitHub while creating the canvas",
+              "sticks": true
+            },
+            {
+              "id": "buttons",
+              "text": "Buttons that run the tests and the build",
+              "sticks": false,
+              "reason": "This board does not run tests or edit the app. Buttons that ask the agent to run development tasks come in the next exercise.",
+              "cite": "ex2"
+            },
+            {
+              "id": "commit",
+              "text": "Commit the board to the repository",
+              "sticks": false,
+              "reason": "It is user-scoped. Creating a user-scoped canvas does not change repository files.",
+              "cite": "ex2"
+            }
+          ],
+          "cite": "ex2"
+        },
+        {
+          "id": "yours",
+          "at": "slate",
+          "kind": "choose",
+          "title": "Your hand",
+          "prompt": "The canvas is open, with its proposal, checklist and notes. What do you do on it?",
+          "options": [
+            {
+              "id": "mark",
+              "text": "Enter a short feature proposal, mark **Plan** complete, and add a next decision",
+              "right": true,
+              "result": "Your marks are on the slate."
+            },
+            {
+              "id": "all",
+              "text": "Mark Plan, Implement and Validate complete, so the board looks done",
+              "reason": "Nothing has been implemented or validated. The board should show the state the work is in.",
+              "backTo": "slate",
+              "cite": "ex2"
+            },
+            {
+              "id": "chat",
+              "text": "Leave the board, and type the proposal into chat",
+              "reason": "Then it is a buried chat sentence again. The board is where you and the agent both look.",
+              "backTo": "slate",
+              "cite": "shared"
+            }
+          ],
+          "hints": [
+            "Three small marks.",
+            "A proposal, one checked item, one note.",
+            "Enter a proposal, mark **Plan** complete, add a next decision."
+          ],
+          "cite": "ex2"
+        },
+        {
+          "id": "theirs",
+          "at": "mate",
+          "kind": "choose",
+          "title": "The mate’s hand",
+          "line": "iw.petra.mate",
+          "prompt": "You submit the prompt `Summarize the current Session Board state.` What do you check?",
+          "options": [
+            {
+              "id": "match",
+              "text": "That the agent’s answer matches my updates",
+              "right": true,
+              "result": "Juno reads the slate back, mark for mark, and pins a note beside yours."
+            },
+            {
+              "id": "any",
+              "text": "Only that it answered at all",
+              "reason": "Confirm that the agent’s answer matches your updates.",
+              "backTo": "mate",
+              "cite": "ex2"
+            },
+            {
+              "id": "tests",
+              "text": "That it ran the tests while it was there",
+              "reason": "The board does not run tests or edit the app.",
+              "backTo": "mate",
+              "cite": "ex2"
+            }
+          ],
+          "hints": [
+            "It reads the same board you marked.",
+            "Compare its answer with your marks.",
+            "Confirm that the answer matches your updates."
+          ],
+          "cite": "ex2"
+        },
+        {
+          "id": "scope",
+          "at": "chest",
+          "kind": "choose",
+          "title": "Where it’s kept",
+          "line": "iw.petra.chest",
+          "prompt": "You open the **Changes** tab in the review panel. What does it list?",
+          "options": [
+            {
+              "id": "none",
+              "text": "No changed files",
+              "right": true,
+              "result": "The slate goes in your own sea chest. Nothing was added to the repository."
+            },
+            {
+              "id": "canvas",
+              "text": "The canvas’s files, waiting to be committed",
+              "reason": "Creating a user-scoped canvas does not change repository files.",
+              "backTo": "chest",
+              "cite": "ex2"
+            },
+            {
+              "id": "missing",
+              "text": "Nothing: there’s no **Changes** tab, so I skip the check",
+              "reason": "If the tab is not open, select **+** (**Add tab**), then **Changes**.",
+              "backTo": "chest",
+              "cite": "ex2"
+            }
+          ],
+          "hints": ["Whose chest is it?", "User scope.", "**Changes** lists no changed files."],
+          "cite": "ex2"
+        }
+      ]
+    }
+  ]
+}

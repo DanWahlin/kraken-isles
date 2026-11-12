@@ -1,0 +1,52 @@
+{
+  "id": "tw.silas.02",
+  "speaker": "Silas",
+  "text": "One trial, then the last lever. Take your time.",
+  "words": [
+    {
+      "word": "One",
+      "start": 0.053208,
+      "end": 0.385625
+    },
+    {
+      "word": "trial",
+      "start": 0.385625,
+      "end": 1.130333
+    },
+    {
+      "word": "then",
+      "start": 1.130333,
+      "end": 1.369666
+    },
+    {
+      "word": "the",
+      "start": 1.369666,
+      "end": 1.46275
+    },
+    {
+      "word": "last",
+      "start": 1.46275,
+      "end": 1.888291
+    },
+    {
+      "word": "lever",
+      "start": 1.888291,
+      "end": 3.377666
+    },
+    {
+      "word": "Take",
+      "start": 3.377666,
+      "end": 3.736708
+    },
+    {
+      "word": "your",
+      "start": 3.736708,
+      "end": 3.882958
+    },
+    {
+      "word": "time",
+      "start": 3.882958,
+      "end": 4.132958
+    }
+  ]
+}

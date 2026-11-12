@@ -1,0 +1,107 @@
+{
+  "id": "ss.noor.03",
+  "speaker": "Noor",
+  "text": "The app can already read and search your files. Use MCP when the task needs something those tools don't supply.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.052083,
+      "end": 0.221375
+    },
+    {
+      "word": "app",
+      "start": 0.221375,
+      "end": 0.494791
+    },
+    {
+      "word": "can",
+      "start": 0.494791,
+      "end": 0.690125
+    },
+    {
+      "word": "already",
+      "start": 0.690125,
+      "end": 1.171875
+    },
+    {
+      "word": "read",
+      "start": 1.171875,
+      "end": 1.5625
+    },
+    {
+      "word": "and",
+      "start": 1.5625,
+      "end": 1.835958
+    },
+    {
+      "word": "search",
+      "start": 1.835958,
+      "end": 2.226583
+    },
+    {
+      "word": "your",
+      "start": 2.226583,
+      "end": 2.395833
+    },
+    {
+      "word": "files",
+      "start": 2.395833,
+      "end": 3.997416
+    },
+    {
+      "word": "Use",
+      "start": 3.997416,
+      "end": 4.309916
+    },
+    {
+      "word": "MCP",
+      "start": 4.309916,
+      "end": 5.247416
+    },
+    {
+      "word": "when",
+      "start": 5.247416,
+      "end": 5.533875
+    },
+    {
+      "word": "the",
+      "start": 5.533875,
+      "end": 5.664083
+    },
+    {
+      "word": "task",
+      "start": 5.664083,
+      "end": 6.223958
+    },
+    {
+      "word": "needs",
+      "start": 6.223958,
+      "end": 6.5495
+    },
+    {
+      "word": "something",
+      "start": 6.5495,
+      "end": 6.992208
+    },
+    {
+      "word": "those",
+      "start": 6.992208,
+      "end": 7.252625
+    },
+    {
+      "word": "tools",
+      "start": 7.252625,
+      "end": 7.682291
+    },
+    {
+      "word": "don't",
+      "start": 7.682291,
+      "end": 7.981791
+    },
+    {
+      "word": "supply",
+      "start": 7.981791,
+      "end": 8.231791000000001
+    }
+  ]
+}

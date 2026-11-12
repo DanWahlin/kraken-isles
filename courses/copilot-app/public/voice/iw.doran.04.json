@@ -1,0 +1,117 @@
+{
+  "id": "iw.doran.04",
+  "speaker": "Doran",
+  "text": "Every button asks the agent to do real work, and records what came back. Building the board can take about ten minutes.",
+  "words": [
+    {
+      "word": "Every",
+      "start": 0.052083,
+      "end": 0.390625
+    },
+    {
+      "word": "button",
+      "start": 0.390625,
+      "end": 0.703125
+    },
+    {
+      "word": "asks",
+      "start": 0.703125,
+      "end": 1.015625
+    },
+    {
+      "word": "the",
+      "start": 1.015625,
+      "end": 1.197916
+    },
+    {
+      "word": "agent",
+      "start": 1.197916,
+      "end": 1.523458
+    },
+    {
+      "word": "to",
+      "start": 1.523458,
+      "end": 1.627625
+    },
+    {
+      "word": "do",
+      "start": 1.627625,
+      "end": 1.783875
+    },
+    {
+      "word": "real",
+      "start": 1.783875,
+      "end": 2.03125
+    },
+    {
+      "word": "work",
+      "start": 2.03125,
+      "end": 2.539083
+    },
+    {
+      "word": "and",
+      "start": 2.539083,
+      "end": 2.695333
+    },
+    {
+      "word": "records",
+      "start": 2.695333,
+      "end": 3.151041
+    },
+    {
+      "word": "what",
+      "start": 3.151041,
+      "end": 3.346375
+    },
+    {
+      "word": "came",
+      "start": 3.346375,
+      "end": 3.59375
+    },
+    {
+      "word": "back",
+      "start": 3.59375,
+      "end": 4.921875
+    },
+    {
+      "word": "Building",
+      "start": 4.921875,
+      "end": 5.364583
+    },
+    {
+      "word": "the",
+      "start": 5.364583,
+      "end": 5.45575
+    },
+    {
+      "word": "board",
+      "start": 5.45575,
+      "end": 5.794291
+    },
+    {
+      "word": "can",
+      "start": 5.794291,
+      "end": 5.976583
+    },
+    {
+      "word": "take",
+      "start": 5.976583,
+      "end": 6.25
+    },
+    {
+      "word": "about",
+      "start": 6.25,
+      "end": 6.5495
+    },
+    {
+      "word": "ten",
+      "start": 6.5495,
+      "end": 6.757833
+    },
+    {
+      "word": "minutes",
+      "start": 6.757833,
+      "end": 7.007833
+    }
+  ]
+}

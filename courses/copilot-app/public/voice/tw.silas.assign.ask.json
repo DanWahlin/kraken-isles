@@ -1,0 +1,42 @@
+{
+  "id": "tw.silas.assign.ask",
+  "speaker": "Silas",
+  "text": "Back, Captain? What did your automation do?",
+  "words": [
+    {
+      "word": "Back",
+      "start": 0.053208,
+      "end": 0.638291
+    },
+    {
+      "word": "Captain",
+      "start": 0.638291,
+      "end": 2.207458
+    },
+    {
+      "word": "What",
+      "start": 2.207458,
+      "end": 2.5665
+    },
+    {
+      "word": "did",
+      "start": 2.5665,
+      "end": 2.765958
+    },
+    {
+      "word": "your",
+      "start": 2.765958,
+      "end": 2.938833
+    },
+    {
+      "word": "automation",
+      "start": 2.938833,
+      "end": 3.577125
+    },
+    {
+      "word": "do",
+      "start": 3.577125,
+      "end": 3.827125
+    }
+  ]
+}

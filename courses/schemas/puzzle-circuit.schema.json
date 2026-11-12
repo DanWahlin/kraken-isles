@@ -34,7 +34,19 @@
     },
     "circuit": {
       "description": "Which of the game's circuits it runs: the Drydock Ring, the Lock Flight, the Pattern Book or the Journeyman's Toolbelt.",
-      "enum": ["ring", "flight", "book", "belt"]
+      "enum": [
+        "ring",
+        "flight",
+        "book",
+        "belt",
+        "signal",
+        "crate",
+        "board",
+        "slate",
+        "chart",
+        "lever",
+        "clock"
+      ]
     },
     "places": {
       "description": "The course's place id → the game's place it is (`acts`, each bound once), its name on signs and in the HUD, and what it stands for in the course.",
@@ -166,7 +178,7 @@
           "$ref": "#/$defs/id"
         },
         "kind": {
-          "enum": ["choose", "watch", "sound", "seal", "tiles", "gate"]
+          "enum": ["choose", "watch", "sound", "seal", "tiles", "gate", "dial"]
         },
         "title": {
           "description": "What the step is, in the course's words (the HUD's heading).",
@@ -193,7 +205,7 @@
           "$ref": "#/$defs/text"
         },
         "action": {
-          "description": "A `watch` station's one thing to do (its button's label), shown with `prompt`; the demo plays once it's done.",
+          "description": "A `watch` station's one thing to do (its button's label), shown with `prompt`; the demo plays once it's done. A `dial` station: the label of the button that sets the control where it is.",
           "$ref": "#/$defs/text"
         },
         "seconds": {
@@ -267,6 +279,51 @@
               }
             }
           }
+        },
+        "positions": {
+          "description": "A `dial` station's positions, in the order the control turns through them (it wraps): at least one right; every other says why when it's set.",
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "text"],
+            "properties": {
+              "id": {
+                "$ref": "#/$defs/id"
+              },
+              "text": {
+                "description": "What the control reads at this position.",
+                "$ref": "#/$defs/text"
+              },
+              "right": {
+                "const": true
+              },
+              "result": {
+                "description": "What the player sees when they set it here.",
+                "$ref": "#/$defs/text"
+              },
+              "reason": {
+                "description": "A wrong setting: why, in the course's words.",
+                "$ref": "#/$defs/text"
+              },
+              "cite": {
+                "description": "A wrong setting: the key of `cites` its reason comes from.",
+                "$ref": "#/$defs/id"
+              },
+              "line": {
+                "description": "A voice line played when it's set here.",
+                "$ref": "#/$defs/id"
+              }
+            }
+          }
+        },
+        "start": {
+          "description": "A `dial` station: the position (index) its control starts at. Not a right one.",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 11
         },
         "hints": {
           "description": "Wingman's three hint tiers (a question, the reason, the choice): text, not voice.",

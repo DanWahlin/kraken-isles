@@ -1,0 +1,62 @@
+{
+  "id": "tw.agnes.wait",
+  "speaker": "Agnes",
+  "text": "Lyra’s on the Bandstand by the quay, Captain. Hear her first.",
+  "words": [
+    {
+      "word": "Lyra’s",
+      "start": 0.0515409,
+      "end": 0.502583
+    },
+    {
+      "word": "on",
+      "start": 0.502583,
+      "end": 0.618541
+    },
+    {
+      "word": "the",
+      "start": 0.618541,
+      "end": 0.695875
+    },
+    {
+      "word": "Bandstand",
+      "start": 0.695875,
+      "end": 1.39175
+    },
+    {
+      "word": "by",
+      "start": 1.39175,
+      "end": 1.559291
+    },
+    {
+      "word": "the",
+      "start": 1.559291,
+      "end": 1.662375
+    },
+    {
+      "word": "quay",
+      "start": 1.662375,
+      "end": 2.229375
+    },
+    {
+      "word": "Captain",
+      "start": 2.229375,
+      "end": 3.698458
+    },
+    {
+      "word": "Hear",
+      "start": 3.698458,
+      "end": 3.994833
+    },
+    {
+      "word": "her",
+      "start": 3.994833,
+      "end": 4.162375
+    },
+    {
+      "word": "first",
+      "start": 4.162375,
+      "end": 4.412375
+    }
+  ]
+}

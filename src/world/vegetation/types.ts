@@ -27,7 +27,8 @@ export type PlantSpecies =
   | 'cactus'
   | 'brush'
   | 'cypress'
-  | 'pineTree';
+  | 'pineTree'
+  | 'saguaro';
 
 export type GrassKind = 'seaOats' | 'meadow' | 'creeper' | 'moss' | 'seedHead';
 

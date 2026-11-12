@@ -1,0 +1,999 @@
+{
+  "$schema": "../../schemas/quests.schema.json",
+  "$comment": "Inkwell Bluffs’ quest line for the Copilot app course (Chapter 06: Canvases; docs/specs/ISLAND-06-inkwell-bluffs.md §4). The game owns the island, the cast’s places, the puzzles’ mechanics and the cues; this file owns every word.",
+  "island": "inkwell",
+  "tracker": {
+    "chapter": "Chapter 06 · Canvases",
+    "goal": "Keep the work on one shared board, and earn the Seal of Inkwell",
+    "next": "Tidewheel Caldera is next, and she’s still being charted. Until then these waters are yours.",
+    "nextSail": "Tidewheel Caldera is next. Board your ship and follow the compass south."
+  },
+  "quests": [
+    {
+      "id": "Q6.1",
+      "title": "The Band’s Arrangement Board",
+      "task": "Hear the Bard’s tale",
+      "steps": {
+        "start": "Lyra’s playing at the taverna, along the lane from the quay.",
+        "done": "A long group chat buries decisions. A canvas is the app’s arrangement board for you and the agent."
+      }
+    },
+    {
+      "id": "Q6.2",
+      "title": "The Gossip Stair",
+      "task": "Tell a thread from a board",
+      "steps": {
+        "start": "Thea keeps the Washing Square, up the first flight of the Gossip Stair.",
+        "done": "Chat for a quick answer to a short task. A canvas when there’s state to keep visible, steps that repeat, or controls you both use."
+      }
+    },
+    {
+      "id": "Q6.3",
+      "title": "The Four Desks",
+      "task": "Make ready, and note your baseline",
+      "link": {
+        "label": "Prepare the session in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/06-canvases/README.md#prerequisites"
+      },
+      "steps": {
+        "start": "Nikos keeps the desks on the Plaza, at the top of the stair.",
+        "done": "Plan, Terminal, Browser and Changes come with every session. Your test totals are the baseline."
+      }
+    },
+    {
+      "id": "Q6.4",
+      "title": "The Borrowed Board",
+      "task": "Try a community canvas",
+      "link": {
+        "label": "Install the canvas in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/06-canvases/README.md#exercise-1-try-your-first-canvas"
+      },
+      "steps": {
+        "start": "Envoy Calla is in the Loggia, on the Plaza’s west side.",
+        "board": "Work the Borrowed Board round the Loggia.",
+        "solved": "Every lamp in the Loggia is lit. Talk to Calla.",
+        "done": "The package has one name and the board another. Move one card to Plan, and the agent moves it to Ready."
+      }
+    },
+    {
+      "id": "Q6.5",
+      "title": "Two Hands, One Chart",
+      "task": "Create a Session Board",
+      "link": {
+        "label": "Create the board in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/06-canvases/README.md#exercise-2-create-a-session-board"
+      },
+      "steps": {
+        "start": "Petra works on the Draughting Terrace, north of the Plaza.",
+        "slate": "Work Two Hands, One Chart round the terrace.",
+        "solved": "Every lamp on the terrace is lit. Talk to Petra.",
+        "done": "You and the agent both read and update one board. It’s user-scoped: no repository files changed."
+      }
+    },
+    {
+      "id": "Q6.6",
+      "title": "The Great Chart",
+      "task": "Learn what the Feature Workbench holds",
+      "link": {
+        "label": "Create the workbench in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/06-canvases/README.md#exercise-3-create-a-feature-workbench"
+      },
+      "steps": {
+        "start": "Doran keeps the Great Chart, along the Kite Walk.",
+        "done": "Five stages and no Approve stage. Every button is an agent-callable action. Repair one part; never regenerate the whole."
+      }
+    },
+    {
+      "id": "Q6.7",
+      "title": "The Shared Chart",
+      "task": "Run the workbench from proposal to final checks",
+      "link": {
+        "label": "Run the workbench in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/06-canvases/README.md#exercise-3-create-a-feature-workbench"
+      },
+      "steps": {
+        "start": "Talk to Doran again at the Great Chart.",
+        "chart": "Walk the Shared Chart round the Chart Court.",
+        "solved": "Every lamp in the court is lit. Talk to Doran.",
+        "done": "Approve in the Plan tab, record a baseline first, and mark a stage only from recorded evidence."
+      }
+    },
+    {
+      "id": "Q6.8",
+      "title": "The Trial of the Dome",
+      "task": "Pass the Trial to earn the Seal",
+      "steps": {
+        "start": "Warden Iris waits on the Dome’s terrace, up the Dome Stair.",
+        "exam": "The Trial of the Dome is ready when you are.",
+        "done": "The Seal of Inkwell is yours."
+      }
+    },
+    {
+      "id": "Q6.A",
+      "title": "Your Turn: An Assess Stage",
+      "task": "Extend your workbench",
+      "optional": true,
+      "link": {
+        "label": "Do the assignment in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/06-canvases/README.md#assignment"
+      },
+      "steps": {
+        "start": "Iris has one more task, on the terrace.",
+        "try": "Add the Assess stage in the app and run the workbench, then tell Iris.",
+        "done": "Evidence at every stage, from assessment through local validation."
+      }
+    }
+  ],
+  "targets": {
+    "Q6.1:start": {
+      "ids": ["npc:lyra_inkwell"],
+      "label": "Lyra"
+    },
+    "Q6.2:start": {
+      "ids": ["npc:thea"],
+      "label": "Thea"
+    },
+    "Q6.3:start": {
+      "ids": ["npc:nikos"],
+      "label": "Nikos"
+    },
+    "Q6.4:start": {
+      "ids": ["npc:calla"],
+      "label": "Envoy Calla"
+    },
+    "Q6.4:board": {
+      "ids": ["board:*"],
+      "label": "The Borrowed Board"
+    },
+    "Q6.4:solved": {
+      "ids": ["npc:calla"],
+      "label": "Envoy Calla"
+    },
+    "Q6.5:start": {
+      "ids": ["npc:petra"],
+      "label": "Petra"
+    },
+    "Q6.5:slate": {
+      "ids": ["slate:*"],
+      "label": "Two Hands, One Chart"
+    },
+    "Q6.5:solved": {
+      "ids": ["npc:petra"],
+      "label": "Petra"
+    },
+    "Q6.6:start": {
+      "ids": ["npc:doran"],
+      "label": "Chief Cartographer Doran"
+    },
+    "Q6.7:start": {
+      "ids": ["npc:doran"],
+      "label": "Chief Cartographer Doran"
+    },
+    "Q6.7:chart": {
+      "ids": ["chart:*"],
+      "label": "The Shared Chart"
+    },
+    "Q6.7:solved": {
+      "ids": ["npc:doran"],
+      "label": "Chief Cartographer Doran"
+    },
+    "Q6.8:start": {
+      "ids": ["npc:iris"],
+      "label": "Warden Iris"
+    },
+    "Q6.8:exam": {
+      "ids": ["npc:iris"],
+      "label": "Warden Iris"
+    },
+    "Q6.A:start": {
+      "ids": ["npc:iris"],
+      "label": "Warden Iris"
+    },
+    "Q6.A:try": {
+      "ids": ["npc:iris"],
+      "label": "Warden Iris"
+    }
+  },
+  "beats": [
+    {
+      "npc": "lyra_inkwell",
+      "when": {
+        "Q6.1": "done"
+      },
+      "say": "iw.lyra.done"
+    },
+    {
+      "npc": "lyra_inkwell",
+      "script": "lyra"
+    },
+    {
+      "npc": "thea",
+      "when": {
+        "Q6.1": {
+          "not": "done"
+        }
+      },
+      "say": "iw.thea.wait"
+    },
+    {
+      "npc": "thea",
+      "when": {
+        "Q6.2": "done"
+      },
+      "say": "iw.thea.done"
+    },
+    {
+      "npc": "thea",
+      "script": "thea"
+    },
+    {
+      "npc": "nikos",
+      "when": {
+        "Q6.2": {
+          "not": "done"
+        }
+      },
+      "say": "iw.nikos.wait"
+    },
+    {
+      "npc": "nikos",
+      "when": {
+        "Q6.3": "done"
+      },
+      "say": "iw.nikos.done"
+    },
+    {
+      "npc": "nikos",
+      "script": "nikos"
+    },
+    {
+      "npc": "calla",
+      "when": {
+        "Q6.3": {
+          "not": "done"
+        }
+      },
+      "say": "iw.calla.wait"
+    },
+    {
+      "npc": "calla",
+      "when": {
+        "Q6.4": "board"
+      },
+      "say": "iw.calla.board"
+    },
+    {
+      "npc": "calla",
+      "when": {
+        "Q6.4": "solved"
+      },
+      "script": "calla.board.solved"
+    },
+    {
+      "npc": "calla",
+      "when": {
+        "Q6.4": {
+          "not": "done"
+        }
+      },
+      "script": "calla"
+    },
+    {
+      "npc": "calla",
+      "say": "iw.calla.done"
+    },
+    {
+      "npc": "petra",
+      "when": {
+        "Q6.4": {
+          "not": "done"
+        }
+      },
+      "say": "iw.petra.wait"
+    },
+    {
+      "npc": "petra",
+      "when": {
+        "Q6.5": "slate"
+      },
+      "say": "iw.petra.slate"
+    },
+    {
+      "npc": "petra",
+      "when": {
+        "Q6.5": "solved"
+      },
+      "script": "petra.slate.solved"
+    },
+    {
+      "npc": "petra",
+      "when": {
+        "Q6.5": {
+          "not": "done"
+        }
+      },
+      "script": "petra"
+    },
+    {
+      "npc": "petra",
+      "say": "iw.petra.done"
+    },
+    {
+      "npc": "doran",
+      "when": {
+        "Q6.5": {
+          "not": "done"
+        }
+      },
+      "say": "iw.doran.wait"
+    },
+    {
+      "npc": "doran",
+      "when": {
+        "Q6.6": {
+          "not": "done"
+        }
+      },
+      "script": "doran"
+    },
+    {
+      "npc": "doran",
+      "when": {
+        "Q6.7": "chart"
+      },
+      "say": "iw.doran.chart"
+    },
+    {
+      "npc": "doran",
+      "when": {
+        "Q6.7": "solved"
+      },
+      "script": "doran.chart.solved"
+    },
+    {
+      "npc": "doran",
+      "when": {
+        "Q6.7": {
+          "not": "done"
+        }
+      },
+      "script": "doran.chart"
+    },
+    {
+      "npc": "doran",
+      "say": "iw.doran.done"
+    },
+    {
+      "npc": "iris",
+      "when": {
+        "Q6.7": {
+          "not": "done"
+        }
+      },
+      "say": "iw.iris.wait"
+    },
+    {
+      "npc": "iris",
+      "when": {
+        "Q6.8": "exam"
+      },
+      "script": "iris.retry"
+    },
+    {
+      "npc": "iris",
+      "when": {
+        "Q6.A": "start"
+      },
+      "script": "iris.assignment"
+    },
+    {
+      "npc": "iris",
+      "when": {
+        "Q6.A": "try"
+      },
+      "script": "iris.assignment.back"
+    },
+    {
+      "npc": "iris",
+      "when": {
+        "Q6.8": "done"
+      },
+      "say": "iw.iris.done"
+    },
+    {
+      "npc": "iris",
+      "script": "iris"
+    }
+  ],
+  "story": {
+    "conditions": {
+      "firstVisit": {
+        "Q6.1": {
+          "not": "done"
+        }
+      },
+      "boardBorrowed": {
+        "Q6.4": ["solved", "done"]
+      },
+      "slateShared": {
+        "Q6.5": ["solved", "done"]
+      },
+      "chartInked": {
+        "Q6.7": ["solved", "done"]
+      },
+      "sealed": {
+        "Q6.8": "done"
+      }
+    },
+    "events": {}
+  },
+  "signs": {
+    "tavernaSign": "The Quill and Anchor",
+    "stairBoard": "One board, in view",
+    "deskPlan": "Plan",
+    "deskTerminal": "Terminal",
+    "deskBrowser": "Browser",
+    "deskChanges": "Changes",
+    "boardName": "Repository Issues Kanban",
+    "colPlan": "Plan",
+    "colReady": "Ready",
+    "borrowedFlag": "Ready",
+    "rollHead": "Installed",
+    "bellPlate": "Restart canvas extensions",
+    "guildNotice": "Awesome GitHub Copilot",
+    "crateStencil": "accessibility-kanban",
+    "easelPlate": "/create-canvas",
+    "slateHead": "Session Board",
+    "slatePlan": "Plan",
+    "slateImplement": "Implement",
+    "slateValidate": "Validate",
+    "slateNotes": "Next decision · Blocker",
+    "chestPlate": "User scope",
+    "railPropose": "Propose",
+    "railPlan": "Plan",
+    "railBaseline": "Baseline",
+    "railImplement": "Implement",
+    "railValidate": "Validate",
+    "bellBaseline": "Run baseline",
+    "bellImplement": "Implement",
+    "bellBrowser": "Browser validation",
+    "bellFinal": "Run final checks",
+    "rackHead": "Evidence",
+    "quillPlate": "Feature proposal",
+    "quillButton": "Generate plan",
+    "planPlate": "Plan",
+    "glassPlate": "Browser",
+    "domeSign": "The Surveyor’s Dome",
+    "sealBanner": "Seal of Inkwell"
+  },
+  "scripts": {
+    "lyra": [
+      {
+        "say": "iw.lyra.01"
+      },
+      {
+        "show": "ch06/arrangement-board-canvas",
+        "caption": "A long group chat buries decisions. A shared arrangement board keeps everything visible and organized."
+      },
+      {
+        "say": "iw.lyra.02"
+      },
+      {
+        "hide": true
+      },
+      {
+        "cue": "iw-song"
+      },
+      {
+        "say": "iw.lyra.03"
+      },
+      {
+        "quiz": "K6.1"
+      },
+      {
+        "page": "pg6.studio",
+        "doubloons": 15
+      },
+      {
+        "say": "iw.lyra.04"
+      },
+      {
+        "quest": "Q6.1",
+        "step": "done"
+      },
+      {
+        "quest": "Q6.2",
+        "step": "start"
+      }
+    ],
+    "thea": [
+      {
+        "say": "iw.thea.01"
+      },
+      {
+        "cue": "iw-stair"
+      },
+      {
+        "say": "iw.thea.02"
+      },
+      {
+        "show": "ch06/chat-vs-canvas",
+        "caption": "Chat for a quick answer to a short task. A canvas when the work has state to keep visible."
+      },
+      {
+        "say": "iw.thea.03"
+      },
+      {
+        "hide": true
+      },
+      {
+        "say": "iw.thea.04"
+      },
+      {
+        "show": "ch06/human-agent-shared-surface",
+        "caption": "You use UI controls. The agent uses actions. Both sides can change the same board."
+      },
+      {
+        "hide": true
+      },
+      {
+        "quiz": "M6.1"
+      },
+      {
+        "say": "iw.thea.05"
+      },
+      {
+        "quiz": "K6.2"
+      },
+      {
+        "term": "canvas"
+      },
+      {
+        "page": "pg6.shared",
+        "doubloons": 15
+      },
+      {
+        "file": "pg6.terms"
+      },
+      {
+        "file": "pg6.when"
+      },
+      {
+        "say": "iw.thea.06"
+      },
+      {
+        "quest": "Q6.2",
+        "step": "done"
+      },
+      {
+        "quest": "Q6.3",
+        "step": "start"
+      }
+    ],
+    "nikos": [
+      {
+        "say": "iw.nikos.01"
+      },
+      {
+        "cue": "iw-desks"
+      },
+      {
+        "say": "iw.nikos.02"
+      },
+      {
+        "say": "iw.nikos.03"
+      },
+      {
+        "quiz": "K6.3"
+      },
+      {
+        "page": "pg6.surfaces",
+        "doubloons": 15
+      },
+      {
+        "say": "iw.nikos.04"
+      },
+      {
+        "say": "iw.nikos.05"
+      },
+      {
+        "term": "baseline"
+      },
+      {
+        "file": "pg6.ready"
+      },
+      {
+        "appTask": "A6.1"
+      },
+      {
+        "say": "iw.nikos.06"
+      },
+      {
+        "quest": "Q6.3",
+        "step": "done"
+      },
+      {
+        "quest": "Q6.4",
+        "step": "start"
+      }
+    ],
+    "calla": [
+      {
+        "say": "iw.calla.01"
+      },
+      {
+        "say": "iw.calla.02"
+      },
+      {
+        "show": "ch06/app-repo-issues-kanban",
+        "caption": "The Repository Issues Kanban: repository issues on a board, organized by status."
+      },
+      {
+        "say": "iw.calla.03"
+      },
+      {
+        "hide": true
+      },
+      {
+        "page": "pg6.community",
+        "doubloons": 15
+      },
+      {
+        "script": "calla.board"
+      }
+    ],
+    "calla.board": [
+      {
+        "quest": "Q6.4",
+        "step": "board"
+      },
+      {
+        "cue": "iw-board"
+      }
+    ],
+    "calla.board.solved": [
+      {
+        "say": "iw.calla.04"
+      },
+      {
+        "show": "ch06/app-open-repo-issues-canvas",
+        "caption": "**+** (**Add tab**), then **Canvas**, then **Repository Issues Kanban**."
+      },
+      {
+        "hide": true
+      },
+      {
+        "quiz": "H6.1"
+      },
+      {
+        "appTask": "A6.2"
+      },
+      {
+        "say": "iw.calla.05"
+      },
+      {
+        "quest": "Q6.4",
+        "step": "done"
+      },
+      {
+        "quest": "Q6.5",
+        "step": "start"
+      }
+    ],
+    "petra": [
+      {
+        "say": "iw.petra.01"
+      },
+      {
+        "say": "iw.petra.02"
+      },
+      {
+        "show": "ch06/session-board-collaboration",
+        "caption": "You and the agent update the same Session Board."
+      },
+      {
+        "say": "iw.petra.03"
+      },
+      {
+        "hide": true
+      },
+      {
+        "page": "pg6.session",
+        "doubloons": 15
+      },
+      {
+        "script": "petra.slate"
+      }
+    ],
+    "petra.slate": [
+      {
+        "quest": "Q6.5",
+        "step": "slate"
+      },
+      {
+        "cue": "iw-slate"
+      }
+    ],
+    "petra.slate.solved": [
+      {
+        "say": "iw.petra.04"
+      },
+      {
+        "quiz": "K6.5"
+      },
+      {
+        "term": "user-scope"
+      },
+      {
+        "appTask": "A6.3"
+      },
+      {
+        "cue": "iw-chest:C6.2"
+      },
+      {
+        "say": "iw.petra.05"
+      },
+      {
+        "quest": "Q6.5",
+        "step": "done"
+      },
+      {
+        "quest": "Q6.6",
+        "step": "start"
+      }
+    ],
+    "doran": [
+      {
+        "say": "iw.doran.01"
+      },
+      {
+        "show": "ch06/session-plan-validation-board",
+        "caption": "The proposal, the plan, the implementation and the evidence, linked to one session."
+      },
+      {
+        "say": "iw.doran.02"
+      },
+      {
+        "hide": true
+      },
+      {
+        "say": "iw.doran.03"
+      },
+      {
+        "say": "iw.doran.04"
+      },
+      {
+        "show": "ch06/app-create-canvas-screenshot",
+        "caption": "Five stages, one feature proposal field, eight checklist items, five actions, and an empty evidence area."
+      },
+      {
+        "hide": true
+      },
+      {
+        "quiz": "H6.2"
+      },
+      {
+        "say": "iw.doran.05"
+      },
+      {
+        "quiz": "K6.6"
+      },
+      {
+        "term": "agent-callable-action"
+      },
+      {
+        "page": "pg6.workbench",
+        "doubloons": 15
+      },
+      {
+        "file": "pg6.prompt"
+      },
+      {
+        "file": "pg6.repair"
+      },
+      {
+        "appTask": "A6.4"
+      },
+      {
+        "say": "iw.doran.06"
+      },
+      {
+        "quest": "Q6.6",
+        "step": "done"
+      },
+      {
+        "quest": "Q6.7",
+        "step": "start"
+      }
+    ],
+    "doran.chart": [
+      {
+        "quest": "Q6.7",
+        "step": "chart"
+      },
+      {
+        "cue": "iw-chart"
+      }
+    ],
+    "doran.chart.solved": [
+      {
+        "say": "iw.doran.07"
+      },
+      {
+        "show": "ch06/app-feature-workbench-plan",
+        "caption": "Propose and Plan are complete, and the status shows **Approved**. Baseline is the current stage."
+      },
+      {
+        "hide": true
+      },
+      {
+        "quiz": "H6.3"
+      },
+      {
+        "page": "pg6.run",
+        "doubloons": 15
+      },
+      {
+        "appTask": "A6.5"
+      },
+      {
+        "cue": "iw-chest:C6.3"
+      },
+      {
+        "say": "iw.doran.08"
+      },
+      {
+        "quest": "Q6.7",
+        "step": "done"
+      },
+      {
+        "quest": "Q6.8",
+        "step": "start"
+      }
+    ],
+    "iris": [
+      {
+        "say": "iw.iris.01"
+      },
+      {
+        "say": "iw.iris.02"
+      },
+      {
+        "quest": "Q6.8",
+        "step": "exam"
+      },
+      {
+        "trial": "T6"
+      },
+      {
+        "script": "trial.passed"
+      }
+    ],
+    "iris.retry": [
+      {
+        "say": "iw.iris.retry"
+      },
+      {
+        "trial": "T6"
+      },
+      {
+        "script": "trial.passed"
+      }
+    ],
+    "trial.passed": [
+      {
+        "cue": "iw-seal"
+      },
+      {
+        "cue": "celebrate"
+      },
+      {
+        "page": "pg6.takeaways"
+      },
+      {
+        "say": "iw.iris.03"
+      },
+      {
+        "file": "pg6.next"
+      },
+      {
+        "quest": "Q6.8",
+        "step": "done"
+      },
+      {
+        "quest": "Q6.A",
+        "step": "start"
+      },
+      {
+        "say": "iw.iris.more"
+      }
+    ],
+    "iris.assignment": [
+      {
+        "say": "iw.iris.assign.01"
+      },
+      {
+        "page": "pg6.assignment",
+        "doubloons": 15
+      },
+      {
+        "say": "iw.iris.assign.go"
+      },
+      {
+        "appTask": "A6.6",
+        "quiet": true
+      },
+      {
+        "quest": "Q6.A",
+        "step": "try"
+      }
+    ],
+    "iris.assignment.back": [
+      {
+        "say": "iw.iris.assign.ask"
+      },
+      {
+        "appTask": "A6.6",
+        "orStop": true
+      },
+      {
+        "quiz": "K6.9"
+      },
+      {
+        "say": "iw.iris.assign.back"
+      },
+      {
+        "quest": "Q6.A",
+        "step": "done"
+      }
+    ]
+  },
+  "notes": {
+    "lyra": "The board song (puzzles/board-song.json, the iw-song cue): the players plan by shouting and the song falls apart; the player pins the parts on one board and it holds (06 · from-the-studio-the-bands-arrangement-board).",
+    "thea": "The stair’s board (iw-stair) frames the lines of notes; then the terms (M6.1) and chat or canvas (K6.2).",
+    "nikos": "The four desks (iw-desks): Plan, Terminal, Browser and Changes come with every session. Then the prerequisites’ session and baseline (A6.1).",
+    "calla.board": "Starts the Borrowed Board (puzzles/borrowed-board.json, P6.1) and frames the Loggia (iw-board).",
+    "petra.slate": "Starts Two Hands, One Chart (puzzles/two-hands.json, P6.2) and frames the terrace (iw-slate).",
+    "doran.chart": "Starts the Shared Chart (puzzles/shared-chart.json, P6.3) and frames the Chart Court (iw-chart).",
+    "trial.passed": "The Seal (iw-seal): the Dome lights, its banners unroll, and the high kites go up."
+  },
+  "barks": {
+    "iw_player_a": [
+      "Who said the bridge comes after the second verse? It was said somewhere.",
+      "Pin it up where I can see it, and I’ll play it."
+    ],
+    "iw_player_b": [
+      "One board, three players, and nobody lost.",
+      "I can read the next part from here, Captain."
+    ],
+    "iw_washer": [
+      "I hung the wash by the notes once. Couldn’t find my own shirt for a week.",
+      "The fountain hears everything, Captain. It keeps none of it."
+    ],
+    "iw_fisher": [
+      "Golden hour’s the best of the day, Captain.",
+      "My chart of the Quills is forty years old, and still right."
+    ],
+    "iw_porter": ["Charts for the Dome! Mind your back.", "Three flights up, and every step counted."],
+    "iw_child": ["Round and round the brass sun!", "Nikos says I mustn’t touch the desks. I only look."],
+    "iw_painter": [
+      "A blue door a day, Captain. Then I check it in the morning light.",
+      "White first, then the blue. In that order."
+    ],
+    "iw_flyer_a": [
+      "She’s pulling well today! The surveyors read the wind off her tail.",
+      "Hold the line, and she tells you where she is."
+    ],
+    "iw_flyer_b": [
+      "Mine goes higher than his. Look and see for yourself.",
+      "The Dome’s quill turns the same way as my kite."
+    ],
+    "iw_surveyor": [
+      "I don’t ink a sounding I didn’t take.",
+      "First sounding, last sounding. The last is never the shallower one."
+    ],
+    "calla": ["Petra’s on the Draughting Terrace, Captain, toward the cliff.", "One card at a time on Plan."],
+    "petra": ["Along the Kite Walk to the Chart Court, Captain.", "Your slate’s in your own sea chest."],
+    "doran": ["Up the Dome Stair, Captain. Iris is on the terrace.", "No slate, no ink."]
+  }
+}

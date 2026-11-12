@@ -1,0 +1,97 @@
+{
+  "id": "ss.zahra.03",
+  "speaker": "Zahra",
+  "text": "A plugin can carry a server inside, but they aren't the same thing. You'll find both in Customize.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.049,
+      "end": 0.171583
+    },
+    {
+      "word": "plugin",
+      "start": 0.171583,
+      "end": 0.66175
+    },
+    {
+      "word": "can",
+      "start": 0.66175,
+      "end": 0.833333
+    },
+    {
+      "word": "carry",
+      "start": 0.833333,
+      "end": 1.164208
+    },
+    {
+      "word": "a",
+      "start": 1.164208,
+      "end": 1.23775
+    },
+    {
+      "word": "server",
+      "start": 1.23775,
+      "end": 1.568625
+    },
+    {
+      "word": "inside",
+      "start": 1.568625,
+      "end": 2.328416
+    },
+    {
+      "word": "but",
+      "start": 2.328416,
+      "end": 2.4755
+    },
+    {
+      "word": "they",
+      "start": 2.4755,
+      "end": 2.622541
+    },
+    {
+      "word": "aren't",
+      "start": 2.622541,
+      "end": 2.879916
+    },
+    {
+      "word": "the",
+      "start": 2.879916,
+      "end": 2.990208
+    },
+    {
+      "word": "same",
+      "start": 2.990208,
+      "end": 3.308833
+    },
+    {
+      "word": "thing",
+      "start": 3.308833,
+      "end": 4.558833
+    },
+    {
+      "word": "You'll",
+      "start": 4.558833,
+      "end": 4.840666
+    },
+    {
+      "word": "find",
+      "start": 4.840666,
+      "end": 5.220583
+    },
+    {
+      "word": "both",
+      "start": 5.220583,
+      "end": 5.539208
+    },
+    {
+      "word": "in",
+      "start": 5.539208,
+      "end": 5.674
+    },
+    {
+      "word": "Customize",
+      "start": 5.674,
+      "end": 5.924
+    }
+  ]
+}

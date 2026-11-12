@@ -1,0 +1,132 @@
+{
+  "id": "iw.thea.04",
+  "speaker": "Thea",
+  "text": "Say the agent adds plan steps. You uncheck one, or write pause before edits. It carries on from your update, not from a buried sentence.",
+  "words": [
+    {
+      "word": "Say",
+      "start": 0.0515409,
+      "end": 0.335041
+    },
+    {
+      "word": "the",
+      "start": 0.335041,
+      "end": 0.528333
+    },
+    {
+      "word": "agent",
+      "start": 0.528333,
+      "end": 0.902041
+    },
+    {
+      "word": "adds",
+      "start": 0.902041,
+      "end": 1.198458
+    },
+    {
+      "word": "plan",
+      "start": 1.198458,
+      "end": 1.546375
+    },
+    {
+      "word": "steps",
+      "start": 1.546375,
+      "end": 3.144333
+    },
+    {
+      "word": "You",
+      "start": 3.144333,
+      "end": 3.337625
+    },
+    {
+      "word": "uncheck",
+      "start": 3.337625,
+      "end": 3.737125
+    },
+    {
+      "word": "one",
+      "start": 3.737125,
+      "end": 4.381458
+    },
+    {
+      "word": "or",
+      "start": 4.381458,
+      "end": 4.523208
+    },
+    {
+      "word": "write",
+      "start": 4.523208,
+      "end": 4.819583
+    },
+    {
+      "word": "pause",
+      "start": 4.819583,
+      "end": 5.193291
+    },
+    {
+      "word": "before",
+      "start": 5.193291,
+      "end": 5.554125
+    },
+    {
+      "word": "edits",
+      "start": 5.554125,
+      "end": 7.07475
+    },
+    {
+      "word": "It",
+      "start": 7.07475,
+      "end": 7.2165
+    },
+    {
+      "word": "carries",
+      "start": 7.2165,
+      "end": 7.654625
+    },
+    {
+      "word": "on",
+      "start": 7.654625,
+      "end": 7.796375
+    },
+    {
+      "word": "from",
+      "start": 7.796375,
+      "end": 7.989708
+    },
+    {
+      "word": "your",
+      "start": 7.989708,
+      "end": 8.157208
+    },
+    {
+      "word": "update",
+      "start": 8.157208,
+      "end": 8.994833
+    },
+    {
+      "word": "not",
+      "start": 8.994833,
+      "end": 9.252583
+    },
+    {
+      "word": "from",
+      "start": 9.252583,
+      "end": 9.433
+    },
+    {
+      "word": "a",
+      "start": 9.433,
+      "end": 9.497416
+    },
+    {
+      "word": "buried",
+      "start": 9.497416,
+      "end": 9.85825
+    },
+    {
+      "word": "sentence",
+      "start": 9.85825,
+      "end": 10.10825
+    }
+  ]
+}

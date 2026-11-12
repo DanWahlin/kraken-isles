@@ -1,0 +1,52 @@
+{
+  "id": "iw.iris.wait",
+  "speaker": "Iris",
+  "text": "Finish at the Great Chart first, Captain. Then climb.",
+  "words": [
+    {
+      "word": "Finish",
+      "start": 0.052625,
+      "end": 0.539458
+    },
+    {
+      "word": "at",
+      "start": 0.539458,
+      "end": 0.671041
+    },
+    {
+      "word": "the",
+      "start": 0.671041,
+      "end": 0.802625
+    },
+    {
+      "word": "Great",
+      "start": 0.802625,
+      "end": 1.14475
+    },
+    {
+      "word": "Chart",
+      "start": 1.14475,
+      "end": 1.526333
+    },
+    {
+      "word": "first",
+      "start": 1.526333,
+      "end": 2.236833
+    },
+    {
+      "word": "Captain",
+      "start": 2.236833,
+      "end": 3.776333
+    },
+    {
+      "word": "Then",
+      "start": 3.776333,
+      "end": 4.039458
+    },
+    {
+      "word": "climb",
+      "start": 4.039458,
+      "end": 4.289458
+    }
+  ]
+}

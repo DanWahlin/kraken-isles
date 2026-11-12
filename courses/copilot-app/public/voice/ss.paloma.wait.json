@@ -1,0 +1,52 @@
+{
+  "id": "ss.paloma.wait",
+  "speaker": "Paloma",
+  "text": "Finish in the Crate Yard first, Captain. Then climb.",
+  "words": [
+    {
+      "word": "Finish",
+      "start": 0.052625,
+      "end": 0.552625
+    },
+    {
+      "word": "in",
+      "start": 0.552625,
+      "end": 0.697375
+    },
+    {
+      "word": "the",
+      "start": 0.697375,
+      "end": 0.842125
+    },
+    {
+      "word": "Crate",
+      "start": 0.842125,
+      "end": 1.210541
+    },
+    {
+      "word": "Yard",
+      "start": 1.210541,
+      "end": 1.565791
+    },
+    {
+      "word": "first",
+      "start": 1.565791,
+      "end": 2.381583
+    },
+    {
+      "word": "Captain",
+      "start": 2.381583,
+      "end": 3.86775
+    },
+    {
+      "word": "Then",
+      "start": 3.86775,
+      "end": 4.223041
+    },
+    {
+      "word": "climb",
+      "start": 4.223041,
+      "end": 4.473041
+    }
+  ]
+}

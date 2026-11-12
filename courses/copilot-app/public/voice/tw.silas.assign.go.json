@@ -1,0 +1,82 @@
+{
+  "id": "tw.silas.assign.go",
+  "speaker": "Silas",
+  "text": "Run it once, read its history, and revise the prompt. Then come and tell me.",
+  "words": [
+    {
+      "word": "Run",
+      "start": 0.053208,
+      "end": 0.332458
+    },
+    {
+      "word": "it",
+      "start": 0.332458,
+      "end": 0.438833
+    },
+    {
+      "word": "once",
+      "start": 0.438833,
+      "end": 1.063833
+    },
+    {
+      "word": "read",
+      "start": 1.063833,
+      "end": 1.369666
+    },
+    {
+      "word": "its",
+      "start": 1.369666,
+      "end": 1.52925
+    },
+    {
+      "word": "history",
+      "start": 1.52925,
+      "end": 2.260625
+    },
+    {
+      "word": "and",
+      "start": 2.260625,
+      "end": 2.446791
+    },
+    {
+      "word": "revise",
+      "start": 2.446791,
+      "end": 2.938833
+    },
+    {
+      "word": "the",
+      "start": 2.938833,
+      "end": 3.045208
+    },
+    {
+      "word": "prompt",
+      "start": 3.045208,
+      "end": 4.481375
+    },
+    {
+      "word": "Then",
+      "start": 4.481375,
+      "end": 4.827125
+    },
+    {
+      "word": "come",
+      "start": 4.827125,
+      "end": 5.132958
+    },
+    {
+      "word": "and",
+      "start": 5.132958,
+      "end": 5.265958
+    },
+    {
+      "word": "tell",
+      "start": 5.265958,
+      "end": 5.531916
+    },
+    {
+      "word": "me",
+      "start": 5.531916,
+      "end": 5.781916
+    }
+  ]
+}

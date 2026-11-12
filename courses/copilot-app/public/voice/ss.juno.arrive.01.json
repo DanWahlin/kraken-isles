@@ -1,0 +1,102 @@
+{
+  "id": "ss.juno.arrive.01",
+  "speaker": "Juno",
+  "text": "Sunspire Sands, Captain. See that flash on the tall tower? The Signal Guild talks across the sea with mirrors.",
+  "words": [
+    {
+      "word": "Sunspire",
+      "start": 0,
+      "end": 0.533
+    },
+    {
+      "word": "Sands",
+      "start": 0.533,
+      "end": 0.93
+    },
+    {
+      "word": "Captain",
+      "start": 0.93,
+      "end": 1.73
+    },
+    {
+      "word": "See",
+      "start": 1.73,
+      "end": 2.016
+    },
+    {
+      "word": "that",
+      "start": 2.016,
+      "end": 2.16
+    },
+    {
+      "word": "flash",
+      "start": 2.16,
+      "end": 2.587
+    },
+    {
+      "word": "on",
+      "start": 2.587,
+      "end": 2.66
+    },
+    {
+      "word": "the",
+      "start": 2.66,
+      "end": 2.784
+    },
+    {
+      "word": "tall",
+      "start": 2.784,
+      "end": 3.093
+    },
+    {
+      "word": "tower",
+      "start": 3.093,
+      "end": 3.8
+    },
+    {
+      "word": "The",
+      "start": 3.8,
+      "end": 4.206
+    },
+    {
+      "word": "Signal",
+      "start": 4.206,
+      "end": 4.533
+    },
+    {
+      "word": "Guild",
+      "start": 4.533,
+      "end": 4.853
+    },
+    {
+      "word": "talks",
+      "start": 4.853,
+      "end": 5.166
+    },
+    {
+      "word": "across",
+      "start": 5.166,
+      "end": 5.46
+    },
+    {
+      "word": "the",
+      "start": 5.46,
+      "end": 5.58
+    },
+    {
+      "word": "sea",
+      "start": 5.58,
+      "end": 5.792
+    },
+    {
+      "word": "with",
+      "start": 5.792,
+      "end": 5.98
+    },
+    {
+      "word": "mirrors",
+      "start": 5.98,
+      "end": 6.23
+    }
+  ]
+}

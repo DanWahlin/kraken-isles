@@ -1,0 +1,92 @@
+{
+  "id": "iw.kosta.market.hello",
+  "speaker": "Kosta",
+  "text": "Welcome, Captain! Kosta's Model Market. Hire a model that fits the job; bigger ones cost more starfish.",
+  "words": [
+    {
+      "word": "Welcome",
+      "start": 0.118416,
+      "end": 0.881583
+    },
+    {
+      "word": "Captain",
+      "start": 0.881583,
+      "end": 2.5
+    },
+    {
+      "word": "Kosta's",
+      "start": 2.5,
+      "end": 2.934208
+    },
+    {
+      "word": "Model",
+      "start": 2.934208,
+      "end": 3.197375
+    },
+    {
+      "word": "Market",
+      "start": 3.197375,
+      "end": 4.723666
+    },
+    {
+      "word": "Hire",
+      "start": 4.723666,
+      "end": 5.078958
+    },
+    {
+      "word": "a",
+      "start": 5.078958,
+      "end": 5.131583
+    },
+    {
+      "word": "model",
+      "start": 5.131583,
+      "end": 5.486833
+    },
+    {
+      "word": "that",
+      "start": 5.486833,
+      "end": 5.671041
+    },
+    {
+      "word": "fits",
+      "start": 5.671041,
+      "end": 5.960541
+    },
+    {
+      "word": "the",
+      "start": 5.960541,
+      "end": 6.065791
+    },
+    {
+      "word": "job",
+      "start": 6.065791,
+      "end": 6.85525
+    },
+    {
+      "word": "bigger",
+      "start": 6.85525,
+      "end": 7.131583
+    },
+    {
+      "word": "ones",
+      "start": 7.131583,
+      "end": 7.434208
+    },
+    {
+      "word": "cost",
+      "start": 7.434208,
+      "end": 7.736833
+    },
+    {
+      "word": "more",
+      "start": 7.736833,
+      "end": 7.907875
+    },
+    {
+      "word": "starfish",
+      "start": 7.907875,
+      "end": 8.157875
+    }
+  ]
+}

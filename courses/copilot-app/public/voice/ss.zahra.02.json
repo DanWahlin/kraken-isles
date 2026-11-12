@@ -1,0 +1,147 @@
+{
+  "id": "ss.zahra.02",
+  "speaker": "Zahra",
+  "text": "An MCP server adds tools that connect the app to a service or a data source. A plugin is a package you install: skills, agents, or other capabilities.",
+  "words": [
+    {
+      "word": "An",
+      "start": 0.049,
+      "end": 0.232833
+    },
+    {
+      "word": "MCP",
+      "start": 0.232833,
+      "end": 0.833333
+    },
+    {
+      "word": "server",
+      "start": 0.833333,
+      "end": 1.2255
+    },
+    {
+      "word": "adds",
+      "start": 1.2255,
+      "end": 1.495083
+    },
+    {
+      "word": "tools",
+      "start": 1.495083,
+      "end": 1.88725
+    },
+    {
+      "word": "that",
+      "start": 1.88725,
+      "end": 2.046583
+    },
+    {
+      "word": "connect",
+      "start": 2.046583,
+      "end": 2.46325
+    },
+    {
+      "word": "the",
+      "start": 2.46325,
+      "end": 2.585791
+    },
+    {
+      "word": "app",
+      "start": 2.585791,
+      "end": 2.781875
+    },
+    {
+      "word": "to",
+      "start": 2.781875,
+      "end": 2.904416
+    },
+    {
+      "word": "a",
+      "start": 2.904416,
+      "end": 2.977958
+    },
+    {
+      "word": "service",
+      "start": 2.977958,
+      "end": 3.517166
+    },
+    {
+      "word": "or",
+      "start": 3.517166,
+      "end": 3.651958
+    },
+    {
+      "word": "a",
+      "start": 3.651958,
+      "end": 3.73775
+    },
+    {
+      "word": "data",
+      "start": 3.73775,
+      "end": 4.093125
+    },
+    {
+      "word": "source",
+      "start": 4.093125,
+      "end": 5.453416
+    },
+    {
+      "word": "A",
+      "start": 5.453416,
+      "end": 5.58825
+    },
+    {
+      "word": "plugin",
+      "start": 5.58825,
+      "end": 6.127458
+    },
+    {
+      "word": "is",
+      "start": 6.127458,
+      "end": 6.28675
+    },
+    {
+      "word": "a",
+      "start": 6.28675,
+      "end": 6.360291
+    },
+    {
+      "word": "package",
+      "start": 6.360291,
+      "end": 6.764708
+    },
+    {
+      "word": "you",
+      "start": 6.764708,
+      "end": 6.8995
+    },
+    {
+      "word": "install",
+      "start": 6.8995,
+      "end": 7.696083
+    },
+    {
+      "word": "skills",
+      "start": 7.696083,
+      "end": 8.357833
+    },
+    {
+      "word": "agents",
+      "start": 8.357833,
+      "end": 9.031875
+    },
+    {
+      "word": "or",
+      "start": 9.031875,
+      "end": 9.203416
+    },
+    {
+      "word": "other",
+      "start": 9.203416,
+      "end": 9.436291
+    },
+    {
+      "word": "capabilities",
+      "start": 9.436291,
+      "end": 9.686291
+    }
+  ]
+}

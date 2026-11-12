@@ -1,0 +1,67 @@
+{
+  "id": "tw.agnes.done",
+  "speaker": "Agnes",
+  "text": "Up the second flight to Bounty Corner, Captain. Tobin’s by the board.",
+  "words": [
+    {
+      "word": "Up",
+      "start": 0.0515409,
+      "end": 0.244833
+    },
+    {
+      "word": "the",
+      "start": 0.244833,
+      "end": 0.335041
+    },
+    {
+      "word": "second",
+      "start": 0.335041,
+      "end": 0.760291
+    },
+    {
+      "word": "flight",
+      "start": 0.760291,
+      "end": 1.082458
+    },
+    {
+      "word": "to",
+      "start": 1.082458,
+      "end": 1.172666
+    },
+    {
+      "word": "Bounty",
+      "start": 1.172666,
+      "end": 1.50775
+    },
+    {
+      "word": "Corner",
+      "start": 1.50775,
+      "end": 2.190708
+    },
+    {
+      "word": "Captain",
+      "start": 2.190708,
+      "end": 3.659791
+    },
+    {
+      "word": "Tobin’s",
+      "start": 3.659791,
+      "end": 4.265458
+    },
+    {
+      "word": "by",
+      "start": 4.265458,
+      "end": 4.445875
+    },
+    {
+      "word": "the",
+      "start": 4.445875,
+      "end": 4.561875
+    },
+    {
+      "word": "board",
+      "start": 4.561875,
+      "end": 4.811875
+    }
+  ]
+}

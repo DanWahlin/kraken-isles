@@ -1,0 +1,72 @@
+{
+  "id": "ss.paloma.02",
+  "speaker": "Paloma",
+  "text": "One trial, then the Seal. Take your time. Nothing here is a trick.",
+  "words": [
+    {
+      "word": "One",
+      "start": 0.052625,
+      "end": 0.407875
+    },
+    {
+      "word": "trial",
+      "start": 0.407875,
+      "end": 1.276333
+    },
+    {
+      "word": "then",
+      "start": 1.276333,
+      "end": 1.526333
+    },
+    {
+      "word": "the",
+      "start": 1.526333,
+      "end": 1.736833
+    },
+    {
+      "word": "Seal",
+      "start": 1.736833,
+      "end": 3
+    },
+    {
+      "word": "Take",
+      "start": 3,
+      "end": 3.302625
+    },
+    {
+      "word": "your",
+      "start": 3.302625,
+      "end": 3.447375
+    },
+    {
+      "word": "time",
+      "start": 3.447375,
+      "end": 4.842125
+    },
+    {
+      "word": "Nothing",
+      "start": 4.842125,
+      "end": 5.315791
+    },
+    {
+      "word": "here",
+      "start": 5.315791,
+      "end": 5.618416
+    },
+    {
+      "word": "is",
+      "start": 5.618416,
+      "end": 5.789458
+    },
+    {
+      "word": "a",
+      "start": 5.789458,
+      "end": 5.934208
+    },
+    {
+      "word": "trick",
+      "start": 5.934208,
+      "end": 6.184208
+    }
+  ]
+}

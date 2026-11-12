@@ -1,0 +1,32 @@
+{
+  "id": "ss.yusuf.market.right",
+  "speaker": "Yusuf",
+  "text": "Right-sized! Here's some starfish back.",
+  "words": [
+    {
+      "word": "Right-sized",
+      "start": 0.05,
+      "end": 1.6875
+    },
+    {
+      "word": "Here's",
+      "start": 1.6875,
+      "end": 1.9875
+    },
+    {
+      "word": "some",
+      "start": 1.9875,
+      "end": 2.25
+    },
+    {
+      "word": "starfish",
+      "start": 2.25,
+      "end": 2.7125
+    },
+    {
+      "word": "back",
+      "start": 2.7125,
+      "end": 2.9625
+    }
+  ]
+}

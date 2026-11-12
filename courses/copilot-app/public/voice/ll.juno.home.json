@@ -1,0 +1,102 @@
+{
+  "id": "ll.juno.home",
+  "speaker": "Juno",
+  "text": "Anchorage Cay and Port Meridian: setup and orientation. You made the app ready, and learned your way round it.",
+  "words": [
+    {
+      "word": "Anchorage",
+      "start": 0,
+      "end": 0.48
+    },
+    {
+      "word": "Cay",
+      "start": 0.48,
+      "end": 0.76
+    },
+    {
+      "word": "and",
+      "start": 0.76,
+      "end": 0.944
+    },
+    {
+      "word": "Port",
+      "start": 0.944,
+      "end": 1.24
+    },
+    {
+      "word": "Meridian",
+      "start": 1.24,
+      "end": 1.933
+    },
+    {
+      "word": "setup",
+      "start": 1.933,
+      "end": 2.84
+    },
+    {
+      "word": "and",
+      "start": 2.84,
+      "end": 3.033
+    },
+    {
+      "word": "orientation",
+      "start": 3.033,
+      "end": 4.3
+    },
+    {
+      "word": "You",
+      "start": 4.3,
+      "end": 5.008
+    },
+    {
+      "word": "made",
+      "start": 5.008,
+      "end": 5.22
+    },
+    {
+      "word": "the",
+      "start": 5.22,
+      "end": 5.34
+    },
+    {
+      "word": "app",
+      "start": 5.34,
+      "end": 5.573
+    },
+    {
+      "word": "ready",
+      "start": 5.573,
+      "end": 6.1
+    },
+    {
+      "word": "and",
+      "start": 6.1,
+      "end": 6.2
+    },
+    {
+      "word": "learned",
+      "start": 6.2,
+      "end": 6.512
+    },
+    {
+      "word": "your",
+      "start": 6.512,
+      "end": 6.66
+    },
+    {
+      "word": "way",
+      "start": 6.66,
+      "end": 6.787
+    },
+    {
+      "word": "round",
+      "start": 6.787,
+      "end": 7.173
+    },
+    {
+      "word": "it",
+      "start": 7.173,
+      "end": 7.423
+    }
+  ]
+}

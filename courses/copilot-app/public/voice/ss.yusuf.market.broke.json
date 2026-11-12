@@ -1,0 +1,92 @@
+{
+  "id": "ss.yusuf.market.broke",
+  "speaker": "Yusuf",
+  "text": "Out of starfish? There are plenty hidden round the isles. Come back when you've found a few.",
+  "words": [
+    {
+      "word": "Out",
+      "start": 0.05,
+      "end": 0.275
+    },
+    {
+      "word": "of",
+      "start": 0.275,
+      "end": 0.425
+    },
+    {
+      "word": "starfish",
+      "start": 0.425,
+      "end": 1.925
+    },
+    {
+      "word": "There",
+      "start": 1.925,
+      "end": 2.225
+    },
+    {
+      "word": "are",
+      "start": 2.225,
+      "end": 2.475
+    },
+    {
+      "word": "plenty",
+      "start": 2.475,
+      "end": 2.7875
+    },
+    {
+      "word": "hidden",
+      "start": 2.7875,
+      "end": 3.15
+    },
+    {
+      "word": "round",
+      "start": 3.15,
+      "end": 3.4
+    },
+    {
+      "word": "the",
+      "start": 3.4,
+      "end": 3.525
+    },
+    {
+      "word": "isles.",
+      "start": 3.525,
+      "end": 4.8625
+    },
+    {
+      "word": "Come",
+      "start": 4.8625,
+      "end": 5.125
+    },
+    {
+      "word": "back",
+      "start": 5.125,
+      "end": 5.325
+    },
+    {
+      "word": "when",
+      "start": 5.325,
+      "end": 5.475
+    },
+    {
+      "word": "you've",
+      "start": 5.475,
+      "end": 5.625
+    },
+    {
+      "word": "found",
+      "start": 5.625,
+      "end": 5.9125
+    },
+    {
+      "word": "a",
+      "start": 5.9125,
+      "end": 5.9875
+    },
+    {
+      "word": "few",
+      "start": 5.9875,
+      "end": 6.2375
+    }
+  ]
+}

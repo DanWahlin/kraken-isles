@@ -1,0 +1,87 @@
+{
+  "id": "iw.doran.01",
+  "speaker": "Doran",
+  "text": "Doran, chief cartographer. This is the Great Chart: a Feature Workbench for the local inner loop.",
+  "words": [
+    {
+      "word": "Doran",
+      "start": 0.052083,
+      "end": 0.716166
+    },
+    {
+      "word": "chief",
+      "start": 0.716166,
+      "end": 1.041666
+    },
+    {
+      "word": "cartographer",
+      "start": 1.041666,
+      "end": 2.7995
+    },
+    {
+      "word": "This",
+      "start": 2.7995,
+      "end": 3.138041
+    },
+    {
+      "word": "is",
+      "start": 3.138041,
+      "end": 3.255208
+    },
+    {
+      "word": "the",
+      "start": 3.255208,
+      "end": 3.346375
+    },
+    {
+      "word": "Great",
+      "start": 3.346375,
+      "end": 3.658875
+    },
+    {
+      "word": "Chart",
+      "start": 3.658875,
+      "end": 4.296875
+    },
+    {
+      "word": "a",
+      "start": 4.296875,
+      "end": 4.375
+    },
+    {
+      "word": "Feature",
+      "start": 4.375,
+      "end": 4.765625
+    },
+    {
+      "word": "Workbench",
+      "start": 4.765625,
+      "end": 5.2995
+    },
+    {
+      "word": "for",
+      "start": 5.2995,
+      "end": 5.403666
+    },
+    {
+      "word": "the",
+      "start": 5.403666,
+      "end": 5.494791
+    },
+    {
+      "word": "local",
+      "start": 5.494791,
+      "end": 5.872416
+    },
+    {
+      "word": "inner",
+      "start": 5.872416,
+      "end": 6.028666
+    },
+    {
+      "word": "loop",
+      "start": 6.028666,
+      "end": 6.278666
+    }
+  ]
+}

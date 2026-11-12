@@ -155,13 +155,13 @@
           ["town", 3796.6, -1766.7],
           ["square", 3883.8, -1748.4],
           ["yard", 3960.8, -1792.1],
-          ["locks", 3890.0, -1847.8],
-          ["light", 3709.0, -2084.4, 44]
+          ["locks", 3890, -1847.8],
+          ["light", 3709, -2084.4, 44]
         ]
       },
       "decks": [
         [3739.2, -1806.9, 2.2],
-        [3707.0, -1830.6, 2.2],
+        [3707, -1830.6, 2.2],
         [3793.6, -1978.7, 20.6],
         [3751.8, -2030.6, 33.4],
         [3717.4, -2065.1, 42.7]
@@ -226,6 +226,293 @@
         ],
         ["gc-yard", [6053.9, 52, 221.7], [6081.2, 42.5, 231.2], "guildhall yard, stations, hall"],
         ["gc-tower", [6033.6, 48, 254.5], [6032.4, 41, 232.9], "tower terrace, stair, bell tower"]
+      ]
+    },
+    {
+      "id": "sunspire",
+      "flag": "sunspire",
+      "name": "Sunspire Sands",
+      "home": false,
+      "terrain": "sunspire-terrain",
+      "silhouette": "sunspire-silhouette",
+      "budget": {
+        "box": [6310.7, 3090.1, 6829.2, 3649.9],
+        "named": [
+          ["quay", "quay"],
+          ["square", 6544.8, 3270],
+          ["oasis", 6540.2, 3373.7],
+          ["court", 6663.5, 3411, 28],
+          ["yard", 6653.2, 3463.8, 28],
+          ["spire", 6749.2, 3461.6, 56]
+        ]
+      },
+      "decks": [
+        [6463.4, 3218.6, 2.2],
+        [6474.7, 3235.2, 2.2],
+        [6663.5, 3411, 28],
+        [6653.2, 3463.8, 28],
+        [6749.2, 3461.6, 56]
+      ],
+      "perf": {
+        "sunspire": {
+          "quay": true
+        },
+        "ss-court": {
+          "at": [6661, 3397.8, 0.6]
+        }
+      },
+      "flicker": [
+        [
+          "ss-quay",
+          [6442.6, 10, 3194.3],
+          [6463.4, 2.2, 3218.6],
+          "quay, bollards, Yusuf's booth, water steps"
+        ],
+        [
+          "ss-bazaar",
+          [6517.9, 17, 3257.7],
+          [6544.8, 8.6, 3270],
+          "bazaar square, stalls, awnings, course board"
+        ],
+        ["ss-oasis", [6541.7, 15, 3342.5], [6549, 10, 3402], "oasis pool, falaj, palms, the Weeping Wall"],
+        [
+          "ss-court",
+          [6658.6, 36, 3384.6],
+          [6670.7, 29, 3420.6],
+          "Mirror Court, stations, mirror stands, chart tent"
+        ],
+        ["ss-yard", [6652.3, 36, 3439.4], [6654, 29, 3468.2], "Crate Yard, arch, crates, stations"],
+        [
+          "ss-spire",
+          [6733.2, 62, 3453.6],
+          [6760.8, 74, 3480.4],
+          "Sundial Terrace, Sun Stair head, the Sunspire"
+        ],
+        [
+          "ss-fly-n",
+          [6565, 110, 2760],
+          [6565, 30, 3380],
+          "the whole island from the air, north side (the tour's distance): far shore, far terrain, the tables"
+        ],
+        [
+          "ss-fly-e",
+          [7185, 110, 3380],
+          [6565, 30, 3380],
+          "the whole island from the air, east side (the tour's distance): far shore, far terrain, the tables"
+        ],
+        [
+          "ss-fly-s",
+          [6565, 110, 4000],
+          [6565, 30, 3380],
+          "the whole island from the air, south side (the tour's distance): far shore, far terrain, the tables"
+        ],
+        [
+          "ss-fly-w",
+          [5945, 110, 3380],
+          [6565, 30, 3380],
+          "the whole island from the air, west side (the tour's distance): far shore, far terrain, the tables"
+        ]
+      ]
+    },
+    {
+      "id": "inkwell",
+      "flag": "inkwell",
+      "name": "Inkwell Bluffs",
+      "home": false,
+      "terrain": "inkwell-terrain",
+      "silhouette": "inkwell-silhouette",
+      "budget": {
+        "box": [6916, 5925, 7434, 6485],
+        "named": [
+          ["quay", "quay"],
+          ["square", 7151.3, 6088.8],
+          ["plaza", 7241.3, 6103.6, 27],
+          ["terrace", 7272.1, 6088, 27],
+          ["court", 7356.1, 6242.6, 44],
+          ["dome", 7374.4, 6320.1, 62]
+        ]
+      },
+      "decks": [
+        [7065.6, 6048.2, 2.2],
+        [7082.9, 6067.8, 2.2],
+        [7111.7, 6071.1, 3.4],
+        [7151.3, 6088.8, 11],
+        [7241.3, 6103.6, 27],
+        [7356.1, 6242.6, 44],
+        [7374.4, 6320.1, 62]
+      ],
+      "perf": {
+        "inkwell": {
+          "quay": true
+        },
+        "iw-court": {
+          "at": [7348.1, 6238.6, 0.6]
+        }
+      },
+      "flicker": [
+        [
+          "iw-quay",
+          [7034.8, 10, 6038.9],
+          [7065.6, 2.2, 6048.2],
+          "quay, bollards, Kosta's booth, water steps, the terraces behind"
+        ],
+        [
+          "iw-stair",
+          [7112.9, 12, 6082.7],
+          [7160.1, 12, 6092.2],
+          "Gossip Stair, lines of notes, Washing Square, course board"
+        ],
+        [
+          "iw-plaza",
+          [7210.9, 36, 6096.5],
+          [7245.7, 28, 6102.8],
+          "Plaza, armillary, desks, balustrade, the Loggia"
+        ],
+        [
+          "iw-walk",
+          [7257, 34, 6124.4],
+          [7330.3, 36, 6181.8],
+          "Kite Walk, wall, kites, the cliff and the Quills"
+        ],
+        [
+          "iw-chart",
+          [7332.5, 62, 6257.8],
+          [7354.9, 44, 6241],
+          "Chart Court from above: the Great Chart, its isles, studs and lines, the rail"
+        ],
+        [
+          "iw-dome",
+          [7376.2, 68, 6292.5],
+          [7381.1, 76, 6338.9],
+          "Dome Stair's head, the terrace, the Dome and its quill"
+        ],
+        [
+          "iw-fly-n",
+          [7170, 110, 5595],
+          [7170, 30, 6215],
+          "the whole island from the air, north side (the tour's distance): far shore, far terrain, the cliff"
+        ],
+        [
+          "iw-fly-e",
+          [7790, 110, 6215],
+          [7170, 30, 6215],
+          "the whole island from the air, east side (the tour's distance): far shore, far terrain, the cliff"
+        ],
+        [
+          "iw-fly-s",
+          [7170, 110, 6835],
+          [7170, 30, 6215],
+          "the whole island from the air, south side (the tour's distance): far shore, far terrain, the valley"
+        ],
+        [
+          "iw-fly-w",
+          [6550, 110, 6215],
+          [7170, 30, 6215],
+          "the whole island from the air, west side (the tour's distance): far shore, far terrain, the town"
+        ]
+      ]
+    },
+    {
+      "id": "tidewheel",
+      "flag": "tidewheel",
+      "name": "Tidewheel Caldera",
+      "home": false,
+      "terrain": "tidewheel-terrain",
+      "silhouette": "tidewheel-silhouette",
+      "budget": {
+        "box": [7812, 9049, 7990, 9225],
+        "named": [
+          ["quay", "quay"],
+          ["square", 7937.3, 9114.8],
+          ["works", 7972.4, 9058.4, 27],
+          ["court", 7957.8, 9157, 36],
+          ["terrace", 7905.7, 9217.5, 46]
+        ]
+      },
+      "decks": [
+        [7854.4, 2.2, 9079.6],
+        [7868.1, 2.2, 9094.4],
+        [7892.9, 3.4, 9100.7],
+        [7937.3, 11, 9114.8],
+        [7971.6, 27, 9064],
+        [7956.6, 36, 9155.4],
+        [7907.3, 46, 9216.3]
+      ],
+      "perf": {
+        "tidewheel": {
+          "quay": true
+        },
+        "tw-court": {
+          "at": [7956.6, 9155.4, 0.6]
+        }
+      },
+      "flicker": [
+        [
+          "tw-quay",
+          [7822, 10, 9056.5],
+          [7854.4, 2.2, 9079.6],
+          "quay, bollards, Pim's booth, water steps, the lamp-lit terraces behind"
+        ],
+        [
+          "tw-stair",
+          [7899.3, 12, 9105.9],
+          [7937.3, 12, 9114.8],
+          "Bandstand, Lamp Stair, pennants, Gear Square and its turning gears, course board"
+        ],
+        [
+          "tw-works",
+          [7966.1, 36, 9088.2],
+          [7972, 28, 9056.2],
+          "Wheel Works: walls, drum, gear train, lever, rails, lanterns"
+        ],
+        [
+          "tw-walk",
+          [7979.2, 34, 9085.7],
+          [7967.4, 37, 9139.8],
+          "Clock Walk, rail, lamps, pennants, the wall above and the bay below"
+        ],
+        [
+          "tw-court",
+          [7957, 46, 9132.6],
+          [7957, 37, 9162.6],
+          "Clock Court from above: the Bell Arch and its bells, desk, pegs, gauge, the rail"
+        ],
+        [
+          "tw-light",
+          [7909.9, 52, 9183.1],
+          [7910.8, 64, 9232.5],
+          "Lighthouse terrace, the tower, its cage's gears, the clock's hands and ring"
+        ],
+        [
+          "tw-breach",
+          [7689.2, 14, 8903.6],
+          [7678.4, 10, 8817.8],
+          "the breach from inside: the Tide Wheel turning, its piers, the jaws, the rock light beyond"
+        ],
+        [
+          "tw-fly-n",
+          [7774, 120, 8430],
+          [7774, 20, 9050],
+          "the whole island from the air, north side (the tour's distance): far shore, far terrain, the ring's wall"
+        ],
+        [
+          "tw-fly-e",
+          [8394, 120, 9050],
+          [7774, 20, 9050],
+          "the whole island from the air, east side (the tour's distance): far shore, far terrain, the Lighthouse"
+        ],
+        [
+          "tw-fly-s",
+          [7774, 120, 9670],
+          [7774, 20, 9050],
+          "the whole island from the air, south side (the tour's distance): far shore, far terrain, the springs"
+        ],
+        [
+          "tw-fly-w",
+          [7154, 120, 9050],
+          [7774, 20, 9050],
+          "the whole island from the air, west side (the tour's distance): the breach, the bay and the town"
+        ]
       ]
     }
   ]

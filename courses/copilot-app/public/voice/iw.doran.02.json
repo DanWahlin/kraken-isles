@@ -1,0 +1,82 @@
+{
+  "id": "iw.doran.02",
+  "speaker": "Doran",
+  "text": "It keeps the proposal, the plan, the work and the evidence tied to one session.",
+  "words": [
+    {
+      "word": "It",
+      "start": 0.052083,
+      "end": 0.208333
+    },
+    {
+      "word": "keeps",
+      "start": 0.208333,
+      "end": 0.520833
+    },
+    {
+      "word": "the",
+      "start": 0.520833,
+      "end": 0.598958
+    },
+    {
+      "word": "proposal",
+      "start": 0.598958,
+      "end": 1.419291
+    },
+    {
+      "word": "the",
+      "start": 1.419291,
+      "end": 1.5495
+    },
+    {
+      "word": "plan",
+      "start": 1.5495,
+      "end": 2.148458
+    },
+    {
+      "word": "the",
+      "start": 2.148458,
+      "end": 2.291666
+    },
+    {
+      "word": "work",
+      "start": 2.291666,
+      "end": 2.773458
+    },
+    {
+      "word": "and",
+      "start": 2.773458,
+      "end": 2.864583
+    },
+    {
+      "word": "the",
+      "start": 2.864583,
+      "end": 3.007833
+    },
+    {
+      "word": "evidence",
+      "start": 3.007833,
+      "end": 3.411458
+    },
+    {
+      "word": "tied",
+      "start": 3.411458,
+      "end": 3.75
+    },
+    {
+      "word": "to",
+      "start": 3.75,
+      "end": 3.841166
+    },
+    {
+      "word": "one",
+      "start": 3.841166,
+      "end": 4.0625
+    },
+    {
+      "word": "session",
+      "start": 4.0625,
+      "end": 4.3125
+    }
+  ]
+}

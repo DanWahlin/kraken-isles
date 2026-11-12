@@ -1,0 +1,97 @@
+{
+  "id": "iw.nikos.03",
+  "speaker": "Nikos",
+  "text": "A canvas adds one more surface, one that you design for the task. It doesn’t replace the four.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.05,
+      "end": 0.190291
+    },
+    {
+      "word": "canvas",
+      "start": 0.190291,
+      "end": 0.726
+    },
+    {
+      "word": "adds",
+      "start": 0.726,
+      "end": 0.968375
+    },
+    {
+      "word": "one",
+      "start": 0.968375,
+      "end": 1.197958
+    },
+    {
+      "word": "more",
+      "start": 1.197958,
+      "end": 1.363791
+    },
+    {
+      "word": "surface",
+      "start": 1.363791,
+      "end": 2.294916
+    },
+    {
+      "word": "one",
+      "start": 2.294916,
+      "end": 2.55
+    },
+    {
+      "word": "that",
+      "start": 2.55,
+      "end": 2.690291
+    },
+    {
+      "word": "you",
+      "start": 2.690291,
+      "end": 2.792333
+    },
+    {
+      "word": "design",
+      "start": 2.792333,
+      "end": 3.226
+    },
+    {
+      "word": "for",
+      "start": 3.226,
+      "end": 3.328041
+    },
+    {
+      "word": "the",
+      "start": 3.328041,
+      "end": 3.417333
+    },
+    {
+      "word": "task",
+      "start": 3.417333,
+      "end": 4.297458
+    },
+    {
+      "word": "It",
+      "start": 4.297458,
+      "end": 4.539791
+    },
+    {
+      "word": "doesn’t",
+      "start": 4.539791,
+      "end": 4.884166
+    },
+    {
+      "word": "replace",
+      "start": 4.884166,
+      "end": 5.356125
+    },
+    {
+      "word": "the",
+      "start": 5.356125,
+      "end": 5.445416
+    },
+    {
+      "word": "four",
+      "start": 5.445416,
+      "end": 5.695416
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "id": "iw.iris.03",
+  "speaker": "Iris",
+  "text": "The Seal of Inkwell is yours. Keep the work where you both can see it, and ink only what the evidence shows.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.052625,
+      "end": 0.210541
+    },
+    {
+      "word": "Seal",
+      "start": 0.210541,
+      "end": 0.565791
+    },
+    {
+      "word": "of",
+      "start": 0.565791,
+      "end": 0.697375
+    },
+    {
+      "word": "Inkwell",
+      "start": 0.697375,
+      "end": 1.236833
+    },
+    {
+      "word": "is",
+      "start": 1.236833,
+      "end": 1.381583
+    },
+    {
+      "word": "yours",
+      "start": 1.381583,
+      "end": 2.842125
+    },
+    {
+      "word": "Keep",
+      "start": 2.842125,
+      "end": 3.118416
+    },
+    {
+      "word": "the",
+      "start": 3.118416,
+      "end": 3.223666
+    },
+    {
+      "word": "work",
+      "start": 3.223666,
+      "end": 3.578958
+    },
+    {
+      "word": "where",
+      "start": 3.578958,
+      "end": 3.75
+    },
+    {
+      "word": "you",
+      "start": 3.75,
+      "end": 3.934208
+    },
+    {
+      "word": "both",
+      "start": 3.934208,
+      "end": 4.25
+    },
+    {
+      "word": "can",
+      "start": 4.25,
+      "end": 4.460541
+    },
+    {
+      "word": "see",
+      "start": 4.460541,
+      "end": 4.723666
+    },
+    {
+      "word": "it",
+      "start": 4.723666,
+      "end": 5.263166
+    },
+    {
+      "word": "and",
+      "start": 5.263166,
+      "end": 5.39475
+    },
+    {
+      "word": "ink",
+      "start": 5.39475,
+      "end": 5.631583
+    },
+    {
+      "word": "only",
+      "start": 5.631583,
+      "end": 5.934208
+    },
+    {
+      "word": "what",
+      "start": 5.934208,
+      "end": 6.197375
+    },
+    {
+      "word": "the",
+      "start": 6.197375,
+      "end": 6.342125
+    },
+    {
+      "word": "evidence",
+      "start": 6.342125,
+      "end": 6.776333
+    },
+    {
+      "word": "shows",
+      "start": 6.776333,
+      "end": 7.026333
+    }
+  ]
+}

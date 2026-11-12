@@ -1,0 +1,92 @@
+{
+  "id": "tw.dot.market.bye",
+  "speaker": "Dot",
+  "text": "Off up the Lamp Stair? Your starfish and your jobs go with you. Come back any time.",
+  "words": [
+    {
+      "word": "Off",
+      "start": 0.049,
+      "end": 0.245083
+    },
+    {
+      "word": "up",
+      "start": 0.245083,
+      "end": 0.404416
+    },
+    {
+      "word": "the",
+      "start": 0.404416,
+      "end": 0.514708
+    },
+    {
+      "word": "Lamp",
+      "start": 0.514708,
+      "end": 0.833333
+    },
+    {
+      "word": "Stair",
+      "start": 0.833333,
+      "end": 2.254916
+    },
+    {
+      "word": "Your",
+      "start": 2.254916,
+      "end": 2.426458
+    },
+    {
+      "word": "starfish",
+      "start": 2.426458,
+      "end": 3.063708
+    },
+    {
+      "word": "and",
+      "start": 3.063708,
+      "end": 3.235291
+    },
+    {
+      "word": "your",
+      "start": 3.235291,
+      "end": 3.382333
+    },
+    {
+      "word": "jobs",
+      "start": 3.382333,
+      "end": 3.7745
+    },
+    {
+      "word": "go",
+      "start": 3.7745,
+      "end": 3.958333
+    },
+    {
+      "word": "with",
+      "start": 3.958333,
+      "end": 4.166666
+    },
+    {
+      "word": "you",
+      "start": 4.166666,
+      "end": 5.294125
+    },
+    {
+      "word": "Come",
+      "start": 5.294125,
+      "end": 5.563708
+    },
+    {
+      "word": "back",
+      "start": 5.563708,
+      "end": 5.870083
+    },
+    {
+      "word": "any",
+      "start": 5.870083,
+      "end": 6.090666
+    },
+    {
+      "word": "time",
+      "start": 6.090666,
+      "end": 6.340666
+    }
+  ]
+}

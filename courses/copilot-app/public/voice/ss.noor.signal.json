@@ -1,0 +1,77 @@
+{
+  "id": "ss.noor.signal",
+  "speaker": "Noor",
+  "text": "Walk the court's stations in order, Captain. The roll first, on the house wall.",
+  "words": [
+    {
+      "word": "Walk",
+      "start": 0.052083,
+      "end": 0.338541
+    },
+    {
+      "word": "the",
+      "start": 0.338541,
+      "end": 0.45575
+    },
+    {
+      "word": "court's",
+      "start": 0.45575,
+      "end": 0.859375
+    },
+    {
+      "word": "stations",
+      "start": 0.859375,
+      "end": 1.458333
+    },
+    {
+      "word": "in",
+      "start": 1.458333,
+      "end": 1.666666
+    },
+    {
+      "word": "order",
+      "start": 1.666666,
+      "end": 2.239583
+    },
+    {
+      "word": "Captain",
+      "start": 2.239583,
+      "end": 3.789083
+    },
+    {
+      "word": "The",
+      "start": 3.789083,
+      "end": 3.90625
+    },
+    {
+      "word": "roll",
+      "start": 3.90625,
+      "end": 4.21875
+    },
+    {
+      "word": "first",
+      "start": 4.21875,
+      "end": 4.934916
+    },
+    {
+      "word": "on",
+      "start": 4.934916,
+      "end": 5.130208
+    },
+    {
+      "word": "the",
+      "start": 5.130208,
+      "end": 5.234375
+    },
+    {
+      "word": "house",
+      "start": 5.234375,
+      "end": 5.559916
+    },
+    {
+      "word": "wall",
+      "start": 5.559916,
+      "end": 5.809916
+    }
+  ]
+}

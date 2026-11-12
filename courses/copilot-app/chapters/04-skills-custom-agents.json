@@ -467,6 +467,128 @@
       }
     },
     {
+      "id": "N4.1",
+      "type": "scenario",
+      "situation": "A raider calls itself *Say It Again*. Every time you review the Book App, you type the same checklist into the prompt box.",
+      "prompt": "Which feature saves it?",
+      "options": [
+        {
+          "id": "skill",
+          "text": "A skill: `.github/skills/<name>/SKILL.md`"
+        },
+        {
+          "id": "prompt",
+          "text": "A one-off prompt, typed again each time",
+          "feedback": "A one-off prompt lives in the current conversation. You’d type it again next time."
+        },
+        {
+          "id": "rules",
+          "text": "Repository instructions",
+          "feedback": "Those apply across every task in the project. They’re the house rules."
+        },
+        {
+          "id": "agent",
+          "text": "A custom agent",
+          "feedback": "A custom agent defines a role and its tools. It isn’t a checklist for one kind of work."
+        }
+      ],
+      "answer": "skill",
+      "explain": {
+        "correct": "Right. Use a skill when you repeat the same kind of work. It applies when the task matches its description, or when you invoke it.",
+        "wrong": "You repeat the same kind of work. Which feature is for that?"
+      },
+      "hints": ["It’s the same kind of work each time.", "It lives in `.github/skills/`.", "A skill."],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "choose-the-feature-that-fits-the-task",
+        "hash": "aa81861f78f8"
+      }
+    },
+    {
+      "id": "N4.2",
+      "type": "scenario",
+      "situation": "A raider calls itself *Paper Lock*. A skill you found says “review without editing”, and a crew member says that makes it safe to turn on unread.",
+      "prompt": "What do you tell them?",
+      "options": [
+        {
+          "id": "guide",
+          "text": "A skill guides the work. It doesn’t disable tools, so read it first"
+        },
+        {
+          "id": "lock",
+          "text": "They’re right: the skill switches the editing tools off",
+          "feedback": "A skill’s instructions don’t enforce what Copilot is allowed to do."
+        },
+        {
+          "id": "plan",
+          "text": "It’s safe as long as the session is in **Plan** mode",
+          "feedback": "The skill changes nothing about the tools, in any mode."
+        },
+        {
+          "id": "name",
+          "text": "It’s safe if the skill’s name sounds read-only",
+          "feedback": "A name isn’t a limit. Skills can include scripts or tell Copilot to use tools."
+        }
+      ],
+      "answer": "guide",
+      "explain": {
+        "correct": "Right. A skill tells Copilot how to approach a task, but its instructions don’t enforce what Copilot is allowed to do. Read unfamiliar skills before you enable them.",
+        "wrong": "Is a skill a lock, or a guide?"
+      },
+      "hints": [
+        "Does a sentence in a skill switch a tool off?",
+        "A skill is task guidance, not a permission boundary.",
+        "A skill guides the work. It doesn’t disable tools."
+      ],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "core-concepts",
+        "hash": "f106792dbf27"
+      }
+    },
+    {
+      "id": "N4.3",
+      "type": "scenario",
+      "situation": "A raider calls itself *Every Tool*. Your `book-app-explainer` agent must only read and search, and its profile has no `tools` line.",
+      "prompt": "What does the missing line mean?",
+      "options": [
+        {
+          "id": "all",
+          "text": "It can use all available tools: add `tools: [\"read\", \"search\"]`"
+        },
+        {
+          "id": "none",
+          "text": "It has no tools until you add some",
+          "feedback": "Omitting the list allows all available tools."
+        },
+        {
+          "id": "scope",
+          "text": "The folder named in its instructions limits it",
+          "feedback": "The folder scope guides the agent, but it isn’t a file-system sandbox."
+        },
+        {
+          "id": "shell",
+          "text": "It’s read-only until you add shell access",
+          "feedback": "With no list, shell access is already there. The example permits only reading and searching."
+        }
+      ],
+      "answer": "all",
+      "explain": {
+        "correct": "Right. The `tools` list limits the available tools, and omitting it would allow all of them. The example permits only reading and searching.",
+        "wrong": "What limits a custom agent’s tools?"
+      },
+      "hints": [
+        "What does the profile’s `tools` list do?",
+        "Without it, nothing is limited.",
+        "It can use all available tools: add `tools: [\"read\", \"search\"]`."
+      ],
+      "source": {
+        "chapter": "04-skills-custom-agents",
+        "anchor": "exercise-create-a-read-only-book-app-explainer",
+        "hash": "428c8ffecae4"
+      }
+    },
+    {
       "id": "T4.1",
       "type": "scenario",
       "situation": "Every task in this project should keep the Book App’s stack and behavior unchanged.",

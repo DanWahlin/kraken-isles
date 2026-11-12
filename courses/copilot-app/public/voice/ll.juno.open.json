@@ -1,0 +1,82 @@
+{
+  "id": "ll.juno.open",
+  "speaker": "Juno",
+  "text": "Night’s coming on, Captain. Look at the chart. Every isle we sealed has its light.",
+  "words": [
+    {
+      "word": "Night’s",
+      "start": 0,
+      "end": 0.434
+    },
+    {
+      "word": "coming",
+      "start": 0.434,
+      "end": 0.693
+    },
+    {
+      "word": "on",
+      "start": 0.693,
+      "end": 0.93
+    },
+    {
+      "word": "Captain",
+      "start": 0.93,
+      "end": 1.488
+    },
+    {
+      "word": "Look",
+      "start": 1.488,
+      "end": 2.027
+    },
+    {
+      "word": "at",
+      "start": 2.027,
+      "end": 2.1
+    },
+    {
+      "word": "the",
+      "start": 2.1,
+      "end": 2.24
+    },
+    {
+      "word": "chart",
+      "start": 2.24,
+      "end": 2.92
+    },
+    {
+      "word": "Every",
+      "start": 2.92,
+      "end": 3.627
+    },
+    {
+      "word": "isle",
+      "start": 3.627,
+      "end": 4
+    },
+    {
+      "word": "we",
+      "start": 4,
+      "end": 4.217
+    },
+    {
+      "word": "sealed",
+      "start": 4.217,
+      "end": 4.62
+    },
+    {
+      "word": "has",
+      "start": 4.62,
+      "end": 4.84
+    },
+    {
+      "word": "its",
+      "start": 4.84,
+      "end": 5.013
+    },
+    {
+      "word": "light",
+      "start": 5.013,
+      "end": 5.263
+    }
+  ]
+}

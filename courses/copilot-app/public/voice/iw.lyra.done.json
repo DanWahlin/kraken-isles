@@ -1,0 +1,72 @@
+{
+  "id": "iw.lyra.done",
+  "speaker": "Lyra",
+  "text": "Thea’s on the Washing Square, Captain, up the first flight of the stair.",
+  "words": [
+    {
+      "word": "Thea’s",
+      "start": 0,
+      "end": 0.347
+    },
+    {
+      "word": "on",
+      "start": 0.347,
+      "end": 0.42
+    },
+    {
+      "word": "the",
+      "start": 0.42,
+      "end": 0.52
+    },
+    {
+      "word": "Washing",
+      "start": 0.52,
+      "end": 0.857
+    },
+    {
+      "word": "Square",
+      "start": 0.857,
+      "end": 1.425
+    },
+    {
+      "word": "Captain",
+      "start": 1.425,
+      "end": 1.893
+    },
+    {
+      "word": "up",
+      "start": 1.893,
+      "end": 2.04
+    },
+    {
+      "word": "the",
+      "start": 2.04,
+      "end": 2.187
+    },
+    {
+      "word": "first",
+      "start": 2.187,
+      "end": 2.354
+    },
+    {
+      "word": "flight",
+      "start": 2.354,
+      "end": 2.587
+    },
+    {
+      "word": "of",
+      "start": 2.587,
+      "end": 2.66
+    },
+    {
+      "word": "the",
+      "start": 2.66,
+      "end": 2.787
+    },
+    {
+      "word": "stair",
+      "start": 2.787,
+      "end": 3.037
+    }
+  ]
+}

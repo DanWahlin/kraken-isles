@@ -1,0 +1,67 @@
+{
+  "id": "tw.ansel.done",
+  "speaker": "Ansel",
+  "text": "Along the Clock Walk, Captain. Greta’s in the court under the Lighthouse.",
+  "words": [
+    {
+      "word": "Along",
+      "start": 0.0515409,
+      "end": 0.3995
+    },
+    {
+      "word": "the",
+      "start": 0.3995,
+      "end": 0.489708
+    },
+    {
+      "word": "Clock",
+      "start": 0.489708,
+      "end": 0.811875
+    },
+    {
+      "word": "Walk",
+      "start": 0.811875,
+      "end": 1.314416
+    },
+    {
+      "word": "Captain",
+      "start": 1.314416,
+      "end": 2.809291
+    },
+    {
+      "word": "Greta’s",
+      "start": 2.809291,
+      "end": 3.234541
+    },
+    {
+      "word": "in",
+      "start": 3.234541,
+      "end": 3.32475
+    },
+    {
+      "word": "the",
+      "start": 3.32475,
+      "end": 3.389166
+    },
+    {
+      "word": "court",
+      "start": 3.389166,
+      "end": 3.762875
+    },
+    {
+      "word": "under",
+      "start": 3.762875,
+      "end": 3.956166
+    },
+    {
+      "word": "the",
+      "start": 3.956166,
+      "end": 4.046375
+    },
+    {
+      "word": "Lighthouse",
+      "start": 4.046375,
+      "end": 4.296375
+    }
+  ]
+}

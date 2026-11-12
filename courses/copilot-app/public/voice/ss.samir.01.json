@@ -1,0 +1,107 @@
+{
+  "id": "ss.samir.01",
+  "speaker": "Samir",
+  "text": "Samir, Captain. Skills and servers you can add one at a time. Or they come packed together, as a plugin.",
+  "words": [
+    {
+      "word": "Samir",
+      "start": 0.0515409,
+      "end": 0.837625
+    },
+    {
+      "word": "Captain",
+      "start": 0.837625,
+      "end": 2.177833
+    },
+    {
+      "word": "Skills",
+      "start": 2.177833,
+      "end": 2.577333
+    },
+    {
+      "word": "and",
+      "start": 2.577333,
+      "end": 2.719083
+    },
+    {
+      "word": "servers",
+      "start": 2.719083,
+      "end": 3.092791
+    },
+    {
+      "word": "you",
+      "start": 3.092791,
+      "end": 3.20875
+    },
+    {
+      "word": "can",
+      "start": 3.20875,
+      "end": 3.440708
+    },
+    {
+      "word": "add",
+      "start": 3.440708,
+      "end": 3.595375
+    },
+    {
+      "word": "one",
+      "start": 3.595375,
+      "end": 3.827333
+    },
+    {
+      "word": "at",
+      "start": 3.827333,
+      "end": 3.956166
+    },
+    {
+      "word": "a",
+      "start": 3.956166,
+      "end": 4.085041
+    },
+    {
+      "word": "time",
+      "start": 4.085041,
+      "end": 5.244833
+    },
+    {
+      "word": "Or",
+      "start": 5.244833,
+      "end": 5.3995
+    },
+    {
+      "word": "they",
+      "start": 5.3995,
+      "end": 5.567
+    },
+    {
+      "word": "come",
+      "start": 5.567,
+      "end": 5.798958
+    },
+    {
+      "word": "packed",
+      "start": 5.798958,
+      "end": 5.99225
+    },
+    {
+      "word": "together",
+      "start": 5.99225,
+      "end": 6.597958
+    },
+    {
+      "word": "as",
+      "start": 6.597958,
+      "end": 6.752583
+    },
+    {
+      "word": "a",
+      "start": 6.752583,
+      "end": 6.894333
+    },
+    {
+      "word": "plugin",
+      "start": 6.894333,
+      "end": 7.144333
+    }
+  ]
+}

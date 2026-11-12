@@ -1,0 +1,112 @@
+{
+  "id": "tw.silas.03",
+  "speaker": "Silas",
+  "text": "The Seal of Tidewheel is yours. Test it by hand, give it only what it needs, and read what it did.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.053208,
+      "end": 0.21275
+    },
+    {
+      "word": "Seal",
+      "start": 0.21275,
+      "end": 0.638291
+    },
+    {
+      "word": "of",
+      "start": 0.638291,
+      "end": 0.757958
+    },
+    {
+      "word": "Tidewheel",
+      "start": 0.757958,
+      "end": 1.409583
+    },
+    {
+      "word": "is",
+      "start": 1.409583,
+      "end": 1.582458
+    },
+    {
+      "word": "yours",
+      "start": 1.582458,
+      "end": 3.0585
+    },
+    {
+      "word": "Test",
+      "start": 3.0585,
+      "end": 3.40425
+    },
+    {
+      "word": "it",
+      "start": 3.40425,
+      "end": 3.523916
+    },
+    {
+      "word": "by",
+      "start": 3.523916,
+      "end": 3.696791
+    },
+    {
+      "word": "hand",
+      "start": 3.696791,
+      "end": 4.335125
+    },
+    {
+      "word": "give",
+      "start": 4.335125,
+      "end": 4.521291
+    },
+    {
+      "word": "it",
+      "start": 4.521291,
+      "end": 4.640958
+    },
+    {
+      "word": "only",
+      "start": 4.640958,
+      "end": 4.920208
+    },
+    {
+      "word": "what",
+      "start": 4.920208,
+      "end": 5.119666
+    },
+    {
+      "word": "it",
+      "start": 5.119666,
+      "end": 5.252666
+    },
+    {
+      "word": "needs",
+      "start": 5.252666,
+      "end": 5.957458
+    },
+    {
+      "word": "and",
+      "start": 5.957458,
+      "end": 6.170208
+    },
+    {
+      "word": "read",
+      "start": 6.170208,
+      "end": 6.449458
+    },
+    {
+      "word": "what",
+      "start": 6.449458,
+      "end": 6.648916
+    },
+    {
+      "word": "it",
+      "start": 6.648916,
+      "end": 6.795208
+    },
+    {
+      "word": "did",
+      "start": 6.795208,
+      "end": 7.045208
+    }
+  ]
+}

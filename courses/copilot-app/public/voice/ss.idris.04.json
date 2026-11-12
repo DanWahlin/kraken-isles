@@ -1,0 +1,112 @@
+{
+  "id": "ss.idris.04",
+  "speaker": "Idris",
+  "text": "A worktree separates file changes, not installed tools. Before you add a server or a plugin, check it isn't there already.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.051,
+      "end": 0.204083
+    },
+    {
+      "word": "worktree",
+      "start": 0.204083,
+      "end": 0.574
+    },
+    {
+      "word": "separates",
+      "start": 0.574,
+      "end": 1.045916
+    },
+    {
+      "word": "file",
+      "start": 1.045916,
+      "end": 1.313791
+    },
+    {
+      "word": "changes",
+      "start": 1.313791,
+      "end": 2.040833
+    },
+    {
+      "word": "not",
+      "start": 2.040833,
+      "end": 2.321416
+    },
+    {
+      "word": "installed",
+      "start": 2.321416,
+      "end": 2.742333
+    },
+    {
+      "word": "tools",
+      "start": 2.742333,
+      "end": 4.119916
+    },
+    {
+      "word": "Before",
+      "start": 4.119916,
+      "end": 4.502541
+    },
+    {
+      "word": "you",
+      "start": 4.502541,
+      "end": 4.617333
+    },
+    {
+      "word": "add",
+      "start": 4.617333,
+      "end": 4.719375
+    },
+    {
+      "word": "a",
+      "start": 4.719375,
+      "end": 4.808666
+    },
+    {
+      "word": "server",
+      "start": 4.808666,
+      "end": 5.191333
+    },
+    {
+      "word": "or",
+      "start": 5.191333,
+      "end": 5.395416
+    },
+    {
+      "word": "a",
+      "start": 5.395416,
+      "end": 5.522958
+    },
+    {
+      "word": "plugin",
+      "start": 5.522958,
+      "end": 6.2245
+    },
+    {
+      "word": "check",
+      "start": 6.2245,
+      "end": 6.428583
+    },
+    {
+      "word": "it",
+      "start": 6.428583,
+      "end": 6.581625
+    },
+    {
+      "word": "isn't",
+      "start": 6.581625,
+      "end": 6.86225
+    },
+    {
+      "word": "there",
+      "start": 6.86225,
+      "end": 7.040833
+    },
+    {
+      "word": "already",
+      "start": 7.040833,
+      "end": 7.290833
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "iw.nikos.wait",
+  "speaker": "Nikos",
+  "text": "See Thea on the Washing Square first, Captain.",
+  "words": [
+    {
+      "word": "See",
+      "start": 0.05,
+      "end": 0.419916
+    },
+    {
+      "word": "Thea",
+      "start": 0.419916,
+      "end": 0.840833
+    },
+    {
+      "word": "on",
+      "start": 0.840833,
+      "end": 0.993875
+    },
+    {
+      "word": "the",
+      "start": 0.993875,
+      "end": 1.057666
+    },
+    {
+      "word": "Washing Square",
+      "start": 1.057666,
+      "end": 1.720916
+    },
+    {
+      "word": "first",
+      "start": 1.720916,
+      "end": 2.613791
+    },
+    {
+      "word": "Captain",
+      "start": 2.613791,
+      "end": 2.863791
+    }
+  ]
+}

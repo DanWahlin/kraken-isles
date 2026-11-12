@@ -1,0 +1,122 @@
+{
+  "id": "iw.iris.01",
+  "speaker": "Iris",
+  "text": "Warden Iris, Captain. From up here you can see every isle on Doran’s chart. Every mark on it has a measure behind it.",
+  "words": [
+    {
+      "word": "Warden",
+      "start": 0.052625,
+      "end": 0.486833
+    },
+    {
+      "word": "Iris",
+      "start": 0.486833,
+      "end": 1.210541
+    },
+    {
+      "word": "Captain",
+      "start": 1.210541,
+      "end": 2.776333
+    },
+    {
+      "word": "From",
+      "start": 2.776333,
+      "end": 3
+    },
+    {
+      "word": "up",
+      "start": 3,
+      "end": 3.197375
+    },
+    {
+      "word": "here",
+      "start": 3.197375,
+      "end": 3.447375
+    },
+    {
+      "word": "you",
+      "start": 3.447375,
+      "end": 3.565791
+    },
+    {
+      "word": "can",
+      "start": 3.565791,
+      "end": 3.763166
+    },
+    {
+      "word": "see",
+      "start": 3.763166,
+      "end": 4.078958
+    },
+    {
+      "word": "every",
+      "start": 4.078958,
+      "end": 4.460541
+    },
+    {
+      "word": "isle",
+      "start": 4.460541,
+      "end": 4.710541
+    },
+    {
+      "word": "on",
+      "start": 4.710541,
+      "end": 4.85525
+    },
+    {
+      "word": "Doran’s",
+      "start": 4.85525,
+      "end": 5.276333
+    },
+    {
+      "word": "chart",
+      "start": 5.276333,
+      "end": 6.75
+    },
+    {
+      "word": "Every",
+      "start": 6.75,
+      "end": 7.118416
+    },
+    {
+      "word": "mark",
+      "start": 7.118416,
+      "end": 7.460541
+    },
+    {
+      "word": "on",
+      "start": 7.460541,
+      "end": 7.592125
+    },
+    {
+      "word": "it",
+      "start": 7.592125,
+      "end": 7.75
+    },
+    {
+      "word": "has",
+      "start": 7.75,
+      "end": 7.921041
+    },
+    {
+      "word": "a",
+      "start": 7.921041,
+      "end": 8
+    },
+    {
+      "word": "measure",
+      "start": 8,
+      "end": 8.381583
+    },
+    {
+      "word": "behind",
+      "start": 8.381583,
+      "end": 8.842125
+    },
+    {
+      "word": "it",
+      "start": 8.842125,
+      "end": 9.092125
+    }
+  ]
+}

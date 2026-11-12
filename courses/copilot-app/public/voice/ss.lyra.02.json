@@ -1,0 +1,97 @@
+{
+  "id": "ss.lyra.02",
+  "speaker": "Lyra",
+  "text": "You choose the gear, and connect it when the session needs it. Listen to us without it first.",
+  "words": [
+    {
+      "word": "You",
+      "start": 0,
+      "end": 0.194
+    },
+    {
+      "word": "choose",
+      "start": 0.194,
+      "end": 0.42
+    },
+    {
+      "word": "the",
+      "start": 0.42,
+      "end": 0.544
+    },
+    {
+      "word": "gear",
+      "start": 0.544,
+      "end": 0.98
+    },
+    {
+      "word": "and",
+      "start": 0.98,
+      "end": 1.09
+    },
+    {
+      "word": "connect",
+      "start": 1.09,
+      "end": 1.467
+    },
+    {
+      "word": "it",
+      "start": 1.467,
+      "end": 1.552
+    },
+    {
+      "word": "when",
+      "start": 1.552,
+      "end": 1.7
+    },
+    {
+      "word": "the",
+      "start": 1.7,
+      "end": 1.8
+    },
+    {
+      "word": "session",
+      "start": 1.8,
+      "end": 2.133
+    },
+    {
+      "word": "needs",
+      "start": 2.133,
+      "end": 2.48
+    },
+    {
+      "word": "it",
+      "start": 2.48,
+      "end": 2.926
+    },
+    {
+      "word": "Listen",
+      "start": 2.926,
+      "end": 3.733
+    },
+    {
+      "word": "to",
+      "start": 3.733,
+      "end": 3.893
+    },
+    {
+      "word": "us",
+      "start": 3.893,
+      "end": 4.04
+    },
+    {
+      "word": "without",
+      "start": 4.04,
+      "end": 4.373
+    },
+    {
+      "word": "it",
+      "start": 4.373,
+      "end": 4.573
+    },
+    {
+      "word": "first",
+      "start": 4.573,
+      "end": 4.823
+    }
+  ]
+}

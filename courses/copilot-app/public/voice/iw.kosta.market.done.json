@@ -1,0 +1,52 @@
+{
+  "id": "iw.kosta.market.done",
+  "speaker": "Kosta",
+  "text": "The whole board, right-sized! You know your models, Captain.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.10525,
+      "end": 0.197375
+    },
+    {
+      "word": "whole",
+      "start": 0.197375,
+      "end": 0.486833
+    },
+    {
+      "word": "board",
+      "start": 0.486833,
+      "end": 1.10525
+    },
+    {
+      "word": "right-sized",
+      "start": 1.10525,
+      "end": 2.960541
+    },
+    {
+      "word": "You",
+      "start": 2.960541,
+      "end": 3.10525
+    },
+    {
+      "word": "know",
+      "start": 3.10525,
+      "end": 3.289458
+    },
+    {
+      "word": "your",
+      "start": 3.289458,
+      "end": 3.434208
+    },
+    {
+      "word": "models",
+      "start": 3.434208,
+      "end": 4.171041
+    },
+    {
+      "word": "Captain",
+      "start": 4.171041,
+      "end": 4.421041
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "ss.samir.06",
+  "speaker": "Samir",
+  "text": "Warden Paloma keeps the Sunspire. Take the Sun Stair from the yard's corner.",
+  "words": [
+    {
+      "word": "Warden",
+      "start": 0.0515409,
+      "end": 0.438125
+    },
+    {
+      "word": "Paloma",
+      "start": 0.438125,
+      "end": 0.837625
+    },
+    {
+      "word": "keeps",
+      "start": 0.837625,
+      "end": 1.056708
+    },
+    {
+      "word": "the",
+      "start": 1.056708,
+      "end": 1.159791
+    },
+    {
+      "word": "Sunspire",
+      "start": 1.159791,
+      "end": 2.731958
+    },
+    {
+      "word": "Take",
+      "start": 2.731958,
+      "end": 2.951041
+    },
+    {
+      "word": "the",
+      "start": 2.951041,
+      "end": 3.054125
+    },
+    {
+      "word": "Sun",
+      "start": 3.054125,
+      "end": 3.311875
+    },
+    {
+      "word": "Stair",
+      "start": 3.311875,
+      "end": 3.569583
+    },
+    {
+      "word": "from",
+      "start": 3.569583,
+      "end": 3.788666
+    },
+    {
+      "word": "the",
+      "start": 3.788666,
+      "end": 3.865958
+    },
+    {
+      "word": "yard's",
+      "start": 3.865958,
+      "end": 4.265458
+    },
+    {
+      "word": "corner",
+      "start": 4.265458,
+      "end": 4.515458
+    }
+  ]
+}

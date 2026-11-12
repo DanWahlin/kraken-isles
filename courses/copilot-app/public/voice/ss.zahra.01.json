@@ -1,0 +1,82 @@
+{
+  "id": "ss.zahra.01",
+  "speaker": "Zahra",
+  "text": "Welcome to the bazaar, Captain. Two kinds of goods here, and people mix them up.",
+  "words": [
+    {
+      "word": "Welcome",
+      "start": 0.049,
+      "end": 0.526958
+    },
+    {
+      "word": "to",
+      "start": 0.526958,
+      "end": 0.6495
+    },
+    {
+      "word": "the",
+      "start": 0.6495,
+      "end": 0.784333
+    },
+    {
+      "word": "bazaar",
+      "start": 0.784333,
+      "end": 1.433833
+    },
+    {
+      "word": "Captain",
+      "start": 1.433833,
+      "end": 2.904416
+    },
+    {
+      "word": "Two",
+      "start": 2.904416,
+      "end": 3.174
+    },
+    {
+      "word": "kinds",
+      "start": 3.174,
+      "end": 3.492666
+    },
+    {
+      "word": "of",
+      "start": 3.492666,
+      "end": 3.615208
+    },
+    {
+      "word": "goods",
+      "start": 3.615208,
+      "end": 3.884791
+    },
+    {
+      "word": "here",
+      "start": 3.884791,
+      "end": 4.41175
+    },
+    {
+      "word": "and",
+      "start": 4.41175,
+      "end": 4.546583
+    },
+    {
+      "word": "people",
+      "start": 4.546583,
+      "end": 4.926458
+    },
+    {
+      "word": "mix",
+      "start": 4.926458,
+      "end": 5.183833
+    },
+    {
+      "word": "them",
+      "start": 5.183833,
+      "end": 5.330875
+    },
+    {
+      "word": "up",
+      "start": 5.330875,
+      "end": 5.580875
+    }
+  ]
+}

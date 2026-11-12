@@ -1,0 +1,42 @@
+{
+  "id": "tw.tobin.wait",
+  "speaker": "Tobin",
+  "text": "See the Keeper on Gear Square first, Captain.",
+  "words": [
+    {
+      "word": "See",
+      "start": 0.05,
+      "end": 0.3375
+    },
+    {
+      "word": "the",
+      "start": 0.3375,
+      "end": 0.45
+    },
+    {
+      "word": "Keeper",
+      "start": 0.45,
+      "end": 0.9625
+    },
+    {
+      "word": "on",
+      "start": 0.9625,
+      "end": 1.2
+    },
+    {
+      "word": "Gear Square",
+      "start": 1.2,
+      "end": 1.75
+    },
+    {
+      "word": "first",
+      "start": 1.75,
+      "end": 2.3875
+    },
+    {
+      "word": "Captain",
+      "start": 2.3875,
+      "end": 2.6375
+    }
+  ]
+}

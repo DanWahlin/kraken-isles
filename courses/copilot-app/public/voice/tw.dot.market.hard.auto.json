@@ -1,0 +1,82 @@
+{
+  "id": "tw.dot.market.hard.auto",
+  "speaker": "Dot",
+  "text": "Right-sized! A hard job wants a higher Fusion level: more capable models and deeper reasoning.",
+  "words": [
+    {
+      "word": "Right-sized",
+      "start": 0.049,
+      "end": 1.936291
+    },
+    {
+      "word": "A",
+      "start": 1.936291,
+      "end": 2.046583
+    },
+    {
+      "word": "hard",
+      "start": 2.046583,
+      "end": 2.414208
+    },
+    {
+      "word": "job",
+      "start": 2.414208,
+      "end": 2.708333
+    },
+    {
+      "word": "wants",
+      "start": 2.708333,
+      "end": 2.977958
+    },
+    {
+      "word": "a",
+      "start": 2.977958,
+      "end": 3.051458
+    },
+    {
+      "word": "higher",
+      "start": 3.051458,
+      "end": 3.382333
+    },
+    {
+      "word": "Fusion",
+      "start": 3.382333,
+      "end": 3.872541
+    },
+    {
+      "word": "level",
+      "start": 3.872541,
+      "end": 4.620083
+    },
+    {
+      "word": "more",
+      "start": 4.620083,
+      "end": 4.852958
+    },
+    {
+      "word": "capable",
+      "start": 4.852958,
+      "end": 5.355375
+    },
+    {
+      "word": "models",
+      "start": 5.355375,
+      "end": 5.784333
+    },
+    {
+      "word": "and",
+      "start": 5.784333,
+      "end": 5.943625
+    },
+    {
+      "word": "deeper",
+      "start": 5.943625,
+      "end": 6.299
+    },
+    {
+      "word": "reasoning",
+      "start": 6.299,
+      "end": 6.549
+    }
+  ]
+}

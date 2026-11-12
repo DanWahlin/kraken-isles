@@ -1,0 +1,112 @@
+{
+  "id": "tw.silas.assign.01",
+  "speaker": "Silas",
+  "text": "The course’s assignment: one manual automation for your own work. A clear name, a manual trigger, one bounded task, and read-only.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.053208,
+      "end": 0.21275
+    },
+    {
+      "word": "course’s",
+      "start": 0.21275,
+      "end": 0.664875
+    },
+    {
+      "word": "assignment",
+      "start": 0.664875,
+      "end": 1.502666
+    },
+    {
+      "word": "one",
+      "start": 1.502666,
+      "end": 1.795208
+    },
+    {
+      "word": "manual",
+      "start": 1.795208,
+      "end": 2.260625
+    },
+    {
+      "word": "automation",
+      "start": 2.260625,
+      "end": 2.91225
+    },
+    {
+      "word": "for",
+      "start": 2.91225,
+      "end": 3.045208
+    },
+    {
+      "word": "your",
+      "start": 3.045208,
+      "end": 3.244666
+    },
+    {
+      "word": "own",
+      "start": 3.244666,
+      "end": 3.430833
+    },
+    {
+      "word": "work",
+      "start": 3.430833,
+      "end": 4.78725
+    },
+    {
+      "word": "A",
+      "start": 4.78725,
+      "end": 4.9335
+    },
+    {
+      "word": "clear",
+      "start": 4.9335,
+      "end": 5.252666
+    },
+    {
+      "word": "name",
+      "start": 5.252666,
+      "end": 5.83775
+    },
+    {
+      "word": "a",
+      "start": 5.83775,
+      "end": 5.97075
+    },
+    {
+      "word": "manual",
+      "start": 5.97075,
+      "end": 6.436166
+    },
+    {
+      "word": "trigger",
+      "start": 6.436166,
+      "end": 7.114375
+    },
+    {
+      "word": "one",
+      "start": 7.114375,
+      "end": 7.460125
+    },
+    {
+      "word": "bounded",
+      "start": 7.460125,
+      "end": 7.885625
+    },
+    {
+      "word": "task",
+      "start": 7.885625,
+      "end": 8.617041
+    },
+    {
+      "word": "and",
+      "start": 8.617041,
+      "end": 8.8165
+    },
+    {
+      "word": "read-only",
+      "start": 8.8165,
+      "end": 9.0665
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "id": "wingman.tw.nav",
+  "speaker": "Wingman",
+  "text": "Your tasks are in the top left, and the compass up top shows the way, up the Lamp Stair and along the wall to the Lighthouse.",
+  "words": [
+    {
+      "word": "Your",
+      "start": 0,
+      "end": 0.24
+    },
+    {
+      "word": "tasks",
+      "start": 0.24,
+      "end": 0.66
+    },
+    {
+      "word": "are",
+      "start": 0.66,
+      "end": 0.747
+    },
+    {
+      "word": "in",
+      "start": 0.747,
+      "end": 0.84
+    },
+    {
+      "word": "the",
+      "start": 0.84,
+      "end": 1.02
+    },
+    {
+      "word": "top",
+      "start": 1.02,
+      "end": 1.28
+    },
+    {
+      "word": "left",
+      "start": 1.28,
+      "end": 2.02
+    },
+    {
+      "word": "and",
+      "start": 2.02,
+      "end": 2.12
+    },
+    {
+      "word": "the",
+      "start": 2.12,
+      "end": 2.29
+    },
+    {
+      "word": "compass",
+      "start": 2.29,
+      "end": 2.667
+    },
+    {
+      "word": "up",
+      "start": 2.667,
+      "end": 2.82
+    },
+    {
+      "word": "top",
+      "start": 2.82,
+      "end": 3.173
+    },
+    {
+      "word": "shows",
+      "start": 3.173,
+      "end": 3.46
+    },
+    {
+      "word": "the",
+      "start": 3.46,
+      "end": 3.6
+    },
+    {
+      "word": "way",
+      "start": 3.6,
+      "end": 4.213
+    },
+    {
+      "word": "up",
+      "start": 4.213,
+      "end": 4.34
+    },
+    {
+      "word": "the",
+      "start": 4.34,
+      "end": 4.464
+    },
+    {
+      "word": "Lamp",
+      "start": 4.464,
+      "end": 4.773
+    },
+    {
+      "word": "Stair",
+      "start": 4.773,
+      "end": 5.14
+    },
+    {
+      "word": "and",
+      "start": 5.14,
+      "end": 5.253
+    },
+    {
+      "word": "along",
+      "start": 5.253,
+      "end": 5.54
+    },
+    {
+      "word": "the",
+      "start": 5.54,
+      "end": 5.664
+    },
+    {
+      "word": "wall",
+      "start": 5.664,
+      "end": 5.973
+    },
+    {
+      "word": "to",
+      "start": 5.973,
+      "end": 6.1
+    },
+    {
+      "word": "the",
+      "start": 6.1,
+      "end": 6.2
+    },
+    {
+      "word": "Lighthouse",
+      "start": 6.2,
+      "end": 6.45
+    }
+  ]
+}

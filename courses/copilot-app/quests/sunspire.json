@@ -1,0 +1,864 @@
+{
+  "$schema": "../../schemas/quests.schema.json",
+  "$comment": "Sunspire Sands’ quest line for the Copilot app course (Chapter 05: MCP Servers and Plugins; docs/specs/ISLAND-05-sunspire-sands.md §4). The game owns the island, the cast’s places, the puzzles’ mechanics and the cues; this file owns every word.",
+  "island": "sunspire",
+  "tracker": {
+    "chapter": "Chapter 05 · MCP Servers & Plugins",
+    "goal": "Connect a server, open a plugin, and earn the Seal of Sunspire",
+    "next": "Inkwell Bluffs is next, and she’s still being charted. Until then these waters are yours.",
+    "nextSail": "Inkwell Bluffs is next. Board your ship and follow the compass south."
+  },
+  "quests": [
+    {
+      "id": "Q5.1",
+      "title": "Connecting the Gear",
+      "task": "Hear the Bard’s tale",
+      "steps": {
+        "start": "Lyra’s playing in the caravanserai, at the quay’s head.",
+        "done": "An MCP server is a connection that gives the crew tools. A plugin is a package of additions. Check what’s inside before you enable it."
+      }
+    },
+    {
+      "id": "Q5.2",
+      "title": "The Bazaar",
+      "task": "Tell a server from a plugin",
+      "steps": {
+        "start": "Zahra keeps the scales on the bazaar square.",
+        "done": "A server connects the app to a service. A plugin is a package you install. Add one only when the task needs it."
+      }
+    },
+    {
+      "id": "Q5.3",
+      "title": "A Tent of Your Own",
+      "task": "Start a practice session",
+      "link": {
+        "label": "Create the session in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/05-mcp-plugins/README.md#create-a-practice-session"
+      },
+      "steps": {
+        "start": "Idris keeps the camp at the oasis, down from the square.",
+        "done": "One session in a new worktree from main, kept for the whole chapter. A worktree separates files, not installed tools."
+      }
+    },
+    {
+      "id": "Q5.4",
+      "title": "The Signal House",
+      "task": "Learn what an MCP server is",
+      "steps": {
+        "start": "Signal Master Noor is at the Signal House, up the Signal Stair.",
+        "done": "An MCP server supplies tools from a service. Use one when the task needs what the app’s own tools don’t supply."
+      }
+    },
+    {
+      "id": "Q5.5",
+      "title": "Mirror Beams",
+      "task": "Connect a server and check its answer",
+      "link": {
+        "label": "Add Context7 in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/05-mcp-plugins/README.md#exercise-check-the-book-apps-input-labels-with-context7"
+      },
+      "steps": {
+        "start": "Talk to Noor again at the Signal House.",
+        "signal": "Walk Mirror Beams round the Mirror Court.",
+        "solved": "Every lamp in the court is lit. Talk to Noor.",
+        "done": "Enabled isn’t connected. Ask the general question, check the tool activity and its sources, and compare at home."
+      }
+    },
+    {
+      "id": "Q5.6",
+      "title": "Sealed Crates",
+      "task": "Learn what a plugin is",
+      "steps": {
+        "start": "Samir trades in the Crate Yard, past the court.",
+        "done": "A plugin packages skills, agents, servers or canvases. Installing it doesn’t run them. Read what’s inside first."
+      }
+    },
+    {
+      "id": "Q5.7",
+      "title": "The Sealed Crate",
+      "task": "Install a plugin and use its skill",
+      "link": {
+        "label": "Install the plugin in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/05-mcp-plugins/README.md#exercise-plan-a-css-improvement-with-modern-web-guidance"
+      },
+      "steps": {
+        "start": "Talk to Samir again in the Crate Yard.",
+        "crate": "Work the Sealed Crate round the yard.",
+        "solved": "Every lamp in the yard is lit. Talk to Samir.",
+        "done": "Read it, install it, reload, invoke its skill, and check its answer against the code."
+      }
+    },
+    {
+      "id": "Q5.8",
+      "title": "The Trial of the Sunspire",
+      "task": "Pass the Trial to earn the Seal",
+      "steps": {
+        "start": "Warden Paloma waits on the Sundial Terrace, up the Sun Stair.",
+        "exam": "The Trial of the Sunspire is ready when you are.",
+        "done": "The Seal of Sunspire is yours."
+      }
+    },
+    {
+      "id": "Q5.A",
+      "title": "Your Turn: The Evidence Table",
+      "task": "Summarize the evidence",
+      "optional": true,
+      "link": {
+        "label": "Do the assignment in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/05-mcp-plugins/README.md#assignment"
+      },
+      "steps": {
+        "start": "Paloma has one more task, on the terrace.",
+        "try": "Make your evidence table in the app, then tell Paloma.",
+        "done": "Completed work apart from proposed checks, with a real source for each tool."
+      }
+    }
+  ],
+  "targets": {
+    "Q5.1:start": {
+      "ids": ["npc:lyra_sunspire"],
+      "label": "Lyra"
+    },
+    "Q5.2:start": {
+      "ids": ["npc:zahra"],
+      "label": "Zahra"
+    },
+    "Q5.3:start": {
+      "ids": ["npc:idris"],
+      "label": "Idris"
+    },
+    "Q5.4:start": {
+      "ids": ["npc:noor"],
+      "label": "Signal Master Noor"
+    },
+    "Q5.5:start": {
+      "ids": ["npc:noor"],
+      "label": "Signal Master Noor"
+    },
+    "Q5.5:signal": {
+      "ids": ["signal:*"],
+      "label": "Mirror Beams"
+    },
+    "Q5.5:solved": {
+      "ids": ["npc:noor"],
+      "label": "Signal Master Noor"
+    },
+    "Q5.6:start": {
+      "ids": ["npc:samir"],
+      "label": "Samir"
+    },
+    "Q5.7:start": {
+      "ids": ["npc:samir"],
+      "label": "Samir"
+    },
+    "Q5.7:crate": {
+      "ids": ["crate:*"],
+      "label": "The Sealed Crate"
+    },
+    "Q5.7:solved": {
+      "ids": ["npc:samir"],
+      "label": "Samir"
+    },
+    "Q5.8:start": {
+      "ids": ["npc:paloma"],
+      "label": "Warden Paloma"
+    },
+    "Q5.8:exam": {
+      "ids": ["npc:paloma"],
+      "label": "Warden Paloma"
+    },
+    "Q5.A:start": {
+      "ids": ["npc:paloma"],
+      "label": "Warden Paloma"
+    },
+    "Q5.A:try": {
+      "ids": ["npc:paloma"],
+      "label": "Warden Paloma"
+    }
+  },
+  "beats": [
+    {
+      "npc": "lyra_sunspire",
+      "when": {
+        "Q5.1": "done"
+      },
+      "say": "ss.lyra.done"
+    },
+    {
+      "npc": "lyra_sunspire",
+      "script": "lyra"
+    },
+    {
+      "npc": "zahra",
+      "when": {
+        "Q5.1": {
+          "not": "done"
+        }
+      },
+      "say": "ss.zahra.wait"
+    },
+    {
+      "npc": "zahra",
+      "when": {
+        "Q5.2": "done"
+      },
+      "say": "ss.zahra.done"
+    },
+    {
+      "npc": "zahra",
+      "script": "zahra"
+    },
+    {
+      "npc": "idris",
+      "when": {
+        "Q5.2": {
+          "not": "done"
+        }
+      },
+      "say": "ss.idris.wait"
+    },
+    {
+      "npc": "idris",
+      "when": {
+        "Q5.3": "done"
+      },
+      "say": "ss.idris.done"
+    },
+    {
+      "npc": "idris",
+      "script": "idris"
+    },
+    {
+      "npc": "noor",
+      "when": {
+        "Q5.3": {
+          "not": "done"
+        }
+      },
+      "say": "ss.noor.wait"
+    },
+    {
+      "npc": "noor",
+      "when": {
+        "Q5.4": {
+          "not": "done"
+        }
+      },
+      "script": "noor"
+    },
+    {
+      "npc": "noor",
+      "when": {
+        "Q5.5": "signal"
+      },
+      "say": "ss.noor.signal"
+    },
+    {
+      "npc": "noor",
+      "when": {
+        "Q5.5": "solved"
+      },
+      "script": "noor.signal.solved"
+    },
+    {
+      "npc": "noor",
+      "when": {
+        "Q5.5": {
+          "not": "done"
+        }
+      },
+      "script": "noor.signal"
+    },
+    {
+      "npc": "noor",
+      "say": "ss.noor.done"
+    },
+    {
+      "npc": "samir",
+      "when": {
+        "Q5.5": {
+          "not": "done"
+        }
+      },
+      "say": "ss.samir.wait"
+    },
+    {
+      "npc": "samir",
+      "when": {
+        "Q5.6": {
+          "not": "done"
+        }
+      },
+      "script": "samir"
+    },
+    {
+      "npc": "samir",
+      "when": {
+        "Q5.7": "crate"
+      },
+      "say": "ss.samir.crate"
+    },
+    {
+      "npc": "samir",
+      "when": {
+        "Q5.7": "solved"
+      },
+      "script": "samir.crate.solved"
+    },
+    {
+      "npc": "samir",
+      "when": {
+        "Q5.7": {
+          "not": "done"
+        }
+      },
+      "script": "samir.crate"
+    },
+    {
+      "npc": "samir",
+      "say": "ss.samir.done"
+    },
+    {
+      "npc": "paloma",
+      "when": {
+        "Q5.7": {
+          "not": "done"
+        }
+      },
+      "say": "ss.paloma.wait"
+    },
+    {
+      "npc": "paloma",
+      "when": {
+        "Q5.8": "exam"
+      },
+      "script": "paloma.retry"
+    },
+    {
+      "npc": "paloma",
+      "when": {
+        "Q5.A": "start"
+      },
+      "script": "paloma.assignment"
+    },
+    {
+      "npc": "paloma",
+      "when": {
+        "Q5.A": "try"
+      },
+      "script": "paloma.assignment.back"
+    },
+    {
+      "npc": "paloma",
+      "when": {
+        "Q5.8": "done"
+      },
+      "say": "ss.paloma.done"
+    },
+    {
+      "npc": "paloma",
+      "script": "paloma"
+    }
+  ],
+  "story": {
+    "conditions": {
+      "firstVisit": {
+        "Q5.1": {
+          "not": "done"
+        }
+      },
+      "beamLanded": {
+        "Q5.5": ["solved", "done"]
+      },
+      "crateOpened": {
+        "Q5.7": ["solved", "done"]
+      },
+      "sealed": {
+        "Q5.8": "done"
+      }
+    },
+    "events": {}
+  },
+  "signs": {
+    "seraiSign": "The Sun and Lantern",
+    "rollHead": "MCP Servers",
+    "cardName": "context7",
+    "cardKind": "HTTP",
+    "cardBearing": "https://mcp.context7.com/mcp",
+    "caravanRow": "awesome-copilot",
+    "bellPlate": "/skills reload",
+    "crateStencil": "modern-web-guidance",
+    "beamFlag": "Connected",
+    "crateTag": "Installed",
+    "sealBanner": "Seal of Sunspire"
+  },
+  "scripts": {
+    "lyra": [
+      {
+        "say": "ss.lyra.01"
+      },
+      {
+        "show": "ch05/extending-copilot-app",
+        "caption": "Skills and agents customize the app’s work. MCP servers and plugins extend what it can do."
+      },
+      {
+        "say": "ss.lyra.02"
+      },
+      {
+        "hide": true
+      },
+      {
+        "cue": "ss-song"
+      },
+      {
+        "say": "ss.lyra.03"
+      },
+      {
+        "quiz": "K5.1"
+      },
+      {
+        "page": "pg5.studio",
+        "doubloons": 15
+      },
+      {
+        "say": "ss.lyra.04"
+      },
+      {
+        "quest": "Q5.1",
+        "step": "done"
+      },
+      {
+        "quest": "Q5.2",
+        "step": "start"
+      }
+    ],
+    "zahra": [
+      {
+        "say": "ss.zahra.01"
+      },
+      {
+        "say": "ss.zahra.02"
+      },
+      {
+        "cue": "ss-scales"
+      },
+      {
+        "quiz": "M5.1"
+      },
+      {
+        "say": "ss.zahra.03"
+      },
+      {
+        "show": "ch05/least-tool-principle",
+        "caption": "Give the agent only what it needs: less noise, and less access to review."
+      },
+      {
+        "say": "ss.zahra.04"
+      },
+      {
+        "hide": true
+      },
+      {
+        "quiz": "K5.2"
+      },
+      {
+        "term": "mcp-server"
+      },
+      {
+        "term": "plugin"
+      },
+      {
+        "page": "pg5.versus",
+        "doubloons": 15
+      },
+      {
+        "file": "pg5.least"
+      },
+      {
+        "say": "ss.zahra.05"
+      },
+      {
+        "quest": "Q5.2",
+        "step": "done"
+      },
+      {
+        "quest": "Q5.3",
+        "step": "start"
+      }
+    ],
+    "idris": [
+      {
+        "say": "ss.idris.01"
+      },
+      {
+        "say": "ss.idris.02"
+      },
+      {
+        "cue": "ss-well"
+      },
+      {
+        "say": "ss.idris.03"
+      },
+      {
+        "say": "ss.idris.04"
+      },
+      {
+        "quiz": "K5.3"
+      },
+      {
+        "page": "pg5.practice",
+        "doubloons": 15
+      },
+      {
+        "appTask": "A5.1"
+      },
+      {
+        "say": "ss.idris.05"
+      },
+      {
+        "quest": "Q5.3",
+        "step": "done"
+      },
+      {
+        "quest": "Q5.4",
+        "step": "start"
+      }
+    ],
+    "noor": [
+      {
+        "say": "ss.noor.01"
+      },
+      {
+        "say": "ss.noor.02"
+      },
+      {
+        "show": "ch05/browser-extensions-analogy",
+        "caption": "A browser extension connects a browser to a service. An MCP server connects the app to tools and data."
+      },
+      {
+        "say": "ss.noor.03"
+      },
+      {
+        "hide": true
+      },
+      {
+        "say": "ss.noor.04"
+      },
+      {
+        "quiz": "K5.4"
+      },
+      {
+        "term": "context7"
+      },
+      {
+        "page": "pg5.mcp",
+        "doubloons": 15
+      },
+      {
+        "say": "ss.noor.05"
+      },
+      {
+        "quest": "Q5.4",
+        "step": "done"
+      },
+      {
+        "quest": "Q5.5",
+        "step": "start"
+      },
+      {
+        "script": "noor.signal"
+      }
+    ],
+    "noor.signal": [
+      {
+        "quest": "Q5.5",
+        "step": "signal"
+      },
+      {
+        "cue": "ss-signal"
+      }
+    ],
+    "noor.signal.solved": [
+      {
+        "say": "ss.noor.06"
+      },
+      {
+        "show": "ch05/app-customize-mcp",
+        "caption": "**Installed**, with the **MCP** type filter: **Context7** under **MCP Servers**, its connected icon beside its enabled toggle."
+      },
+      {
+        "hide": true
+      },
+      {
+        "quiz": "H5.1"
+      },
+      {
+        "quiz": "H5.2"
+      },
+      {
+        "file": "pg5.context7"
+      },
+      {
+        "page": "pg5.local",
+        "doubloons": 15
+      },
+      {
+        "appTask": "A5.2"
+      },
+      {
+        "appTask": "A5.3"
+      },
+      {
+        "cue": "ss-chest:C5.2"
+      },
+      {
+        "say": "ss.noor.07"
+      },
+      {
+        "quest": "Q5.5",
+        "step": "done"
+      },
+      {
+        "quest": "Q5.6",
+        "step": "start"
+      }
+    ],
+    "samir": [
+      {
+        "say": "ss.samir.01"
+      },
+      {
+        "say": "ss.samir.02"
+      },
+      {
+        "say": "ss.samir.03"
+      },
+      {
+        "say": "ss.samir.04"
+      },
+      {
+        "quiz": "K5.6"
+      },
+      {
+        "term": "marketplace"
+      },
+      {
+        "page": "pg5.plugins",
+        "doubloons": 15
+      },
+      {
+        "quest": "Q5.6",
+        "step": "done"
+      },
+      {
+        "quest": "Q5.7",
+        "step": "start"
+      },
+      {
+        "script": "samir.crate"
+      }
+    ],
+    "samir.crate": [
+      {
+        "quest": "Q5.7",
+        "step": "crate"
+      },
+      {
+        "cue": "ss-crate"
+      }
+    ],
+    "samir.crate.solved": [
+      {
+        "say": "ss.samir.05"
+      },
+      {
+        "show": "ch05/app-customize-plugins",
+        "caption": "① **Browse** · ② the **Plugins** type filter · ③ search for `modern-web-guidance` · ④ **Install**, after you review its details."
+      },
+      {
+        "hide": true
+      },
+      {
+        "quiz": "H5.3"
+      },
+      {
+        "file": "pg5.marketplace"
+      },
+      {
+        "page": "pg5.invoke",
+        "doubloons": 15
+      },
+      {
+        "appTask": "A5.4"
+      },
+      {
+        "appTask": "A5.5"
+      },
+      {
+        "cue": "ss-chest:C5.3"
+      },
+      {
+        "say": "ss.samir.06"
+      },
+      {
+        "quest": "Q5.7",
+        "step": "done"
+      },
+      {
+        "quest": "Q5.8",
+        "step": "start"
+      }
+    ],
+    "paloma": [
+      {
+        "say": "ss.paloma.01"
+      },
+      {
+        "say": "ss.paloma.02"
+      },
+      {
+        "quest": "Q5.8",
+        "step": "exam"
+      },
+      {
+        "trial": "T5"
+      },
+      {
+        "script": "trial.passed"
+      }
+    ],
+    "paloma.retry": [
+      {
+        "say": "ss.paloma.retry"
+      },
+      {
+        "trial": "T5"
+      },
+      {
+        "script": "trial.passed"
+      }
+    ],
+    "trial.passed": [
+      {
+        "cue": "ss-seal"
+      },
+      {
+        "cue": "celebrate"
+      },
+      {
+        "page": "pg5.takeaways"
+      },
+      {
+        "say": "ss.paloma.03"
+      },
+      {
+        "file": "pg5.next"
+      },
+      {
+        "quest": "Q5.8",
+        "step": "done"
+      },
+      {
+        "quest": "Q5.A",
+        "step": "start"
+      },
+      {
+        "say": "ss.paloma.more"
+      }
+    ],
+    "paloma.assignment": [
+      {
+        "say": "ss.paloma.assign.01"
+      },
+      {
+        "page": "pg5.assignment",
+        "doubloons": 15
+      },
+      {
+        "say": "ss.paloma.assign.go"
+      },
+      {
+        "appTask": "A5.6",
+        "quiet": true
+      },
+      {
+        "quest": "Q5.A",
+        "step": "try"
+      }
+    ],
+    "paloma.assignment.back": [
+      {
+        "say": "ss.paloma.assign.ask"
+      },
+      {
+        "appTask": "A5.6",
+        "orStop": true
+      },
+      {
+        "quiz": "K5.9"
+      },
+      {
+        "say": "ss.paloma.assign.back"
+      },
+      {
+        "quest": "Q5.A",
+        "step": "done"
+      }
+    ]
+  },
+  "notes": {
+    "lyra": "The gear song (puzzles/gear-song.json, the ss-song cue): the players play from the chart and the singer can’t be heard; the player connects the gear and the song comes through (05 · from-the-studio-connecting-the-gear).",
+    "zahra": "The weighing table (ss-scales) frames the matching quiz M5.1; then the least-tool principle.",
+    "idris": "The well (ss-well): one well for every tent. A worktree separates file changes, not installed tools.",
+    "noor.signal": "Starts Mirror Beams (puzzles/mirror-beams.json, P5.1) and frames the court (ss-signal).",
+    "samir.crate": "Starts the Sealed Crate (puzzles/sealed-crate.json, P5.2) and frames the yard (ss-crate).",
+    "trial.passed": "The Seal (ss-seal): the Sunspire lights, the court’s beam crosses to it and on to Library Rock, and the pennants unroll."
+  },
+  "barks": {
+    "ss_player_a": [
+      "One, two, and wait for the singer!",
+      "The chart says what to play. It never said plug her in."
+    ],
+    "ss_player_b": [
+      "I’ve played this tune forty years. I still read the chart.",
+      "Loud enough now, Captain?"
+    ],
+    "ss_trader": [
+      "Dates, figs, saffron! Take what you’ll eat, Captain, no more.",
+      "A heavy pack is a slow caravan."
+    ],
+    "ss_weaver": [
+      "Feel that weave, Captain. I check every thread myself.",
+      "The label says silk. I look anyway."
+    ],
+    "ss_carrier": [
+      "Water for the camp! One well, every tent.",
+      "Mind the falaj, Captain. It’s shallow, but it’s cold."
+    ],
+    "ss_camper": [
+      "My tent’s my own. The well’s everyone’s.",
+      "Somebody added a second rope to the well. One was enough."
+    ],
+    "ss_signaller": [
+      "Shutter open, and still no answer. Aim first, I say.",
+      "We flash the question. We never flash the ledger."
+    ],
+    "ss_porter": [
+      "Read the lading, then lift. In that order.",
+      "A crate on the bench hasn’t done a day’s work yet."
+    ],
+    "ss_child": ["Look, look! I can flash the Sunspire with my mirror!", "The big tower winked at me!"],
+    "ss_fisher": [
+      "Morning light’s best for the mirrors, Captain.",
+      "I watched that tower flash before you were born."
+    ],
+    "noor": [
+      "Samir’s crates are in the yard, Captain, by the court’s east side.",
+      "One beam to a tower. A second one only crosses the first."
+    ],
+    "samir": [
+      "Up the Sun Stair, Captain. Paloma’s on the terrace.",
+      "Read what’s inside before you take it in."
+    ]
+  }
+}

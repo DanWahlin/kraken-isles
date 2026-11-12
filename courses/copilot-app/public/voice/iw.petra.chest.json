@@ -1,0 +1,47 @@
+{
+  "id": "iw.petra.chest",
+  "speaker": "Petra",
+  "text": "Where’s the board kept? Open Changes and look.",
+  "words": [
+    {
+      "word": "Where’s",
+      "start": 0.049,
+      "end": 0.343125
+    },
+    {
+      "word": "the",
+      "start": 0.343125,
+      "end": 0.453416
+    },
+    {
+      "word": "board",
+      "start": 0.453416,
+      "end": 0.772041
+    },
+    {
+      "word": "kept",
+      "start": 0.772041,
+      "end": 2.144625
+    },
+    {
+      "word": "Open",
+      "start": 2.144625,
+      "end": 2.451
+    },
+    {
+      "word": "Changes",
+      "start": 2.451,
+      "end": 2.941166
+    },
+    {
+      "word": "and",
+      "start": 2.941166,
+      "end": 3.125
+    },
+    {
+      "word": "look",
+      "start": 3.125,
+      "end": 3.375
+    }
+  ]
+}

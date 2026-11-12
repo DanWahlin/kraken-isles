@@ -1,0 +1,112 @@
+{
+  "id": "tw.agnes.05",
+  "speaker": "Agnes",
+  "text": "For a first one, pick work you already do more than once. Not one that writes code, posts comments, or merges.",
+  "words": [
+    {
+      "word": "For",
+      "start": 0.0515409,
+      "end": 0.244833
+    },
+    {
+      "word": "a",
+      "start": 0.244833,
+      "end": 0.309291
+    },
+    {
+      "word": "first",
+      "start": 0.309291,
+      "end": 0.721666
+    },
+    {
+      "word": "one",
+      "start": 0.721666,
+      "end": 1.417541
+    },
+    {
+      "word": "pick",
+      "start": 1.417541,
+      "end": 1.610833
+    },
+    {
+      "word": "work",
+      "start": 1.610833,
+      "end": 1.920083
+    },
+    {
+      "word": "you",
+      "start": 1.920083,
+      "end": 2.023208
+    },
+    {
+      "word": "already",
+      "start": 2.023208,
+      "end": 2.409791
+    },
+    {
+      "word": "do",
+      "start": 2.409791,
+      "end": 2.551541
+    },
+    {
+      "word": "more",
+      "start": 2.551541,
+      "end": 2.796375
+    },
+    {
+      "word": "than",
+      "start": 2.796375,
+      "end": 2.951041
+    },
+    {
+      "word": "once",
+      "start": 2.951041,
+      "end": 4.433
+    },
+    {
+      "word": "Not",
+      "start": 4.433,
+      "end": 4.703625
+    },
+    {
+      "word": "one",
+      "start": 4.703625,
+      "end": 4.922666
+    },
+    {
+      "word": "that",
+      "start": 4.922666,
+      "end": 5.090208
+    },
+    {
+      "word": "writes",
+      "start": 5.090208,
+      "end": 5.3995
+    },
+    {
+      "word": "code",
+      "start": 5.3995,
+      "end": 6.056708
+    },
+    {
+      "word": "posts",
+      "start": 6.056708,
+      "end": 6.39175
+    },
+    {
+      "word": "comments",
+      "start": 6.39175,
+      "end": 7.203625
+    },
+    {
+      "word": "or",
+      "start": 7.203625,
+      "end": 7.293833
+    },
+    {
+      "word": "merges",
+      "start": 7.293833,
+      "end": 7.543833
+    }
+  ]
+}

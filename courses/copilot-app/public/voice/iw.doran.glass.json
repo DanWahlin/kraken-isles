@@ -1,0 +1,77 @@
+{
+  "id": "iw.doran.glass",
+  "speaker": "Doran",
+  "text": "Let the agent check the feature in the Browser tab. Then look for yourself.",
+  "words": [
+    {
+      "word": "Let",
+      "start": 0.052083,
+      "end": 0.3125
+    },
+    {
+      "word": "the",
+      "start": 0.3125,
+      "end": 0.494791
+    },
+    {
+      "word": "agent",
+      "start": 0.494791,
+      "end": 0.820333
+    },
+    {
+      "word": "check",
+      "start": 0.820333,
+      "end": 1.067708
+    },
+    {
+      "word": "the",
+      "start": 1.067708,
+      "end": 1.171875
+    },
+    {
+      "word": "feature",
+      "start": 1.171875,
+      "end": 1.614583
+    },
+    {
+      "word": "in",
+      "start": 1.614583,
+      "end": 1.744791
+    },
+    {
+      "word": "the",
+      "start": 1.744791,
+      "end": 1.809916
+    },
+    {
+      "word": "Browser",
+      "start": 1.809916,
+      "end": 2.1875
+    },
+    {
+      "word": "tab",
+      "start": 2.1875,
+      "end": 3.528666
+    },
+    {
+      "word": "Then",
+      "start": 3.528666,
+      "end": 3.841166
+    },
+    {
+      "word": "look",
+      "start": 3.841166,
+      "end": 4.0625
+    },
+    {
+      "word": "for",
+      "start": 4.0625,
+      "end": 4.179708
+    },
+    {
+      "word": "yourself",
+      "start": 4.179708,
+      "end": 4.429708
+    }
+  ]
+}

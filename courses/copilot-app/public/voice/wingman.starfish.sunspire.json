@@ -1,0 +1,77 @@
+{
+  "id": "wingman.starfish.sunspire",
+  "speaker": "Wingman",
+  "text": "And five starfish are hidden around Sunspire Sands. Your count's in the top right.",
+  "words": [
+    {
+      "word": "And",
+      "start": 0,
+      "end": 0.224
+    },
+    {
+      "word": "five",
+      "start": 0.224,
+      "end": 0.56
+    },
+    {
+      "word": "starfish",
+      "start": 0.56,
+      "end": 1.24
+    },
+    {
+      "word": "are",
+      "start": 1.24,
+      "end": 1.394
+    },
+    {
+      "word": "hidden",
+      "start": 1.394,
+      "end": 1.646
+    },
+    {
+      "word": "around",
+      "start": 1.646,
+      "end": 2.02
+    },
+    {
+      "word": "Sunspire",
+      "start": 2.02,
+      "end": 2.653
+    },
+    {
+      "word": "Sands",
+      "start": 2.653,
+      "end": 3.504
+    },
+    {
+      "word": "Your",
+      "start": 3.504,
+      "end": 3.813
+    },
+    {
+      "word": "count's",
+      "start": 3.813,
+      "end": 4.187
+    },
+    {
+      "word": "in",
+      "start": 4.187,
+      "end": 4.26
+    },
+    {
+      "word": "the",
+      "start": 4.26,
+      "end": 4.38
+    },
+    {
+      "word": "top",
+      "start": 4.38,
+      "end": 4.627
+    },
+    {
+      "word": "right",
+      "start": 4.627,
+      "end": 4.877
+    }
+  ]
+}

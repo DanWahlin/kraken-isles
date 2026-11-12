@@ -1,0 +1,52 @@
+{
+  "id": "ss.paloma.done",
+  "speaker": "Paloma",
+  "text": "The Sunspire's lit, Captain. Sail on when you're ready.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.052625,
+      "end": 0.236833
+    },
+    {
+      "word": "Sunspire's",
+      "start": 0.236833,
+      "end": 1.013166
+    },
+    {
+      "word": "lit",
+      "start": 1.013166,
+      "end": 1.618416
+    },
+    {
+      "word": "Captain",
+      "start": 1.618416,
+      "end": 3.10525
+    },
+    {
+      "word": "Sail",
+      "start": 3.10525,
+      "end": 3.526333
+    },
+    {
+      "word": "on",
+      "start": 3.526333,
+      "end": 3.763166
+    },
+    {
+      "word": "when",
+      "start": 3.763166,
+      "end": 3.973666
+    },
+    {
+      "word": "you're",
+      "start": 3.973666,
+      "end": 4.118416
+    },
+    {
+      "word": "ready",
+      "start": 4.118416,
+      "end": 4.368416
+    }
+  ]
+}

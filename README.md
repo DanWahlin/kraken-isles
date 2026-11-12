@@ -18,9 +18,11 @@ storage keys when it starts.
 
 ## What you'll do
 
-- **Sail between islands.** Five are playable so far: Anchorage Cay (Chapter 00 · Setup), Port
+- **Sail between islands.** All eight are playable: Anchorage Cay (Chapter 00 · Setup), Port
   Meridian (01 · Tour the App), Thousand-Bough Isle (02 · Sessions, Worktrees & Context),
-  Keelhaven (03 · Dev & GitHub Workflows) and Guildcrest (04 · Skills & Custom Agents).
+  Keelhaven (03 · Dev & GitHub Workflows), Guildcrest (04 · Skills & Custom Agents), Sunspire
+  Sands (05 · MCP Servers & Plugins), Inkwell Bluffs (06 · Canvases) and Tidewheel Caldera
+  (07 · Automations), where the last Seal starts the voyage's ending.
 - **Solve puzzles that use the concept.** For example, pick Interactive, Plan or Autopilot for each
   order, or give each crew its own worktree.
 - **Take quizzes on real screenshots of the app**, fight sea battles with review questions between
@@ -69,7 +71,11 @@ More commands, the stack, and the project rules are in
 - **Specs:** [Islands 00–01](docs/specs/POC-islands-00-01.md) ·
   [Thousand-Bough Isle](docs/specs/ISLAND-02-thousand-bough.md) ·
   [Keelhaven (design)](docs/specs/ISLAND-03-keelhaven.md) ·
-  [Guildcrest](docs/specs/ISLAND-04-guildcrest.md) · [Sea battles](docs/specs/BATTLES.md) ·
+  [Guildcrest](docs/specs/ISLAND-04-guildcrest.md) ·
+  [Sunspire Sands](docs/specs/ISLAND-05-sunspire-sands.md) ·
+  [Inkwell Bluffs](docs/specs/ISLAND-06-inkwell-bluffs.md) ·
+  [Tidewheel Caldera](docs/specs/ISLAND-07-tidewheel-caldera.md) ·
+  [Islands 05–07 (plan)](docs/specs/PHASE-3-islands-05-07.md) · [Sea battles](docs/specs/BATTLES.md) ·
   [Opening](docs/specs/OPENING-living-chart.md) · [Chart labels](docs/specs/LOWER-THIRDS.md) ·
   [Model Market](docs/specs/MODEL-MARKET.md)
 - **Model list:** the Model Market's models come from GitHub Docs (`npm run models:sync`). A weekly

@@ -1,0 +1,52 @@
+{
+  "id": "ll.juno.guild",
+  "speaker": "Juno",
+  "text": "Guildcrest: repository instructions, reusable skills, and read-only custom agents.",
+  "words": [
+    {
+      "word": "Guildcrest",
+      "start": 0,
+      "end": 0.887
+    },
+    {
+      "word": "repository",
+      "start": 0.887,
+      "end": 1.822
+    },
+    {
+      "word": "instructions",
+      "start": 1.822,
+      "end": 2.729
+    },
+    {
+      "word": "reusable",
+      "start": 2.729,
+      "end": 3.52
+    },
+    {
+      "word": "skills",
+      "start": 3.52,
+      "end": 4.3
+    },
+    {
+      "word": "and",
+      "start": 4.3,
+      "end": 4.544
+    },
+    {
+      "word": "read-only",
+      "start": 4.544,
+      "end": 5.349
+    },
+    {
+      "word": "custom",
+      "start": 5.349,
+      "end": 5.84
+    },
+    {
+      "word": "agents",
+      "start": 5.84,
+      "end": 6.09
+    }
+  ]
+}

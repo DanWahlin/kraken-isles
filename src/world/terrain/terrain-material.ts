@@ -447,6 +447,37 @@ export function createTerrainMaterial(options: TerrainMaterialOptions = {}): Mes
   base = mix(base, closeSand, sandFinger.mul(0.62));
   base = mix(base, rootGreen, grassFinger.mul(0.5));
   base = mix(base, color(0xe7d39b), bardCampSand.mul(0.86));
+  // A desert's open floor (`desertSand`): golden sand in broad drifts of tone (paler flats, redder
+  // where the tables' dust blows down), with wind ripples square to the south-west wind: long ones
+  // out to the middle distance, fine ones at your feet. Each ripple set fades to its mean as its
+  // lines near a pixel apart (no shimmer from the air), and neither shows on the miniature.
+  // (Only the bake's real grass keeps its green: a faint grass mask on the open floor is sand.)
+  const desertBare = R.desertSand.mul(float(1).sub(smoothstep(0.45, 0.8, grassMask)));
+  const desert = desertBare
+    .mul(float(1).sub(saturate(cliffMask.add(rockMask))))
+    .mul(float(1).sub(underwater));
+  const desertDrift = saturate(broadNoise.mul(0.6).add(noiseLow.a.mul(0.4)));
+  const desertTone = mix(
+    mix(color(0xc58647), color(0xe6ba74), desertDrift),
+    color(0xb1653a),
+    pow(saturate(noiseLow.b.sub(0.5).mul(2.4)), 1.6).mul(0.42),
+  );
+  const windPhase = P.x.mul(-0.799).add(P.z.mul(0.602));
+  const dunePhase = windPhase.mul(2.3).add(noiseLow.r.mul(5.0)).add(noiseMid.g.mul(1.6));
+  const finePhase = windPhase.mul(15).add(noiseMid.b.mul(4.0)).add(noiseFine.g.mul(1.2));
+  const duneShow = options.miniature
+    ? float(0)
+    : midDetail.mul(float(1).sub(smoothstep(0.5, 1.4, dunePhase.fwidth())));
+  const fineShow = options.miniature
+    ? float(0)
+    : closeDetail.mul(float(1).sub(smoothstep(0.5, 1.4, finePhase.fwidth())));
+  const duneRipple = mix(float(0.5), sin(dunePhase).mul(0.5).add(0.5), duneShow);
+  const fineRipple = mix(float(0.5), sin(finePhase).mul(0.5).add(0.5), fineShow);
+  const desertShade = float(1.06)
+    .sub(duneRipple.mul(0.1))
+    .sub(fineRipple.mul(0.13))
+    .mul(float(0.95).add(sandGrain.mul(0.1)));
+  base = mix(base, desertTone.mul(desertShade), desert.mul(0.95));
   base = mix(base, color(0xf4daa4), beachRipples.mul(0.13));
   base = mix(
     base,
@@ -644,6 +675,62 @@ export function createTerrainMaterial(options: TerrainMaterialOptions = {}): Mes
   );
   const basaltMossTone = mix(color(0x34502a), color(0x6b8a3c), noiseFine.g.mul(0.6).add(noiseMid.r.mul(0.4)));
   base = mix(base, mix(basaltTone, basaltMossTone, basaltMoss.mul(0.92)), R.basalt);
+  // Sunspire's red sandstone: warm stone with the triplanar grain, darker bedding planes, and one pale
+  // bed in each (the same wandering phase as the cliff beds, with its screen-space width, so the
+  // bands don't shimmer far off); the island's regions say where.
+  const paleBed = options.miniature
+    ? float(0.2)
+    : smoothstep(float(0.42).sub(bedWidth), float(0.42).add(bedWidth), bedPhase).mul(
+        float(1).sub(smoothstep(float(0.62).sub(bedWidth), float(0.62).add(bedWidth), bedPhase)),
+      );
+  const redRockTone = mix(
+    mix(color(0x7a3a24), color(0xb5562e), faceNoise.mul(0.6).add(faceGrain.mul(0.4))),
+    color(0xd9a066),
+    paleBed.mul(0.5),
+  )
+    .mul(float(1).sub(cliffBeds.mul(0.26)))
+    .mul(float(1).sub(smoothstep(0.62, 0.8, faceNoise).mul(0.16)));
+  // On the bake's own cliff and rock (not the drawn slope: a far level's faces are gentler).
+  base = mix(base, redRockTone, R.redRock.mul(saturate(cliffMask.add(rockMask.mul(0.85)))));
+  // Inkwell's white chalk: pale stone with the triplanar grain, soft grey beds, and a darker, greener
+  // band where the sea wets its foot; on the bake's own cliff and rock, as the red rock is.
+  const chalkTone = mix(color(0xc0b392), color(0xf0e7d2), faceNoise.mul(0.55).add(faceGrain.mul(0.45)))
+    .mul(float(1).sub(cliffBeds.mul(0.22)))
+    .mul(float(1).sub(smoothstep(0.64, 0.82, faceNoise).mul(0.1)));
+  const chalkWet = smoothstep(3.2, 0.4, y.add(faceNoise.sub(0.5).mul(2.4)));
+  base = mix(
+    base,
+    mix(chalkTone, color(0x7f8672), chalkWet.mul(0.55)),
+    R.chalk.mul(saturate(cliffMask.add(rockMask.mul(0.85)))),
+  );
+  // Tidewheel's young volcanic rock: near-black stone with the triplanar grain and faint bedding,
+  // streaked with rust and (in patches, high on the faces) pale sulphur, wet and darker at the sea's
+  // foot; on the bake's own cliff and rock, as the red rock is.
+  const lavaTone = mix(color(0x161515), color(0x3d3a3a), faceNoise.mul(0.55).add(faceGrain.mul(0.45)))
+    .mul(float(1).sub(cliffBeds.mul(0.2)))
+    .mul(float(1).sub(smoothstep(4.0, 0.5, y.add(faceNoise.sub(0.5).mul(2.6))).mul(0.4)));
+  const lavaRust = smoothstep(0.66, 0.82, noiseMid.r.mul(0.55).add(faceNoise.mul(0.45)));
+  const lavaSulphur = smoothstep(0.7, 0.84, noiseLow.b.mul(0.6).add(noiseMid.a.mul(0.4))).mul(
+    smoothstep(18, 44, y),
+  );
+  base = mix(
+    base,
+    mix(mix(lavaTone, color(0x5e3a28), lavaRust.mul(0.3)), color(0xa8924e), lavaSulphur.mul(0.34)),
+    R.lavaRock.mul(saturate(cliffMask.add(rockMask.mul(0.85)))),
+  );
+  // Tidewheel's black sand and cinder ground: dark grey grains in broad drifts of tone with a faint
+  // sparkle of paler grit at your feet, on the bake's sand and (thinly, so a little green shows
+  // through) its turf; not on rock, cliff or the sea's floor.
+  const cinder = R.blackSand
+    .mul(float(1).sub(saturate(cliffMask.add(rockMask))))
+    .mul(float(1).sub(underwater))
+    .mul(float(1).sub(grassMask.mul(0.3)));
+  const cinderTone = mix(
+    mix(color(0x222120), color(0x3e3b39), saturate(broadNoise.mul(0.6).add(noiseLow.a.mul(0.4)))),
+    color(0x6a645c),
+    closeDetail.mul(smoothstep(0.62, 0.8, noiseFine.g)).mul(0.5),
+  );
+  base = mix(base, cinderTone, cinder.mul(0.92));
 
   // Fluted green walls (`paliWall`): a forest canopy over the whole region (walls up to near-sheer,
   // crests, valley floors), yellow-green on the open ribs and crests and dark wet green in the gullies
@@ -781,6 +868,7 @@ export function createTerrainMaterial(options: TerrainMaterialOptions = {}): Mes
     .mul(float(1).sub(R.town))
     .mul(float(1).sub(R.limestoneRidge))
     .mul(float(1).sub(R.bluff))
+    .mul(float(1).sub(desertBare))
     .mul(float(1).sub(R.paths))
     .mul(float(1).sub(R.forestFloor))
     .mul(float(1).sub(underwater))

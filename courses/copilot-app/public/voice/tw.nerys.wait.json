@@ -1,0 +1,62 @@
+{
+  "id": "tw.nerys.wait",
+  "speaker": "Nerys",
+  "text": "Set the clock with Greta first, Captain. The bells come after.",
+  "words": [
+    {
+      "word": "Set",
+      "start": 0.05,
+      "end": 0.3
+    },
+    {
+      "word": "the",
+      "start": 0.3,
+      "end": 0.4
+    },
+    {
+      "word": "clock",
+      "start": 0.4,
+      "end": 0.725
+    },
+    {
+      "word": "with",
+      "start": 0.725,
+      "end": 0.8875
+    },
+    {
+      "word": "Greta",
+      "start": 0.8875,
+      "end": 1.175
+    },
+    {
+      "word": "first",
+      "start": 1.175,
+      "end": 1.65
+    },
+    {
+      "word": "Captain",
+      "start": 1.65,
+      "end": 3.1
+    },
+    {
+      "word": "The",
+      "start": 3.1,
+      "end": 3.2375
+    },
+    {
+      "word": "bells",
+      "start": 3.2375,
+      "end": 3.6125
+    },
+    {
+      "word": "come",
+      "start": 3.6125,
+      "end": 3.875
+    },
+    {
+      "word": "after",
+      "start": 3.875,
+      "end": 4.125
+    }
+  ]
+}

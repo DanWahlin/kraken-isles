@@ -1,0 +1,112 @@
+{
+  "id": "ss.idris.02",
+  "speaker": "Idris",
+  "text": "Set the mode to Interactive. If an agent picker shows, it should say Default agent, not the read-only explainer from Guildcrest.",
+  "words": [
+    {
+      "word": "Set",
+      "start": 0.051,
+      "end": 0.369916
+    },
+    {
+      "word": "the",
+      "start": 0.369916,
+      "end": 0.471958
+    },
+    {
+      "word": "mode",
+      "start": 0.471958,
+      "end": 0.714291
+    },
+    {
+      "word": "to",
+      "start": 0.714291,
+      "end": 0.905625
+    },
+    {
+      "word": "Interactive",
+      "start": 0.905625,
+      "end": 2.614791
+    },
+    {
+      "word": "If",
+      "start": 2.614791,
+      "end": 2.844375
+    },
+    {
+      "word": "an",
+      "start": 2.844375,
+      "end": 3.061208
+    },
+    {
+      "word": "agent",
+      "start": 3.061208,
+      "end": 3.418375
+    },
+    {
+      "word": "picker",
+      "start": 3.418375,
+      "end": 3.699
+    },
+    {
+      "word": "shows",
+      "start": 3.699,
+      "end": 4.298458
+    },
+    {
+      "word": "it",
+      "start": 4.298458,
+      "end": 4.426
+    },
+    {
+      "word": "should",
+      "start": 4.426,
+      "end": 4.591833
+    },
+    {
+      "word": "say",
+      "start": 4.591833,
+      "end": 4.808666
+    },
+    {
+      "word": "Default",
+      "start": 4.808666,
+      "end": 5.216833
+    },
+    {
+      "word": "agent",
+      "start": 5.216833,
+      "end": 5.905625
+    },
+    {
+      "word": "not",
+      "start": 5.905625,
+      "end": 6.096958
+    },
+    {
+      "word": "the",
+      "start": 6.096958,
+      "end": 6.186208
+    },
+    {
+      "word": "read-only",
+      "start": 6.186208,
+      "end": 6.619916
+    },
+    {
+      "word": "explainer",
+      "start": 6.619916,
+      "end": 7.117333
+    },
+    {
+      "word": "from",
+      "start": 7.117333,
+      "end": 7.385208
+    },
+    {
+      "word": "Guildcrest",
+      "start": 7.385208,
+      "end": 7.635208
+    }
+  ]
+}

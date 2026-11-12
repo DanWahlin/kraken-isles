@@ -1,0 +1,117 @@
+{
+  "id": "iw.iris.assign.01",
+  "speaker": "Iris",
+  "text": "The course’s assignment adds an Assess stage after Propose. It compares the proposal with what the app does now, before any planning.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.052625,
+      "end": 0.197375
+    },
+    {
+      "word": "course’s",
+      "start": 0.197375,
+      "end": 0.631583
+    },
+    {
+      "word": "assignment",
+      "start": 0.631583,
+      "end": 1.276333
+    },
+    {
+      "word": "adds",
+      "start": 1.276333,
+      "end": 1.526333
+    },
+    {
+      "word": "an",
+      "start": 1.526333,
+      "end": 1.657875
+    },
+    {
+      "word": "Assess",
+      "start": 1.657875,
+      "end": 2.065791
+    },
+    {
+      "word": "stage",
+      "start": 2.065791,
+      "end": 2.513166
+    },
+    {
+      "word": "after",
+      "start": 2.513166,
+      "end": 2.842125
+    },
+    {
+      "word": "Propose",
+      "start": 2.842125,
+      "end": 4.421041
+    },
+    {
+      "word": "It",
+      "start": 4.421041,
+      "end": 4.60525
+    },
+    {
+      "word": "compares",
+      "start": 4.60525,
+      "end": 5.118416
+    },
+    {
+      "word": "the",
+      "start": 5.118416,
+      "end": 5.236833
+    },
+    {
+      "word": "proposal",
+      "start": 5.236833,
+      "end": 5.868416
+    },
+    {
+      "word": "with",
+      "start": 5.868416,
+      "end": 6.039458
+    },
+    {
+      "word": "what",
+      "start": 6.039458,
+      "end": 6.276333
+    },
+    {
+      "word": "the",
+      "start": 6.276333,
+      "end": 6.421041
+    },
+    {
+      "word": "app",
+      "start": 6.421041,
+      "end": 6.631583
+    },
+    {
+      "word": "does",
+      "start": 6.631583,
+      "end": 6.907875
+    },
+    {
+      "word": "now",
+      "start": 6.907875,
+      "end": 7.578958
+    },
+    {
+      "word": "before",
+      "start": 7.578958,
+      "end": 7.973666
+    },
+    {
+      "word": "any",
+      "start": 7.973666,
+      "end": 8.25
+    },
+    {
+      "word": "planning",
+      "start": 8.25,
+      "end": 8.5
+    }
+  ]
+}

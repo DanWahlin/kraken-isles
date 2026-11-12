@@ -4,8 +4,8 @@
 # loop), and encodes Ogg/Opus plus an AAC fallback into public/audio. Prints each output's
 # integrated loudness for src/audio/music/tracks.ts.
 #   bash tools/music/fetch.sh [music_name]   (just the one track when a name is given)
-# Suno tracks ("suno:<id>") can't be downloaded: export the MP3 from Dan's Suno library and copy it
-# to tools/.cache/music/<name without the music_ prefix>.mp3 first. ElevenLabs Music tracks
+# Suno tracks ("suno:<id>") can't be downloaded: export the MP3 (or M4A) from Dan's Suno library and
+# copy it to tools/.cache/music/<name without the music_ prefix>.mp3 (or .m4a) first. ElevenLabs Music tracks
 # ("elevenlabs:<date>", generated with `elevenlabs music compose`; ART_PROVENANCE.md has the prompt) are
 # the same: copy the generated MP3 to the cache first.
 set -euo pipefail
@@ -25,6 +25,10 @@ TRACKS=(
   "music_brass_of_the_storm|suno:c7937692-3831-4a79-b7f2-66401ecc9b68|85e9baef8964374bb43540c966781411c9608d8f82e0508b717a9f6bf8ed6113|0.0|146.7"
   "music_thousand_boughs|suno:99af60c4-84c5-4b2b-8908-7b80468b66c6|b2d08fd5e03d6d7011e7dc4b40688401bd5ef76e71cee93d74e221688df66780|0.0|148.6"
   "music_harps_return|suno:harps-return|ae5c71dc21094f1bd214cef2ee75ebbd9786725dff7df97485d002ef92a5c2a8|0.15|179.9"
+  "music_sunspire_crossing|suno:sunspire-crossing|471175514cfeaa8855364cf65ee274d23157c9af2eee862bdcb9f504e418e3a6|0.1|131.9"
+  "music_inkwell_waltz|suno:inkwell-waltz|2096216d5a7ac982d42aa6306a43ff992b5383e8aee518f607c0fc3cba1306a9|0.1|149.9"
+  "music_tidewheel_lullaby|suno:tidewheel-lullaby|1974960ef23f0b7151d9990d3dbbf799783bc6cca9fa7b1d556e3acc527fce67|0.05|149.9"
+  "music_the_long_light|suno:the-long-light|1ad27e1046a2a362b84f28a2c422dcc53b319e69c1d2a861eb3f37e9f76387d3|0.0|147.3"
 )
 
 ONLY="${1:-}"
@@ -32,8 +36,10 @@ for entry in "${TRACKS[@]}"; do
   IFS='|' read -r name url sha start end <<<"$entry"
   [[ -z "$ONLY" || "$name" == "$ONLY" ]] || continue
   if [[ "$url" == suno:* || "$url" == elevenlabs:* ]]; then
+    # (Suno exports an MP3 or an M4A: either is taken.)
     src="$CACHE/${name#music_}.mp3"
-    [[ -f "$src" ]] || { echo "Missing $src: export track ${url#*:} (${url%%:*}) and copy it there." >&2; exit 1; }
+    [[ -f "$src" ]] || src="$CACHE/${name#music_}.m4a"
+    [[ -f "$src" ]] || { echo "Missing $CACHE/${name#music_}.mp3 (or .m4a): export track ${url#*:} (${url%%:*}) and copy it there." >&2; exit 1; }
   else
     src="$CACHE/$(basename "$url")"
     [[ -f "$src" ]] || curl -sfL -A "Mozilla/5.0" -o "$src" "$url"

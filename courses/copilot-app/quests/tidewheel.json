@@ -1,0 +1,964 @@
+{
+  "$schema": "../../schemas/quests.schema.json",
+  "$comment": "Tidewheel Caldera’s quest line for the Copilot app course (Chapter 07: Automations; docs/specs/ISLAND-07-tidewheel-caldera.md §4). The game owns the island, the cast’s places, the puzzles’ mechanics and the cues; this file owns every word.",
+  "island": "tidewheel",
+  "tracker": {
+    "chapter": "Chapter 07 · Automations",
+    "goal": "Test it by hand, put it on the clock, and earn the Seal of Tidewheel",
+    "next": "Every Seal is yours, Master Captain. These waters are yours to sail."
+  },
+  "quests": [
+    {
+      "id": "Q7.1",
+      "title": "Programming the Sequencer",
+      "task": "Hear the Bard’s tale",
+      "steps": {
+        "start": "Lyra’s playing on the Bandstand, along the lane from the quay.",
+        "done": "A producer programs a pattern once and lets it run. The pattern is the saved prompt."
+      }
+    },
+    {
+      "id": "Q7.2",
+      "title": "The Four Gears",
+      "task": "Learn what an automation is made of",
+      "steps": {
+        "start": "Keeper Agnes is on Gear Square, up the first flight of the Lamp Stair.",
+        "done": "A trigger, a prompt, tools, and a review path. Start manual and local, with a read-only report."
+      }
+    },
+    {
+      "id": "Q7.3",
+      "title": "The Bounty Board",
+      "task": "Confirm that work items exist",
+      "link": {
+        "label": "Check your pull requests in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/07-automations/README.md#confirm-work-items-exist"
+      },
+      "steps": {
+        "start": "Tobin keeps the bounty board, up the second flight.",
+        "done": "At least three open pull requests, in whatever state they are in now."
+      }
+    },
+    {
+      "id": "Q7.4",
+      "title": "The Lever",
+      "task": "Create a manual report, run it, and read its run",
+      "link": {
+        "label": "Create the automation in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/07-automations/README.md#exercise-create-a-manual-review-readiness-report"
+      },
+      "steps": {
+        "start": "Ansel is in the Wheel Works, up the stair from Bounty Corner.",
+        "lever": "Work the Lever round the Wheel Works.",
+        "solved": "Every lamp in the Works is lit. Talk to Ansel.",
+        "done": "Manual, local, and read-only. Create and run, then read the run: the prompt, no errors, and a table with a next action."
+      }
+    },
+    {
+      "id": "Q7.5",
+      "title": "Gears & Bells",
+      "task": "Schedule the report, and know what it needs",
+      "link": {
+        "label": "Schedule the automation in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/07-automations/README.md#exercise-schedule-the-review-readiness-report"
+      },
+      "steps": {
+        "start": "Greta keeps the Clock Court, along the Clock Walk.",
+        "clock": "Work Gears & Bells round the Clock Court.",
+        "solved": "Every lamp in the court is lit. Talk to Greta.",
+        "done": "Daily at 08:00, and no other hour. A local run needs the computer awake and the app running."
+      }
+    },
+    {
+      "id": "Q7.6",
+      "title": "The Trial of the Long Light",
+      "task": "Pass the Trial to earn the last Seal",
+      "steps": {
+        "start": "Old Silas waits on the Lighthouse’s terrace, up the Light Walk.",
+        "exam": "The Trial of the Long Light is ready when you are.",
+        "done": "The Seal of Tidewheel is yours, and the last light is lit."
+      }
+    },
+    {
+      "id": "Q7.O",
+      "title": "Bells and the Rock Light",
+      "task": "Hear about event triggers and the cloud",
+      "optional": true,
+      "link": {
+        "label": "Read the optional section ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/07-automations/README.md#event-triggers"
+      },
+      "steps": {
+        "start": "Nerys is by the Bell Arch, in the Clock Court.",
+        "done": "Twelve event triggers. Start read-only and filter narrowly. Cloud runs on GitHub, in private or internal repositories."
+      }
+    },
+    {
+      "id": "Q7.A",
+      "title": "Your Turn: One Manual Automation",
+      "task": "Automate one task of your own",
+      "optional": true,
+      "link": {
+        "label": "Do the assignment in the app ↗",
+        "url": "https://github.com/github/copilot-app-for-beginners/blob/main/07-automations/README.md#assignment"
+      },
+      "steps": {
+        "start": "Silas has one more task, on the terrace.",
+        "try": "Create and run your own manual automation in the app, then tell Silas.",
+        "done": "You can explain why your automation is safe to run again."
+      }
+    }
+  ],
+  "targets": {
+    "Q7.1:start": {
+      "ids": ["npc:lyra_tidewheel"],
+      "label": "Lyra"
+    },
+    "Q7.2:start": {
+      "ids": ["npc:agnes"],
+      "label": "Keeper Agnes"
+    },
+    "Q7.3:start": {
+      "ids": ["npc:tobin"],
+      "label": "Tobin"
+    },
+    "Q7.4:start": {
+      "ids": ["npc:ansel"],
+      "label": "Ansel"
+    },
+    "Q7.4:lever": {
+      "ids": ["lever:*"],
+      "label": "The Lever"
+    },
+    "Q7.4:solved": {
+      "ids": ["npc:ansel"],
+      "label": "Ansel"
+    },
+    "Q7.5:start": {
+      "ids": ["npc:greta"],
+      "label": "Bellmaster Greta"
+    },
+    "Q7.5:clock": {
+      "ids": ["clock:*"],
+      "label": "Gears & Bells"
+    },
+    "Q7.5:solved": {
+      "ids": ["npc:greta"],
+      "label": "Bellmaster Greta"
+    },
+    "Q7.6:start": {
+      "ids": ["npc:silas"],
+      "label": "Old Silas"
+    },
+    "Q7.6:exam": {
+      "ids": ["npc:silas"],
+      "label": "Old Silas"
+    },
+    "Q7.O:start": {
+      "ids": ["npc:nerys"],
+      "label": "Nerys"
+    },
+    "Q7.A:start": {
+      "ids": ["npc:silas"],
+      "label": "Old Silas"
+    },
+    "Q7.A:try": {
+      "ids": ["npc:silas"],
+      "label": "Old Silas"
+    }
+  },
+  "beats": [
+    {
+      "npc": "lyra_tidewheel",
+      "when": {
+        "Q7.1": "done"
+      },
+      "say": "tw.lyra.done"
+    },
+    {
+      "npc": "lyra_tidewheel",
+      "script": "lyra"
+    },
+    {
+      "npc": "agnes",
+      "when": {
+        "Q7.1": {
+          "not": "done"
+        }
+      },
+      "say": "tw.agnes.wait"
+    },
+    {
+      "npc": "agnes",
+      "when": {
+        "Q7.2": "done"
+      },
+      "say": "tw.agnes.done"
+    },
+    {
+      "npc": "agnes",
+      "script": "agnes"
+    },
+    {
+      "npc": "tobin",
+      "when": {
+        "Q7.2": {
+          "not": "done"
+        }
+      },
+      "say": "tw.tobin.wait"
+    },
+    {
+      "npc": "tobin",
+      "when": {
+        "Q7.3": "done"
+      },
+      "say": "tw.tobin.done"
+    },
+    {
+      "npc": "tobin",
+      "script": "tobin"
+    },
+    {
+      "npc": "ansel",
+      "when": {
+        "Q7.3": {
+          "not": "done"
+        }
+      },
+      "say": "tw.ansel.wait"
+    },
+    {
+      "npc": "ansel",
+      "when": {
+        "Q7.4": "lever"
+      },
+      "say": "tw.ansel.lever"
+    },
+    {
+      "npc": "ansel",
+      "when": {
+        "Q7.4": "solved"
+      },
+      "script": "ansel.lever.solved"
+    },
+    {
+      "npc": "ansel",
+      "when": {
+        "Q7.4": {
+          "not": "done"
+        }
+      },
+      "script": "ansel"
+    },
+    {
+      "npc": "ansel",
+      "say": "tw.ansel.done"
+    },
+    {
+      "npc": "greta",
+      "when": {
+        "Q7.4": {
+          "not": "done"
+        }
+      },
+      "say": "tw.greta.wait"
+    },
+    {
+      "npc": "greta",
+      "when": {
+        "Q7.5": "clock"
+      },
+      "say": "tw.greta.clock"
+    },
+    {
+      "npc": "greta",
+      "when": {
+        "Q7.5": "solved"
+      },
+      "script": "greta.clock.solved"
+    },
+    {
+      "npc": "greta",
+      "when": {
+        "Q7.5": {
+          "not": "done"
+        }
+      },
+      "script": "greta"
+    },
+    {
+      "npc": "greta",
+      "say": "tw.greta.done"
+    },
+    {
+      "npc": "nerys",
+      "when": {
+        "Q7.5": {
+          "not": "done"
+        }
+      },
+      "say": "tw.nerys.wait"
+    },
+    {
+      "npc": "nerys",
+      "when": {
+        "Q7.O": "done"
+      },
+      "say": "tw.nerys.done"
+    },
+    {
+      "npc": "nerys",
+      "script": "nerys"
+    },
+    {
+      "npc": "silas",
+      "when": {
+        "Q7.5": {
+          "not": "done"
+        }
+      },
+      "say": "tw.silas.wait"
+    },
+    {
+      "npc": "silas",
+      "when": {
+        "Q7.6": "exam"
+      },
+      "script": "silas.retry"
+    },
+    {
+      "npc": "silas",
+      "when": {
+        "Q7.A": "start"
+      },
+      "script": "silas.assignment"
+    },
+    {
+      "npc": "silas",
+      "when": {
+        "Q7.A": "try"
+      },
+      "script": "silas.assignment.back"
+    },
+    {
+      "npc": "silas",
+      "when": {
+        "Q7.6": "done"
+      },
+      "say": "tw.silas.done"
+    },
+    {
+      "npc": "silas",
+      "script": "silas"
+    }
+  ],
+  "story": {
+    "conditions": {
+      "firstVisit": {
+        "Q7.1": {
+          "not": "done"
+        }
+      },
+      "reportRan": {
+        "Q7.4": ["solved", "done"]
+      },
+      "reportScheduled": {
+        "Q7.5": ["solved", "done"]
+      },
+      "sealed": {
+        "Q7.6": "done"
+      }
+    },
+    "events": {}
+  },
+  "signs": {
+    "bandstandSign": "The Tidewheel Band",
+    "gearTrigger": "Trigger",
+    "gearPrompt": "Prompt",
+    "gearTools": "Tools",
+    "gearReview": "Review path",
+    "bountyBoard": "Pull requests · Authored by me",
+    "worksSign": "The Wheel Works",
+    "drumPlate": "Prompt",
+    "toolsPlate": "The least access needed",
+    "gearPlate": "Trigger",
+    "switchPlate": "Run in the cloud",
+    "deskPlate": "Repository · Workspace",
+    "leverPlate": "Create and run",
+    "logPlate": "Recent runs",
+    "clockDeskPlate": "Edit",
+    "dayGearPlate": "Daily",
+    "pegsPlate": "Hours",
+    "ringPlate": "08:00",
+    "saveBellPlate": "Save automation",
+    "tidePlate": "Awake",
+    "morningLogPlate": "Next run",
+    "bellArchSign": "Event triggers",
+    "bellIssue": "Issue",
+    "bellFailed": "Automation failed",
+    "bellCompleted": "Automation completed",
+    "bellCodeScan": "Code scanning alert",
+    "bellDependabot": "Dependabot alert",
+    "bellDiscussionComment": "Discussion comment",
+    "bellDiscussionOpened": "Discussion opened",
+    "bellDiscussionUpdated": "Discussion updated",
+    "bellPullRequest": "Pull request",
+    "bellSecretScan": "Secret scanning alert",
+    "bellSubIssue": "Sub issue added",
+    "bellWorkflow": "Workflow",
+    "rockLightPlate": "Run in the cloud",
+    "lastLeverPlate": "The Long Light",
+    "sealBanner": "Seal of Tidewheel"
+  },
+  "scripts": {
+    "lyra": [
+      {
+        "say": "tw.lyra.01"
+      },
+      {
+        "show": "ch07/sequencer-automation",
+        "caption": "Program the pattern once. Then let it run when needed."
+      },
+      {
+        "say": "tw.lyra.02"
+      },
+      {
+        "hide": true
+      },
+      {
+        "cue": "tw-song"
+      },
+      {
+        "say": "tw.lyra.03"
+      },
+      {
+        "quiz": "K7.1"
+      },
+      {
+        "page": "pg7.studio",
+        "doubloons": 15
+      },
+      {
+        "say": "tw.lyra.04"
+      },
+      {
+        "quest": "Q7.1",
+        "step": "done"
+      },
+      {
+        "quest": "Q7.2",
+        "step": "start"
+      }
+    ],
+    "agnes": [
+      {
+        "say": "tw.agnes.01"
+      },
+      {
+        "cue": "tw-gears"
+      },
+      {
+        "say": "tw.agnes.02"
+      },
+      {
+        "show": "ch07/automation-trigger-to-run",
+        "caption": "A trigger starts the run. The prompt says what to do, the tools limit access, and the review path is where you look."
+      },
+      {
+        "hide": true
+      },
+      {
+        "quiz": "M7.1"
+      },
+      {
+        "say": "tw.agnes.03"
+      },
+      {
+        "show": "ch07/manual-first-path",
+        "caption": "Start manual. Add a schedule, an event trigger, or the cloud only after the prompt gives trustworthy results."
+      },
+      {
+        "say": "tw.agnes.04"
+      },
+      {
+        "hide": true
+      },
+      {
+        "quiz": "K7.2"
+      },
+      {
+        "say": "tw.agnes.05"
+      },
+      {
+        "quiz": "K7.3"
+      },
+      {
+        "term": "automation"
+      },
+      {
+        "page": "pg7.parts",
+        "doubloons": 15
+      },
+      {
+        "file": "pg7.manual"
+      },
+      {
+        "file": "pg7.starter"
+      },
+      {
+        "say": "tw.agnes.06"
+      },
+      {
+        "quest": "Q7.2",
+        "step": "done"
+      },
+      {
+        "quest": "Q7.3",
+        "step": "start"
+      }
+    ],
+    "tobin": [
+      {
+        "say": "tw.tobin.01"
+      },
+      {
+        "cue": "tw-bounty"
+      },
+      {
+        "say": "tw.tobin.02"
+      },
+      {
+        "quiz": "K7.4"
+      },
+      {
+        "page": "pg7.items",
+        "doubloons": 15
+      },
+      {
+        "appTask": "A7.1"
+      },
+      {
+        "say": "tw.tobin.03"
+      },
+      {
+        "quest": "Q7.3",
+        "step": "done"
+      },
+      {
+        "quest": "Q7.4",
+        "step": "start"
+      }
+    ],
+    "ansel": [
+      {
+        "say": "tw.ansel.01"
+      },
+      {
+        "say": "tw.ansel.02"
+      },
+      {
+        "show": "ch07/app-new-automation",
+        "caption": "The new automation form: a name, the **Manual** trigger, **Run in the cloud** off, the prompt, the repository, and **Current checkout**."
+      },
+      {
+        "say": "tw.ansel.03"
+      },
+      {
+        "hide": true
+      },
+      {
+        "term": "manual-trigger"
+      },
+      {
+        "page": "pg7.create",
+        "doubloons": 15
+      },
+      {
+        "script": "ansel.lever"
+      }
+    ],
+    "ansel.lever": [
+      {
+        "quest": "Q7.4",
+        "step": "lever"
+      },
+      {
+        "cue": "tw-lever"
+      }
+    ],
+    "ansel.lever.solved": [
+      {
+        "say": "tw.ansel.04"
+      },
+      {
+        "quiz": "H7.1"
+      },
+      {
+        "appTask": "A7.2"
+      },
+      {
+        "file": "pg7.detail"
+      },
+      {
+        "appTask": "A7.3"
+      },
+      {
+        "cue": "tw-chest:C7.2"
+      },
+      {
+        "say": "tw.ansel.05"
+      },
+      {
+        "quest": "Q7.4",
+        "step": "done"
+      },
+      {
+        "quest": "Q7.5",
+        "step": "start"
+      }
+    ],
+    "greta": [
+      {
+        "say": "tw.greta.01"
+      },
+      {
+        "say": "tw.greta.02"
+      },
+      {
+        "say": "tw.greta.03"
+      },
+      {
+        "page": "pg7.schedule",
+        "doubloons": 15
+      },
+      {
+        "script": "greta.clock"
+      }
+    ],
+    "greta.clock": [
+      {
+        "quest": "Q7.5",
+        "step": "clock"
+      },
+      {
+        "cue": "tw-clock"
+      }
+    ],
+    "greta.clock.solved": [
+      {
+        "say": "tw.greta.04"
+      },
+      {
+        "show": "ch07/app-automation-schedule",
+        "caption": "**Automation details**: the **Schedule**, and the **Next run** time."
+      },
+      {
+        "hide": true
+      },
+      {
+        "quiz": "H7.2"
+      },
+      {
+        "quiz": "K7.5"
+      },
+      {
+        "appTask": "A7.4"
+      },
+      {
+        "say": "tw.greta.05"
+      },
+      {
+        "quest": "Q7.5",
+        "step": "done"
+      },
+      {
+        "quest": "Q7.O",
+        "step": "start"
+      },
+      {
+        "quest": "Q7.6",
+        "step": "start"
+      }
+    ],
+    "nerys": [
+      {
+        "say": "tw.nerys.01"
+      },
+      {
+        "cue": "tw-bells"
+      },
+      {
+        "say": "tw.nerys.02"
+      },
+      {
+        "show": "ch07/app-automation-new-triggers",
+        "caption": "The Trigger menu: the schedules first, then the event triggers. Scroll it to see every choice."
+      },
+      {
+        "hide": true
+      },
+      {
+        "quiz": "K7.6"
+      },
+      {
+        "say": "tw.nerys.03"
+      },
+      {
+        "quiz": "K7.7"
+      },
+      {
+        "term": "prompt-injection"
+      },
+      {
+        "say": "tw.nerys.04"
+      },
+      {
+        "show": "ch07/local-vs-cloud-automations",
+        "caption": "Local runs from your machine while the app is open. Cloud runs on GitHub-hosted infrastructure."
+      },
+      {
+        "hide": true
+      },
+      {
+        "quiz": "K7.8"
+      },
+      {
+        "term": "cloud-automation"
+      },
+      {
+        "quiz": "H7.3"
+      },
+      {
+        "page": "pg7.events",
+        "doubloons": 15
+      },
+      {
+        "file": "pg7.safe"
+      },
+      {
+        "file": "pg7.cloud"
+      },
+      {
+        "file": "pg7.tools"
+      },
+      {
+        "say": "tw.nerys.05"
+      },
+      {
+        "quest": "Q7.O",
+        "step": "done"
+      }
+    ],
+    "silas": [
+      {
+        "say": "tw.silas.01"
+      },
+      {
+        "say": "tw.silas.02"
+      },
+      {
+        "quest": "Q7.6",
+        "step": "exam"
+      },
+      {
+        "trial": "T7"
+      },
+      {
+        "script": "trial.passed"
+      }
+    ],
+    "silas.retry": [
+      {
+        "say": "tw.silas.retry"
+      },
+      {
+        "trial": "T7"
+      },
+      {
+        "script": "trial.passed"
+      }
+    ],
+    "trial.passed": [
+      {
+        "cue": "tw-seal"
+      },
+      {
+        "cue": "tw-ending"
+      },
+      {
+        "cue": "celebrate"
+      },
+      {
+        "page": "pg7.takeaways"
+      },
+      {
+        "say": "tw.silas.03"
+      },
+      {
+        "quest": "Q7.6",
+        "step": "done"
+      },
+      {
+        "file": "pg7.complete"
+      },
+      {
+        "quest": "Q7.A",
+        "step": "start"
+      },
+      {
+        "say": "tw.silas.more"
+      }
+    ],
+    "silas.assignment": [
+      {
+        "say": "tw.silas.assign.01"
+      },
+      {
+        "page": "pg7.assignment",
+        "doubloons": 15
+      },
+      {
+        "say": "tw.silas.assign.go"
+      },
+      {
+        "appTask": "A7.5",
+        "quiet": true
+      },
+      {
+        "quest": "Q7.A",
+        "step": "try"
+      }
+    ],
+    "silas.assignment.back": [
+      {
+        "say": "tw.silas.assign.ask"
+      },
+      {
+        "appTask": "A7.5",
+        "orStop": true
+      },
+      {
+        "quiz": "K7.9"
+      },
+      {
+        "say": "tw.silas.assign.back"
+      },
+      {
+        "quest": "Q7.A",
+        "step": "done"
+      }
+    ],
+    "ending.open": [
+      {
+        "say": "ll.juno.open"
+      }
+    ],
+    "ending.light.anchorage": [
+      {
+        "say": "ll.juno.home"
+      }
+    ],
+    "ending.light.thousand-bough": [
+      {
+        "say": "ll.juno.bough"
+      }
+    ],
+    "ending.light.keelhaven": [
+      {
+        "say": "ll.juno.keel"
+      }
+    ],
+    "ending.light.guildcrest": [
+      {
+        "say": "ll.juno.guild"
+      }
+    ],
+    "ending.light.sunspire": [
+      {
+        "say": "ll.juno.sun"
+      }
+    ],
+    "ending.light.inkwell": [
+      {
+        "say": "ll.juno.ink"
+      }
+    ],
+    "ending.light.tidewheel": [
+      {
+        "say": "ll.juno.tide"
+      }
+    ],
+    "ending.kraken": [
+      {
+        "say": "ll.juno.kraken.01"
+      },
+      {
+        "say": "ll.juno.kraken.02"
+      }
+    ],
+    "ending.last": [
+      {
+        "say": "ll.juno.habit"
+      },
+      {
+        "say": "ll.juno.last"
+      },
+      {
+        "say": "ll.juno.bye"
+      }
+    ]
+  },
+  "notes": {
+    "lyra": "The drum song (puzzles/drum-song.json, the tw-song cue): the band plays the pattern by hand and it wanders; the player pins it on the drum and the box plays it the same every time (07 · from-the-studio-programming-the-sequencer).",
+    "agnes": "The four gears (tw-gears) frames the gears’ wall for the matching check (M7.1); then manual and local first (K7.2) and a good starter (K7.3).",
+    "tobin": "The bounty board (tw-bounty): confirm work items exist (K7.4, A7.1).",
+    "ansel.lever": "Starts the Lever (puzzles/the-lever.json, P7.1) and frames the Wheel Works (tw-lever).",
+    "greta.clock": "Starts Gears & Bells (puzzles/gears-and-bells.json, P7.2) and frames the Clock Court (tw-clock).",
+    "nerys": "The optional section: the Bell Arch (tw-bells), event triggers, keeping them safe, and cloud automations (the rock light).",
+    "trial.passed": "The Seal (tw-seal): the last lever, the Works run, the figures strike, and the lamp’s beam goes out through the breach. Then the ending (tw-ending).",
+    "ending.open": "The Long Light (docs/specs/ISLAND-07-tidewheel-caldera.md §10): the game’s ending (the tw-ending cue) plays the `ending.*` scripts by name. Each `ending.light.<island>` line says what the course’s Course Complete table says you practised there (Anchorage’s covers Port Meridian too)."
+  },
+  "barks": {
+    "tw_player_a": [
+      "Forty years I’ve played that pattern by hand. The box has it right every time.",
+      "My hands are glad of the drum, Captain."
+    ],
+    "tw_player_b": [
+      "Same tune, same tempo, every night. That’s the drum for you.",
+      "We still listen to it play. Somebody should."
+    ],
+    "tw_mender": [
+      "The tide’s in, so the wheel turns. Simple as that.",
+      "A net mends by hand, Captain. Some jobs still do."
+    ],
+    "tw_fisher": [
+      "That rock light out there? Burns all night, whoever’s asleep.",
+      "In through the breach on the flood, out on the ebb."
+    ],
+    "tw_lamplighter": [
+      "I light these by hand. I’ve asked Greta about a clock for it.",
+      "Every lamp, every evening. I know the round by heart."
+    ],
+    "tw_child": [
+      "The water’s warm! Keeper says it comes from under the mountain.",
+      "Four gears on the wall. I can name them all."
+    ],
+    "tw_oiler": [
+      "A gear that isn’t looked at seizes. I read the log every morning.",
+      "Oil, then check. In that order."
+    ],
+    "tw_ringer": ["I only ring what I’m asked to ring.", "Twelve bells, and Nerys knows each one’s news."],
+    "tw_keeper": [
+      "Mind the top pool, Captain. That one’s hot.",
+      "The steam comes up whether we watch it or not."
+    ],
+    "tw_stargazer": [
+      "The first star’s out over the breach.",
+      "From here you can count the lights, isle by isle."
+    ],
+    "ansel": ["Along the Clock Walk, Captain.", "By hand first. Always."],
+    "greta": ["Up the Light Walk, Captain.", "One hour in the ring, and no other."],
+    "tobin": ["Up the Works Stair, Captain.", "Three slips on the board, last I looked."]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "tw.silas.wait",
+  "speaker": "Silas",
+  "text": "Set the clock with Greta first, Captain. The lamp will wait.",
+  "words": [
+    {
+      "word": "Set",
+      "start": 0.053208,
+      "end": 0.398916
+    },
+    {
+      "word": "the",
+      "start": 0.398916,
+      "end": 0.492041
+    },
+    {
+      "word": "clock",
+      "start": 0.492041,
+      "end": 0.877666
+    },
+    {
+      "word": "with",
+      "start": 0.877666,
+      "end": 1.063833
+    },
+    {
+      "word": "Greta",
+      "start": 1.063833,
+      "end": 1.396291
+    },
+    {
+      "word": "first",
+      "start": 1.396291,
+      "end": 2.15425
+    },
+    {
+      "word": "Captain",
+      "start": 2.15425,
+      "end": 3.710125
+    },
+    {
+      "word": "The",
+      "start": 3.710125,
+      "end": 3.882958
+    },
+    {
+      "word": "lamp",
+      "start": 3.882958,
+      "end": 4.3085
+    },
+    {
+      "word": "will",
+      "start": 4.3085,
+      "end": 4.534583
+    },
+    {
+      "word": "wait",
+      "start": 4.534583,
+      "end": 4.784583
+    }
+  ]
+}

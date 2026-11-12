@@ -1,0 +1,293 @@
+{
+  "$schema": "../../schemas/puzzle-circuit.schema.json",
+  "id": "P5.2",
+  "mechanic": "circuit",
+  "chapter": "05-mcp-plugins",
+  "quest": "Q5.7",
+  "circuit": "crate",
+  "$comment": "The Sealed Crate in the Crate Yard (docs/specs/ISLAND-05-sunspire-sands.md §5.2): the caravan row’s board (Customize, Browse, the Plugins filter, the marketplace), the bill of lading (the plugin’s details and repository), the scale (Install, the Installed tab), the bell (/skills reload and the / menu), and Samir’s bench (the prompt’s limits and the check of the skill’s work). The places and lamps are the game’s; every word is this file’s.",
+  "places": {
+    "row": {
+      "acts": "row",
+      "name": "The caravan row’s board",
+      "means": "**Customize** → **Browse** → the **Plugins** type filter",
+      "cite": "mwg"
+    },
+    "lading": {
+      "acts": "lading",
+      "name": "The bill of lading",
+      "means": "The plugin’s details, and its repository",
+      "cite": "mwg"
+    },
+    "scale": {
+      "acts": "scale",
+      "name": "The scale",
+      "means": "**Install**, then the **Installed** tab",
+      "cite": "mwg"
+    },
+    "bell": {
+      "acts": "bell",
+      "name": "The yard bell",
+      "means": "`/skills reload`, then the `/` menu",
+      "cite": "mwg"
+    },
+    "bench": {
+      "acts": "bench",
+      "name": "Samir’s bench",
+      "means": "The prompt, the skill activity and its guide-search output",
+      "cite": "mwg"
+    }
+  },
+  "text": {
+    "lampDark": "○ waiting",
+    "lampRunning": "… running",
+    "lampReady": "✓ ready",
+    "lampNotReady": "✗ not ready",
+    "next": "Next station: {name}",
+    "back": "Back to {name}",
+    "skip": "Skip",
+    "leave": "Leave",
+    "hint": "Hint",
+    "sealIt": "Seal it",
+    "sendBack": "Send it back",
+    "darkLamp": "{name} is still dark.",
+    "sticks": "It sticks.",
+    "noStick": "It won’t stick.",
+    "turnBack": "◀ Turn it back",
+    "turnOn": "Turn it on ▶",
+    "set": "Set it here",
+    "title": "The Sealed Crate",
+    "intro": "Find the crate, read what’s inside, take it in, call for its skill, and check its work.",
+    "hoist": "Send the order"
+  },
+  "cites": {
+    "mwg": {
+      "anchor": "exercise-plan-a-css-improvement-with-modern-web-guidance",
+      "hash": "b0743e577ce2"
+    },
+    "plugins": {
+      "anchor": "plugins-use-a-packaged-capability",
+      "hash": "78b16e5f879c"
+    },
+    "tsMissing": {
+      "anchor": "a-plugin-is-installed-but-its-skill-is-missing",
+      "hash": "dbb32fed0e08"
+    },
+    "pre": {
+      "anchor": "prerequisites",
+      "hash": "07decfa586e3"
+    }
+  },
+  "laps": [
+    {
+      "id": "open",
+      "quest": "Q5.7",
+      "step": "crate",
+      "solved": "solved",
+      "close": "samir.crate.solved",
+      "title": "The Sealed Crate: one small CSS proposal",
+      "order": "modern-web-guidance · wrap a short heading",
+      "stations": [
+        {
+          "id": "find",
+          "at": "row",
+          "kind": "choose",
+          "title": "Find the plugin",
+          "line": "ss.samir.row",
+          "prompt": "You search **Browse** for `modern-web-guidance` and nothing shows. What now?",
+          "options": [
+            {
+              "id": "market",
+              "text": "Select **Add** > **Manage marketplaces…** and confirm that **awesome-copilot** is in the **Marketplaces** list",
+              "right": true,
+              "result": "The caravan’s row is on the list. The crate shows on the board."
+            },
+            {
+              "id": "other",
+              "text": "Install another plugin with a name like it",
+              "reason": "Use `modern-web-guidance` for this exercise. If it can’t be had, record the exercise as blocked rather than installing an unrelated plugin.",
+              "backTo": "row",
+              "cite": "tsMissing"
+            },
+            {
+              "id": "policy",
+              "text": "Change your company’s managed settings to allow it",
+              "reason": "Do not change company-managed settings to complete the exercise. Read the example, record it as blocked, and continue.",
+              "backTo": "row",
+              "cite": "mwg"
+            }
+          ],
+          "hints": [
+            "Where do plugins come from?",
+            "A marketplace is a catalog of plugins.",
+            "**Add** > **Manage marketplaces…**, and look for **awesome-copilot**."
+          ],
+          "cite": "mwg"
+        },
+        {
+          "id": "read",
+          "at": "lading",
+          "kind": "choose",
+          "title": "Review what’s inside",
+          "line": "ss.samir.lading",
+          "prompt": "The crate is on the board, sealed. What do you do before **Install**?",
+          "options": [
+            {
+              "id": "details",
+              "text": "Open its details and review the description, then compare them with the plugin’s repository",
+              "right": true,
+              "result": "The lading matches the maker’s mark: `GoogleChrome/modern-web-guidance`. Its skill uses `npx` to run a documentation tool."
+            },
+            {
+              "id": "label",
+              "text": "Install it. The marketplace’s description is enough",
+              "reason": "Read its contents, not only the marketplace description. Some plugins start processes, call services, or run hooks.",
+              "backTo": "lading",
+              "cite": "plugins"
+            },
+            {
+              "id": "known",
+              "text": "Install it. The maker is well known",
+              "reason": "A known maker still ships contents you review: the skill instructions, and any command approval before use.",
+              "backTo": "lading",
+              "cite": "mwg"
+            }
+          ],
+          "hints": [
+            "What does the board’s label leave out?",
+            "The details don’t show the source.",
+            "Open the details, then compare them with the plugin’s repository."
+          ],
+          "cite": "mwg"
+        },
+        {
+          "id": "install",
+          "at": "scale",
+          "kind": "watch",
+          "title": "Install it",
+          "prompt": "You’ve read the lading. The scale takes the crate in.",
+          "action": "Select **Install**",
+          "text": "The crate goes on the scale and into the yard. On **Installed** it shows under **Plugins**, with its enabled toggle on. Nothing inside it has run.",
+          "seconds": 5,
+          "cite": "mwg"
+        },
+        {
+          "id": "invoke",
+          "at": "bell",
+          "kind": "choose",
+          "title": "Invoke its skill",
+          "line": "ss.samir.bell",
+          "prompt": "The plugin is installed. How do you put its skill to work?",
+          "options": [
+            {
+              "id": "reload",
+              "text": "Submit `/skills reload`, type `/`, select the `modern-web-guidance` skill, then add the prompt",
+              "right": true,
+              "result": "The bell rings and the skill answers to its name. Its command can carry a plugin prefix."
+            },
+            {
+              "id": "done",
+              "text": "Nothing more: it’s installed, so it’s working",
+              "reason": "Installation alone doesn’t prove that the skill ran. You still invoke it.",
+              "backTo": "bell",
+              "cite": "mwg"
+            },
+            {
+              "id": "window",
+              "text": "Close the window and open it again",
+              "reason": "Run `/skills reload` first. And closing a window isn’t the same as quitting the app.",
+              "backTo": "bell",
+              "cite": "tsMissing"
+            }
+          ],
+          "hints": [
+            "What does the bell plate say?",
+            "Reload, then the `/` menu.",
+            "`/skills reload`, then `/` and the skill by name."
+          ],
+          "cite": "mwg"
+        },
+        {
+          "id": "order",
+          "at": "bench",
+          "kind": "tiles",
+          "title": "Word the order",
+          "prompt": "Samir chalks the order for the skill. Which lines keep it small and safe?",
+          "tiles": [
+            {
+              "id": "general",
+              "text": "Use only general terms in external queries",
+              "sticks": true
+            },
+            {
+              "id": "one",
+              "text": "Propose at most one CSS-only improvement",
+              "sticks": true
+            },
+            {
+              "id": "nochange",
+              "text": "Don’t add JavaScript, change files, or run app checks",
+              "sticks": true
+            },
+            {
+              "id": "stop",
+              "text": "If the plugin skill is unavailable, stop",
+              "sticks": true
+            },
+            {
+              "id": "redesign",
+              "text": "Redesign the book cards while you’re there",
+              "sticks": false,
+              "reason": "It’s one book-title layout question, not a redesign.",
+              "cite": "mwg"
+            },
+            {
+              "id": "send",
+              "text": "Send `app.css` to the guide service",
+              "sticks": false,
+              "reason": "Inspect the files locally. External queries use only general terms.",
+              "cite": "mwg"
+            }
+          ],
+          "cite": "mwg"
+        },
+        {
+          "id": "check",
+          "at": "bench",
+          "kind": "choose",
+          "title": "Check its work",
+          "line": "ss.samir.bench",
+          "prompt": "The skill proposes `text-wrap: balance` for long book titles. What do you check?",
+          "options": [
+            {
+              "id": "inspect",
+              "text": "The skill activity and its guide-search output, that it names the real title element and CSS, and what happens in browsers that don’t support it",
+              "right": true,
+              "result": "It names the guide it used, the support, and a browser check. No Book App file changed."
+            },
+            {
+              "id": "trust",
+              "text": "Nothing: it came from an installed plugin",
+              "reason": "You still inspect its tool activity and check its recommendation against the code.",
+              "backTo": "bench",
+              "cite": "mwg"
+            },
+            {
+              "id": "apply",
+              "text": "Apply it and run the app checks",
+              "reason": "This exercise proposes. It does not change files or run app checks.",
+              "backTo": "bench",
+              "cite": "mwg"
+            }
+          ],
+          "hints": [
+            "Where does its work show?",
+            "The activity, the guide, and the code it names.",
+            "Inspect the activity, and ask what happens where the browser doesn’t support it."
+          ],
+          "cite": "mwg"
+        }
+      ]
+    }
+  ]
+}

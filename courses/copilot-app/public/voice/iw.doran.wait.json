@@ -1,0 +1,42 @@
+{
+  "id": "iw.doran.wait",
+  "speaker": "Doran",
+  "text": "Make your slate with Petra first, Captain.",
+  "words": [
+    {
+      "word": "Make",
+      "start": 0.052083,
+      "end": 0.403666
+    },
+    {
+      "word": "your",
+      "start": 0.403666,
+      "end": 0.507833
+    },
+    {
+      "word": "slate",
+      "start": 0.507833,
+      "end": 0.9245
+    },
+    {
+      "word": "with",
+      "start": 0.9245,
+      "end": 1.106791
+    },
+    {
+      "word": "Petra",
+      "start": 1.106791,
+      "end": 1.445333
+    },
+    {
+      "word": "first",
+      "start": 1.445333,
+      "end": 2.083333
+    },
+    {
+      "word": "Captain",
+      "start": 2.083333,
+      "end": 2.333333
+    }
+  ]
+}

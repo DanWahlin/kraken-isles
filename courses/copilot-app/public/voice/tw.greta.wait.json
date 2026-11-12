@@ -1,0 +1,72 @@
+{
+  "id": "tw.greta.wait",
+  "speaker": "Greta",
+  "text": "Run it by hand with Ansel first, Captain. Then we’ll talk about clocks.",
+  "words": [
+    {
+      "word": "Run",
+      "start": 0.05,
+      "end": 0.3
+    },
+    {
+      "word": "it",
+      "start": 0.3,
+      "end": 0.425
+    },
+    {
+      "word": "by",
+      "start": 0.425,
+      "end": 0.6125
+    },
+    {
+      "word": "hand",
+      "start": 0.6125,
+      "end": 0.95
+    },
+    {
+      "word": "with",
+      "start": 0.95,
+      "end": 1.075
+    },
+    {
+      "word": "Ansel",
+      "start": 1.075,
+      "end": 1.45
+    },
+    {
+      "word": "first",
+      "start": 1.45,
+      "end": 2.2625
+    },
+    {
+      "word": "Captain",
+      "start": 2.2625,
+      "end": 3.65
+    },
+    {
+      "word": "Then",
+      "start": 3.65,
+      "end": 3.9375
+    },
+    {
+      "word": "we’ll",
+      "start": 3.9375,
+      "end": 4.1375
+    },
+    {
+      "word": "talk",
+      "start": 4.1375,
+      "end": 4.45
+    },
+    {
+      "word": "about",
+      "start": 4.45,
+      "end": 4.7375
+    },
+    {
+      "word": "clocks",
+      "start": 4.7375,
+      "end": 4.9875
+    }
+  ]
+}

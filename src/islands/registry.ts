@@ -1,8 +1,11 @@
 import { ANCHORAGE } from './anchorage';
 import { GUILDCREST_ISLAND } from './guildcrest';
+import { INKWELL_ISLAND } from './inkwell';
 import { KEELHAVEN_ISLAND } from './keelhaven';
 import { MERIDIAN_ISLAND } from './meridian';
+import { SUNSPIRE_ISLAND } from './sunspire';
 import { THOUSAND_BOUGH_ISLAND } from './thousand-bough';
+import { TIDEWHEEL_ISLAND } from './tidewheel';
 import type { IslandEntry, IslandInBuild } from './types';
 
 /**
@@ -18,6 +21,9 @@ export const ISLAND_REGISTRY = {
   'thousand-bough': THOUSAND_BOUGH_ISLAND,
   keelhaven: KEELHAVEN_ISLAND,
   guildcrest: GUILDCREST_ISLAND,
+  sunspire: SUNSPIRE_ISLAND,
+  inkwell: INKWELL_ISLAND,
+  tidewheel: TIDEWHEEL_ISLAND,
 } as const satisfies Readonly<Record<string, IslandEntry>>;
 
 export type IslandId = keyof typeof ISLAND_REGISTRY;

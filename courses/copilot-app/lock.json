@@ -3,7 +3,7 @@
   "repo": "github/copilot-app-for-beginners",
   "ref": "main",
   "sha": "8cb27928ebfefa978617dd4b7663d4338fc3faeb",
-  "syncedAt": "2026-11-09",
+  "syncedAt": "2026-11-11",
   "catalog": [
     {
       "id": "00-setup",
@@ -1294,6 +1294,786 @@
           "hash": "457440eb5876"
         }
       }
+    },
+    "05-mcp-plugins": {
+      "short": "ch05",
+      "title": "MCP Servers and Plugins",
+      "hash": "e9510c0f070d",
+      "sections": {
+        "learning-objectives": {
+          "title": "Learning Objectives",
+          "level": 2,
+          "hash": "63b41976f466",
+          "terms": ["Estimated Time"]
+        },
+        "prerequisites": {
+          "title": "Prerequisites",
+          "level": 2,
+          "hash": "07decfa586e3",
+          "terms": ["Customize"]
+        },
+        "from-the-studio-connecting-the-gear": {
+          "title": "From the Studio: Connecting the Gear",
+          "level": 2,
+          "hash": "49ec83da8d2a",
+          "images": ["05-mcp-plugins/assets/extending-copilot-app.webp"]
+        },
+        "core-concepts": {
+          "title": "Core Concepts",
+          "level": 2,
+          "hash": "488996e5f50e",
+          "images": ["05-mcp-plugins/assets/least-tool-principle.webp"],
+          "terms": ["Customize"]
+        },
+        "mcp-server-versus-plugin": {
+          "title": "MCP Server Versus Plugin",
+          "level": 3,
+          "hash": "abf0d4488ca1",
+          "images": ["05-mcp-plugins/assets/least-tool-principle.webp"],
+          "terms": ["Customize"]
+        },
+        "create-a-practice-session": {
+          "title": "Create a Practice Session",
+          "level": 2,
+          "hash": "8691f68a9c1f",
+          "terms": ["Create from", "Branches", "Interactive", "Default agent", "Expected Output:"]
+        },
+        "mcp-servers-get-information-from-another-service": {
+          "title": "MCP Servers: Get Information from Another Service",
+          "level": 2,
+          "hash": "7c70da2c1f2b",
+          "images": [
+            "05-mcp-plugins/assets/browser-extensions-analogy.webp",
+            "05-mcp-plugins/assets/app-customize-mcp.webp",
+            "05-mcp-plugins/assets/app-context7-configuration.webp"
+          ],
+          "terms": [
+            "MCP server",
+            "Customize",
+            "MCP",
+            "Extensions",
+            "MCP Servers",
+            "Installed",
+            "Browse",
+            "All types",
+            "Add server",
+            "Context7",
+            "Interactive",
+            "Expected Output:",
+            "How It Works:"
+          ]
+        },
+        "exercise-check-the-book-apps-input-labels-with-context7": {
+          "title": "Exercise: Check the Book App's Input Labels with Context7",
+          "level": 3,
+          "hash": "531f67f51964",
+          "images": ["05-mcp-plugins/assets/app-context7-configuration.webp"],
+          "terms": [
+            "Customize",
+            "Browse",
+            "All types",
+            "MCP",
+            "Add server",
+            "Context7",
+            "Installed",
+            "MCP Servers",
+            "Interactive",
+            "Expected Output:",
+            "How It Works:"
+          ]
+        },
+        "plugins-use-a-packaged-capability": {
+          "title": "Plugins: Use a Packaged Capability",
+          "level": 2,
+          "hash": "78b16e5f879c",
+          "images": ["05-mcp-plugins/assets/app-customize-plugins.webp"],
+          "terms": [
+            "plugin",
+            "marketplace",
+            "Optional exploration:",
+            "Customize",
+            "Browse",
+            "Plugins",
+            "Add",
+            "Manage marketplaces…",
+            "awesome-copilot",
+            "Marketplaces",
+            "Source",
+            "Installed",
+            "modern-web-guidance",
+            "Install",
+            "Interactive",
+            "Expected Output:",
+            "How It Works:"
+          ]
+        },
+        "exercise-plan-a-css-improvement-with-modern-web-guidance": {
+          "title": "Exercise: Plan a CSS Improvement with Modern Web Guidance",
+          "level": 3,
+          "hash": "b0743e577ce2",
+          "images": ["05-mcp-plugins/assets/app-customize-plugins.webp"],
+          "terms": [
+            "Customize",
+            "Browse",
+            "Plugins",
+            "Add",
+            "Manage marketplaces…",
+            "awesome-copilot",
+            "Marketplaces",
+            "Source",
+            "Installed",
+            "modern-web-guidance",
+            "Install",
+            "Interactive",
+            "Expected Output:",
+            "How It Works:"
+          ]
+        },
+        "troubleshooting": {
+          "title": "Troubleshooting",
+          "level": 2,
+          "hash": "f73e4a49c7ef",
+          "terms": ["Customize", "Default agent", "Tool permissions"]
+        },
+        "i-cannot-find-mcp-or-plugins-in-settings": {
+          "title": "I cannot find MCP or plugins in Settings",
+          "level": 3,
+          "hash": "a8f368794af1",
+          "terms": ["Customize"]
+        },
+        "an-mcp-server-is-enabled-but-its-tools-fail": {
+          "title": "An MCP server is enabled but its tools fail",
+          "level": 3,
+          "hash": "6bcecf0c4f5d"
+        },
+        "a-plugin-is-installed-but-its-skill-is-missing": {
+          "title": "A plugin is installed but its skill is missing",
+          "level": 3,
+          "hash": "dbb32fed0e08"
+        },
+        "the-agent-cannot-use-the-integration": {
+          "title": "The agent cannot use the integration",
+          "level": 3,
+          "hash": "84c6bff1e9d2",
+          "terms": ["Default agent", "Tool permissions"]
+        },
+        "key-takeaways": {
+          "title": "Key Takeaways",
+          "level": 2,
+          "hash": "179f39f1bb67"
+        },
+        "assignment": {
+          "title": "Assignment",
+          "level": 2,
+          "hash": "d64b0750a772",
+          "images": ["assets/assignment.webp"],
+          "terms": ["Changes", "Success Criteria:"]
+        },
+        "whats-next": {
+          "title": "What's Next",
+          "level": 2,
+          "hash": "3eefb4c2c724"
+        },
+        "source-references": {
+          "title": "Source References",
+          "level": 2,
+          "hash": "b1c55a5d1855"
+        }
+      }
+    },
+    "06-canvases": {
+      "short": "ch06",
+      "title": "Canvases",
+      "hash": "d6619288b89c",
+      "sections": {
+        "learning-objectives": {
+          "title": "Learning Objectives",
+          "level": 2,
+          "hash": "cc985e12e4bb",
+          "terms": ["Estimated Time"]
+        },
+        "prerequisites": {
+          "title": "Prerequisites",
+          "level": 2,
+          "hash": "7b03cb754f34",
+          "terms": ["Create from", "Branches", "Interactive", "Default agent", "Terminal"]
+        },
+        "from-the-studio-the-bands-arrangement-board": {
+          "title": "From the Studio: The Band's Arrangement Board",
+          "level": 2,
+          "hash": "4ea6ed135528",
+          "images": ["06-canvases/assets/arrangement-board-canvas.webp"]
+        },
+        "core-concepts": {
+          "title": "Core Concepts",
+          "level": 2,
+          "hash": "c5e8d0aac4fb",
+          "images": [
+            "06-canvases/assets/human-agent-shared-surface.webp",
+            "06-canvases/assets/chat-vs-canvas.webp"
+          ],
+          "terms": ["bidirectional", "Plan", "Terminal", "Browser", "Changes"]
+        },
+        "a-canvas-is-a-shared-control-panel": {
+          "title": "A Canvas Is a Shared Control Panel",
+          "level": 3,
+          "hash": "258a840d9be4",
+          "images": ["06-canvases/assets/human-agent-shared-surface.webp"],
+          "terms": ["bidirectional"]
+        },
+        "built-in-work-surfaces-come-first": {
+          "title": "Built-In Work Surfaces Come First",
+          "level": 3,
+          "hash": "03abe31013c8",
+          "terms": ["Plan", "Terminal", "Browser", "Changes"]
+        },
+        "when-to-use-a-canvas": {
+          "title": "When to Use a Canvas",
+          "level": 3,
+          "hash": "83a511b5a288",
+          "images": ["06-canvases/assets/chat-vs-canvas.webp"]
+        },
+        "exercise-1-try-your-first-canvas": {
+          "title": "Exercise 1: Try Your First Canvas",
+          "level": 2,
+          "hash": "1fc9e1017bb6",
+          "images": [
+            "06-canvases/assets/app-repo-issues-kanban.webp",
+            "06-canvases/assets/app-open-repo-issues-canvas.webp"
+          ],
+          "terms": [
+            "Open in Copilot app",
+            "Install plugin?",
+            "Allow",
+            "Install plugin",
+            "Install",
+            "Customize",
+            "Installed",
+            "Plugins",
+            "+",
+            "Add tab",
+            "Canvas",
+            "Repository Issues Kanban",
+            "View",
+            "Toggle Panel",
+            "Plan",
+            "Ready"
+          ]
+        },
+        "exercise-2-create-a-session-board": {
+          "title": "Exercise 2: Create a Session Board",
+          "level": 2,
+          "hash": "21b5e247f33c",
+          "images": ["06-canvases/assets/session-board-collaboration.webp"],
+          "terms": ["Plan", "Changes", "+", "Add tab", "Expected Output:"]
+        },
+        "exercise-3-create-a-feature-workbench": {
+          "title": "Exercise 3: Create a Feature Workbench",
+          "level": 2,
+          "hash": "74377c083aef",
+          "images": [
+            "06-canvases/assets/session-plan-validation-board.webp",
+            "06-canvases/assets/app-create-canvas-command.webp",
+            "06-canvases/assets/app-create-canvas-screenshot.webp",
+            "06-canvases/assets/app-feature-workbench-propose.webp",
+            "06-canvases/assets/app-feature-workbench-plan.webp",
+            "06-canvases/assets/app-feature-workbench-baseline.webp",
+            "06-canvases/assets/app-feature-workbench-implement.webp",
+            "06-canvases/assets/app-feature-workbench-browser-validation.webp",
+            "06-canvases/assets/app-feature-workbench-validate.webp"
+          ],
+          "terms": [
+            "then",
+            "Plan",
+            "Important:",
+            "Propose",
+            "Baseline",
+            "Implement",
+            "Validate",
+            "Generate plan",
+            "Parts are missing:",
+            "Items show as complete without evidence:",
+            "Actions stop before the work finishes:",
+            "An action stays disabled:",
+            "Feature proposal",
+            "Working",
+            "Approve and implement this plan",
+            "Review plan",
+            "Exit plan mode and I will prompt myself",
+            "Continue",
+            "Interactive",
+            "Feature Workbench",
+            "Approved",
+            "Run baseline",
+            "Autopilot",
+            "Diff",
+            "Changes",
+            "Browser validation",
+            "Browser",
+            "Book App Web",
+            "+",
+            "Add tab",
+            "Clear filters",
+            "Background",
+            "Terminal",
+            "Close terminal",
+            "Run final checks",
+            "Expected Output:",
+            "Files"
+          ]
+        },
+        "markdown-fallback": {
+          "title": "Markdown Fallback",
+          "level": 3,
+          "hash": "69f72d14a345",
+          "terms": ["Files"]
+        },
+        "troubleshooting": {
+          "title": "Troubleshooting",
+          "level": 2,
+          "hash": "f98d76cc5bc3",
+          "terms": [
+            "Repository Issues Kanban",
+            "Review plan",
+            "Refresh evidence",
+            "Implement",
+            "Run final checks",
+            "An action stays disabled",
+            "An action shows an error after its work is done",
+            "Autopilot",
+            "Interactive",
+            "Load failed",
+            "Browser",
+            "View",
+            "Toggle Panel",
+            "+",
+            "Terminal"
+          ]
+        },
+        "no-canvas-opens": {
+          "title": "No canvas opens",
+          "level": 3,
+          "hash": "425aa8f81f45"
+        },
+        "the-community-canvas-is-not-listed": {
+          "title": "The community canvas is not listed",
+          "level": 3,
+          "hash": "a337f3b1e165",
+          "terms": ["Repository Issues Kanban"]
+        },
+        "the-generated-layout-is-incomplete": {
+          "title": "The generated layout is incomplete",
+          "level": 3,
+          "hash": "5bff43f0dee4"
+        },
+        "the-plan-status-stays-at-working": {
+          "title": "The plan status stays at Working",
+          "level": 3,
+          "hash": "7e3a113baed0",
+          "terms": ["Review plan", "Refresh evidence"]
+        },
+        "an-action-button-stays-disabled": {
+          "title": "An action button stays disabled",
+          "level": 3,
+          "hash": "37a83cd52004",
+          "terms": ["Implement", "Run final checks", "An action stays disabled"]
+        },
+        "an-action-shows-an-error-but-its-stage-is-complete": {
+          "title": "An action shows an error, but its stage is complete",
+          "level": 3,
+          "hash": "4b5cfb2c70cf",
+          "terms": ["An action shows an error after its work is done"]
+        },
+        "the-session-stays-in-autopilot-mode": {
+          "title": "The session stays in Autopilot mode",
+          "level": 3,
+          "hash": "9a0089acc3dd",
+          "terms": ["Autopilot", "Interactive"]
+        },
+        "more-than-one-feature-workbench-tab-opens": {
+          "title": "More than one Feature Workbench tab opens",
+          "level": 3,
+          "hash": "53d913a2acb7",
+          "terms": ["Load failed", "Browser"]
+        },
+        "the-terminal-or-browser-tab-is-missing": {
+          "title": "The Terminal or Browser tab is missing",
+          "level": 3,
+          "hash": "23a929e0e262",
+          "terms": ["View", "Toggle Panel", "+", "Terminal", "Browser"]
+        },
+        "the-board-does-not-match-the-evidence": {
+          "title": "The board does not match the evidence",
+          "level": 3,
+          "hash": "db033d529ef1"
+        },
+        "sensitive-data-appears-in-a-custom-canvas": {
+          "title": "Sensitive data appears in a custom canvas",
+          "level": 3,
+          "hash": "d4cce26975d5"
+        },
+        "key-takeaways": {
+          "title": "Key Takeaways",
+          "level": 2,
+          "hash": "3047dd138e5a"
+        },
+        "assignment": {
+          "title": "Assignment",
+          "level": 2,
+          "hash": "ef0185fdf5e1",
+          "images": ["assets/assignment.webp"],
+          "terms": ["Assess", "Propose", "Core Success Criteria:", "Challenge Success Criteria:"]
+        },
+        "core-assignment": {
+          "title": "Core Assignment",
+          "level": 3,
+          "hash": "d846f46c0106",
+          "terms": ["Assess", "Propose", "Core Success Criteria:"]
+        },
+        "optional-github-workflow-challenge": {
+          "title": "Optional GitHub Workflow Challenge",
+          "level": 3,
+          "hash": "9114c6dbb68e",
+          "terms": ["Challenge Success Criteria:"]
+        },
+        "whats-next": {
+          "title": "What's Next",
+          "level": 2,
+          "hash": "cc93b5496737"
+        },
+        "source-references": {
+          "title": "Source References",
+          "level": 2,
+          "hash": "fde3f21794c7"
+        }
+      }
+    },
+    "07-automations": {
+      "short": "ch07",
+      "title": "Automations",
+      "hash": "775a0d8a7680",
+      "sections": {
+        "learning-objectives": {
+          "title": "Learning Objectives",
+          "level": 2,
+          "hash": "6c54d11474f4",
+          "terms": ["Issue", "Pull request", "Estimated Time"]
+        },
+        "prerequisites": {
+          "title": "Prerequisites",
+          "level": 2,
+          "hash": "0b15040f59f4",
+          "terms": ["Pull requests"]
+        },
+        "from-the-studio-programming-the-sequencer": {
+          "title": "From the Studio: Programming the Sequencer",
+          "level": 2,
+          "hash": "3b4bfbe2b7f9",
+          "images": ["07-automations/assets/sequencer-automation.webp"]
+        },
+        "core-concepts": {
+          "title": "Core Concepts",
+          "level": 2,
+          "hash": "07db38e2c98b",
+          "images": [
+            "07-automations/assets/automation-trigger-to-run.webp",
+            "07-automations/assets/manual-first-path.webp"
+          ],
+          "terms": ["prompt-injection"]
+        },
+        "automation-is-a-saved-agent-run": {
+          "title": "Automation Is a Saved Agent Run",
+          "level": 3,
+          "hash": "20384c60f1f2",
+          "images": ["07-automations/assets/automation-trigger-to-run.webp"]
+        },
+        "start-manual-and-local": {
+          "title": "Start Manual and Local",
+          "level": 3,
+          "hash": "d258fd3120f6",
+          "images": ["07-automations/assets/manual-first-path.webp"]
+        },
+        "a-good-starter-automation": {
+          "title": "A Good Starter Automation",
+          "level": 3,
+          "hash": "6d971c2000fa",
+          "terms": ["prompt-injection"]
+        },
+        "hands-on-exercises": {
+          "title": "Hands-On Exercises",
+          "level": 2,
+          "hash": "105585996f94",
+          "images": [
+            "07-automations/assets/app-new-automation.webp",
+            "07-automations/assets/app-automation-schedule.webp"
+          ],
+          "terms": [
+            "Pull requests",
+            "Authored by me",
+            "Automations",
+            "New automation",
+            "Trigger",
+            "Daily",
+            "Manual",
+            "Run in the cloud",
+            "Select repository",
+            "Workspace",
+            "Current checkout",
+            "Create",
+            "Create and run",
+            "Expected Output:",
+            "Your automations",
+            "Recent runs",
+            "prompt",
+            "error text",
+            "result",
+            "How It Works:",
+            "Edit",
+            "Hours",
+            "08:00",
+            "09:00",
+            "Minute",
+            ":00",
+            "Save automation",
+            "Automation details",
+            "Schedule",
+            "Next run",
+            "Run",
+            "Hourly",
+            "Weekly",
+            "CRON"
+          ]
+        },
+        "confirm-work-items-exist": {
+          "title": "Confirm Work Items Exist",
+          "level": 3,
+          "hash": "bd4ff9a68d41",
+          "terms": ["Pull requests", "Authored by me"]
+        },
+        "exercise-create-a-manual-review-readiness-report": {
+          "title": "Exercise: Create a Manual Review Readiness Report",
+          "level": 3,
+          "hash": "c77f03fd8c5f",
+          "images": ["07-automations/assets/app-new-automation.webp"],
+          "terms": [
+            "Pull requests",
+            "Automations",
+            "New automation",
+            "Trigger",
+            "Daily",
+            "Manual",
+            "Run in the cloud",
+            "Select repository",
+            "Workspace",
+            "Current checkout",
+            "Create",
+            "Create and run",
+            "Expected Output:",
+            "Your automations",
+            "Recent runs",
+            "prompt",
+            "error text",
+            "result",
+            "How It Works:"
+          ]
+        },
+        "exercise-schedule-the-review-readiness-report": {
+          "title": "Exercise: Schedule the Review Readiness Report",
+          "level": 3,
+          "hash": "3fc0f26b2de5",
+          "images": ["07-automations/assets/app-automation-schedule.webp"],
+          "terms": [
+            "Automations",
+            "Edit",
+            "Trigger",
+            "Manual",
+            "Daily",
+            "Hours",
+            "08:00",
+            "09:00",
+            "Minute",
+            ":00",
+            "Save automation",
+            "Automation details",
+            "Schedule",
+            "Next run",
+            "Recent runs",
+            "Expected Output:",
+            "Run"
+          ]
+        },
+        "why-schedule-instead-of-running-manually": {
+          "title": "Why Schedule Instead of Running Manually?",
+          "level": 3,
+          "hash": "429046dfee8c",
+          "terms": ["Hourly", "Weekly", "CRON"]
+        },
+        "event-triggers": {
+          "title": "Event Triggers",
+          "level": 2,
+          "hash": "7ffdcb04e9e2",
+          "images": [
+            "07-automations/assets/app-automation-new-triggers.webp",
+            "07-automations/assets/app-automation-new-triggers-scrolled.webp"
+          ],
+          "terms": [
+            "Issue",
+            "Automation failed",
+            "Automation completed",
+            "Upstream Automations",
+            "Code scanning alert",
+            "Dependabot alert",
+            "Discussion comment",
+            "Discussion opened",
+            "Discussion updated",
+            "Pull request",
+            "Secret scanning alert",
+            "Sub issue added",
+            "Workflow",
+            "Hourly",
+            "Daily",
+            "Weekly",
+            "CRON",
+            "Start read-only.",
+            "Limit repository scope.",
+            "Filter by label or search query.",
+            "Avoid write tools until the summary is reliable.",
+            "Review run history regularly."
+          ]
+        },
+        "keeping-event-triggers-safe": {
+          "title": "Keeping Event Triggers Safe",
+          "level": 3,
+          "hash": "a74ee12f99e6",
+          "terms": [
+            "Start read-only.",
+            "Limit repository scope.",
+            "Filter by label or search query.",
+            "Avoid write tools until the summary is reliable.",
+            "Review run history regularly."
+          ]
+        },
+        "cloud-automations": {
+          "title": "Cloud Automations",
+          "level": 2,
+          "hash": "25cad27151a9",
+          "images": [
+            "07-automations/assets/local-vs-cloud-automations.webp",
+            "07-automations/assets/app-automation-cloud-tools.webp"
+          ],
+          "terms": [
+            "local",
+            "cloud automation",
+            "Copilot cloud agent",
+            "Repository visibility",
+            "Billing",
+            "Personal",
+            "Shared",
+            "Run in the cloud",
+            "Tools",
+            "Select tools",
+            "Suggest tools",
+            "Issues",
+            "Pull Requests",
+            "Discussions",
+            "Repos",
+            "Actions",
+            "Search tools…",
+            "Read PR",
+            "List PRs",
+            "Search PRs",
+            "Create PR",
+            "Merge PR",
+            "Type"
+          ]
+        },
+        "when-to-consider-cloud": {
+          "title": "When to Consider Cloud",
+          "level": 3,
+          "hash": "fe1374c93ce2",
+          "images": ["07-automations/assets/app-automation-cloud-tools.webp"],
+          "terms": [
+            "Copilot cloud agent",
+            "Repository visibility",
+            "Billing",
+            "Personal",
+            "Shared",
+            "Run in the cloud",
+            "Tools",
+            "Select tools",
+            "Suggest tools",
+            "Issues",
+            "Pull Requests",
+            "Discussions",
+            "Repos",
+            "Actions",
+            "Search tools…",
+            "Read PR",
+            "List PRs",
+            "Search PRs",
+            "Create PR",
+            "Merge PR",
+            "Type"
+          ]
+        },
+        "troubleshooting": {
+          "title": "Troubleshooting",
+          "level": 2,
+          "hash": "411a9d88ce93"
+        },
+        "a-local-automation-does-not-run": {
+          "title": "A local automation does not run",
+          "level": 3,
+          "hash": "9cc84322a688"
+        },
+        "the-review-readiness-report-is-empty": {
+          "title": "The review readiness report is empty",
+          "level": 3,
+          "hash": "e3ccb064a0b7"
+        },
+        "cloud-automations-are-unavailable": {
+          "title": "Cloud automations are unavailable",
+          "level": 3,
+          "hash": "62cf332802f4"
+        },
+        "a-scheduled-run-is-noisy": {
+          "title": "A scheduled run is noisy",
+          "level": 3,
+          "hash": "f216e903d1b5"
+        },
+        "the-automation-made-surprising-suggestions": {
+          "title": "The automation made surprising suggestions",
+          "level": 3,
+          "hash": "11ffdf459efc"
+        },
+        "key-takeaways": {
+          "title": "Key Takeaways",
+          "level": 2,
+          "hash": "6560b58c0983",
+          "terms": ["Pull requests"]
+        },
+        "assignment": {
+          "title": "Assignment",
+          "level": 2,
+          "hash": "9ecad7eb59d7",
+          "images": ["assets/assignment.webp"],
+          "terms": ["Tools", "Success Criteria:"]
+        },
+        "course-complete": {
+          "title": "Course Complete",
+          "level": 2,
+          "hash": "d9b0f78d83b3",
+          "terms": [
+            "[← Back to Chapter 06](../06-canvases/README.md)",
+            "[Return to Course Home →](../README.md)"
+          ]
+        },
+        "source-references": {
+          "title": "Source References",
+          "level": 2,
+          "hash": "cf7d0d3eb3fb"
+        }
+      }
     }
   },
   "appendices": {
@@ -1832,6 +2612,186 @@
       "sha256": "e25c1aec1e737067af9419c75065b5777750ffdc05ec5f22ed455a276632c77d",
       "pinned": true,
       "bytes": 138964
+    },
+    "course/ch05/app-context7-configuration.webp": {
+      "upstream": "05-mcp-plugins/assets/app-context7-configuration.webp",
+      "sha256": "4be98a4533e4dd9b6c732e04d22dfeb0e333904327f0652652576b1f6668a4d5",
+      "pinned": true,
+      "bytes": 18732
+    },
+    "course/ch05/app-customize-mcp.webp": {
+      "upstream": "05-mcp-plugins/assets/app-customize-mcp.webp",
+      "sha256": "b2b7336d5ea421e97e4e34240e9578cce71d43d8a7c05e5c96ed6a94ea918174",
+      "pinned": true,
+      "bytes": 27470
+    },
+    "course/ch05/app-customize-plugins.webp": {
+      "upstream": "05-mcp-plugins/assets/app-customize-plugins.webp",
+      "sha256": "9aad06076e3e133cb98371f49236e5803e7cec99bc290d8f00d0da4e083c26ff",
+      "pinned": true,
+      "bytes": 49190
+    },
+    "course/ch05/browser-extensions-analogy.webp": {
+      "upstream": "05-mcp-plugins/assets/browser-extensions-analogy.webp",
+      "sha256": "5f69461884137f3576f832438c35561539f884c4f23d0452281a081ca59b2c7e",
+      "pinned": true,
+      "bytes": 80484
+    },
+    "course/ch05/extending-copilot-app.webp": {
+      "upstream": "05-mcp-plugins/assets/extending-copilot-app.webp",
+      "sha256": "6a1b5d9aa0f5d42aae910433e1bbe868b48cbe2e78d1c4d90f77433620b4ecf5",
+      "pinned": true,
+      "bytes": 306736
+    },
+    "course/ch05/least-tool-principle.webp": {
+      "upstream": "05-mcp-plugins/assets/least-tool-principle.webp",
+      "sha256": "3602ba1e0a6fc397a1322d6d2f244c15b4cbf6a87d6706c6ee3096c42fa66ae4",
+      "pinned": true,
+      "bytes": 47326
+    },
+    "course/ch06/app-create-canvas-command.webp": {
+      "upstream": "06-canvases/assets/app-create-canvas-command.webp",
+      "sha256": "f2b324671689b7e976129e4976f76645493760ab9dd053a722ae5a1cb09fe5fb",
+      "pinned": true,
+      "bytes": 12162
+    },
+    "course/ch06/app-create-canvas-screenshot.webp": {
+      "upstream": "06-canvases/assets/app-create-canvas-screenshot.webp",
+      "sha256": "25a0eb4f5a24bbd5280a8b2435c783c40e1375ebaf22f095460b18a3818b66c7",
+      "pinned": true,
+      "bytes": 190566
+    },
+    "course/ch06/app-feature-workbench-baseline.webp": {
+      "upstream": "06-canvases/assets/app-feature-workbench-baseline.webp",
+      "sha256": "7b0c1bf9798ae630c2d0b1715612b86a1a196a3c2cd5f1341d3ba36004e0ef54",
+      "pinned": true,
+      "bytes": 186984
+    },
+    "course/ch06/app-feature-workbench-browser-validation.webp": {
+      "upstream": "06-canvases/assets/app-feature-workbench-browser-validation.webp",
+      "sha256": "5b1424c09571b4f0c948c7a9f0d8629d18b14ee8e3abef273eece0fde861a07a",
+      "pinned": true,
+      "bytes": 218568
+    },
+    "course/ch06/app-feature-workbench-implement.webp": {
+      "upstream": "06-canvases/assets/app-feature-workbench-implement.webp",
+      "sha256": "6c0f5e7f68f2ad2e343cd643699e254014905dbccfda5eaf48f787a37d743612",
+      "pinned": true,
+      "bytes": 187904
+    },
+    "course/ch06/app-feature-workbench-plan.webp": {
+      "upstream": "06-canvases/assets/app-feature-workbench-plan.webp",
+      "sha256": "ec5acda3036ed085b0907bf01b8956795d9cddaa51f822b61410b1ee8ae7b7d4",
+      "pinned": true,
+      "bytes": 172148
+    },
+    "course/ch06/app-feature-workbench-propose.webp": {
+      "upstream": "06-canvases/assets/app-feature-workbench-propose.webp",
+      "sha256": "c25be18d9dac438cd9eb7abda9dd1bc1ac551db7f0580c526b3151484b742b95",
+      "pinned": true,
+      "bytes": 155988
+    },
+    "course/ch06/app-feature-workbench-validate.webp": {
+      "upstream": "06-canvases/assets/app-feature-workbench-validate.webp",
+      "sha256": "7a95db7534275fea7f2033cc446152d64c078fbd23869e49a078e13b04e9963f",
+      "pinned": true,
+      "bytes": 206648
+    },
+    "course/ch06/app-open-repo-issues-canvas.webp": {
+      "upstream": "06-canvases/assets/app-open-repo-issues-canvas.webp",
+      "sha256": "a5aa647178d01dff1b1d7a4dbcd3fa8f561f93bced29ba328c158c284d307bcd",
+      "pinned": true,
+      "bytes": 29194
+    },
+    "course/ch06/app-repo-issues-kanban.webp": {
+      "upstream": "06-canvases/assets/app-repo-issues-kanban.webp",
+      "sha256": "80b239e48ef97be6cf61adb233abcc20795fb2124f7600c2ec612d8441ffc0b5",
+      "pinned": true,
+      "bytes": 219566
+    },
+    "course/ch06/arrangement-board-canvas.webp": {
+      "upstream": "06-canvases/assets/arrangement-board-canvas.webp",
+      "sha256": "cd962be24c8cc23672ef554a28ca6ff3706ad0efe9ff665a53e22f767461a2c7",
+      "pinned": true,
+      "bytes": 152646
+    },
+    "course/ch06/chat-vs-canvas.webp": {
+      "upstream": "06-canvases/assets/chat-vs-canvas.webp",
+      "sha256": "7c4a13adf2269a4014c00e87893ac58b219babf84ec849fbf7e9d7d1692790b4",
+      "pinned": true,
+      "bytes": 47820
+    },
+    "course/ch06/human-agent-shared-surface.webp": {
+      "upstream": "06-canvases/assets/human-agent-shared-surface.webp",
+      "sha256": "8c6f8b8e9134c4184d14d14f7542fb4d2a0ab83497a3cd22590c3f3bd264c5ef",
+      "pinned": true,
+      "bytes": 69718
+    },
+    "course/ch06/session-board-collaboration.webp": {
+      "upstream": "06-canvases/assets/session-board-collaboration.webp",
+      "sha256": "dda9ec5e95bb0a9c54c34198f2d752444705b57f092086f199ec483caa08ee90",
+      "pinned": true,
+      "bytes": 102926
+    },
+    "course/ch06/session-plan-validation-board.webp": {
+      "upstream": "06-canvases/assets/session-plan-validation-board.webp",
+      "sha256": "8ffe6bdd6e0edb451aa75ef0036eddbd707b6ad13dde35c717e1a5f0f2412ea7",
+      "pinned": true,
+      "bytes": 57992
+    },
+    "course/ch07/app-automation-cloud-tools.webp": {
+      "upstream": "07-automations/assets/app-automation-cloud-tools.webp",
+      "sha256": "52511d91fad90584293787ee95904b808c7b2b7e380585dce27feb2f95a68dfb",
+      "pinned": true,
+      "bytes": 189370
+    },
+    "course/ch07/app-automation-new-triggers-scrolled.webp": {
+      "upstream": "07-automations/assets/app-automation-new-triggers-scrolled.webp",
+      "sha256": "0e8a9bbfd3b815017306e96a3777779451cda4bc6795a61681d2f9aa1b62287e",
+      "pinned": true,
+      "bytes": 151514
+    },
+    "course/ch07/app-automation-new-triggers.webp": {
+      "upstream": "07-automations/assets/app-automation-new-triggers.webp",
+      "sha256": "135ca18ddbb8a889c0099afcaced7509d6c0224759148440a2678244953fe93d",
+      "pinned": true,
+      "bytes": 143806
+    },
+    "course/ch07/app-automation-schedule.webp": {
+      "upstream": "07-automations/assets/app-automation-schedule.webp",
+      "sha256": "b53090f477a9dfc8928cb681ab51346c5ffa7b789068c37637438c61441d7c75",
+      "pinned": true,
+      "bytes": 79670
+    },
+    "course/ch07/app-new-automation.webp": {
+      "upstream": "07-automations/assets/app-new-automation.webp",
+      "sha256": "069b603c030c6e663b43707b1d5ec85d0963c858727deac527e4bc0c8c07b8b9",
+      "pinned": true,
+      "bytes": 198914
+    },
+    "course/ch07/automation-trigger-to-run.webp": {
+      "upstream": "07-automations/assets/automation-trigger-to-run.webp",
+      "sha256": "aabc62d20012f9f70022c9f484bb6a0eaa4f1fef155c02ed7ace1cbc07d9f7f6",
+      "pinned": true,
+      "bytes": 42168
+    },
+    "course/ch07/local-vs-cloud-automations.webp": {
+      "upstream": "07-automations/assets/local-vs-cloud-automations.webp",
+      "sha256": "132d8c8f23826150f94fc305933d049f3bf9145457ba6c999bb7ef171b292147",
+      "pinned": true,
+      "bytes": 29702
+    },
+    "course/ch07/manual-first-path.webp": {
+      "upstream": "07-automations/assets/manual-first-path.webp",
+      "sha256": "5bc8e2a016a28e77113e35c624ab9aa8c73a46301225916f0e85d20f2b0ff83c",
+      "pinned": true,
+      "bytes": 52208
+    },
+    "course/ch07/sequencer-automation.webp": {
+      "upstream": "07-automations/assets/sequencer-automation.webp",
+      "sha256": "8a0128a8d6bbf784e04d048085e1963d2b0e12bfe54546788c07d6d6fe75e6e1",
+      "pinned": true,
+      "bytes": 112996
     },
     "course/shared/app-github-copilot-app.webp": {
       "upstream": "assets/app-github-copilot-app.webp",

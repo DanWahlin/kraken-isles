@@ -1,0 +1,17 @@
+{
+  "$schema": "../../schemas/puzzle-ceremony.schema.json",
+  "id": "Q5.1.gear-song",
+  "mechanic": "ceremony",
+  "quest": "Q5.1",
+  "$comment": "Lyra’s gear song under the caravanserai’s arcade (Q5.1, docs/specs/ISLAND-05-sunspire-sands.md §4): the players play from the chart and the singer can’t be heard; the player connects the gear the session needs, and the song comes through. Her talk is the island’s lyra script (05 · From the Studio).",
+  "text": {
+    "playChart": "Play it from the chart",
+    "connect": "Connect the gear",
+    "playGear": "Play it again",
+    "faint": "Every note is right, and you can’t hear the singer. The chart never said to plug her in.",
+    "clear": "Same chart, and now the song carries across the court.",
+    "unlocked": "Sunspire Crossing joins your Songbook.",
+    "hint1": "Listen: they’re playing what the chart says.",
+    "hint2": "Connect what the session needs, then listen again."
+  }
+}

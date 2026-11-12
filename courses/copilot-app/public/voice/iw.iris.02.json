@@ -1,0 +1,72 @@
+{
+  "id": "iw.iris.02",
+  "speaker": "Iris",
+  "text": "One trial, then the Seal. Take your time. Nothing here is a trick.",
+  "words": [
+    {
+      "word": "One",
+      "start": 0.052625,
+      "end": 0.368416
+    },
+    {
+      "word": "trial",
+      "start": 0.368416,
+      "end": 1.14475
+    },
+    {
+      "word": "then",
+      "start": 1.14475,
+      "end": 1.368416
+    },
+    {
+      "word": "the",
+      "start": 1.368416,
+      "end": 1.486833
+    },
+    {
+      "word": "Seal",
+      "start": 1.486833,
+      "end": 2.907875
+    },
+    {
+      "word": "Take",
+      "start": 2.907875,
+      "end": 3.210541
+    },
+    {
+      "word": "your",
+      "start": 3.210541,
+      "end": 3.35525
+    },
+    {
+      "word": "time",
+      "start": 3.35525,
+      "end": 4.789458
+    },
+    {
+      "word": "Nothing",
+      "start": 4.789458,
+      "end": 5.302625
+    },
+    {
+      "word": "here",
+      "start": 5.302625,
+      "end": 5.578958
+    },
+    {
+      "word": "is",
+      "start": 5.578958,
+      "end": 5.723666
+    },
+    {
+      "word": "a",
+      "start": 5.723666,
+      "end": 5.802625
+    },
+    {
+      "word": "trick",
+      "start": 5.802625,
+      "end": 6.052625
+    }
+  ]
+}

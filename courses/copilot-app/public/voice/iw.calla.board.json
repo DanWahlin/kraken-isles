@@ -1,0 +1,67 @@
+{
+  "id": "iw.calla.board",
+  "speaker": "Calla",
+  "text": "Work round the Loggia, Captain. The guild’s notice first, by the door.",
+  "words": [
+    {
+      "word": "Work",
+      "start": 0.052625,
+      "end": 0.421041
+    },
+    {
+      "word": "round",
+      "start": 0.421041,
+      "end": 0.763166
+    },
+    {
+      "word": "the",
+      "start": 0.763166,
+      "end": 0.85525
+    },
+    {
+      "word": "Loggia",
+      "start": 0.85525,
+      "end": 1.526333
+    },
+    {
+      "word": "Captain",
+      "start": 1.526333,
+      "end": 3.14475
+    },
+    {
+      "word": "The",
+      "start": 3.14475,
+      "end": 3.25
+    },
+    {
+      "word": "guild’s",
+      "start": 3.25,
+      "end": 3.657875
+    },
+    {
+      "word": "notice",
+      "start": 3.657875,
+      "end": 4.065791
+    },
+    {
+      "word": "first",
+      "start": 4.065791,
+      "end": 4.657875
+    },
+    {
+      "word": "by",
+      "start": 4.657875,
+      "end": 4.907875
+    },
+    {
+      "word": "the",
+      "start": 4.907875,
+      "end": 5
+    },
+    {
+      "word": "door",
+      "start": 5,
+      "end": 5.25
+    }
+  ]
+}

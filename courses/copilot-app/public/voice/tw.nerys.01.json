@@ -1,0 +1,112 @@
+{
+  "id": "tw.nerys.01",
+  "speaker": "Nerys",
+  "text": "Nerys, Captain. The clock isn’t the only thing that can start a run. Twelve bells, one for each kind of news.",
+  "words": [
+    {
+      "word": "Nerys",
+      "start": 0.05,
+      "end": 0.6875
+    },
+    {
+      "word": "Captain",
+      "start": 0.6875,
+      "end": 2.1875
+    },
+    {
+      "word": "The",
+      "start": 2.1875,
+      "end": 2.325
+    },
+    {
+      "word": "clock",
+      "start": 2.325,
+      "end": 2.6875
+    },
+    {
+      "word": "isn’t",
+      "start": 2.6875,
+      "end": 2.95
+    },
+    {
+      "word": "the",
+      "start": 2.95,
+      "end": 3.0875
+    },
+    {
+      "word": "only",
+      "start": 3.0875,
+      "end": 3.4
+    },
+    {
+      "word": "thing",
+      "start": 3.4,
+      "end": 3.6875
+    },
+    {
+      "word": "that",
+      "start": 3.6875,
+      "end": 3.85
+    },
+    {
+      "word": "can",
+      "start": 3.85,
+      "end": 4.025
+    },
+    {
+      "word": "start",
+      "start": 4.025,
+      "end": 4.3625
+    },
+    {
+      "word": "a",
+      "start": 4.3625,
+      "end": 4.4125
+    },
+    {
+      "word": "run",
+      "start": 4.4125,
+      "end": 5.775
+    },
+    {
+      "word": "Twelve",
+      "start": 5.775,
+      "end": 6.1
+    },
+    {
+      "word": "bells",
+      "start": 6.1,
+      "end": 6.6375
+    },
+    {
+      "word": "one",
+      "start": 6.6375,
+      "end": 6.9375
+    },
+    {
+      "word": "for",
+      "start": 6.9375,
+      "end": 7.1125
+    },
+    {
+      "word": "each",
+      "start": 7.1125,
+      "end": 7.4
+    },
+    {
+      "word": "kind",
+      "start": 7.4,
+      "end": 7.725
+    },
+    {
+      "word": "of",
+      "start": 7.725,
+      "end": 7.825
+    },
+    {
+      "word": "news",
+      "start": 7.825,
+      "end": 8.075
+    }
+  ]
+}

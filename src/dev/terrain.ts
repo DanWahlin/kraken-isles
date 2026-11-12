@@ -9,6 +9,7 @@ import { GUILDCREST_FLORA } from '../world/islands/guildcrest/flora';
 import { GUILDCREST_PLANT_LOOK } from '../world/islands/guildcrest/vegetation';
 import { createGuildcrestWorldAsync } from '../world/islands/guildcrest';
 import { auditCoplanar, type CoplanarAuditOptions } from './coplanar-audit';
+import { FRAME_ISLAND_VIEWS } from './frame-islands';
 import { GUILDCREST, toWorld as gcWorld } from '../world/islands/guildcrest/layout';
 import { KEELHAVEN_FLORA } from '../world/islands/keelhaven/flora';
 import { keelhavenTerrainWater } from '../world/islands/keelhaven/height';
@@ -359,6 +360,32 @@ PACKS.guildcrest = {
   },
 };
 
+// The cove islands (./frame-islands.ts): each one's views are in its own frame.
+for (const [id, f] of Object.entries(FRAME_ISLAND_VIEWS)) {
+  const at = (u: number, v: number, y: number) => {
+    const p = f.toWorld(u, v);
+    return [p.x, y, p.z];
+  };
+  PACKS[id] = {
+    sky: f.layout.sky,
+    mood: f.layout.mood,
+    views: Object.fromEntries(
+      Object.entries(f.views).map(([name, [eye, target]]) => [name, [at(...eye), at(...target)] as CamPose]),
+    ),
+    groundViews: (groundAt) =>
+      Object.fromEntries(
+        Object.entries(f.groundViews).map(([name, [eye, target]]) => {
+          const p = f.toWorld(eye[0], eye[1]);
+          return [name, [[p.x, groundAt(p.x, p.z) + eye[2], p.z], at(...target)] as CamPose];
+        }),
+      ),
+  };
+}
+
+/** The islands that lend the ocean a floor tile of their own, and those with surf on an open coast. */
+const OWN_FLOOR = new Set(['thousand-bough', 'keelhaven', 'guildcrest', ...Object.keys(FRAME_ISLAND_VIEWS)]);
+const OPEN_COAST = new Set(['keelhaven', 'guildcrest', ...Object.keys(FRAME_ISLAND_VIEWS)]);
+
 const h = await createDevHarness();
 const { q, backend, tier, canvas, renderer, engine } = h;
 const { scene, camera, clock } = engine;
@@ -376,6 +403,7 @@ if (preset.mood) {
 const ocean = createOcean({ tier, env: sky.env, terrainDepth: true });
 scene.add(ocean.mesh);
 
+const frameIsland = FRAME_ISLAND_VIEWS[packName];
 const data = await loadTerrainPack(`/packs/${packName}/terrain`);
 const terrain = createTerrain({
   tier,
@@ -398,19 +426,26 @@ const terrain = createTerrain({
           seabed: GUILDCREST.terrain.seabed,
           freshWater: q.has('noart') ? null : guildcrestTerrainWater(),
         }
-      : {}),
+      : frameIsland
+        ? {
+            ...frameIsland.layout.terrain,
+            ...(frameIsland.freshWater
+              ? { freshWater: q.has('noart') ? null : frameIsland.freshWater() }
+              : {}),
+          }
+        : {}),
 });
 scene.add(terrain.group);
 // The streamed islands lend the ocean their floor (Anchorage's and Meridian's are in its home tile).
-if (packName === 'thousand-bough' || packName === 'keelhaven' || packName === 'guildcrest') {
+if (OWN_FLOOR.has(packName)) {
   const build = waterDepthTileFromTerrain(data, packName);
   let r = build.next();
   while (!r.done) r = build.next();
   addWaterDepthTile(r.value);
 }
 const coastFoam = createCoastFoam(data, terrain.heightField, {
-  exposure: packName === 'keelhaven' || packName === 'guildcrest' ? 1 : 0,
-  maxDistance: packName === 'keelhaven' || packName === 'guildcrest' ? 1100 : 620,
+  exposure: OPEN_COAST.has(packName) ? 1 : 0,
+  maxDistance: OPEN_COAST.has(packName) ? 1100 : 620,
 });
 scene.add(coastFoam);
 
@@ -494,6 +529,53 @@ if (packName === 'guildcrest' && !q.has('noart')) {
       GUILDCREST_FLORA,
       terrain,
       q.has('nolook') ? undefined : GUILDCREST_PLANT_LOOK,
+    );
+    patch.group.visible = true;
+  }
+}
+
+// A cove island's world art, as Guildcrest's: its plants a patch, its birds, and whatever the URL sets
+// on it (./frame-islands.ts). Its world is at `window.__island`.
+if (frameIsland && !q.has('noart')) {
+  const breathe = () => Promise.resolve();
+  const kit = await loadVillageKit();
+  const art = await frameIsland.create({ tier, heightField: terrain.heightField, kit }, breathe);
+  scene.add(art.group);
+  khFrame = (c) => art.frame(c);
+  gcUpdate = (dt, t) => art.update(dt, t);
+  frameIsland.apply?.(art, q);
+  (window as unknown as { __island: unknown }).__island = art;
+  if (tier.birds > 0)
+    for (const f of art.birds) {
+      if (f.kind?.count === 0) continue;
+      const b = createBirds({
+        tier,
+        perches: f.perches,
+        center: f.center,
+        radius: f.radius,
+        seed: f.seed,
+        ...f.kind,
+      });
+      scene.add(b.group);
+      khBirds.push(b);
+    }
+  if (!q.has('noveg')) {
+    vegetation = await createVegetation({
+      heightField: terrain.heightField,
+      heightGrid: terrain.heightGrid,
+      tier,
+      renderer,
+      island: noHomePlants(),
+    });
+    scene.add(vegetation.group);
+    const patch = await addIslandPlants(
+      { skipShadows: false },
+      vegetation,
+      await art.plants(breathe),
+      `${packName}-plants`,
+      frameIsland.flora,
+      terrain,
+      q.has('nolook') ? undefined : frameIsland.plantLook,
     );
     patch.group.visible = true;
   }

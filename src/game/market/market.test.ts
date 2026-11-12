@@ -546,9 +546,12 @@ describe('the market at every stall (MODEL-MARKET.md §2, §5)', () => {
     expect(MARKET_STALLS.map((s) => s.island).sort()).toEqual([
       'anchorage',
       'guildcrest',
+      'inkwell',
       'keelhaven',
       'meridian',
+      'sunspire',
       'thousand-bough',
+      'tidewheel',
     ]);
     expect(MARKET_STALLS.filter((s) => s.lines === 'gilda').map((s) => s.puzzle)).toEqual(['market']);
     expect(MARKET_STALLS.filter((s) => questStall(s.island)).map((s) => s.puzzle)).toEqual(['market']);

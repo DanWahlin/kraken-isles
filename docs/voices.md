@@ -81,6 +81,32 @@ another language) in its own `voice/cast.json`.
 | Rory | Azure AI Speech | `en-IE-ConnorNeural`, −2 % | **Stopgap**, as Ewan (the same Azure voice as Pim on Anchorage, at another rate; `en-GB-Harry:MAI-Voice-2.1` gives no word timings). Planned: [Steven – Warm Scottish English](https://elevenlabs.io/voices/wnbtVuRBgnPmE1cCeLUN) (`wnbtVuRBgnPmE1cCeLUN`), 730-day notice. The journeyman (`gc.rory.*`, 3 lines). |
 | Seren | Azure AI Speech | `en-GB-Sonia:DragonHDLatestNeural`, −6 % | **Stopgap**, as Ewan. Fallback `en-GB-SoniaNeural`. Planned: [Hannah – Welsh and friendly](https://elevenlabs.io/voices/73fZMjboCm1aBVyxTbBp) (`73fZMjboCm1aBVyxTbBp`), 730-day notice. Keeper of the bell and the Seal (`gc.seren.*`, 12 lines). |
 | Moira | Azure AI Speech | `en-GB-Ada:DragonHDLatestNeural` | **Stopgap**, as Ewan. Fallback `en-GB-AdaMultilingualNeural`. Planned: [Laura – Natural Scottish Conversational](https://elevenlabs.io/voices/XaIM9neHiD6g6r88bMbY) (`XaIM9neHiD6g6r88bMbY`), 730-day notice. The Model Market’s stall on Guildcrest (`gc.moira.market.*`, 14 lines). |
+| Zahra | Azure AI Speech | `en-GB-BellaNeural`, +2 % | **Provisional** (2026-11-11): Sunspire Sands. Dan has not auditioned it yet. |
+| Idris | Azure AI Speech | `en-NG-AbeoNeural`, −2 % | **Provisional** (2026-11-11): Sunspire Sands. Dan has not auditioned it yet. |
+| Noor | Azure AI Speech | `en-GB-LibbyNeural`, −4 %, −1 st | **Provisional** (2026-11-11): Sunspire Sands. Dan has not auditioned it yet. |
+| Samir | Azure AI Speech | `en-ZA-LukeNeural`, −3 % | **Provisional** (2026-11-11): Sunspire Sands. Dan has not auditioned it yet. |
+| Paloma | Azure AI Speech | `en-ZA-LeahNeural`, −5 % | **Provisional** (2026-11-11): Sunspire Sands. Dan has not auditioned it yet. |
+| Yusuf | Azure AI Speech | `en-KE-ChilembaNeural` | **Provisional** (2026-11-11): Sunspire Sands (the Model Market's keeper). Dan has not auditioned it yet. |
+| Thea | Azure AI Speech | `en-AU-FreyaNeural`, −3 % | **Provisional** (2026-11-11): Inkwell Bluffs. Dan has not auditioned it yet. |
+| Nikos | Azure AI Speech | `en-AU-WilliamNeural`, −2 % | **Provisional** (2026-11-11): Inkwell Bluffs. Dan has not auditioned it yet. |
+| Calla | Azure AI Speech | `en-NZ-MollyNeural` | **Provisional** (2026-11-11): Inkwell Bluffs. Dan has not auditioned it yet. |
+| Petra | Azure AI Speech | `en-AU-NatashaNeural`, +2 % | **Provisional** (2026-11-11): Inkwell Bluffs. Dan has not auditioned it yet. |
+| Doran | Azure AI Speech | `en-AU-DarrenNeural`, −4 %, −1 st | **Provisional** (2026-11-11): Inkwell Bluffs. Dan has not auditioned it yet. |
+| Iris | Azure AI Speech | `en-GB-MaisieNeural`, −5 % | **Provisional** (2026-11-11): Inkwell Bluffs. Dan has not auditioned it yet. |
+| Kosta | Azure AI Speech | `en-NZ-MitchellNeural` | **Provisional** (2026-11-11): Inkwell Bluffs (the Model Market's keeper). Dan has not auditioned it yet. |
+
+| Agnes | Azure AI Speech | `en-AU-AnnetteNeural`, −3 % | **Provisional** (2026-11-11): Tidewheel Caldera (Keeper Agnes Voss). Dan has not auditioned it yet. |
+| Tobin | Azure AI Speech | `en-AU-DuncanNeural` | **Provisional** (2026-11-11): Tidewheel Caldera. Dan has not auditioned it yet. |
+| Ansel | Azure AI Speech | `en-AU-KenNeural`, −3 %, −1 st | **Provisional** (2026-11-11): Tidewheel Caldera. Dan has not auditioned it yet. |
+| Greta | Azure AI Speech | `en-AU-ElsieNeural` | **Provisional** (2026-11-11): Tidewheel Caldera. Dan has not auditioned it yet. |
+| Nerys | Azure AI Speech | `en-CA-ClaraNeural` | **Provisional** (2026-11-11): Tidewheel Caldera. Dan has not auditioned it yet. |
+| Silas | Azure AI Speech | `en-AU-NeilNeural`, −6 %, −2 st | **Provisional** (2026-11-11): Tidewheel Caldera. Dan has not auditioned it yet. |
+| Dot | Azure AI Speech | `en-AU-CarlyNeural`, +2 % | **Provisional** (2026-11-11): Tidewheel Caldera (the Model Market's keeper). Dan has not auditioned it yet. |
+
+**Sunspire's, Inkwell's and Tidewheel's provisional voices.** The twenty speakers new to Sunspire Sands, Inkwell
+Bluffs and Tidewheel Caldera have Azure voices that nobody has auditioned (2026-11-11). To recast one, change its entry in `cast.json` and make
+its lines again (`--only=<Speaker>`), then `npm run voice:lipsync` for its mouth cues (made for all of them on
+2026-11-11; the tool needs Rhubarb, which `npm run toolchain` installs).
 
 **Guildcrest's stopgap voices.** All eight of Guildcrest's ElevenLabs voices were checked with a test line on
 2026-11-01, but the account's ElevenLabs credits ran out after Elspeth, Aidan and most of Brigid. Ewan, Fergus,

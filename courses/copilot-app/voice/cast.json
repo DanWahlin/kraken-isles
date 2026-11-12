@@ -205,6 +205,112 @@
     "Moira": {
       "voice": "en-GB-Ada:DragonHDLatestNeural",
       "fallbackVoice": "en-GB-AdaMultilingualNeural"
+    },
+    "Zahra": {
+      "voice": "en-GB-BellaNeural",
+      "prosody": {
+        "rate": "+2%"
+      }
+    },
+    "Idris": {
+      "voice": "en-NG-AbeoNeural",
+      "prosody": {
+        "rate": "-2%"
+      }
+    },
+    "Noor": {
+      "voice": "en-GB-LibbyNeural",
+      "prosody": {
+        "rate": "-4%",
+        "pitch": "-1st"
+      }
+    },
+    "Samir": {
+      "voice": "en-ZA-LukeNeural",
+      "prosody": {
+        "rate": "-3%"
+      }
+    },
+    "Paloma": {
+      "voice": "en-ZA-LeahNeural",
+      "prosody": {
+        "rate": "-5%"
+      }
+    },
+    "Yusuf": {
+      "voice": "en-KE-ChilembaNeural"
+    },
+    "Thea": {
+      "voice": "en-AU-FreyaNeural",
+      "prosody": {
+        "rate": "-3%"
+      }
+    },
+    "Nikos": {
+      "voice": "en-AU-WilliamNeural",
+      "prosody": {
+        "rate": "-2%"
+      }
+    },
+    "Calla": {
+      "voice": "en-NZ-MollyNeural"
+    },
+    "Petra": {
+      "voice": "en-AU-NatashaNeural",
+      "prosody": {
+        "rate": "+2%"
+      }
+    },
+    "Doran": {
+      "voice": "en-AU-DarrenNeural",
+      "prosody": {
+        "rate": "-4%",
+        "pitch": "-1st"
+      }
+    },
+    "Iris": {
+      "voice": "en-GB-MaisieNeural",
+      "prosody": {
+        "rate": "-5%"
+      }
+    },
+    "Kosta": {
+      "voice": "en-NZ-MitchellNeural"
+    },
+    "Tobin": {
+      "voice": "en-AU-DuncanNeural"
+    },
+    "Ansel": {
+      "voice": "en-AU-KenNeural",
+      "prosody": {
+        "rate": "-3%",
+        "pitch": "-1st"
+      }
+    },
+    "Greta": {
+      "voice": "en-AU-ElsieNeural"
+    },
+    "Nerys": {
+      "voice": "en-CA-ClaraNeural"
+    },
+    "Silas": {
+      "voice": "en-AU-NeilNeural",
+      "prosody": {
+        "rate": "-6%",
+        "pitch": "-2st"
+      }
+    },
+    "Agnes": {
+      "voice": "en-AU-AnnetteNeural",
+      "prosody": {
+        "rate": "-3%"
+      }
+    },
+    "Dot": {
+      "voice": "en-AU-CarlyNeural",
+      "prosody": {
+        "rate": "+2%"
+      }
     }
   }
 }

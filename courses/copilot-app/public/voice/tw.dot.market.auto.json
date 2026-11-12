@@ -1,0 +1,117 @@
+{
+  "id": "tw.dot.market.auto",
+  "speaker": "Dot",
+  "text": "Copilot Fusion's on offer too. It isn't one model: it picks models and a workflow for each job. And it isn't Autopilot.",
+  "words": [
+    {
+      "word": "Copilot",
+      "start": 0.049,
+      "end": 0.686291
+    },
+    {
+      "word": "Fusion's",
+      "start": 0.686291,
+      "end": 1.25
+    },
+    {
+      "word": "on",
+      "start": 1.25,
+      "end": 1.397041
+    },
+    {
+      "word": "offer",
+      "start": 1.397041,
+      "end": 1.654416
+    },
+    {
+      "word": "too",
+      "start": 1.654416,
+      "end": 2.977958
+    },
+    {
+      "word": "It",
+      "start": 2.977958,
+      "end": 3.13725
+    },
+    {
+      "word": "isn't",
+      "start": 3.13725,
+      "end": 3.443625
+    },
+    {
+      "word": "one",
+      "start": 3.443625,
+      "end": 3.71325
+    },
+    {
+      "word": "model",
+      "start": 3.71325,
+      "end": 4.448541
+    },
+    {
+      "word": "it",
+      "start": 4.448541,
+      "end": 4.583333
+    },
+    {
+      "word": "picks",
+      "start": 4.583333,
+      "end": 4.938708
+    },
+    {
+      "word": "models",
+      "start": 4.938708,
+      "end": 5.355375
+    },
+    {
+      "word": "and",
+      "start": 5.355375,
+      "end": 5.477958
+    },
+    {
+      "word": "a",
+      "start": 5.477958,
+      "end": 5.539208
+    },
+    {
+      "word": "workflow",
+      "start": 5.539208,
+      "end": 6.151958
+    },
+    {
+      "word": "for",
+      "start": 6.151958,
+      "end": 6.384791
+    },
+    {
+      "word": "each",
+      "start": 6.384791,
+      "end": 6.666666
+    },
+    {
+      "word": "job",
+      "start": 6.666666,
+      "end": 7.977958
+    },
+    {
+      "word": "And",
+      "start": 7.977958,
+      "end": 8.1495
+    },
+    {
+      "word": "it",
+      "start": 8.1495,
+      "end": 8.333333
+    },
+    {
+      "word": "isn't",
+      "start": 8.333333,
+      "end": 8.701
+    },
+    {
+      "word": "Autopilot",
+      "start": 8.701,
+      "end": 8.951
+    }
+  ]
+}

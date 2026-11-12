@@ -1,0 +1,87 @@
+{
+  "id": "tw.silas.more",
+  "speaker": "Silas",
+  "text": "That’s every Seal in the isles, Master Captain. I’ve one more task, if you’d like it.",
+  "words": [
+    {
+      "word": "That’s",
+      "start": 0.053208,
+      "end": 0.492041
+    },
+    {
+      "word": "every",
+      "start": 0.492041,
+      "end": 0.824458
+    },
+    {
+      "word": "Seal",
+      "start": 0.824458,
+      "end": 1.236708
+    },
+    {
+      "word": "in",
+      "start": 1.236708,
+      "end": 1.356375
+    },
+    {
+      "word": "the",
+      "start": 1.356375,
+      "end": 1.515958
+    },
+    {
+      "word": "isles",
+      "start": 1.515958,
+      "end": 2.180833
+    },
+    {
+      "word": "Master",
+      "start": 2.180833,
+      "end": 2.659583
+    },
+    {
+      "word": "Captain",
+      "start": 2.659583,
+      "end": 4.228708
+    },
+    {
+      "word": "I’ve",
+      "start": 4.228708,
+      "end": 4.547875
+    },
+    {
+      "word": "one",
+      "start": 4.547875,
+      "end": 4.773916
+    },
+    {
+      "word": "more",
+      "start": 4.773916,
+      "end": 4.960125
+    },
+    {
+      "word": "task",
+      "start": 4.960125,
+      "end": 5.718083
+    },
+    {
+      "word": "if",
+      "start": 5.718083,
+      "end": 5.944166
+    },
+    {
+      "word": "you’d",
+      "start": 5.944166,
+      "end": 6.170208
+    },
+    {
+      "word": "like",
+      "start": 6.170208,
+      "end": 6.436166
+    },
+    {
+      "word": "it",
+      "start": 6.436166,
+      "end": 6.686166
+    }
+  ]
+}

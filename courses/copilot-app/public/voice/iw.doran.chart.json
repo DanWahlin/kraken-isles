@@ -1,0 +1,67 @@
+{
+  "id": "iw.doran.chart",
+  "speaker": "Doran",
+  "text": "Walk the Great Chart’s stations in order, Captain. The quill desk first.",
+  "words": [
+    {
+      "word": "Walk",
+      "start": 0.052083,
+      "end": 0.364583
+    },
+    {
+      "word": "the",
+      "start": 0.364583,
+      "end": 0.45575
+    },
+    {
+      "word": "Great",
+      "start": 0.45575,
+      "end": 0.76825
+    },
+    {
+      "word": "Chart’s",
+      "start": 0.76825,
+      "end": 1.09375
+    },
+    {
+      "word": "stations",
+      "start": 1.09375,
+      "end": 1.653666
+    },
+    {
+      "word": "in",
+      "start": 1.653666,
+      "end": 1.770833
+    },
+    {
+      "word": "order",
+      "start": 1.770833,
+      "end": 2.304708
+    },
+    {
+      "word": "Captain",
+      "start": 2.304708,
+      "end": 3.815125
+    },
+    {
+      "word": "The",
+      "start": 3.815125,
+      "end": 3.984375
+    },
+    {
+      "word": "quill",
+      "start": 3.984375,
+      "end": 4.270833
+    },
+    {
+      "word": "desk",
+      "start": 4.270833,
+      "end": 4.596375
+    },
+    {
+      "word": "first",
+      "start": 4.596375,
+      "end": 4.846375
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "iw.kosta.market.over.effort",
+  "speaker": "Kosta",
+  "text": "High effort for a quick look? The default effort would've done fine.",
+  "words": [
+    {
+      "word": "High",
+      "start": 0.118416,
+      "end": 0.381583
+    },
+    {
+      "word": "effort",
+      "start": 0.381583,
+      "end": 0.671041
+    },
+    {
+      "word": "for",
+      "start": 0.671041,
+      "end": 0.868416
+    },
+    {
+      "word": "a",
+      "start": 0.868416,
+      "end": 0.921041
+    },
+    {
+      "word": "quick",
+      "start": 0.921041,
+      "end": 1.223666
+    },
+    {
+      "word": "look",
+      "start": 1.223666,
+      "end": 2.552625
+    },
+    {
+      "word": "The",
+      "start": 2.552625,
+      "end": 2.657875
+    },
+    {
+      "word": "default",
+      "start": 2.657875,
+      "end": 3.14475
+    },
+    {
+      "word": "effort",
+      "start": 3.14475,
+      "end": 3.473666
+    },
+    {
+      "word": "would've",
+      "start": 3.473666,
+      "end": 3.776333
+    },
+    {
+      "word": "done",
+      "start": 3.776333,
+      "end": 4.026333
+    },
+    {
+      "word": "fine",
+      "start": 4.026333,
+      "end": 4.276333
+    }
+  ]
+}

@@ -664,6 +664,285 @@
         "voice": "gc.moira.market.bye",
         "text": "Off up the brae? Your starfish and your jobs go with you."
       }
+    },
+    "sunspire": {
+      "hello": {
+        "voice": "ss.yusuf.market.hello",
+        "text": "Welcome, Captain! Yusuf's Model Market. Hire a model that fits the job; bigger ones cost more starfish.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "models-and-reasoning-effort",
+          "hash": "0f81a0a94c0c"
+        }
+      },
+      "open": {
+        "voice": "ss.yusuf.market.open",
+        "text": "Pick a job off the board, then hire a model and set the effort dial."
+      },
+      "auto": {
+        "voice": "ss.yusuf.market.auto",
+        "text": "Copilot Fusion's on offer too. It isn't one model: it picks models and a workflow for each job. And it isn't Autopilot.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "copilot-fusion",
+          "hash": "8338257de5eb"
+        }
+      },
+      "right": {
+        "voice": "ss.yusuf.market.right",
+        "text": "Right-sized! Here's some starfish back."
+      },
+      "fair": {
+        "voice": "ss.yusuf.market.fair",
+        "text": "Right-sized, and a fair price, Captain."
+      },
+      "keep": {
+        "voice": "ss.yusuf.market.keep",
+        "text": "Right-sized. A quick look's fine on the model you've got, at its default effort. Bigger ones just cost more.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "models-and-reasoning-effort",
+          "hash": "0f81a0a94c0c"
+        }
+      },
+      "overEffort": {
+        "voice": "ss.yusuf.market.over.effort",
+        "text": "High effort for a quick look? The default effort would've done fine.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "models-and-reasoning-effort",
+          "hash": "0f81a0a94c0c"
+        }
+      },
+      "overAuto": {
+        "voice": "ss.yusuf.market.over.auto",
+        "text": "A higher Fusion level for a quick look? Standard would've done fine.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "models-and-reasoning-effort",
+          "hash": "0f81a0a94c0c"
+        }
+      },
+      "short": {
+        "voice": "ss.yusuf.market.short",
+        "text": "That wasn't enough for this one. Try again with a stronger model or more effort.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "try-again-with-a-different-model",
+          "hash": "b0031ded9c4d"
+        }
+      },
+      "hardAuto": {
+        "voice": "ss.yusuf.market.hard.auto",
+        "text": "Right-sized! A hard job wants a higher Fusion level: more capable models and deeper reasoning.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "copilot-fusion",
+          "hash": "8338257de5eb"
+        }
+      },
+      "broke": {
+        "voice": "ss.yusuf.market.broke",
+        "text": "Out of starfish? There are plenty hidden round the isles. Come back when you've found a few."
+      },
+      "done": {
+        "voice": "ss.yusuf.market.done",
+        "text": "The whole board, right-sized! You know your models, Captain."
+      },
+      "early": {
+        "voice": "ss.yusuf.market.early",
+        "text": "Not yet, Captain. Oren on Port Meridian teaches models first. Come back after his lesson."
+      },
+      "bye": {
+        "voice": "ss.yusuf.market.bye",
+        "text": "Off to the bazaar? Your starfish and your jobs go with you. Come back any time."
+      }
+    },
+    "inkwell": {
+      "hello": {
+        "voice": "iw.kosta.market.hello",
+        "text": "Welcome, Captain! Kosta's Model Market. Hire a model that fits the job; bigger ones cost more starfish.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "models-and-reasoning-effort",
+          "hash": "0f81a0a94c0c"
+        }
+      },
+      "open": {
+        "voice": "iw.kosta.market.open",
+        "text": "Pick a job off the board, then hire a model and set the effort dial."
+      },
+      "auto": {
+        "voice": "iw.kosta.market.auto",
+        "text": "Copilot Fusion's on offer too. It isn't one model: it picks models and a workflow for each job. And it isn't Autopilot.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "copilot-fusion",
+          "hash": "8338257de5eb"
+        }
+      },
+      "right": {
+        "voice": "iw.kosta.market.right",
+        "text": "Right-sized! Here's some starfish back."
+      },
+      "fair": {
+        "voice": "iw.kosta.market.fair",
+        "text": "Right-sized, and a fair price, Captain."
+      },
+      "keep": {
+        "voice": "iw.kosta.market.keep",
+        "text": "Right-sized. A quick look's fine on the model you've got, at its default effort. Bigger ones just cost more.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "models-and-reasoning-effort",
+          "hash": "0f81a0a94c0c"
+        }
+      },
+      "overEffort": {
+        "voice": "iw.kosta.market.over.effort",
+        "text": "High effort for a quick look? The default effort would've done fine.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "models-and-reasoning-effort",
+          "hash": "0f81a0a94c0c"
+        }
+      },
+      "overAuto": {
+        "voice": "iw.kosta.market.over.auto",
+        "text": "A higher Fusion level for a quick look? Standard would've done fine.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "models-and-reasoning-effort",
+          "hash": "0f81a0a94c0c"
+        }
+      },
+      "short": {
+        "voice": "iw.kosta.market.short",
+        "text": "That wasn't enough for this one. Try again with a stronger model or more effort.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "try-again-with-a-different-model",
+          "hash": "b0031ded9c4d"
+        }
+      },
+      "hardAuto": {
+        "voice": "iw.kosta.market.hard.auto",
+        "text": "Right-sized! A hard job wants a higher Fusion level: more capable models and deeper reasoning.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "copilot-fusion",
+          "hash": "8338257de5eb"
+        }
+      },
+      "broke": {
+        "voice": "iw.kosta.market.broke",
+        "text": "Out of starfish? There are plenty hidden round the isles. Come back when you've found a few."
+      },
+      "done": {
+        "voice": "iw.kosta.market.done",
+        "text": "The whole board, right-sized! You know your models, Captain."
+      },
+      "early": {
+        "voice": "iw.kosta.market.early",
+        "text": "Not yet, Captain. Oren on Port Meridian teaches models first. Come back after his lesson."
+      },
+      "bye": {
+        "voice": "iw.kosta.market.bye",
+        "text": "Off up the stair? Your starfish and your jobs go with you. Come back any time."
+      }
+    },
+    "tidewheel": {
+      "hello": {
+        "voice": "tw.dot.market.hello",
+        "text": "Welcome, Captain! Dot's Model Market. Hire a model that fits the job; bigger ones cost more starfish.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "models-and-reasoning-effort",
+          "hash": "0f81a0a94c0c"
+        }
+      },
+      "open": {
+        "voice": "tw.dot.market.open",
+        "text": "Pick a job off the board, then hire a model and set the effort dial."
+      },
+      "auto": {
+        "voice": "tw.dot.market.auto",
+        "text": "Copilot Fusion's on offer too. It isn't one model: it picks models and a workflow for each job. And it isn't Autopilot.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "copilot-fusion",
+          "hash": "8338257de5eb"
+        }
+      },
+      "right": {
+        "voice": "tw.dot.market.right",
+        "text": "Right-sized! Here's some starfish back."
+      },
+      "fair": {
+        "voice": "tw.dot.market.fair",
+        "text": "Right-sized, and a fair price, Captain."
+      },
+      "keep": {
+        "voice": "tw.dot.market.keep",
+        "text": "Right-sized. A quick look's fine on the model you've got, at its default effort. Bigger ones just cost more.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "models-and-reasoning-effort",
+          "hash": "0f81a0a94c0c"
+        }
+      },
+      "overEffort": {
+        "voice": "tw.dot.market.over.effort",
+        "text": "High effort for a quick look? The default effort would've done fine.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "models-and-reasoning-effort",
+          "hash": "0f81a0a94c0c"
+        }
+      },
+      "overAuto": {
+        "voice": "tw.dot.market.over.auto",
+        "text": "A higher Fusion level for a quick look? Standard would've done fine.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "models-and-reasoning-effort",
+          "hash": "0f81a0a94c0c"
+        }
+      },
+      "short": {
+        "voice": "tw.dot.market.short",
+        "text": "That wasn't enough for this one. Try again with a stronger model or more effort.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "try-again-with-a-different-model",
+          "hash": "b0031ded9c4d"
+        }
+      },
+      "hardAuto": {
+        "voice": "tw.dot.market.hard.auto",
+        "text": "Right-sized! A hard job wants a higher Fusion level: more capable models and deeper reasoning.",
+        "source": {
+          "chapter": "01-tour-the-app",
+          "anchor": "copilot-fusion",
+          "hash": "8338257de5eb"
+        }
+      },
+      "broke": {
+        "voice": "tw.dot.market.broke",
+        "text": "Out of starfish? There are plenty hidden round the isles. Come back when you've found a few."
+      },
+      "done": {
+        "voice": "tw.dot.market.done",
+        "text": "The whole board, right-sized! You know your models, Captain."
+      },
+      "early": {
+        "voice": "tw.dot.market.early",
+        "text": "Not yet, Captain. Oren on Port Meridian teaches models first. Come back after his lesson."
+      },
+      "bye": {
+        "voice": "tw.dot.market.bye",
+        "text": "Off up the Lamp Stair? Your starfish and your jobs go with you. Come back any time."
+      }
     }
   }
 }

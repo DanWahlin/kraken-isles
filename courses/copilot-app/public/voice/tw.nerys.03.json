@@ -1,0 +1,112 @@
+{
+  "id": "tw.nerys.03",
+  "speaker": "Nerys",
+  "text": "But a bell answers to whoever rings it. Start read-only, keep it to one repository, filter narrowly, and read its runs.",
+  "words": [
+    {
+      "word": "But",
+      "start": 0.05,
+      "end": 0.225
+    },
+    {
+      "word": "a",
+      "start": 0.225,
+      "end": 0.275
+    },
+    {
+      "word": "bell",
+      "start": 0.275,
+      "end": 0.6
+    },
+    {
+      "word": "answers",
+      "start": 0.6,
+      "end": 1.05
+    },
+    {
+      "word": "to",
+      "start": 1.05,
+      "end": 1.1625
+    },
+    {
+      "word": "whoever",
+      "start": 1.1625,
+      "end": 1.5625
+    },
+    {
+      "word": "rings",
+      "start": 1.5625,
+      "end": 1.9125
+    },
+    {
+      "word": "it",
+      "start": 1.9125,
+      "end": 3.025
+    },
+    {
+      "word": "Start",
+      "start": 3.025,
+      "end": 3.4125
+    },
+    {
+      "word": "read-only",
+      "start": 3.4125,
+      "end": 4.1625
+    },
+    {
+      "word": "keep",
+      "start": 4.1625,
+      "end": 4.3875
+    },
+    {
+      "word": "it",
+      "start": 4.3875,
+      "end": 4.4875
+    },
+    {
+      "word": "to",
+      "start": 4.4875,
+      "end": 4.5875
+    },
+    {
+      "word": "one",
+      "start": 4.5875,
+      "end": 4.8375
+    },
+    {
+      "word": "repository",
+      "start": 4.8375,
+      "end": 5.75
+    },
+    {
+      "word": "filter",
+      "start": 5.75,
+      "end": 6.1375
+    },
+    {
+      "word": "narrowly",
+      "start": 6.1375,
+      "end": 6.8125
+    },
+    {
+      "word": "and",
+      "start": 6.8125,
+      "end": 6.9375
+    },
+    {
+      "word": "read",
+      "start": 6.9375,
+      "end": 7.1875
+    },
+    {
+      "word": "its",
+      "start": 7.1875,
+      "end": 7.325
+    },
+    {
+      "word": "runs",
+      "start": 7.325,
+      "end": 7.575
+    }
+  ]
+}

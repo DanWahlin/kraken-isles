@@ -1,0 +1,37 @@
+{
+  "id": "ss.yusuf.market.fair",
+  "speaker": "Yusuf",
+  "text": "Right-sized, and a fair price, Captain.",
+  "words": [
+    {
+      "word": "Right-sized",
+      "start": 0.05,
+      "end": 0.95
+    },
+    {
+      "word": "and",
+      "start": 0.95,
+      "end": 1.0875
+    },
+    {
+      "word": "a",
+      "start": 1.0875,
+      "end": 1.1875
+    },
+    {
+      "word": "fair",
+      "start": 1.1875,
+      "end": 1.5
+    },
+    {
+      "word": "price",
+      "start": 1.5,
+      "end": 1.975
+    },
+    {
+      "word": "Captain",
+      "start": 1.975,
+      "end": 2.225
+    }
+  ]
+}

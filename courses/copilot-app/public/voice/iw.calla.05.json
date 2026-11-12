@@ -1,0 +1,92 @@
+{
+  "id": "iw.calla.05",
+  "speaker": "Calla",
+  "text": "Petra will show you how to make your own. She’s on the Draughting Terrace, north of the Plaza.",
+  "words": [
+    {
+      "word": "Petra",
+      "start": 0.052625,
+      "end": 0.460541
+    },
+    {
+      "word": "will",
+      "start": 0.460541,
+      "end": 0.64475
+    },
+    {
+      "word": "show",
+      "start": 0.64475,
+      "end": 0.986833
+    },
+    {
+      "word": "you",
+      "start": 0.986833,
+      "end": 1.14475
+    },
+    {
+      "word": "how",
+      "start": 1.14475,
+      "end": 1.407875
+    },
+    {
+      "word": "to",
+      "start": 1.407875,
+      "end": 1.552625
+    },
+    {
+      "word": "make",
+      "start": 1.552625,
+      "end": 1.802625
+    },
+    {
+      "word": "your",
+      "start": 1.802625,
+      "end": 1.973666
+    },
+    {
+      "word": "own",
+      "start": 1.973666,
+      "end": 3.35525
+    },
+    {
+      "word": "She’s",
+      "start": 3.35525,
+      "end": 3.657875
+    },
+    {
+      "word": "on",
+      "start": 3.657875,
+      "end": 3.802625
+    },
+    {
+      "word": "the",
+      "start": 3.802625,
+      "end": 3.907875
+    },
+    {
+      "word": "Draughting Terrace",
+      "start": 3.907875,
+      "end": 5.10525
+    },
+    {
+      "word": "north",
+      "start": 5.10525,
+      "end": 5.552625
+    },
+    {
+      "word": "of",
+      "start": 5.552625,
+      "end": 5.657875
+    },
+    {
+      "word": "the",
+      "start": 5.657875,
+      "end": 5.763166
+    },
+    {
+      "word": "Plaza",
+      "start": 5.763166,
+      "end": 6.013166
+    }
+  ]
+}

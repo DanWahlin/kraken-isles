@@ -1,0 +1,67 @@
+{
+  "id": "tw.ansel.log",
+  "speaker": "Ansel",
+  "text": "Now read the log. Open the run and check what came back.",
+  "words": [
+    {
+      "word": "Now",
+      "start": 0.0515409,
+      "end": 0.373708
+    },
+    {
+      "word": "read",
+      "start": 0.373708,
+      "end": 0.644333
+    },
+    {
+      "word": "the",
+      "start": 0.644333,
+      "end": 0.70875
+    },
+    {
+      "word": "log",
+      "start": 0.70875,
+      "end": 2.07475
+    },
+    {
+      "word": "Open",
+      "start": 2.07475,
+      "end": 2.422666
+    },
+    {
+      "word": "the",
+      "start": 2.422666,
+      "end": 2.512875
+    },
+    {
+      "word": "run",
+      "start": 2.512875,
+      "end": 2.796375
+    },
+    {
+      "word": "and",
+      "start": 2.796375,
+      "end": 2.963916
+    },
+    {
+      "word": "check",
+      "start": 2.963916,
+      "end": 3.234541
+    },
+    {
+      "word": "what",
+      "start": 3.234541,
+      "end": 3.402041
+    },
+    {
+      "word": "came",
+      "start": 3.402041,
+      "end": 3.659791
+    },
+    {
+      "word": "back",
+      "start": 3.659791,
+      "end": 3.909791
+    }
+  ]
+}

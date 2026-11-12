@@ -1,0 +1,112 @@
+{
+  "id": "tw.tobin.02",
+  "speaker": "Tobin",
+  "text": "Open Pull requests, then Authored by me. You want at least three open ones. If it’s empty, run the setup script.",
+  "words": [
+    {
+      "word": "Open",
+      "start": 0.05,
+      "end": 0.425
+    },
+    {
+      "word": "Pull",
+      "start": 0.425,
+      "end": 0.625
+    },
+    {
+      "word": "requests",
+      "start": 0.625,
+      "end": 1.425
+    },
+    {
+      "word": "then",
+      "start": 1.425,
+      "end": 1.725
+    },
+    {
+      "word": "Authored",
+      "start": 1.725,
+      "end": 2.075
+    },
+    {
+      "word": "by",
+      "start": 2.075,
+      "end": 2.2625
+    },
+    {
+      "word": "me",
+      "start": 2.2625,
+      "end": 3.4875
+    },
+    {
+      "word": "You",
+      "start": 3.4875,
+      "end": 3.675
+    },
+    {
+      "word": "want",
+      "start": 3.675,
+      "end": 3.9125
+    },
+    {
+      "word": "at",
+      "start": 3.9125,
+      "end": 4
+    },
+    {
+      "word": "least",
+      "start": 4,
+      "end": 4.275
+    },
+    {
+      "word": "three",
+      "start": 4.275,
+      "end": 4.6125
+    },
+    {
+      "word": "open",
+      "start": 4.6125,
+      "end": 4.8875
+    },
+    {
+      "word": "ones",
+      "start": 4.8875,
+      "end": 6.275
+    },
+    {
+      "word": "If",
+      "start": 6.275,
+      "end": 6.4625
+    },
+    {
+      "word": "it’s",
+      "start": 6.4625,
+      "end": 6.6125
+    },
+    {
+      "word": "empty",
+      "start": 6.6125,
+      "end": 7.2125
+    },
+    {
+      "word": "run",
+      "start": 7.2125,
+      "end": 7.5
+    },
+    {
+      "word": "the",
+      "start": 7.5,
+      "end": 7.5875
+    },
+    {
+      "word": "setup",
+      "start": 7.5875,
+      "end": 8
+    },
+    {
+      "word": "script",
+      "start": 8,
+      "end": 8.25
+    }
+  ]
+}

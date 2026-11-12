@@ -1,0 +1,107 @@
+{
+  "id": "iw.calla.02",
+  "speaker": "Calla",
+  "text": "Awesome GitHub Copilot is a curated collection of agents, instructions, skills and canvas extensions. Ours is the Repository Issues Kanban.",
+  "words": [
+    {
+      "word": "Awesome",
+      "start": 0.052625,
+      "end": 0.447375
+    },
+    {
+      "word": "GitHub",
+      "start": 0.447375,
+      "end": 0.907875
+    },
+    {
+      "word": "Copilot",
+      "start": 0.907875,
+      "end": 1.64475
+    },
+    {
+      "word": "is",
+      "start": 1.64475,
+      "end": 1.802625
+    },
+    {
+      "word": "a",
+      "start": 1.802625,
+      "end": 1.907875
+    },
+    {
+      "word": "curated",
+      "start": 1.907875,
+      "end": 2.460541
+    },
+    {
+      "word": "collection",
+      "start": 2.460541,
+      "end": 2.960541
+    },
+    {
+      "word": "of",
+      "start": 2.960541,
+      "end": 3.078958
+    },
+    {
+      "word": "agents",
+      "start": 3.078958,
+      "end": 3.881583
+    },
+    {
+      "word": "instructions",
+      "start": 3.881583,
+      "end": 5.039458
+    },
+    {
+      "word": "skills",
+      "start": 5.039458,
+      "end": 5.657875
+    },
+    {
+      "word": "and",
+      "start": 5.657875,
+      "end": 5.85525
+    },
+    {
+      "word": "canvas",
+      "start": 5.85525,
+      "end": 6.263166
+    },
+    {
+      "word": "extensions",
+      "start": 6.263166,
+      "end": 8.157875
+    },
+    {
+      "word": "Ours",
+      "start": 8.157875,
+      "end": 8.592125
+    },
+    {
+      "word": "is",
+      "start": 8.592125,
+      "end": 8.776333
+    },
+    {
+      "word": "the",
+      "start": 8.776333,
+      "end": 8.881583
+    },
+    {
+      "word": "Repository",
+      "start": 8.881583,
+      "end": 9.657875
+    },
+    {
+      "word": "Issues",
+      "start": 9.657875,
+      "end": 10.118416
+    },
+    {
+      "word": "Kanban",
+      "start": 10.118416,
+      "end": 10.368416
+    }
+  ]
+}

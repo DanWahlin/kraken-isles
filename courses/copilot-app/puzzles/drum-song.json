@@ -1,0 +1,17 @@
+{
+  "$schema": "../../schemas/puzzle-ceremony.schema.json",
+  "id": "Q7.1.drum-song",
+  "mechanic": "ceremony",
+  "quest": "Q7.1",
+  "$comment": "Lyra’s drum song on the Bandstand (Q7.1, docs/specs/ISLAND-07-tidewheel-caldera.md §4): the band plays the pattern by hand, as it does every night, and it drags and thins; the player pins the pattern on the music-box drum once, and the box plays it the same every time. Her talk is the island’s lyra script (07 · From the Studio).",
+  "text": {
+    "playHand": "Play it by hand",
+    "pin": "Pin the pattern on the drum",
+    "playDrum": "Let the drum play it",
+    "tired": "The same pattern by hand, night after night. Tonight it drags, and the last bar is thin.",
+    "steady": "Pinned once, and the drum plays it the same every time.",
+    "unlocked": "Tidewheel Lullaby joins your Songbook.",
+    "hint1": "Listen: they play the pattern by hand, as they do every night.",
+    "hint2": "Program the pattern once, then let it run."
+  }
+}

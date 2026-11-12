@@ -20,7 +20,7 @@ import {
   createRecoloredLeafMaterial,
   createVegetationMaterial,
 } from './materials';
-import { buildCypress, buildMaquisBush, buildPine, buildPricklyPear } from './cactus';
+import { buildCypress, buildMaquisBush, buildPine, buildPricklyPear, buildSaguaro } from './cactus';
 import { buildPalmFar, buildPalmNear, buildYoungPalm } from './palms';
 import { PLANT_SPECIES } from './blockers';
 import type { PlantSpecies } from './types';
@@ -295,7 +295,13 @@ async function loadSpecies(loader: GLTFLoader, species: PlantSpecies): Promise<V
       (['hero', 'grove'] as const).flatMap((lod) => createPalmParts(species, variant, lod)),
     );
   }
-  if (species === 'cactus' || species === 'brush' || species === 'cypress' || species === 'pineTree') {
+  if (
+    species === 'cactus' ||
+    species === 'brush' ||
+    species === 'cypress' ||
+    species === 'pineTree' ||
+    species === 'saguaro'
+  ) {
     // Built in code (no model in the kit): Port Meridian's prickly pears and maquis brush. Same
     // material options, so both share one program.
     const source =
@@ -305,7 +311,9 @@ async function loadSpecies(loader: GLTFLoader, species: PlantSpecies): Promise<V
           ? buildMaquisBush()
           : species === 'pineTree'
             ? buildPine()
-            : buildCypress();
+            : species === 'saguaro'
+              ? buildSaguaro()
+              : buildCypress();
     const geometry = addInstanceAttributes(source, new Mesh(source), species);
     source.dispose();
     const parts: VegetationModelPart[] = [
@@ -320,7 +328,9 @@ async function loadSpecies(loader: GLTFLoader, species: PlantSpecies): Promise<V
                 ? 0x8c9a58
                 : species === 'pineTree'
                   ? 0x3a5236
-                  : 0x3d5a34,
+                  : species === 'saguaro'
+                    ? 0x93ae6c
+                    : 0x3d5a34,
           ),
           name: 'vegetation-procedural',
         }),
@@ -358,6 +368,7 @@ export async function loadVegetationGeometries(): Promise<VegetationGeometryCata
     'brush',
     'cypress',
     'pineTree',
+    'saguaro',
   ] as PlantSpecies[];
   const entries = await Promise.all(
     speciesList.map(async (species) => [species, await loadSpecies(loader, species)] as const),

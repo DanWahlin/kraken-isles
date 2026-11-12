@@ -25,6 +25,8 @@ interface ManifestLine {
   readonly text: string;
   readonly hash: string;
   readonly files: { readonly webm?: string; readonly m4a?: string };
+  /** A caption that is written but not voiced yet: it has no audio to time. */
+  readonly pending?: true;
 }
 
 interface FaceLine {
@@ -125,8 +127,8 @@ async function main(): Promise<void> {
   const manifest = JSON.parse(await readFile(join(outDir, 'manifest.json'), 'utf8')) as VoiceManifest;
   const linesFile = JSON.parse(await readFile(linesPath, 'utf8')) as LinesFile;
   const textById = new Map(linesFile.lines.map((line) => [line.id, line.text]));
-  // Wingman is a parrot with a beak, not a painted face.
-  const wanted = manifest.lines.filter((line) => line.speaker !== 'Wingman');
+  // Wingman is a parrot with a beak, not a painted face; a pending line has no audio yet.
+  const wanted = manifest.lines.filter((line) => line.speaker !== 'Wingman' && !line.pending);
   const outPath = join(outDir, 'lipsync.json');
   const previous = (await exists(outPath))
     ? unpackAll(

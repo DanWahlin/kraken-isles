@@ -1,0 +1,52 @@
+{
+  "id": "iw.petra.easel",
+  "speaker": "Petra",
+  "text": "Slash, then create-canvas. Then the description of the board.",
+  "words": [
+    {
+      "word": "Slash",
+      "start": 0.049,
+      "end": 0.63725
+    },
+    {
+      "word": "then",
+      "start": 0.63725,
+      "end": 0.882333
+    },
+    {
+      "word": "create-canvas",
+      "start": 0.882333,
+      "end": 2.732833
+    },
+    {
+      "word": "Then",
+      "start": 2.732833,
+      "end": 2.953416
+    },
+    {
+      "word": "the",
+      "start": 2.953416,
+      "end": 3.063708
+    },
+    {
+      "word": "description",
+      "start": 3.063708,
+      "end": 3.664208
+    },
+    {
+      "word": "of",
+      "start": 3.664208,
+      "end": 3.76225
+    },
+    {
+      "word": "the",
+      "start": 3.76225,
+      "end": 3.860291
+    },
+    {
+      "word": "board",
+      "start": 3.860291,
+      "end": 4.110291
+    }
+  ]
+}

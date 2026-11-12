@@ -1,0 +1,92 @@
+{
+  "id": "ss.idris.05",
+  "speaker": "Idris",
+  "text": "Keep that session for the whole island. The Signal House is up the stair, on the mesa.",
+  "words": [
+    {
+      "word": "Keep",
+      "start": 0.051,
+      "end": 0.318875
+    },
+    {
+      "word": "that",
+      "start": 0.318875,
+      "end": 0.459166
+    },
+    {
+      "word": "session",
+      "start": 0.459166,
+      "end": 0.905625
+    },
+    {
+      "word": "for",
+      "start": 0.905625,
+      "end": 1.084166
+    },
+    {
+      "word": "the",
+      "start": 1.084166,
+      "end": 1.173458
+    },
+    {
+      "word": "whole",
+      "start": 1.173458,
+      "end": 1.403041
+    },
+    {
+      "word": "island",
+      "start": 1.403041,
+      "end": 2.793375
+    },
+    {
+      "word": "The",
+      "start": 2.793375,
+      "end": 2.984708
+    },
+    {
+      "word": "Signal",
+      "start": 2.984708,
+      "end": 3.341833
+    },
+    {
+      "word": "House",
+      "start": 3.341833,
+      "end": 3.635208
+    },
+    {
+      "word": "is",
+      "start": 3.635208,
+      "end": 3.78825
+    },
+    {
+      "word": "up",
+      "start": 3.78825,
+      "end": 3.941333
+    },
+    {
+      "word": "the",
+      "start": 3.941333,
+      "end": 4.056125
+    },
+    {
+      "word": "stair",
+      "start": 4.056125,
+      "end": 4.693875
+    },
+    {
+      "word": "on",
+      "start": 4.693875,
+      "end": 4.872458
+    },
+    {
+      "word": "the",
+      "start": 4.872458,
+      "end": 4.96175
+    },
+    {
+      "word": "mesa",
+      "start": 4.96175,
+      "end": 5.21175
+    }
+  ]
+}

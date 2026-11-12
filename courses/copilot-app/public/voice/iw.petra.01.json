@@ -1,0 +1,72 @@
+{
+  "id": "iw.petra.01",
+  "speaker": "Petra",
+  "text": "Petra, Captain. Now a board of your own. Start small: a shared checklist.",
+  "words": [
+    {
+      "word": "Petra",
+      "start": 0.049,
+      "end": 0.61275
+    },
+    {
+      "word": "Captain",
+      "start": 0.61275,
+      "end": 2.132333
+    },
+    {
+      "word": "Now",
+      "start": 2.132333,
+      "end": 2.426458
+    },
+    {
+      "word": "a",
+      "start": 2.426458,
+      "end": 2.4755
+    },
+    {
+      "word": "board",
+      "start": 2.4755,
+      "end": 2.781875
+    },
+    {
+      "word": "of",
+      "start": 2.781875,
+      "end": 2.867666
+    },
+    {
+      "word": "your",
+      "start": 2.867666,
+      "end": 3.051458
+    },
+    {
+      "word": "own",
+      "start": 3.051458,
+      "end": 4.3505
+    },
+    {
+      "word": "Start",
+      "start": 4.3505,
+      "end": 4.767166
+    },
+    {
+      "word": "small",
+      "start": 4.767166,
+      "end": 5.379916
+    },
+    {
+      "word": "a",
+      "start": 5.379916,
+      "end": 5.58825
+    },
+    {
+      "word": "shared",
+      "start": 5.58825,
+      "end": 5.894625
+    },
+    {
+      "word": "checklist",
+      "start": 5.894625,
+      "end": 6.144625
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "tw.ansel.drum",
+  "speaker": "Ansel",
+  "text": "Pin the pattern once. One bounded task, and what it must not do.",
+  "words": [
+    {
+      "word": "Pin",
+      "start": 0.0515409,
+      "end": 0.322166
+    },
+    {
+      "word": "the",
+      "start": 0.322166,
+      "end": 0.412375
+    },
+    {
+      "word": "pattern",
+      "start": 0.412375,
+      "end": 0.760291
+    },
+    {
+      "word": "once",
+      "start": 0.760291,
+      "end": 2.087625
+    },
+    {
+      "word": "One",
+      "start": 2.087625,
+      "end": 2.371125
+    },
+    {
+      "word": "bounded",
+      "start": 2.371125,
+      "end": 2.744833
+    },
+    {
+      "word": "task",
+      "start": 2.744833,
+      "end": 3.3505
+    },
+    {
+      "word": "and",
+      "start": 3.3505,
+      "end": 3.505166
+    },
+    {
+      "word": "what",
+      "start": 3.505166,
+      "end": 3.646916
+    },
+    {
+      "word": "it",
+      "start": 3.646916,
+      "end": 3.75
+    },
+    {
+      "word": "must",
+      "start": 3.75,
+      "end": 3.994833
+    },
+    {
+      "word": "not",
+      "start": 3.994833,
+      "end": 4.201041
+    },
+    {
+      "word": "do",
+      "start": 4.201041,
+      "end": 4.451041
+    }
+  ]
+}

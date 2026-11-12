@@ -1,0 +1,42 @@
+{
+  "id": "tw.silas.retry",
+  "speaker": "Silas",
+  "text": "Again, Captain? The tide’s still coming in.",
+  "words": [
+    {
+      "word": "Again",
+      "start": 0.053208,
+      "end": 0.744666
+    },
+    {
+      "word": "Captain",
+      "start": 0.744666,
+      "end": 2.327125
+    },
+    {
+      "word": "The",
+      "start": 2.327125,
+      "end": 2.526583
+    },
+    {
+      "word": "tide’s",
+      "start": 2.526583,
+      "end": 2.992041
+    },
+    {
+      "word": "still",
+      "start": 2.992041,
+      "end": 3.351083
+    },
+    {
+      "word": "coming",
+      "start": 3.351083,
+      "end": 3.723416
+    },
+    {
+      "word": "in",
+      "start": 3.723416,
+      "end": 3.973416
+    }
+  ]
+}

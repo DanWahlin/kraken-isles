@@ -1,0 +1,97 @@
+{
+  "id": "ss.noor.roll",
+  "speaker": "Noor",
+  "text": "The roll of towers is Customize. Open Browse, set the type filter to MCP, and search for context7.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.052083,
+      "end": 0.169291
+    },
+    {
+      "word": "roll",
+      "start": 0.169291,
+      "end": 0.507833
+    },
+    {
+      "word": "of",
+      "start": 0.507833,
+      "end": 0.625
+    },
+    {
+      "word": "towers",
+      "start": 0.625,
+      "end": 1.132833
+    },
+    {
+      "word": "is",
+      "start": 1.132833,
+      "end": 1.315125
+    },
+    {
+      "word": "Customize",
+      "start": 1.315125,
+      "end": 3.138041
+    },
+    {
+      "word": "Open",
+      "start": 3.138041,
+      "end": 3.4375
+    },
+    {
+      "word": "Browse",
+      "start": 3.4375,
+      "end": 4.192708
+    },
+    {
+      "word": "set",
+      "start": 4.192708,
+      "end": 4.596375
+    },
+    {
+      "word": "the",
+      "start": 4.596375,
+      "end": 4.700541
+    },
+    {
+      "word": "type",
+      "start": 4.700541,
+      "end": 5.052083
+    },
+    {
+      "word": "filter",
+      "start": 5.052083,
+      "end": 5.442708
+    },
+    {
+      "word": "to",
+      "start": 5.442708,
+      "end": 5.598958
+    },
+    {
+      "word": "MCP",
+      "start": 5.598958,
+      "end": 6.5495
+    },
+    {
+      "word": "and",
+      "start": 6.5495,
+      "end": 6.822916
+    },
+    {
+      "word": "search",
+      "start": 6.822916,
+      "end": 7.265625
+    },
+    {
+      "word": "for",
+      "start": 7.265625,
+      "end": 7.369791
+    },
+    {
+      "word": "context7",
+      "start": 7.369791,
+      "end": 7.619791
+    }
+  ]
+}

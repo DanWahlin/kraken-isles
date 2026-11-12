@@ -1,0 +1,77 @@
+{
+  "id": "tw.silas.assign.back",
+  "speaker": "Silas",
+  "text": "And you can say why it’s safe to run again. That’s the whole craft.",
+  "words": [
+    {
+      "word": "And",
+      "start": 0.053208,
+      "end": 0.252666
+    },
+    {
+      "word": "you",
+      "start": 0.252666,
+      "end": 0.41225
+    },
+    {
+      "word": "can",
+      "start": 0.41225,
+      "end": 0.611708
+    },
+    {
+      "word": "say",
+      "start": 0.611708,
+      "end": 0.877666
+    },
+    {
+      "word": "why",
+      "start": 0.877666,
+      "end": 1.1835
+    },
+    {
+      "word": "it’s",
+      "start": 1.1835,
+      "end": 1.343083
+    },
+    {
+      "word": "safe",
+      "start": 1.343083,
+      "end": 1.66225
+    },
+    {
+      "word": "to",
+      "start": 1.66225,
+      "end": 1.781916
+    },
+    {
+      "word": "run",
+      "start": 1.781916,
+      "end": 1.981375
+    },
+    {
+      "word": "again",
+      "start": 1.981375,
+      "end": 3.364375
+    },
+    {
+      "word": "That’s",
+      "start": 3.364375,
+      "end": 3.789875
+    },
+    {
+      "word": "the",
+      "start": 3.789875,
+      "end": 3.909583
+    },
+    {
+      "word": "whole",
+      "start": 3.909583,
+      "end": 4.188833
+    },
+    {
+      "word": "craft",
+      "start": 4.188833,
+      "end": 4.438833
+    }
+  ]
+}

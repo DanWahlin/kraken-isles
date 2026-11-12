@@ -1,0 +1,97 @@
+{
+  "id": "iw.nikos.06",
+  "speaker": "Nikos",
+  "text": "The visiting guild has lent us a board. Envoy Calla’s in the Loggia, on the Plaza’s west side.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.05,
+      "end": 0.215833
+    },
+    {
+      "word": "visiting",
+      "start": 0.215833,
+      "end": 0.675
+    },
+    {
+      "word": "guild",
+      "start": 0.675,
+      "end": 1.057666
+    },
+    {
+      "word": "has",
+      "start": 1.057666,
+      "end": 1.2745
+    },
+    {
+      "word": "lent",
+      "start": 1.2745,
+      "end": 1.516833
+    },
+    {
+      "word": "us",
+      "start": 1.516833,
+      "end": 1.657125
+    },
+    {
+      "word": "a",
+      "start": 1.657125,
+      "end": 1.695416
+    },
+    {
+      "word": "board",
+      "start": 1.695416,
+      "end": 2.56275
+    },
+    {
+      "word": "Envoy",
+      "start": 2.56275,
+      "end": 2.983666
+    },
+    {
+      "word": "Calla’s",
+      "start": 2.983666,
+      "end": 3.455625
+    },
+    {
+      "word": "in",
+      "start": 3.455625,
+      "end": 3.557666
+    },
+    {
+      "word": "the",
+      "start": 3.557666,
+      "end": 3.608666
+    },
+    {
+      "word": "Loggia",
+      "start": 3.608666,
+      "end": 4.46325
+    },
+    {
+      "word": "on",
+      "start": 4.46325,
+      "end": 4.603583
+    },
+    {
+      "word": "the",
+      "start": 4.603583,
+      "end": 4.680083
+    },
+    {
+      "word": "Plaza’s",
+      "start": 4.680083,
+      "end": 5.177541
+    },
+    {
+      "word": "west",
+      "start": 5.177541,
+      "end": 5.394375
+    },
+    {
+      "word": "side",
+      "start": 5.394375,
+      "end": 5.644375
+    }
+  ]
+}

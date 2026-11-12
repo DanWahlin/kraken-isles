@@ -1,0 +1,142 @@
+{
+  "id": "ll.juno.last",
+  "speaker": "Juno",
+  "text": "Human judgment stays in the loop at every major control point: before implementation starts, before a pull request is opened, and before any merge automation is enabled.",
+  "words": [
+    {
+      "word": "Human",
+      "start": 0,
+      "end": 0.391
+    },
+    {
+      "word": "judgment",
+      "start": 0.391,
+      "end": 1.027
+    },
+    {
+      "word": "stays",
+      "start": 1.027,
+      "end": 1.413
+    },
+    {
+      "word": "in",
+      "start": 1.413,
+      "end": 1.54
+    },
+    {
+      "word": "the",
+      "start": 1.54,
+      "end": 1.664
+    },
+    {
+      "word": "loop",
+      "start": 1.664,
+      "end": 2.027
+    },
+    {
+      "word": "at",
+      "start": 2.027,
+      "end": 2.32
+    },
+    {
+      "word": "every",
+      "start": 2.32,
+      "end": 2.787
+    },
+    {
+      "word": "major",
+      "start": 2.787,
+      "end": 3.18
+    },
+    {
+      "word": "control",
+      "start": 3.18,
+      "end": 3.667
+    },
+    {
+      "word": "point",
+      "start": 3.667,
+      "end": 4.537
+    },
+    {
+      "word": "before",
+      "start": 4.537,
+      "end": 4.933
+    },
+    {
+      "word": "implementation",
+      "start": 4.933,
+      "end": 5.76
+    },
+    {
+      "word": "starts",
+      "start": 5.76,
+      "end": 6.709
+    },
+    {
+      "word": "before",
+      "start": 6.709,
+      "end": 7.16
+    },
+    {
+      "word": "a",
+      "start": 7.16,
+      "end": 7.264
+    },
+    {
+      "word": "pull",
+      "start": 7.264,
+      "end": 7.57
+    },
+    {
+      "word": "request",
+      "start": 7.57,
+      "end": 7.973
+    },
+    {
+      "word": "is",
+      "start": 7.973,
+      "end": 8.16
+    },
+    {
+      "word": "opened",
+      "start": 8.16,
+      "end": 9.08
+    },
+    {
+      "word": "and",
+      "start": 9.08,
+      "end": 9.269
+    },
+    {
+      "word": "before",
+      "start": 9.269,
+      "end": 9.78
+    },
+    {
+      "word": "any",
+      "start": 9.78,
+      "end": 10.147
+    },
+    {
+      "word": "merge",
+      "start": 10.147,
+      "end": 10.545
+    },
+    {
+      "word": "automation",
+      "start": 10.545,
+      "end": 11.253
+    },
+    {
+      "word": "is",
+      "start": 11.253,
+      "end": 11.43
+    },
+    {
+      "word": "enabled",
+      "start": 11.43,
+      "end": 11.68
+    }
+  ]
+}

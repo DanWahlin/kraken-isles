@@ -1,0 +1,42 @@
+{
+  "id": "tw.greta.gear",
+  "speaker": "Greta",
+  "text": "The day gear. From Manual to Daily.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.05,
+      "end": 0.1875
+    },
+    {
+      "word": "day",
+      "start": 0.1875,
+      "end": 0.5
+    },
+    {
+      "word": "gear",
+      "start": 0.5,
+      "end": 1.8125
+    },
+    {
+      "word": "From",
+      "start": 1.8125,
+      "end": 2.0375
+    },
+    {
+      "word": "Manual",
+      "start": 2.0375,
+      "end": 2.475
+    },
+    {
+      "word": "to",
+      "start": 2.475,
+      "end": 2.625
+    },
+    {
+      "word": "Daily",
+      "start": 2.625,
+      "end": 2.875
+    }
+  ]
+}

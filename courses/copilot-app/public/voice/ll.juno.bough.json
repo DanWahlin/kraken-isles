@@ -1,0 +1,87 @@
+{
+  "id": "ll.juno.bough",
+  "speaker": "Juno",
+  "text": "Thousand-Bough: scoped branches and isolated worktrees, and context used on purpose: prompts, files, issues, and instructions.",
+  "words": [
+    {
+      "word": "Thousand-Bough",
+      "start": 0,
+      "end": 0.834
+    },
+    {
+      "word": "scoped",
+      "start": 0.834,
+      "end": 1.591
+    },
+    {
+      "word": "branches",
+      "start": 1.591,
+      "end": 2.2
+    },
+    {
+      "word": "and",
+      "start": 2.2,
+      "end": 2.391
+    },
+    {
+      "word": "isolated",
+      "start": 2.391,
+      "end": 3.024
+    },
+    {
+      "word": "worktrees",
+      "start": 3.024,
+      "end": 3.94
+    },
+    {
+      "word": "and",
+      "start": 3.94,
+      "end": 4.56
+    },
+    {
+      "word": "context",
+      "start": 4.56,
+      "end": 5.168
+    },
+    {
+      "word": "used",
+      "start": 5.168,
+      "end": 5.413
+    },
+    {
+      "word": "on",
+      "start": 5.413,
+      "end": 5.59
+    },
+    {
+      "word": "purpose",
+      "start": 5.59,
+      "end": 6.71
+    },
+    {
+      "word": "prompts",
+      "start": 6.71,
+      "end": 7.44
+    },
+    {
+      "word": "files",
+      "start": 7.44,
+      "end": 8.069
+    },
+    {
+      "word": "issues",
+      "start": 8.069,
+      "end": 8.52
+    },
+    {
+      "word": "and",
+      "start": 8.52,
+      "end": 8.702
+    },
+    {
+      "word": "instructions",
+      "start": 8.702,
+      "end": 8.952
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "../../schemas/puzzle-ceremony.schema.json",
+  "id": "Q6.1.board-song",
+  "mechanic": "ceremony",
+  "quest": "Q6.1",
+  "$comment": "Lyra’s board song under the taverna’s pergola (Q6.1, docs/specs/ISLAND-06-inkwell-bluffs.md §4): the players plan the arrangement by shouting across the terrace and the song falls apart; the player pins the parts on one board that all three can see, and it holds together. Her talk is the island’s lyra script (06 · From the Studio).",
+  "text": {
+    "playTalk": "Play it from the talk",
+    "pin": "Pin the parts on one board",
+    "playBoard": "Play it from the board",
+    "lost": "Three players, three counts. Somebody said where the bridge goes, and nobody can find it.",
+    "together": "Same players, one board, and the song holds together.",
+    "unlocked": "Inkwell Waltz joins your Songbook.",
+    "hint1": "Listen: they planned it by shouting across the terrace.",
+    "hint2": "Put the arrangement where all three can see it, then listen again."
+  }
+}

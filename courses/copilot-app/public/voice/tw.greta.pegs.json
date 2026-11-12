@@ -1,0 +1,97 @@
+{
+  "id": "tw.greta.pegs",
+  "speaker": "Greta",
+  "text": "The field takes more than one hour. Clear every hour but yours, and leave the minute at zero.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.05,
+      "end": 0.1625
+    },
+    {
+      "word": "field",
+      "start": 0.1625,
+      "end": 0.575
+    },
+    {
+      "word": "takes",
+      "start": 0.575,
+      "end": 0.9125
+    },
+    {
+      "word": "more",
+      "start": 0.9125,
+      "end": 1.15
+    },
+    {
+      "word": "than",
+      "start": 1.15,
+      "end": 1.325
+    },
+    {
+      "word": "one",
+      "start": 1.325,
+      "end": 1.55
+    },
+    {
+      "word": "hour",
+      "start": 1.55,
+      "end": 2.8625
+    },
+    {
+      "word": "Clear",
+      "start": 2.8625,
+      "end": 3.2125
+    },
+    {
+      "word": "every",
+      "start": 3.2125,
+      "end": 3.5875
+    },
+    {
+      "word": "hour",
+      "start": 3.5875,
+      "end": 3.7875
+    },
+    {
+      "word": "but",
+      "start": 3.7875,
+      "end": 3.9875
+    },
+    {
+      "word": "yours",
+      "start": 3.9875,
+      "end": 4.7875
+    },
+    {
+      "word": "and",
+      "start": 4.7875,
+      "end": 4.9375
+    },
+    {
+      "word": "leave",
+      "start": 4.9375,
+      "end": 5.175
+    },
+    {
+      "word": "the",
+      "start": 5.175,
+      "end": 5.275
+    },
+    {
+      "word": "minute",
+      "start": 5.275,
+      "end": 5.6125
+    },
+    {
+      "word": "at",
+      "start": 5.6125,
+      "end": 5.75
+    },
+    {
+      "word": "zero",
+      "start": 5.75,
+      "end": 6
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "id": "tw.ansel.03",
+  "speaker": "Ansel",
+  "text": "It only reads. The prompt’s last line says so: don’t edit, comment, label, approve, or merge.",
+  "words": [
+    {
+      "word": "It",
+      "start": 0.0515409,
+      "end": 0.219083
+    },
+    {
+      "word": "only",
+      "start": 0.219083,
+      "end": 0.54125
+    },
+    {
+      "word": "reads",
+      "start": 0.54125,
+      "end": 2.023208
+    },
+    {
+      "word": "The",
+      "start": 2.023208,
+      "end": 2.164958
+    },
+    {
+      "word": "prompt’s",
+      "start": 2.164958,
+      "end": 2.551541
+    },
+    {
+      "word": "last",
+      "start": 2.551541,
+      "end": 2.860833
+    },
+    {
+      "word": "line",
+      "start": 2.860833,
+      "end": 3.131458
+    },
+    {
+      "word": "says",
+      "start": 3.131458,
+      "end": 3.363416
+    },
+    {
+      "word": "so",
+      "start": 3.363416,
+      "end": 3.904625
+    },
+    {
+      "word": "don’t",
+      "start": 3.904625,
+      "end": 4.162375
+    },
+    {
+      "word": "edit",
+      "start": 4.162375,
+      "end": 4.587625
+    },
+    {
+      "word": "comment",
+      "start": 4.587625,
+      "end": 5.193291
+    },
+    {
+      "word": "label",
+      "start": 5.193291,
+      "end": 5.837625
+    },
+    {
+      "word": "approve",
+      "start": 5.837625,
+      "end": 6.456166
+    },
+    {
+      "word": "or",
+      "start": 6.456166,
+      "end": 6.636583
+    },
+    {
+      "word": "merge",
+      "start": 6.636583,
+      "end": 6.886583
+    }
+  ]
+}

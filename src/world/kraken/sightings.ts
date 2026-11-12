@@ -35,6 +35,8 @@ export interface SightingPlan {
   duration: number;
   start: number;
   seed: number;
+  /** Placed by the game (the ending's farewell): the gates don't send it down. */
+  staged?: boolean;
 }
 
 /** What the camera sees (a sighting must be in view and big enough). */
@@ -248,6 +250,8 @@ export class KrakenSightings {
   gates: SightingsGates;
   /** The sighting showing now, or null. */
   current: SightingPlan | null = null;
+  /** The clock of the last update (a sighting the game places starts from it). */
+  private now = 0;
   readonly kraken: Kraken;
   private readonly waves: WaveSampler;
   private readonly lite: boolean;
@@ -339,6 +343,25 @@ export class KrakenSightings {
     this.pending = { kind, distance };
   }
 
+  /**
+   * A group of arms at a place the game picks, for `duration` s (the ending's farewell in the
+   * caldera's bay): none of the planner's rules apply, and it takes the place of any sighting showing.
+   */
+  showAt(x: number, z: number, heading: number, duration = 10): void {
+    this.pending = null;
+    this.start({
+      kind: 'group',
+      x,
+      z,
+      heading,
+      arms: this.kraken.arms.length,
+      duration,
+      start: this.now,
+      seed: 0x4c_4c,
+      staged: true,
+    });
+  }
+
   /** For the warm-up: every part shown; returns the undo. */
   stageWarm(): () => void {
     const k = this.kraken;
@@ -359,6 +382,7 @@ export class KrakenSightings {
   }
 
   update(dt: number, t: number, camera: PerspectiveCamera, viewportHeight: number): void {
+    this.now = t;
     if (!this.current) {
       if (dt > 0 && (this.pending || this.planner.due(t))) this.tryStart(t, camera, viewportHeight);
     } else this.animate(dt, t, camera);
@@ -453,8 +477,8 @@ export class KrakenSightings {
     const u = t - plan.start;
     const k = this.kraken;
     // A gate that closes mid-sighting (a battle, a harbour) sends it down at once.
-    if (this.leaveAt === Infinity && this.gates.allowed && !this.gates.allowed()) this.leaveAt = u + 2.6;
-    if (this.gates.quiet?.everywhere && this.leaveAt === Infinity) this.leaveAt = u + 2.6;
+    const closed = (this.gates.allowed && !this.gates.allowed()) || this.gates.quiet?.everywhere;
+    if (closed && !plan.staged && this.leaveAt === Infinity) this.leaveAt = u + 2.6;
     for (let i = 0; i < k.arms.length; i++) {
       const arm = k.arms[i]!;
       const share = this.shown(i, u, plan);

@@ -1,0 +1,77 @@
+{
+  "id": "iw.petra.mate",
+  "speaker": "Petra",
+  "text": "Now ask the mate to read it back. Does her answer match your marks?",
+  "words": [
+    {
+      "word": "Now",
+      "start": 0.049,
+      "end": 0.343125
+    },
+    {
+      "word": "ask",
+      "start": 0.343125,
+      "end": 0.674
+    },
+    {
+      "word": "the",
+      "start": 0.674,
+      "end": 0.772041
+    },
+    {
+      "word": "mate",
+      "start": 0.772041,
+      "end": 1.029416
+    },
+    {
+      "word": "to",
+      "start": 1.029416,
+      "end": 1.176458
+    },
+    {
+      "word": "read",
+      "start": 1.176458,
+      "end": 1.409333
+    },
+    {
+      "word": "it",
+      "start": 1.409333,
+      "end": 1.495083
+    },
+    {
+      "word": "back",
+      "start": 1.495083,
+      "end": 2.830875
+    },
+    {
+      "word": "Does",
+      "start": 2.830875,
+      "end": 3.051458
+    },
+    {
+      "word": "her",
+      "start": 3.051458,
+      "end": 3.198541
+    },
+    {
+      "word": "answer",
+      "start": 3.198541,
+      "end": 3.602958
+    },
+    {
+      "word": "match",
+      "start": 3.602958,
+      "end": 3.897041
+    },
+    {
+      "word": "your",
+      "start": 3.897041,
+      "end": 4.044125
+    },
+    {
+      "word": "marks",
+      "start": 4.044125,
+      "end": 4.294125
+    }
+  ]
+}

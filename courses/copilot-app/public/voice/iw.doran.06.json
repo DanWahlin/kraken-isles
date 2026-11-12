@@ -1,0 +1,77 @@
+{
+  "id": "iw.doran.06",
+  "speaker": "Doran",
+  "text": "Now run it. Talk to me again when you’re ready to walk the chart.",
+  "words": [
+    {
+      "word": "Now",
+      "start": 0.052083,
+      "end": 0.416666
+    },
+    {
+      "word": "run",
+      "start": 0.416666,
+      "end": 0.651041
+    },
+    {
+      "word": "it",
+      "start": 0.651041,
+      "end": 1.888041
+    },
+    {
+      "word": "Talk",
+      "start": 1.888041,
+      "end": 2.1745
+    },
+    {
+      "word": "to",
+      "start": 2.1745,
+      "end": 2.278666
+    },
+    {
+      "word": "me",
+      "start": 2.278666,
+      "end": 2.408875
+    },
+    {
+      "word": "again",
+      "start": 2.408875,
+      "end": 2.773458
+    },
+    {
+      "word": "when",
+      "start": 2.773458,
+      "end": 2.95575
+    },
+    {
+      "word": "you’re",
+      "start": 2.95575,
+      "end": 3.098958
+    },
+    {
+      "word": "ready",
+      "start": 3.098958,
+      "end": 3.346375
+    },
+    {
+      "word": "to",
+      "start": 3.346375,
+      "end": 3.463541
+    },
+    {
+      "word": "walk",
+      "start": 3.463541,
+      "end": 3.723958
+    },
+    {
+      "word": "the",
+      "start": 3.723958,
+      "end": 3.828125
+    },
+    {
+      "word": "chart",
+      "start": 3.828125,
+      "end": 4.078125
+    }
+  ]
+}

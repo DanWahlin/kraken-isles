@@ -1,0 +1,117 @@
+{
+  "id": "iw.thea.02",
+  "speaker": "Thea",
+  "text": "Chat works well for questions and talk. But once a session is doing real work, a long thread gets hard to scan.",
+  "words": [
+    {
+      "word": "Chat",
+      "start": 0.0515409,
+      "end": 0.386583
+    },
+    {
+      "word": "works",
+      "start": 0.386583,
+      "end": 0.773208
+    },
+    {
+      "word": "well",
+      "start": 0.773208,
+      "end": 1.095375
+    },
+    {
+      "word": "for",
+      "start": 1.095375,
+      "end": 1.25
+    },
+    {
+      "word": "questions",
+      "start": 1.25,
+      "end": 1.842791
+    },
+    {
+      "word": "and",
+      "start": 1.842791,
+      "end": 1.971666
+    },
+    {
+      "word": "talk",
+      "start": 1.971666,
+      "end": 3.414958
+    },
+    {
+      "word": "But",
+      "start": 3.414958,
+      "end": 3.595375
+    },
+    {
+      "word": "once",
+      "start": 3.595375,
+      "end": 3.904625
+    },
+    {
+      "word": "a",
+      "start": 3.904625,
+      "end": 3.956166
+    },
+    {
+      "word": "session",
+      "start": 3.956166,
+      "end": 4.381458
+    },
+    {
+      "word": "is",
+      "start": 4.381458,
+      "end": 4.523208
+    },
+    {
+      "word": "doing",
+      "start": 4.523208,
+      "end": 4.819583
+    },
+    {
+      "word": "real",
+      "start": 4.819583,
+      "end": 5.077333
+    },
+    {
+      "word": "work",
+      "start": 5.077333,
+      "end": 5.837625
+    },
+    {
+      "word": "a",
+      "start": 5.837625,
+      "end": 5.927833
+    },
+    {
+      "word": "long",
+      "start": 5.927833,
+      "end": 6.198458
+    },
+    {
+      "word": "thread",
+      "start": 6.198458,
+      "end": 6.5335
+    },
+    {
+      "word": "gets",
+      "start": 6.5335,
+      "end": 6.778333
+    },
+    {
+      "word": "hard",
+      "start": 6.778333,
+      "end": 7.036083
+    },
+    {
+      "word": "to",
+      "start": 7.036083,
+      "end": 7.152041
+    },
+    {
+      "word": "scan",
+      "start": 7.152041,
+      "end": 7.402041
+    }
+  ]
+}

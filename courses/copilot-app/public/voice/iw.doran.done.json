@@ -1,0 +1,57 @@
+{
+  "id": "iw.doran.done",
+  "speaker": "Doran",
+  "text": "Up the Dome Stair, Captain. Iris is on the terrace.",
+  "words": [
+    {
+      "word": "Up",
+      "start": 0.052083,
+      "end": 0.260416
+    },
+    {
+      "word": "the",
+      "start": 0.260416,
+      "end": 0.351583
+    },
+    {
+      "word": "Dome",
+      "start": 0.351583,
+      "end": 0.651041
+    },
+    {
+      "word": "Stair",
+      "start": 0.651041,
+      "end": 1.263041
+    },
+    {
+      "word": "Captain",
+      "start": 1.263041,
+      "end": 2.8125
+    },
+    {
+      "word": "Iris",
+      "start": 2.8125,
+      "end": 3.333333
+    },
+    {
+      "word": "is",
+      "start": 3.333333,
+      "end": 3.489583
+    },
+    {
+      "word": "on",
+      "start": 3.489583,
+      "end": 3.606791
+    },
+    {
+      "word": "the",
+      "start": 3.606791,
+      "end": 3.684916
+    },
+    {
+      "word": "terrace",
+      "start": 3.684916,
+      "end": 3.934916
+    }
+  ]
+}

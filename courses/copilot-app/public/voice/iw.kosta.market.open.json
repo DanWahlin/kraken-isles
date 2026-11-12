@@ -1,0 +1,82 @@
+{
+  "id": "iw.kosta.market.open",
+  "speaker": "Kosta",
+  "text": "Pick a job off the board, then hire a model and set the effort dial.",
+  "words": [
+    {
+      "word": "Pick",
+      "start": 0.118416,
+      "end": 0.315791
+    },
+    {
+      "word": "a",
+      "start": 0.315791,
+      "end": 0.381583
+    },
+    {
+      "word": "job",
+      "start": 0.381583,
+      "end": 0.64475
+    },
+    {
+      "word": "off",
+      "start": 0.64475,
+      "end": 0.802625
+    },
+    {
+      "word": "the",
+      "start": 0.802625,
+      "end": 0.907875
+    },
+    {
+      "word": "board",
+      "start": 0.907875,
+      "end": 1.723666
+    },
+    {
+      "word": "then",
+      "start": 1.723666,
+      "end": 1.934208
+    },
+    {
+      "word": "hire",
+      "start": 1.934208,
+      "end": 2.289458
+    },
+    {
+      "word": "a",
+      "start": 2.289458,
+      "end": 2.342125
+    },
+    {
+      "word": "model",
+      "start": 2.342125,
+      "end": 2.75
+    },
+    {
+      "word": "and",
+      "start": 2.75,
+      "end": 2.881583
+    },
+    {
+      "word": "set",
+      "start": 2.881583,
+      "end": 3.157875
+    },
+    {
+      "word": "the",
+      "start": 3.157875,
+      "end": 3.289458
+    },
+    {
+      "word": "effort",
+      "start": 3.289458,
+      "end": 3.565791
+    },
+    {
+      "word": "dial",
+      "start": 3.565791,
+      "end": 3.815791
+    }
+  ]
+}

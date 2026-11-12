@@ -141,6 +141,13 @@ export interface IslandSessionHost {
   openChest(id: string): Promise<void>;
   cues: Map<string, () => Promise<void>>;
   puzzles: Puzzle[];
+  /**
+   * The sky's clock, for a set piece that moves the day (the ending's nightfall): the hour now, a
+   * jump to another, and `home`, which puts the island's own hour back.
+   */
+  sky: { hours(): number; set(hours: number): void; home(): void };
+  /** Where a set piece's own overlay goes: over the world and the HUD, under the fade. */
+  overlay: HTMLElement;
 }
 
 /**

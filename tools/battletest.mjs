@@ -7,8 +7,10 @@
 // Screenshots at the sighting, a broadside, a hit, a raider striking, the question, the bonus pick and
 // the win card.
 // node tools/battletest.mjs [--base=http://localhost:5301] [--tier=high] [--webgl] [--out=/tmp/shots/battle]
-//   [--only=play|skip] [--sea=calm|breeze|fresh|gale] (the Sea state setting: the battle must still fight
+//   [--watch[=port]] [--only=play|skip] [--sea=calm|breeze|fresh|gale] (the Sea state setting: the battle must still fight
 //   on its own fixed sea, today's Breeze, and the harbour must show the setting's)
+//   [--battle=5], [--battle=6] (battles 5 and 6, battle 4's form: Guildcrest to Sunspire Sands with
+//   Chapters 00-04 done, and Sunspire Sands to Inkwell Bluffs with Chapters 00-05 done).
 //   [--battle=4] (battle 4, "Evidence Agrees": Chapters 00-03 done, the chart to Keelhaven, then out
 //   toward Guildcrest; no kraken; its peak must stay at or under 140 programs with Guildcrest in memory,
 //   and you dock at Guildcrest).
@@ -19,7 +21,7 @@
 //   never within 0.45 m of a sail, a yard or a mast), then in wave 2 a tell near you, a dodge, a
 //   lure (a raider led over a tell and taken) and a hit on your hull, and its retreat after the last
 //   raider; no ship's sails may jump (`sailJumps`). --nokraken plays it without (a census without it).
-import { collectLogs, launchChrome, parseFlags, waitForTitle } from './lib/browser.mjs';
+import { collectLogs, launchChrome, parseFlags, waitForTitle, watchPage } from './lib/browser.mjs';
 import { passLearningPauses } from './lib/learning-cards.mjs';
 
 const opt = parseFlags();
@@ -30,14 +32,17 @@ const tag = `${opt.webgl ? 'gl' : 'gpu'}-${tier}`;
 // --nokraken: battle 3 without its kraken (its census without it).
 const url = `${base}/?debug&tier=${tier}${opt.webgl ? '&webgl' : ''}${opt.nokraken ? '&nokraken' : ''}`;
 const BATTLE = Number(opt.battle ?? 1);
-if (![1, 3, 4].includes(BATTLE)) throw new Error('--battle=1, --battle=3 or --battle=4');
-/** Battles 3 and 4 sail from a later island (by the chart) to the next. */
+if (![1, 3, 4, 5, 6].includes(BATTLE))
+  throw new Error('--battle=1, --battle=3, --battle=4, --battle=5 or --battle=6');
+/** Battles 3 to 6 sail from a later island (by the chart) to the next. */
 const LATER = BATTLE >= 3;
 /** The passage's two islands. */
 const PASSAGE = {
   1: ['anchorage', 'meridian'],
   3: ['thousand-bough', 'keelhaven'],
   4: ['keelhaven', 'guildcrest'],
+  5: ['guildcrest', 'sunspire'],
+  6: ['sunspire', 'inkwell'],
 }[BATTLE];
 // Battles 3 and 4 have an island on each side of the passage in memory: the peak keeps room for the next.
 const PROGRAM_CAP = LATER ? 140 : 150;
@@ -45,14 +50,26 @@ const BATTLE_ID = {
   1: 'passage-anchorage-meridian',
   3: 'passage-thousand-bough-keelhaven',
   4: 'passage-keelhaven-guildcrest',
+  5: 'passage-guildcrest-sunspire',
+  6: 'passage-sunspire-inkwell',
 }[BATTLE];
 /** The quests done before the battle (each chapter's island and its Seal). */
 const CH0 = ['Q0.2', 'Q0.3', 'Q0.4', 'Q0.5', 'Q0.6', 'Q0.7', 'Q0.8', 'Q0.9', 'Q0.10', 'Q0.11'];
 const CH1 = ['Q1.1', 'Q1.2', 'Q1.3', 'Q1.4', 'Q1.5', 'Q1.6', 'Q1.7', 'Q1.8', 'Q1.A'];
 const CH2 = ['Q2.1', 'Q2.2', 'Q2.3', 'Q2.4', 'Q2.5', 'Q2.6', 'Q2.7', 'Q2.8', 'Q2.9', 'Q2.A'];
 const CH3 = ['Q3.1', 'Q3.2', 'Q3.3', 'Q3.4', 'Q3.5', 'Q3.6', 'Q3.7', 'Q3.8', 'Q3.9', 'Q3.10', 'Q3.A', 'Q3.B'];
+const CH4 = ['Q4.1', 'Q4.2', 'Q4.3', 'Q4.4', 'Q4.5', 'Q4.6', 'Q4.7', 'Q4.8', 'Q4.A'];
+const CH5 = ['Q5.1', 'Q5.2', 'Q5.3', 'Q5.4', 'Q5.5', 'Q5.6', 'Q5.7', 'Q5.8', 'Q5.A'];
 const QUESTS =
-  BATTLE === 4 ? [...CH0, ...CH1, ...CH2, ...CH3] : BATTLE === 3 ? [...CH0, ...CH1, ...CH2] : CH0;
+  BATTLE === 6
+    ? [...CH0, ...CH1, ...CH2, ...CH3, ...CH4, ...CH5]
+    : BATTLE === 5
+      ? [...CH0, ...CH1, ...CH2, ...CH3, ...CH4]
+      : BATTLE === 4
+        ? [...CH0, ...CH1, ...CH2, ...CH3]
+        : BATTLE === 3
+          ? [...CH0, ...CH1, ...CH2]
+          : CH0;
 
 const browser = await launchChrome({ autoplay: true });
 const report = { url, play: null, skip: null };
@@ -64,8 +81,12 @@ const fail = (msg) => logs.push(`[battletest] ${msg}`);
  * whose Chapter 00 quests are marked done, saved, then reloaded and continued from the title (so
  * the island is built and warmed with the Seal, as a real save would be).
  */
+let stopWatch = null;
 async function voyage() {
   const page = await browser.newPage({ viewport: { width: 1600, height: 900 } });
+  // `--watch[=port]`: this voyage shows live at http://localhost:5390 (or the port given).
+  stopWatch?.();
+  stopWatch = opt.watch ? await watchPage(page, opt.watch === true ? 5390 : Number(opt.watch)) : null;
   collectLogs(page, { types: ['error'], logs });
   await page.goto(url, { waitUntil: 'load' });
   await page.evaluate(() => localStorage.clear());
@@ -222,7 +243,7 @@ async function boardAndSailOut(page) {
     const { from, to } = await passageEnds(page);
     await sailToward(page, to.x, to.z, 30_000, started);
     if (!(await started())) {
-      const k = BATTLE === 4 ? 0.5 : 0.3;
+      const k = BATTLE >= 4 ? 0.5 : 0.3;
       const h = Math.atan2(to.x - from.x, to.z - from.z);
       await page.evaluate(
         ([x, z, h]) => window.__flow.debugSession.debug.sailTo(x, z, h),
@@ -690,6 +711,7 @@ if (opt.only !== 'play') {
   report.skip = res;
   await page.close();
 }
+stopWatch?.();
 await browser.close();
 console.log(JSON.stringify({ ...report, samples, shots, logs: logs.slice(0, 30) }, null, 1));
 process.exit(logs.length ? 1 : 0);

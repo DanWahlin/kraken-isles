@@ -1,0 +1,92 @@
+{
+  "id": "iw.iris.assign.back",
+  "speaker": "Iris",
+  "text": "Evidence at every stage, from this session. And you knew the next decision without rereading the chat.",
+  "words": [
+    {
+      "word": "Evidence",
+      "start": 0.052625,
+      "end": 0.64475
+    },
+    {
+      "word": "at",
+      "start": 0.64475,
+      "end": 0.789458
+    },
+    {
+      "word": "every",
+      "start": 0.789458,
+      "end": 1.118416
+    },
+    {
+      "word": "stage",
+      "start": 1.118416,
+      "end": 1.842125
+    },
+    {
+      "word": "from",
+      "start": 1.842125,
+      "end": 2.065791
+    },
+    {
+      "word": "this",
+      "start": 2.065791,
+      "end": 2.25
+    },
+    {
+      "word": "session",
+      "start": 2.25,
+      "end": 3.723666
+    },
+    {
+      "word": "And",
+      "start": 3.723666,
+      "end": 3.89475
+    },
+    {
+      "word": "you",
+      "start": 3.89475,
+      "end": 4.052625
+    },
+    {
+      "word": "knew",
+      "start": 4.052625,
+      "end": 4.289458
+    },
+    {
+      "word": "the",
+      "start": 4.289458,
+      "end": 4.421041
+    },
+    {
+      "word": "next",
+      "start": 4.421041,
+      "end": 4.763166
+    },
+    {
+      "word": "decision",
+      "start": 4.763166,
+      "end": 5.328958
+    },
+    {
+      "word": "without",
+      "start": 5.328958,
+      "end": 5.763166
+    },
+    {
+      "word": "rereading",
+      "start": 5.763166,
+      "end": 6.328958
+    },
+    {
+      "word": "the",
+      "start": 6.328958,
+      "end": 6.447375
+    },
+    {
+      "word": "chat",
+      "start": 6.447375,
+      "end": 6.697375
+    }
+  ]
+}

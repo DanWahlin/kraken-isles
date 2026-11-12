@@ -1,0 +1,102 @@
+{
+  "id": "iw.lyra.02",
+  "speaker": "Lyra",
+  "text": "Or we pin the arrangement on one board that everybody can see. Hear us try it the first way.",
+  "words": [
+    {
+      "word": "Or",
+      "start": 0,
+      "end": 0.213
+    },
+    {
+      "word": "we",
+      "start": 0.213,
+      "end": 0.38
+    },
+    {
+      "word": "pin",
+      "start": 0.38,
+      "end": 0.58
+    },
+    {
+      "word": "the",
+      "start": 0.58,
+      "end": 0.687
+    },
+    {
+      "word": "arrangement",
+      "start": 0.687,
+      "end": 1.253
+    },
+    {
+      "word": "on",
+      "start": 1.253,
+      "end": 1.42
+    },
+    {
+      "word": "one",
+      "start": 1.42,
+      "end": 1.667
+    },
+    {
+      "word": "board",
+      "start": 1.667,
+      "end": 2.016
+    },
+    {
+      "word": "that",
+      "start": 2.016,
+      "end": 2.12
+    },
+    {
+      "word": "everybody",
+      "start": 2.12,
+      "end": 2.52
+    },
+    {
+      "word": "can",
+      "start": 2.52,
+      "end": 2.74
+    },
+    {
+      "word": "see",
+      "start": 2.74,
+      "end": 3.456
+    },
+    {
+      "word": "Hear",
+      "start": 3.456,
+      "end": 4.853
+    },
+    {
+      "word": "us",
+      "start": 4.853,
+      "end": 5.04
+    },
+    {
+      "word": "try",
+      "start": 5.04,
+      "end": 5.307
+    },
+    {
+      "word": "it",
+      "start": 5.307,
+      "end": 5.38
+    },
+    {
+      "word": "the",
+      "start": 5.38,
+      "end": 5.493
+    },
+    {
+      "word": "first",
+      "start": 5.493,
+      "end": 5.82
+    },
+    {
+      "word": "way",
+      "start": 5.82,
+      "end": 6.07
+    }
+  ]
+}

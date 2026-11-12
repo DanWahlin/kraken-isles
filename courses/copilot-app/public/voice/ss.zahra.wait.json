@@ -1,0 +1,62 @@
+{
+  "id": "ss.zahra.wait",
+  "speaker": "Zahra",
+  "text": "Lyra's in the caravanserai by the quay, Captain. Hear her first.",
+  "words": [
+    {
+      "word": "Lyra's",
+      "start": 0.049,
+      "end": 0.502458
+    },
+    {
+      "word": "in",
+      "start": 0.502458,
+      "end": 0.625
+    },
+    {
+      "word": "the",
+      "start": 0.625,
+      "end": 0.723041
+    },
+    {
+      "word": "caravanserai",
+      "start": 0.723041,
+      "end": 1.495083
+    },
+    {
+      "word": "by",
+      "start": 1.495083,
+      "end": 1.666666
+    },
+    {
+      "word": "the",
+      "start": 1.666666,
+      "end": 1.801458
+    },
+    {
+      "word": "quay",
+      "start": 1.801458,
+      "end": 2.230375
+    },
+    {
+      "word": "Captain",
+      "start": 2.230375,
+      "end": 3.664208
+    },
+    {
+      "word": "Hear",
+      "start": 3.664208,
+      "end": 3.897041
+    },
+    {
+      "word": "her",
+      "start": 3.897041,
+      "end": 4.044125
+    },
+    {
+      "word": "first",
+      "start": 4.044125,
+      "end": 4.294125
+    }
+  ]
+}

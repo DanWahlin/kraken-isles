@@ -1,0 +1,87 @@
+{
+  "id": "tw.agnes.06",
+  "speaker": "Agnes",
+  "text": "Tobin keeps the bounty board, up the second flight. A report needs something to report on.",
+  "words": [
+    {
+      "word": "Tobin",
+      "start": 0.0515409,
+      "end": 0.502583
+    },
+    {
+      "word": "keeps",
+      "start": 0.502583,
+      "end": 0.837625
+    },
+    {
+      "word": "the",
+      "start": 0.837625,
+      "end": 0.940708
+    },
+    {
+      "word": "bounty",
+      "start": 0.940708,
+      "end": 1.275791
+    },
+    {
+      "word": "board",
+      "start": 1.275791,
+      "end": 1.984541
+    },
+    {
+      "word": "up",
+      "start": 1.984541,
+      "end": 2.152041
+    },
+    {
+      "word": "the",
+      "start": 2.152041,
+      "end": 2.24225
+    },
+    {
+      "word": "second",
+      "start": 2.24225,
+      "end": 2.64175
+    },
+    {
+      "word": "flight",
+      "start": 2.64175,
+      "end": 4.097958
+    },
+    {
+      "word": "A",
+      "start": 4.097958,
+      "end": 4.226791
+    },
+    {
+      "word": "report",
+      "start": 4.226791,
+      "end": 4.703625
+    },
+    {
+      "word": "needs",
+      "start": 4.703625,
+      "end": 4.974208
+    },
+    {
+      "word": "something",
+      "start": 4.974208,
+      "end": 5.322166
+    },
+    {
+      "word": "to",
+      "start": 5.322166,
+      "end": 5.451041
+    },
+    {
+      "word": "report",
+      "start": 5.451041,
+      "end": 5.876291
+    },
+    {
+      "word": "on",
+      "start": 5.876291,
+      "end": 6.126291
+    }
+  ]
+}

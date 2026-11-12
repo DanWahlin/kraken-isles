@@ -1,0 +1,97 @@
+{
+  "id": "tw.tobin.01",
+  "speaker": "Tobin",
+  "text": "Tobin Marsh, Captain. Before you build the report, look at the board. Are there work items on it?",
+  "words": [
+    {
+      "word": "Tobin",
+      "start": 0.05,
+      "end": 0.5
+    },
+    {
+      "word": "Marsh",
+      "start": 0.5,
+      "end": 1.0875
+    },
+    {
+      "word": "Captain",
+      "start": 1.0875,
+      "end": 2.575
+    },
+    {
+      "word": "Before",
+      "start": 2.575,
+      "end": 2.875
+    },
+    {
+      "word": "you",
+      "start": 2.875,
+      "end": 3.025
+    },
+    {
+      "word": "build",
+      "start": 3.025,
+      "end": 3.3
+    },
+    {
+      "word": "the",
+      "start": 3.3,
+      "end": 3.4
+    },
+    {
+      "word": "report",
+      "start": 3.4,
+      "end": 4
+    },
+    {
+      "word": "look",
+      "start": 4,
+      "end": 4.2625
+    },
+    {
+      "word": "at",
+      "start": 4.2625,
+      "end": 4.3625
+    },
+    {
+      "word": "the",
+      "start": 4.3625,
+      "end": 4.45
+    },
+    {
+      "word": "board",
+      "start": 4.45,
+      "end": 5.7875
+    },
+    {
+      "word": "Are",
+      "start": 5.7875,
+      "end": 5.9375
+    },
+    {
+      "word": "there",
+      "start": 5.9375,
+      "end": 6.1
+    },
+    {
+      "word": "work",
+      "start": 6.1,
+      "end": 6.425
+    },
+    {
+      "word": "items",
+      "start": 6.425,
+      "end": 6.7875
+    },
+    {
+      "word": "on",
+      "start": 6.7875,
+      "end": 6.9125
+    },
+    {
+      "word": "it",
+      "start": 6.9125,
+      "end": 7.1625
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "tw.ansel.wait",
+  "speaker": "Ansel",
+  "text": "Check the bounty board with Tobin first, Captain.",
+  "words": [
+    {
+      "word": "Check",
+      "start": 0.0515409,
+      "end": 0.322166
+    },
+    {
+      "word": "the",
+      "start": 0.322166,
+      "end": 0.42525
+    },
+    {
+      "word": "bounty",
+      "start": 0.42525,
+      "end": 0.734541
+    },
+    {
+      "word": "board",
+      "start": 0.734541,
+      "end": 1.069583
+    },
+    {
+      "word": "with",
+      "start": 1.069583,
+      "end": 1.237125
+    },
+    {
+      "word": "Tobin",
+      "start": 1.237125,
+      "end": 1.636583
+    },
+    {
+      "word": "first",
+      "start": 1.636583,
+      "end": 2.24225
+    },
+    {
+      "word": "Captain",
+      "start": 2.24225,
+      "end": 2.49225
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "tw.dot.market.right",
+  "speaker": "Dot",
+  "text": "Right-sized! Here's some starfish back.",
+  "words": [
+    {
+      "word": "Right-sized",
+      "start": 0.049,
+      "end": 1.936291
+    },
+    {
+      "word": "Here's",
+      "start": 1.936291,
+      "end": 2.254916
+    },
+    {
+      "word": "some",
+      "start": 2.254916,
+      "end": 2.51225
+    },
+    {
+      "word": "starfish",
+      "start": 2.51225,
+      "end": 3.1005
+    },
+    {
+      "word": "back",
+      "start": 3.1005,
+      "end": 3.3505
+    }
+  ]
+}

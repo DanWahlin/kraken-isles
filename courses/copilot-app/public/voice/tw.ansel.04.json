@@ -1,0 +1,107 @@
+{
+  "id": "tw.ansel.04",
+  "speaker": "Ansel",
+  "text": "It ran when you pulled, and the log shows what it did. That’s a routine I’d trust on the clock.",
+  "words": [
+    {
+      "word": "It",
+      "start": 0.0515409,
+      "end": 0.244833
+    },
+    {
+      "word": "ran",
+      "start": 0.244833,
+      "end": 0.54125
+    },
+    {
+      "word": "when",
+      "start": 0.54125,
+      "end": 0.670083
+    },
+    {
+      "word": "you",
+      "start": 0.670083,
+      "end": 0.760291
+    },
+    {
+      "word": "pulled",
+      "start": 0.760291,
+      "end": 1.25
+    },
+    {
+      "word": "and",
+      "start": 1.25,
+      "end": 1.39175
+    },
+    {
+      "word": "the",
+      "start": 1.39175,
+      "end": 1.456166
+    },
+    {
+      "word": "log",
+      "start": 1.456166,
+      "end": 1.726791
+    },
+    {
+      "word": "shows",
+      "start": 1.726791,
+      "end": 2.087625
+    },
+    {
+      "word": "what",
+      "start": 2.087625,
+      "end": 2.229375
+    },
+    {
+      "word": "it",
+      "start": 2.229375,
+      "end": 2.345375
+    },
+    {
+      "word": "did",
+      "start": 2.345375,
+      "end": 3.595375
+    },
+    {
+      "word": "That’s",
+      "start": 3.595375,
+      "end": 3.917541
+    },
+    {
+      "word": "a",
+      "start": 3.917541,
+      "end": 3.969083
+    },
+    {
+      "word": "routine",
+      "start": 3.969083,
+      "end": 4.497416
+    },
+    {
+      "word": "I’d",
+      "start": 4.497416,
+      "end": 4.703625
+    },
+    {
+      "word": "trust",
+      "start": 4.703625,
+      "end": 5.012875
+    },
+    {
+      "word": "on",
+      "start": 5.012875,
+      "end": 5.103083
+    },
+    {
+      "word": "the",
+      "start": 5.103083,
+      "end": 5.167541
+    },
+    {
+      "word": "clock",
+      "start": 5.167541,
+      "end": 5.417541
+    }
+  ]
+}

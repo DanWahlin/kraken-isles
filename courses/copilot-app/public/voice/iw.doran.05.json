@@ -1,0 +1,107 @@
+{
+  "id": "iw.doran.05",
+  "speaker": "Doran",
+  "text": "Generated results differ between runs. Check the structure, and repair only the part that’s wrong. Don’t regenerate the whole board.",
+  "words": [
+    {
+      "word": "Generated",
+      "start": 0.052083,
+      "end": 0.612
+    },
+    {
+      "word": "results",
+      "start": 0.612,
+      "end": 1.106791
+    },
+    {
+      "word": "differ",
+      "start": 1.106791,
+      "end": 1.458333
+    },
+    {
+      "word": "between",
+      "start": 1.458333,
+      "end": 1.835958
+    },
+    {
+      "word": "runs",
+      "start": 1.835958,
+      "end": 3.242208
+    },
+    {
+      "word": "Check",
+      "start": 3.242208,
+      "end": 3.515625
+    },
+    {
+      "word": "the",
+      "start": 3.515625,
+      "end": 3.606791
+    },
+    {
+      "word": "structure",
+      "start": 3.606791,
+      "end": 4.362
+    },
+    {
+      "word": "and",
+      "start": 4.362,
+      "end": 4.51825
+    },
+    {
+      "word": "repair",
+      "start": 4.51825,
+      "end": 4.869791
+    },
+    {
+      "word": "only",
+      "start": 4.869791,
+      "end": 5.065125
+    },
+    {
+      "word": "the",
+      "start": 5.065125,
+      "end": 5.169291
+    },
+    {
+      "word": "part",
+      "start": 5.169291,
+      "end": 5.494791
+    },
+    {
+      "word": "that’s",
+      "start": 5.494791,
+      "end": 5.742208
+    },
+    {
+      "word": "wrong",
+      "start": 5.742208,
+      "end": 7.083333
+    },
+    {
+      "word": "Don’t",
+      "start": 7.083333,
+      "end": 7.382833
+    },
+    {
+      "word": "regenerate",
+      "start": 7.382833,
+      "end": 7.95575
+    },
+    {
+      "word": "the",
+      "start": 7.95575,
+      "end": 8.046875
+    },
+    {
+      "word": "whole",
+      "start": 8.046875,
+      "end": 8.294291
+    },
+    {
+      "word": "board",
+      "start": 8.294291,
+      "end": 8.544291
+    }
+  ]
+}

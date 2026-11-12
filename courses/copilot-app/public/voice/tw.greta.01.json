@@ -1,0 +1,92 @@
+{
+  "id": "tw.greta.01",
+  "speaker": "Greta",
+  "text": "Greta Hale, bellmaster. Your report worked by hand. Now it can be waiting for you each morning.",
+  "words": [
+    {
+      "word": "Greta",
+      "start": 0.05,
+      "end": 0.4
+    },
+    {
+      "word": "Hale",
+      "start": 0.4,
+      "end": 1.1375
+    },
+    {
+      "word": "bellmaster",
+      "start": 1.1375,
+      "end": 2.7875
+    },
+    {
+      "word": "Your",
+      "start": 2.7875,
+      "end": 2.9625
+    },
+    {
+      "word": "report",
+      "start": 2.9625,
+      "end": 3.425
+    },
+    {
+      "word": "worked",
+      "start": 3.425,
+      "end": 3.8
+    },
+    {
+      "word": "by",
+      "start": 3.8,
+      "end": 4
+    },
+    {
+      "word": "hand",
+      "start": 4,
+      "end": 5.4
+    },
+    {
+      "word": "Now",
+      "start": 5.4,
+      "end": 5.7625
+    },
+    {
+      "word": "it",
+      "start": 5.7625,
+      "end": 5.8625
+    },
+    {
+      "word": "can",
+      "start": 5.8625,
+      "end": 6.0375
+    },
+    {
+      "word": "be",
+      "start": 6.0375,
+      "end": 6.15
+    },
+    {
+      "word": "waiting",
+      "start": 6.15,
+      "end": 6.575
+    },
+    {
+      "word": "for",
+      "start": 6.575,
+      "end": 6.7
+    },
+    {
+      "word": "you",
+      "start": 6.7,
+      "end": 6.875
+    },
+    {
+      "word": "each",
+      "start": 6.875,
+      "end": 7.1125
+    },
+    {
+      "word": "morning",
+      "start": 7.1125,
+      "end": 7.3625
+    }
+  ]
+}

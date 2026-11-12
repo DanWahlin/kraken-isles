@@ -1,0 +1,132 @@
+{
+  "id": "wingman.iw.nav",
+  "speaker": "Wingman",
+  "text": "Your tasks are in the top left, and the compass up top shows the way, up the stair and along the cliff to the Dome.",
+  "words": [
+    {
+      "word": "Your",
+      "start": 0,
+      "end": 0.16
+    },
+    {
+      "word": "tasks",
+      "start": 0.16,
+      "end": 0.58
+    },
+    {
+      "word": "are",
+      "start": 0.58,
+      "end": 0.693
+    },
+    {
+      "word": "in",
+      "start": 0.693,
+      "end": 0.82
+    },
+    {
+      "word": "the",
+      "start": 0.82,
+      "end": 0.94
+    },
+    {
+      "word": "top",
+      "start": 0.94,
+      "end": 1.184
+    },
+    {
+      "word": "left",
+      "start": 1.184,
+      "end": 1.8
+    },
+    {
+      "word": "and",
+      "start": 1.8,
+      "end": 1.94
+    },
+    {
+      "word": "the",
+      "start": 1.94,
+      "end": 2.05
+    },
+    {
+      "word": "compass",
+      "start": 2.05,
+      "end": 2.453
+    },
+    {
+      "word": "up",
+      "start": 2.453,
+      "end": 2.64
+    },
+    {
+      "word": "top",
+      "start": 2.64,
+      "end": 2.933
+    },
+    {
+      "word": "shows",
+      "start": 2.933,
+      "end": 3.22
+    },
+    {
+      "word": "the",
+      "start": 3.22,
+      "end": 3.38
+    },
+    {
+      "word": "way",
+      "start": 3.38,
+      "end": 4.133
+    },
+    {
+      "word": "up",
+      "start": 4.133,
+      "end": 4.44
+    },
+    {
+      "word": "the",
+      "start": 4.44,
+      "end": 4.627
+    },
+    {
+      "word": "stair",
+      "start": 4.627,
+      "end": 5.02
+    },
+    {
+      "word": "and",
+      "start": 5.02,
+      "end": 5.253
+    },
+    {
+      "word": "along",
+      "start": 5.253,
+      "end": 5.54
+    },
+    {
+      "word": "the",
+      "start": 5.54,
+      "end": 5.667
+    },
+    {
+      "word": "cliff",
+      "start": 5.667,
+      "end": 6.08
+    },
+    {
+      "word": "to",
+      "start": 6.08,
+      "end": 6.26
+    },
+    {
+      "word": "the",
+      "start": 6.26,
+      "end": 6.416
+    },
+    {
+      "word": "Dome",
+      "start": 6.416,
+      "end": 6.666
+    }
+  ]
+}

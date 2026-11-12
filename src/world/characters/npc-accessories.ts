@@ -386,6 +386,231 @@ export function dressNpcCharacter(root: Group, body: CharacterBody): void {
     case 'gc_shepherd':
       addHeadscarf(root, 0x3a5a4a, 0xd8b97a);
       break;
+    // Sunspire Sands (docs/specs/ISLAND-05-sunspire-sands.md §4).
+    case 'zahra':
+      addHeadscarf(root, 0xe0a030, 0x34507e);
+      addMerchantScales(root, 1);
+      break;
+    case 'idris':
+      addSunBleachedCap(root);
+      addRolledSleeves(root, 0xd4c1a0);
+      addBucket(root, 0x8a6444, -1);
+      break;
+    case 'noor':
+      addHeadscarf(root, 0x34507e, 0xc89b3c);
+      addSpyglassInHand(root, 1);
+      addSash(root, 0xc89b3c, 1);
+      break;
+    case 'samir':
+      addWideBrimFeltHat(root, 0x6b4a30, 0xb8443a);
+      addApron(root, 0x7a5a3c, 0x3a2a20);
+      addScroll(root, 1);
+      break;
+    case 'paloma':
+      addAstronomerRobe(root, 0xf0e6d0, 0xc89b3c);
+      addAstrolabeInHand(root, 1);
+      break;
+    case 'ss_market':
+      addSunHat(root, 0xd9b97a, 0xe0a030);
+      addApron(root, 0xeadcb4, 0xe0a030);
+      addMoneyPouch(root, 0x8b5428, 1);
+      break;
+    case 'ss_player_a':
+      addHeadscarf(root, 0xb8443a, 0xf0e6d0);
+      break;
+    case 'ss_player_b':
+      addSunBleachedCap(root);
+      addBeard(root, 0xb7b3a3);
+      break;
+    case 'ss_trader':
+      addSunHat(root, 0xd9b97a, 0xb8443a);
+      addMarketBasket(root, -1);
+      break;
+    case 'ss_weaver':
+      addHeadscarf(root, 0x5f426f, 0xe0a030);
+      break;
+    case 'ss_carrier':
+      addStrawHat(root);
+      addBucket(root, 0x8a6444, 1);
+      addRolledSleeves(root, 0xb7a281);
+      break;
+    case 'ss_camper':
+      addWideBrimFeltHat(root, 0x8a7a5a, 0x34507e);
+      addNeckerchief(root, 0xb8443a);
+      break;
+    case 'ss_signaller':
+      addSoftStarCap(root, 0x34507e, 0xc89b3c);
+      addSpyglass(root, -1);
+      break;
+    case 'ss_porter':
+      addBandana(root, 0xb8443a, 0xf0e6d0);
+      addRolledSleeves(root, 0xb7a281);
+      break;
+    case 'ss_child':
+      addChildSailorCap(root, 0xf0e6d0, 0xe0a030);
+      addToyPinwheel(root, 1);
+      break;
+    case 'ss_fisher':
+      addStrawHat(root);
+      addTacklePouch(root, 0x6b4a30, 1);
+      addPipe(root);
+      break;
+    // Inkwell Bluffs (docs/specs/ISLAND-06-inkwell-bluffs.md §4).
+    case 'thea':
+      addHeadscarf(root, 0x2c5c9a, 0xfffaf0);
+      addMarketBasket(root, -1);
+      break;
+    case 'nikos':
+      addFlatCap(root, 0x2c3e5c);
+      addPencilBehindEar(root, 1);
+      addLedgerInHand(root, 0x2c5c9a, 1);
+      break;
+    case 'calla':
+      addWideBrimFeltHat(root, 0x5f426f, 0xc2337a);
+      addSatchel(root, 0x6b4a30, -1);
+      addScroll(root, 1);
+      break;
+    case 'petra':
+      addQuillBehindEar(root, 1);
+      addApron(root, 0xeadcb4, 0x2c5c9a);
+      addRolledMapInHand(root, -1);
+      break;
+    case 'doran':
+      addArchivistCoat(root, 0x2c3e5c, 0xf0e6d0);
+      addBeard(root, 0xe6e2d6);
+      addRolledMapInHand(root, 1);
+      break;
+    case 'iris':
+      addAstronomerRobe(root, 0xfffaf0, 0x2c5c9a);
+      addAstrolabeInHand(root, 1);
+      break;
+    case 'iw_market':
+      addSunHat(root, 0xe9ddbf, 0x2c5c9a);
+      addApron(root, 0xfffaf0, 0x2c5c9a);
+      addMoneyPouch(root, 0x8b5428, 1);
+      break;
+    case 'iw_player_a':
+      addFlatCap(root, 0x3a4048);
+      addBeard(root, 0xb7b3a3);
+      break;
+    case 'iw_player_b':
+      addHeadscarf(root, 0xe6b84a, 0x2c5c9a);
+      break;
+    case 'iw_washer':
+      addHeadscarf(root, 0xfffaf0, 0x5e8fc8);
+      addBucket(root, 0x86664a, 1);
+      addRolledSleeves(root, 0xd4c1a0);
+      break;
+    case 'iw_fisher':
+      addStrawHat(root);
+      addFishingNet(root, 1);
+      addPipe(root);
+      break;
+    case 'iw_porter':
+      addBandana(root, 0x2c5c9a, 0xfffaf0);
+      addRolledSleeves(root, 0xb7a281);
+      break;
+    case 'iw_child':
+      addChildSailorCap(root, 0xfffaf0, 0x2c5c9a);
+      addToyHoop(root, 1);
+      break;
+    case 'iw_painter':
+      addSunHat(root, 0xe9ddbf, 0xc2337a);
+      addApron(root, 0x5e8fc8, 0xfffaf0);
+      break;
+    case 'iw_flyer_a':
+      addWatchCap(root, 0xc8452f);
+      addNeckerchief(root, 0x2c5c9a);
+      break;
+    case 'iw_flyer_b':
+      addStrawHat(root);
+      addNeckerchief(root, 0xc2337a);
+      break;
+    case 'iw_surveyor':
+      addSoftStarCap(root, 0x2c5c9a, 0xd0a040);
+      addSpyglassInHand(root, 1);
+      addSatchel(root, 0x6b4a30, -1);
+      break;
+    // Tidewheel Caldera (docs/specs/ISLAND-07-tidewheel-caldera.md §6).
+    case 'agnes':
+      addWatchCap(root, 0x2c3e5c);
+      addArchivistCoat(root, 0x34383f, 0xe9ddc6);
+      addSpyglassInHand(root, 1);
+      break;
+    case 'tobin':
+      addFlatCap(root, 0x5e4432);
+      addPencilBehindEar(root, 1);
+      addLedgerInHand(root, 0xb5532c, 1);
+      break;
+    case 'ansel':
+      addBandana(root, 0xb5532c, 0xe9ddc6);
+      addApron(root, 0x6b4a30, 0x3c3b3a);
+      addRolledSleeves(root, 0xb7a281);
+      addMalletInHand(root, 1);
+      break;
+    case 'greta':
+      addWideBrimFeltHat(root, 0x2e3a34, 0xe0b040);
+      addSatchel(root, 0x6b4a30, -1);
+      addLedgerInHand(root, 0x4f9a86, 1);
+      break;
+    case 'nerys':
+      addHeadscarf(root, 0xd89a3a, 0x5e4432);
+      addSpyglassInHand(root, -1);
+      break;
+    case 'silas':
+      addNavalTricorn(root, 0x202a3a, 0xe0b040);
+      addBeard(root, 0xe5dfcf);
+      addArchivistCoat(root, 0x202a3a, 0xe9ddc6);
+      addAstrolabeInHand(root, 1);
+      break;
+    case 'tw_market':
+      addSunHat(root, 0xe2d4b0, 0xb5532c);
+      addApron(root, 0xe9ddc6, 0xb5532c);
+      addMoneyPouch(root, 0x8b5428, 1);
+      break;
+    case 'tw_player_a':
+      addFlatCap(root, 0x3a4048);
+      addBeard(root, 0xb7b3a3);
+      break;
+    case 'tw_player_b':
+      addHeadscarf(root, 0x4f9a86, 0xe9ddc6);
+      break;
+    case 'tw_mender':
+      addStrawHat(root);
+      addFishingNet(root, 1);
+      addPipe(root);
+      break;
+    case 'tw_lamplighter':
+      addWatchCap(root, 0xb5532c);
+      addNeckerchief(root, 0xd89a3a);
+      addTool(root, 0xe0b040, 1);
+      break;
+    case 'tw_child':
+      addChildSailorCap(root, 0xe9ddc6, 0xb5532c);
+      addToyPinwheel(root, 1);
+      break;
+    case 'tw_oiler':
+      addBandana(root, 0x4f9a86, 0xe9ddc6);
+      addApron(root, 0x5e4432, 0x3c3b3a);
+      addBucket(root, 0x4f9a86, 1);
+      break;
+    case 'tw_ringer':
+      addSoftStarCap(root, 0x7a1f2d, 0xe0b040);
+      addNeckerchief(root, 0xe9ddc6);
+      break;
+    case 'tw_keeper':
+      addSunHat(root, 0xe2d4b0, 0x4f9a86);
+      addMarketBasket(root, -1);
+      break;
+    case 'tw_stargazer':
+      addSoftStarCap(root, 0x17396a, 0xd0a040);
+      addSpectacles(root, SPECTACLES.oren);
+      addSpyglassInHand(root, 1);
+      break;
+    case 'tw_fisher':
+      addSunBleachedCap(root);
+      addTacklePouch(root, 0x6b4a30, 1);
+      break;
   }
 }
 

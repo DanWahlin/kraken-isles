@@ -1,0 +1,117 @@
+{
+  "id": "ss.lyra.04",
+  "speaker": "Lyra",
+  "text": "Check what's in the package, and what access it needs, before you switch it on. Zahra's in the bazaar, up the lane.",
+  "words": [
+    {
+      "word": "Check",
+      "start": 0,
+      "end": 0.272
+    },
+    {
+      "word": "what's",
+      "start": 0.272,
+      "end": 0.507
+    },
+    {
+      "word": "in",
+      "start": 0.507,
+      "end": 0.58
+    },
+    {
+      "word": "the",
+      "start": 0.58,
+      "end": 0.71
+    },
+    {
+      "word": "package",
+      "start": 0.71,
+      "end": 1.4
+    },
+    {
+      "word": "and",
+      "start": 1.4,
+      "end": 1.552
+    },
+    {
+      "word": "what",
+      "start": 1.552,
+      "end": 1.737
+    },
+    {
+      "word": "access",
+      "start": 1.737,
+      "end": 2.133
+    },
+    {
+      "word": "it",
+      "start": 2.133,
+      "end": 2.307
+    },
+    {
+      "word": "needs",
+      "start": 2.307,
+      "end": 2.857
+    },
+    {
+      "word": "before",
+      "start": 2.857,
+      "end": 3.22
+    },
+    {
+      "word": "you",
+      "start": 3.22,
+      "end": 3.326
+    },
+    {
+      "word": "switch",
+      "start": 3.326,
+      "end": 3.627
+    },
+    {
+      "word": "it",
+      "start": 3.627,
+      "end": 3.787
+    },
+    {
+      "word": "on",
+      "start": 3.787,
+      "end": 4.52
+    },
+    {
+      "word": "Zahra's",
+      "start": 4.52,
+      "end": 6.107
+    },
+    {
+      "word": "in",
+      "start": 6.107,
+      "end": 6.18
+    },
+    {
+      "word": "the",
+      "start": 6.18,
+      "end": 6.28
+    },
+    {
+      "word": "bazaar",
+      "start": 6.28,
+      "end": 6.933
+    },
+    {
+      "word": "up",
+      "start": 6.933,
+      "end": 7.06
+    },
+    {
+      "word": "the",
+      "start": 7.06,
+      "end": 7.2
+    },
+    {
+      "word": "lane",
+      "start": 7.2,
+      "end": 7.45
+    }
+  ]
+}

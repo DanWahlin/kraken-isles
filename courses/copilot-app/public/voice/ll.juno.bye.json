@@ -1,0 +1,57 @@
+{
+  "id": "ll.juno.bye",
+  "speaker": "Juno",
+  "text": "Fair winds, Master Captain. Practice on small, real issues first.",
+  "words": [
+    {
+      "word": "Fair",
+      "start": 0,
+      "end": 0.307
+    },
+    {
+      "word": "winds",
+      "start": 0.307,
+      "end": 0.823
+    },
+    {
+      "word": "Master",
+      "start": 0.823,
+      "end": 1.02
+    },
+    {
+      "word": "Captain",
+      "start": 1.02,
+      "end": 1.973
+    },
+    {
+      "word": "Practice",
+      "start": 1.973,
+      "end": 2.453
+    },
+    {
+      "word": "on",
+      "start": 2.453,
+      "end": 2.64
+    },
+    {
+      "word": "small",
+      "start": 2.64,
+      "end": 3.36
+    },
+    {
+      "word": "real",
+      "start": 3.36,
+      "end": 3.737
+    },
+    {
+      "word": "issues",
+      "start": 3.737,
+      "end": 4.173
+    },
+    {
+      "word": "first",
+      "start": 4.173,
+      "end": 4.423
+    }
+  ]
+}

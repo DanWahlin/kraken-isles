@@ -1,0 +1,77 @@
+{
+  "id": "ll.juno.keel",
+  "speaker": "Juno",
+  "text": "Keelhaven: plan, change, and validate. Then issues, pull requests, review comments, and failing checks.",
+  "words": [
+    {
+      "word": "Keelhaven",
+      "start": 0,
+      "end": 1.2
+    },
+    {
+      "word": "plan",
+      "start": 1.2,
+      "end": 1.909
+    },
+    {
+      "word": "change",
+      "start": 1.909,
+      "end": 2.5
+    },
+    {
+      "word": "and",
+      "start": 2.5,
+      "end": 2.64
+    },
+    {
+      "word": "validate",
+      "start": 2.64,
+      "end": 3.808
+    },
+    {
+      "word": "Then",
+      "start": 3.808,
+      "end": 4.24
+    },
+    {
+      "word": "issues",
+      "start": 4.24,
+      "end": 4.88
+    },
+    {
+      "word": "pull",
+      "start": 4.88,
+      "end": 5.28
+    },
+    {
+      "word": "requests",
+      "start": 5.28,
+      "end": 6.194
+    },
+    {
+      "word": "review",
+      "start": 6.194,
+      "end": 6.462
+    },
+    {
+      "word": "comments",
+      "start": 6.462,
+      "end": 7.14
+    },
+    {
+      "word": "and",
+      "start": 7.14,
+      "end": 7.25
+    },
+    {
+      "word": "failing",
+      "start": 7.25,
+      "end": 7.669
+    },
+    {
+      "word": "checks",
+      "start": 7.669,
+      "end": 7.919
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "iw.calla.done",
+  "speaker": "Calla",
+  "text": "Petra’s on the Draughting Terrace, Captain, toward the cliff.",
+  "words": [
+    {
+      "word": "Petra’s",
+      "start": 0.052625,
+      "end": 0.39475
+    },
+    {
+      "word": "on",
+      "start": 0.39475,
+      "end": 0.539458
+    },
+    {
+      "word": "the",
+      "start": 0.539458,
+      "end": 0.631583
+    },
+    {
+      "word": "Draughting Terrace",
+      "start": 0.631583,
+      "end": 1.789458
+    },
+    {
+      "word": "Captain",
+      "start": 1.789458,
+      "end": 2.460541
+    },
+    {
+      "word": "toward",
+      "start": 2.460541,
+      "end": 2.973666
+    },
+    {
+      "word": "the",
+      "start": 2.973666,
+      "end": 3.078958
+    },
+    {
+      "word": "cliff",
+      "start": 3.078958,
+      "end": 3.328958
+    }
+  ]
+}

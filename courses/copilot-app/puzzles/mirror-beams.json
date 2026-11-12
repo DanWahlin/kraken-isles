@@ -1,0 +1,365 @@
+{
+  "$schema": "../../schemas/puzzle-circuit.schema.json",
+  "id": "P5.1",
+  "mechanic": "circuit",
+  "chapter": "05-mcp-plugins",
+  "quest": "Q5.5",
+  "circuit": "signal",
+  "$comment": "Mirror Beams in the Mirror Court (docs/specs/ISLAND-05-sunspire-sands.md §5.1): the roll of towers (Customize, Browse, the MCP filter), the brass card (the Context7 dialog), the shutter (enabled), the mirror (connected: a dial the player turns until the beam lands on the Sunspire), the key (the general question, then the reply and its sources), and the chart tent (the local comparison). The places, lamps, the mirror and its beam are the game’s; every word is this file’s.",
+  "places": {
+    "roll": {
+      "acts": "roll",
+      "name": "The roll of towers",
+      "means": "**Customize** → **Browse** → the **MCP** type filter",
+      "cite": "c7"
+    },
+    "card": {
+      "acts": "card",
+      "name": "The brass card",
+      "means": "The **Context7** dialog: Server name, Server type, URL",
+      "cite": "c7"
+    },
+    "shutter": {
+      "acts": "shutter",
+      "name": "The shutter",
+      "means": "The server’s enabled toggle",
+      "cite": "tsFail"
+    },
+    "mirror": {
+      "acts": "mirror",
+      "name": "The great mirror",
+      "means": "The server’s connected icon",
+      "cite": "c7"
+    },
+    "key": {
+      "acts": "key",
+      "name": "The signal key",
+      "means": "Your prompt, and the tool activity that answers it",
+      "cite": "c7"
+    },
+    "tent": {
+      "acts": "tent",
+      "name": "The chart tent",
+      "means": "The local comparison with `BookFilters.tsx`",
+      "cite": "c7"
+    }
+  },
+  "text": {
+    "lampDark": "○ waiting",
+    "lampRunning": "… running",
+    "lampReady": "✓ ready",
+    "lampNotReady": "✗ not ready",
+    "next": "Next station: {name}",
+    "back": "Back to {name}",
+    "skip": "Skip",
+    "leave": "Leave",
+    "hint": "Hint",
+    "sealIt": "Seal it",
+    "sendBack": "Send it back",
+    "darkLamp": "{name} is still dark.",
+    "sticks": "It sticks.",
+    "noStick": "It won’t stick.",
+    "turnBack": "◀ Turn it back",
+    "turnOn": "Turn it on ▶",
+    "set": "Set it here",
+    "title": "Mirror Beams",
+    "intro": "Find the tower, read its card, open the shutter, land the beam, flash the question, read the reply, and compare at home."
+  },
+  "cites": {
+    "c7": {
+      "anchor": "exercise-check-the-book-apps-input-labels-with-context7",
+      "hash": "531f67f51964"
+    },
+    "mcp": {
+      "anchor": "mcp-servers-get-information-from-another-service",
+      "hash": "7c70da2c1f2b"
+    },
+    "tsFail": {
+      "anchor": "an-mcp-server-is-enabled-but-its-tools-fail",
+      "hash": "6bcecf0c4f5d"
+    },
+    "tsFind": {
+      "anchor": "i-cannot-find-mcp-or-plugins-in-settings",
+      "hash": "a8f368794af1"
+    },
+    "take": {
+      "anchor": "key-takeaways",
+      "hash": "179f39f1bb67"
+    }
+  },
+  "laps": [
+    {
+      "id": "connect",
+      "quest": "Q5.5",
+      "step": "signal",
+      "solved": "solved",
+      "close": "noor.signal.solved",
+      "title": "Mirror Beams: ask Context7, compare at home",
+      "order": "context7 · React input labels",
+      "stations": [
+        {
+          "id": "find",
+          "at": "roll",
+          "kind": "choose",
+          "title": "Find the server",
+          "line": "ss.noor.roll",
+          "prompt": "Context7 isn’t on your roll yet. Where do you add it?",
+          "options": [
+            {
+              "id": "browse",
+              "text": "**Customize** → **Browse** → type filter **MCP** → search `context7` → **Add server**",
+              "right": true,
+              "result": "There it is: **Context7**, with **Add server** on its row."
+            },
+            {
+              "id": "settings",
+              "text": "In **Settings**",
+              "reason": "Use the **Customize** view in the sidebar.",
+              "backTo": "roll",
+              "cite": "tsFind"
+            },
+            {
+              "id": "extensions",
+              "text": "**Customize**, with the type filter on **Extensions**",
+              "reason": "Configure MCP connections with the type filter set to **MCP**, not **Extensions**.",
+              "backTo": "roll",
+              "cite": "mcp"
+            },
+            {
+              "id": "twice",
+              "text": "Add it again, though it’s on **Installed** already",
+              "reason": "If it’s already connected, skip the add-server steps. Use one connection per service.",
+              "backTo": "roll",
+              "cite": "c7"
+            }
+          ],
+          "hints": [
+            "Which view holds servers and plugins?",
+            "It’s in the sidebar, and its tab is **Browse**.",
+            "**Customize** → **Browse** → **MCP** → search `context7` → **Add server**."
+          ],
+          "cite": "c7"
+        },
+        {
+          "id": "card",
+          "at": "card",
+          "kind": "choose",
+          "title": "Review the dialog",
+          "image": "ch05/app-context7-configuration",
+          "caption": "Server name `context7`, Server type `HTTP`, and the URL.",
+          "prompt": "The card reads `context7`, `HTTP`, and a URL. What does `HTTP` tell you?",
+          "options": [
+            {
+              "id": "hosted",
+              "text": "The app connects to a hosted server instead of starting a local process",
+              "right": true,
+              "result": "A far tower you reach, not one you build in your own yard. Select **Add server**."
+            },
+            {
+              "id": "local",
+              "text": "The app starts the server on your machine",
+              "reason": "That’s what `HTTP` avoids: it connects to a hosted server.",
+              "backTo": "card",
+              "cite": "c7"
+            },
+            {
+              "id": "dep",
+              "text": "Context7 becomes part of the Book App",
+              "reason": "It supplies documentation. It doesn’t become a dependency of the Book App.",
+              "backTo": "card",
+              "cite": "mcp"
+            }
+          ],
+          "hints": [
+            "Where does this server run?",
+            "Hosted, or local?",
+            "The app connects to a hosted server."
+          ],
+          "cite": "c7"
+        },
+        {
+          "id": "open",
+          "at": "shutter",
+          "kind": "watch",
+          "title": "Enable it",
+          "line": "ss.noor.shutter",
+          "prompt": "The server’s on **Installed** now. Its toggle is the shutter.",
+          "action": "Open the shutter",
+          "text": "The shutter opens and a beam leaves the mirror. It lands on the cliff. Nothing answers: the toggle is on, and the server isn’t connected yet.",
+          "seconds": 5,
+          "cite": "tsFail"
+        },
+        {
+          "id": "aim",
+          "at": "mirror",
+          "kind": "dial",
+          "title": "Check that it connects",
+          "line": "ss.noor.aim",
+          "prompt": "Turn the great mirror. Where must the beam land for the tower to answer?",
+          "action": "Hold it here",
+          "start": 0,
+          "positions": [
+            {
+              "id": "cliff",
+              "text": "On the High Mesa’s cliff",
+              "reason": "The shutter’s open, and nothing answers. An enabled toggle alone doesn’t prove that a server is connected.",
+              "cite": "tsFail"
+            },
+            {
+              "id": "butte",
+              "text": "On Red Butte",
+              "reason": "No tower there. Check the connection status, not the toggle.",
+              "cite": "tsFail"
+            },
+            {
+              "id": "dunes",
+              "text": "On the dunes",
+              "reason": "Sand answers nobody. Check the connection status, the URL and the network.",
+              "cite": "tsFail"
+            },
+            {
+              "id": "sea",
+              "text": "Out over the open sea",
+              "reason": "Nothing out there to answer. Check the connection status, not the toggle.",
+              "cite": "tsFail"
+            },
+            {
+              "id": "town",
+              "text": "On the bazaar",
+              "reason": "That’s home. The far tower is the other way.",
+              "cite": "tsFail"
+            },
+            {
+              "id": "spire",
+              "text": "On the Sunspire’s great mirror",
+              "right": true,
+              "result": "It lands, and the Sunspire sends it on to Library Rock. **Context7** shows its connected icon beside its toggle."
+            }
+          ],
+          "hints": [
+            "Which landmark carries a mirror of its own?",
+            "The tallest tower on the island.",
+            "Turn until the beam lands on the Sunspire’s great mirror."
+          ],
+          "cite": "c7"
+        },
+        {
+          "id": "ask",
+          "at": "key",
+          "kind": "choose",
+          "title": "Ask the general question",
+          "line": "ss.noor.key",
+          "prompt": "The line is up. What do you flash to Context7?",
+          "options": [
+            {
+              "id": "general",
+              "text": "How do nested labels compare with `htmlFor` and `id` when labeling an input? Summarize both patterns, with source links",
+              "right": true,
+              "result": "The question goes out in dots and dashes. No code went with it."
+            },
+            {
+              "id": "file",
+              "text": "The same question, with `BookFilters.tsx` attached so it can check it",
+              "reason": "Do not send repository code or paths to Context7. General documentation questions don’t need repository code.",
+              "backTo": "key",
+              "cite": "c7"
+            },
+            {
+              "id": "fix",
+              "text": "\"Fix the labels in my Book App\"",
+              "reason": "That isn’t a question for a documentation service, and it asks for a change. Ask only the general question.",
+              "backTo": "key",
+              "cite": "c7"
+            }
+          ],
+          "hints": [
+            "What stays in the tent?",
+            "The question is general.",
+            "Flash only the general question about nested labels and `htmlFor`."
+          ],
+          "cite": "c7"
+        },
+        {
+          "id": "reply",
+          "at": "key",
+          "kind": "choose",
+          "title": "Check the reply",
+          "prompt": "A reply flashes back. What proves the server answered?",
+          "options": [
+            {
+              "id": "activity",
+              "text": "Expand the tool activity: a **Context7** tool returned documentation. Open a source link and compare it with the summary",
+              "right": true,
+              "result": "The reply carries the Library’s seal: a tool result, and links to its sources."
+            },
+            {
+              "id": "said",
+              "text": "The signaller says it worked",
+              "reason": "Check tool activity, retrieved guidance and returned source links, not only the agent’s statement that an integration worked.",
+              "backTo": "key",
+              "cite": "take"
+            },
+            {
+              "id": "toggle",
+              "text": "The toggle is still on",
+              "reason": "A toggle isn’t a reply. If the MCP tools are unavailable, the agent should report that and stop.",
+              "backTo": "mirror",
+              "cite": "tsFail"
+            }
+          ],
+          "hints": [
+            "A statement, or evidence?",
+            "The reply shows in the tool activity.",
+            "Expand the tool activity and open a source link."
+          ],
+          "cite": "c7"
+        },
+        {
+          "id": "compare",
+          "at": "tent",
+          "kind": "choose",
+          "title": "Compare at home",
+          "line": "ss.noor.tent",
+          "prompt": "The Library’s guidance is on the table beside your own chart. How do you compare them?",
+          "options": [
+            {
+              "id": "local",
+              "text": "Compare the guidance with `@samples/book-app-web/src/components/BookFilters.tsx` locally. No edits, and no more external requests",
+              "right": true,
+              "result": "The comparison stays in the tent."
+            },
+            {
+              "id": "send",
+              "text": "Flash the file across and ask the Library to check it",
+              "reason": "Keep this comparison local. The server supplied documentation; the agent compares it with local code.",
+              "backTo": "key",
+              "cite": "c7"
+            },
+            {
+              "id": "edit",
+              "text": "Have the agent add `htmlFor` to every label now",
+              "reason": "This step explains. It does not edit files.",
+              "backTo": "tent",
+              "cite": "c7"
+            }
+          ],
+          "hints": [
+            "Where does your own code stay?",
+            "Local, with no more requests.",
+            "Compare with the file locally: no edits, no external requests."
+          ],
+          "cite": "c7"
+        },
+        {
+          "id": "result",
+          "at": "tent",
+          "kind": "watch",
+          "title": "Read the result",
+          "text": "Search, Genre and Status each sit inside a `<label>`. A missing `htmlFor` isn’t a defect when a control is inside its label. No source files changed.",
+          "seconds": 6,
+          "cite": "c7"
+        }
+      ]
+    }
+  ]
+}

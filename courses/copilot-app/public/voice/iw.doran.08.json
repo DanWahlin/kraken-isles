@@ -1,0 +1,67 @@
+{
+  "id": "iw.doran.08",
+  "speaker": "Doran",
+  "text": "Warden Iris keeps the Dome. Take the stair from the court’s corner.",
+  "words": [
+    {
+      "word": "Warden",
+      "start": 0.052083,
+      "end": 0.442708
+    },
+    {
+      "word": "Iris",
+      "start": 0.442708,
+      "end": 0.820333
+    },
+    {
+      "word": "keeps",
+      "start": 0.820333,
+      "end": 1.119791
+    },
+    {
+      "word": "the",
+      "start": 1.119791,
+      "end": 1.210958
+    },
+    {
+      "word": "Dome",
+      "start": 1.210958,
+      "end": 2.630208
+    },
+    {
+      "word": "Take",
+      "start": 2.630208,
+      "end": 2.929708
+    },
+    {
+      "word": "the",
+      "start": 2.929708,
+      "end": 3.020833
+    },
+    {
+      "word": "stair",
+      "start": 3.020833,
+      "end": 3.398458
+    },
+    {
+      "word": "from",
+      "start": 3.398458,
+      "end": 3.59375
+    },
+    {
+      "word": "the",
+      "start": 3.59375,
+      "end": 3.671875
+    },
+    {
+      "word": "court’s",
+      "start": 3.671875,
+      "end": 4.010416
+    },
+    {
+      "word": "corner",
+      "start": 4.010416,
+      "end": 4.260416
+    }
+  ]
+}

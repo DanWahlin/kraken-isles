@@ -1,0 +1,354 @@
+{
+  "$schema": "../../schemas/puzzle-circuit.schema.json",
+  "id": "P7.1",
+  "mechanic": "circuit",
+  "chapter": "07-automations",
+  "quest": "Q7.4",
+  "circuit": "lever",
+  "$comment": "The Lever in the Wheel Works (docs/specs/ISLAND-07-tidewheel-caldera.md §5): the drum (the prompt), the gear rack (the trigger: Manual), the cloud switch (Run in the cloud off), the chart desk (Select repository, Workspace), the great lever (Create and run) and the keeper’s log (Recent runs, the run detail). The places, lamps, the drum’s pins and the lever are the game’s; every word is this file’s.",
+  "places": {
+    "drum": {
+      "acts": "drum",
+      "name": "The drum",
+      "means": "The prompt: one bounded task, and what it must not do",
+      "cite": "ex1"
+    },
+    "gear": {
+      "acts": "gear",
+      "name": "The gear rack",
+      "means": "The **Trigger**: from **Daily** to **Manual**",
+      "cite": "ex1"
+    },
+    "switch": {
+      "acts": "switch",
+      "name": "The cloud switch",
+      "means": "**Run in the cloud**, off",
+      "cite": "ex1"
+    },
+    "desk": {
+      "acts": "desk",
+      "name": "The chart desk",
+      "means": "**Select repository**, and the **Workspace** picker",
+      "cite": "ex1"
+    },
+    "lever": {
+      "acts": "lever",
+      "name": "The great lever",
+      "means": "The arrow next to **Create** → **Create and run**",
+      "cite": "ex1"
+    },
+    "log": {
+      "acts": "log",
+      "name": "The keeper’s log",
+      "means": "**Recent runs**, and the run detail",
+      "cite": "ex1"
+    }
+  },
+  "text": {
+    "lampDark": "○ waiting",
+    "lampRunning": "… running",
+    "lampReady": "✓ ready",
+    "lampNotReady": "✗ not ready",
+    "next": "Next station: {name}",
+    "back": "Back to {name}",
+    "skip": "Skip",
+    "leave": "Leave",
+    "hint": "Hint",
+    "sealIt": "Seal it",
+    "sendBack": "Send it back",
+    "darkLamp": "{name} is still dark.",
+    "sticks": "It sticks.",
+    "noStick": "It won’t stick.",
+    "turnBack": "◀ Turn it back",
+    "turnOn": "Turn it on ▶",
+    "set": "Set it here",
+    "title": "The Lever",
+    "intro": "Pin the drum, seat the hand gear, keep it local, say where it works, pull the lever, and read the log.",
+    "hoist": "Set the desk"
+  },
+  "cites": {
+    "ex1": {
+      "anchor": "exercise-create-a-manual-review-readiness-report",
+      "hash": "c77f03fd8c5f"
+    },
+    "starter": {
+      "anchor": "a-good-starter-automation",
+      "hash": "6d971c2000fa"
+    },
+    "manual": {
+      "anchor": "start-manual-and-local",
+      "hash": "d258fd3120f6"
+    },
+    "saved": {
+      "anchor": "automation-is-a-saved-agent-run",
+      "hash": "20384c60f1f2"
+    },
+    "tsEmpty": {
+      "anchor": "the-review-readiness-report-is-empty",
+      "hash": "e3ccb064a0b7"
+    },
+    "tsSurprise": {
+      "anchor": "the-automation-made-surprising-suggestions",
+      "hash": "11ffdf459efc"
+    }
+  },
+  "laps": [
+    {
+      "id": "manual",
+      "quest": "Q7.4",
+      "step": "lever",
+      "solved": "solved",
+      "close": "ansel.lever.solved",
+      "title": "The Lever: a manual review readiness report",
+      "order": "PR review readiness report · Manual",
+      "stations": [
+        {
+          "id": "prompt",
+          "at": "drum",
+          "kind": "choose",
+          "title": "Pin the pattern",
+          "line": "tw.ansel.drum",
+          "prompt": "The automation is named `PR review readiness report`. Which prompt do you pin on the drum?",
+          "options": [
+            {
+              "id": "report",
+              "text": "For each open pull request, report its checks, its comments and the next human action, as a table. Do not edit files, add comments, change labels, approve reviews, or merge anything",
+              "right": true,
+              "result": "Brass pins rise on the drum: one bounded task, and what it must not do."
+            },
+            {
+              "id": "merge",
+              "text": "For each open pull request, fix what is failing and merge it when the checks pass",
+              "reason": "Avoid first automations that write code, post comments, change labels, approve reviews, or merge pull requests.",
+              "backTo": "drum",
+              "cite": "starter"
+            },
+            {
+              "id": "vague",
+              "text": "Look after my pull requests",
+              "reason": "Make the prompt more specific, and list what the automation must not do.",
+              "backTo": "drum",
+              "cite": "tsSurprise"
+            }
+          ],
+          "hints": [
+            "Which one only reads?",
+            "It says what not to do.",
+            "The report, with its last line: do not edit, comment, label, approve, or merge."
+          ],
+          "cite": "ex1"
+        },
+        {
+          "id": "trigger",
+          "at": "gear",
+          "kind": "choose",
+          "title": "Seat the trigger",
+          "line": "tw.ansel.gear",
+          "prompt": "The new automation form shows the **Trigger** set to **Daily**. Which gear do you seat?",
+          "options": [
+            {
+              "id": "manual",
+              "text": "**Manual**",
+              "right": true,
+              "result": "The hand gear drops into mesh. It runs only when you start it."
+            },
+            {
+              "id": "daily",
+              "text": "**Daily**: leave it as it is",
+              "reason": "Start with a manual automation so you can test the prompt safely before giving it a schedule or trigger.",
+              "backTo": "gear",
+              "cite": "manual"
+            },
+            {
+              "id": "issue",
+              "text": "**Issue**, so it runs when there is news",
+              "reason": "Add a schedule, an event trigger, or cloud execution only after the manual prompt gives trustworthy results.",
+              "backTo": "gear",
+              "cite": "manual"
+            }
+          ],
+          "hints": [
+            "What did Agnes say comes first?",
+            "It runs only when you start it.",
+            "Change the **Trigger** from **Daily** to **Manual**."
+          ],
+          "cite": "ex1"
+        },
+        {
+          "id": "local",
+          "at": "switch",
+          "kind": "choose",
+          "title": "Keep it local",
+          "line": "tw.ansel.switch",
+          "prompt": "Below the trigger is **Run in the cloud**. What do you do with it?",
+          "options": [
+            {
+              "id": "off",
+              "text": "Make sure it is off, so the automation runs locally",
+              "right": true,
+              "result": "The shutter toward the rock light stays closed. This one runs here."
+            },
+            {
+              "id": "on",
+              "text": "Turn it on, so it runs when my computer is off",
+              "reason": "Keep it local while you test it. A manual, local automation is the safest first step.",
+              "backTo": "switch",
+              "cite": "manual"
+            },
+            {
+              "id": "either",
+              "text": "It makes no difference for a manual run",
+              "reason": "It decides where the run happens. Make sure **Run in the cloud** is off, so the automation runs locally.",
+              "backTo": "switch",
+              "cite": "ex1"
+            }
+          ],
+          "hints": [
+            "Where should a first run happen?",
+            "On your own machine.",
+            "Make sure **Run in the cloud** is off."
+          ],
+          "cite": "ex1"
+        },
+        {
+          "id": "where",
+          "at": "desk",
+          "kind": "tiles",
+          "title": "Say where it works",
+          "line": "tw.ansel.desk",
+          "prompt": "The prompt says \"this repository\". Which settings belong below it?",
+          "tiles": [
+            {
+              "id": "repo",
+              "text": "**Select repository**: your `copilot-app-for-beginners` fork",
+              "sticks": true
+            },
+            {
+              "id": "checkout",
+              "text": "**Workspace**: **Current checkout**",
+              "sticks": true
+            },
+            {
+              "id": "all",
+              "text": "Every repository I can access",
+              "sticks": false,
+              "reason": "The prompt says \"this repository\", so the automation must target your fork.",
+              "cite": "ex1"
+            },
+            {
+              "id": "worktree",
+              "text": "A new worktree for each run",
+              "sticks": false,
+              "reason": "This report only reads data, so each run doesn’t need its own new worktree.",
+              "cite": "ex1"
+            },
+            {
+              "id": "secret",
+              "text": "My access token, pasted into the prompt",
+              "sticks": false,
+              "reason": "Treat the prompt like production instructions: keep secrets out of it.",
+              "cite": "starter"
+            }
+          ],
+          "cite": "ex1"
+        },
+        {
+          "id": "run",
+          "at": "lever",
+          "kind": "choose",
+          "title": "Pull the lever",
+          "line": "tw.ansel.pull",
+          "image": "ch07/app-new-automation",
+          "caption": "The menu beside **Create**, with **Create and run**.",
+          "prompt": "The form is ready. How do you save the automation and test it at once?",
+          "options": [
+            {
+              "id": "createRun",
+              "text": "Select the arrow next to **Create**, then **Create and run**",
+              "right": true,
+              "result": "The great lever comes down."
+            },
+            {
+              "id": "create",
+              "text": "Select **Create**, and wait for it to run",
+              "reason": "A manual automation runs only when you start it. Use **Create and run** from the menu to test your prompt right away.",
+              "backTo": "lever",
+              "cite": "ex1"
+            },
+            {
+              "id": "daily",
+              "text": "Change the trigger back to **Daily**, so it runs",
+              "reason": "Test the prompt before adding a schedule.",
+              "backTo": "lever",
+              "cite": "manual"
+            }
+          ],
+          "hints": [
+            "Save and run in one step.",
+            "It’s in the menu beside **Create**.",
+            "The arrow next to **Create**, then **Create and run**."
+          ],
+          "cite": "ex1"
+        },
+        {
+          "id": "running",
+          "at": "lever",
+          "kind": "watch",
+          "title": "Watch it run",
+          "prompt": "The run starts immediately.",
+          "action": "Wait for the run",
+          "text": "Your automation appears under **Your automations** with the **Manual** trigger, and the run appears under **Recent runs**. Wait for the run to complete: the status changes to a success indicator.",
+          "seconds": 6,
+          "cite": "ex1"
+        },
+        {
+          "id": "read",
+          "at": "log",
+          "kind": "tiles",
+          "title": "Read the log",
+          "line": "tw.ansel.log",
+          "prompt": "You open the run detail. What do you confirm?",
+          "tiles": [
+            {
+              "id": "prompt",
+              "text": "The prompt matches what you pasted",
+              "sticks": true
+            },
+            {
+              "id": "noerror",
+              "text": "No error text appears",
+              "sticks": true
+            },
+            {
+              "id": "table",
+              "text": "The result includes a table with CI status, comment status, and the next action for each pull request",
+              "sticks": true
+            },
+            {
+              "id": "same",
+              "text": "The PR numbers match the course’s example exactly",
+              "sticks": false,
+              "reason": "Your PR numbers, titles, and statuses may differ. The key is that each row includes CI status, comment status, and a concrete next action.",
+              "cite": "ex1"
+            },
+            {
+              "id": "merged",
+              "text": "The ready pull requests were merged",
+              "sticks": false,
+              "reason": "The prompt is read-only: it does not merge anything. A human reviews the result.",
+              "cite": "ex1"
+            },
+            {
+              "id": "empty",
+              "text": "An empty table means there is nothing to do",
+              "sticks": false,
+              "reason": "If the result is empty, check that the Chapter 00 setup script created practice pull requests, then check repository permissions.",
+              "cite": "tsEmpty"
+            }
+          ],
+          "cite": "ex1"
+        }
+      ]
+    }
+  ]
+}

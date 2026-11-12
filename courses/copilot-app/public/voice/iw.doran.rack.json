@@ -1,0 +1,87 @@
+{
+  "id": "iw.doran.rack",
+  "speaker": "Doran",
+  "text": "The surveyor’s back with a slate. Check it against the tool output before you trust it.",
+  "words": [
+    {
+      "word": "The",
+      "start": 0.052083,
+      "end": 0.208333
+    },
+    {
+      "word": "surveyor’s",
+      "start": 0.208333,
+      "end": 0.742208
+    },
+    {
+      "word": "back",
+      "start": 0.742208,
+      "end": 1.054708
+    },
+    {
+      "word": "with",
+      "start": 1.054708,
+      "end": 1.223958
+    },
+    {
+      "word": "a",
+      "start": 1.223958,
+      "end": 1.263041
+    },
+    {
+      "word": "slate",
+      "start": 1.263041,
+      "end": 2.695333
+    },
+    {
+      "word": "Check",
+      "start": 2.695333,
+      "end": 2.96875
+    },
+    {
+      "word": "it",
+      "start": 2.96875,
+      "end": 3.072916
+    },
+    {
+      "word": "against",
+      "start": 3.072916,
+      "end": 3.385416
+    },
+    {
+      "word": "the",
+      "start": 3.385416,
+      "end": 3.489583
+    },
+    {
+      "word": "tool",
+      "start": 3.489583,
+      "end": 3.776041
+    },
+    {
+      "word": "output",
+      "start": 3.776041,
+      "end": 4.166666
+    },
+    {
+      "word": "before",
+      "start": 4.166666,
+      "end": 4.453125
+    },
+    {
+      "word": "you",
+      "start": 4.453125,
+      "end": 4.583333
+    },
+    {
+      "word": "trust",
+      "start": 4.583333,
+      "end": 4.895833
+    },
+    {
+      "word": "it",
+      "start": 4.895833,
+      "end": 5.145833
+    }
+  ]
+}

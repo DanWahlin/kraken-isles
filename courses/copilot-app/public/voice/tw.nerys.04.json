@@ -1,0 +1,137 @@
+{
+  "id": "tw.nerys.04",
+  "speaker": "Nerys",
+  "text": "See the rock light past the breach? That’s the cloud. It runs when your own machine is asleep, on GitHub’s side, with rules of its own.",
+  "words": [
+    {
+      "word": "See",
+      "start": 0.05,
+      "end": 0.275
+    },
+    {
+      "word": "the",
+      "start": 0.275,
+      "end": 0.3875
+    },
+    {
+      "word": "rock",
+      "start": 0.3875,
+      "end": 0.65
+    },
+    {
+      "word": "light",
+      "start": 0.65,
+      "end": 0.9375
+    },
+    {
+      "word": "past",
+      "start": 0.9375,
+      "end": 1.2625
+    },
+    {
+      "word": "the",
+      "start": 1.2625,
+      "end": 1.3875
+    },
+    {
+      "word": "breach",
+      "start": 1.3875,
+      "end": 2.8
+    },
+    {
+      "word": "That’s",
+      "start": 2.8,
+      "end": 3.125
+    },
+    {
+      "word": "the",
+      "start": 3.125,
+      "end": 3.25
+    },
+    {
+      "word": "cloud",
+      "start": 3.25,
+      "end": 4.6375
+    },
+    {
+      "word": "It",
+      "start": 4.6375,
+      "end": 4.7625
+    },
+    {
+      "word": "runs",
+      "start": 4.7625,
+      "end": 5.1
+    },
+    {
+      "word": "when",
+      "start": 5.1,
+      "end": 5.2375
+    },
+    {
+      "word": "your",
+      "start": 5.2375,
+      "end": 5.375
+    },
+    {
+      "word": "own",
+      "start": 5.375,
+      "end": 5.6125
+    },
+    {
+      "word": "machine",
+      "start": 5.6125,
+      "end": 6.0625
+    },
+    {
+      "word": "is",
+      "start": 6.0625,
+      "end": 6.175
+    },
+    {
+      "word": "asleep",
+      "start": 6.175,
+      "end": 6.825
+    },
+    {
+      "word": "on",
+      "start": 6.825,
+      "end": 6.9625
+    },
+    {
+      "word": "GitHub’s",
+      "start": 6.9625,
+      "end": 7.4125
+    },
+    {
+      "word": "side",
+      "start": 7.4125,
+      "end": 8
+    },
+    {
+      "word": "with",
+      "start": 8,
+      "end": 8.15
+    },
+    {
+      "word": "rules",
+      "start": 8.15,
+      "end": 8.5125
+    },
+    {
+      "word": "of",
+      "start": 8.5125,
+      "end": 8.5875
+    },
+    {
+      "word": "its",
+      "start": 8.5875,
+      "end": 8.775
+    },
+    {
+      "word": "own",
+      "start": 8.775,
+      "end": 9.025
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "tw.dot.market.over.auto",
+  "speaker": "Dot",
+  "text": "A higher Fusion level for a quick look? Standard would've done fine.",
+  "words": [
+    {
+      "word": "A",
+      "start": 0.049,
+      "end": 0.159333
+    },
+    {
+      "word": "higher",
+      "start": 0.159333,
+      "end": 0.514708
+    },
+    {
+      "word": "Fusion",
+      "start": 0.514708,
+      "end": 1.004916
+    },
+    {
+      "word": "level",
+      "start": 1.004916,
+      "end": 1.323541
+    },
+    {
+      "word": "for",
+      "start": 1.323541,
+      "end": 1.531875
+    },
+    {
+      "word": "a",
+      "start": 1.531875,
+      "end": 1.605375
+    },
+    {
+      "word": "quick",
+      "start": 1.605375,
+      "end": 1.924
+    },
+    {
+      "word": "look",
+      "start": 1.924,
+      "end": 3.198541
+    },
+    {
+      "word": "Standard",
+      "start": 3.198541,
+      "end": 3.835791
+    },
+    {
+      "word": "would've",
+      "start": 3.835791,
+      "end": 4.227958
+    },
+    {
+      "word": "done",
+      "start": 4.227958,
+      "end": 4.522041
+    },
+    {
+      "word": "fine",
+      "start": 4.522041,
+      "end": 4.772041
+    }
+  ]
+}

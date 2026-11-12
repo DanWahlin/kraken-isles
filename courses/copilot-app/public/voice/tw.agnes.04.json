@@ -1,0 +1,127 @@
+{
+  "id": "tw.agnes.04",
+  "speaker": "Agnes",
+  "text": "That way you test the prompt, read the output, and get no surprise runs. Add a schedule only when the results can be trusted.",
+  "words": [
+    {
+      "word": "That",
+      "start": 0.0515409,
+      "end": 0.25775
+    },
+    {
+      "word": "way",
+      "start": 0.25775,
+      "end": 0.438125
+    },
+    {
+      "word": "you",
+      "start": 0.438125,
+      "end": 0.567
+    },
+    {
+      "word": "test",
+      "start": 0.567,
+      "end": 0.902041
+    },
+    {
+      "word": "the",
+      "start": 0.902041,
+      "end": 0.979375
+    },
+    {
+      "word": "prompt",
+      "start": 0.979375,
+      "end": 1.67525
+    },
+    {
+      "word": "read",
+      "start": 1.67525,
+      "end": 1.907208
+    },
+    {
+      "word": "the",
+      "start": 1.907208,
+      "end": 2.048958
+    },
+    {
+      "word": "output",
+      "start": 2.048958,
+      "end": 2.873708
+    },
+    {
+      "word": "and",
+      "start": 2.873708,
+      "end": 3.002583
+    },
+    {
+      "word": "get",
+      "start": 3.002583,
+      "end": 3.170083
+    },
+    {
+      "word": "no",
+      "start": 3.170083,
+      "end": 3.389166
+    },
+    {
+      "word": "surprise",
+      "start": 3.389166,
+      "end": 3.956166
+    },
+    {
+      "word": "runs",
+      "start": 3.956166,
+      "end": 5.451041
+    },
+    {
+      "word": "Add",
+      "start": 5.451041,
+      "end": 5.657208
+    },
+    {
+      "word": "a",
+      "start": 5.657208,
+      "end": 5.70875
+    },
+    {
+      "word": "schedule",
+      "start": 5.70875,
+      "end": 6.301541
+    },
+    {
+      "word": "only",
+      "start": 6.301541,
+      "end": 6.572166
+    },
+    {
+      "word": "when",
+      "start": 6.572166,
+      "end": 6.752583
+    },
+    {
+      "word": "the",
+      "start": 6.752583,
+      "end": 6.817
+    },
+    {
+      "word": "results",
+      "start": 6.817,
+      "end": 7.293833
+    },
+    {
+      "word": "can",
+      "start": 7.293833,
+      "end": 7.448458
+    },
+    {
+      "word": "be",
+      "start": 7.448458,
+      "end": 7.538666
+    },
+    {
+      "word": "trusted",
+      "start": 7.538666,
+      "end": 7.788666
+    }
+  ]
+}
