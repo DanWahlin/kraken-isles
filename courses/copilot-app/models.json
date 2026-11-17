@@ -2,8 +2,8 @@
   "source": {
     "repo": "github/docs",
     "path": "data/tables/copilot",
-    "commit": "d59e39205d23d200a029f8824158d15fcec58eed",
-    "fetchedAt": "2026-11-09T22:57:16.509Z"
+    "commit": "91aa429006f71e57eb2dc555f2384f841f4b9d95",
+    "fetchedAt": "2026-11-16T22:50:35.811Z"
   },
   "models": [
     {
@@ -97,15 +97,6 @@
       "ga": true
     },
     {
-      "name": "GPT-5.6 Terra",
-      "provider": "openai",
-      "family": "GPT",
-      "category": "Versatile",
-      "taskArea": "General-purpose coding and agent tasks",
-      "excelsAt": "Balanced everyday interactive and agentic coding",
-      "ga": true
-    },
-    {
       "name": "GPT-6.1 Terra",
       "provider": "openai",
       "family": "GPT",
@@ -133,6 +124,15 @@
       "ga": true
     },
     {
+      "name": "Claude Fable 5.2",
+      "provider": "anthropic",
+      "family": "Claude",
+      "category": "Powerful",
+      "taskArea": "Long-horizon, autonomous coding and knowledge-work",
+      "excelsAt": "Substantial, long-running coding tasks, including deep codebase research, feature development, and complex agentic workflows",
+      "ga": true
+    },
+    {
       "name": "Claude Opus 4.8",
       "provider": "anthropic",
       "family": "Claude",
@@ -149,15 +149,6 @@
       "taskArea": "Deep reasoning and debugging",
       "excelsAt": "Complex problem-solving challenges, sophisticated reasoning",
       "ga": false
-    },
-    {
-      "name": "Claude Opus 5",
-      "provider": "anthropic",
-      "family": "Claude",
-      "category": "Powerful",
-      "taskArea": "Deep reasoning and debugging",
-      "excelsAt": "Complex problem-solving challenges, sophisticated reasoning",
-      "ga": true
     },
     {
       "name": "Claude Opus 5.5",
