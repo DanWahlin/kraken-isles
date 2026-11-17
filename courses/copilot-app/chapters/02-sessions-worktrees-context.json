@@ -1051,7 +1051,7 @@
       "source": {
         "chapter": "02-sessions-worktrees-context",
         "anchor": "slash-commands",
-        "hash": "f7db6b7416aa"
+        "hash": "cbf042866b89"
       }
     },
     {
@@ -1270,17 +1270,17 @@
       "source": {
         "chapter": "02-sessions-worktrees-context",
         "anchor": "slash-commands",
-        "hash": "f7db6b7416aa"
+        "hash": "cbf042866b89"
       }
     },
     {
       "id": "pg2.more-commands",
       "title": "More slash commands",
-      "caption": "You may also see `/agent`, `/collect-debug-logs`, `/create-canvas`, `/orchestrate`, `/research`, `/review`, `/rubber-duck`, `/skills`, `/usage`, and a command for each installed skill. When in doubt, type `/` and look.",
+      "caption": "You may also see `/agent`, `/collect-debug-logs`, `/create-canvas`, `/new`, `/orchestrate`, `/research`, `/review`, `/rubber-duck`, `/skills`, `/usage`, and a command for each installed skill. When in doubt, type `/` and look.",
       "source": {
         "chapter": "02-sessions-worktrees-context",
         "anchor": "slash-commands",
-        "hash": "f7db6b7416aa"
+        "hash": "cbf042866b89"
       }
     },
     {
@@ -1757,12 +1757,12 @@
     "tb.ines.06": {
       "chapter": "02-sessions-worktrees-context",
       "anchor": "slash-commands",
-      "hash": "f7db6b7416aa"
+      "hash": "cbf042866b89"
     },
     "tb.ines.07": {
       "chapter": "02-sessions-worktrees-context",
       "anchor": "slash-commands",
-      "hash": "f7db6b7416aa"
+      "hash": "cbf042866b89"
     },
     "tb.rook.01": {
       "chapter": "02-sessions-worktrees-context",
@@ -1880,7 +1880,7 @@
       "source": {
         "chapter": "02-sessions-worktrees-context",
         "anchor": "slash-commands",
-        "hash": "f7db6b7416aa"
+        "hash": "cbf042866b89"
       }
     },
     "P2.3.order.2.#": {
@@ -1888,7 +1888,7 @@
       "source": {
         "chapter": "02-sessions-worktrees-context",
         "anchor": "slash-commands",
-        "hash": "f7db6b7416aa"
+        "hash": "cbf042866b89"
       }
     },
     "P2.3.order.2.&": {
@@ -1896,7 +1896,7 @@
       "source": {
         "chapter": "02-sessions-worktrees-context",
         "anchor": "slash-commands",
-        "hash": "f7db6b7416aa"
+        "hash": "cbf042866b89"
       }
     },
     "P2.3.order.3.@": {
@@ -1992,7 +1992,7 @@
       "source": {
         "chapter": "02-sessions-worktrees-context",
         "anchor": "slash-commands",
-        "hash": "f7db6b7416aa"
+        "hash": "cbf042866b89"
       }
     }
   }

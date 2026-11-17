@@ -2,8 +2,8 @@
   "$comment": "Written by tools/course/sync.mjs (PLAN §8.2). Section hashes are the first 12 hex digits of the SHA-256 of normalizeForCompare(markdown); images keep the full SHA-256. Do not edit by hand.",
   "repo": "github/copilot-app-for-beginners",
   "ref": "main",
-  "sha": "8cb27928ebfefa978617dd4b7663d4338fc3faeb",
-  "syncedAt": "2026-11-11",
+  "sha": "f4fe510c5e94fc9bbcb90d4e41a101ef8d512e84",
+  "syncedAt": "2026-11-16",
   "catalog": [
     {
       "id": "00-setup",
@@ -592,7 +592,7 @@
     "02-sessions-worktrees-context": {
       "short": "ch02",
       "title": "Sessions, Worktrees, and Context",
-      "hash": "d59d6e2c5334",
+      "hash": "d06382608497",
       "sections": {
         "learning-objectives": {
           "title": "Learning Objectives",
@@ -614,7 +614,7 @@
         "core-concepts": {
           "title": "Core Concepts",
           "level": 2,
-          "hash": "707815da7fee",
+          "hash": "b14928f333ba",
           "images": [
             "02-sessions-worktrees-context/assets/one-repo-many-worktrees.webp",
             "02-sessions-worktrees-context/assets/app-where-sessions-run.webp"
@@ -670,7 +670,7 @@
         "slash-commands": {
           "title": "Slash Commands",
           "level": 3,
-          "hash": "f7db6b7416aa"
+          "hash": "cbf042866b89"
         },
         "exercise-start-a-session-from-a-branch-and-attach-an-issue": {
           "title": "Exercise: Start a Session from a Branch and Attach an Issue",
