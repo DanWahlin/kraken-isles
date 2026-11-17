@@ -266,13 +266,13 @@
     {
       "id": "S0.4",
       "type": "scenario",
-      "situation": "In **Terminal**, `node -v` prints `v20.19.5`. The Node.js download page marks v24 as **LTS**.",
+      "situation": "In **Terminal**, `node -v` prints `v20.19.5`. The Node.js download page marks v26 as **LTS**.",
       "prompt": "What do you do?",
       "options": [
         {
           "id": "fine",
           "text": "Carry on. It printed a version number, so Node.js is installed",
-          "feedback": "A number means it’s installed, but for Node.js the course also compares the first number with the LTS. 20 is lower than 24."
+          "feedback": "A number means it’s installed, but for Node.js the course also compares the first number with the LTS. 20 is lower than 26."
         },
         {
           "id": "lts",
@@ -555,13 +555,13 @@
     {
       "id": "N0.3",
       "type": "scenario",
-      "situation": "Your version checks print `command not found` for `git --version`, `v24.22.1` for `node -v` (the download page marks v24 as **LTS**), `11.19.1` for `npm -v`, and `gh version 2.74.0`.",
+      "situation": "Your version checks print `command not found` for `git --version`, `v26.13.1` for `node -v` (the download page marks v26 as **LTS**), `11.20.0` for `npm -v`, and `gh version 2.74.0`.",
       "prompt": "What do you do before the setup script?",
       "options": [
         {
           "id": "node",
           "text": "Install a newer Node.js",
-          "feedback": "Its first number, 24, matches the LTS, so Node.js is fine. It’s Git that’s missing."
+          "feedback": "Its first number, 26, matches the LTS, so Node.js is fine. It’s Git that’s missing."
         },
         {
           "id": "git",
@@ -1348,7 +1348,7 @@
       }
     },
     "gear.rack.lantern": {
-      "text": "node -v prints v20.19.5 first, lower than the LTS (v24), so you install the LTS and run it again: v24.22.1.",
+      "text": "node -v prints v20.19.5 first, lower than the LTS (v26), so you install the LTS and run it again: v26.13.1.",
       "source": {
         "chapter": "00-setup",
         "anchor": "check-your-tools-in-terminal",

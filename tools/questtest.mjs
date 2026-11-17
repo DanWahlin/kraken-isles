@@ -8,6 +8,7 @@
 // Harbormaster's Trial and the christening. Answered through the real UI where it matters (hotspots
 // are clicked; other types use __dev.answer()), with screenshots at each beat.
 // node tools/questtest.mjs [--base=http://localhost:5301] [--webgl] [--out=/tmp/shots/quest]
+import { readFileSync } from 'node:fs';
 import { collectLogs, launchChrome, parseFlags } from './lib/browser.mjs';
 import { answerCard, cardOpen, cardState } from './lib/learning-cards.mjs';
 import { answerSetupForm } from './lib/setup-forms.mjs';
@@ -17,6 +18,11 @@ const base = opt.base || 'http://localhost:5301';
 const out = opt.out || '/tmp/shots/quest';
 const tag = opt.webgl ? 'gl' : 'gpu';
 const url = `${base}/devpages/play.html?auto&quiet&shot${opt.webgl ? '&webgl' : ''}`;
+// The lantern's rerun prints the pack's Node.js LTS sample (it follows nodejs.org).
+const gearRack = JSON.parse(
+  readFileSync(new URL('../courses/copilot-app/puzzles/gear-rack.json', import.meta.url), 'utf8'),
+);
+const nodeLts = gearRack.checks.find((c) => c.id === 'lantern').output;
 
 const browser = await launchChrome();
 const page = await browser.newPage({ viewport: { width: 1600, height: 900 } });
@@ -372,7 +378,7 @@ if (gs) {
         logs.push(`[questtest] gear: node -v didn't print the old version (${t.slice(-80)})`);
     }
     await drive(`gear-${k}`, (s) => !s.dialogue && !s.quiz && !s.reveal);
-    if (k === 2 && !/v24\./.test(await term()))
+    if (k === 2 && !(await term()).includes(nodeLts))
       logs.push(`[questtest] gear: the rerun didn't print the LTS (${(await term()).slice(-80)})`);
   }
   results.gear = { pressed, state: await rack() };
