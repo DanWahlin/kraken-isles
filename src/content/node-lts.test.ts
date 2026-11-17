@@ -5,6 +5,10 @@ import { checkPack, ltsClaims, meetsEngines, newestLts, trackedChecks } from '..
 
 const pack = join(ROOT, 'courses', 'copilot-app');
 const engines = new Map([['samples/book-app-web/package.json', '>=24.15.0']]);
+// The rack's own LTS sample, so these tests follow it when nodejs.org marks a new major.
+const rackOutput = trackedChecks(pack)[0].output;
+const rackMajor = Number(/^v(\d+)\./.exec(rackOutput)![1]);
+const rackLts = { version: rackOutput, major: rackMajor, name: 'Current', date: '2026-11-10' };
 
 describe('the Node.js LTS check (issue 279)', () => {
   it('reads the newest LTS from nodejs.org’s index', () => {
@@ -41,14 +45,14 @@ describe('the Node.js LTS check (issue 279)', () => {
 
   it('passes the gear rack while nodejs.org marks its major LTS', () => {
     expect(trackedChecks(pack).map((c) => c.id)).toEqual(['lantern']);
-    const lts = { version: 'v24.22.1', major: 24, name: 'Krypton', date: '2026-10-20' };
-    expect(checkPack(pack, lts, engines)).toEqual([]);
+    expect(checkPack(pack, rackLts, engines)).toEqual([]);
   });
 
   it('lists the rack and every line that names the LTS when a new major becomes LTS', () => {
+    const next = rackMajor + 2;
     const problems = checkPack(
       pack,
-      { version: 'v26.13.0', major: 26, name: 'Lynx', date: '2026-10-28' },
+      { version: `v${next}.0.0`, major: next, name: 'Next', date: '2027-10-28' },
       engines,
     );
     expect(problems.some((p) => p.includes('gear-rack.json → lantern'))).toBe(true);
@@ -57,8 +61,7 @@ describe('the Node.js LTS check (issue 279)', () => {
   });
 
   it('fails when the sample needs more than the rack prints', () => {
-    const lts = { version: 'v24.22.1', major: 24, name: 'Krypton', date: '2026-10-20' };
-    const more = new Map([['samples/book-app-web/package.json', '>=24.30.0']]);
-    expect(checkPack(pack, lts, more)).toEqual([expect.stringContaining("doesn't meet")]);
+    const more = new Map([['samples/book-app-web/package.json', `>=${rackMajor}.999.0`]]);
+    expect(checkPack(pack, rackLts, more)).toEqual([expect.stringContaining("doesn't meet")]);
   });
 });

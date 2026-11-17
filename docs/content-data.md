@@ -439,8 +439,8 @@ text-only pack, its captions). The PR, "Weekly refresh: <course title> @ <sha>",
   `npm run course:node-lts` (`tools/course/node-lts.ts`). A checklist check with `"tracks":
   {"release": "node-lts"}` (the gear rack's `node -v`) must print the major version that nodejs.org
   marks LTS, meet the course sample's `engines.node` (`tracks.engines`), and keep its `stale` output
-  lower. Every line in the pack that names the LTS (`marks v24 as **LTS**`, `the LTS (v24)`,
-  `24, matches the LTS`, `20 is lower than 24`) must name the same major, and each full version in it
+  lower. Every line in the pack that names the LTS (`marks v26 as **LTS**`, `the LTS (v26)`,
+  `26, matches the LTS`, `20 is lower than 26`) must name the same major, and each full version in it
   must be one of the check's outputs. When one doesn't, the job fails and opens the issue "Node.js LTS
   changed: update the gear rack's node -v sample" with the list (or comments on the open one).
 - Nothing merges by itself: a person reviews and merges each PR.
