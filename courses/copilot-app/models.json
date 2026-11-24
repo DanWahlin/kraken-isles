@@ -2,8 +2,8 @@
   "source": {
     "repo": "github/docs",
     "path": "data/tables/copilot",
-    "commit": "91aa429006f71e57eb2dc555f2384f841f4b9d95",
-    "fetchedAt": "2026-11-16T22:50:35.811Z"
+    "commit": "e0b0c900ea2465ce1697fdbef73debd206d0274e",
+    "fetchedAt": "2026-11-24T00:42:46.843Z"
   },
   "models": [
     {
@@ -197,6 +197,24 @@
     },
     {
       "name": "GPT-6.1 Sol",
+      "provider": "openai",
+      "family": "GPT",
+      "category": "Powerful",
+      "taskArea": "Complex coding tasks",
+      "excelsAt": "Advanced, efficient reasoning for complex coding tasks",
+      "ga": true
+    },
+    {
+      "name": "GPT-6.2 Astra",
+      "provider": "openai",
+      "family": "GPT",
+      "category": "Powerful",
+      "taskArea": "Long-horizon, autonomous coding and agentic tasks",
+      "excelsAt": "Long-horizon coding tasks with continuous planning, batched diagnosis and verification, and independent result confirmation",
+      "ga": true
+    },
+    {
+      "name": "GPT-6.2 Sol",
       "provider": "openai",
       "family": "GPT",
       "category": "Powerful",
