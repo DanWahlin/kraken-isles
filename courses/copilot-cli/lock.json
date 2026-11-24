@@ -2,8 +2,8 @@
   "$comment": "Written by tools/course/sync.mjs (PLAN §8.2). Section hashes are the first 12 hex digits of the SHA-256 of normalizeForCompare(markdown); images keep the full SHA-256. Do not edit by hand.",
   "repo": "github/copilot-cli-for-beginners",
   "ref": "main",
-  "sha": "fe3123f930b6318d1859c9636f94f5929877b076",
-  "syncedAt": "2026-11-16",
+  "sha": "a912a424c04f0e4d47d4324fc72f72a83388d3ce",
+  "syncedAt": "2026-11-24",
   "catalog": [
     {
       "id": "00-quick-start",
@@ -50,7 +50,7 @@
     "00-quick-start": {
       "short": "ch00",
       "title": "Quick Start",
-      "hash": "887cf86305c9",
+      "hash": "077911163bac",
       "sections": {
         "-learning-objectives": {
           "title": "🎯 Learning Objectives",
@@ -118,14 +118,14 @@
         "verify-it-works": {
           "title": "Verify It Works",
           "level": 2,
-          "hash": "462ed4890cd9",
+          "hash": "7c9995725c73",
           "images": ["00-quick-start/assets/hello-demo.gif"],
           "terms": ["Expected output", "Note:"]
         },
         "step-1-test-copilot-cli": {
           "title": "Step 1: Test Copilot CLI",
           "level": 3,
-          "hash": "649949ce4cdf",
+          "hash": "93cad39d324f",
           "images": ["00-quick-start/assets/hello-demo.gif"],
           "terms": ["Expected output"]
         },
@@ -138,7 +138,7 @@
         "step-3-try-copilot-cli-with-the-book-app": {
           "title": "Step 3: Try Copilot CLI with the Book App",
           "level": 3,
-          "hash": "e678d7b74781",
+          "hash": "dab303608fc6",
           "terms": ["Expected output"]
         },
         "-youre-ready": {
